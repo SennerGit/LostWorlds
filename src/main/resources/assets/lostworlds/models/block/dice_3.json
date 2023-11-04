@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "lostworlds:block/dice_3",
+    "down": "lostworlds:block/dice_4",
+    "north": "lostworlds:block/dice_6",
+    "east": "lostworlds:block/dice_2",
+    "south": "lostworlds:block/dice_1",
+    "west": "lostworlds:block/dice_5",
+    "particle": "lostworlds:block/dice_3"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "tin",
+  "ingredient": {
+    "item": "lostworlds:raw_tin"
+  },
+  "result": "lostworlds:tin_ingot"
+}

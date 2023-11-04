@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "lostworlds:saw_them",
+      "required": false
+    },
+    {
+      "id": "lostworlds:shrimp",
+      "required": false
+    },
+    {
+      "id": "lostworlds:world",
+      "required": false
+    }
+  ]
+}

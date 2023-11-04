@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "lostworlds:block/elder_wood_planks",
+    "side": "lostworlds:block/elder_wood_planks",
+    "top": "lostworlds:block/elder_wood_planks"
+  }
+}

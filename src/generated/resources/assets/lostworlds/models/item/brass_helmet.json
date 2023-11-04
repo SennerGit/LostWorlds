@@ -1,0 +1,128 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "lostworlds:item/brass_helmet_quartz_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_iron_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.2
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_netherite_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.3
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_redstone_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.4
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_copper_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.5
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_gold_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.6
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_emerald_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.7
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_diamond_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.8
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_lapis_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.9
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_amethyst_trim",
+      "predicate": {
+        "minecraft:trim_type": 1.0
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_quartz_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.1
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_iron_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.2
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_netherite_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.3
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_redstone_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.4
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_copper_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.5
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_gold_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.6
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_emerald_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.7
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_diamond_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.8
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_lapis_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 0.9
+      }
+    },
+    {
+      "model": "lostworlds:item/brass_helmet_amethyst_trim",
+      "predicate": {
+        "lostworlds:item/brass_helmet": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "lostworlds:item/brass_helmet"
+  }
+}

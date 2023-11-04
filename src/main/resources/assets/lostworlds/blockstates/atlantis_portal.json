@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "axis=z": { "model": "lostworlds:block/atlantis_portal_ew" },
+    "axis=x": { "model": "lostworlds:block/atlantis_portal_ns" }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "lostworlds:block/atlantas_water_remover_block_off"
+    },
+    "clicked=true": {
+      "model": "lostworlds:block/atlantas_water_remover_block_on"
+    }
+  }
+}

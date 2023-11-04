@@ -1,0 +1,6 @@
+// 1.20.1	2023-10-22T14:12:27.6569481	Global Loot Modifiers : lostworlds
+847dd0a6f414488f8f981cf74d607ee067e6159f data/forge/loot_modifiers/global_loot_modifiers.json
+5cc49379079cfa353ef44cae3cee5a59bd85fed0 data/lostworlds/loot_modifiers/pomegranate_seeds_from_abandoned_mineshaft.json
+9a48c56fc4ded06fc1f7e5e15810d1df1b60f78d data/lostworlds/loot_modifiers/pomegranate_seeds_from_fern.json
+8e9e10ee149d9f8a5bb47a2d8664621ff24ac95c data/lostworlds/loot_modifiers/pomegranate_seeds_from_grass.json
+20df5774a9921777ca3c91501f8d11fc9fe76aef data/lostworlds/loot_modifiers/pomegranate_seeds_from_suspicious_sand.json

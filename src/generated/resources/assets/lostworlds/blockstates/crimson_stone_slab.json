@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lostworlds:block/crimson_stone_slab"
+    },
+    "type=double": {
+      "model": "lostworlds:block/crimson_stone"
+    },
+    "type=top": {
+      "model": "lostworlds:block/crimson_stone_slab_top"
+    }
+  }
+}

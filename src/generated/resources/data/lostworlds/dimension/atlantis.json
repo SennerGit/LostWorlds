@@ -1,0 +1,11 @@
+{
+  "type": "lostworlds:atlantis_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "lostworlds:atlantis_ocean"
+    },
+    "settings": "lostworlds:atlantis_noise_key"
+  }
+}

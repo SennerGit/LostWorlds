@@ -1,0 +1,11 @@
+{
+  "type": "lostworlds:nidavellir_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "lostworlds:nidavellir_cavern"
+    },
+    "settings": "lostworlds:nidavellir_noise_key"
+  }
+}

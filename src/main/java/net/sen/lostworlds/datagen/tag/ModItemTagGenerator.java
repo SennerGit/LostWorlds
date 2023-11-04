@@ -1,0 +1,68 @@
+package net.sen.lostworlds.datagen.tag;
+
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.item.ModItems;
+import net.sen.lostworlds.util.ModTags;
+
+import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
+
+public class ModItemTagGenerator extends ItemTagsProvider {
+    public ModItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper) {
+        super(pOutput, pLookupProvider, pBlockTags, LostWorlds.MODID, existingFileHelper);
+    }
+
+    @Override
+    protected void addTags(HolderLookup.Provider pProvider) {
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.NETHER_STEEL_HELMET.get(),
+                ModItems.NETHER_STEEL_CHESTPLATE.get(),
+                ModItems.NETHER_STEEL_LEGGINGS.get(),
+                ModItems.NETHER_STEEL_BOOTS.get(),
+                ModItems.ZINC_HELMET.get(),
+                ModItems.ZINC_CHESTPLATE.get(),
+                ModItems.ZINC_LEGGINGS.get(),
+                ModItems.ZINC_BOOTS.get(),
+                ModItems.TIN_HELMET.get(),
+                ModItems.TIN_CHESTPLATE.get(),
+                ModItems.TIN_LEGGINGS.get(),
+                ModItems.TIN_BOOTS.get(),
+                ModItems.BRASS_HELMET.get(),
+                ModItems.BRASS_CHESTPLATE.get(),
+                ModItems.BRASS_LEGGINGS.get(),
+                ModItems.BRASS_BOOTS.get(),
+                ModItems.BRONZE_HELMET.get(),
+                ModItems.BRONZE_CHESTPLATE.get(),
+                ModItems.BRONZE_LEGGINGS.get(),
+                ModItems.BRONZE_BOOTS.get(),
+                ModItems.ORICHALCUM_HELMET.get(),
+                ModItems.ORICHALCUM_CHESTPLATE.get(),
+                ModItems.ORICHALCUM_LEGGINGS.get(),
+                ModItems.ORICHALCUM_BOOTS.get());
+        this.tag(ItemTags.MUSIC_DISCS)
+                .add(ModItems.BAR_BRAWL_RECORD.get());
+
+        this.tag(ModTags.Items.ELDER_WOOD_LOGS)
+                .add(Item.byBlock(ModBlocks.ELDER_WOOD_LOG.get()))
+                .add(Item.byBlock(ModBlocks.ELDER_WOOD.get()))
+                .add(Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get()))
+                .add(Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD.get()));
+
+        this.tag(ModTags.Items.ELDER_WOOD_STRIPPED_LOGS)
+                .add(Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get()))
+                .add(Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD.get()));
+    }
+
+    @Override
+    public String getName() {
+        return "Item Tags";
+    }
+}

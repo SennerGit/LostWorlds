@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "zinc",
+  "ingredient": {
+    "item": "lostworlds:zinc_ore"
+  },
+  "result": "lostworlds:zinc_ingot"
+}

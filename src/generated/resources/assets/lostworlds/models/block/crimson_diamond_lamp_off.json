@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "lostworlds:block/crimson_diamond_lamp_off"
+  }
+}

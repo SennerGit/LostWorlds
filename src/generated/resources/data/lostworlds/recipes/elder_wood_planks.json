@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "lostworlds:elder_wood_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "lostworlds:elder_wood_planks"
+  }
+}

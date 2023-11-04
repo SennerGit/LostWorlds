@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "lostworlds:block/raw_nether_steel_block"
+    }
+  }
+}

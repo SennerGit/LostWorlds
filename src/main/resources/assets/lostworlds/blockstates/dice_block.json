@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "number=up": {
+      "model": "lostworlds:block/dice_1"
+    },
+    "number=north": {
+      "model": "lostworlds:block/dice_2"
+    },
+    "number=east": {
+      "model": "lostworlds:block/dice_3"
+    },
+    "number=south": {
+      "model": "lostworlds:block/dice_5"
+    },
+    "number=west": {
+      "model": "lostworlds:block/dice_4"
+    },
+    "number=down": {
+      "model": "lostworlds:block/dice_6"
+    }
+  }
+}

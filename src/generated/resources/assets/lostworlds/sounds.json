@@ -1,0 +1,47 @@
+{
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "lostworlds:bar_brawl",
+        "stream": true
+      }
+    ],
+    "subtitle": "lostworlds:bar_brawl"
+  },
+  "crimson_diamond_lamp_break": {
+    "sounds": [
+      "lostworlds:crimson_diamond_lamp_break"
+    ],
+    "subtitle": "sounds.lostworlds.crimson_diamond_lamp_break"
+  },
+  "crimson_diamond_lamp_fall": {
+    "sounds": [
+      "lostworlds:crimson_diamond_lamp_fall"
+    ],
+    "subtitle": "sounds.lostworlds.crimson_diamond_lamp_fall"
+  },
+  "crimson_diamond_lamp_hit": {
+    "sounds": [
+      "lostworlds:crimson_diamond_lamp_hit"
+    ],
+    "subtitle": "sounds.lostworlds.crimson_diamond_lamp_hit"
+  },
+  "crimson_diamond_lamp_place": {
+    "sounds": [
+      "lostworlds:crimson_diamond_lamp_place"
+    ],
+    "subtitle": "sounds.lostworlds.crimson_diamond_lamp_place"
+  },
+  "crimson_diamond_lamp_step": {
+    "sounds": [
+      "lostworlds:crimson_diamond_lamp_step"
+    ],
+    "subtitle": "sounds.lostworlds.crimson_diamond_lamp_step"
+  },
+  "magical_dowsing_rod_found_ore": {
+    "sounds": [
+      "lostworlds:magical_dowsing_rod_found_ore"
+    ],
+    "subtitle": "sounds.lostworlds.magical_dowsing_rod_found_ore"
+  }
+}

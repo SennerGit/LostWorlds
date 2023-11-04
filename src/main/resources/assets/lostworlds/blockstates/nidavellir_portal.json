@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "axis=z": { "model": "lostworlds:block/nidavellir_portal_ew" },
+    "axis=x": { "model": "lostworlds:block/nidavellir_portal_ns" }
+  }
+}

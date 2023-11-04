@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "lostworlds:block/crimson_diamond_lamp_off"
+    },
+    "clicked=true": {
+      "model": "lostworlds:block/crimson_diamond_lamp_on"
+    }
+  }
+}

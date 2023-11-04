@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lostworlds:nether_steel_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "lostworlds:nether_steel_nugget"
+  }
+}
