@@ -22,8 +22,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.NETHER_STEEL_HELMET.get(),
+        this.tag(ItemTags.TRIMMABLE_ARMOR).add(
+                ModItems.NETHER_STEEL_HELMET.get(),
                 ModItems.NETHER_STEEL_CHESTPLATE.get(),
                 ModItems.NETHER_STEEL_LEGGINGS.get(),
                 ModItems.NETHER_STEEL_BOOTS.get(),
@@ -46,19 +46,72 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.ORICHALCUM_HELMET.get(),
                 ModItems.ORICHALCUM_CHESTPLATE.get(),
                 ModItems.ORICHALCUM_LEGGINGS.get(),
-                ModItems.ORICHALCUM_BOOTS.get());
-        this.tag(ItemTags.MUSIC_DISCS)
-                .add(ModItems.BAR_BRAWL_RECORD.get());
+                ModItems.ORICHALCUM_BOOTS.get()
+        );
 
-        this.tag(ModTags.Items.ELDER_WOOD_LOGS)
-                .add(Item.byBlock(ModBlocks.ELDER_WOOD_LOG.get()))
-                .add(Item.byBlock(ModBlocks.ELDER_WOOD.get()))
-                .add(Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get()))
-                .add(Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD.get()));
+        this.tag(ItemTags.MUSIC_DISCS).add(
+                ModItems.BAR_BRAWL_RECORD.get()
+        );
 
-        this.tag(ModTags.Items.ELDER_WOOD_STRIPPED_LOGS)
-                .add(Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get()))
-                .add(Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD.get()));
+        this.tag(ModTags.Items.ELDER_WOOD_LOGS).add(
+                Item.byBlock(ModBlocks.ELDER_WOOD_LOG.get()),
+                Item.byBlock(ModBlocks.ELDER_WOOD.get()),
+                Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.ELDER_WOOD_STRIPPED_LOGS).add(
+                Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_ELDER_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.OLIVE_LOGS).add(
+                Item.byBlock(ModBlocks.OLIVE_LOG.get()),
+                Item.byBlock(ModBlocks.OLIVE_WOOD.get()),
+                Item.byBlock(ModBlocks.STRIPPED_OLIVE_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_OLIVE_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.OLIVE_STRIPPED_LOGS).add(
+                Item.byBlock(ModBlocks.STRIPPED_OLIVE_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_OLIVE_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.MYRRH_LOGS).add(
+                Item.byBlock(ModBlocks.MYRRH_LOG.get()),
+                Item.byBlock(ModBlocks.MYRRH_WOOD.get()),
+                Item.byBlock(ModBlocks.STRIPPED_MYRRH_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_MYRRH_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.MYRRH_STRIPPED_LOGS).add(
+                Item.byBlock(ModBlocks.STRIPPED_MYRRH_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_MYRRH_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.LAUREL_LOGS).add(
+                Item.byBlock(ModBlocks.LAUREL_LOG.get()),
+                Item.byBlock(ModBlocks.LAUREL_WOOD.get()),
+                Item.byBlock(ModBlocks.STRIPPED_LAUREL_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_LAUREL_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.LAUREL_STRIPPED_LOGS).add(
+                Item.byBlock(ModBlocks.STRIPPED_LAUREL_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_LAUREL_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.CYPRESS_LOGS).add(
+                Item.byBlock(ModBlocks.CYPRESS_LOG.get()),
+                Item.byBlock(ModBlocks.CYPRESS_WOOD.get()),
+                Item.byBlock(ModBlocks.STRIPPED_CYPRESS_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_CYPRESS_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.CYPRESS_STRIPPED_LOGS).add(
+                Item.byBlock(ModBlocks.STRIPPED_CYPRESS_LOG.get()),
+                Item.byBlock(ModBlocks.STRIPPED_CYPRESS_WOOD.get())
+        );
     }
 
     @Override

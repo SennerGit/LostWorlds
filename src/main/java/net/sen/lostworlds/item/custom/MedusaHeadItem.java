@@ -8,8 +8,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.entity.custom.MagicGorganProjectileEntity;
+import net.sen.lostworlds.entity.projectile.MagicGorganProjectileEntity;
 import net.sen.lostworlds.sound.ModSounds;
 
 public class MedusaHeadItem extends Item {

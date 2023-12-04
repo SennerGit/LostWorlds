@@ -1,5 +1,9 @@
 {
   "values": [
-    "lostworlds:elder_wood_planks_door"
+    "lostworlds:elder_wood_planks_door",
+    "lostworlds:olive_planks_door",
+    "lostworlds:myrrh_planks_door",
+    "lostworlds:laurel_planks_door",
+    "lostworlds:cypress_planks_door"
   ]
 }

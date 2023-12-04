@@ -1,25 +1,15 @@
 package net.sen.lostworlds.client.event;
 
-import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.block.entity.ModBlockEntities;
-import net.sen.lostworlds.client.entity.layers.ModModelLayers;
-import net.sen.lostworlds.client.entity.model.RhinoModel;
-import net.sen.lostworlds.entity.ModEntities;
-import net.sen.lostworlds.entity.custom.RhinoEntity;
 import net.sen.lostworlds.particle.MagicDowsingRodParticles;
 import net.sen.lostworlds.particle.ModParticles;
 

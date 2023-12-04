@@ -39,8 +39,10 @@ public class ModDimensions {
             new ResourceLocation(LostWorlds.MODID, "alfheimr"));
     public static final ResourceKey<DimensionType> ALFHEIMR_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             new ResourceLocation(LostWorlds.MODID, "alfheimr_type"));
+    public static final ResourceKey<NoiseGeneratorSettings> ALFHEIMR_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
+            new ResourceLocation(LostWorlds.MODID, "alfheimr_noise_key"));
 
-    //Alfheimr
+    //Atlantis
     public static final ResourceKey<LevelStem> ATLANTIS_KEY = ResourceKey.create(Registries.LEVEL_STEM,
             new ResourceLocation(LostWorlds.MODID, "atlantis"));
     public static final ResourceKey<Level> ATLANTIS_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
@@ -50,13 +52,15 @@ public class ModDimensions {
     public static final ResourceKey<NoiseGeneratorSettings> ATLANTIS_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
             new ResourceLocation(LostWorlds.MODID, "atlantis_noise_key"));
 
-    //Alfheimr
+    //Skyopia
     public static final ResourceKey<LevelStem> SKYOPIA_KEY = ResourceKey.create(Registries.LEVEL_STEM,
             new ResourceLocation(LostWorlds.MODID, "skyopia"));
     public static final ResourceKey<Level> SKYOPIA_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
             new ResourceLocation(LostWorlds.MODID, "skyopia"));
     public static final ResourceKey<DimensionType> SKYOPIA_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             new ResourceLocation(LostWorlds.MODID, "skyopia_type"));
+    public static final ResourceKey<NoiseGeneratorSettings> SKYOPIA_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
+            new ResourceLocation(LostWorlds.MODID, "skyopia_noise_key"));
 
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         UnderworldDimension.underworldDimensionType(context);
@@ -68,9 +72,11 @@ public class ModDimensions {
 
 
     public static void bootstrapNoise(BootstapContext<NoiseGeneratorSettings> context) {
-        context.register(UNDERWORLD_NOISE_KEY, UnderworldDimension.underworldNoise(context));
+//        context.register(UNDERWORLD_NOISE_KEY, UnderworldDimension.underworldNoise(context));
         context.register(NIDAVELLIR_NOISE_KEY, NidavellirDimension.nidavellirDimensionNoise(context));
+//        context.register(ALFHEIMR_NOISE_KEY, AlfheimrDimension.alfheimrDimensionNoise(context));
         context.register(ATLANTIS_NOISE_KEY, AtlantisDimension.atlantisDimensionNoise(context));
+//        context.register(SKYOPIA_NOISE_KEY, SkyopiaDimension.skyopiaDimensionNoise(context));
     }
 
    public static void bootstrapStem(BootstapContext<LevelStem> context) {

@@ -120,6 +120,116 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 createSingleItemTable(ModItems.ELDER_WOOD_HANGING_SIGN.get()));
         this.add(ModBlocks.ELDER_WOOD_PLANKS_WALL_HANGING_SIGN.get(), block ->
                 createSingleItemTable(ModItems.ELDER_WOOD_HANGING_SIGN.get()));
+
+        //Olive
+        this.dropSelf(ModBlocks.OLIVE_LOG.get());
+        this.dropSelf(ModBlocks.OLIVE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_OLIVE_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_OLIVE_WOOD.get());
+        this.dropSelf(ModBlocks.OLIVE_SAPLING.get());
+        this.dropSelf(ModBlocks.OLIVE_PLANKS.get());
+        this.add(ModBlocks.OLIVE_PLANKS_SLAB.get(), block -> createSlabItemTable(ModBlocks.OLIVE_PLANKS_SLAB.get()));
+        this.dropSelf(ModBlocks.OLIVE_PLANKS_STAIRS.get());
+        this.dropSelf(ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get());
+        this.add(ModBlocks.OLIVE_PLANKS_DOOR.get(), block -> createDoorTable(ModBlocks.OLIVE_PLANKS_DOOR.get()));
+        this.dropSelf(ModBlocks.OLIVE_PLANKS_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.OLIVE_PLANKS_FENCE.get());
+        this.dropSelf(ModBlocks.OLIVE_PLANKS_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.OLIVE_PLANKS_BUTTON.get());
+
+        this.add(ModBlocks.OLIVE_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.OLIVE_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.add(ModBlocks.OLIVE_PLANKS_SIGN.get(), block ->
+                createSingleItemTable(ModItems.OLIVE_SIGN.get()));
+        this.add(ModBlocks.OLIVE_PLANKS_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.OLIVE_SIGN.get()));
+        this.add(ModBlocks.OLIVE_PLANKS_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.OLIVE_HANGING_SIGN.get()));
+        this.add(ModBlocks.OLIVE_PLANKS_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.OLIVE_HANGING_SIGN.get()));
+
+        //Myrrh
+        this.dropSelf(ModBlocks.MYRRH_LOG.get());
+        this.dropSelf(ModBlocks.MYRRH_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_MYRRH_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_MYRRH_WOOD.get());
+        this.dropSelf(ModBlocks.MYRRH_SAPLING.get());
+        this.dropSelf(ModBlocks.MYRRH_PLANKS.get());
+        this.add(ModBlocks.MYRRH_PLANKS_SLAB.get(), block -> createSlabItemTable(ModBlocks.MYRRH_PLANKS_SLAB.get()));
+        this.dropSelf(ModBlocks.MYRRH_PLANKS_STAIRS.get());
+        this.dropSelf(ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get());
+        this.add(ModBlocks.MYRRH_PLANKS_DOOR.get(), block -> createDoorTable(ModBlocks.MYRRH_PLANKS_DOOR.get()));
+        this.dropSelf(ModBlocks.MYRRH_PLANKS_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.MYRRH_PLANKS_FENCE.get());
+        this.dropSelf(ModBlocks.MYRRH_PLANKS_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.MYRRH_PLANKS_BUTTON.get());
+
+        this.add(ModBlocks.MYRRH_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.MYRRH_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.add(ModBlocks.MYRRH_PLANKS_SIGN.get(), block ->
+                createSingleItemTable(ModItems.MYRRH_SIGN.get()));
+        this.add(ModBlocks.MYRRH_PLANKS_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.MYRRH_SIGN.get()));
+        this.add(ModBlocks.MYRRH_PLANKS_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.MYRRH_HANGING_SIGN.get()));
+        this.add(ModBlocks.MYRRH_PLANKS_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.MYRRH_HANGING_SIGN.get()));
+
+        //Laurel
+        this.dropSelf(ModBlocks.LAUREL_LOG.get());
+        this.dropSelf(ModBlocks.LAUREL_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_LAUREL_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_LAUREL_WOOD.get());
+        this.dropSelf(ModBlocks.LAUREL_SAPLING.get());
+        this.dropSelf(ModBlocks.LAUREL_PLANKS.get());
+        this.add(ModBlocks.LAUREL_PLANKS_SLAB.get(), block -> createSlabItemTable(ModBlocks.LAUREL_PLANKS_SLAB.get()));
+        this.dropSelf(ModBlocks.LAUREL_PLANKS_STAIRS.get());
+        this.dropSelf(ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get());
+        this.add(ModBlocks.LAUREL_PLANKS_DOOR.get(), block -> createDoorTable(ModBlocks.LAUREL_PLANKS_DOOR.get()));
+        this.dropSelf(ModBlocks.LAUREL_PLANKS_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.LAUREL_PLANKS_FENCE.get());
+        this.dropSelf(ModBlocks.LAUREL_PLANKS_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.LAUREL_PLANKS_BUTTON.get());
+
+        this.add(ModBlocks.LAUREL_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.LAUREL_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.add(ModBlocks.LAUREL_PLANKS_SIGN.get(), block ->
+                createSingleItemTable(ModItems.LAUREL_SIGN.get()));
+        this.add(ModBlocks.LAUREL_PLANKS_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.LAUREL_SIGN.get()));
+        this.add(ModBlocks.LAUREL_PLANKS_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.LAUREL_HANGING_SIGN.get()));
+        this.add(ModBlocks.LAUREL_PLANKS_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.LAUREL_HANGING_SIGN.get()));
+
+
+        //Cypress
+        this.dropSelf(ModBlocks.CYPRESS_LOG.get());
+        this.dropSelf(ModBlocks.CYPRESS_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_CYPRESS_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_CYPRESS_WOOD.get());
+        this.dropSelf(ModBlocks.CYPRESS_SAPLING.get());
+        this.dropSelf(ModBlocks.CYPRESS_PLANKS.get());
+        this.add(ModBlocks.CYPRESS_PLANKS_SLAB.get(), block -> createSlabItemTable(ModBlocks.CYPRESS_PLANKS_SLAB.get()));
+        this.dropSelf(ModBlocks.CYPRESS_PLANKS_STAIRS.get());
+        this.dropSelf(ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get());
+        this.add(ModBlocks.CYPRESS_PLANKS_DOOR.get(), block -> createDoorTable(ModBlocks.CYPRESS_PLANKS_DOOR.get()));
+        this.dropSelf(ModBlocks.CYPRESS_PLANKS_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.CYPRESS_PLANKS_FENCE.get());
+        this.dropSelf(ModBlocks.CYPRESS_PLANKS_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.CYPRESS_PLANKS_BUTTON.get());
+
+        this.add(ModBlocks.CYPRESS_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.CYPRESS_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.add(ModBlocks.CYPRESS_PLANKS_SIGN.get(), block ->
+                createSingleItemTable(ModItems.CYPRESS_SIGN.get()));
+        this.add(ModBlocks.CYPRESS_PLANKS_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.CYPRESS_SIGN.get()));
+        this.add(ModBlocks.CYPRESS_PLANKS_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.CYPRESS_HANGING_SIGN.get()));
+        this.add(ModBlocks.CYPRESS_PLANKS_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.CYPRESS_HANGING_SIGN.get()));
+
     }
 
     @Override

@@ -4,7 +4,7 @@
   "category": "lostworlds:getting_started",
   "description": "book.lostworlds.lost_worlds_book.getting_started.intro.description",
   "hide_while_locked": false,
-  "icon": "lostworlds:crimson_diamond",
+  "icon": "lostworlds:basic_portal_core",
   "name": "book.lostworlds.lost_worlds_book.getting_started.intro.name",
   "pages": [
     {

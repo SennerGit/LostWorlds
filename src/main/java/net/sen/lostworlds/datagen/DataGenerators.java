@@ -14,7 +14,8 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.compat.modonomicon.ModBookProvider;
+import net.sen.lostworlds.datagen.language.ModLanguageEnUsProvider;
+import net.sen.lostworlds.datagen.modonomicon.ModBookProvider;
 import net.sen.lostworlds.datagen.loottable.ModGlobalLootModifierProvider;
 import net.sen.lostworlds.datagen.loottable.ModLootTableProvider;
 import net.sen.lostworlds.datagen.tag.*;
@@ -54,7 +55,7 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookUpProvider));
 
-        LanguageProvider enusProvider = new ModLanguageProvider(packOutput, "en_us");
+        LanguageProvider enusProvider = new ModLanguageEnUsProvider(packOutput, "en_us");
         generator.addProvider(event.includeClient(), enusProvider);
         generator.addProvider(event.includeServer(), new ModBookProvider(packOutput, enusProvider));
     }

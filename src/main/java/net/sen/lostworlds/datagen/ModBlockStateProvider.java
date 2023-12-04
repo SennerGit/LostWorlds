@@ -230,6 +230,138 @@ public class ModBlockStateProvider extends BlockStateProvider {
         hangingSignBlock( ModBlocks.ELDER_WOOD_PLANKS_HANGING_SIGN.get(), ModBlocks.ELDER_WOOD_PLANKS_WALL_HANGING_SIGN.get(),
                 blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
 
+        //Olive
+        logBlock(((RotatedPillarBlock) ModBlocks.OLIVE_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.OLIVE_WOOD.get(), blockTexture(ModBlocks.OLIVE_LOG.get()), blockTexture(ModBlocks.OLIVE_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_OLIVE_LOG.get(), modBlockResourceLocation("stripped_olive_log"), modBlockResourceLocation("stripped_olive_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_OLIVE_WOOD.get(), modBlockResourceLocation("stripped_olive_log"), modBlockResourceLocation("stripped_olive_log"));
+
+        blockItem(ModBlocks.OLIVE_LOG);
+        blockItem(ModBlocks.OLIVE_WOOD);
+        blockItem(ModBlocks.STRIPPED_OLIVE_LOG);
+        blockItem(ModBlocks.STRIPPED_OLIVE_WOOD);
+        blockWithItem(ModBlocks.OLIVE_PLANKS);
+
+        stairsBlock((StairBlock) ModBlocks.OLIVE_PLANKS_STAIRS.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.OLIVE_PLANKS_SLAB.get()), blockTexture(ModBlocks.OLIVE_PLANKS.get()), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+        fenceBlock((FenceBlock) ModBlocks.OLIVE_PLANKS_FENCE.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) ModBlocks.OLIVE_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) ModBlocks.OLIVE_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.OLIVE_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.OLIVE_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.OLIVE_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.OLIVE_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) ModBlocks.OLIVE_PLANKS_BUTTON.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+
+        blockItem(ModBlocks.OLIVE_PLANKS_STAIRS);
+        blockItem(ModBlocks.OLIVE_PLANKS_SLAB);
+        blockItem(ModBlocks.OLIVE_PLANKS_FENCE_GATE);
+        blockItem(ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE);
+        blockItem(ModBlocks.OLIVE_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(ModBlocks.OLIVE_LEAVES);
+        saplingBlock(ModBlocks.OLIVE_SAPLING);
+        signBlock(((StandingSignBlock) ModBlocks.OLIVE_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.OLIVE_PLANKS_WALL_SIGN.get()),
+                blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+        hangingSignBlock( ModBlocks.OLIVE_PLANKS_HANGING_SIGN.get(), ModBlocks.OLIVE_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+
+        //Myrrh
+        logBlock(((RotatedPillarBlock) ModBlocks.MYRRH_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.MYRRH_WOOD.get(), blockTexture(ModBlocks.MYRRH_LOG.get()), blockTexture(ModBlocks.MYRRH_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_MYRRH_LOG.get(), modBlockResourceLocation("stripped_myrrh_log"), modBlockResourceLocation("stripped_myrrh_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_MYRRH_WOOD.get(), modBlockResourceLocation("stripped_myrrh_log"), modBlockResourceLocation("stripped_myrrh_log"));
+
+        blockItem(ModBlocks.MYRRH_LOG);
+        blockItem(ModBlocks.MYRRH_WOOD);
+        blockItem(ModBlocks.STRIPPED_MYRRH_LOG);
+        blockItem(ModBlocks.STRIPPED_MYRRH_WOOD);
+        blockWithItem(ModBlocks.MYRRH_PLANKS);
+
+        stairsBlock((StairBlock) ModBlocks.MYRRH_PLANKS_STAIRS.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.MYRRH_PLANKS_SLAB.get()), blockTexture(ModBlocks.MYRRH_PLANKS.get()), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+        fenceBlock((FenceBlock) ModBlocks.MYRRH_PLANKS_FENCE.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) ModBlocks.MYRRH_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) ModBlocks.MYRRH_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.MYRRH_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.MYRRH_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.MYRRH_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.MYRRH_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) ModBlocks.MYRRH_PLANKS_BUTTON.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+
+        blockItem(ModBlocks.MYRRH_PLANKS_STAIRS);
+        blockItem(ModBlocks.MYRRH_PLANKS_SLAB);
+        blockItem(ModBlocks.MYRRH_PLANKS_FENCE_GATE);
+        blockItem(ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE);
+        blockItem(ModBlocks.MYRRH_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(ModBlocks.MYRRH_LEAVES);
+        saplingBlock(ModBlocks.MYRRH_SAPLING);
+        signBlock(((StandingSignBlock) ModBlocks.MYRRH_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.MYRRH_PLANKS_WALL_SIGN.get()),
+                blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+        hangingSignBlock( ModBlocks.MYRRH_PLANKS_HANGING_SIGN.get(), ModBlocks.MYRRH_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+
+        //Laurel
+        logBlock(((RotatedPillarBlock) ModBlocks.LAUREL_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.LAUREL_WOOD.get(), blockTexture(ModBlocks.LAUREL_LOG.get()), blockTexture(ModBlocks.LAUREL_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_LAUREL_LOG.get(), modBlockResourceLocation("stripped_laurel_log"), modBlockResourceLocation("stripped_laurel_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_LAUREL_WOOD.get(), modBlockResourceLocation("stripped_laurel_log"), modBlockResourceLocation("stripped_laurel_log"));
+
+        blockItem(ModBlocks.LAUREL_LOG);
+        blockItem(ModBlocks.LAUREL_WOOD);
+        blockItem(ModBlocks.STRIPPED_LAUREL_LOG);
+        blockItem(ModBlocks.STRIPPED_LAUREL_WOOD);
+        blockWithItem(ModBlocks.LAUREL_PLANKS);
+
+        stairsBlock((StairBlock) ModBlocks.LAUREL_PLANKS_STAIRS.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.LAUREL_PLANKS_SLAB.get()), blockTexture(ModBlocks.LAUREL_PLANKS.get()), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+        fenceBlock((FenceBlock) ModBlocks.LAUREL_PLANKS_FENCE.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) ModBlocks.LAUREL_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) ModBlocks.LAUREL_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.LAUREL_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.LAUREL_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.LAUREL_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.LAUREL_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) ModBlocks.LAUREL_PLANKS_BUTTON.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+
+        blockItem(ModBlocks.LAUREL_PLANKS_STAIRS);
+        blockItem(ModBlocks.LAUREL_PLANKS_SLAB);
+        blockItem(ModBlocks.LAUREL_PLANKS_FENCE_GATE);
+        blockItem(ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE);
+        blockItem(ModBlocks.LAUREL_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(ModBlocks.LAUREL_LEAVES);
+        saplingBlock(ModBlocks.LAUREL_SAPLING);
+        signBlock(((StandingSignBlock) ModBlocks.LAUREL_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.LAUREL_PLANKS_WALL_SIGN.get()),
+                blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+        hangingSignBlock( ModBlocks.LAUREL_PLANKS_HANGING_SIGN.get(), ModBlocks.LAUREL_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+
+        //Cypress
+        logBlock(((RotatedPillarBlock) ModBlocks.CYPRESS_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.CYPRESS_WOOD.get(), blockTexture(ModBlocks.CYPRESS_LOG.get()), blockTexture(ModBlocks.CYPRESS_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_CYPRESS_LOG.get(), modBlockResourceLocation("stripped_cypress_log"), modBlockResourceLocation("stripped_cypress_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_CYPRESS_WOOD.get(), modBlockResourceLocation("stripped_cypress_log"), modBlockResourceLocation("stripped_cypress_log"));
+
+        blockItem(ModBlocks.CYPRESS_LOG);
+        blockItem(ModBlocks.CYPRESS_WOOD);
+        blockItem(ModBlocks.STRIPPED_CYPRESS_LOG);
+        blockItem(ModBlocks.STRIPPED_CYPRESS_WOOD);
+        blockWithItem(ModBlocks.CYPRESS_PLANKS);
+
+        stairsBlock((StairBlock) ModBlocks.CYPRESS_PLANKS_STAIRS.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.CYPRESS_PLANKS_SLAB.get()), blockTexture(ModBlocks.CYPRESS_PLANKS.get()), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+        fenceBlock((FenceBlock) ModBlocks.CYPRESS_PLANKS_FENCE.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) ModBlocks.CYPRESS_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) ModBlocks.CYPRESS_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.CYPRESS_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.CYPRESS_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.CYPRESS_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.CYPRESS_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) ModBlocks.CYPRESS_PLANKS_BUTTON.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+
+        blockItem(ModBlocks.CYPRESS_PLANKS_STAIRS);
+        blockItem(ModBlocks.CYPRESS_PLANKS_SLAB);
+        blockItem(ModBlocks.CYPRESS_PLANKS_FENCE_GATE);
+        blockItem(ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE);
+        blockItem(ModBlocks.CYPRESS_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(ModBlocks.CYPRESS_LEAVES);
+        saplingBlock(ModBlocks.CYPRESS_SAPLING);
+        signBlock(((StandingSignBlock) ModBlocks.CYPRESS_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.CYPRESS_PLANKS_WALL_SIGN.get()),
+                blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+        hangingSignBlock( ModBlocks.CYPRESS_PLANKS_HANGING_SIGN.get(), ModBlocks.CYPRESS_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+
         /*
          * FLOWER
         */

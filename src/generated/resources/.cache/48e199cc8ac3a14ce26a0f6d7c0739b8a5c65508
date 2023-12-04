@@ -1,5 +1,13 @@
-// 1.20.1	2023-10-13T21:07:08.0365646	Item Tags
+// 1.20.1	2023-11-09T10:43:15.1425337	Item Tags
+1327d78e0388c77f4d3ddec7f2b6e4b42e8696f2 data/lostworlds/tags/items/cypress_logs.json
+2d404d31673d9060db9bf5b193c7b7108b810df9 data/lostworlds/tags/items/cypress_stripped_logs.json
 15017fb942b97f9c9cca82d292a9097dfceb29d0 data/lostworlds/tags/items/elder_wood_logs.json
 de40a497531552f6da8e8c4b0531f6fbbf26f34e data/lostworlds/tags/items/elder_wood_stripped_logs.json
+f83b1d7d0066eb5e1e9005ab112325b5116b2535 data/lostworlds/tags/items/laurel_logs.json
+2d0dcc56d1a3255e4531ecda3f21db6eb91a1893 data/lostworlds/tags/items/laurel_stripped_logs.json
+010d3f0c64828fcf14b3f927fea8294eac6e8f62 data/lostworlds/tags/items/myrrh_logs.json
+65eee66fcc4f88d7be5e69f910b9c61a72125955 data/lostworlds/tags/items/myrrh_stripped_logs.json
+c8ef2b2b537ba28fecc270da2b6edd7914072a64 data/lostworlds/tags/items/olive_logs.json
+fa4a4b8c2eba33c501141accc25c289717bae59c data/lostworlds/tags/items/olive_stripped_logs.json
 cc8ba915a484770ade30bffd5aac0dfcbcc8f5bd data/minecraft/tags/items/music_discs.json
 2bdcd75445a01f024e5e99937e96c0bc807b3eb2 data/minecraft/tags/items/trimmable_armor.json

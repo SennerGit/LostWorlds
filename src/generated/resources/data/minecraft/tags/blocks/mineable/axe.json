@@ -1,19 +1,9 @@
 {
   "values": [
-    "lostworlds:elder_wood_log",
-    "lostworlds:elder_wood",
-    "lostworlds:stripped_elder_wood_log",
-    "lostworlds:stripped_elder_wood",
-    "lostworlds:elder_wood_leaves",
-    "lostworlds:elder_wood_sapling",
-    "lostworlds:elder_wood_planks",
-    "lostworlds:elder_wood_planks_slab",
-    "lostworlds:elder_wood_planks_stairs",
-    "lostworlds:elder_wood_planks_pressure_plate",
-    "lostworlds:elder_wood_planks_door",
-    "lostworlds:elder_wood_planks_trapdoor",
-    "lostworlds:elder_wood_planks_fence",
-    "lostworlds:elder_wood_planks_fence_gate",
-    "lostworlds:elder_wood_planks_button"
+    "#lostworlds:elder_wood",
+    "#lostworlds:olive_wood",
+    "#lostworlds:myrrh_wood",
+    "#lostworlds:laurel_wood",
+    "#lostworlds:cypress_wood"
   ]
 }

@@ -1,5 +1,9 @@
 {
   "values": [
-    "lostworlds:elder_wood_planks_pressure_plate"
+    "lostworlds:elder_wood_planks_pressure_plate",
+    "lostworlds:olive_planks_pressure_plate",
+    "lostworlds:myrrh_planks_pressure_plate",
+    "lostworlds:laurel_planks_pressure_plate",
+    "lostworlds:cypress_planks_pressure_plate"
   ]
 }

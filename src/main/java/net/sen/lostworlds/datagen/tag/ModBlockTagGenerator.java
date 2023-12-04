@@ -59,22 +59,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 Blocks.STONE
         );
 
-        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
-                ModBlocks.ELDER_WOOD_LOG.get(),
-                ModBlocks.ELDER_WOOD.get(),
-                ModBlocks.STRIPPED_ELDER_WOOD_LOG.get(),
-                ModBlocks.STRIPPED_ELDER_WOOD.get(),
-                ModBlocks.ELDER_WOOD_LEAVES.get(),
-                ModBlocks.ELDER_WOOD_SAPLING.get(),
-                ModBlocks.ELDER_WOOD_PLANKS.get(),
-                ModBlocks.ELDER_WOOD_PLANKS_SLAB.get(),
-                ModBlocks.ELDER_WOOD_PLANKS_STAIRS.get(),
-                ModBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE.get(),
-                ModBlocks.ELDER_WOOD_PLANKS_DOOR.get(),
-                ModBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.get(),
-                ModBlocks.ELDER_WOOD_PLANKS_FENCE.get(),
-                ModBlocks.ELDER_WOOD_PLANKS_FENCE_GATE.get(),
-                ModBlocks.ELDER_WOOD_PLANKS_BUTTON.get()
+        this.tag(BlockTags.MINEABLE_WITH_AXE).addTags(
+                ModTags.Blocks.ELDER_WOOD,
+                ModTags.Blocks.OLIVE_WOOD,
+                ModTags.Blocks.MYRRH_WOOD,
+                ModTags.Blocks.LAUREL_WOOD,
+                ModTags.Blocks.CYPRESS_WOOD
         );
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
@@ -181,61 +171,265 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.DEEPSLATE_ADAMANT_ORE.get()
         );
 
-        this.tag(ModTags.Blocks.PAXEL_MINEABLE)
-                .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .addTag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .addTag(BlockTags.MINEABLE_WITH_AXE);
+        this.tag(ModTags.Blocks.PAXEL_MINEABLE).addTags(
+                BlockTags.MINEABLE_WITH_PICKAXE,
+                BlockTags.MINEABLE_WITH_SHOVEL,
+                BlockTags.MINEABLE_WITH_AXE
+        );
 
-        this.tag(BlockTags.FENCES)
+        this.tag(BlockTags.FENCES).add(
+                ModBlocks.ELDER_WOOD_PLANKS_FENCE.get(),
+                ModBlocks.OLIVE_PLANKS_FENCE.get(),
+                ModBlocks.MYRRH_PLANKS_FENCE.get(),
+                ModBlocks.LAUREL_PLANKS_FENCE.get(),
+                ModBlocks.CYPRESS_PLANKS_FENCE.get()
+        );
 //                .add(ModBlocks.CRIMSON_STONE_FENCE.get())
-                .add(ModBlocks.ELDER_WOOD_PLANKS_FENCE.get());
 
-        this.tag(BlockTags.FENCE_GATES)
-                .add(ModBlocks.CRIMSON_STONE_FENCE_GATE.get())
-                .add(ModBlocks.ELDER_WOOD_PLANKS_FENCE_GATE.get());
+        this.tag(BlockTags.FENCE_GATES).add(
+                ModBlocks.CRIMSON_STONE_FENCE_GATE.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_FENCE_GATE.get(),
+                ModBlocks.OLIVE_PLANKS_FENCE_GATE.get(),
+                ModBlocks.MYRRH_PLANKS_FENCE_GATE.get(),
+                ModBlocks.LAUREL_PLANKS_FENCE_GATE.get(),
+                ModBlocks.CYPRESS_PLANKS_FENCE_GATE.get()
+        );
 
-        this.tag(BlockTags.WALLS)
-                .add(ModBlocks.CRIMSON_STONE_WALL.get());
+        this.tag(BlockTags.WALLS).add(
+                ModBlocks.CRIMSON_STONE_WALL.get()
+        );
 
-        this.tag(BlockTags.LOGS_THAT_BURN)
-                .add(ModBlocks.ELDER_WOOD_LOG.get())
-                .add(ModBlocks.ELDER_WOOD.get())
-                .add(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get())
-                .add(ModBlocks.STRIPPED_ELDER_WOOD.get());
+        this.tag(BlockTags.LOGS_THAT_BURN).add(
+                ModBlocks.ELDER_WOOD_LOG.get(),
+                ModBlocks.ELDER_WOOD.get(),
+                ModBlocks.STRIPPED_ELDER_WOOD_LOG.get(),
+                ModBlocks.STRIPPED_ELDER_WOOD.get(),
+                ModBlocks.OLIVE_LOG.get(),
+                ModBlocks.OLIVE_WOOD.get(),
+                ModBlocks.STRIPPED_OLIVE_LOG.get(),
+                ModBlocks.STRIPPED_OLIVE_WOOD.get(),
+                ModBlocks.MYRRH_LOG.get(),
+                ModBlocks.MYRRH_WOOD.get(),
+                ModBlocks.STRIPPED_MYRRH_LOG.get(),
+                ModBlocks.STRIPPED_MYRRH_WOOD.get(),
+                ModBlocks.LAUREL_LOG.get(),
+                ModBlocks.LAUREL_WOOD.get(),
+                ModBlocks.STRIPPED_LAUREL_LOG.get(),
+                ModBlocks.STRIPPED_LAUREL_WOOD.get(),
+                ModBlocks.CYPRESS_LOG.get(),
+                ModBlocks.CYPRESS_WOOD.get(),
+                ModBlocks.STRIPPED_CYPRESS_LOG.get(),
+                ModBlocks.STRIPPED_CYPRESS_WOOD.get()
+        );
 
-        this.tag(BlockTags.PLANKS)
-                .add(ModBlocks.ELDER_WOOD_PLANKS.get());
+        this.tag(BlockTags.PLANKS).add(
+                ModBlocks.ELDER_WOOD_PLANKS.get(),
+                ModBlocks.OLIVE_PLANKS.get(),
+                ModBlocks.MYRRH_PLANKS.get(),
+                ModBlocks.LAUREL_PLANKS.get(),
+                ModBlocks.CYPRESS_PLANKS.get()
+        );
 
-        this.tag(BlockTags.WOODEN_DOORS)
-                .add(ModBlocks.ELDER_WOOD_PLANKS_DOOR.get());
+        this.tag(BlockTags.WOODEN_DOORS).add(
+                ModBlocks.ELDER_WOOD_PLANKS_DOOR.get(),
+                ModBlocks.OLIVE_PLANKS_DOOR.get(),
+                ModBlocks.MYRRH_PLANKS_DOOR.get(),
+                ModBlocks.LAUREL_PLANKS_DOOR.get(),
+                ModBlocks.CYPRESS_PLANKS_DOOR.get()
+        );
 
-        this.tag(BlockTags.WOODEN_FENCES)
-                .add(ModBlocks.ELDER_WOOD_PLANKS_FENCE.get());
+        this.tag(BlockTags.WOODEN_FENCES).add(
+                ModBlocks.ELDER_WOOD_PLANKS_FENCE.get(),
+                ModBlocks.OLIVE_PLANKS_FENCE.get(),
+                ModBlocks.MYRRH_PLANKS_FENCE.get(),
+                ModBlocks.LAUREL_PLANKS_FENCE.get(),
+                ModBlocks.CYPRESS_PLANKS_FENCE.get()
+        );
 
-        this.tag(BlockTags.WOODEN_BUTTONS)
-                .add(ModBlocks.ELDER_WOOD_PLANKS_BUTTON.get());
+        this.tag(BlockTags.WOODEN_BUTTONS).add(
+                ModBlocks.ELDER_WOOD_PLANKS_BUTTON.get(),
+                ModBlocks.OLIVE_PLANKS_BUTTON.get(),
+                ModBlocks.MYRRH_PLANKS_BUTTON.get(),
+                ModBlocks.LAUREL_PLANKS_BUTTON.get(),
+                ModBlocks.CYPRESS_PLANKS_BUTTON.get()
+        );
 
-        this.tag(BlockTags.WOODEN_SLABS)
-                .add(ModBlocks.ELDER_WOOD_PLANKS_SLAB.get());
+        this.tag(BlockTags.WOODEN_SLABS).add(
+                ModBlocks.ELDER_WOOD_PLANKS_SLAB.get(),
+                ModBlocks.OLIVE_PLANKS_SLAB.get(),
+                ModBlocks.MYRRH_PLANKS_SLAB.get(),
+                ModBlocks.LAUREL_PLANKS_SLAB.get(),
+                ModBlocks.CYPRESS_PLANKS_SLAB.get()
+        );
 
-        this.tag(BlockTags.WOODEN_STAIRS)
-                .add(ModBlocks.ELDER_WOOD_PLANKS_STAIRS.get());
+        this.tag(BlockTags.WOODEN_STAIRS).add(
+                ModBlocks.ELDER_WOOD_PLANKS_STAIRS.get(),
+                ModBlocks.OLIVE_PLANKS_STAIRS.get(),
+                ModBlocks.MYRRH_PLANKS_STAIRS.get(),
+                ModBlocks.LAUREL_PLANKS_STAIRS.get(),
+                ModBlocks.CYPRESS_PLANKS_STAIRS.get()
+        );
 
-        this.tag(BlockTags.WOODEN_PRESSURE_PLATES)
-                .add(ModBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE.get());
+        this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(
+                ModBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get()
+        );
 
-        this.tag(BlockTags.WOODEN_TRAPDOORS)
-                .add(ModBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.get());
+        this.tag(BlockTags.WOODEN_TRAPDOORS).add(
+                ModBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.get(),
+                ModBlocks.OLIVE_PLANKS_TRAPDOOR.get(),
+                ModBlocks.MYRRH_PLANKS_TRAPDOOR.get(),
+                ModBlocks.LAUREL_PLANKS_TRAPDOOR.get(),
+                ModBlocks.CYPRESS_PLANKS_TRAPDOOR.get()
+        );
 
-        this.tag(ModTags.Blocks.ELDER_WOOD_LOGS)
-                .add(ModBlocks.ELDER_WOOD_LOG.get())
-                .add(ModBlocks.ELDER_WOOD.get())
-                .add(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get())
-                .add(ModBlocks.STRIPPED_ELDER_WOOD.get());
+        this.tag(ModTags.Blocks.ELDER_WOOD).add(
+                ModBlocks.ELDER_WOOD_LOG.get(),
+                ModBlocks.ELDER_WOOD.get(),
+                ModBlocks.STRIPPED_ELDER_WOOD_LOG.get(),
+                ModBlocks.STRIPPED_ELDER_WOOD.get(),
+                ModBlocks.ELDER_WOOD_LEAVES.get(),
+                ModBlocks.ELDER_WOOD_PLANKS.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_SLAB.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_STAIRS.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_DOOR.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_FENCE.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_FENCE_GATE.get(),
+                ModBlocks.ELDER_WOOD_PLANKS_BUTTON.get()
+        );
 
-        this.tag(ModTags.Blocks.ELDER_WOOD_STRIPPED_LOGS)
-                .add(ModBlocks.STRIPPED_ELDER_WOOD_LOG.get())
-                .add(ModBlocks.STRIPPED_ELDER_WOOD.get());
+        this.tag(ModTags.Blocks.ELDER_WOOD_LOGS).add(
+                ModBlocks.ELDER_WOOD_LOG.get(),
+                ModBlocks.ELDER_WOOD.get(),
+                ModBlocks.STRIPPED_ELDER_WOOD_LOG.get(),
+                ModBlocks.STRIPPED_ELDER_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.ELDER_WOOD_STRIPPED_LOGS).add(
+                ModBlocks.STRIPPED_ELDER_WOOD_LOG.get(),
+                ModBlocks.STRIPPED_ELDER_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.OLIVE_WOOD).add(
+                ModBlocks.OLIVE_LOG.get(),
+                ModBlocks.OLIVE_WOOD.get(),
+                ModBlocks.STRIPPED_OLIVE_LOG.get(),
+                ModBlocks.STRIPPED_OLIVE_WOOD.get(),
+                ModBlocks.OLIVE_LEAVES.get(),
+                ModBlocks.OLIVE_PLANKS.get(),
+                ModBlocks.OLIVE_PLANKS_SLAB.get(),
+                ModBlocks.OLIVE_PLANKS_STAIRS.get(),
+                ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.OLIVE_PLANKS_DOOR.get(),
+                ModBlocks.OLIVE_PLANKS_TRAPDOOR.get(),
+                ModBlocks.OLIVE_PLANKS_FENCE.get(),
+                ModBlocks.OLIVE_PLANKS_FENCE_GATE.get(),
+                ModBlocks.OLIVE_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.OLIVE_LOGS).add(
+                ModBlocks.OLIVE_LOG.get(),
+                ModBlocks.OLIVE_WOOD.get(),
+                ModBlocks.STRIPPED_OLIVE_LOG.get(),
+                ModBlocks.STRIPPED_OLIVE_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.OLIVE_STRIPPED_LOGS).add(
+                ModBlocks.STRIPPED_OLIVE_LOG.get(),
+                ModBlocks.STRIPPED_OLIVE_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.MYRRH_WOOD).add(
+                ModBlocks.MYRRH_LOG.get(),
+                ModBlocks.MYRRH_WOOD.get(),
+                ModBlocks.STRIPPED_MYRRH_LOG.get(),
+                ModBlocks.STRIPPED_MYRRH_WOOD.get(),
+                ModBlocks.MYRRH_LEAVES.get(),
+                ModBlocks.MYRRH_PLANKS.get(),
+                ModBlocks.MYRRH_PLANKS_SLAB.get(),
+                ModBlocks.MYRRH_PLANKS_STAIRS.get(),
+                ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.MYRRH_PLANKS_DOOR.get(),
+                ModBlocks.MYRRH_PLANKS_TRAPDOOR.get(),
+                ModBlocks.MYRRH_PLANKS_FENCE.get(),
+                ModBlocks.MYRRH_PLANKS_FENCE_GATE.get(),
+                ModBlocks.MYRRH_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.MYRRH_LOGS).add(
+                ModBlocks.MYRRH_LOG.get(),
+                ModBlocks.MYRRH_WOOD.get(),
+                ModBlocks.STRIPPED_MYRRH_LOG.get(),
+                ModBlocks.STRIPPED_MYRRH_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.MYRRH_STRIPPED_LOGS).add(
+                ModBlocks.STRIPPED_MYRRH_LOG.get(),
+                ModBlocks.STRIPPED_MYRRH_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.LAUREL_WOOD).add(
+                ModBlocks.LAUREL_LOG.get(),
+                ModBlocks.LAUREL_WOOD.get(),
+                ModBlocks.STRIPPED_LAUREL_LOG.get(),
+                ModBlocks.STRIPPED_LAUREL_WOOD.get(),
+                ModBlocks.LAUREL_LEAVES.get(),
+                ModBlocks.LAUREL_PLANKS.get(),
+                ModBlocks.LAUREL_PLANKS_SLAB.get(),
+                ModBlocks.LAUREL_PLANKS_STAIRS.get(),
+                ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.LAUREL_PLANKS_DOOR.get(),
+                ModBlocks.LAUREL_PLANKS_TRAPDOOR.get(),
+                ModBlocks.LAUREL_PLANKS_FENCE.get(),
+                ModBlocks.LAUREL_PLANKS_FENCE_GATE.get(),
+                ModBlocks.LAUREL_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.LAUREL_LOGS).add(
+                ModBlocks.LAUREL_LOG.get(),
+                ModBlocks.LAUREL_WOOD.get(),
+                ModBlocks.STRIPPED_LAUREL_LOG.get(),
+                ModBlocks.STRIPPED_LAUREL_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.LAUREL_STRIPPED_LOGS).add(
+                ModBlocks.STRIPPED_LAUREL_LOG.get(),
+                ModBlocks.STRIPPED_LAUREL_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.CYPRESS_WOOD).add(
+                ModBlocks.CYPRESS_LOG.get(),
+                ModBlocks.CYPRESS_WOOD.get(),
+                ModBlocks.STRIPPED_CYPRESS_LOG.get(),
+                ModBlocks.STRIPPED_CYPRESS_WOOD.get(),
+                ModBlocks.CYPRESS_LEAVES.get(),
+                ModBlocks.CYPRESS_PLANKS.get(),
+                ModBlocks.CYPRESS_PLANKS_SLAB.get(),
+                ModBlocks.CYPRESS_PLANKS_STAIRS.get(),
+                ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get(),
+                ModBlocks.CYPRESS_PLANKS_DOOR.get(),
+                ModBlocks.CYPRESS_PLANKS_TRAPDOOR.get(),
+                ModBlocks.CYPRESS_PLANKS_FENCE.get(),
+                ModBlocks.CYPRESS_PLANKS_FENCE_GATE.get(),
+                ModBlocks.CYPRESS_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.CYPRESS_LOGS).add(
+                ModBlocks.CYPRESS_LOG.get(),
+                ModBlocks.CYPRESS_WOOD.get(),
+                ModBlocks.STRIPPED_CYPRESS_LOG.get(),
+                ModBlocks.STRIPPED_CYPRESS_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.CYPRESS_STRIPPED_LOGS).add(
+                ModBlocks.STRIPPED_CYPRESS_LOG.get(),
+                ModBlocks.STRIPPED_CYPRESS_WOOD.get()
+        );
     }
 
     @Override

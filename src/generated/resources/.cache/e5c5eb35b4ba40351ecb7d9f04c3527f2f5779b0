@@ -1,3 +1,8 @@
-// 1.20.1	2023-10-08T21:34:35.649531	Advancements
-6bbc6c50699c5fed8cd9441d2c56a1c11245f7e4 data/lostworlds/advancements/item.lostworlds.crimson_diamond.json
-7c1f8e84e284d483d2f78b6ac70f96cdebc1a5aa data/lostworlds/advancements/item.lostworlds.magical_dowsing_rod.json
+// 1.20.1	2023-12-04T12:04:37.0171733	Advancements
+7ceb22354e8c15dda683a1c7021e640a2626c91c data/lostworlds/advancements/block.lostworlds.alfheimr_portal_frame.json
+a9aa158647e921a8d93d2ffb399b438995f6d436 data/lostworlds/advancements/block.lostworlds.atlantis_portal_frame.json
+940ceadf3848b75af336ec28bff927316573bcbf data/lostworlds/advancements/block.lostworlds.nidavellir_portal_frame.json
+23f977164c51fcf9371bc95921c54620d49744c2 data/lostworlds/advancements/block.lostworlds.skyopia_portal_frame.json
+54f5a8361be9e10c71074d80608e5de27d00c67b data/lostworlds/advancements/block.lostworlds.underworld_portal_frame.json
+84815ac32689cbce6258abe117294d4bb44b5a88 data/lostworlds/advancements/item.lostworlds.basic_portal_core.json
+d6e92f443434a88327b4d37dc93c6df4c3dff35f data/lostworlds/advancements/item.lostworlds.magical_dowsing_rod.json

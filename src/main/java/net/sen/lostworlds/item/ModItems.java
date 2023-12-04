@@ -2,6 +2,7 @@ package net.sen.lostworlds.item;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -9,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.compat.modonomicon.LostWorldsBookItem;
+import net.sen.lostworlds.datagen.modonomicon.LostWorldsBookItem;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.fluid.ModFluids;
 import net.sen.lostworlds.item.custom.*;
@@ -158,9 +159,16 @@ public class ModItems {
     //Food
     public static final RegistryObject<Item> CRIMSON_APPLE = ITEMS.register("crimson_apple", () -> new Item(new Item.Properties().food(ModFoodProperties.CRIMSON_APPLE)));
     public static final RegistryObject<Item> POMEGRANATE = ITEMS.register("pomegranate", () -> new Item(new Item.Properties().food(ModFoodProperties.POMEGRANATE)));
+    public static final RegistryObject<Item> OLIVE = ITEMS.register("olive", () -> new Item(new Item.Properties().food(ModFoodProperties.OLIVE)));
 
+    /*
+    PLANTS
+     */
     public static final RegistryObject<Item> POMEGRANATE_SEEDS = ITEMS.register("pomegranate_seeds", () -> new ItemNameBlockItem(ModBlocks.POMEGRANATE_CROP_BLOCK.get(), new Item.Properties()));
 
+    /*
+    RECORDS
+     */
     public static final RegistryObject<Item> BAR_BRAWL_RECORD = ITEMS.register("bar_brawl_record", () -> new RecordItem(4, ModSounds.BAR_BRAWL, new Item.Properties().stacksTo(1), 2440));
 
     //Fuel
@@ -173,6 +181,10 @@ public class ModItems {
     public static final RegistryObject<Item> ALEXANDRITE_SHIELD = ITEMS.register("alexandrite_shield", () -> new ShieldItem(new Item.Properties().durability(500)));
     public static final RegistryObject<Item> STYX_WATER_BUCKET = ITEMS.register("styx_water_bucket", () -> new BucketItem(ModFluids.SOURCE_STYX_WATER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
+    //Entity Bucket
+    public static final RegistryObject<Item> CLOWNFISH_BUCKET = ITEMS.register("clownfish_bucket", () -> new ModFishBucket(ModEntities.CLOWNFISH, Fluids.WATER, new Item.Properties()));
+    public static final RegistryObject<Item> TANG_FISH_BUCKET = ITEMS.register("tang_fish_bucket", () -> new ModFishBucket(ModEntities.TANG_FISH, Fluids.WATER, new Item.Properties()));
+
     /*
      * WOOD TYPES
      */
@@ -180,17 +192,84 @@ public class ModItems {
     public static final RegistryObject<Item> ELDER_WOOD_SIGN = ITEMS.register("elder_wood_sign", () -> new SignItem(new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16), ModBlocks.ELDER_WOOD_PLANKS_SIGN.get(), ModBlocks.ELDER_WOOD_PLANKS_WALL_SIGN.get()));
     public static final RegistryObject<Item> ELDER_WOOD_HANGING_SIGN = ITEMS.register("elder_wood_hanging_sign", () -> new HangingSignItem(ModBlocks.ELDER_WOOD_PLANKS_HANGING_SIGN.get(), ModBlocks.ELDER_WOOD_PLANKS_WALL_HANGING_SIGN.get(), new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16)));
 
+    //Olive
+    public static final RegistryObject<Item> OLIVE_SIGN = ITEMS.register("olive_sign", () -> new SignItem(new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16), ModBlocks.OLIVE_PLANKS_SIGN.get(), ModBlocks.OLIVE_PLANKS_WALL_SIGN.get()));
+    public static final RegistryObject<Item> OLIVE_HANGING_SIGN = ITEMS.register("olive_hanging_sign", () -> new HangingSignItem(ModBlocks.OLIVE_PLANKS_HANGING_SIGN.get(), ModBlocks.OLIVE_PLANKS_WALL_HANGING_SIGN.get(), new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16)));
+
+    //Myrrh
+    public static final RegistryObject<Item> MYRRH_SIGN = ITEMS.register("myrrh_sign", () -> new SignItem(new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16), ModBlocks.MYRRH_PLANKS_SIGN.get(), ModBlocks.MYRRH_PLANKS_WALL_SIGN.get()));
+    public static final RegistryObject<Item> MYRRH_HANGING_SIGN = ITEMS.register("myrrh_hanging_sign", () -> new HangingSignItem(ModBlocks.MYRRH_PLANKS_HANGING_SIGN.get(), ModBlocks.MYRRH_PLANKS_WALL_HANGING_SIGN.get(), new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16)));
+
+    //Laurel
+    public static final RegistryObject<Item> LAUREL_SIGN = ITEMS.register("laurel_sign", () -> new SignItem(new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16), ModBlocks.LAUREL_PLANKS_SIGN.get(), ModBlocks.LAUREL_PLANKS_WALL_SIGN.get()));
+    public static final RegistryObject<Item> LAUREL_HANGING_SIGN = ITEMS.register("laurel_hanging_sign", () -> new HangingSignItem(ModBlocks.LAUREL_PLANKS_HANGING_SIGN.get(), ModBlocks.LAUREL_PLANKS_WALL_HANGING_SIGN.get(), new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16)));
+
+    //Cypress
+    public static final RegistryObject<Item> CYPRESS_SIGN = ITEMS.register("cypress_sign", () -> new SignItem(new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16), ModBlocks.CYPRESS_PLANKS_SIGN.get(), ModBlocks.CYPRESS_PLANKS_WALL_SIGN.get()));
+    public static final RegistryObject<Item> CYPRESS_HANGING_SIGN = ITEMS.register("cypress_hanging_sign", () -> new HangingSignItem(ModBlocks.CYPRESS_PLANKS_HANGING_SIGN.get(), ModBlocks.CYPRESS_PLANKS_WALL_HANGING_SIGN.get(), new Item.Properties().craftRemainder(Items.OAK_SIGN).stacksTo(16)));
+
+    //Misc
+    public static final RegistryObject<Item> SHARK_TOOTH = ITEMS.register("shark_tooth", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CLOWNFISH = ITEMS.register("clownfish", () -> new Item(new Item.Properties())); //.food(ModFoodProperties.CLOWNFISH)
+    public static final RegistryObject<Item> COOKED_CLOWNFISH = ITEMS.register("cooked_clownfish", () -> new Item(new Item.Properties())); //.food(ModFoodProperties.COOKED_CLOWNFISH)
+    public static final RegistryObject<Item> RAW_TUNA = ITEMS.register("raw_tuna", () -> new Item(new Item.Properties())); //.food(ModFoodProperties.COOKED_CLOWNFISH)
+    public static final RegistryObject<Item> COOKED_TUNA = ITEMS.register("cooked_tuna", () -> new Item(new Item.Properties())); //.food(ModFoodProperties.COOKED_CLOWNFISH)
+    public static final RegistryObject<Item> TANG_FISH = ITEMS.register("tang_fish", () -> new Item(new Item.Properties())); //.food(ModFoodProperties.COOKED_CLOWNFISH)
+    public static final RegistryObject<Item> COOKED_TANG_FISH = ITEMS.register("cooked_tang_fish", () -> new Item(new Item.Properties())); //.food(ModFoodProperties.COOKED_CLOWNFISH)
+
     //Book
     public static final RegistryObject<LostWorldsBookItem> LOST_WORLDS_BOOK = ITEMS.register("lost_worlds_book", () -> new LostWorldsBookItem(new Item.Properties().stacksTo(1)));
 
     //Spawn Egg
-    public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.RHINO, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.RHINO, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> SHARK_SPAWN_EGG = ITEMS.register("shark_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SHARK, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> MORAY_EELS_SPAWN_EGG = ITEMS.register("moray_eels_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.MORAY_EELS, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> ELECTRIC_EELS_SPAWN_EGG = ITEMS.register("electric_eels_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ELECTRIC_EELS, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> JELLYFISH_SPAWN_EGG = ITEMS.register("jellyfish_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.JELLYFISH, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> GIANT_SQUID_SPAWN_EGG = ITEMS.register("giant_squid_spawn_egg_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GIANT_SQUID, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> RAY_SPAWN_EGG = ITEMS.register("ray_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.RAY, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> GIANT_OCTOPUS_SPAWN_EGG = ITEMS.register("giant_octopus_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GIANT_OCTOPUS, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> NUDIBRANCH_SLUG_SPAWN_EGG = ITEMS.register("nudibranch_slug_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.NUDIBRANCH_SLUG, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> GREAT_WHITE_SPAWN_EGG = ITEMS.register("great_white_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GREAT_WHITE, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> ANGLER_FISH_SPAWN_EGG = ITEMS.register("angler_fish_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ANGLER_FISH, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> SEAHORSE_SPAWN_EGG = ITEMS.register("seahorse_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SEAHORSE, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> CLOWNFISH_SPAWN_EGG = ITEMS.register("clownfish_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CLOWNFISH, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> ATLANTIAN_GURDIAN_SPAWN_EGG = ITEMS.register("atlantian_gurdian_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ATLANTIAN_GURDIAN, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> SIREN_SPAWN_EGG = ITEMS.register("siren_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SIREN, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> MERFOLK_SPAWN_EGG = ITEMS.register("merfolk_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.MERFOLK, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> ATLANTIAN_SPAWN_EGG = ITEMS.register("atlantian_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ATLANTIAN, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+
+    public static final RegistryObject<Item> TANG_FISH_SPAWN_EGG = ITEMS.register("tang_fish_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.TANG_FISH, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+
+    public static final RegistryObject<Item> TUNA_SPAWN_EGG = ITEMS.register("tuna_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.TUNA, 0x7e9680, 0xc5d1c5, new Item.Properties()));
 
     //Projectiles
     public static final RegistryObject<Item> DICE = ITEMS.register("dice", () -> new DiceItem(new Item.Properties()));
 
     //Portal Item
-    public static final RegistryObject<Item> BASIC_PORTAL_ACTIVATOR = ITEMS.register("underworld_portal_activator", PortalActivatorItem::new);
+    public static final RegistryObject<Item> BASIC_PORTAL_ACTIVATOR = ITEMS.register("basic_portal_activator", () -> new PortalActivatorItem(0));
+
+    //Portal Core
+    public static final RegistryObject<Item> BASIC_PORTAL_CORE = ITEMS.register("basic_portal_core", () -> new Item(new Item.Properties()));
 
     public static RegistryObject<Item> registerHorseArmour(String name, int pProtection, int pMaxDamage) {
         return ITEMS.register(name + "_horse_armor", () -> new HorseArmorItem(

@@ -57,7 +57,7 @@ public class UnderworldDimension {
 
         NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
                 new FixedBiomeSource(biomeRegistry.getOrThrow(UnderworldBiomes.TEST_BIOME_2)),
-                noiseGenSettings.getOrThrow(ModDimensions.UNDERWORLD_NOISE_KEY));
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(

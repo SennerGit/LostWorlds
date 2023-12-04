@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.RhinoModel;
-import net.sen.lostworlds.entity.custom.RhinoEntity;
+import net.sen.lostworlds.entity.mob.RhinoEntity;
 import net.sen.lostworlds.entity.variant.RhinoVariant;
 
 import java.util.Map;

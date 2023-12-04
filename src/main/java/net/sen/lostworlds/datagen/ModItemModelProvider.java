@@ -14,7 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.compat.modonomicon.LostWorldsBookItem;
+import net.sen.lostworlds.datagen.modonomicon.LostWorldsBookItem;
 import net.sen.lostworlds.item.ModItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -27,6 +27,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CRIMSON_APPLE);
         simpleItem(ModItems.POMEGRANATE);
         simpleItem(ModItems.POMEGRANATE_SEEDS);
+        simpleItem(ModItems.OLIVE);
+
         simpleItem(ModItems.CRIMSON_DIAMOND);
         simpleItem(ModItems.CRIMSON_TEAR);
         simpleItem(ModItems.NETHER_STEEL_INGOT);
@@ -134,6 +136,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.STYX_WATER_BUCKET);
 
+        simpleItem(ModItems.CLOWNFISH_BUCKET);
+        simpleItem(ModItems.TANG_FISH_BUCKET);
+
         /*
          * TREES
          */
@@ -145,6 +150,43 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.simpleBlockItemUi(ModBlocks.ELDER_WOOD_PLANKS_DOOR);
         simpleItem(ModItems.ELDER_WOOD_SIGN);
         simpleItem(ModItems.ELDER_WOOD_HANGING_SIGN);
+
+        //Olive
+        saplingItem(ModBlocks.OLIVE_SAPLING);
+
+        fenceItem(ModBlocks.OLIVE_PLANKS_FENCE, ModBlocks.OLIVE_PLANKS);
+        buttonItem(ModBlocks.OLIVE_PLANKS_BUTTON, ModBlocks.OLIVE_PLANKS);
+        this.simpleBlockItemUi(ModBlocks.OLIVE_PLANKS_DOOR);
+        simpleItem(ModItems.OLIVE_SIGN);
+        simpleItem(ModItems.OLIVE_HANGING_SIGN);
+
+        //Myrrh
+        saplingItem(ModBlocks.MYRRH_SAPLING);
+
+        fenceItem(ModBlocks.MYRRH_PLANKS_FENCE, ModBlocks.MYRRH_PLANKS);
+        buttonItem(ModBlocks.MYRRH_PLANKS_BUTTON, ModBlocks.MYRRH_PLANKS);
+        this.simpleBlockItemUi(ModBlocks.MYRRH_PLANKS_DOOR);
+        simpleItem(ModItems.MYRRH_SIGN);
+        simpleItem(ModItems.MYRRH_HANGING_SIGN);
+
+        //Laurel
+        saplingItem(ModBlocks.LAUREL_SAPLING);
+
+        fenceItem(ModBlocks.LAUREL_PLANKS_FENCE, ModBlocks.LAUREL_PLANKS);
+        buttonItem(ModBlocks.LAUREL_PLANKS_BUTTON, ModBlocks.LAUREL_PLANKS);
+        this.simpleBlockItemUi(ModBlocks.LAUREL_PLANKS_DOOR);
+        simpleItem(ModItems.LAUREL_SIGN);
+        simpleItem(ModItems.LAUREL_HANGING_SIGN);
+
+        //Cypress
+        saplingItem(ModBlocks.CYPRESS_SAPLING);
+
+        fenceItem(ModBlocks.CYPRESS_PLANKS_FENCE, ModBlocks.CYPRESS_PLANKS);
+        buttonItem(ModBlocks.CYPRESS_PLANKS_BUTTON, ModBlocks.CYPRESS_PLANKS);
+        this.simpleBlockItemUi(ModBlocks.CYPRESS_PLANKS_DOOR);
+        simpleItem(ModItems.CYPRESS_SIGN);
+        simpleItem(ModItems.CYPRESS_HANGING_SIGN);
+
         simpleBookItem(ModItems.LOST_WORLDS_BOOK);
 
         createArmourSet(ModItems.NETHER_STEEL_HELMET, ModItems.NETHER_STEEL_CHESTPLATE, ModItems.NETHER_STEEL_LEGGINGS, ModItems.NETHER_STEEL_BOOTS);
@@ -155,9 +197,37 @@ public class ModItemModelProvider extends ItemModelProvider {
         createArmourSet(ModItems.BRONZE_HELMET, ModItems.BRONZE_CHESTPLATE, ModItems.BRONZE_LEGGINGS, ModItems.BRONZE_BOOTS);
 
         withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SHARK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.MORAY_EELS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ELECTRIC_EELS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.JELLYFISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.GIANT_SQUID_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.RAY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.GIANT_OCTOPUS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.NUDIBRANCH_SLUG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.GREAT_WHITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ANGLER_FISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SEAHORSE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.CLOWNFISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ATLANTIAN_GURDIAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.SIREN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.MERFOLK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ATLANTIAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.TANG_FISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.TUNA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         simpleItem(ModItems.DICE);
         simpleItem(ModItems.BASIC_PORTAL_ACTIVATOR);
+        simpleItem(ModItems.BASIC_PORTAL_CORE);
+
+        //Misc
+        simpleItem(ModItems.SHARK_TOOTH);
+        simpleItem(ModItems.CLOWNFISH);
+        simpleItem(ModItems.COOKED_CLOWNFISH);
+        simpleItem(ModItems.RAW_TUNA);
+        simpleItem(ModItems.COOKED_TUNA);
+        simpleItem(ModItems.TANG_FISH);
+        simpleItem(ModItems.COOKED_TANG_FISH);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

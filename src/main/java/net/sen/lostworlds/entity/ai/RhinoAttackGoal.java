@@ -4,7 +4,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.sen.lostworlds.entity.custom.RhinoEntity;
+import net.sen.lostworlds.entity.mob.RhinoEntity;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
 
 public class RhinoAttackGoal extends MeleeAttackGoal {

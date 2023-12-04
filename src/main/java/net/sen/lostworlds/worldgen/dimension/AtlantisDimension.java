@@ -5,10 +5,12 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.NoiseData;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
@@ -17,15 +19,17 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
+import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
 import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
 import net.sen.lostworlds.worldgen.dimension.TerrainProvider.AtlantisTerrainProvider;
 
 import java.util.List;
 import java.util.OptionalLong;
+import java.util.function.UnaryOperator;
 
 public class AtlantisDimension {
-    public static final int SEA_LEVEL = 127;
+    public static final int SEA_LEVEL = 384;
 
     public static void atlantisDimensionType(BootstapContext<DimensionType> context) {
         context.register(ModDimensions.ATLANTIS_DIM_TYPE, new DimensionType(
@@ -33,17 +37,17 @@ public class AtlantisDimension {
                 true, // hasSkylight
                 false, // hasCeiling
                 false, // ultraWarm
-                true, // natural
+                false, // natural
                 1.0, // coordinateScale
                 true, // bedWorks
                 false, // respawnAnchorWorks
-                0, // minY
-                256, // height
-                256, // logicalHeight
+                -64, // minY
+                384, // height
+                384, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
-                1.0f, // ambientLight
-                new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
+                0f, // ambientLight
+                new DimensionType.MonsterSettings(false, false, UniformInt.of(0, 7), 0)));
     }
 
     public static void atlantisDimension(BootstapContext<LevelStem> context) {
@@ -58,21 +62,21 @@ public class AtlantisDimension {
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
-                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.OCEAN))
+                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AtlantisBiomes.ATLANTIS_OCEAN))
                         ))),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+                noiseGenSettings.getOrThrow(ModDimensions.ATLANTIS_NOISE_KEY));
 
-        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.ATLANTIS_DIM_TYPE), wrappedChunkGenerator);
+        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.ATLANTIS_DIM_TYPE), noiseBasedChunkGenerator);
 
         context.register(ModDimensions.ATLANTIS_KEY, stem);
     }
 
     public static NoiseGeneratorSettings atlantisDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
-        HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
+        HolderGetter<NoiseParameters> noises = context.lookup(Registries.NOISE);
 
         NoiseGeneratorSettings noiseGeneratorSettings = new NoiseGeneratorSettings(NoiseSettings.create(
-                0, 256, 2, 1),
+                -64, 384, 1, 2),
                 Blocks.STONE.defaultBlockState(),
                 Blocks.WATER.defaultBlockState(),
                 atlantisNoiseRouter(functions, noises),
@@ -80,17 +84,17 @@ public class AtlantisDimension {
                         //bedrock floor
                         SurfaceRules.ifTrue(SurfaceRules.verticalGradient("minecraft:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())),
                         //filler depthrock
-                        SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0), SurfaceRules.state(Blocks.STONE.defaultBlockState())),
+//                        SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0), SurfaceRules.state(Blocks.STONE.defaultBlockState())),
                         //sediment
-                        SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(33), 0)), SurfaceRules.state(Blocks.STONE.defaultBlockState()))),
+//                        SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(33), 0)), SurfaceRules.state(Blocks.STONE.defaultBlockState()))),
                         //frozen deepturf
-                        SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.OCEAN), SurfaceRules.ifTrue(
+                        SurfaceRules.ifTrue(SurfaceRules.isBiome(AtlantisBiomes.ATLANTIS_OCEAN), SurfaceRules.ifTrue(
                                 SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
                                 SurfaceRules.state(Blocks.STONE.defaultBlockState()))
                         )
                 ),
                 List.of(), //spawn targets
-                185,
+                SEA_LEVEL,
                 false,
                 true,
                 true,
@@ -103,9 +107,6 @@ public class AtlantisDimension {
     private static final DensityFunction BLENDING_FACTOR = DensityFunctions.constant(10.0);
     private static final DensityFunction BLENDING_JAGGEDNESS = DensityFunctions.zero();
 
-    private static final ResourceKey<DensityFunction> Y = vanillaKey("y");
-    private static final ResourceKey<DensityFunction> SHIFT_X = vanillaKey("shift_x");
-    private static final ResourceKey<DensityFunction> SHIFT_Z = vanillaKey("shift_z");
     private static final ResourceKey<DensityFunction> BASE_3D_NOISE_OVERWORLD = vanillaKey("overworld/base_3d_noise");
     private static final ResourceKey<DensityFunction> SPAGHETTI_ROUGHNESS_FUNCTION = vanillaKey("overworld/caves/spaghetti_roughness_function");
     private static final ResourceKey<DensityFunction> ENTRANCES = vanillaKey("overworld/caves/entrances");
@@ -160,11 +161,12 @@ public class AtlantisDimension {
         ));
     }
 
-    public static NoiseRouter atlantisNoiseRouter(final HolderGetter<DensityFunction> densityFunctions, final HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
-        DensityFunction aquiferBarrier = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_BARRIER), 0.5); //barrier
-        DensityFunction aquiferFluidLevelFloodedness = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_FLOODEDNESS), 0.67); //fluid level floodedness
-        DensityFunction aquiferFluidLevelSpread = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_SPREAD), 1.0 / 1.4); //fluid level spread
-        DensityFunction aquiferLava = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_LAVA)); //lava
+    public static NoiseRouter atlantisNoiseRouter(final HolderGetter<DensityFunction> densityFunctions, final HolderGetter<NoiseParameters> noiseParameters) {
+        DensityFunction aquiferBarrier = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_BARRIER), 1, 0.5); //barrier
+        DensityFunction aquiferFluidLevelFloodedness = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_FLOODEDNESS), 1, 0.67); //fluid level floodedness
+        DensityFunction aquiferFluidLevelSpread = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_SPREAD), 1, 0.7142857142857143); //fluid level spread
+        DensityFunction aquiferLava = DensityFunctions.zero(); //lava
+        DensityFunction Y = NoiseRouterData.getFunction(densityFunctions, NoiseRouterData.Y);
         DensityFunction shiftX = NoiseRouterData.getFunction(densityFunctions, NoiseRouterData.SHIFT_X);
         DensityFunction shiftZ = NoiseRouterData.getFunction(densityFunctions, NoiseRouterData.SHIFT_Z);
         DensityFunction temperature = DensityFunctions.shiftedNoise2d(shiftX, shiftZ, 0.25D, noiseParameters.getOrThrow(Noises.TEMPERATURE)); //temperature
@@ -176,14 +178,47 @@ public class AtlantisDimension {
                 32.0D,
                 DensityFunctions.constant(2.0D),
                 DensityFunctions.constant(-2.0D)); //depth
-        DensityFunction initialDensityWithoutJaggedness = noiseGradientDensity(DensityFunctions.cache2d(factor), depth); //initial density
+        DensityFunction densityFunction = DensityFunctions.mul(depth, DensityFunctions.cache2d(factor));
+        DensityFunction initialDensityWithoutJaggedness = noiseGradientDensity(DensityFunctions.cache2d(factor), depth); //.cache2d(factor), depth); //initial density
         DensityFunction slopedCheese = getFunction(densityFunctions, SLOPED_CHEESE);
         DensityFunction densityfunction12 = DensityFunctions.min(slopedCheese, DensityFunctions.mul(DensityFunctions.constant(5.0), getFunction(densityFunctions, ENTRANCES)));
         DensityFunction densityfunction13 = DensityFunctions.rangeChoice(slopedCheese, -1000000.0, 1.5625, densityfunction12, underground(densityFunctions, noiseParameters, slopedCheese));
         DensityFunction finalDensity = DensityFunctions.min(postProcess(slideAtlantics(densityfunction13)), getFunction(densityFunctions, NOODLE)); //final density
-        DensityFunction veinToggle = DensityFunctions.zero(); //vein toggle
-        DensityFunction veinRidged = DensityFunctions.zero(); //vein ridged
-        DensityFunction veinGap = DensityFunctions.zero(); //vein gap
+        DensityFunction veinToggle = DensityFunctions.interpolated(DensityFunctions.rangeChoice(Y, -60, 51, DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_VEININESS), 1.5, 1.5), DensityFunctions.zero())); //vein toggle
+
+        DensityFunction veinRidged =
+                DensityFunctions.add(
+                        DensityFunctions.constant(-0.07999999821186066),
+                        DensityFunctions.max(
+                                DensityFunctions.interpolated(
+                                        DensityFunctions.rangeChoice(
+                                                Y,
+                                                -60,
+                                                51,
+                                                DensityFunctions.noise(
+                                                        noiseParameters.getOrThrow(Noises.ORE_VEIN_A),
+                                                        4.0,
+                                                        4.0
+                                                ),
+                                                DensityFunctions.zero()
+                                        )
+                                ).abs(),
+                                DensityFunctions.interpolated(
+                                        DensityFunctions.rangeChoice(
+                                                Y,
+                                                -60,
+                                                51,
+                                                DensityFunctions.noise(
+                                                        noiseParameters.getOrThrow(Noises.ORE_VEIN_B),
+                                                        4,
+                                                        4
+                                                ),
+                                                DensityFunctions.zero()
+                                        )
+                                ).abs()
+                        )
+                ); //vein ridged
+        DensityFunction veinGap = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_GAP), 1, 1); //vein gap
 
         NoiseRouter newNoiseRouter = new NoiseRouter(
                 aquiferBarrier,
@@ -206,7 +241,7 @@ public class AtlantisDimension {
         return newNoiseRouter;
     }
 
-    private static DensityFunction underground(HolderGetter<DensityFunction> densityFunctions, HolderGetter<NormalNoise.NoiseParameters> noiseParameters, DensityFunction slopedCheese) {
+    private static DensityFunction underground(HolderGetter<DensityFunction> densityFunctions, HolderGetter<NoiseParameters> noiseParameters, DensityFunction slopedCheese) {
         DensityFunction spaghetti2d = getFunction(densityFunctions, SPAGHETTI_2D);
         DensityFunction spaghettiRoughness = getFunction(densityFunctions, SPAGHETTI_ROUGHNESS_FUNCTION);
         DensityFunction caveLayer = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.CAVE_LAYER), 8.0);
@@ -258,7 +293,9 @@ public class AtlantisDimension {
 
     private static DensityFunction noiseGradientDensity(DensityFunction p_212272_, DensityFunction p_212273_) {
         DensityFunction densityfunction = DensityFunctions.mul(p_212273_, p_212272_);
-        return DensityFunctions.mul(DensityFunctions.constant(4.0), densityfunction.quarterNegative());
+        return DensityFunctions.mul(
+                DensityFunctions.constant(4.0D),
+                densityfunction.quarterNegative());
     }
 
     private static ResourceKey<DensityFunction> vanillaKey(String name) {

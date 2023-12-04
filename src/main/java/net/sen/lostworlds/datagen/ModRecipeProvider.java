@@ -4,6 +4,8 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -88,6 +90,49 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModBlocks.ELDER_WOOD_PLANKS_STAIRS.get(), ModBlocks.ELDER_WOOD_PLANKS_SLAB.get(), ModBlocks.ELDER_WOOD_PLANKS_FENCE.get(),
                 ModBlocks.ELDER_WOOD_PLANKS_FENCE_GATE.get(), ModBlocks.ELDER_WOOD_PLANKS_DOOR.get(), ModBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.get(),
                 ModBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE.get(), ModBlocks.ELDER_WOOD_PLANKS_BUTTON.get(), ModItems.ELDER_WOOD_SIGN.get(), ModItems.ELDER_WOOD_HANGING_SIGN.get());
+        //Olive
+        createWoodRecipes(pWriter, "olive", ModTags.Blocks.OLIVE_LOGS, ModTags.Blocks.OLIVE_STRIPPED_LOGS, ModBlocks.OLIVE_PLANKS.get(),
+                ModBlocks.OLIVE_PLANKS_STAIRS.get(), ModBlocks.OLIVE_PLANKS_SLAB.get(), ModBlocks.OLIVE_PLANKS_FENCE.get(),
+                ModBlocks.OLIVE_PLANKS_FENCE_GATE.get(), ModBlocks.OLIVE_PLANKS_DOOR.get(), ModBlocks.OLIVE_PLANKS_TRAPDOOR.get(),
+                ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get(), ModBlocks.OLIVE_PLANKS_BUTTON.get(), ModItems.OLIVE_SIGN.get(), ModItems.OLIVE_HANGING_SIGN.get());
+        //Myrrh
+        createWoodRecipes(pWriter, "myrrh", ModTags.Blocks.MYRRH_LOGS, ModTags.Blocks.MYRRH_STRIPPED_LOGS, ModBlocks.MYRRH_PLANKS.get(),
+                ModBlocks.MYRRH_PLANKS_STAIRS.get(), ModBlocks.MYRRH_PLANKS_SLAB.get(), ModBlocks.MYRRH_PLANKS_FENCE.get(),
+                ModBlocks.MYRRH_PLANKS_FENCE_GATE.get(), ModBlocks.MYRRH_PLANKS_DOOR.get(), ModBlocks.MYRRH_PLANKS_TRAPDOOR.get(),
+                ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get(), ModBlocks.MYRRH_PLANKS_BUTTON.get(), ModItems.MYRRH_SIGN.get(), ModItems.MYRRH_HANGING_SIGN.get());
+        //Laurel
+        createWoodRecipes(pWriter, "laurel", ModTags.Blocks.LAUREL_LOGS, ModTags.Blocks.LAUREL_STRIPPED_LOGS, ModBlocks.LAUREL_PLANKS.get(),
+                ModBlocks.LAUREL_PLANKS_STAIRS.get(), ModBlocks.LAUREL_PLANKS_SLAB.get(), ModBlocks.LAUREL_PLANKS_FENCE.get(),
+                ModBlocks.LAUREL_PLANKS_FENCE_GATE.get(), ModBlocks.LAUREL_PLANKS_DOOR.get(), ModBlocks.LAUREL_PLANKS_TRAPDOOR.get(),
+                ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get(), ModBlocks.LAUREL_PLANKS_BUTTON.get(), ModItems.LAUREL_SIGN.get(), ModItems.LAUREL_HANGING_SIGN.get());
+        //Cypress
+        createWoodRecipes(pWriter, "cypress", ModTags.Blocks.CYPRESS_LOGS, ModTags.Blocks.CYPRESS_STRIPPED_LOGS, ModBlocks.CYPRESS_PLANKS.get(),
+                ModBlocks.CYPRESS_PLANKS_STAIRS.get(), ModBlocks.CYPRESS_PLANKS_SLAB.get(), ModBlocks.CYPRESS_PLANKS_FENCE.get(),
+                ModBlocks.CYPRESS_PLANKS_FENCE_GATE.get(), ModBlocks.CYPRESS_PLANKS_DOOR.get(), ModBlocks.CYPRESS_PLANKS_TRAPDOOR.get(),
+                ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get(), ModBlocks.CYPRESS_PLANKS_BUTTON.get(), ModItems.CYPRESS_SIGN.get(), ModItems.CYPRESS_HANGING_SIGN.get());
+
+        /*
+        COOKING
+         */
+        createSmokingRecipes(pWriter, ModItems.CLOWNFISH.get(), ModItems.COOKED_CLOWNFISH.get());
+        createSmokingRecipes(pWriter, ModItems.RAW_TUNA.get(), ModItems.COOKED_TUNA.get());
+        createSmokingRecipes(pWriter, ModItems.TANG_FISH.get(), ModItems.COOKED_TANG_FISH.get());
+
+        /*
+        CRAFTING
+         */
+        //Portal Core
+        craftPortalCore(pWriter, ModItems.BASIC_PORTAL_CORE.get(), Items.ENDER_EYE, Items.BLAZE_POWDER);
+        
+        //Portal Activator
+        craftPortalActivator(pWriter, ModItems.BASIC_PORTAL_ACTIVATOR.get(), ModItems.BASIC_PORTAL_CORE.get());
+        
+        //Portal Frames
+        craftPortalFrame(pWriter, ModBlocks.UNDERWORLD_PORTAL_FRAME.get(), ModItems.BASIC_PORTAL_CORE.get(), Blocks.OBSIDIAN, ModItems.POMEGRANATE.get());
+        craftPortalFrame(pWriter, ModBlocks.ALFHEIMR_PORTAL_FRAME.get(), ModItems.BASIC_PORTAL_CORE.get(), ItemTags.LOGS, Items.ENDER_PEARL);
+        craftPortalFrame(pWriter, ModBlocks.NIDAVELLIR_PORTAL_FRAME.get(), ModItems.BASIC_PORTAL_CORE.get(), Blocks.OBSIDIAN, ItemTags.STONE_BRICKS);
+        craftPortalFrame(pWriter, ModBlocks.ATLANTIS_PORTAL_FRAME.get(), ModItems.BASIC_PORTAL_CORE.get(), Blocks.LAPIS_BLOCK, Items.WATER_BUCKET);
+        craftPortalFrame(pWriter, ModBlocks.SKYOPIA_PORTAL_FRAME.get(), ModItems.BASIC_PORTAL_CORE.get(), Blocks.OBSIDIAN, Items.FEATHER);
     }
 
     private void createAlloyRecipes(Consumer<FinishedRecipe> pWriter, String brass, Item ingredient1, Item ingredient2, Item outPutItem, Block block, Item nugget) {
@@ -322,6 +367,135 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
     }
 
+    /**
+     * This function simplifies crafting the portal frames.
+     * @param pWriter Connect recipe to writer
+     * @param pResult What portal frame is this making?
+     * @param pFrame What block is the frame of this portal block.
+     * @param pEssence What block/item is the essence of the dimension we want to access.
+     */
+    protected static void craftPortalFrame(Consumer<FinishedRecipe> pWriter, ItemLike pResult, ItemLike pPortalCore, ItemLike pFrame, ItemLike pEssence) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("FSF")
+                .pattern("SES")
+                .pattern("FSF")
+                .define('E', pPortalCore)
+                .define('F', pFrame)
+                .define('S', pEssence)
+                .unlockedBy("has_" + getItemName(pPortalCore), inventoryTrigger(ItemPredicate.Builder.item().of(pResult).build()))
+                .save(pWriter);
+    }
+
+    /**
+     * This function simplifies crafting the portal activator.
+     * @param pWriter Connect recipe to writer
+     * @param pResult What tier is the portal activator that this is making?
+     * @param pPortalCore What core tier is this portal activator.
+     */
+    protected static void craftPortalActivator(Consumer<FinishedRecipe> pWriter, ItemLike pResult, ItemLike pPortalCore) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("E")
+                .pattern("F")
+                .pattern("F")
+                .define('E', pPortalCore)
+                .define('F', Items.BLAZE_ROD)
+                .unlockedBy("has_" + getItemName(pPortalCore), inventoryTrigger(ItemPredicate.Builder.item().of(pResult).build()))
+                .save(pWriter);
+    }
+
+    /**
+     * This function simplifies crafting the portal core.
+     * @param pWriter Connect recipe to writer
+     * @param pResult What tier for the portal core is this making?
+     * @param pPortalCore The core ingredient that defines the tier of the core.
+     * @param pPortalEssence The essence to upgrade the tier of the core.
+     */
+    protected static void craftPortalCore(Consumer<FinishedRecipe> pWriter, ItemLike pResult, ItemLike pPortalCore, ItemLike pPortalEssence) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("FFF")
+                .pattern("FEF")
+                .pattern("FFF")
+                .define('E', pPortalCore)
+                .define('F', pPortalEssence)
+                .unlockedBy("has_" + getItemName(pPortalCore), inventoryTrigger(ItemPredicate.Builder.item().of(pResult).build()))
+                .save(pWriter);
+    }
+
+    /**
+     * This function simplifies crafting the portal core.
+     * @param pWriter Connect recipe to writer
+     * @param pResult What tier for the portal core is this making?
+     * @param pPortalCore The core ingredient that defines the tier of the core.
+     * @param pPortalEssence The essence to upgrade the tier of the core.
+     */
+    protected static void craftPortalCore(Consumer<FinishedRecipe> pWriter, ItemLike pResult, ItemLike pPortalCore, TagKey<Item> pPortalEssence) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("FFF")
+                .pattern("FEF")
+                .pattern("FFF")
+                .define('E', pPortalCore)
+                .define('F', pPortalEssence)
+                .unlockedBy("has_" + getItemName(pPortalCore), inventoryTrigger(ItemPredicate.Builder.item().of(pResult).build()))
+                .save(pWriter);
+    }
+
+    /**
+     * This function simplifies crafting the portal frames.
+     * @param pWriter Connect recipe to writer
+     * @param pResult What portal frame is this making?
+     * @param pFrame What block is the frame of this portal block.
+     * @param pEssence What block/item is the essence of the dimension we want to access.
+     */
+    protected static void craftPortalFrame(Consumer<FinishedRecipe> pWriter, ItemLike pResult, ItemLike pPortalCore, TagKey<Item> pFrame, ItemLike pEssence) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("FSF")
+                .pattern("SES")
+                .pattern("FSF")
+                .define('E', pPortalCore)
+                .define('F', pFrame)
+                .define('S', pEssence)
+                .unlockedBy("has_" + getItemName(pPortalCore), inventoryTrigger(ItemPredicate.Builder.item().of(pResult).build()))
+                .save(pWriter);
+    }
+
+    /**
+     * This function simplifies crafting the portal frames.
+     * @param pWriter Connect recipe to writer
+     * @param pResult What portal frame is this making?
+     * @param pFrame What block is the frame of this portal block.
+     * @param pEssence What block/item is the essence of the dimension we want to access.
+     */
+    protected static void craftPortalFrame(Consumer<FinishedRecipe> pWriter, ItemLike pResult, ItemLike pPortalCore, ItemLike pFrame, TagKey<Item> pEssence) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("FSF")
+                .pattern("SES")
+                .pattern("FSF")
+                .define('E', pPortalCore)
+                .define('F', pFrame)
+                .define('S', pEssence)
+                .unlockedBy("has_" + getItemName(pPortalCore), inventoryTrigger(ItemPredicate.Builder.item().of(pResult).build()))
+                .save(pWriter);
+    }
+
+    /**
+     * This function simplifies crafting the portal frames.
+     * @param pWriter Connect recipe to writer
+     * @param pResult What portal frame is this making?
+     * @param pFrame What block is the frame of this portal block.
+     * @param pEssence What block/item is the essence of the dimension we want to access.
+     */
+    protected static void craftPortalFrame(Consumer<FinishedRecipe> pWriter, ItemLike pResult, ItemLike pPortalCore, TagKey<Item> pFrame, TagKey<Item> pEssence) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("FSF")
+                .pattern("SES")
+                .pattern("FSF")
+                .define('E', pPortalCore)
+                .define('F', pFrame)
+                .define('S', pEssence)
+                .unlockedBy("has_" + getItemName(pPortalCore), inventoryTrigger(ItemPredicate.Builder.item().of(pResult).build()))
+                .save(pWriter);
+    }
+
     protected static void nineBlockStorageRecipesForMetals(Consumer<FinishedRecipe> pWriter, Item item, Block block) {
         nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, item, RecipeCategory.MISC, block,
                 LostWorlds.MODID + ":" + getItemName(item) + "_from_block", null,
@@ -361,6 +535,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .save(pFinishedRecipeConsumer, LostWorlds.MODID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
 
+    }
+
+
+
+    private static void createSmokingRecipes(Consumer<FinishedRecipe> pWriter, Item pIngredient, Item pResult) {
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredient), RecipeCategory.FOOD, pResult, 0.25f, 200, RecipeSerializer.SMOKING_RECIPE)
+                .group(null)
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pWriter, LostWorlds.MODID + ":" + getItemName(pResult) + "_" + "cooked_from" + "_" + getItemName(pIngredient));
     }
 
     protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer,

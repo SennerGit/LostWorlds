@@ -28,6 +28,10 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ELDER_WOOD_KEY = registerKey("elder_wood");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OLIVE_KEY = registerKey("olive");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MYRRH_KEY = registerKey("myrrh");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LAUREL_KEY = registerKey("laurel");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_KEY = registerKey("cypress");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_TIN_ORE_KEY = registerKey("overworld_tin_ore_key");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_IRIS_KEY = registerKey("overworld_iris_key");
 
@@ -53,6 +57,58 @@ public class ModConfiguredFeatures {
                 .dirt(BlockStateProvider.simple(elderWoodSapling.getBlock(0)))
                 .dirt(BlockStateProvider.simple(elderWoodSapling.getBlock(1)))
                 .dirt(BlockStateProvider.simple(elderWoodSapling.getBlock(2)))
+                .build());
+
+        ModSaplingBlock oliveSapling = ((ModSaplingBlock) ModBlocks.OLIVE_SAPLING.get());
+        register(context, OLIVE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.OLIVE_LOG.get()),
+                new StraightTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(ModBlocks.OLIVE_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(oliveSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(oliveSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(oliveSapling.getBlock(2)))
+                .build());
+
+        ModSaplingBlock myrrhSapling = ((ModSaplingBlock) ModBlocks.MYRRH_SAPLING.get());
+        register(context, MYRRH_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.MYRRH_LOG.get()),
+                new StraightTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(ModBlocks.MYRRH_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(myrrhSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(myrrhSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(myrrhSapling.getBlock(2)))
+                .build());
+
+        ModSaplingBlock laurelSapling = ((ModSaplingBlock) ModBlocks.LAUREL_SAPLING.get());
+        register(context, LAUREL_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.LAUREL_LOG.get()),
+                new StraightTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(ModBlocks.LAUREL_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(laurelSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(laurelSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(laurelSapling.getBlock(2)))
+                .build());
+
+        ModSaplingBlock cypressSapling = ((ModSaplingBlock) ModBlocks.CYPRESS_SAPLING.get());
+        register(context, CYPRESS_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.CYPRESS_LOG.get()),
+                new StraightTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(ModBlocks.CYPRESS_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(cypressSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(cypressSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(cypressSapling.getBlock(2)))
                 .build());
 
         register(context, OVERWORLD_TIN_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTinOres, 10));

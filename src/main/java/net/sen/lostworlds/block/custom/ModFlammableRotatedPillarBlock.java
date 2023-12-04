@@ -42,6 +42,14 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
         Map<Integer, WoodStrippedRecipe> strippedWoodMap = new HashMap<Integer, WoodStrippedRecipe>();
         strippedWoodMap.put(0, new WoodStrippedRecipe(ModBlocks.ELDER_WOOD_LOG.get(), ModBlocks.STRIPPED_ELDER_WOOD_LOG.get()));
         strippedWoodMap.put(1, new WoodStrippedRecipe(ModBlocks.ELDER_WOOD.get(), ModBlocks.STRIPPED_ELDER_WOOD.get()));
+        strippedWoodMap.put(2, new WoodStrippedRecipe(ModBlocks.OLIVE_LOG.get(), ModBlocks.STRIPPED_OLIVE_LOG.get()));
+        strippedWoodMap.put(3, new WoodStrippedRecipe(ModBlocks.OLIVE_WOOD.get(), ModBlocks.STRIPPED_OLIVE_WOOD.get()));
+        strippedWoodMap.put(4, new WoodStrippedRecipe(ModBlocks.MYRRH_LOG.get(), ModBlocks.STRIPPED_MYRRH_LOG.get()));
+        strippedWoodMap.put(5, new WoodStrippedRecipe(ModBlocks.MYRRH_WOOD.get(), ModBlocks.STRIPPED_MYRRH_WOOD.get()));
+        strippedWoodMap.put(6, new WoodStrippedRecipe(ModBlocks.LAUREL_LOG.get(), ModBlocks.STRIPPED_LAUREL_LOG.get()));
+        strippedWoodMap.put(7, new WoodStrippedRecipe(ModBlocks.LAUREL_WOOD.get(), ModBlocks.STRIPPED_LAUREL_WOOD.get()));
+        strippedWoodMap.put(8, new WoodStrippedRecipe(ModBlocks.CYPRESS_LOG.get(), ModBlocks.STRIPPED_CYPRESS_LOG.get()));
+        strippedWoodMap.put(9, new WoodStrippedRecipe(ModBlocks.CYPRESS_WOOD.get(), ModBlocks.STRIPPED_CYPRESS_WOOD.get()));
 
         if (context.getItemInHand().getItem() instanceof AxeItem axeItem) {
             for (int i = 0; i < strippedWoodMap.size(); i++) {

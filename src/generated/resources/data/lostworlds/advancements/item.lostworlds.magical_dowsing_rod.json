@@ -1,5 +1,5 @@
 {
-  "parent": "lostworlds:item.lostworlds.crimson_diamond",
+  "parent": "lostworlds:item.lostworlds.basic_portal_core",
   "criteria": {
     "has_dowsing_rod": {
       "conditions": {

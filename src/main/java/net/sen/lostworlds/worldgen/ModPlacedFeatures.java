@@ -20,6 +20,10 @@ import java.util.List;
 
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ELDER_WOOD_KEY = registerKey("elder_wood_placed");
+    public static final ResourceKey<PlacedFeature> OLIVE_KEY = registerKey("olive_placed");
+    public static final ResourceKey<PlacedFeature> MYRRH_KEY = registerKey("myrrh_placed");
+    public static final ResourceKey<PlacedFeature> LAUREL_KEY = registerKey("laurel_placed");
+    public static final ResourceKey<PlacedFeature> CYPRESS_KEY = registerKey("cypress_placed");
     public static final ResourceKey<PlacedFeature> OVERWORLD_TIN_ORE_PLACED_KEY = registerKey("overworld_tin_ore_placed_key");
     public static final ResourceKey<PlacedFeature> OVERWORLD_IRIS_PLACED_KEY = registerKey("overworld_iris_placed_key");
 
@@ -30,6 +34,22 @@ public class ModPlacedFeatures {
         register(context, ELDER_WOOD_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ELDER_WOOD_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
                         ModBlocks.ELDER_WOOD_SAPLING.get()));
+
+        register(context, OLIVE_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLIVE_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
+                        ModBlocks.OLIVE_SAPLING.get()));
+
+        register(context, MYRRH_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MYRRH_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
+                        ModBlocks.MYRRH_SAPLING.get()));
+
+        register(context, LAUREL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LAUREL_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
+                        ModBlocks.LAUREL_SAPLING.get()));
+
+        register(context, CYPRESS_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CYPRESS_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
+                        ModBlocks.CYPRESS_SAPLING.get()));
 
         register(context, OVERWORLD_TIN_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_TIN_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(12, HeightRangePlacement.uniform(

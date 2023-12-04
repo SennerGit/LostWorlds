@@ -22,31 +22,25 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.block.ModTileEntityTypes;
-import net.sen.lostworlds.block.ModWoodTypes;
-import net.sen.lostworlds.block.entity.ModBlockEntities;
-import net.sen.lostworlds.client.entity.renderer.MagicGorganProjectileRenderer;
-import net.sen.lostworlds.client.entity.renderer.RhinoRenderer;
-import net.sen.lostworlds.effect.ModEffects;
-import net.sen.lostworlds.enchantment.ModEnchantments;
-import net.sen.lostworlds.entity.ModEntities;
-import net.sen.lostworlds.fluid.ModFluidTypes;
-import net.sen.lostworlds.fluid.ModFluids;
-import net.sen.lostworlds.item.ModItemProperties;
-import net.sen.lostworlds.item.ModItems;
-import net.sen.lostworlds.item.ModCreativeModeTabs;
-import net.sen.lostworlds.loot.ModLootModifier;
-import net.sen.lostworlds.painting.ModPaintings;
-import net.sen.lostworlds.particle.ModParticles;
-import net.sen.lostworlds.potion.ModPotions;
-import net.sen.lostworlds.recipe.ModRecipes;
-import net.sen.lostworlds.screen.alloysmelter.AlloySmelterScreen;
-import net.sen.lostworlds.screen.ModMenuTypes;
-import net.sen.lostworlds.sound.ModSounds;
-import net.sen.lostworlds.villager.ModVillagers;
-import net.sen.lostworlds.worldgen.biome.carver.ModCarvers;
-import net.sen.lostworlds.worldgen.portal.ModPortals;
+import net.sen.lostworlds.block.*;
+import net.sen.lostworlds.block.entity.*;
+import net.sen.lostworlds.client.entity.renderer.*;
+import net.sen.lostworlds.effect.*;
+import net.sen.lostworlds.enchantment.*;
+import net.sen.lostworlds.entity.*;
+import net.sen.lostworlds.fluid.*;
+import net.sen.lostworlds.item.*;
+import net.sen.lostworlds.loot.*;
+import net.sen.lostworlds.painting.*;
+import net.sen.lostworlds.particle.*;
+import net.sen.lostworlds.potion.*;
+import net.sen.lostworlds.recipe.*;
+import net.sen.lostworlds.screen.alloysmelter.*;
+import net.sen.lostworlds.screen.*;
+import net.sen.lostworlds.sound.*;
+import net.sen.lostworlds.villager.*;
+import net.sen.lostworlds.worldgen.biome.carver.*;
+import net.sen.lostworlds.worldgen.portal.*;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -108,6 +102,8 @@ public class LostWorlds {
         event.enqueueWork(() -> {
             ComposterBlock.COMPOSTABLES.put(ModItems.CRIMSON_APPLE.get(), 0.35f);
             ComposterBlock.COMPOSTABLES.put(ModItems.POMEGRANATE.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.OLIVE.get(), 0.35f);
+
             ComposterBlock.COMPOSTABLES.put(ModItems.POMEGRANATE_SEEDS.get(), 0.20f);
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.IRIS_FLOWER.getId(), ModBlocks.POTTED_IRIS_FLOWER);
@@ -135,6 +131,10 @@ public class LostWorlds {
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
                 Sheets.addWoodType(ModWoodTypes.ELDER_WOOD);
+                Sheets.addWoodType(ModWoodTypes.OLIVE);
+                Sheets.addWoodType(ModWoodTypes.MYRRH);
+                Sheets.addWoodType(ModWoodTypes.LAUREL);
+                Sheets.addWoodType(ModWoodTypes.CYPRESS);
 
                 ModItemProperties.addCustomItemProperties();
 
@@ -143,7 +143,28 @@ public class LostWorlds {
 
                 MenuScreens.register(ModMenuTypes.ALLOY_SMELTER_MENU.get(), AlloySmelterScreen::new);
 
+                //Mobs
                 EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+                EntityRenderers.register(ModEntities.SHARK.get(), SharkRenderer::new);
+                EntityRenderers.register(ModEntities.MORAY_EELS.get(), MorayEelsRenderer::new);
+                EntityRenderers.register(ModEntities.ELECTRIC_EELS.get(), ElectricEelsRenderer::new);
+                EntityRenderers.register(ModEntities.JELLYFISH.get(), JellyfishRenderer::new);
+                EntityRenderers.register(ModEntities.GIANT_SQUID.get(), GiantSquidRenderer::new);
+                EntityRenderers.register(ModEntities.RAY.get(), RayRenderer::new);
+                EntityRenderers.register(ModEntities.GIANT_OCTOPUS.get(), GiantOctopusRenderer::new);
+                EntityRenderers.register(ModEntities.NUDIBRANCH_SLUG.get(), NudibranchSlugRenderer::new);
+                EntityRenderers.register(ModEntities.GREAT_WHITE.get(), GreatWhiteRenderer::new);
+                EntityRenderers.register(ModEntities.ANGLER_FISH.get(), AnglerFishRenderer::new);
+                EntityRenderers.register(ModEntities.SEAHORSE.get(), SeahorseRenderer::new);
+                EntityRenderers.register(ModEntities.CLOWNFISH.get(), ClownfishRenderer::new);
+                EntityRenderers.register(ModEntities.TUNA.get(), TunaRenderer::new);
+                EntityRenderers.register(ModEntities.TANG_FISH.get(), TangFishRenderer::new);
+                EntityRenderers.register(ModEntities.ATLANTIAN_GURDIAN.get(), AtlantianGurdianRenderer::new);
+                EntityRenderers.register(ModEntities.SIREN.get(), SirenRenderer::new);
+                EntityRenderers.register(ModEntities.MERFOLK.get(), MerfolkRenderer::new);
+                EntityRenderers.register(ModEntities.ATLANTIAN.get(), AtlantianRenderer::new);
+
+                //Projectiles
                 EntityRenderers.register(ModEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
                 EntityRenderers.register(ModEntities.MAGIC_GORGAN_PROJECTILE.get(), MagicGorganProjectileRenderer::new);
             });

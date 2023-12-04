@@ -6,11 +6,10 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.sen.lostworlds.entity.custom.DiceProjectileEntity;
+import net.sen.lostworlds.entity.projectile.DiceProjectileEntity;
 
 
 public class DiceItem extends Item {

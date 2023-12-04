@@ -13,7 +13,7 @@ import net.minecraft.util.Mth;
 import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.MagicGorganProjectileModel;
-import net.sen.lostworlds.entity.custom.MagicGorganProjectileEntity;
+import net.sen.lostworlds.entity.projectile.MagicGorganProjectileEntity;
 
 public class MagicGorganProjectileRenderer extends EntityRenderer<MagicGorganProjectileEntity> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(LostWorlds.MODID, "textures/entity/magic_projectile.png");

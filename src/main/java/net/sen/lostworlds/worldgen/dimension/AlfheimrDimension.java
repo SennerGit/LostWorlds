@@ -1,9 +1,12 @@
 package net.sen.lostworlds.worldgen.dimension;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.biome.*;
@@ -15,7 +18,9 @@ import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.BlendedNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
+import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.worldgen.biome.AlfheimrBiomes;
+import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
 import net.sen.lostworlds.worldgen.biome.ModBiomes;
 import net.sen.lostworlds.worldgen.biome.UnderworldBiomes;
 
@@ -73,6 +78,77 @@ public class AlfheimrDimension {
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.ALFHEIMR_DIM_TYPE), noiseBasedChunkGenerator);
 
         context.register(ModDimensions.ALFHEIMR_KEY, stem);
+    }
+
+    public static NoiseGeneratorSettings alfheimrDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {
+        HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
+        HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
+
+        return new NoiseGeneratorSettings(
+                NoiseSettings.create(-32, 256, 1, 2),
+                Blocks.STONE.defaultBlockState(),
+                Blocks.WATER.defaultBlockState(),
+                alfheimrNoiseRouter(functions, noises),
+                alfheimrSurfaceRules(),
+                List.of(), //spawn targets
+                0,
+                false,
+                true,
+                true,
+                false
+        );
+    }
+
+    private static SurfaceRules.RuleSource alfheimrSurfaceRules() {
+        return SurfaceRules.sequence(
+                //bedrock floor
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("minecraft:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())),
+                //filler depthrock
+//                        SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0), SurfaceRules.state(Blocks.STONE.defaultBlockState())),
+                //sediment
+//                        SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(33), 0)), SurfaceRules.state(Blocks.STONE.defaultBlockState()))),
+                //frozen deepturf
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(AtlantisBiomes.ATLANTIS_OCEAN), SurfaceRules.ifTrue(
+                        SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
+                        SurfaceRules.state(Blocks.STONE.defaultBlockState()))
+                )
+        );
+    }
+
+    private static NoiseRouter alfheimrNoiseRouter(final HolderGetter<DensityFunction> densityFunctions, final HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
+        DensityFunction aquiferBarrier = DensityFunctions.zero();
+        DensityFunction aquiferFluidLevelFloodedness = DensityFunctions.zero();
+        DensityFunction aquiferFluidLevelSpread = DensityFunctions.zero();
+        DensityFunction aquiferLava = DensityFunctions.zero();
+        DensityFunction temperature = DensityFunctions.zero();
+        DensityFunction vegetation = DensityFunctions.zero();
+        DensityFunction continents = DensityFunctions.zero();
+        DensityFunction erosion = DensityFunctions.zero();
+        DensityFunction depth = DensityFunctions.zero();
+        DensityFunction ridges = DensityFunctions.zero();
+        DensityFunction initialDensityWithoutJaggedness = DensityFunctions.zero();
+        DensityFunction finalDensity = DensityFunctions.zero();
+        DensityFunction veinToggle = DensityFunctions.zero();
+        DensityFunction veinRidged = DensityFunctions.zero();
+        DensityFunction veinGap = DensityFunctions.zero();
+
+        return new NoiseRouter(
+                aquiferBarrier,
+                aquiferFluidLevelFloodedness,
+                aquiferFluidLevelSpread,
+                aquiferLava,
+                temperature,
+                vegetation,
+                continents,
+                erosion,
+                depth,
+                ridges,
+                initialDensityWithoutJaggedness,
+                finalDensity,
+                veinToggle,
+                veinRidged,
+                veinGap
+        );
     }
 
 //    public static NoiseGeneratorSettings alfheimrDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {
@@ -176,4 +252,29 @@ public class AlfheimrDimension {
 //
 //        return noiseGeneratorSettings;
 //    }
+
+    private static DensityFunction getFunction(HolderGetter<DensityFunction> registry, ResourceKey<DensityFunction> key) {
+        return wrap(registry.getOrThrow(key));
+    }
+
+    private static DensityFunctions.HolderHolder wrap(Holder.Reference<DensityFunction> holder) {
+        return new DensityFunctions.HolderHolder(holder);
+    }
+
+    private static DensityFunction yLimitedInterpolatable(DensityFunction p_209472_, DensityFunction p_209473_, int p_209474_, int p_209475_, int p_209476_) {
+        return DensityFunctions.interpolated(DensityFunctions.rangeChoice(p_209472_, p_209474_, p_209475_ + 1, p_209473_, DensityFunctions.constant(p_209476_)));
+    }
+
+    private static DensityFunction noiseGradientDensity(DensityFunction p_212272_, DensityFunction p_212273_) {
+        DensityFunction densityfunction = DensityFunctions.mul(p_212273_, p_212272_);
+        return DensityFunctions.mul(DensityFunctions.constant(4.0), densityfunction.quarterNegative());
+    }
+
+    private static ResourceKey<DensityFunction> vanillaKey(String name) {
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(name));
+    }
+
+    private static ResourceKey<DensityFunction> createKey(final String name) {
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(LostWorlds.MODID, name));
+    }
 }

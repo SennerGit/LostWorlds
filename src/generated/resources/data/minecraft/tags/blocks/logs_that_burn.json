@@ -3,6 +3,22 @@
     "lostworlds:elder_wood_log",
     "lostworlds:elder_wood",
     "lostworlds:stripped_elder_wood_log",
-    "lostworlds:stripped_elder_wood"
+    "lostworlds:stripped_elder_wood",
+    "lostworlds:olive_log",
+    "lostworlds:olive_wood",
+    "lostworlds:stripped_olive_log",
+    "lostworlds:stripped_olive_wood",
+    "lostworlds:myrrh_log",
+    "lostworlds:myrrh_wood",
+    "lostworlds:stripped_myrrh_log",
+    "lostworlds:stripped_myrrh_wood",
+    "lostworlds:laurel_log",
+    "lostworlds:laurel_wood",
+    "lostworlds:stripped_laurel_log",
+    "lostworlds:stripped_laurel_wood",
+    "lostworlds:cypress_log",
+    "lostworlds:cypress_wood",
+    "lostworlds:stripped_cypress_log",
+    "lostworlds:stripped_cypress_wood"
   ]
 }

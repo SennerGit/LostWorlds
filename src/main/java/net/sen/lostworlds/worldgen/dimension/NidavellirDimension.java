@@ -51,16 +51,16 @@ public class NidavellirDimension {
 
         NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
                 new FixedBiomeSource(biomeRegistry.getOrThrow(NidavellirBiomes.NIDAVELLIR_CAVERN)),
-                noiseGenSettings.getOrThrow(ModDimensions.NIDAVELLIR_NOISE_KEY));
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.CAVES));
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(Pair.of(
                                 Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(NidavellirBiomes.NIDAVELLIR_CAVERN))
                         ))),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+                noiseGenSettings.getOrThrow(ModDimensions.NIDAVELLIR_NOISE_KEY));
 
-        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.NIDAVELLIR_DIM_TYPE), wrappedChunkGenerator);
+        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.NIDAVELLIR_DIM_TYPE), noiseBasedChunkGenerator);
 
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);

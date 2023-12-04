@@ -15,13 +15,18 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LostWorlds.MODID);
 
     public static final RegistryObject<CreativeModeTab> LOST_WORLDS_TAB = CREATIVE_MODE_TABS.register("lost_worlds_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ModItems.BRONZE_INGOT.get()))
+            .icon(() -> new ItemStack(ModItems.BASIC_PORTAL_CORE.get()))
             .title(Component.translatable("creativetab.lost_worlds_tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.LOST_WORLDS_BOOK.get());
 
                 output.accept(ModItems.DICE.get());
+
+                output.accept(ModItems.BASIC_PORTAL_CORE.get());
+
                 output.accept(ModItems.BASIC_PORTAL_ACTIVATOR.get());
+
+                output.accept(ModItems.OLIVE.get());
 
                 output.accept(ModBlocks.ZINC_BLOCK.get());
                 output.accept(ModBlocks.RAW_ZINC_BLOCK.get());
@@ -120,11 +125,83 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.ELDER_WOOD_PLANKS_BUTTON.get());
                 output.accept(ModItems.ELDER_WOOD_SIGN.get());
                 output.accept(ModItems.ELDER_WOOD_HANGING_SIGN.get());
+
+                output.accept(ModBlocks.OLIVE_LOG.get());
+                output.accept(ModBlocks.STRIPPED_OLIVE_LOG.get());
+                output.accept(ModBlocks.OLIVE_WOOD.get());
+                output.accept(ModBlocks.STRIPPED_OLIVE_WOOD.get());
+                output.accept(ModBlocks.OLIVE_LEAVES.get());
+                output.accept(ModBlocks.OLIVE_SAPLING.get());
+                output.accept(ModBlocks.OLIVE_PLANKS.get());
+                output.accept(ModBlocks.OLIVE_PLANKS_SLAB.get());
+                output.accept(ModBlocks.OLIVE_PLANKS_STAIRS.get());
+                output.accept(ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.OLIVE_PLANKS_DOOR.get());
+                output.accept(ModBlocks.OLIVE_PLANKS_TRAPDOOR.get());
+                output.accept(ModBlocks.OLIVE_PLANKS_FENCE.get());
+                output.accept(ModBlocks.OLIVE_PLANKS_FENCE_GATE.get());
+                output.accept(ModBlocks.OLIVE_PLANKS_BUTTON.get());
+                output.accept(ModItems.OLIVE_SIGN.get());
+                output.accept(ModItems.OLIVE_HANGING_SIGN.get());
+
+                output.accept(ModBlocks.MYRRH_LOG.get());
+                output.accept(ModBlocks.STRIPPED_MYRRH_LOG.get());
+                output.accept(ModBlocks.MYRRH_WOOD.get());
+                output.accept(ModBlocks.STRIPPED_MYRRH_WOOD.get());
+                output.accept(ModBlocks.MYRRH_LEAVES.get());
+                output.accept(ModBlocks.MYRRH_SAPLING.get());
+                output.accept(ModBlocks.MYRRH_PLANKS.get());
+                output.accept(ModBlocks.MYRRH_PLANKS_SLAB.get());
+                output.accept(ModBlocks.MYRRH_PLANKS_STAIRS.get());
+                output.accept(ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.MYRRH_PLANKS_DOOR.get());
+                output.accept(ModBlocks.MYRRH_PLANKS_TRAPDOOR.get());
+                output.accept(ModBlocks.MYRRH_PLANKS_FENCE.get());
+                output.accept(ModBlocks.MYRRH_PLANKS_FENCE_GATE.get());
+                output.accept(ModBlocks.MYRRH_PLANKS_BUTTON.get());
+                output.accept(ModItems.MYRRH_SIGN.get());
+                output.accept(ModItems.MYRRH_HANGING_SIGN.get());
+
+                output.accept(ModBlocks.LAUREL_LOG.get());
+                output.accept(ModBlocks.STRIPPED_LAUREL_LOG.get());
+                output.accept(ModBlocks.LAUREL_WOOD.get());
+                output.accept(ModBlocks.STRIPPED_LAUREL_WOOD.get());
+                output.accept(ModBlocks.LAUREL_LEAVES.get());
+                output.accept(ModBlocks.LAUREL_SAPLING.get());
+                output.accept(ModBlocks.LAUREL_PLANKS.get());
+                output.accept(ModBlocks.LAUREL_PLANKS_SLAB.get());
+                output.accept(ModBlocks.LAUREL_PLANKS_STAIRS.get());
+                output.accept(ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.LAUREL_PLANKS_DOOR.get());
+                output.accept(ModBlocks.LAUREL_PLANKS_TRAPDOOR.get());
+                output.accept(ModBlocks.LAUREL_PLANKS_FENCE.get());
+                output.accept(ModBlocks.LAUREL_PLANKS_FENCE_GATE.get());
+                output.accept(ModBlocks.LAUREL_PLANKS_BUTTON.get());
+                output.accept(ModItems.LAUREL_SIGN.get());
+                output.accept(ModItems.LAUREL_HANGING_SIGN.get());
+
+                output.accept(ModBlocks.CYPRESS_LOG.get());
+                output.accept(ModBlocks.STRIPPED_CYPRESS_LOG.get());
+                output.accept(ModBlocks.CYPRESS_WOOD.get());
+                output.accept(ModBlocks.STRIPPED_CYPRESS_WOOD.get());
+                output.accept(ModBlocks.CYPRESS_LEAVES.get());
+                output.accept(ModBlocks.CYPRESS_SAPLING.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS_SLAB.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS_STAIRS.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS_DOOR.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS_TRAPDOOR.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS_FENCE.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS_FENCE_GATE.get());
+                output.accept(ModBlocks.CYPRESS_PLANKS_BUTTON.get());
+                output.accept(ModItems.CYPRESS_SIGN.get());
+                output.accept(ModItems.CYPRESS_HANGING_SIGN.get());
             })
             .build());
 
     public static final RegistryObject<CreativeModeTab> LOST_WORLDS_UNDERWORLD_TAB = CREATIVE_MODE_TABS.register("lost_worlds_underworld_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ModItems.ADAMANT.get()))
+            .icon(() -> new ItemStack(ModBlocks.UNDERWORLD_PORTAL_FRAME.get()))
             .title(Component.translatable("creativetab.lost_worlds_underworld_tab"))
             .displayItems((parameters, output) -> {
 //                output.accept(ModBlocks.UNDERWORLD_GRASS_BLOCK.get());
@@ -164,7 +241,7 @@ public class ModCreativeModeTabs {
             .build());
 
     public static final RegistryObject<CreativeModeTab> LOST_WORLDS_NIDAVELLIR_TAB = CREATIVE_MODE_TABS.register("lost_worlds_nidavellir_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ModItems.CRIMSON_DIAMOND.get()))
+            .icon(() -> new ItemStack(ModBlocks.NIDAVELLIR_PORTAL_FRAME.get()))
             .title(Component.translatable("creativetab.lost_worlds_nidavellir_tab"))
             .displayItems((parameters, output) -> {
 
@@ -217,7 +294,7 @@ public class ModCreativeModeTabs {
             .build());
 
     public static final RegistryObject<CreativeModeTab> LOST_WORLDS_ALFHEIMR_TAB = CREATIVE_MODE_TABS.register("lost_worlds_alfheimr_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ModItems.CRIMSON_DIAMOND.get()))
+            .icon(() -> new ItemStack(ModBlocks.ALFHEIMR_PORTAL_FRAME.get()))
             .title(Component.translatable("creativetab.lost_worlds_alfheimr_tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ModBlocks.ALFHEIMR_PORTAL_FRAME.get());
@@ -225,17 +302,29 @@ public class ModCreativeModeTabs {
             .build());
 
     public static final RegistryObject<CreativeModeTab> LOST_WORLDS_ATLANTIS_TAB = CREATIVE_MODE_TABS.register("lost_worlds_atlantis_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(Items.COD))
+            .icon(() -> new ItemStack(ModBlocks.ATLANTIS_PORTAL_FRAME.get()))
             .title(Component.translatable("creativetab.lost_worlds_atlantis_tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ModBlocks.ATLANTIS_PORTAL_FRAME.get());
 
                 output.accept(ModBlocks.ATLANTAS_WATER_REMOVER_BLOCK.get());
+                output.accept(ModItems.CLOWNFISH_BUCKET.get());
+                output.accept(ModItems.TANG_FISH_BUCKET.get());
+
+                output.accept(ModItems.SHARK_TOOTH.get());
+
+                output.accept(ModItems.RAW_TUNA.get());
+                output.accept(ModItems.COOKED_TUNA.get());
+
+                output.accept(ModItems.CLOWNFISH.get());
+                output.accept(ModItems.COOKED_CLOWNFISH.get());
+                output.accept(ModItems.TANG_FISH.get());
+                output.accept(ModItems.COOKED_TANG_FISH.get());
             })
             .build());
 
     public static final RegistryObject<CreativeModeTab> LOST_WORLDS_SKYOPIA_TAB = CREATIVE_MODE_TABS.register("lost_worlds_skyopia_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(Items.COD))
+            .icon(() -> new ItemStack(ModBlocks.SKYOPIA_PORTAL_FRAME.get()))
             .title(Component.translatable("creativetab.lost_worlds_skyopia_tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ModBlocks.SKYOPIA_PORTAL_FRAME.get());
@@ -244,9 +333,27 @@ public class ModCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> LOST_WORLDS_ENTITIES_TAB = CREATIVE_MODE_TABS.register("lost_worlds_entities_tab", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ModItems.RHINO_SPAWN_EGG.get()))
-            .title(Component.translatable("creativetab.lost_worlds_Entities_tab"))
+            .title(Component.translatable("creativetab.lost_worlds_entities_tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.RHINO_SPAWN_EGG.get());
+                output.accept(ModItems.SHARK_SPAWN_EGG.get());
+                output.accept(ModItems.MORAY_EELS_SPAWN_EGG.get());
+                output.accept(ModItems.ELECTRIC_EELS_SPAWN_EGG.get());
+                output.accept(ModItems.JELLYFISH_SPAWN_EGG.get());
+                output.accept(ModItems.GIANT_SQUID_SPAWN_EGG.get());
+                output.accept(ModItems.RAY_SPAWN_EGG.get());
+                output.accept(ModItems.GIANT_OCTOPUS_SPAWN_EGG.get());
+                output.accept(ModItems.NUDIBRANCH_SLUG_SPAWN_EGG.get());
+                output.accept(ModItems.GREAT_WHITE_SPAWN_EGG.get());
+                output.accept(ModItems.ANGLER_FISH_SPAWN_EGG.get());
+                output.accept(ModItems.SEAHORSE_SPAWN_EGG.get());
+                output.accept(ModItems.CLOWNFISH_SPAWN_EGG.get());
+                output.accept(ModItems.ATLANTIAN_GURDIAN_SPAWN_EGG.get());
+                output.accept(ModItems.SIREN_SPAWN_EGG.get());
+                output.accept(ModItems.MERFOLK_SPAWN_EGG.get());
+                output.accept(ModItems.ATLANTIAN_SPAWN_EGG.get());
+                output.accept(ModItems.TANG_FISH_SPAWN_EGG.get());
+                output.accept(ModItems.TUNA_SPAWN_EGG.get());
             })
             .build());
 
