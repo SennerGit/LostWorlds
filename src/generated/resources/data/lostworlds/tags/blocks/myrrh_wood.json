@@ -1,0 +1,18 @@
+{
+  "values": [
+    "lostworlds:myrrh_log",
+    "lostworlds:myrrh_wood",
+    "lostworlds:stripped_myrrh_log",
+    "lostworlds:stripped_myrrh_wood",
+    "lostworlds:myrrh_leaves",
+    "lostworlds:myrrh_planks",
+    "lostworlds:myrrh_planks_slab",
+    "lostworlds:myrrh_planks_stairs",
+    "lostworlds:myrrh_planks_pressure_plate",
+    "lostworlds:myrrh_planks_door",
+    "lostworlds:myrrh_planks_trapdoor",
+    "lostworlds:myrrh_planks_fence",
+    "lostworlds:myrrh_planks_fence_gate",
+    "lostworlds:myrrh_planks_button"
+  ]
+}

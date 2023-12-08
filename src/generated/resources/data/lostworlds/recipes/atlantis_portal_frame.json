@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "lostworlds:basic_portal_core"
+    },
+    "F": {
+      "item": "minecraft:lapis_block"
+    },
+    "S": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    "FSF",
+    "SES",
+    "FSF"
+  ],
+  "result": {
+    "item": "lostworlds:atlantis_portal_frame"
+  },
+  "show_notification": true
+}

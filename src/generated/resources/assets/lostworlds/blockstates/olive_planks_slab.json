@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lostworlds:block/olive_planks_slab"
+    },
+    "type=double": {
+      "model": "lostworlds:block/olive_planks"
+    },
+    "type=top": {
+      "model": "lostworlds:block/olive_planks_slab_top"
+    }
+  }
+}

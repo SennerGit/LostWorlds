@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "lostworlds:raw_tuna"
+        }
+      ],
+      "rolls": 5.0
+    }
+  ],
+  "random_sequence": "lostworlds:entities/tuna_giant"
+}

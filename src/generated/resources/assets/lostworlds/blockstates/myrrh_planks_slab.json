@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lostworlds:block/myrrh_planks_slab"
+    },
+    "type=double": {
+      "model": "lostworlds:block/myrrh_planks"
+    },
+    "type=top": {
+      "model": "lostworlds:block/myrrh_planks_slab_top"
+    }
+  }
+}

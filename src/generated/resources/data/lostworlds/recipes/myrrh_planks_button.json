@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lostworlds:myrrh_planks"
+    }
+  ],
+  "result": {
+    "item": "lostworlds:myrrh_planks_button"
+  }
+}

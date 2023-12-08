@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "lostworlds:myrrh_planks"
+    }
+  },
+  "pattern": [
+    "AA",
+    "AA",
+    "AA"
+  ],
+  "result": {
+    "count": 3,
+    "item": "lostworlds:myrrh_planks_door"
+  },
+  "show_notification": true
+}

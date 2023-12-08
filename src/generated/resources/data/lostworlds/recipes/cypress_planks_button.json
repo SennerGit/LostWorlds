@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lostworlds:cypress_planks"
+    }
+  ],
+  "result": {
+    "item": "lostworlds:cypress_planks_button"
+  }
+}

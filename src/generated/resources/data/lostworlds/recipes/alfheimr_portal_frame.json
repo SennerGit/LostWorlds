@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "lostworlds:basic_portal_core"
+    },
+    "F": {
+      "tag": "minecraft:logs"
+    },
+    "S": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "FSF",
+    "SES",
+    "FSF"
+  ],
+  "result": {
+    "item": "lostworlds:alfheimr_portal_frame"
+  },
+  "show_notification": true
+}
