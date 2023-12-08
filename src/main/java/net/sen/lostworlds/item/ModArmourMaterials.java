@@ -11,6 +11,7 @@ import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 
 import java.util.EnumMap;
 import java.util.function.Supplier;
@@ -108,7 +109,7 @@ public enum ModArmourMaterials implements ArmorMaterial {
     }
 
     public String getName() {
-        return LostWorlds.MODID + ":" + this.name;
+        return LostWorldsConstants.MODID + ":" + this.name;
     }
 
     public float getToughness() {
@@ -123,6 +124,6 @@ public enum ModArmourMaterials implements ArmorMaterial {
     }
 
     public String getSerializedName() {
-        return LostWorlds.MODID + ":" + this.name;
+        return LostWorldsConstants.MODID + ":" + this.name;
     }
 }

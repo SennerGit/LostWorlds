@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.AnglerfishModel;
 import net.sen.lostworlds.entity.mob.AnglerFishEntity;
@@ -20,7 +21,7 @@ public class AnglerFishRenderer extends MobRenderer<AnglerFishEntity, Anglerfish
     private static final Map<AnglerFishVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(AnglerFishVariant.class), map -> {
                 map.put(AnglerFishVariant.DEFAULT,
-                        new ResourceLocation(LostWorlds.MODID, "textures/entity/anglerfish/anglerfish.png"));
+                        LostWorldsConstants.modLoc("textures/entity/anglerfish/anglerfish.png"));
             });
 
     public AnglerFishRenderer(EntityRendererProvider.Context pContext) {

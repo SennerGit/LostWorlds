@@ -10,13 +10,14 @@ import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.item.ModItems;
 
 public class ModBookProvider extends BookProvider {
     public static final String COLOUR_ORANGE = "ad03fc";
 
     public ModBookProvider(PackOutput packOutput, LanguageProvider defaultLang) {
-        super(ModItems.LOST_WORLDS_BOOK.getId().getPath(), packOutput, LostWorlds.MODID, defaultLang);
+        super(ModItems.LOST_WORLDS_BOOK.getId().getPath(), packOutput, LostWorldsConstants.MODID, defaultLang);
     }
 
     @Override

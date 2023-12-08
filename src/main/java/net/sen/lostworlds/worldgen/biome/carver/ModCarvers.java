@@ -7,10 +7,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 
 public class ModCarvers {
     public static final DeferredRegister<WorldCarver<?>> CARVERS =
-            DeferredRegister.create(ForgeRegistries.WORLD_CARVERS, LostWorlds.MODID);
+            DeferredRegister.create(ForgeRegistries.WORLD_CARVERS, LostWorldsConstants.MODID);
 
     public static final RegistryObject<WorldCarver<CaveCarverConfiguration>> NIDAVELLIR_CAVE =
             CARVERS.register("nidavellir_cave", () -> new NidavellirCaveWorldCarver(CaveCarverConfiguration.CODEC));

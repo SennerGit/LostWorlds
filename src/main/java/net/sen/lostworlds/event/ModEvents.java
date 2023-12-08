@@ -18,6 +18,7 @@ import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.server.command.ConfigCommand;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.command.ReturnHomeCommand;
 import net.sen.lostworlds.command.SetHomeCommand;
 import net.sen.lostworlds.item.ModItems;
@@ -36,7 +37,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Mod.EventBusSubscriber(modid = LostWorlds.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = LostWorldsConstants.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
 
     // Done with the help of https://github.com/CoFH/CoFHCore/blob/1.19.x/src/main/java/cofh/core/event/AreaEffectEvents.java
@@ -76,7 +77,7 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onPlayerCloned(PlayerEvent.Clone event) {
-        event.getEntity().getPersistentData().putIntArray(LostWorlds.MODID + ".homepos", event.getOriginal().getPersistentData().getIntArray(LostWorlds.MODID + ".homepos"));
+        event.getEntity().getPersistentData().putIntArray(LostWorldsConstants.MODID + ".homepos", event.getOriginal().getPersistentData().getIntArray(LostWorldsConstants.MODID + ".homepos"));
     }
 
     @SubscribeEvent

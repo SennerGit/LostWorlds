@@ -14,6 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.custom.*;
 import net.sen.lostworlds.block.portal.*;
 import net.sen.lostworlds.fluid.ModFluids;
@@ -26,7 +27,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
     //https://en.wikipedia.org/wiki/List_of_fictional_elements,_materials,_isotopes_and_subatomic_particles
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, LostWorlds.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, LostWorldsConstants.MODID);
 
     /*
     *   Custom Blocks

@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.datagen.modonomicon.LostWorldsBookItem;
 import net.sen.lostworlds.entity.ModEntities;
@@ -18,7 +19,7 @@ import net.sen.lostworlds.sound.ModSounds;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, LostWorlds.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, LostWorldsConstants.MODID);
 
     /*
      *   Crimson Dimension
@@ -48,7 +49,7 @@ public class ModItems {
     public static final RegistryObject<Item> NETHER_STEEL_CHESTPLATE = ITEMS.register("nether_steel_chestplate", () -> new ModArmorItem(ModArmourMaterials.NETHER_STEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(256)));
     public static final RegistryObject<Item> NETHER_STEEL_LEGGINGS = ITEMS.register("nether_steel_leggings", () -> new ModArmorItem(ModArmourMaterials.NETHER_STEEL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(256)));
     public static final RegistryObject<Item> NETHER_STEEL_BOOTS = ITEMS.register("nether_steel_boots", () -> new ModArmorItem(ModArmourMaterials.NETHER_STEEL, ArmorItem.Type.BOOTS, new Item.Properties().durability(256)));
-    public static final RegistryObject<Item> NETHER_STEEL_HORSE_ARMOR = ITEMS.register("nether_steel_horse_armor", () -> new HorseArmorItem(12, new ResourceLocation(LostWorlds.MODID, "textures/entity/horse/armor/horse_armor_nether_steel.png"), new Item.Properties().durability(256)));
+    public static final RegistryObject<Item> NETHER_STEEL_HORSE_ARMOR = ITEMS.register("nether_steel_horse_armor", () -> new HorseArmorItem(12, LostWorldsConstants.modLoc("textures/entity/horse/armor/horse_armor_nether_steel.png"), new Item.Properties().durability(256)));
 
     /*
      * World Metals
@@ -274,7 +275,7 @@ public class ModItems {
     public static RegistryObject<Item> registerHorseArmour(String name, int pProtection, int pMaxDamage) {
         return ITEMS.register(name + "_horse_armor", () -> new HorseArmorItem(
                 pProtection,
-                new ResourceLocation(LostWorlds.MODID, "textures/entity/horse/armor/horse_armor_" + name + ".png"),
+                LostWorldsConstants.modLoc("textures/entity/horse/armor/horse_armor_" + name + ".png"),
                 new Item.Properties().durability(pMaxDamage)));
 
     }

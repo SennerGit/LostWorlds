@@ -21,7 +21,7 @@ import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
 import net.sen.lostworlds.entity.custom.WaterMonster;
 import net.sen.lostworlds.entity.mob.*;
 
-@Mod.EventBusSubscriber(modid = LostWorlds.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = LostWorldsConstants.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
 
     @SubscribeEvent

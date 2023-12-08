@@ -13,13 +13,14 @@ import net.minecraft.world.level.levelgen.carver.CaveCarverConfiguration;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.util.ModTags;
 
 @SuppressWarnings("unused")
 public class ModConfiguredCarvers {
     public static final ResourceKey<ConfiguredWorldCarver<?>> NIDAVELLIR_CAVE =
             ResourceKey.create(Registries.CONFIGURED_CARVER,
-                    new ResourceLocation(LostWorlds.MODID, "nidavellir_carver"));
+                    LostWorldsConstants.modLoc("nidavellir_carver"));
 
     public static void bootstrap(BootstapContext<ConfiguredWorldCarver<?>> context) {
         HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);

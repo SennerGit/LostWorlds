@@ -13,14 +13,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.block.entity.AlloySmelterBlockEntity;
 import net.sen.lostworlds.recipe.AlloySmelterRecipe;
 import net.sen.lostworlds.util.tools.SlotsVector;
 
 public class AlloySmelterRecipeCategory implements IRecipeCategory<AlloySmelterRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(LostWorlds.MODID, "alloy_smelter");
-    public static final ResourceLocation TEXTURE = new ResourceLocation(LostWorlds.MODID,
+    public static final ResourceLocation UID = LostWorldsConstants.modLoc("alloy_smelter");
+    public static final ResourceLocation TEXTURE = LostWorldsConstants.modLoc(
             "textures/gui/container/alloy_smelter_gui.png");
 
     private static final SlotsVector INPUT_1_SLOT = AlloySmelterBlockEntity.INPUT_1_SLOT;

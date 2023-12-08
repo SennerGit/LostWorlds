@@ -10,6 +10,7 @@ import net.minecraft.world.item.alchemy.Potion;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.effect.ModEffects;
 import net.sen.lostworlds.enchantment.ModEnchantments;
@@ -22,7 +23,7 @@ import net.sen.lostworlds.villager.ModVillagers;
 
 public class ModLanguageEnUsProvider extends LanguageProvider {
     public ModLanguageEnUsProvider(PackOutput output, String locale) {
-        super(output, LostWorlds.MODID, locale);
+        super(output, LostWorldsConstants.MODID, locale);
     }
 
     @Override
@@ -438,8 +439,8 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
     }
 
     public void addPainting(RegistryObject<PaintingVariant> painting, String title, String author) {
-        add("painting." + LostWorlds.MODID + "." + painting.getId().getPath() + ".title", title);
-        add("painting." + LostWorlds.MODID + "." + painting.getId().getPath() + ".author", author);
+        add("painting." + LostWorldsConstants.MODID + "." + painting.getId().getPath() + ".title", title);
+        add("painting." + LostWorldsConstants.MODID + "." + painting.getId().getPath() + ".author", author);
     }
 
     public void addPotion(RegistryObject<Potion> potion, String title) {
@@ -453,7 +454,7 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
     }
 
     public void addProfession(RegistryObject<VillagerProfession> profession, String name) {
-        add("entity.minecraft.villager." + LostWorlds.MODID + "." + profession.getId().getPath(), name);
+        add("entity.minecraft.villager." + LostWorldsConstants.MODID + "." + profession.getId().getPath(), name);
     }
 
     public void addRecord(RegistryObject<Item> record, String name, String description) {
@@ -462,12 +463,12 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
     }
 
     public void addSound(RegistryObject<SoundEvent> sound, String name) {
-        add("sounds." + LostWorlds.MODID + "." + sound.get().getLocation().getPath(), name);
+        add("sounds." + LostWorldsConstants.MODID + "." + sound.get().getLocation().getPath(), name);
 //        add("sounds.modid.name", name);
     }
 
     public void addBookInformation(String name, String info) {
-        add("book." + LostWorlds.MODID + "." + "lost_worlds_book." + name, info);
+        add("book." + LostWorldsConstants.MODID + "." + "lost_worlds_book." + name, info);
 //        add("sounds.modid.name", name);
     }
 }

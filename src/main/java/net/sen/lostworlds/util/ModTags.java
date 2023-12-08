@@ -12,6 +12,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +21,7 @@ import java.util.function.BiConsumer;
 public class ModTags {
     public static class Biomes {
         private static TagKey<Biome> tag(String name) {
-            return BiomeTags.create(new ResourceLocation(LostWorlds.MODID, "biome_tag_" + name).toString());
+            return BiomeTags.create(LostWorldsConstants.modLoc("biome_tag_" + name).toString());
         }
     }
 
@@ -41,11 +42,11 @@ public class ModTags {
         public static final TagKey<Item> CYPRESS_STRIPPED_LOGS = tag("cypress_stripped_logs");
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(new ResourceLocation(LostWorlds.MODID, name));
+            return ItemTags.create(LostWorldsConstants.modLoc(name));
         }
 
         private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(new ResourceLocation("forge", name));
+            return BlockTags.create(LostWorldsConstants.forgeLoc(name));
         }
     }
 
@@ -83,11 +84,11 @@ public class ModTags {
         public static final TagKey<Block> MOD_CARVER_REPLACEABLES = tag("mod_carver_replaceables");
 
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(new ResourceLocation(LostWorlds.MODID, name));
+            return BlockTags.create(LostWorldsConstants.modLoc(name));
         }
 
         private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(new ResourceLocation("forge", name));
+            return BlockTags.create(LostWorldsConstants.forgeLoc(name));
         }
     }
 

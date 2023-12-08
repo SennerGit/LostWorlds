@@ -10,13 +10,14 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.client.entity.animations.ModRhinoAnimationDefinitions;
 import net.sen.lostworlds.client.entity.animations.ModSirenAnimationDefinitions;
 import net.sen.lostworlds.entity.mob.SirenEntity;
 
 public class SirenModel<T extends SirenEntity> extends HierarchicalModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(LostWorlds.MODID, "siren_model"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(LostWorldsConstants.modLoc("siren_model"), "main");
 	private final ModelPart siren;
 	private final ModelPart head;
 

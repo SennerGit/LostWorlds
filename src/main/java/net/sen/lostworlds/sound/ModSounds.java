@@ -8,9 +8,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 
 public class ModSounds {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, LostWorlds.MODID);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, LostWorldsConstants.MODID);
 
     public static final RegistryObject<SoundEvent> MAGICAL_DOWSING_ROD_FOUND_ORE = registerSoundEvent("magical_dowsing_rod_found_ore");
     public static final RegistryObject<SoundEvent> CRIMSON_DIAMOND_LAMP_BREAK = registerSoundEvent("crimson_diamond_lamp_break");
@@ -26,7 +27,7 @@ public class ModSounds {
             ModSounds.CRIMSON_DIAMOND_LAMP_HIT, ModSounds.CRIMSON_DIAMOND_LAMP_FALL);
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
-        ResourceLocation id = new ResourceLocation(LostWorlds.MODID, name);
+        ResourceLocation id = LostWorldsConstants.modLoc(name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
     }
 

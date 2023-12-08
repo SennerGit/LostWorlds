@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.datagen.custom.AlloySmelterRecipeBuilder;
 import net.sen.lostworlds.item.ModItems;
@@ -498,14 +499,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     protected static void nineBlockStorageRecipesForMetals(Consumer<FinishedRecipe> pWriter, Item item, Block block) {
         nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, item, RecipeCategory.MISC, block,
-                LostWorlds.MODID + ":" + getItemName(item) + "_from_block", null,
-                LostWorlds.MODID + ":" + getItemName(block), null);
+                LostWorldsConstants.MODID + ":" + getItemName(item) + "_from_block", null,
+                LostWorldsConstants.MODID + ":" + getItemName(block), null);
     }
 
     protected static void nineBlockStorageRecipesForMetals(Consumer<FinishedRecipe> pWriter, Item item, Item outputItem) {
         nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, item, RecipeCategory.MISC, outputItem,
-                LostWorlds.MODID + ":" + getItemName(item), null,
-                LostWorlds.MODID + ":" + getItemName(outputItem) + "_from_nugget", null);
+                LostWorldsConstants.MODID + ":" + getItemName(item), null,
+                LostWorldsConstants.MODID + ":" + getItemName(outputItem) + "_from_nugget", null);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
@@ -532,7 +533,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         for(ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime,
                     pCookingSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
-                    .save(pFinishedRecipeConsumer, LostWorlds.MODID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
+                    .save(pFinishedRecipeConsumer, LostWorldsConstants.MODID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
 
     }
@@ -543,7 +544,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredient), RecipeCategory.FOOD, pResult, 0.25f, 200, RecipeSerializer.SMOKING_RECIPE)
                 .group(null)
                 .unlockedBy(getHasName(pIngredient), has(pIngredient))
-                .save(pWriter, LostWorlds.MODID + ":" + getItemName(pResult) + "_" + "cooked_from" + "_" + getItemName(pIngredient));
+                .save(pWriter, LostWorldsConstants.MODID + ":" + getItemName(pResult) + "_" + "cooked_from" + "_" + getItemName(pIngredient));
     }
 
     protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer,
@@ -552,6 +553,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredients), pCategory, pResult, pExperience, pCookingTime,
                     pCookingSerializer).group(pGroup).unlockedBy(getHasName(pIngredients), has(pIngredients))
-                    .save(pFinishedRecipeConsumer, LostWorlds.MODID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(pIngredients));
+                    .save(pFinishedRecipeConsumer, LostWorldsConstants.MODID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(pIngredients));
     }
 }

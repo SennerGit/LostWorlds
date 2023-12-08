@@ -23,6 +23,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingBigFish;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
 import net.sen.lostworlds.entity.variant.TangFishVariant;
@@ -36,15 +37,15 @@ public class TunaEntity extends AbstractSchoolingBigFish {
     private static final Map<TunaSizeVariant, ResourceLocation> SIZE_BY_VARIANT =
             Util.make(Maps.newEnumMap(TunaSizeVariant.class), map -> {
                 map.put(TunaSizeVariant.TINY,
-                        new ResourceLocation(LostWorlds.MODID, "entities/tuna"));
+                        LostWorldsConstants.modLoc("entities/tuna"));
                 map.put(TunaSizeVariant.SMALL,
-                        new ResourceLocation(LostWorlds.MODID, "entities/tuna_small"));
+                        LostWorldsConstants.modLoc("entities/tuna_small"));
                 map.put(TunaSizeVariant.MID,
-                        new ResourceLocation(LostWorlds.MODID, "entities/tuna_mid"));
+                        LostWorldsConstants.modLoc("entities/tuna_mid"));
                 map.put(TunaSizeVariant.LARGE,
-                        new ResourceLocation(LostWorlds.MODID, "entities/tuna_large"));
+                        LostWorldsConstants.modLoc("entities/tuna_large"));
                 map.put(TunaSizeVariant.GIANT,
-                        new ResourceLocation(LostWorlds.MODID, "entities/tuna_giant"));
+                        LostWorldsConstants.modLoc("entities/tuna_giant"));
             });
 
     private static final EntityDataAccessor<Integer> DATA_ID_TEXTURE_VARIANT =

@@ -10,13 +10,14 @@ import net.minecraftforge.client.model.generators.ModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 
 import java.util.function.BiConsumer;
 
 public class ModBlockModelProvider extends BlockModelProvider {
     public ModBlockModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, LostWorlds.MODID, existingFileHelper);
+        super(output, LostWorldsConstants.MODID, existingFileHelper);
     }
 
     @Override
@@ -31,7 +32,7 @@ public class ModBlockModelProvider extends BlockModelProvider {
 
     private ResourceLocation modResourceLocation(String block) {
         ResourceLocation resourceLocation;
-        resourceLocation = new ResourceLocation(LostWorlds.MODID, "block/" + block);
+        resourceLocation = new ResourceLocation(LostWorldsConstants.MODID, "block/" + block);
         return resourceLocation;
     }
 

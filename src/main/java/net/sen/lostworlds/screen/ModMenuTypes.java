@@ -9,12 +9,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.screen.alloysmelter.AlloySmelterMenu;
 import net.sen.lostworlds.screen.inventory.LostWorldsInventory;
 
 public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.MENU_TYPES, LostWorlds.MODID);
+            DeferredRegister.create(ForgeRegistries.MENU_TYPES, LostWorldsConstants.MODID);
 
     public static final RegistryObject<MenuType<AlloySmelterMenu>> ALLOY_SMELTER_MENU = registerMenuType("alloy_smelter_menu", AlloySmelterMenu::new);
 

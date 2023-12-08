@@ -8,6 +8,7 @@ import com.klikli_dev.modonomicon.api.datagen.book.BookEntryModel;
 import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel;
 import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.item.ModItems;
 
 public class BaseBookSection {
@@ -31,7 +32,7 @@ public class BaseBookSection {
 
         BookEntryModel introEntry = makeIntroEntry(context, entryMap, 'i');
 
-        return BookCategoryModel.create(modLoc(context.categoryId()), context.categoryName())
+        return BookCategoryModel.create(LostWorldsConstants.modLoc(context.categoryId()), context.categoryName())
                 .withIcon(ModItems.BASIC_PORTAL_CORE.getId().toString())
                 .withEntries(
                         introEntry
@@ -53,7 +54,7 @@ public class BaseBookSection {
 //                ""
 //        );
 
-        return BookEntryModel.create(modLoc(context.categoryId() + "/" + context.entryId()), context.entryName())
+        return BookEntryModel.create(LostWorldsConstants.modLoc(context.categoryId() + "/" + context.entryId()), context.entryName())
                 .withDescription(context.entryDescription())
                 .withIcon(ModItems.BASIC_PORTAL_CORE.getId().toString())
                 .withLocation(entryMap.get(icon))
@@ -61,9 +62,5 @@ public class BaseBookSection {
                 .withPages(
                         intro
                 );
-    }
-
-    protected static ResourceLocation modLoc(String name) {
-        return new ResourceLocation(LostWorlds.MODID, name);
     }
 }

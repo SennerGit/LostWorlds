@@ -18,6 +18,7 @@ import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 
 import java.util.List;
 import java.util.OptionalLong;
@@ -232,14 +233,14 @@ public class SkyopiaDimension {
     }
 
     private static ResourceKey<DensityFunction> vanillaKey(String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.mcLoc(name));
     }
 
     private static ResourceKey<NormalNoise.NoiseParameters> vanillaKeyNoise(String name) {
-        return ResourceKey.create(Registries.NOISE, new ResourceLocation(name));
+        return ResourceKey.create(Registries.NOISE, LostWorldsConstants.mcLoc(name));
     }
 
     private static ResourceKey<DensityFunction> createKey(final String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(LostWorlds.MODID, name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.modLoc(name));
     }
 }

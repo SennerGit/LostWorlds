@@ -10,10 +10,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS =
-            DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, LostWorlds.MODID);
+            DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, LostWorldsConstants.MODID);
 
     public static final RegistryObject<MobEffect> DROWSY_EFFECT = MOB_EFFECTS.register("drowsy_effect",
             () -> new DrowsyEffect(MobEffectCategory.NEUTRAL, 0x36ebeb).addAttributeModifier(Attributes.MOVEMENT_SPEED,

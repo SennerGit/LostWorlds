@@ -8,12 +8,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.item.ModItems;
 
 public class ModFluids {
     public static final DeferredRegister<Fluid> FLUIDS =
-            DeferredRegister.create(ForgeRegistries.FLUIDS, LostWorlds.MODID);
+            DeferredRegister.create(ForgeRegistries.FLUIDS, LostWorldsConstants.MODID);
 
     public static final RegistryObject<FlowingFluid> SOURCE_STYX_WATER = FLUIDS.register("styx_water_fluid",
             () -> new ForgeFlowingFluid.Source(ModFluids.STYX_WATER_FLUID_PROPERTIES));

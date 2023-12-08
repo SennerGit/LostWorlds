@@ -11,6 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.item.ModItems;
 
@@ -34,7 +35,7 @@ public class NidavellirBookSection {
 
         BookEntryModel introEntry = makeIntroEntry(context, entryMap, 'i');
 
-        return BookCategoryModel.create(modLoc(context.categoryId()), context.categoryName())
+        return BookCategoryModel.create(LostWorldsConstants.modLoc(context.categoryId()), context.categoryName())
                 .withIcon(ModBlocks.NIDAVELLIR_PORTAL_FRAME.getId().toString())
                 .withEntries(
                         introEntry
@@ -56,7 +57,7 @@ public class NidavellirBookSection {
 //                ""
 //        );
 
-        return BookEntryModel.create(modLoc(context.categoryId() + "/" + context.entryId()), context.entryName())
+        return BookEntryModel.create(LostWorldsConstants.modLoc(context.categoryId() + "/" + context.entryId()), context.entryName())
                 .withDescription(context.entryDescription())
                 .withIcon(ModBlocks.NIDAVELLIR_PORTAL_FRAME.getId().toString())
                 .withLocation(entryMap.get(icon))
@@ -66,7 +67,4 @@ public class NidavellirBookSection {
                 );
     }
 
-    protected static ResourceLocation modLoc(String name) {
-        return new ResourceLocation(LostWorlds.MODID, name);
-    }
 }

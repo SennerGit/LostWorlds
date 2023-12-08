@@ -13,13 +13,14 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.datagen.modonomicon.LostWorldsBookItem;
 import net.sen.lostworlds.item.ModItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, LostWorlds.MODID, existingFileHelper);
+        super(output, LostWorldsConstants.MODID, existingFileHelper);
     }
 
     @Override
@@ -232,57 +233,57 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()));
+                LostWorldsConstants.mcLoc("item/generated")).texture("layer0",
+                LostWorldsConstants.modLoc("item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> block) {
         return withExistingParent(block.getId().getPath(),
-                new ResourceLocation(LostWorlds.MODID, "block/" + block.getId().getPath()));
+                LostWorldsConstants.modLoc("block/" + block.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBookItem(RegistryObject<LostWorldsBookItem> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()));
+                LostWorldsConstants.mcLoc("item/generated")).texture("layer0",
+                LostWorldsConstants.modLoc("item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItemUi(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()));
+                LostWorldsConstants.mcLoc("item/generated")).texture("layer0",
+                LostWorldsConstants.modLoc("item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()));
+                LostWorldsConstants.mcLoc("item/handheld")).texture("layer0",
+                LostWorldsConstants.modLoc("item/" + item.getId().getPath()));
     }
 
     private void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
-                .texture("texture", new ResourceLocation(LostWorlds.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("texture", LostWorldsConstants.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     private void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture", new ResourceLocation(LostWorlds.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("texture", LostWorldsConstants.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     private void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall", new ResourceLocation(LostWorlds.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+                .texture("wall", LostWorldsConstants.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
     private ItemModelBuilder complexBlock(Block block) {
-        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(LostWorlds.MODID,
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(LostWorldsConstants.MODID,
                 "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(LostWorlds.MODID,"block/" + item.getId().getPath()));
+                LostWorldsConstants.mcLoc("item/generated")).texture("layer0",
+                new ResourceLocation(LostWorldsConstants.MODID,"block/" + item.getId().getPath()));
     }
 
     public void createArmourSet(RegistryObject<Item> helmet, RegistryObject<Item> chestplate, RegistryObject<Item> leggings, RegistryObject<Item> boots) {
@@ -313,42 +314,42 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder createTrim(RegistryObject<Item> item, String name, ResourceKey<TrimMaterial> trimMaterials, float indexId) {
         ItemModelBuilder base = this.simpleItem(item);
         ModelFile trimModel = this.withExistingParent(item.getId().getPath() + "_" + trimMaterials.location().getPath() + "_trim",
-                new ResourceLocation("item/generated"))
-                .texture("layer0", new ResourceLocation(LostWorlds.MODID,"item/" + item.getId().getPath()))
+                LostWorldsConstants.mcLoc("item/generated"))
+                .texture("layer0", new ResourceLocation(LostWorldsConstants.MODID,"item/" + item.getId().getPath()))
 //                .texture("layer1", this.mcLoc("trims/items/" + name + "_trim"));
 
                 //@Error Need to include trim but throws error because the trim file doesn't exist
-//                .texture("layer1", new ResourceLocation("minecraft", "trims/items/" + name + "_trim_" + trimMaterials.location().getPath()));
-                .texture("layer1", new ResourceLocation("minecraft", "trims/items/" + name + "_trim_" + trimMaterials.location().getPath()));
+//                .texture("layer1", LostWorldsConstants.mcLoc("minecraft", "trims/items/" + name + "_trim_" + trimMaterials.location().getPath()));
+                .texture("layer1", LostWorldsConstants.mcLoc("trims/items/" + name + "_trim_" + trimMaterials.location().getPath()));
 
-        return base.override().predicate(new ResourceLocation("trim_type"), indexId).model(trimModel).end();
+        return base.override().predicate(LostWorldsConstants.mcLoc("trim_type"), indexId).model(trimModel).end();
     }
 
     private ItemModelBuilder createArmor(RegistryObject<Item> item) {
-        ModelFile quartzLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_quartz_trim");
-        ModelFile ironLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_iron_trim");
-        ModelFile netheriteLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_netherite_trim");
-        ModelFile redstoneLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_redstone_trim");
-        ModelFile copperLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_copper_trim");
-        ModelFile goldLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_gold_trim");
-        ModelFile emeraldLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_emerald_trim");
-        ModelFile diamondLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_diamond_trim");
-        ModelFile lapisLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_lapis_trim");
-        ModelFile amethystLoc = generateArmorModel(LostWorlds.MODID + ":item/" + item.getId().getPath() + "_amethyst_trim");
+        ModelFile quartzLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_quartz_trim");
+        ModelFile ironLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_iron_trim");
+        ModelFile netheriteLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_netherite_trim");
+        ModelFile redstoneLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_redstone_trim");
+        ModelFile copperLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_copper_trim");
+        ModelFile goldLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_gold_trim");
+        ModelFile emeraldLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_emerald_trim");
+        ModelFile diamondLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_diamond_trim");
+        ModelFile lapisLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_lapis_trim");
+        ModelFile amethystLoc = generateArmorModel(LostWorldsConstants.MODID + ":item/" + item.getId().getPath() + "_amethyst_trim");
 
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated"))
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.1f).model(quartzLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.2f).model(ironLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.3f).model(netheriteLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.4f).model(redstoneLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.5f).model(copperLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.6f).model(goldLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.7f).model(emeraldLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.8f).model(diamondLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 0.9f).model(lapisLoc).end()
-                .override().predicate(new ResourceLocation(LostWorlds.MODID, "item/" + item.getId().getPath()), 1.0f).model(amethystLoc).end()
-                .texture("layer0", new ResourceLocation(LostWorlds.MODID,"item/" + item.getId().getPath()));
+                LostWorldsConstants.mcLoc("item/generated"))
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.1f).model(quartzLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.2f).model(ironLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.3f).model(netheriteLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.4f).model(redstoneLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.5f).model(copperLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.6f).model(goldLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.7f).model(emeraldLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.8f).model(diamondLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 0.9f).model(lapisLoc).end()
+                .override().predicate(LostWorldsConstants.modLoc("item/" + item.getId().getPath()), 1.0f).model(amethystLoc).end()
+                .texture("layer0", new ResourceLocation(LostWorldsConstants.MODID,"item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder generateArmorModel(String name, ResourceLocation... layers) {

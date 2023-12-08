@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.SharkModel;
 import net.sen.lostworlds.entity.mob.SharkEntity;
@@ -19,7 +20,7 @@ public class SharkRenderer extends MobRenderer<SharkEntity, SharkModel<SharkEnti
     private static final Map<SharkVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(SharkVariant.class), map -> {
                 map.put(SharkVariant.DEFAULT,
-                        new ResourceLocation(LostWorlds.MODID, "textures/entity/shark/shark.png"));
+                        LostWorldsConstants.modLoc("textures/entity/shark/shark.png"));
             });
 
     public SharkRenderer(EntityRendererProvider.Context pContext) {

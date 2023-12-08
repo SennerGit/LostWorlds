@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.GiantOctopusModel;
 import net.sen.lostworlds.entity.mob.GiantOctopusEntity;
@@ -19,9 +20,9 @@ public class GiantOctopusRenderer extends MobRenderer<GiantOctopusEntity, GiantO
     private static final Map<GiantOctopusVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(GiantOctopusVariant.class), map -> {
                 map.put(GiantOctopusVariant.DEFAULT,
-                        new ResourceLocation(LostWorlds.MODID, "textures/entity/giant_octopus/giant_octopus.png"));
+                        LostWorldsConstants.modLoc("textures/entity/giant_octopus/giant_octopus.png"));
                 map.put(GiantOctopusVariant.WHITE,
-                        new ResourceLocation(LostWorlds.MODID, "textures/entity/giant_octopus/white_giant_octopus.png"));
+                        LostWorldsConstants.modLoc("textures/entity/giant_octopus/white_giant_octopus.png"));
             });
 
     public GiantOctopusRenderer(EntityRendererProvider.Context pContext) {

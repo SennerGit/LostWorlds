@@ -9,6 +9,7 @@ import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.item.ModItems;
 
@@ -32,7 +33,7 @@ public class SkyopiaBookSection {
 
         BookEntryModel introEntry = makeIntroEntry(context, entryMap, 'i');
 
-        return BookCategoryModel.create(modLoc(context.categoryId()), context.categoryName())
+        return BookCategoryModel.create(LostWorldsConstants.modLoc(context.categoryId()), context.categoryName())
                 .withIcon(ModBlocks.SKYOPIA_PORTAL_FRAME.getId().toString())
                 .withEntries(
                         introEntry
@@ -54,7 +55,7 @@ public class SkyopiaBookSection {
 //                ""
 //        );
 
-        return BookEntryModel.create(modLoc(context.categoryId() + "/" + context.entryId()), context.entryName())
+        return BookEntryModel.create(LostWorldsConstants.modLoc(context.categoryId() + "/" + context.entryId()), context.entryName())
                 .withDescription(context.entryDescription())
                 .withIcon(ModBlocks.SKYOPIA_PORTAL_FRAME.getId().toString())
                 .withLocation(entryMap.get(icon))
@@ -62,9 +63,5 @@ public class SkyopiaBookSection {
                 .withPages(
                         intro
                 );
-    }
-
-    protected static ResourceLocation modLoc(String name) {
-        return new ResourceLocation(LostWorlds.MODID, name);
     }
 }

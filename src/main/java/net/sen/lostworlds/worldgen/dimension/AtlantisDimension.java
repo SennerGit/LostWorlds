@@ -21,6 +21,7 @@ import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
 import net.sen.lostworlds.worldgen.dimension.TerrainProvider.AtlantisTerrainProvider;
 
@@ -107,18 +108,18 @@ public class AtlantisDimension {
     private static final DensityFunction BLENDING_FACTOR = DensityFunctions.constant(10.0);
     private static final DensityFunction BLENDING_JAGGEDNESS = DensityFunctions.zero();
 
-    private static final ResourceKey<DensityFunction> BASE_3D_NOISE_OVERWORLD = vanillaKey("overworld/base_3d_noise");
-    private static final ResourceKey<DensityFunction> SPAGHETTI_ROUGHNESS_FUNCTION = vanillaKey("overworld/caves/spaghetti_roughness_function");
-    private static final ResourceKey<DensityFunction> ENTRANCES = vanillaKey("overworld/caves/entrances");
-    private static final ResourceKey<DensityFunction> NOODLE = vanillaKey("overworld/caves/noodle");
-    private static final ResourceKey<DensityFunction> PILLARS = vanillaKey("overworld/caves/pillars");
-    private static final ResourceKey<DensityFunction> SPAGHETTI_2D = vanillaKey("overworld/caves/spaghetti_2d");
+    private static final ResourceKey<DensityFunction> BASE_3D_NOISE_OVERWORLD = vanillaKey("base_3d_noise");
+    private static final ResourceKey<DensityFunction> SPAGHETTI_ROUGHNESS_FUNCTION = vanillaKey("caves/spaghetti_roughness_function");
+    private static final ResourceKey<DensityFunction> ENTRANCES = vanillaKey("caves/entrances");
+    private static final ResourceKey<DensityFunction> NOODLE = vanillaKey("caves/noodle");
+    private static final ResourceKey<DensityFunction> PILLARS = vanillaKey("caves/pillars");
+    private static final ResourceKey<DensityFunction> SPAGHETTI_2D = vanillaKey("caves/spaghetti_2d");
 
-    public static final ResourceKey<DensityFunction> OFFSET = createKey("atlantis/offset");
-    public static final ResourceKey<DensityFunction> FACTOR = createKey("atlantis/factor");
-    public static final ResourceKey<DensityFunction> DEPTH = createKey("atlantis/depth");
-    public static final ResourceKey<DensityFunction> JAGGEDNESS = createKey("atlantis/jaggedness");
-    public static final ResourceKey<DensityFunction> SLOPED_CHEESE = createKey("atlantis/sloped_cheese");
+    public static final ResourceKey<DensityFunction> OFFSET = createKey("offset");
+    public static final ResourceKey<DensityFunction> FACTOR = createKey("factor");
+    public static final ResourceKey<DensityFunction> DEPTH = createKey("depth");
+    public static final ResourceKey<DensityFunction> JAGGEDNESS = createKey("jaggedness");
+    public static final ResourceKey<DensityFunction> SLOPED_CHEESE = createKey("sloped_cheese");
 
     public static void atlantisDensityFunction(BootstapContext<DensityFunction> context) {
         final HolderGetter<DensityFunction> densityFunctions = context.lookup(Registries.DENSITY_FUNCTION);
@@ -299,11 +300,11 @@ public class AtlantisDimension {
     }
 
     private static ResourceKey<DensityFunction> vanillaKey(String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.mcLoc("overworld/" + name));
     }
 
     private static ResourceKey<DensityFunction> createKey(final String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation(LostWorlds.MODID, name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.modLoc("atlantis/" + name));
     }
 
 //    public static NoiseGeneratorSettings atlantisDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {

@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.AtlantianModel;
 import net.sen.lostworlds.entity.mob.AtlantianEntity;
@@ -19,9 +20,9 @@ public class AtlantianRenderer extends MobRenderer<AtlantianEntity, AtlantianMod
     private static final Map<AtlantianVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(AtlantianVariant.class), map -> {
                 map.put(AtlantianVariant.DEFAULT,
-                        new ResourceLocation(LostWorlds.MODID, "textures/entity/atlantian/atlantian.png"));
+                        LostWorldsConstants.modLoc("textures/entity/atlantian/atlantian.png"));
                 map.put(AtlantianVariant.WHITE,
-                        new ResourceLocation(LostWorlds.MODID, "textures/entity/atlantian/white_atlantian.png"));
+                        LostWorldsConstants.modLoc("textures/entity/atlantian/white_atlantian.png"));
             });
 
     public AtlantianRenderer(EntityRendererProvider.Context pContext) {

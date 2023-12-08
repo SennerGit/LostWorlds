@@ -6,10 +6,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 
 public class ModPaintings {
     public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS =
-            DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, LostWorlds.MODID);
+            DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, LostWorldsConstants.MODID);
 
     public static final RegistryObject<PaintingVariant> SAW_THEM = PAINTING_VARIANTS.register("saw_them",
             () -> new PaintingVariant(16, 16));

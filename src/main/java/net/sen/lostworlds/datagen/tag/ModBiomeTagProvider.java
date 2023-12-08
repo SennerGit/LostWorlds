@@ -8,6 +8,7 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
 import org.jetbrains.annotations.Nullable;
@@ -16,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModBiomeTagProvider extends BiomeTagsProvider {
     public ModBiomeTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> future, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, future, LostWorlds.MODID, existingFileHelper);
+        super(output, future, LostWorldsConstants.MODID, existingFileHelper);
     }
 
     @Override

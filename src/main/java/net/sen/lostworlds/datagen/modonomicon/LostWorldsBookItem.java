@@ -19,13 +19,14 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class LostWorldsBookItem extends ModonomiconItem {
-    public static final ResourceLocation LOST_WORLDS_BOOK = new ResourceLocation(LostWorlds.MODID, "lost_worlds_book");
+    public static final ResourceLocation LOST_WORLDS_BOOK = LostWorldsConstants.modLoc("lost_worlds_book");
     public LostWorldsBookItem(Properties pProperties) {
         super(pProperties);
     }

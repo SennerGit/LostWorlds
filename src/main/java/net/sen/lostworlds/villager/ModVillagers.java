@@ -12,16 +12,17 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 
 import java.util.function.Supplier;
 
 public class ModVillagers {
     public static final DeferredRegister<PoiType> POI_TYPES =
-            DeferredRegister.create(ForgeRegistries.POI_TYPES, LostWorlds.MODID);
+            DeferredRegister.create(ForgeRegistries.POI_TYPES, LostWorldsConstants.MODID);
 
     public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS =
-            DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, LostWorlds.MODID);
+            DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, LostWorldsConstants.MODID);
 
     public static final RegistryObject<PoiType> ALLOY_POI = POI_TYPES.register("alloy_poi",
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.ALLOY_SMELTER.get().getStateDefinition().getPossibleStates()),

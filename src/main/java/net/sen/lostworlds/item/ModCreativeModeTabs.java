@@ -9,10 +9,11 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 
 public class ModCreativeModeTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LostWorlds.MODID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LostWorldsConstants.MODID);
 
     public static final RegistryObject<CreativeModeTab> LOST_WORLDS_TAB = CREATIVE_MODE_TABS.register("lost_worlds_tab", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ModItems.BASIC_PORTAL_CORE.get()))

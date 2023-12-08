@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-04T07:10:44.2580742	Loot Tables
+// 1.20.1	2023-12-06T16:56:42.4637903	Loot Tables
 76fc0563528526d8df71ce9744072616106e6675 data/lostworlds/loot_tables/blocks/adamant_block.json
 d1aaa141846a0dc9a007586ec7443c812379aceb data/lostworlds/loot_tables/blocks/adamant_ore.json
 c6f6739e7f2d844cf7b54e9d6510b12c86fd3409 data/lostworlds/loot_tables/blocks/alfheimr_portal_frame.json
@@ -169,3 +169,4 @@ fbe3e39965cee10ee3c41e9badf155ab5784e8a1 data/lostworlds/loot_tables/entities/rh
 0b3478d2a131163b72b5ed166db0ab60387d3fa8 data/lostworlds/loot_tables/entities/tuna_large.json
 0eac67cd55433b7a9c245209dedc6d1bd3d94378 data/lostworlds/loot_tables/entities/tuna_mid.json
 bb7f265dfcf216dc5aa3201b1a0404e07b3480d0 data/lostworlds/loot_tables/entities/tuna_small.json
+cd0a6e9eefa897c9ff93c472cd641749922716ba data/minecraft/loot_tables/gameplay/fishing/fish.json
