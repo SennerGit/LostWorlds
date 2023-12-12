@@ -270,7 +270,7 @@ public class ModItems {
     public static final RegistryObject<Item> BASIC_PORTAL_ACTIVATOR = ITEMS.register("basic_portal_activator", () -> new PortalActivatorItem(0));
 
     //Portal Core
-    public static final RegistryObject<Item> BASIC_PORTAL_CORE = ITEMS.register("basic_portal_core", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BASIC_PORTAL_CORE = ITEMS.register("basic_portal_core", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static RegistryObject<Item> registerHorseArmour(String name, int pProtection, int pMaxDamage) {
         return ITEMS.register(name + "_horse_armor", () -> new HorseArmorItem(

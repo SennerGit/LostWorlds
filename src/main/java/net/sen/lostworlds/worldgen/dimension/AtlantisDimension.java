@@ -5,11 +5,8 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.NoiseData;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.block.Blocks;
@@ -18,19 +15,33 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
-import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
-import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
 import net.sen.lostworlds.worldgen.dimension.TerrainProvider.AtlantisTerrainProvider;
+import net.sen.lostworlds.worldgen.dimension.surfacerules.AtlantisSurfaceRules;
 
 import java.util.List;
 import java.util.OptionalLong;
-import java.util.function.UnaryOperator;
 
 public class AtlantisDimension {
     public static final int SEA_LEVEL = 384;
+
+    private static final DensityFunction BLENDING_FACTOR = DensityFunctions.constant(10.0);
+    private static final DensityFunction BLENDING_JAGGEDNESS = DensityFunctions.zero();
+
+    private static final ResourceKey<DensityFunction> BASE_3D_NOISE_OVERWORLD = vanillaKey("base_3d_noise");
+    private static final ResourceKey<DensityFunction> SPAGHETTI_ROUGHNESS_FUNCTION = vanillaKey("caves/spaghetti_roughness_function");
+    private static final ResourceKey<DensityFunction> ENTRANCES = vanillaKey("caves/entrances");
+    private static final ResourceKey<DensityFunction> NOODLE = vanillaKey("caves/noodle");
+    private static final ResourceKey<DensityFunction> PILLARS = vanillaKey("caves/pillars");
+    private static final ResourceKey<DensityFunction> SPAGHETTI_2D = vanillaKey("caves/spaghetti_2d");
+
+    public static final ResourceKey<DensityFunction> OFFSET = createKey("offset");
+    public static final ResourceKey<DensityFunction> FACTOR = createKey("factor");
+    public static final ResourceKey<DensityFunction> DEPTH = createKey("depth");
+    public static final ResourceKey<DensityFunction> JAGGEDNESS = createKey("jaggedness");
+    public static final ResourceKey<DensityFunction> SLOPED_CHEESE = createKey("sloped_cheese");
 
     public static void atlantisDimensionType(BootstapContext<DimensionType> context) {
         context.register(ModDimensions.ATLANTIS_DIM_TYPE, new DimensionType(
@@ -56,10 +67,6 @@ public class AtlantisDimension {
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
 
-        NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
-                new FixedBiomeSource(biomeRegistry.getOrThrow(AtlantisBiomes.ATLANTIS_OCEAN)),
-                noiseGenSettings.getOrThrow(ModDimensions.ATLANTIS_NOISE_KEY));
-
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
@@ -76,24 +83,12 @@ public class AtlantisDimension {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NoiseParameters> noises = context.lookup(Registries.NOISE);
 
-        NoiseGeneratorSettings noiseGeneratorSettings = new NoiseGeneratorSettings(NoiseSettings.create(
+        return new NoiseGeneratorSettings(NoiseSettings.create(
                 -64, 384, 1, 2),
                 Blocks.STONE.defaultBlockState(),
                 Blocks.WATER.defaultBlockState(),
                 atlantisNoiseRouter(functions, noises),
-                SurfaceRules.sequence(
-                        //bedrock floor
-                        SurfaceRules.ifTrue(SurfaceRules.verticalGradient("minecraft:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())),
-                        //filler depthrock
-//                        SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0), SurfaceRules.state(Blocks.STONE.defaultBlockState())),
-                        //sediment
-//                        SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(33), 0)), SurfaceRules.state(Blocks.STONE.defaultBlockState()))),
-                        //frozen deepturf
-                        SurfaceRules.ifTrue(SurfaceRules.isBiome(AtlantisBiomes.ATLANTIS_OCEAN), SurfaceRules.ifTrue(
-                                SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
-                                SurfaceRules.state(Blocks.STONE.defaultBlockState()))
-                        )
-                ),
+                AtlantisSurfaceRules.atlantisSurfaceRules(),
                 List.of(), //spawn targets
                 SEA_LEVEL,
                 false,
@@ -101,25 +96,7 @@ public class AtlantisDimension {
                 true,
                 false
         );
-
-        return noiseGeneratorSettings;
     }
-
-    private static final DensityFunction BLENDING_FACTOR = DensityFunctions.constant(10.0);
-    private static final DensityFunction BLENDING_JAGGEDNESS = DensityFunctions.zero();
-
-    private static final ResourceKey<DensityFunction> BASE_3D_NOISE_OVERWORLD = vanillaKey("base_3d_noise");
-    private static final ResourceKey<DensityFunction> SPAGHETTI_ROUGHNESS_FUNCTION = vanillaKey("caves/spaghetti_roughness_function");
-    private static final ResourceKey<DensityFunction> ENTRANCES = vanillaKey("caves/entrances");
-    private static final ResourceKey<DensityFunction> NOODLE = vanillaKey("caves/noodle");
-    private static final ResourceKey<DensityFunction> PILLARS = vanillaKey("caves/pillars");
-    private static final ResourceKey<DensityFunction> SPAGHETTI_2D = vanillaKey("caves/spaghetti_2d");
-
-    public static final ResourceKey<DensityFunction> OFFSET = createKey("offset");
-    public static final ResourceKey<DensityFunction> FACTOR = createKey("factor");
-    public static final ResourceKey<DensityFunction> DEPTH = createKey("depth");
-    public static final ResourceKey<DensityFunction> JAGGEDNESS = createKey("jaggedness");
-    public static final ResourceKey<DensityFunction> SLOPED_CHEESE = createKey("sloped_cheese");
 
     public static void atlantisDensityFunction(BootstapContext<DensityFunction> context) {
         final HolderGetter<DensityFunction> densityFunctions = context.lookup(Registries.DENSITY_FUNCTION);
@@ -221,7 +198,7 @@ public class AtlantisDimension {
                 ); //vein ridged
         DensityFunction veinGap = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_GAP), 1, 1); //vein gap
 
-        NoiseRouter newNoiseRouter = new NoiseRouter(
+        return new NoiseRouter(
                 aquiferBarrier,
                 aquiferFluidLevelFloodedness,
                 aquiferFluidLevelSpread,
@@ -238,8 +215,6 @@ public class AtlantisDimension {
                 veinRidged,
                 veinGap
         );
-
-        return newNoiseRouter;
     }
 
     private static DensityFunction underground(HolderGetter<DensityFunction> densityFunctions, HolderGetter<NoiseParameters> noiseParameters, DensityFunction slopedCheese) {

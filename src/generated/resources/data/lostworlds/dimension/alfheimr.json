@@ -151,6 +151,6 @@
         }
       ]
     },
-    "settings": "minecraft:amplified"
+    "settings": "lostworlds:alfheimr_noise_key"
   }
 }

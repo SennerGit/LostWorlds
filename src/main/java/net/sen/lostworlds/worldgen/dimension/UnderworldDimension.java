@@ -7,7 +7,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.FixedBiomeSource;
@@ -17,18 +17,16 @@ import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
-import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.sen.lostworlds.LostWorldsConstants;
-import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
 import net.sen.lostworlds.worldgen.biome.UnderworldBiomes;
-import net.sen.lostworlds.worldgen.dimension.TerrainProvider.AtlantisTerrainProvider;
+import net.sen.lostworlds.worldgen.dimension.TerrainProvider.UnderworldTerrainProvider;
+import net.sen.lostworlds.worldgen.dimension.surfacerules.UnderworldSurfaceRules;
 
 import java.util.List;
 import java.util.OptionalLong;
 
 public class UnderworldDimension {
-
     private static final DensityFunction BLENDING_FACTOR = DensityFunctions.constant(10.0);
     private static final DensityFunction BLENDING_JAGGEDNESS = DensityFunctions.zero();
 
@@ -66,6 +64,40 @@ public class UnderworldDimension {
 //        context.register(ModDimensions.UNDERWORLD_KEY, stem);
 //    }
 
+
+
+    public static void underworldDimension(BootstapContext<LevelStem> context) {
+        HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
+        HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
+        HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
+
+        NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
+                new FixedBiomeSource(biomeRegistry.getOrThrow(UnderworldBiomes.DOMINION_OF_HADES)),
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+
+        NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
+                MultiNoiseBiomeSource.createFromList(
+                        new Climate.ParameterList<>(
+                                List.of(
+                                        Pair.of(Climate.parameters(0.0F, 0.0F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.ASPHODEL_MEADOWS)),
+                                        Pair.of(Climate.parameters(0.1F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.DOMINION_OF_HADES)),
+                                        Pair.of(Climate.parameters(0.2F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.ELYSIAN_FIELDS)),
+                                        Pair.of(Climate.parameters(0.3F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.ISLES_OF_THE_BLESSED)),
+                                        Pair.of(Climate.parameters(0.4F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.LANDS_OF_DREAMS)),
+                                        Pair.of(Climate.parameters(0.5F, 0.2F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.RIVER_STYX)),
+                                        Pair.of(Climate.parameters(0.6F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.STYGAN_MARSH)),
+                                        Pair.of(Climate.parameters(0.7F, 0.4F, 0.0F, 0.6F, 0.5F, 0.4F, 0.2F), biomeRegistry.getOrThrow(UnderworldBiomes.TARTARUS))
+                                )
+                        )
+                ),
+                noiseGenSettings.getOrThrow(ModDimensions.UNDERWORLD_NOISE_KEY));
+//                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+
+        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.UNDERWORLD_DIM_TYPE), noiseBasedChunkGenerator);
+
+        context.register(ModDimensions.UNDERWORLD_KEY, stem);
+    }
+
     public static void underworldDensityFunction(BootstapContext<DensityFunction> context) {
         final HolderGetter<DensityFunction> densityFunctions = context.lookup(Registries.DENSITY_FUNCTION);
 
@@ -76,14 +108,14 @@ public class UnderworldDimension {
 
         final Holder.Reference<DensityFunction> offset = context.register(OFFSET, splineWithBlending(DensityFunctions.add(
                 DensityFunctions.constant(-0.50375F),
-                DensityFunctions.spline(AtlantisTerrainProvider.offset(
+                DensityFunctions.spline(UnderworldTerrainProvider.offset(
                         continents,
                         erosion,
                         ridges
                 ))
         ), DensityFunctions.blendOffset()));
 
-        final Holder.Reference<DensityFunction> factor = context.register(FACTOR, splineWithBlending(DensityFunctions.spline(AtlantisTerrainProvider.factor(
+        final Holder.Reference<DensityFunction> factor = context.register(FACTOR, splineWithBlending(DensityFunctions.spline(UnderworldTerrainProvider.factor(
                 continents,
                 erosion,
                 weirdness,
@@ -97,7 +129,7 @@ public class UnderworldDimension {
                 -1.5
         ), wrap(offset)));
 
-        final Holder.Reference<DensityFunction> jaggedness = context.register(JAGGEDNESS, splineWithBlending(DensityFunctions.spline(AtlantisTerrainProvider.jaggedness(
+        final Holder.Reference<DensityFunction> jaggedness = context.register(JAGGEDNESS, splineWithBlending(DensityFunctions.spline(UnderworldTerrainProvider.jaggedness(
                 continents,
                 erosion,
                 weirdness,
@@ -114,45 +146,38 @@ public class UnderworldDimension {
 
     public static void underworldDimensionType(BootstapContext<DimensionType> context) {
         context.register(ModDimensions.UNDERWORLD_DIM_TYPE, new DimensionType(
-                OptionalLong.of(18000), // fixedTime
-                false, // hasSkylight
-                true, // hasCeiling
+                OptionalLong.of(12000), // fixedTime
+                true, // hasSkylight
+                false, // hasCeiling
                 false, // ultraWarm
-                false, // natural
+                true, // natural
                 0.8, // coordinateScale
                 true, // bedWorks
-                true, // respawnAnchorWorks
+                false, // respawnAnchorWorks
                 -64, // minY
-                256, // height
-                128, // logicalHeight
+                384, // height
+                384, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
-                0.1f, // ambientLight
-                new DimensionType.MonsterSettings(false, false, ConstantInt.of(7), 15)));
+                0.0f, // ambientLight
+                new DimensionType.MonsterSettings(false, false, UniformInt.of(0, 7), 0)));
     }
 
-    public static NoiseGeneratorSettings underworldNoise(BootstapContext<?> context) {
+    public static NoiseGeneratorSettings underworldDimensionNoise(BootstapContext<?> context) {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
 
-        NoiseGeneratorSettings noiseGeneratorSettings = new NoiseGeneratorSettings(NoiseSettings.create(
-                -64, 384, 1, 2),
+        NoiseGeneratorSettings noiseGeneratorSettings = new NoiseGeneratorSettings(
+                NoiseSettings.create(
+                    -64,
+                    384,
+                    1,
+                    2
+                ),
                 Blocks.STONE.defaultBlockState(),
                 Blocks.WATER.defaultBlockState(),
                 underworldNoiseRouter(functions, noises),
-                SurfaceRules.sequence(
-                        //bedrock floor
-                        SurfaceRules.ifTrue(SurfaceRules.verticalGradient("minecraft:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())),
-                        //filler depthrock
-//                        SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0), SurfaceRules.state(Blocks.STONE.defaultBlockState())),
-                        //sediment
-//                        SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(33), 0)), SurfaceRules.state(Blocks.STONE.defaultBlockState()))),
-                        //frozen deepturf
-                        SurfaceRules.ifTrue(SurfaceRules.isBiome(UnderworldBiomes.ASPHODEL_MEADOWS), SurfaceRules.ifTrue(
-                                SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
-                                SurfaceRules.state(Blocks.STONE.defaultBlockState()))
-                        )
-                ),
+                UnderworldSurfaceRules.underworldSurfaceRules(),
                 List.of(), //spawn targets
                 128,
                 false,
@@ -224,7 +249,7 @@ public class UnderworldDimension {
                 ); //vein ridged
         DensityFunction veinGap = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_GAP), 1, 1); //vein gap
 
-        NoiseRouter newNoiseRouter = new NoiseRouter(
+        return new NoiseRouter(
                 aquiferBarrier,
                 aquiferFluidLevelFloodedness,
                 aquiferFluidLevelSpread,
@@ -241,42 +266,9 @@ public class UnderworldDimension {
                 veinRidged,
                 veinGap
         );
-
-        return newNoiseRouter;
     }
 
-    public static void underworldDimension(BootstapContext<LevelStem> context) {
-        HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
-        HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
-        HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
-
-        NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
-                new FixedBiomeSource(biomeRegistry.getOrThrow(UnderworldBiomes.DOMINION_OF_HADES)),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
-
-        NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
-                MultiNoiseBiomeSource.createFromList(
-                        new Climate.ParameterList<>(
-                                List.of(
-                                    Pair.of(Climate.parameters(0.0F, 0.0F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.ASPHODEL_MEADOWS)),
-                                    Pair.of(Climate.parameters(0.1F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.DOMINION_OF_HADES)),
-                                    Pair.of(Climate.parameters(0.2F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.ELYSIAN_FIELDS)),
-                                    Pair.of(Climate.parameters(0.3F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.ISLES_OF_THE_BLESSED)),
-                                    Pair.of(Climate.parameters(0.4F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.LANDS_OF_DREAMS)),
-                                    Pair.of(Climate.parameters(0.5F, 0.2F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.RIVER_STYX)),
-                                    Pair.of(Climate.parameters(0.6F, 0.2F, 0.4F, 0.2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(UnderworldBiomes.STYGAN_MARSH)),
-                                    Pair.of(Climate.parameters(0.7F, 0.4F, 0.0F, 0.6F, 0.5F, 0.4F, 0.2F), biomeRegistry.getOrThrow(UnderworldBiomes.TARTARUS))
-                                )
-                        )
-                ),
-                noiseGenSettings.getOrThrow(ModDimensions.UNDERWORLD_NOISE_KEY));
-//                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
-
-        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.UNDERWORLD_DIM_TYPE), noiseBasedChunkGenerator);
-
-        context.register(ModDimensions.UNDERWORLD_KEY, stem);
-    }
-
+    //Basic Generators
     protected static NoiseRouter nether(HolderGetter<DensityFunction> pDensityFunctions, HolderGetter<NormalNoise.NoiseParameters> pNoiseParameters) {
         return noNewCaves(pDensityFunctions, pNoiseParameters, slideNetherLike(pDensityFunctions, 0, 128));
     }
@@ -347,10 +339,6 @@ public class UnderworldDimension {
 
     private static final ResourceKey<DensityFunction> BASE_3D_NOISE_NETHER = createKey("nether/base_3d_noise");
 
-    private static ResourceKey<DensityFunction> createKey(String pLocation) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.modLoc("underworld/" + pLocation));
-    }
-
     private static DensityFunction getFunction(HolderGetter<DensityFunction> pDensityFunctions, ResourceKey<DensityFunction> pKey) {
         return new DensityFunctions.HolderHolder(pDensityFunctions.getOrThrow(pKey));
     }
@@ -360,6 +348,10 @@ public class UnderworldDimension {
         DensityFunction $$9 = DensityFunctions.lerp(densityfunction1, p_224449_, pDensityFunction);
         DensityFunction densityfunction2 = DensityFunctions.yClampedGradient(pMinY + p_224450_, pMinY + p_224451_, 0.0D, 1.0D);
         return DensityFunctions.lerp(densityfunction2, p_224452_, $$9);
+    }
+
+    private static ResourceKey<DensityFunction> createKey(String pLocation) {
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.modLoc("underworld/" + pLocation));
     }
 
     private static ResourceKey<DensityFunction> vanillaKey(String name) {

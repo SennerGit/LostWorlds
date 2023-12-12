@@ -71,9 +71,9 @@ public class ModDimensions {
 
 
     public static void bootstrapNoise(BootstapContext<NoiseGeneratorSettings> context) {
-        context.register(UNDERWORLD_NOISE_KEY, UnderworldDimension.underworldNoise(context));
+        context.register(UNDERWORLD_NOISE_KEY, UnderworldDimension.underworldDimensionNoise(context));
         context.register(NIDAVELLIR_NOISE_KEY, NidavellirDimension.nidavellirDimensionNoise(context));
-//        context.register(ALFHEIMR_NOISE_KEY, AlfheimrDimension.alfheimrDimensionNoise(context));
+        context.register(ALFHEIMR_NOISE_KEY, AlfheimrDimension.alfheimrDimensionNoise(context));
         context.register(ATLANTIS_NOISE_KEY, AtlantisDimension.atlantisDimensionNoise(context));
 //        context.register(SKYOPIA_NOISE_KEY, SkyopiaDimension.skyopiaDimensionNoise(context));
     }
@@ -89,5 +89,6 @@ public class ModDimensions {
    public static void bootstrapDensityFunctions(BootstapContext<DensityFunction> context) {
        UnderworldDimension.underworldDensityFunction(context);
        AtlantisDimension.atlantisDensityFunction(context);
+       AlfheimrDimension.alfheimrDensityFunction(context);
     }
 }

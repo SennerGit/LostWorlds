@@ -5,19 +5,15 @@ import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Musics;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.sound.ModSounds;
-import net.sen.lostworlds.worldgen.ModPlacedFeatures;
+import net.sen.lostworlds.worldgen.placement.*;
 
 public class AtlantisBiomes {
     /*
@@ -34,29 +30,14 @@ public class AtlantisBiomes {
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-//        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.RHINO.get(), 2, 3, 5));
-//
-//        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 8, 8));
-        
-//        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
-//        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
         globalOverworldGeneration(biomeBuilder);
         addAtlantisOceanWaterCreatures(spawnBuilder);
 
-//        BiomeDefaultFeatures.addMossyStoneBlock(biomeBuilder);
-//        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
-//        BiomeDefaultFeatures.addFerns(biomeBuilder);
-//        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-//        BiomeDefaultFeatures.addExtraGold(biomeBuilder);
-//
-//        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
-//        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
-//        biomeBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModPlacedFeatures.ALEXANDRITE_GEODE_PLACED_KEY);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.OVERWORLD_IRIS_PLACED_KEY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.FLOWER_IRIS_PLACED_KEY);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.WARM_OCEAN_VEGETATION);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEA_PICKLE);
-//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.ELDER_WOOD_KEY);
 
 
         return new Biome.BiomeBuilder()

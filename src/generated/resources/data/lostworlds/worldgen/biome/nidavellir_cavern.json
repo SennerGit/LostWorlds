@@ -71,10 +71,10 @@
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
       "minecraft:ore_gold_extra",
-      "lostworlds:overworld_tin_ore_placed_key"
+      "lostworlds:alfheimr_tin_ore_key"
     ],
     [
-      "lostworlds:overworld_tin_ore_placed_key"
+      "lostworlds:alfheimr_tin_ore_key"
     ],
     [
       "minecraft:spring_water",
@@ -89,7 +89,7 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "lostworlds:overworld_iris_placed_key"
+      "lostworlds:flower_iris_placed_key"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -19,7 +19,6 @@ public class PortalActivatorItem extends Item {
     public PortalActivatorItem(int level) {
         super(new Properties()
                 .stacksTo(1)
-                .rarity(Rarity.RARE)
                 .durability(16)
         );
 

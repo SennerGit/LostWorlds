@@ -1,16 +1,12 @@
 {
   "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
+    "air": "lostworlds:underworld_carver"
   },
-  "downfall": 0.8,
+  "downfall": 0.5,
   "effects": {
-    "fog_color": 11645361,
-    "foliage_color": 3134511,
-    "grass_color": 851712,
+    "fog_color": 2949161,
+    "foliage_color": 4128823,
+    "grass_color": 3211301,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -23,69 +19,46 @@
       "replace_current_music": false,
       "sound": "lostworlds:bar_brawl"
     },
-    "sky_color": 8224457,
-    "water_color": 6613195,
-    "water_fog_color": 2930854
+    "sky_color": 2359579,
+    "water_color": 6832487,
+    "water_fog_color": 4140605
   },
   "features": [
     [],
+    [],
+    [],
+    [],
+    [],
+    [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
-    ],
-    [
-      "minecraft:amethyst_geode",
-      "minecraft:forest_rock"
-    ],
-    [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "lostworlds:alfheimr_coal_ore_key",
+      "lostworlds:alfheimr_iron_ore_key",
+      "lostworlds:alfheimr_gold_ore_key",
+      "lostworlds:alfheimr_redstone_ore_key",
+      "lostworlds:alfheimr_diamond_ore_key",
+      "lostworlds:alfheimr_lapis_ore_key",
+      "lostworlds:alfheimr_copper_ore_key",
+      "lostworlds:alfheimr_small_andesite_key",
+      "lostworlds:alfheimr_small_diorite_key",
+      "lostworlds:alfheimr_small_granite_key"
     ],
     [],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
-      "minecraft:ore_coal_upper",
-      "minecraft:ore_coal_lower",
-      "minecraft:ore_iron_upper",
-      "minecraft:ore_iron_middle",
-      "minecraft:ore_iron_small",
-      "minecraft:ore_gold",
-      "minecraft:ore_gold_lower",
-      "minecraft:ore_redstone",
-      "minecraft:ore_redstone_lower",
-      "minecraft:ore_diamond",
-      "minecraft:ore_diamond_large",
-      "minecraft:ore_diamond_buried",
-      "minecraft:ore_lapis",
-      "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:ore_gold_extra"
-    ],
-    [],
-    [
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
-    ],
-    [
-      "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "minecraft:patch_large_fern",
-      "minecraft:trees_plains",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
+      "minecraft:patch_grass_forest",
+      "minecraft:patch_tall_grass",
+      "minecraft:patch_grass_badlands",
+      "minecraft:patch_grass_savanna",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "lostworlds:overworld_iris_placed_key"
+      "lostworlds:elder_wood_placed",
+      "lostworlds:olive_placed",
+      "lostworlds:myrrh_placed",
+      "lostworlds:laurel_placed",
+      "lostworlds:cypress_placed",
+      "lostworlds:flower_iris_placed_key"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -94,114 +67,21 @@
   "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "maxCount": 8,
-        "minCount": 8,
-        "weight": 10
-      }
-    ],
+    "ambient": [],
     "axolotls": [],
     "creature": [
       {
         "type": "lostworlds:rhino",
-        "maxCount": 5,
-        "minCount": 3,
-        "weight": 2
-      },
-      {
-        "type": "minecraft:wolf",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:sheep",
         "maxCount": 4,
         "minCount": 4,
         "weight": 12
-      },
-      {
-        "type": "minecraft:pig",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
       }
     ],
     "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:spider",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:zombie",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 95
-      },
-      {
-        "type": "minecraft:zombie_villager",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:skeleton",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:creeper",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:slime",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:enderman",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:witch",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      }
-    ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "maxCount": 6,
-        "minCount": 4,
-        "weight": 10
-      }
-    ],
+    "monster": [],
+    "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.7
+  "temperature": 0.5
 }
