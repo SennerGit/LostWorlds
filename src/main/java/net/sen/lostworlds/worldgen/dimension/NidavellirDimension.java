@@ -16,6 +16,7 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.BlendedNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
+import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.worldgen.biome.NidavellirBiomes;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.NidavellirSurfaceRules;
 
@@ -33,7 +34,7 @@ public class NidavellirDimension {
                 1.0, // coordinateScale
                 true, // bedWorks
                 false, // respawnAnchorWorks
-                0, // minY
+                -128, // minY
                 256, // height
                 256, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
@@ -63,9 +64,14 @@ public class NidavellirDimension {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
 
-        return new NoiseGeneratorSettings(NoiseSettings.create(
-                0, 128, 1, 2),
-                Blocks.STONE.defaultBlockState(),
+        return new NoiseGeneratorSettings(
+                NoiseSettings.create(
+                    -128,
+                    256,
+                    1,
+                    2
+                ),
+                ModBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState(),
                 Blocks.WATER.defaultBlockState(),
                 nidavellirDimensionNoiseRouter(functions, noises),
                 NidavellirSurfaceRules.nidavellirSurfaceRules(),

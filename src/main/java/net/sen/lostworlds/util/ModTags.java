@@ -83,12 +83,18 @@ public class ModTags {
 
         public static final TagKey<Block> MOD_CARVER_REPLACEABLES = tag("mod_carver_replaceables");
 
+        public static final TagKey<Block> NEEDS_NETHERITE_TOOL = tag("needs_netherite_tool");
+
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(LostWorldsConstants.modLoc(name));
         }
 
         private static TagKey<Block> forgeTag(String name) {
             return BlockTags.create(LostWorldsConstants.forgeLoc(name));
+        }
+
+        private static TagKey<Block> mcTag(String name) {
+            return BlockTags.create(LostWorldsConstants.mcLoc(name));
         }
     }
 

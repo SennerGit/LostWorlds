@@ -71,17 +71,232 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         nineBlockStorageRecipesForMetals(pWriter, ModItems.CRIMSON_DIAMOND.get(), ModBlocks.CRIMSON_DIAMOND_BLOCK.get());
 
-        createStoneGeoRecipes(pWriter, "crimson", ModBlocks.CRIMSON_STONE.get(), ModBlocks.CRIMSON_STONE_STAIRS.get(), ModBlocks.CRIMSON_STONE_SLAB.get(), ModBlocks.CRIMSON_COBBLESTONE.get(), ModBlocks.CRIMSON_COBBLESTONE_STAIRS.get(), ModBlocks.CRIMSON_COBBLESTONE_SLAB.get(), ModBlocks.CRIMSON_STONE_BRICKS.get(), ModBlocks.CRIMSON_STONE_BRICK_STAIRS.get(), ModBlocks.CRIMSON_STONE_BRICK_SLAB.get());
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CRIMSON_STONE_BUTTON.get())
-                .requires(ModBlocks.CRIMSON_STONE.get())
-                .unlockedBy("has_" + "crimson", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.CRIMSON_STONE.get()).build()))
-                .save(pWriter);
+//        createStoneGeoRecipes(pWriter,
+//                ModBlocks.CRIMSON_STONE.get(),
+//                ModBlocks.CRIMSON_STONE_STAIRS.get(),
+//                ModBlocks.CRIMSON_STONE_SLAB.get(),
+//                ModBlocks.CRIMSON_COBBLESTONE.get(),
+//                ModBlocks.CRIMSON_COBBLESTONE_STAIRS.get(),
+//                ModBlocks.CRIMSON_COBBLESTONE_SLAB.get(),
+//                ModBlocks.CRIMSON_STONE_BRICKS.get(),
+//                ModBlocks.CRIMSON_STONE_BRICK_STAIRS.get(),
+//                ModBlocks.CRIMSON_STONE_BRICK_SLAB.get(),
+//                ModBlocks.CRIMSON_STONE_BUTTON.get(),
+//                ModBlocks.CRIMSON_STONE_PRESSURE_PLATE.get()
+//                ModBlocks.CRIMSON_STONE_WALL.get()
+//        );
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CRIMSON_STONE_PRESSURE_PLATE.get())
-                .pattern("AA")
-                .define('A', ModBlocks.CRIMSON_STONE.get())
-                .unlockedBy("has_" + "crimson", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.CRIMSON_STONE.get()).build()))
-                .save(pWriter);
+        createStoneGeoRecipes(pWriter,
+                ModBlocks.NIDAVELLIR_SOFT_STONE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_SLAB.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_BUTTON.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_PRESSURE_PLATE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL.get()
+        );
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE.get(), Items.LAPIS_LAZULI);
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE_CLUSTER.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER.get(), Items.LAPIS_LAZULI);
+
+        createStoneGeoRecipes(pWriter,
+                ModBlocks.NIDAVELLIR_HARD_STONE.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get(),
+                ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_SLAB.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_BUTTON.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_PRESSURE_PLATE.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL.get()
+        );
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE.get(), Items.LAPIS_LAZULI);
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE_CLUSTER.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER.get(), Items.LAPIS_LAZULI);
+
+        createStoneGeoRecipes(pWriter,
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_SLAB.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_PRESSURE_PLATE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL.get()
+        );
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE.get(), Items.LAPIS_LAZULI);
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE_CLUSTER.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER.get(), Items.LAPIS_LAZULI);
+
+        createStoneGeoRecipes(pWriter,
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_SLAB.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_PRESSURE_PLATE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL.get()
+        );
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE.get(), Items.LAPIS_LAZULI);
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE_CLUSTER.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER.get(), Items.LAPIS_LAZULI);
+
+        createStoneGeoRecipes(pWriter,
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_SLAB.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_STAIRS.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_SLAB.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_PRESSURE_PLATE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL.get()
+        );
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE.get(), Items.LAPIS_LAZULI);
+
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER.get(), Items.IRON_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER.get(), Items.GOLD_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER.get(), Items.COPPER_INGOT);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER.get(), ModItems.TIN_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER.get(), ModItems.ZINC_INGOT.get());
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER.get(), Items.DIAMOND);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE_CLUSTER.get(), Items.EMERALD);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER.get(), Items.COAL);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER.get(), Items.REDSTONE);
+        createBlastingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER.get(), Items.LAPIS_LAZULI);
+
+        createStoneGeoRecipes(pWriter,
+                ModBlocks.TARTARUS_STONE.get(),
+                ModBlocks.TARTARUS_STONE_STAIRS.get(),
+                ModBlocks.TARTARUS_STONE_SLAB.get(),
+                ModBlocks.TARTARUS_STONE_COBBLESTONE.get(),
+                ModBlocks.TARTARUS_STONE_COBBLESTONE_STAIRS.get(),
+                ModBlocks.TARTARUS_STONE_COBBLESTONE_SLAB.get(),
+                ModBlocks.TARTARUS_STONE_BRICKS.get(),
+                ModBlocks.TARTARUS_STONE_BRICKS_STAIRS.get(),
+                ModBlocks.TARTARUS_STONE_BRICKS_SLAB.get(),
+                ModBlocks.TARTARUS_STONE_BUTTON.get(),
+                ModBlocks.TARTARUS_STONE_PRESSURE_PLATE.get(),
+                ModBlocks.TARTARUS_STONE_WALL.get(),
+                ModBlocks.TARTARUS_STONE_COBBLESTONE_WALL.get(),
+                ModBlocks.TARTARUS_STONE_BRICKS_WALL.get()
+        );
 
         /*
          * WOOD TYPES
@@ -120,6 +335,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         createSmokingRecipes(pWriter, ModItems.TANG_FISH.get(), ModItems.COOKED_TANG_FISH.get());
 
         /*
+        SMELTING
+         */
+//        createSmeltingRecipes(pWriter, ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get(), ModBlocks.NIDAVELLIR_SOFT_STONE.get());
+//        createSmeltingRecipes(pWriter, ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get(), ModBlocks.NIDAVELLIR_HARD_STONE.get());
+//        createSmeltingRecipes(pWriter, ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get(), ModBlocks.NIDAVELLIR_ENHANCED_STONE.get());
+//        createSmeltingRecipes(pWriter, ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get(), ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get());
+//        createSmeltingRecipes(pWriter, ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get(), ModBlocks.NIDAVELLIR_CRIMSON_STONE.get());
+
+        /*
         CRAFTING
          */
         //Portal Core
@@ -134,6 +358,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         craftPortalFrame(pWriter, ModBlocks.NIDAVELLIR_PORTAL_FRAME.get(), ModItems.BASIC_PORTAL_CORE.get(), Blocks.OBSIDIAN, ItemTags.STONE_BRICKS);
         craftPortalFrame(pWriter, ModBlocks.ATLANTIS_PORTAL_FRAME.get(), ModItems.BASIC_PORTAL_CORE.get(), Blocks.LAPIS_BLOCK, Items.WATER_BUCKET);
         craftPortalFrame(pWriter, ModBlocks.SKYOPIA_PORTAL_FRAME.get(), ModItems.BASIC_PORTAL_CORE.get(), Blocks.OBSIDIAN, Items.FEATHER);
+    }
+
+    private void createBlastingRecipes(Consumer<FinishedRecipe> pWriter, Block pIngredient, Item pResult) {
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredient), RecipeCategory.BUILDING_BLOCKS, pResult, 0.25f, 200, RecipeSerializer.SMELTING_RECIPE)
+                .group(null)
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pWriter, LostWorldsConstants.MODID + ":" + getItemName(pResult) + "_" + "smelting_from" + "_" + getItemName(pIngredient));
+
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredient), RecipeCategory.BUILDING_BLOCKS, pResult, 0.25f, 100, RecipeSerializer.BLASTING_RECIPE)
+                .group(null)
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pWriter, LostWorldsConstants.MODID + ":" + getItemName(pResult) + "_" + "blasting_from" + "_" + getItemName(pIngredient));
     }
 
     private void createAlloyRecipes(Consumer<FinishedRecipe> pWriter, String brass, Item ingredient1, Item ingredient2, Item outPutItem, Block block, Item nugget) {
@@ -239,10 +475,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
     }
 
-    private static void createStoneGeoRecipes(Consumer<FinishedRecipe> pWriter, String name, Block stone, Block stone_stairs, Block stone_slab, Block cobble, Block cobble_stairs, Block cobble_slab, Block bricks, Block brick_stairs, Block brick_slab) {
+    private static void createStoneGeoRecipes(Consumer<FinishedRecipe> pWriter, Block stone, Block stone_stairs, Block stone_slab,
+                                              Block cobble, Block cobble_stairs, Block cobble_slab, Block bricks, Block brick_stairs,
+                                              Block brick_slab, Block button, Block pressure_plate,
+                                              Block wall, Block cobble_wall, Block stone_wall) {
+        String name = stone.getName().toString();
+
         createStoneRecipes(pWriter, name, stone, stone_stairs, stone_slab);
         createStoneRecipes(pWriter, name + "_cobble", cobble, cobble_stairs, cobble_slab);
         createStoneRecipes(pWriter, name + "_bricks", bricks, brick_stairs, brick_slab);
+
+        createWallRecipe(pWriter, stone, wall);
+        createWallRecipe(pWriter, cobble, cobble_wall);
+        createWallRecipe(pWriter, bricks, stone_wall);
 
         oreSmelting(pWriter, cobble, RecipeCategory.MISC, stone, 0, 200, name);
 
@@ -251,6 +496,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AA")
                 .define('A', stone)
                 .unlockedBy("has_" + name, inventoryTrigger(ItemPredicate.Builder.item().of(stone).build()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, button)
+                .requires(stone)
+                .unlockedBy("has_" + name, inventoryTrigger(ItemPredicate.Builder.item().of(stone).build()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pressure_plate)
+                .pattern("AA")
+                .define('A', stone)
+                .unlockedBy("has_" + name, inventoryTrigger(ItemPredicate.Builder.item().of(stone).build()))
+                .save(pWriter);
+    }
+
+    private static void createWallRecipe(Consumer<FinishedRecipe> pWriter, Block stone, Block wall) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, wall, 6)
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', stone)
+                .unlockedBy(stone.getName().toString() + "_to_" + wall.getName().toString(), inventoryTrigger(ItemPredicate.Builder.item().of(stone).build()))
                 .save(pWriter);
     }
 
@@ -538,13 +803,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     }
 
-
-
     private static void createSmokingRecipes(Consumer<FinishedRecipe> pWriter, Item pIngredient, Item pResult) {
         SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredient), RecipeCategory.FOOD, pResult, 0.25f, 200, RecipeSerializer.SMOKING_RECIPE)
                 .group(null)
                 .unlockedBy(getHasName(pIngredient), has(pIngredient))
                 .save(pWriter, LostWorldsConstants.MODID + ":" + getItemName(pResult) + "_" + "cooked_from" + "_" + getItemName(pIngredient));
+    }
+
+    private static void createSmeltingRecipes(Consumer<FinishedRecipe> pWriter, ItemLike pIngredient, ItemLike pResult) {
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(pIngredient), RecipeCategory.BUILDING_BLOCKS, pResult, 0.25f, 200, RecipeSerializer.SMELTING_RECIPE)
+                .group(null)
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pWriter, LostWorldsConstants.MODID + ":" + getItemName(pResult) + "_" + "smelting_from" + "_" + getItemName(pIngredient));
     }
 
     protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer,

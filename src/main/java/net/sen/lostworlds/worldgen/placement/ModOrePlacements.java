@@ -24,6 +24,25 @@ public class ModOrePlacements {
     public static final ResourceKey<PlacedFeature> PLACED_ALFHEIMR_COPPER_ORE_KEY = registerKey("alfheimr_copper_ore_key");
     public static final ResourceKey<PlacedFeature> PLACED_ALFHEIMR_TIN_ORE_KEY = registerKey("alfheimr_tin_ore_key");
 
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_COAL_ORE_KEY = registerKey("nidavellir_coal_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_COAL_ORE_CLUSTER_KEY = registerKey("nidavellir_coal_ore_cluster_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_IRON_ORE_KEY = registerKey("nidavellir_iron_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_IRON_ORE_CLUSTER_KEY = registerKey("nidavellir_iron_ore_cluster_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_GOLD_ORE_KEY = registerKey("nidavellir_gold_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_GOLD_ORE_CLUSTER_KEY = registerKey("nidavellir_gold_ore_cluster_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_REDSTONE_ORE_KEY = registerKey("nidavellir_redstone_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_REDSTONE_ORE_CLUSTER_KEY = registerKey("nidavellir_redstone_ore_cluster_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_DIAMOND_ORE_KEY = registerKey("nidavellir_diamond_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_DIAMOND_ORE_CLUSTER_KEY = registerKey("nidavellir_diamond_ore_cluster_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_LAPIS_ORE_KEY = registerKey("nidavellir_lapis_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_LAPIS_ORE_CLUSTER_KEY = registerKey("nidavellir_lapis_ore_cluster_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_COPPER_ORE_KEY = registerKey("nidavellir_copper_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_COPPER_ORE_CLUSTER_KEY = registerKey("nidavellir_copper_ore_cluster_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_TIN_ORE_KEY = registerKey("nidavellir_tin_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_TIN_ORE_CLUSTER_KEY = registerKey("nidavellir_tin_ore_cluster_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_ZINC_ORE_KEY = registerKey("nidavellir_zinc_ore_key");
+    public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_ZINC_ORE_CLUSTER_KEY = registerKey("nidavellir_zinc_ore_cluster_key");
+
     public static void bootstrap(BootstapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures) {
 
         register(context, PLACED_ALFHEIMR_TIN_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.ALFHEIMR_TIN_ORE_KEY),
@@ -68,6 +87,113 @@ public class ModOrePlacements {
                 )));
 
         register(context, PLACED_ALFHEIMR_COPPER_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.ALFHEIMR_COPPER_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        /*
+        NIDAVELLIR
+         */
+        register(context, PLACED_NIDAVELLIR_TIN_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_TIN_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80))));
+
+        register(context, PLACED_NIDAVELLIR_TIN_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_TIN_ORE_CLUSTER_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80))));
+
+        register(context, PLACED_NIDAVELLIR_ZINC_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_ZINC_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80))));
+
+        register(context, PLACED_NIDAVELLIR_ZINC_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_ZINC_ORE_CLUSTER_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80))));
+
+        register(context, PLACED_NIDAVELLIR_COAL_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_COAL_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_COAL_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_COAL_ORE_CLUSTER_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_IRON_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_IRON_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_IRON_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_IRON_ORE_CLUSTER_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_GOLD_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_GOLD_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_GOLD_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_GOLD_ORE_CLUSTER_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_REDSTONE_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_REDSTONE_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_REDSTONE_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_REDSTONE_ORE_CLUSTER_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_DIAMOND_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_DIAMOND_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_DIAMOND_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_DIAMOND_ORE_CLUSTER_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_LAPIS_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_LAPIS_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_LAPIS_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_LAPIS_ORE_CLUSTER_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_COPPER_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_COPPER_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(80)
+                )));
+
+        register(context, PLACED_NIDAVELLIR_COPPER_ORE_CLUSTER_KEY, configuredFeatures.getOrThrow(ModOreFeatures.NIDAVELLIR_COPPER_ORE_CLUSTER_KEY),
                 ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
                         VerticalAnchor.absolute(-64),
                         VerticalAnchor.absolute(80)

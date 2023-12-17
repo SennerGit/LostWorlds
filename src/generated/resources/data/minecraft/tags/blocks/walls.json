@@ -1,5 +1,23 @@
 {
   "values": [
-    "lostworlds:crimson_stone_wall"
+    "lostworlds:crimson_stone_wall",
+    "lostworlds:nidavellir_soft_stone_wall",
+    "lostworlds:nidavellir_soft_cobblestone_wall",
+    "lostworlds:nidavellir_soft_stone_bricks_wall",
+    "lostworlds:nidavellir_hard_stone_wall",
+    "lostworlds:nidavellir_hard_cobblestone_wall",
+    "lostworlds:nidavellir_hard_stone_bricks_wall",
+    "lostworlds:nidavellir_enhanced_stone_wall",
+    "lostworlds:nidavellir_enhanced_cobblestone_wall",
+    "lostworlds:nidavellir_enhanced_stone_bricks_wall",
+    "lostworlds:nidavellir_deepslate_stone_wall",
+    "lostworlds:nidavellir_deepslate_cobblestone_wall",
+    "lostworlds:nidavellir_deepslate_stone_bricks_wall",
+    "lostworlds:nidavellir_crimson_stone_wall",
+    "lostworlds:nidavellir_crimson_cobblestone_wall",
+    "lostworlds:nidavellir_crimson_stone_bricks_wall",
+    "lostworlds:tartarus_stone_wall",
+    "lostworlds:tartarus_stone_cobblestone_wall",
+    "lostworlds:tartarus_stone_bricks_wall"
   ]
 }

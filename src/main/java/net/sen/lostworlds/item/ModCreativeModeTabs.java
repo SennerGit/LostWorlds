@@ -207,6 +207,26 @@ public class ModCreativeModeTabs {
             .displayItems((parameters, output) -> {
 //                output.accept(ModBlocks.UNDERWORLD_GRASS_BLOCK.get());
 
+                output.accept(ModBlocks.TARTARUS_STONE.get());
+                output.accept(ModBlocks.TARTARUS_STONE_STAIRS.get());
+                output.accept(ModBlocks.TARTARUS_STONE_SLAB.get());
+                output.accept(ModBlocks.TARTARUS_STONE_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.TARTARUS_STONE_BUTTON.get());
+                output.accept(ModBlocks.TARTARUS_STONE_WALL.get());
+                output.accept(ModBlocks.TARTARUS_STONE_SMOOTH_STONE.get());
+                output.accept(ModBlocks.TARTARUS_STONE_COBBLESTONE.get());
+                output.accept(ModBlocks.TARTARUS_STONE_COBBLESTONE_STAIRS.get());
+                output.accept(ModBlocks.TARTARUS_STONE_COBBLESTONE_SLAB.get());
+                output.accept(ModBlocks.TARTARUS_STONE_COBBLESTONE_WALL.get());
+                output.accept(ModBlocks.TARTARUS_STONE_COBBLESTONE_MOSSY.get());
+                output.accept(ModBlocks.TARTARUS_STONE_BRICKS.get());
+                output.accept(ModBlocks.TARTARUS_STONE_BRICKS_STAIRS.get());
+                output.accept(ModBlocks.TARTARUS_STONE_BRICKS_SLAB.get());
+                output.accept(ModBlocks.TARTARUS_STONE_BRICKS_WALL.get());
+                output.accept(ModBlocks.TARTARUS_STONE_BRICKS_MOSSY.get());
+                output.accept(ModBlocks.TARTARUS_STONE_BRICKS_CRACKED.get());
+                output.accept(ModBlocks.TARTARUS_STONE_BRICKS_CHISELED.get());
+
                 output.accept(ModBlocks.UNDERWORLD_PORTAL_FRAME.get());
 
                 output.accept(ModBlocks.UNDERWORLD_DIRT.get());
@@ -247,6 +267,216 @@ public class ModCreativeModeTabs {
             .displayItems((parameters, output) -> {
 
                 output.accept(ModBlocks.NIDAVELLIR_PORTAL_FRAME.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_BUTTON.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_SMOOTH_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_CRACKED.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_CHISELED.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_BUTTON.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_SMOOTH_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_CRACKED.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_CHISELED.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_SMOOTH_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_CRACKED.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_CHISELED.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_SMOOTH_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CRACKED.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CHISELED.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_SMOOTH_STONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_STAIRS.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_SLAB.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_MOSSY.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_CRACKED.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_CHISELED.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE.get());
+
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER.get());
+                output.accept(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER.get());
 
                 output.accept(ModItems.CRIMSON_DIAMOND.get());
                 output.accept(ModItems.NETHER_STEEL_INGOT.get());

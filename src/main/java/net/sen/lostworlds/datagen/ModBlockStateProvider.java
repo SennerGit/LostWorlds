@@ -12,6 +12,7 @@ import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.block.custom.CrimsonDiamondLampBlock;
+import net.sen.lostworlds.block.custom.ModRedStoneOreBlock;
 import net.sen.lostworlds.block.custom.PomegranateCropBlock;
 import net.sen.lostworlds.block.custom.WaterRemoverBlock;
 
@@ -26,6 +27,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.CRIMSON_DIAMOND_BLOCK);
+
+        baseBlocks();
 
         blockWithItem(ModBlocks.UNDERWORLD_PORTAL_FRAME);
         blockWithItem(ModBlocks.NIDAVELLIR_PORTAL_FRAME);
@@ -70,26 +73,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock((StairBlock) ModBlocks.CRIMSON_STONE_STAIRS.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
         stairsBlock((StairBlock) ModBlocks.CRIMSON_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.CRIMSON_COBBLESTONE.get()));
         stairsBlock((StairBlock) ModBlocks.CRIMSON_STONE_BRICK_STAIRS.get(), blockTexture(ModBlocks.CRIMSON_STONE_BRICKS.get()));
-
         doorBlockWithRenderType((DoorBlock) ModBlocks.CRIMSON_STONE_DOOR.get(), modLoc("block/" + ModBlocks.CRIMSON_STONE_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.CRIMSON_STONE_DOOR.getId().getPath() + "_top"), "cutout");
         trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.CRIMSON_STONE_TRAPDOOR.get(), modLoc("block/" + ModBlocks.CRIMSON_STONE_TRAPDOOR.getId().getPath()), true, "cutout");
-
         slabBlock(((SlabBlock) ModBlocks.CRIMSON_STONE_SLAB.get()), blockTexture(ModBlocks.CRIMSON_STONE.get()), blockTexture(ModBlocks.CRIMSON_STONE.get()));
         slabBlock(((SlabBlock) ModBlocks.CRIMSON_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.CRIMSON_COBBLESTONE.get()), blockTexture(ModBlocks.CRIMSON_COBBLESTONE.get()));
         slabBlock(((SlabBlock) ModBlocks.CRIMSON_STONE_BRICK_SLAB.get()), blockTexture(ModBlocks.CRIMSON_STONE_BRICKS.get()), blockTexture(ModBlocks.CRIMSON_STONE_BRICKS.get()));
-
         pressurePlateBlock((PressurePlateBlock) ModBlocks.CRIMSON_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
         fenceBlock((FenceBlock) ModBlocks.CRIMSON_STONE_FENCE.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
         fenceGateBlock((FenceGateBlock) ModBlocks.CRIMSON_STONE_FENCE_GATE.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
         wallBlock((WallBlock) ModBlocks.CRIMSON_STONE_WALL.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
         buttonBlock((ButtonBlock) ModBlocks.CRIMSON_STONE_BUTTON.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
-
-        blockWithItem(ModBlocks.SOUND_BLOCK);
-
-//        blockWithItem(ModBlocks.UNDERWORLD_PORTAL);
-//        blockWithItem(ModBlocks.NIDAVELLIR_PORTAL);
-//        blockWithItem(ModBlocks.ALFHEIMR_PORTAL);
-
         blockItem(ModBlocks.CRIMSON_STONE_STAIRS);
         blockItem(ModBlocks.CRIMSON_STONE_SLAB);
         blockItem(ModBlocks.CRIMSON_COBBLESTONE_STAIRS);
@@ -97,9 +90,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.CRIMSON_STONE_BRICK_STAIRS);
         blockItem(ModBlocks.CRIMSON_STONE_BRICK_SLAB);
         blockItem(ModBlocks.CRIMSON_STONE_FENCE_GATE);
-
         blockItem(ModBlocks.CRIMSON_STONE_PRESSURE_PLATE);
         blockItem(ModBlocks.CRIMSON_STONE_TRAPDOOR, "_bottom");
+
+        blockWithItem(ModBlocks.SOUND_BLOCK);
+
+//        blockWithItem(ModBlocks.UNDERWORLD_PORTAL);
+//        blockWithItem(ModBlocks.NIDAVELLIR_PORTAL);
+//        blockWithItem(ModBlocks.ALFHEIMR_PORTAL);
+
+
 
         customLamp(ModBlocks.CRIMSON_DIAMOND_LAMP);
 
@@ -370,6 +370,326 @@ public class ModBlockStateProvider extends BlockStateProvider {
         makeFlowerPotted(ModBlocks.POTTED_IRIS_FLOWER, ModBlocks.IRIS_FLOWER);
 
         this.waterRemoverBlock(ModBlocks.ATLANTAS_WATER_REMOVER_BLOCK);
+
+        blockComplexGen();
+    }
+
+    public void baseBlocks() {
+        /*
+        STONE GEN
+         */
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_SMOOTH_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_CRACKED);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_CHISELED);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_SMOOTH_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_CRACKED);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_CHISELED);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_SMOOTH_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_CRACKED);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_CHISELED);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_SMOOTH_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CRACKED);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CHISELED);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_SMOOTH_STONE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_MOSSY);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_CRACKED);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_CHISELED);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE);
+
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER);
+
+        blockWithItem(ModBlocks.TARTARUS_STONE);
+        blockWithItem(ModBlocks.TARTARUS_STONE_COBBLESTONE);
+        blockWithItem(ModBlocks.TARTARUS_STONE_BRICKS);
+        blockWithItem(ModBlocks.TARTARUS_STONE_SMOOTH_STONE);
+        blockWithItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_MOSSY);
+        blockWithItem(ModBlocks.TARTARUS_STONE_BRICKS_MOSSY);
+        blockWithItem(ModBlocks.TARTARUS_STONE_BRICKS_CRACKED);
+        blockWithItem(ModBlocks.TARTARUS_STONE_BRICKS_CHISELED);
+    }
+
+    private void blockComplexGen() {
+        /*
+        STONE GEN
+         */
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
+
+        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_SLAB);
+        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_PRESSURE_PLATE);
+//        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BUTTON);
+//        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL);
+
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_HARD_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_HARD_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_HARD_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
+        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_HARD_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
+
+        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_SLAB);
+        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_PRESSURE_PLATE);
+//        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_BUTTON);
+//        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL);
+
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+
+        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_SLAB);
+        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_PRESSURE_PLATE);
+//        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON);
+//        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL);
+
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+
+        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_SLAB);
+        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_PRESSURE_PLATE);
+//        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON);
+//        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL);
+
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()));
+        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+
+        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_SLAB);
+        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_PRESSURE_PLATE);
+//        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON);
+//        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL);
+        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_STAIRS);
+        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_SLAB);
+//        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL);
+
+        stairsBlock((StairBlock) ModBlocks.TARTARUS_STONE_STAIRS.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
+        stairsBlock((StairBlock) ModBlocks.TARTARUS_STONE_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.TARTARUS_STONE_COBBLESTONE.get()));
+        stairsBlock((StairBlock) ModBlocks.TARTARUS_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.TARTARUS_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.TARTARUS_STONE_SLAB.get()), blockTexture(ModBlocks.TARTARUS_STONE.get()), blockTexture(ModBlocks.TARTARUS_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.TARTARUS_STONE_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.TARTARUS_STONE_COBBLESTONE.get()), blockTexture(ModBlocks.TARTARUS_STONE_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.TARTARUS_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.TARTARUS_STONE_BRICKS.get()), blockTexture(ModBlocks.TARTARUS_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.TARTARUS_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.TARTARUS_STONE_WALL.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.TARTARUS_STONE_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
+        wallBlock((WallBlock) ModBlocks.TARTARUS_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
+        buttonBlock((ButtonBlock) ModBlocks.TARTARUS_STONE_BUTTON.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
+
+        blockItem(ModBlocks.TARTARUS_STONE_STAIRS);
+        blockItem(ModBlocks.TARTARUS_STONE_SLAB);
+        blockItem(ModBlocks.TARTARUS_STONE_PRESSURE_PLATE);
+//        blockItem(ModBlocks.TARTARUS_STONE_BUTTON);
+//        blockItem(ModBlocks.TARTARUS_STONE_WALL);
+        blockItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_STAIRS);
+        blockItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_SLAB);
+//        blockItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_WALL);
+        blockItem(ModBlocks.TARTARUS_STONE_BRICKS_STAIRS);
+        blockItem(ModBlocks.TARTARUS_STONE_BRICKS_SLAB);
+//        blockItem(ModBlocks.TARTARUS_STONE_BRICKS_WALL);
     }
 
     private String name(Block block) {

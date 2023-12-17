@@ -416,7 +416,18 @@ public class ModEntities {
 //    /*
 //    NIDAVELLIR
 //     */
-//
+//    Goblins
+//    Dwarves
+//    Cave Bats
+//    Cave Fish
+//    Cave Salamanders
+//    Cave Spiders
+//    Cave Scorpions
+//    Glowworms
+//    Kobolds
+//    Cave Trolls
+//    Umber Hulks
+
 //    /*
 //    ALFHEIMR
 //     */
