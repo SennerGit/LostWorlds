@@ -25,6 +25,12 @@ public class ModVegetationPlacements {
 
     //Flowers
     public static final ResourceKey<PlacedFeature> FLOWER_IRIS_PLACED_KEY = registerKey("flower_iris_placed_key");
+    public static final ResourceKey<PlacedFeature> ALFHEIMR_FLOWERS_KEY = registerKey("alfheimr_flowers_key");
+
+    //Vegetation
+    public static final ResourceKey<PlacedFeature> ALFHEIMR_MAGIC_GRASS_PLACED_KEY = registerKey("alfheimr_magic_grass_placed_key");
+    public static final ResourceKey<PlacedFeature> ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY = registerKey("alfheimr_magic_grass_single_placed_key");
+    public static final ResourceKey<PlacedFeature> ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY = registerKey("alfheimr_magic_grass_patch_placed_key");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures) {
         register(context, TREE_ELDER_WOOD_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.TREE_ELDER_WOOD_KEY),
@@ -49,6 +55,17 @@ public class ModVegetationPlacements {
 
         //Flowers
         register(context, FLOWER_IRIS_PLACED_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.FLOWER_IRIS_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+
+        register(context, ALFHEIMR_FLOWERS_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.ALFHEIMR_FLOWERS_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+
+        //Vegetation
+        register(context, ALFHEIMR_MAGIC_GRASS_PLACED_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.ALFHEIMR_MAGIC_GRASS_PLACED_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+        register(context, ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+        register(context, ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
     }

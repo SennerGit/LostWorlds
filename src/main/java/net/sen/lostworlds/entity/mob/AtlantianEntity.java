@@ -20,8 +20,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.village.ReputationEventType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.npc.VillagerData;
+import net.minecraft.world.entity.npc.VillagerDataHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.Item;
@@ -38,7 +41,7 @@ import net.sen.lostworlds.entity.variant.AtlantianVariant;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
 import org.jetbrains.annotations.Nullable;
 
-public class AtlantianEntity extends AbstractVillager {
+public class AtlantianEntity extends AbstractVillager implements ReputationEventHandler, VillagerDataHolder {
     private static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(AtlantianEntity.class, EntityDataSerializers.BOOLEAN);
 
@@ -152,9 +155,9 @@ public class AtlantianEntity extends AbstractVillager {
      * Variants
      */
 
-    public AtlantianVariant getVariant() {
-        return AtlantianVariant.byId(this.getTypeVariant() & 255);
-    }
+//    public AtlantianVariant getVariant() {
+//        return AtlantianVariant.byId(this.getTypeVariant() & 255);
+//    }
 
     private int getTypeVariant() {
         return this.entityData.get(DATA_ID_TYPE_VARIANT);
@@ -212,5 +215,24 @@ public class AtlantianEntity extends AbstractVillager {
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.DOLPHIN_DEATH;
+    }
+
+    @Override
+    public void onReputationEventFrom(ReputationEventType pType, Entity pTarget) {
+
+    }
+
+    /*
+    VILLAGER
+     */
+
+    @Override
+    public VillagerData getVillagerData() {
+        return null;
+    }
+
+    @Override
+    public void setVillagerData(VillagerData pData) {
+
     }
 }

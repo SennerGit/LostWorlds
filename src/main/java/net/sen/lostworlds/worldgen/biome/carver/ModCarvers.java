@@ -16,6 +16,12 @@ public class ModCarvers {
     public static final RegistryObject<WorldCarver<CaveCarverConfiguration>> NIDAVELLIR_CAVE =
             CARVERS.register("nidavellir_cave", () -> new NidavellirCaveWorldCarver(CaveCarverConfiguration.CODEC));
 
+    public static final RegistryObject<WorldCarver<CaveCarverConfiguration>> NIDAVELLIR_SUNKEN_CAVERN_CAVE =
+            CARVERS.register("nidavellir_sunken_cavern_cave", () -> new NidavellirSunkenCavernCaveWorldCarver(CaveCarverConfiguration.CODEC));
+
+    public static final RegistryObject<WorldCarver<CaveCarverConfiguration>> NIDAVELLIR_LAVA_CAVERN_CAVE =
+            CARVERS.register("nidavellir_lava_cavern_cave", () -> new NidavellirLavaCavernCaveWorldCarver(CaveCarverConfiguration.CODEC));
+
     public static final RegistryObject<WorldCarver<CaveCarverConfiguration>> ALFHEIMR_CAVE =
             CARVERS.register("alfheimr_cave", () -> new AlfheimrCaveWorldCarver(CaveCarverConfiguration.CODEC));
 

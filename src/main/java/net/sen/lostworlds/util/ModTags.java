@@ -25,6 +25,20 @@ public class ModTags {
         }
     }
 
+    public static class CreativeTabs {
+        public static final TagKey<Item> GENERAL = tag("general");
+        public static final TagKey<Item> UNDERWORLD = tag("underworld");
+        public static final TagKey<Item> NIDAVELLIR = tag("nidavellir");
+        public static final TagKey<Item> ALFHEIMR = tag("alfheimr");
+        public static final TagKey<Item> ATLANTIS = tag("atlantis");
+        public static final TagKey<Item> SKYOPIA = tag("skyopia");
+        public static final TagKey<Item> SPAWN_EGGS = tag("spawn_eggs");
+
+        private static TagKey<Item> tag(String name) {
+            return ItemTags.create(LostWorldsConstants.modLoc(name));
+        }
+    }
+
     public static class Items {
         public static final TagKey<Item> ELDER_WOOD_LOGS = tag("elder_wood_logs");
         public static final TagKey<Item> ELDER_WOOD_STRIPPED_LOGS = tag("elder_wood_stripped_logs");
@@ -40,6 +54,8 @@ public class ModTags {
 
         public static final TagKey<Item> CYPRESS_LOGS = tag("cypress_logs");
         public static final TagKey<Item> CYPRESS_STRIPPED_LOGS = tag("cypress_stripped_logs");
+
+        public static final TagKey<Item> MUSHROOMS = tag("mushrooms");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(LostWorldsConstants.modLoc(name));
@@ -85,6 +101,8 @@ public class ModTags {
 
         public static final TagKey<Block> NEEDS_NETHERITE_TOOL = tag("needs_netherite_tool");
 
+        public static final TagKey<Block> MUSHROOMS = tag("mushrooms");
+
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(LostWorldsConstants.modLoc(name));
         }
@@ -119,6 +137,8 @@ public class ModTags {
 
         toItemTag.put(Blocks.CYPRESS_LOGS, Items.CYPRESS_LOGS);
         toItemTag.put(Blocks.CYPRESS_STRIPPED_LOGS, Items.CYPRESS_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.MUSHROOMS, Items.MUSHROOMS);
     }
 
     public static TagKey<Item> getItemTag(TagKey<Block> blockTag)

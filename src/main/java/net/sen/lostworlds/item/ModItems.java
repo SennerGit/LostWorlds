@@ -31,6 +31,9 @@ public class ModItems {
      */
     //Crimson Diamond
     public static final RegistryObject<Item> CRIMSON_DIAMOND = ITEMS.register("crimson_diamond", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AQUAMARINE = ITEMS.register("aquamarine", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OPAL = ITEMS.register("opal", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(new Item.Properties()));
 
     //Nether Steel
     public static final RegistryObject<Item> NETHER_STEEL_INGOT = ITEMS.register("nether_steel_ingot", () -> new Item(new Item.Properties()));
@@ -161,11 +164,24 @@ public class ModItems {
     public static final RegistryObject<Item> CRIMSON_APPLE = ITEMS.register("crimson_apple", () -> new Item(new Item.Properties().food(ModFoodProperties.CRIMSON_APPLE)));
     public static final RegistryObject<Item> POMEGRANATE = ITEMS.register("pomegranate", () -> new Item(new Item.Properties().food(ModFoodProperties.POMEGRANATE)));
     public static final RegistryObject<Item> OLIVE = ITEMS.register("olive", () -> new Item(new Item.Properties().food(ModFoodProperties.OLIVE)));
+    public static final RegistryObject<Item> DURUM_WHEAT = ITEMS.register("durum_wheat", () -> new Item(new Item.Properties().food(ModFoodProperties.DURUM_WHEAT)));
+    public static final RegistryObject<Item> TOMATO = ITEMS.register("tomato", () -> new Item(new Item.Properties().food(ModFoodProperties.TOMATO)));
+    public static final RegistryObject<Item> WILD_ONION = ITEMS.register("wild_onion", () -> new ItemNameBlockItem(ModBlocks.WILD_ONION_CROP_BLOCK.get(), new Item.Properties().food(ModFoodProperties.WILD_ONION)));
+    public static final RegistryObject<Item> ONION_STAGE_1 = ITEMS.register("onion_stage_1", () -> new ItemNameBlockItem(ModBlocks.STAGE_1_ONION_CROP_BLOCK.get(), new Item.Properties().food(ModFoodProperties.ONION_STAGE_1)));
+    public static final RegistryObject<Item> ONION_STAGE_2 = ITEMS.register("onion_stage_2", () -> new ItemNameBlockItem(ModBlocks.STAGE_2_ONION_CROP_BLOCK.get(), new Item.Properties().food(ModFoodProperties.ONION_STAGE_2)));
+    public static final RegistryObject<Item> ONION_STAGE_3 = ITEMS.register("onion_stage_3", () -> new ItemNameBlockItem(ModBlocks.STAGE_3_ONION_CROP_BLOCK.get(), new Item.Properties().food(ModFoodProperties.ONION_STAGE_3)));
+    public static final RegistryObject<Item> ONION = ITEMS.register("onion", () -> new ItemNameBlockItem(ModBlocks.ONION_CROP_BLOCK.get(), new Item.Properties().food(ModFoodProperties.ONION)));
+    public static final RegistryObject<Item> DRAGON_FRUIT = ITEMS.register("dragon_fruit", () -> new Item(new Item.Properties().food(ModFoodProperties.DRAGON_FRUIT)));
+    public static final RegistryObject<Item> CHILLI = ITEMS.register("chilli", () -> new Item(new Item.Properties().food(ModFoodProperties.CHILLI)));
 
     /*
     PLANTS
      */
     public static final RegistryObject<Item> POMEGRANATE_SEEDS = ITEMS.register("pomegranate_seeds", () -> new ItemNameBlockItem(ModBlocks.POMEGRANATE_CROP_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DURUM_WHEAT_SEEDS = ITEMS.register("durum_wheat_seeds", () -> new ItemNameBlockItem(ModBlocks.DURUM_WHEAT_CROP_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds", () -> new ItemNameBlockItem(ModBlocks.TOMATO_CROP_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = ITEMS.register("dragon_fruit_seeds", () -> new ItemNameBlockItem(ModBlocks.DRAGON_FRUIT_CROP_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CHILLI_SEEDS = ITEMS.register("chilli_seeds", () -> new ItemNameBlockItem(ModBlocks.CHILLI_CROP_BLOCK.get(), new Item.Properties()));
 
     /*
     RECORDS
@@ -224,6 +240,10 @@ public class ModItems {
     //Spawn Egg
     public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.RHINO, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> DWARVES_SPAWN_EGG = ITEMS.register("dwarves_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DWARVES, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> ELVES_SPAWN_EGG = ITEMS.register("elves_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ELVES, 0x7e9680, 0xc5d1c5, new Item.Properties()));
     public static final RegistryObject<Item> SHARK_SPAWN_EGG = ITEMS.register("shark_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SHARK, 0x7e9680, 0xc5d1c5, new Item.Properties()));
     public static final RegistryObject<Item> MORAY_EELS_SPAWN_EGG = ITEMS.register("moray_eels_spawn_egg",

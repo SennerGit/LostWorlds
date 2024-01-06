@@ -46,6 +46,12 @@ public class ModOreFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_TIN_ORE_CLUSTER_KEY = registerKey("nidavellir_tin_ore_cluster");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_ZINC_ORE_KEY = registerKey("nidavellir_zinc_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_ZINC_ORE_CLUSTER_KEY = registerKey("nidavellir_zinc_ore_cluster");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_AQUAMARINE_ORE_KEY = registerKey("nidavellir_aquamarine_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_AQUAMARINE_ORE_CLUSTER_KEY = registerKey("nidavellir_aquamarine_ore_cluster");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_OPAL_ORE_KEY = registerKey("nidavellir_opal_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_OPAL_ORE_CLUSTER_KEY = registerKey("nidavellir_opal_ore_cluster");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_RUBY_ORE_KEY = registerKey("nidavellir_ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_RUBY_ORE_CLUSTER_KEY = registerKey("nidavellir_ruby_ore_cluster");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -232,8 +238,56 @@ public class ModOreFeatures {
                 OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
                 OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
                 OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
                 OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> nidavellirAquamarineOres = List.of(
+                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> nidavellirAquamarineOreClusters = List.of(
+                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> nidavellirOpalOres = List.of(
+                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> nidavellirOpalOreClusters = List.of(
+                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> nidavellirRubyOres = List.of(
+                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> nidavellirRubyOreClusters = List.of(
+                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState())
         );
 
         //ALFHEIMR
@@ -265,6 +319,12 @@ public class ModOreFeatures {
         register(context, NIDAVELLIR_LAPIS_ORE_CLUSTER_KEY, Feature.ORE, new OreConfiguration(nidavellirLapisOreClusters, 10));
         register(context, NIDAVELLIR_COPPER_ORE_KEY, Feature.ORE, new OreConfiguration(nidavellirCopperOres, 10));
         register(context, NIDAVELLIR_COPPER_ORE_CLUSTER_KEY, Feature.ORE, new OreConfiguration(nidavellirCopperOreClusters, 10));
+        register(context, NIDAVELLIR_AQUAMARINE_ORE_KEY, Feature.ORE, new OreConfiguration(nidavellirAquamarineOres, 10));
+        register(context, NIDAVELLIR_AQUAMARINE_ORE_CLUSTER_KEY, Feature.ORE, new OreConfiguration(nidavellirAquamarineOreClusters, 10));
+        register(context, NIDAVELLIR_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(nidavellirOpalOres, 10));
+        register(context, NIDAVELLIR_OPAL_ORE_CLUSTER_KEY, Feature.ORE, new OreConfiguration(nidavellirOpalOreClusters, 10));
+        register(context, NIDAVELLIR_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(nidavellirRubyOres, 10));
+        register(context, NIDAVELLIR_RUBY_ORE_CLUSTER_KEY, Feature.ORE, new OreConfiguration(nidavellirRubyOreClusters, 10));
 
     }
 

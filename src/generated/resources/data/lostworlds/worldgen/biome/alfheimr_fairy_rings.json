@@ -48,13 +48,10 @@
     [],
     [],
     [
-      "minecraft:patch_grass_forest",
-      "minecraft:patch_tall_grass",
-      "minecraft:patch_grass_badlands",
-      "minecraft:patch_grass_savanna",
       "minecraft:patch_sugar_cane",
-      "minecraft:trees_jungle",
-      "minecraft:trees_sparse_jungle"
+      "minecraft:mushroom_island_vegetation",
+      "minecraft:red_mushroom_normal",
+      "minecraft:brown_mushroom_normal"
     ],
     [
       "minecraft:freeze_top_layer"

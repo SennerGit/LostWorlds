@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "lostworlds:block/atlantis_portal_frame"
-  }
-}

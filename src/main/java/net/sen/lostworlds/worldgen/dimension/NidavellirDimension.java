@@ -50,8 +50,12 @@ public class NidavellirDimension {
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
-                        new Climate.ParameterList<>(List.of(Pair.of(
-                                Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(NidavellirBiomes.NIDAVELLIR_CAVERN))
+                        new Climate.ParameterList<>(List.of(
+                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(NidavellirBiomes.NIDAVELLIR_CAVERN)),
+                                Pair.of(Climate.parameters(0.1F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(NidavellirBiomes.NIDAVELLIR_OVERGROWN_CAVERN)),
+                                Pair.of(Climate.parameters(0.2F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(NidavellirBiomes.NIDAVELLIR_SUNKEN_CAVERN)),
+                                Pair.of(Climate.parameters(0.3F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(NidavellirBiomes.NIDAVELLIR_LAVA_CAVERN)),
+                                Pair.of(Climate.parameters(0.4F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(NidavellirBiomes.NIDAVELLIR_FUNGAL_CAVERN))
                         ))),
                 noiseGenSettings.getOrThrow(ModDimensions.NIDAVELLIR_NOISE_KEY));
 

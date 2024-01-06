@@ -10,6 +10,8 @@ public class ModEntityRendReg {
         event.enqueueWork(() -> {
             //Mobs
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+            EntityRenderers.register(ModEntities.DWARVES.get(), DwarvesRenderer::new);
+            EntityRenderers.register(ModEntities.ELVES.get(), ElvesRenderer::new);
             EntityRenderers.register(ModEntities.SHARK.get(), SharkRenderer::new);
             EntityRenderers.register(ModEntities.MORAY_EELS.get(), MorayEelsRenderer::new);
             EntityRenderers.register(ModEntities.ELECTRIC_EELS.get(), ElectricEelsRenderer::new);

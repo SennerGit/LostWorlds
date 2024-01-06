@@ -21,6 +21,7 @@ import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.command.ReturnHomeCommand;
 import net.sen.lostworlds.command.SetHomeCommand;
+import net.sen.lostworlds.event.custom.DwarvenVillagerTradesEvent;
 import net.sen.lostworlds.item.ModItems;
 import net.sen.lostworlds.item.custom.HammerItem;
 import net.minecraft.core.BlockPos;
@@ -32,6 +33,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sen.lostworlds.item.custom.ModArmorItem;
 import net.sen.lostworlds.villager.ModVillagers;
+import net.sen.lostworlds.villager.custom.dwarven.DwarvenVillagerTrades;
+import net.sen.lostworlds.villager.custom.dwarven.ModDwarvenVillagers;
 
 import java.util.HashSet;
 import java.util.List;
@@ -123,6 +126,23 @@ public class ModEvents {
 //            );
         }
     }
+
+//    @SubscribeEvent
+//    public static void addCustomDwarvenTrades(DwarvenVillagerTradesEvent event) {
+//        if (event.getType() == ModDwarvenVillagers.ALLOY_MASTER.get()) {
+//            Int2ObjectMap<List<DwarvenVillagerTrades.ItemListing>> trades = event.getTrades();
+//
+//            trades.get(1).add((pTrader, pRandom) -> tradingCost(2, Items.COPPER_INGOT, 6, 10, 2, 0.02f));
+//            trades.get(1).add((pTrader, pRandom) -> tradingCost(2, ModItems.ZINC_INGOT.get(), 6, 10, 2, 0.02f));
+//            trades.get(1).add((pTrader, pRandom) -> tradingCost(2, ModItems.TIN_INGOT.get(), 6, 10, 2, 0.02f));
+//            trades.get(2).add((pTrader, pRandom) -> tradingCost(2, ModItems.BRASS_INGOT.get(), 6, 10, 2, 0.02f));
+//            trades.get(2).add((pTrader, pRandom) -> tradingCost(2, ModItems.BRONZE_INGOT.get(), 6, 10, 2, 0.02f));
+////            trades.get(villagerLevel).add((pTrader, pRandom) -> new MerchantOffer(
+////                    stack, new ItemStack(ModItems.POMEGRANATE.get(), 6),
+////                    10, 2, 0.02f)
+////            );
+//        }
+//    }
 
     @SubscribeEvent
     public static void addCustomWanderingTrades(WandererTradesEvent event) {

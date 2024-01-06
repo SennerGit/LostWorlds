@@ -1,12 +1,6 @@
 package net.sen.lostworlds;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -17,10 +11,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sen.lostworlds.block.*;
 import net.sen.lostworlds.block.entity.*;
-import net.sen.lostworlds.client.entity.renderer.*;
+import net.sen.lostworlds.client.ClientHandler;
 import net.sen.lostworlds.client.util.registry.*;
 import net.sen.lostworlds.effect.*;
 import net.sen.lostworlds.enchantment.*;
@@ -28,16 +23,17 @@ import net.sen.lostworlds.entity.*;
 import net.sen.lostworlds.fluid.*;
 import net.sen.lostworlds.item.*;
 import net.sen.lostworlds.loot.*;
+//import net.sen.lostworlds.multiblocks.druid_ritual.ModDruidRituals;
 import net.sen.lostworlds.painting.*;
 import net.sen.lostworlds.particle.*;
 import net.sen.lostworlds.potion.*;
 import net.sen.lostworlds.recipe.*;
-import net.sen.lostworlds.screen.alloysmelter.*;
 import net.sen.lostworlds.screen.*;
 import net.sen.lostworlds.sound.*;
 import net.sen.lostworlds.util.registry.ModCompostables;
 import net.sen.lostworlds.util.registry.ModFlowerPots;
 import net.sen.lostworlds.villager.*;
+import net.sen.lostworlds.villager.custom.dwarven.ModDwarvenVillagers;
 import net.sen.lostworlds.worldgen.biome.carver.*;
 import net.sen.lostworlds.worldgen.portal.*;
 import org.slf4j.Logger;
@@ -71,8 +67,13 @@ public class LostWorlds {
         ModRecipes.register(modEventBus);
         ModEntities.register(modEventBus);
 
+        //Custom
+//        ModDruidRituals.register(modEventBus);
+        ModDwarvenVillagers.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::enqueueIMC);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -82,9 +83,14 @@ public class LostWorlds {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+//        SyncHandler.init();
+
         ModPotions.recipe(event);
         ModCompostables.setup(event);
         ModFlowerPots.setup(event);
+    }
+
+    private void enqueueIMC(InterModEnqueueEvent event) {
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -98,6 +104,12 @@ public class LostWorlds {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+//            DebugInfoHandler.init();
+//            HUDOverlayHandler.init();
+//            TooltipOverlayHandler.init();
+
+//            event.enqueueWork(ClientHandler::init);
+
             event.enqueueWork(() -> {
                 ModWoodTypesReg.setup(event);
                 ModItemProperties.addCustomItemProperties();
@@ -105,6 +117,7 @@ public class LostWorlds {
                 ModMenuScreenReg.setup(event);
                 ModEntityRendReg.setup(event);
                 ModEntityRendProjReg.setup(event);
+                ClientHandler.init(event);
             });
         }
     }

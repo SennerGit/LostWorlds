@@ -8,16 +8,13 @@ import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.block.custom.CrimsonDiamondLampBlock;
-import net.sen.lostworlds.block.custom.ModRedStoneOreBlock;
-import net.sen.lostworlds.block.custom.PomegranateCropBlock;
-import net.sen.lostworlds.block.custom.WaterRemoverBlock;
+import net.sen.lostworlds.block.custom.*;
+import net.sen.lostworlds.block.portal.ModPortalBlock;
 
-import java.util.Properties;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -104,6 +101,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customLamp(ModBlocks.CRIMSON_DIAMOND_LAMP);
 
         makeCrop(((PomegranateCropBlock) ModBlocks.POMEGRANATE_CROP_BLOCK.get()), "pomegranate_stage", "pomegranate_stage");
+        makeCrop(((DurumWheatCropBlock) ModBlocks.DURUM_WHEAT_CROP_BLOCK.get()), "durum_wheat_stage", "durum_wheat_stage");
+        makeCrop(((TomatoCropBlock) ModBlocks.TOMATO_CROP_BLOCK.get()), "tomato_stage", "tomato_stage");
+        makeCrop(((OnionCropBlock) ModBlocks.WILD_ONION_CROP_BLOCK.get()), "wild_onion_stage", "wild_onion_stage");
+        makeCrop(((OnionCropBlock) ModBlocks.STAGE_1_ONION_CROP_BLOCK.get()), "stage_1_onion_stage", "stage_1_onion_stage");
+        makeCrop(((OnionCropBlock) ModBlocks.STAGE_2_ONION_CROP_BLOCK.get()), "stage_2_onion_stage", "stage_2_onion_stage");
+        makeCrop(((OnionCropBlock) ModBlocks.STAGE_3_ONION_CROP_BLOCK.get()), "stage_3_onion_stage", "stage_3_onion_stage");
+        makeCrop(((OnionCropBlock) ModBlocks.ONION_CROP_BLOCK.get()), "onion_stage", "onion_stage");
+        makeCrop(((DragonFruitCropBlock) ModBlocks.DRAGON_FRUIT_CROP_BLOCK.get()), "dragon_fruit_stage", "dragon_fruit_stage");
+        makeCrop(((ChilliCropBlock) ModBlocks.CHILLI_CROP_BLOCK.get()), "chilli_stage", "chilli_stage");
+
+        this.makePortalBlock(ModBlocks.ALFHEIMR_PORTAL);
+        this.makePortalBlock(ModBlocks.ATLANTIS_PORTAL);
+        this.makePortalBlock(ModBlocks.NIDAVELLIR_PORTAL);
+        this.makePortalBlock(ModBlocks.SKYOPIA_PORTAL);
+        this.makePortalBlock(ModBlocks.UNDERWORLD_PORTAL);
 
         horizontalBlock(ModBlocks.ALLOY_SMELTER.get(), new ModelFile.UncheckedModelFile(modLoc("block/alloy_smelter")));
 
@@ -366,9 +378,110 @@ public class ModBlockStateProvider extends BlockStateProvider {
         /*
          * FLOWER
         */
-        makeFlower(ModBlocks.IRIS_FLOWER.get());
-        makeFlowerPotted(ModBlocks.POTTED_IRIS_FLOWER, ModBlocks.IRIS_FLOWER);
+        makeFlower(ModBlocks.IRIS_FLOWER, ModBlocks.POTTED_IRIS_FLOWER);
+        makeFlower(ModBlocks.DARK_BLOOM_FLOWER, ModBlocks.POTTED_DARK_BLOOM_FLOWER);
+        makeFlower(ModBlocks.DREAD_NIGHT_FLOWER, ModBlocks.POTTED_DREAD_NIGIHT_FLOWER);
+        makeFlower(ModBlocks.BLACK_LOTUS_FLOWER, ModBlocks.POTTED_BLACK_LOTUS_FLOWER);
+        makeFlower(ModBlocks.NIGHT_ROSE_FLOWER, ModBlocks.POTTED_NIGHT_ROSE_FLOWER);
+        makeFlower(ModBlocks.AQUA_ROSE_FLOWER, ModBlocks.POTTED_AQUA_ROSE_FLOWER);
+        makeFlower(ModBlocks.MOON_FLOWER, ModBlocks.POTTED_MOON_FLOWER);
+        makeFlower(ModBlocks.CATHERINE_FLOWER, ModBlocks.POTTED_CATHERINE_FLOWER);
+        makeFlower(ModBlocks.TAINTED_ROSE_FLOWER, ModBlocks.POTTED_TAINTED_ROSE_FLOWER);
+        makeFlower(ModBlocks.CINNAMON_ROSE_FLOWER, ModBlocks.POTTED_CINNAMON_ROSE_FLOWER);
+        makeFlower(ModBlocks.BUTTERFLY_FLOWER, ModBlocks.POTTED_BUTTERFLY_FLOWER);
+        makeFlower(ModBlocks.GAIA_TULIP_FLOWER, ModBlocks.POTTED_GAIA_TULIP_FLOWER);
+        makeFlower(ModBlocks.BEARDED_IRIS_FLOWER, ModBlocks.POTTED_BEARDED_IRIS_FLOWER);
+        makeFlower(ModBlocks.CORNFLOWER_FLOWER, ModBlocks.POTTED_CORNFLOWER_FLOWER);
+        makeFlower(ModBlocks.MORNING_GLORY_FLOWER, ModBlocks.POTTED_MORNING_GLORY_FLOWER);
+        makeFlower(ModBlocks.GEORGIA_BLUE_FLOWER, ModBlocks.POTTED_GEORGIA_BLUE_FLOWER);
+        makeFlower(ModBlocks.BLUE_POPPY_FLOWER, ModBlocks.POTTED_BLUE_POPPY_FLOWER);
+        makeFlower(ModBlocks.TULIP_FLOWER, ModBlocks.POTTED_TULIP_FLOWER);
+        makeFlower(ModBlocks.CARNATION_FLOWER, ModBlocks.POTTED_CARNATION_FLOWER);
+        makeFlower(ModBlocks.LADYS_MANTLE_FLOWER, ModBlocks.POTTED_LADYS_MANTLE_FLOWER);
+        makeFlower(ModBlocks.GREEN_ROSE_FLOWER, ModBlocks.POTTED_GREEN_ROSE_FLOWER);
+        makeFlower(ModBlocks.CLEMATIS_FLOWER, ModBlocks.POTTED_CLEMATIS_FLOWER);
+        makeFlower(ModBlocks.BLUE_STAR_FLOWER, ModBlocks.POTTED_BLUE_STAR_FLOWER);
+        makeFlower(ModBlocks.SALVIA_FLOWER, ModBlocks.POTTED_SALVIA_FLOWER);
+        makeFlower(ModBlocks.FALSE_INDIGO_FLOWER, ModBlocks.POTTED_FALSE_INDIGO_FLOWER);
+        makeFlower(ModBlocks.WHITE_SAGE_FLOWER, ModBlocks.POTTED_WHITE_SAGE_FLOWER);
+        makeFlower(ModBlocks.SILVER_SCHEHERAZADE_FLOWER, ModBlocks.POTTED_SILVER_SCHEHERAZADE_FLOWER);
+        makeFlower(ModBlocks.SILVER_SPRING_FLOWER, ModBlocks.POTTED_SILVER_SPRING_FLOWER);
+        makeFlower(ModBlocks.SILVER_SHADOWS_FLOWER, ModBlocks.POTTED_SILVER_SHADOWS_FLOWER);
+        makeFlower(ModBlocks.GREEN_BALL_FLOWER, ModBlocks.POTTED_GREEN_BALL_FLOWER);
+        makeFlower(ModBlocks.LIME_DAHLIA_FLOWER, ModBlocks.POTTED_LIME_DAHLIA_FLOWER);
+        makeFlower(ModBlocks.HYDRANGEA_FLOWER, ModBlocks.POTTED_HYDRANGEA_FLOWER);
+        makeFlower(ModBlocks.ZINNIA_FLOWER, ModBlocks.POTTED_ZINNIA_FLOWER);
+        makeFlower(ModBlocks.BUTTERFLY_CANDY_FLOWER, ModBlocks.POTTED_BUTTERFLY_CANDY_FLOWER);
+        makeFlower(ModBlocks.CABARET_FLOWER, ModBlocks.POTTED_CABARET_FLOWER);
+        makeFlower(ModBlocks.DIANTHUS_FLOWER, ModBlocks.POTTED_DIANTHUS_FLOWER);
+        makeFlower(ModBlocks.TITAN_CRANBERRY_VINCA_FLOWER, ModBlocks.POTTED_TITAN_CRANBERRY_VINCA_FLOWER);
+        makeFlower(ModBlocks.ORANGE_ZINNIA_FLOWER, ModBlocks.POTTED_ORANGE_ZINNIA_FLOWER);
+        makeFlower(ModBlocks.BEGONIA_FLOWER, ModBlocks.POTTED_BEGONIA_FLOWER);
+        makeFlower(ModBlocks.CROWN_IMPERIAL_FLOWER, ModBlocks.POTTED_CROWN_IMPERIAL_FLOWER);
+        makeFlower(ModBlocks.ORIENTAL_POPPY_FLOWER, ModBlocks.POTTED_ORIENTAL_POPPY_FLOWER);
+        makeFlower(ModBlocks.AZALEA_FLOWER, ModBlocks.POTTED_AZALEA_FLOWER);
+        makeFlower(ModBlocks.PINK_DELIGHT_FLOWER, ModBlocks.POTTED_PINK_DELIGHT_FLOWER);
+        makeFlower(ModBlocks.CHRYSANTHEMUM_FLOWER, ModBlocks.POTTED_CHRYSANTHEMUM_FLOWER);
+        makeFlower(ModBlocks.HIBISCUS_FLOWER, ModBlocks.POTTED_HIBISCUS_FLOWER);
+        makeFlower(ModBlocks.CARDINAL_FLOWER, ModBlocks.POTTED_CARDINAL_FLOWER);
+        makeFlower(ModBlocks.GERBERA_FLOWER, ModBlocks.POTTED_GERBERA_FLOWER);
+        makeFlower(ModBlocks.RED_TULIP_FLOWER, ModBlocks.POTTED_RED_TULIP_FLOWER);
+        makeFlower(ModBlocks.FREESIA_FLOWER, ModBlocks.POTTED_FREESIA_FLOWER);
+        makeFlower(ModBlocks.GARDENIAS_FLOWER, ModBlocks.POTTED_GARDENIAS_FLOWER);
+        makeFlower(ModBlocks.STAR_JASMINE_FLOWER, ModBlocks.POTTED_STAR_JASMINE_FLOWER);
+        makeFlower(ModBlocks.WHITE_WARATAH_FLOWER, ModBlocks.POTTED_WHITE_WARATAH_FLOWER);
+        makeFlower(ModBlocks.FLANNEL_FLOWER, ModBlocks.POTTED_FLANNEL_FLOWER);
+        makeFlower(ModBlocks.BEARS_EARS_FLOWER, ModBlocks.POTTED_BEARS_EARS_FLOWER);
+        makeFlower(ModBlocks.BIDENS_FLOWER, ModBlocks.POTTED_BIDENS_FLOWER);
+        makeFlower(ModBlocks.BLANKET_FLOWER, ModBlocks.POTTED_BLANKET_FLOWER);
+        makeFlower(ModBlocks.BULBINE_FLOWER, ModBlocks.POTTED_BULBINE_FLOWER);
+        makeFlower(ModBlocks.SILVER_BRUNIA_FLOWER, ModBlocks.POTTED_SILVER_BRUNIA_FLOWER);
+        makeFlower(ModBlocks.GRAY_ROSES_FLOWER, ModBlocks.POTTED_GRAY_ROSES_FLOWER);
+        makeFlower(ModBlocks.MOON_CARROT_FLOWER, ModBlocks.POTTED_MOON_CARROT_FLOWER);
+        makeFlower(ModBlocks.SILVER_BABY_FLOWER, ModBlocks.POTTED_SILVER_BABY_FLOWER);
+        makeFlower(ModBlocks.LAVENDER_FLOWER, ModBlocks.POTTED_LAVENDER_FLOWER);
+        makeFlower(ModBlocks.BELLFLOWER_FLOWER, ModBlocks.POTTED_BELLFLOWER_FLOWER);
+        makeFlower(ModBlocks.LILAC_FLOWER, ModBlocks.POTTED_LILAC_FLOWER);
+        makeFlower(ModBlocks.SWEET_PEA_FLOWER, ModBlocks.POTTED_SWEET_PEA_FLOWER);
 
+        /*
+        VEGETATION
+         */
+        makeVegetation(ModBlocks.ALFHEIMR_MAGIC_GRASS);
+
+        /*
+        MUSHROOMS
+         */
+        blockWithItem(ModBlocks.TOP_POINT_MUSHROOM_BLOCK);
+        blockWithItem(ModBlocks.POINT_MUSHROOM_STEM_BLOCK);
+        makeMushroom(ModBlocks.POINT_MUSHROOM_BLOCK, ModBlocks.POTTED_POINT_MUSHROOM_BLOCK);
+
+        blockWithItem(ModBlocks.TOP_WITCHES_MUSHROOM_BLOCK);
+        blockWithItem(ModBlocks.WITCHES_MUSHROOM_STEM_BLOCK);
+        makeMushroom(ModBlocks.WITCHES_MUSHROOM_BLOCK, ModBlocks.POTTED_WITCHES_MUSHROOM_BLOCK);
+
+        blockWithItem(ModBlocks.TOP_ROYAL_BLUE_MUSHROOM_BLOCK);
+        blockWithItem(ModBlocks.ROYAL_BLUE_MUSHROOM_STEM_BLOCK);
+        blockWithItem(ModBlocks.ROYAL_BLUE_MUSHROOM_GLOW_BLOCK);
+        makeMushroom(ModBlocks.ROYAL_BLUE_MUSHROOM_BLOCK, ModBlocks.POTTED_ROYAL_BLUE_MUSHROOM_BLOCK);
+
+        blockWithItem(ModBlocks.TOP_SHORT_TOP_MUSHROOM_BLOCK);
+        blockWithItem(ModBlocks.SHORT_TOP_MUSHROOM_STEM_BLOCK);
+        makeMushroom(ModBlocks.SHORT_TOP_MUSHROOM_BLOCK, ModBlocks.POTTED_SHORT_TOP_MUSHROOM_BLOCK);
+
+        blockWithItem(ModBlocks.TOP_SPECTRAL_MUSHROOM_BLOCK);
+        blockWithItem(ModBlocks.SPECTRAL_MUSHROOM_STEM_BLOCK);
+        makeMushroom(ModBlocks.SPECTRAL_MUSHROOM_BLOCK, ModBlocks.POTTED_SPECTRAL_MUSHROOM_BLOCK);
+
+        makeVine(ModBlocks.SHADE_MUSHROOM_VINE_BLOCK);
+        makeMushroom(ModBlocks.SHADE_MUSHROOM_BLOCK, ModBlocks.POTTED_SHADE_MUSHROOM_BLOCK);
+
+        makeVine(ModBlocks.CAP_MUSHROOM_VINE_BLOCK);
+        makeMushroom(ModBlocks.CAP_MUSHROOM_BLOCK, ModBlocks.POTTED_CAP_MUSHROOM_BLOCK);
+
+        /*
+        STUFF
+         */
         this.waterRemoverBlock(ModBlocks.ATLANTAS_WATER_REMOVER_BLOCK);
 
         blockComplexGen();
@@ -397,6 +510,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE);
 
         blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER);
@@ -408,6 +524,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER);
 
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE);
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE);
@@ -428,6 +547,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE);
 
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER);
@@ -439,6 +561,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER);
 
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE);
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE);
@@ -459,6 +584,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE);
 
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER);
@@ -470,6 +598,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER);
 
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE);
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE);
@@ -490,6 +621,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE);
 
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER);
@@ -501,6 +635,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER);
 
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE);
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE);
@@ -521,6 +658,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE);
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE);
 
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER);
@@ -532,6 +672,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER);
         blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER);
 
         blockWithItem(ModBlocks.TARTARUS_STONE);
         blockWithItem(ModBlocks.TARTARUS_STONE_COBBLESTONE);
@@ -747,23 +890,52 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 modBlockResourceLocation(block.getId().getPath() + "_on")));
     }
 
-    public void makeCrop(CropBlock block, String modelName, String textureName) {
+    public void makePortalBlock(RegistryObject<Block> block) {
+        ModelFile portalModel = models().getBuilder(modBlockResourceLocation(block).getPath());
+        ModelFile portalModelEW = models().getBuilder(modBlockResourceLocation(block, "_ew").getPath());
+        ModelFile portalModelNS = models().getBuilder(modBlockResourceLocation(block, "_ns").getPath());
+
+        getVariantBuilder(block.get())
+                .forAllStates(state -> {
+                    switch (state.getValue(ModPortalBlock.AXIS)) {
+                        case X -> {
+                            return ConfiguredModel.builder().modelFile(portalModelEW).build();
+                        }
+
+                        case Z -> {
+                            return ConfiguredModel.builder().modelFile(portalModelNS).build();
+                        }
+                    }
+
+                    return null;
+//                    final String path = state.getValue(ModPortalBlock.AXIS == ) ? "_ew" : "_ns";
+//                    return ConfiguredModel.builder().modelFile(portalModelEW).nextModel().modelFile(portalModelNS).build();
+                })
+//                .forAllStates(state -> ConfiguredModel.builder().modelFile(portalModelNS).build())
+        ;
+
+//        getVariantBuilder(block.get()).partialState().addModels(
+//                new ConfiguredModel(portalModelEW)
+//        ).addModels(
+//                new ConfiguredModel(portalModelNS)
+//        );
+
+//        getVariantBuilder(block.get()).partialState().getSetStates().get(ModPortalBlock.AXIS)
+//                .modelForState().modelFile(portalModelEW).nextModel().modelFile(portalModelNS).build();
+    }
+
+    public void makeCrop(ModCropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+    private ConfiguredModel[] states(BlockState state, ModCropBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((PomegranateCropBlock) block).getAgeProperty()),
-                modBlockResourceLocation(textureName + state.getValue(((PomegranateCropBlock) block).getAgeProperty()))).renderType("cutout"));
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue((block).getAgeProperty()),
+                modBlockResourceLocation(textureName + state.getValue((block).getAgeProperty()))).renderType("cutout"));
 
         return models;
-    }
-
-    public void makeFlower(Block block) {
-        simpleBlock(block,
-                models().cross(blockTexture(block).getPath(), blockTexture(block)).renderType("cutout"));
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
@@ -786,12 +958,52 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(wallSignBlock, sign);
     }
 
-    public void makeFlowerPotted(RegistryObject<Block> potBlock, RegistryObject<Block> flowerBlock) {
-        simpleBlock(potBlock.get(), models().withExistingParent(potBlock.getId().getPath(), mcLoc("block/flower_pot_cross")).renderType("cutout").texture("plant", blockTexture(flowerBlock.get())));
+    public void makeFlower(RegistryObject<Block> flowerBlock, RegistryObject<Block> potBlock) {
+        simpleBlock(flowerBlock.get(),
+                models().cross(blockTexture(flowerBlock.get()).getPath(),
+                        blockTexture(flowerBlock.get())).renderType("cutout"));
+        simpleBlock(potBlock.get(),
+                models().withExistingParent(potBlock.getId().getPath(),
+                        mcLoc("block/flower_pot_cross")).renderType("cutout")
+                        .texture("plant", blockTexture(flowerBlock.get())));
+    }
+
+    public void makeVegetation(RegistryObject<Block> vegBlock) {
+        simpleBlock(vegBlock.get(),
+                models().cross(blockTexture(vegBlock.get()).getPath(),
+                        blockTexture(vegBlock.get())).renderType("cutout"));
+    }
+
+    public void makeMushroom(RegistryObject<Block> mushroomBlock, RegistryObject<Block> potBlock) {
+        simpleBlock(mushroomBlock.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(mushroomBlock.get()).getPath(),
+                        blockTexture(mushroomBlock.get())).renderType("cutout"));
+        simpleBlock(potBlock.get(),
+                models().withExistingParent(potBlock.getId().getPath(),
+                                mcLoc("block/flower_pot_cross")).renderType("cutout")
+                        .texture("plant", blockTexture(mushroomBlock.get())));
+    }
+
+    public void makeMushroom(RegistryObject<Block> mushroomBlock) {
+        simpleBlock(mushroomBlock.get(),
+                models().cross(blockTexture(mushroomBlock.get()).getPath(),
+                        blockTexture(mushroomBlock.get())).renderType("cutout"));
+    }
+
+    public void makeVine(RegistryObject<Block> vineBlock) {
+        simpleBlock(vineBlock.get(),
+                models().withExistingParent(vineBlock.getId().getPath(),
+                        mcLoc("block/vine")).renderType("vine")
+                        .texture("vine", blockTexture(vineBlock.get()))
+        );
     }
 
     private ResourceLocation modBlockResourceLocation(RegistryObject<Block> block) {
         return modBlockResourceLocation(block.getId().getPath());
+    }
+
+    private ResourceLocation modBlockResourceLocation(RegistryObject<Block> block, String addedData) {
+        return modBlockResourceLocation(block.getId().getPath() + addedData);
     }
 
     private ResourceLocation modBlockResourceLocation(String block) {

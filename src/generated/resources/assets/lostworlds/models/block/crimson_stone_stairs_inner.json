@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "lostworlds:block/crimson_stone",
-    "side": "lostworlds:block/crimson_stone",
-    "top": "lostworlds:block/crimson_stone"
-  }
-}

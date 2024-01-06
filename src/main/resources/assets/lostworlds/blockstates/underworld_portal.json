@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "axis=z": { "model": "lostworlds:block/underworld_portal_ew" },
-    "axis=x": { "model": "lostworlds:block/underworld_portal_ns" }
-  }
-}

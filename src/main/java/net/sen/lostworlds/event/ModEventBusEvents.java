@@ -27,6 +27,8 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.RHINO_LAYER, RhinoModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.DWARVES_LAYER, DwarvesModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ELVES_LAYER, ElvesModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SHARK_LAYER, SharkModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.MORAY_EELS_LAYER, MorayEelsModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.ELECTRIC_EELS_LAYER, ElectricEelsModel::createBodyLayer);
@@ -52,6 +54,8 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.RHINO.get(), RhinoEntity.createAttributes().build());
+        event.put(ModEntities.DWARVES.get(), DwarvesEntity.createAttributes().build());
+        event.put(ModEntities.ELVES.get(), ElvesEntity.createAttributes().build());
         event.put(ModEntities.SHARK.get(), SharkEntity.createAttributes().build());
         event.put(ModEntities.MORAY_EELS.get(), MorayEelsEntity.createAttributes().build());
         event.put(ModEntities.ELECTRIC_EELS.get(), ElectricEelsEntity.createAttributes().build());
@@ -75,6 +79,10 @@ public class ModEventBusEvents {
     public static void registersSpawnPlacement(SpawnPlacementRegisterEvent event) {
         event.register(ModEntities.RHINO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.DWARVES.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                AbstractVillager::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ModEntities.ELVES.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                AbstractVillager::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(ModEntities.SHARK.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.OCEAN_FLOOR,
                 WaterAnimal::checkSurfaceWaterAnimalSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(ModEntities.MORAY_EELS.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.OCEAN_FLOOR,

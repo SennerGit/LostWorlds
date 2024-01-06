@@ -12,7 +12,6 @@ import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.datagen.modonomicon.LostWorldsBookItem;
@@ -50,10 +49,32 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL, ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE);
         wallItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL, ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS);
 
+        buttonItem(ModBlocks.TARTARUS_STONE_BUTTON, ModBlocks.TARTARUS_STONE);
+        wallItem(ModBlocks.TARTARUS_STONE_WALL, ModBlocks.TARTARUS_STONE);
+        wallItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_WALL, ModBlocks.TARTARUS_STONE_COBBLESTONE);
+        wallItem(ModBlocks.TARTARUS_STONE_BRICKS_WALL, ModBlocks.TARTARUS_STONE_BRICKS);
+
         simpleItem(ModItems.CRIMSON_APPLE);
         simpleItem(ModItems.POMEGRANATE);
         simpleItem(ModItems.POMEGRANATE_SEEDS);
         simpleItem(ModItems.OLIVE);
+        simpleItem(ModItems.DURUM_WHEAT);
+        simpleItem(ModItems.DURUM_WHEAT_SEEDS);
+        simpleItem(ModItems.TOMATO);
+        simpleItem(ModItems.TOMATO_SEEDS);
+        simpleItem(ModItems.WILD_ONION);
+        simpleItem(ModItems.ONION_STAGE_1);
+        simpleItem(ModItems.ONION_STAGE_2);
+        simpleItem(ModItems.ONION_STAGE_3);
+        simpleItem(ModItems.ONION);
+        simpleItem(ModItems.DRAGON_FRUIT);
+        simpleItem(ModItems.DRAGON_FRUIT_SEEDS);
+        simpleItem(ModItems.CHILLI);
+        simpleItem(ModItems.CHILLI_SEEDS);
+
+        simpleItem(ModItems.AQUAMARINE);
+        simpleItem(ModItems.OPAL);
+        simpleItem(ModItems.RUBY);
 
         simpleItem(ModItems.CRIMSON_DIAMOND);
         simpleItem(ModItems.CRIMSON_TEAR);
@@ -138,7 +159,86 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.CRIMSON_STONE_WALL, ModBlocks.CRIMSON_STONE);
 
         this.simpleBlockItemUi(ModBlocks.CRIMSON_STONE_DOOR);
-        this.simpleBlockItemUi(ModBlocks.IRIS_FLOWER);
+
+        //Vegetation
+        this.simpleBlockTexture(ModBlocks.ALFHEIMR_MAGIC_GRASS);
+
+        this.simpleBlockTexture(ModBlocks.IRIS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.DARK_BLOOM_FLOWER);
+        this.simpleBlockTexture(ModBlocks.DREAD_NIGHT_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BLACK_LOTUS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.NIGHT_ROSE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.AQUA_ROSE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.MOON_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CATHERINE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.TAINTED_ROSE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CINNAMON_ROSE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BUTTERFLY_FLOWER);
+        this.simpleBlockTexture(ModBlocks.GAIA_TULIP_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BEARDED_IRIS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CORNFLOWER_FLOWER);
+        this.simpleBlockTexture(ModBlocks.MORNING_GLORY_FLOWER);
+        this.simpleBlockTexture(ModBlocks.GEORGIA_BLUE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BLUE_POPPY_FLOWER);
+        this.simpleBlockTexture(ModBlocks.TULIP_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CARNATION_FLOWER);
+        this.simpleBlockTexture(ModBlocks.LADYS_MANTLE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.GREEN_ROSE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CLEMATIS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BLUE_STAR_FLOWER);
+        this.simpleBlockTexture(ModBlocks.SALVIA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.FALSE_INDIGO_FLOWER);
+        this.simpleBlockTexture(ModBlocks.WHITE_SAGE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.SILVER_SCHEHERAZADE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.SILVER_SPRING_FLOWER);
+        this.simpleBlockTexture(ModBlocks.SILVER_SHADOWS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.GREEN_BALL_FLOWER);
+        this.simpleBlockTexture(ModBlocks.LIME_DAHLIA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.HYDRANGEA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.ZINNIA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BUTTERFLY_CANDY_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CABARET_FLOWER);
+        this.simpleBlockTexture(ModBlocks.DIANTHUS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.TITAN_CRANBERRY_VINCA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.ORANGE_ZINNIA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BEGONIA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CROWN_IMPERIAL_FLOWER);
+        this.simpleBlockTexture(ModBlocks.ORIENTAL_POPPY_FLOWER);
+        this.simpleBlockTexture(ModBlocks.AZALEA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.PINK_DELIGHT_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CHRYSANTHEMUM_FLOWER);
+        this.simpleBlockTexture(ModBlocks.HIBISCUS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.CARDINAL_FLOWER);
+        this.simpleBlockTexture(ModBlocks.GERBERA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.RED_TULIP_FLOWER);
+        this.simpleBlockTexture(ModBlocks.FREESIA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.GARDENIAS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.STAR_JASMINE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.WHITE_WARATAH_FLOWER);
+        this.simpleBlockTexture(ModBlocks.FLANNEL_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BEARS_EARS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BIDENS_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BLANKET_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BULBINE_FLOWER);
+        this.simpleBlockTexture(ModBlocks.SILVER_BRUNIA_FLOWER);
+        this.simpleBlockTexture(ModBlocks.GRAY_ROSES_FLOWER);
+        this.simpleBlockTexture(ModBlocks.MOON_CARROT_FLOWER);
+        this.simpleBlockTexture(ModBlocks.SILVER_BABY_FLOWER);
+        this.simpleBlockTexture(ModBlocks.LAVENDER_FLOWER);
+        this.simpleBlockTexture(ModBlocks.BELLFLOWER_FLOWER);
+        this.simpleBlockTexture(ModBlocks.LILAC_FLOWER);
+        this.simpleBlockTexture(ModBlocks.SWEET_PEA_FLOWER);
+
+        //Mushrooms
+        this.mushroomItem(ModBlocks.POINT_MUSHROOM_BLOCK);
+        this.mushroomItem(ModBlocks.WITCHES_MUSHROOM_BLOCK);
+        this.mushroomItem(ModBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
+        this.mushroomItem(ModBlocks.SHORT_TOP_MUSHROOM_BLOCK);
+        this.mushroomItem(ModBlocks.SPECTRAL_MUSHROOM_BLOCK);
+        this.mushroomItem(ModBlocks.SHADE_MUSHROOM_BLOCK);
+        this.mushroomItem(ModBlocks.SHADE_MUSHROOM_VINE_BLOCK);
+        this.mushroomItem(ModBlocks.CAP_MUSHROOM_BLOCK);
+        this.mushroomItem(ModBlocks.CAP_MUSHROOM_VINE_BLOCK);
 
         handheldItem(ModItems.NETHER_STEEL_SWORD);
         handheldItem(ModItems.NETHER_STEEL_PICKAXE);
@@ -158,7 +258,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         complexBlock(ModBlocks.ALLOY_SMELTER.get());
 //        simpleBlockItem(ModBlocks.UNDERWORLD_GRASS_BLOCK);
-
 
         simpleItem(ModItems.STYX_WATER_BUCKET);
 
@@ -223,6 +322,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         createArmourSet(ModItems.BRONZE_HELMET, ModItems.BRONZE_CHESTPLATE, ModItems.BRONZE_LEGGINGS, ModItems.BRONZE_BOOTS);
 
         withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.DWARVES_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ELVES_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SHARK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.MORAY_EELS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.ELECTRIC_EELS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -306,6 +407,18 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                LostWorldsConstants.mcLoc("item/generated")).texture("layer0",
+                new ResourceLocation(LostWorldsConstants.MODID,"block/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder mushroomItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                LostWorldsConstants.mcLoc("item/generated")).texture("layer0",
+                new ResourceLocation(LostWorldsConstants.MODID,"block/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockTexture(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 LostWorldsConstants.mcLoc("item/generated")).texture("layer0",
                 new ResourceLocation(LostWorldsConstants.MODID,"block/" + item.getId().getPath()));

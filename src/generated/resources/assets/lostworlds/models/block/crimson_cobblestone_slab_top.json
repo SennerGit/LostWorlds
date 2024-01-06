@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "lostworlds:block/crimson_cobblestone",
-    "side": "lostworlds:block/crimson_cobblestone",
-    "top": "lostworlds:block/crimson_cobblestone"
-  }
-}

@@ -1,13 +1,18 @@
 package net.sen.lostworlds.client;
 
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.client.event.CreativeScreenEvents;
 
-@Mod.EventBusSubscriber(modid = LostWorlds.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientHandler {
-    public static void init() {
-
+    public static void init(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            MinecraftForge.EVENT_BUS.register(new CreativeScreenEvents());
+        });
     }
 
 //    @SubscribeEvent

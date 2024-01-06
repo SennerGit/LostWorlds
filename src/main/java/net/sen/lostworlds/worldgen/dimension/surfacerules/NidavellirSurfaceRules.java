@@ -36,7 +36,15 @@ public class NidavellirSurfaceRules {
 
     private static SurfaceRules.RuleSource stoneSoftSurface() {
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0), SurfaceRules.state(ModBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState()))
+                SurfaceRules.ifTrue(
+                        SurfaceRules.yBlockCheck(
+                                VerticalAnchor.belowTop(5),
+                                0
+                        ),
+                        SurfaceRules.state(
+                                ModBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState()
+                        )
+                )
         );
     }
 

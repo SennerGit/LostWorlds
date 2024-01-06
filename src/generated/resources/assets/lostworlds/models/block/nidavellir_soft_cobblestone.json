@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "lostworlds:block/nidavellir_soft_cobblestone"
-  }
-}

@@ -1,64 +1,69 @@
-[17Dec2023 11:15:46.339] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\seang\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.1.3, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, lostworlds, --all, --output, C:\Work\Modding\Minecraft\1.20.X\LostWorlds\src\generated\resources, --existing, C:\Work\Modding\Minecraft\1.20.X\LostWorlds\src\main\resources]
-[17Dec2023 11:15:46.346] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.8.1 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[17Dec2023 11:15:46.535] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[17Dec2023 11:15:46.602] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/seang/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[17Dec2023 11:15:47.005] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\seang\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.1.3\9775dc3f284cdb3e0d33b372c328c6ef88e434b0\javafmllanguage-1.20.1-47.1.3.jar is missing mods.toml file
-[17Dec2023 11:15:47.014] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\seang\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.1.3\d785f4087ec3be094fd5aed801f5366ca958a81b\lowcodelanguage-1.20.1-47.1.3.jar is missing mods.toml file
-[17Dec2023 11:15:47.021] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\seang\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.1.3\be60c45f3578cdf944a669c6ea16fd91bec50f2e\mclanguage-1.20.1-47.1.3.jar is missing mods.toml file
-[17Dec2023 11:15:47.028] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\seang\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.1.3\1aadc0201d8e97b107d9978c7fe066bb54bbb9dc\fmlcore-1.20.1-47.1.3.jar is missing mods.toml file
-[17Dec2023 11:15:47.233] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
-[17Dec2023 11:15:51.018] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[17Dec2023 11:15:51.029] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\seang\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, lostworlds, --all, --output, C:\Work\Modding\Minecraft\1.20.X\LostWorlds\src\generated\resources, --existing, C:\Work\Modding\Minecraft\1.20.X\LostWorlds\src\main\resources]
-[17Dec2023 11:15:51.174] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.mixins.json could not be read. If this is a development environment you can ignore this message
-[17Dec2023 11:15:51.177] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.forge.mixins.json could not be read. If this is a development environment you can ignore this message
-[17Dec2023 11:15:51.400] [main/INFO] [mixin/]: Remapping refMap structure_gel.refmap.json using C:\Work\Modding\Minecraft\1.20.X\LostWorlds\build\createSrgToMcp\output.srg
-[17Dec2023 11:15:52.162] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [lostworlds]
-[17Dec2023 11:15:57.466] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.1.3, for MC 1.20.1 with MCP 20230612.114412
-[17Dec2023 11:15:57.468] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.1.3 Initialized
-[17Dec2023 11:15:58.012] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[17Dec2023 11:15:58.031] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 11.47 ms
-[17Dec2023 11:15:58.718] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:loot_table_alias
-[17Dec2023 11:15:58.725] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:data_handler_type
-[17Dec2023 11:15:58.728] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:dynamic_spawner
-[17Dec2023 11:15:58.731] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:jigsaw_type
-[17Dec2023 11:15:58.802] [main/WARN] [net.minecraft.network.syncher.SynchedEntityData/]: defineId called for: class net.sen.lostworlds.entity.mob.RhinoEntity from class net.sen.lostworlds.entity.mob.SharkEntity
-[17Dec2023 11:15:58.803] [main/WARN] [net.minecraft.network.syncher.SynchedEntityData/]: defineId called for: class net.sen.lostworlds.entity.mob.RhinoEntity from class net.sen.lostworlds.entity.mob.SharkEntity
-[17Dec2023 11:15:58.916] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Work/Modding/Minecraft/1.20.X/LostWorlds/build/fg_cache/net/minecraftforge/forge/1.20.1-47.1.3_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.1.3_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[17Dec2023 11:15:58.916] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Work/Modding/Minecraft/1.20.X/LostWorlds/build/fg_cache/net/minecraftforge/forge/1.20.1-47.1.3_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.1.3_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[17Dec2023 11:15:59.475] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[17Dec2023 11:15:59.536] [Worker-Main-2/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Generating ResourceKey[minecraft:root / forge:holder_set_type]
-[17Dec2023 11:15:59.536] [Worker-Main-2/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Generating ResourceKey[minecraft:root / forge:structure_modifier_serializers]
-[17Dec2023 11:15:59.536] [Worker-Main-2/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Generating ResourceKey[minecraft:root / forge:structure_modifier]
-[17Dec2023 11:15:59.667] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 189 ms
-[17Dec2023 11:15:59.668] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[17Dec2023 11:15:59.941] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 273 ms
-[17Dec2023 11:15:59.942] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block Tags
-[17Dec2023 11:16:00.002] [main/INFO] [net.minecraft.data.DataGenerator/]: Block Tags finished after 59 ms
-[17Dec2023 11:16:00.003] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Tags
-[17Dec2023 11:16:00.008] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Tags finished after 5 ms
-[17Dec2023 11:16:00.009] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block Models: lostworlds
-[17Dec2023 11:16:00.009] [main/INFO] [net.minecraft.data.DataGenerator/]: Block Models: lostworlds finished after 0 ms
-[17Dec2023 11:16:00.010] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: lostworlds
-[17Dec2023 11:16:00.405] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: lostworlds finished after 394 ms
-[17Dec2023 11:16:00.405] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: lostworlds
-[17Dec2023 11:16:00.941] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: lostworlds finished after 534 ms
-[17Dec2023 11:16:00.942] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Sound Definitions
-[17Dec2023 11:16:00.954] [main/INFO] [net.minecraft.data.DataGenerator/]: Sound Definitions finished after 11 ms
-[17Dec2023 11:16:00.954] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : lostworlds
-[17Dec2023 11:16:00.968] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : lostworlds finished after 12 ms
-[17Dec2023 11:16:00.968] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:painting_variant mod id lostworlds
-[17Dec2023 11:16:00.970] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:painting_variant mod id lostworlds finished after 1 ms
-[17Dec2023 11:16:00.971] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:point_of_interest_type mod id lostworlds
-[17Dec2023 11:16:00.973] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:point_of_interest_type mod id lostworlds finished after 1 ms
-[17Dec2023 11:16:00.973] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:fluid mod id lostworlds
-[17Dec2023 11:16:00.975] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:fluid mod id lostworlds finished after 0 ms
-[17Dec2023 11:16:00.975] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
-[17Dec2023 11:16:01.004] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 29 ms
-[17Dec2023 11:16:01.005] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[17Dec2023 11:16:01.145] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 138 ms
-[17Dec2023 11:16:01.145] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
-[17Dec2023 11:16:01.152] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 6 ms
-[17Dec2023 11:16:01.153] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Books: lostworlds
-[17Dec2023 11:16:01.202] [main/INFO] [net.minecraft.data.DataGenerator/]: Books: lostworlds finished after 48 ms
-[17Dec2023 11:16:01.202] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 1727 ms
-[17Dec2023 11:16:01.439] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 3181, old count: 3181, new count: 3182, removed stale: 0, written: 1
+[06Jan2024 09:14:00.352] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\seang\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.1.3, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, lostworlds, --all, --output, C:\Work\Modding\Minecraft\1.20.X\LostWorlds\src\generated\resources, --existing, C:\Work\Modding\Minecraft\1.20.X\LostWorlds\src\main\resources]
+[06Jan2024 09:14:00.366] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.8.1 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[06Jan2024 09:14:00.618] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[06Jan2024 09:14:00.678] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/seang/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[06Jan2024 09:14:01.102] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\seang\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.1.3\9775dc3f284cdb3e0d33b372c328c6ef88e434b0\javafmllanguage-1.20.1-47.1.3.jar is missing mods.toml file
+[06Jan2024 09:14:01.109] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\seang\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.1.3\d785f4087ec3be094fd5aed801f5366ca958a81b\lowcodelanguage-1.20.1-47.1.3.jar is missing mods.toml file
+[06Jan2024 09:14:01.115] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\seang\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.1.3\be60c45f3578cdf944a669c6ea16fd91bec50f2e\mclanguage-1.20.1-47.1.3.jar is missing mods.toml file
+[06Jan2024 09:14:01.121] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\seang\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.1.3\1aadc0201d8e97b107d9978c7fe066bb54bbb9dc\fmlcore-1.20.1-47.1.3.jar is missing mods.toml file
+[06Jan2024 09:14:01.348] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 3 dependencies adding them to mods collection
+[06Jan2024 09:14:05.858] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[06Jan2024 09:14:05.876] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\seang\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, lostworlds, --all, --output, C:\Work\Modding\Minecraft\1.20.X\LostWorlds\src\generated\resources, --existing, C:\Work\Modding\Minecraft\1.20.X\LostWorlds\src\main\resources]
+[06Jan2024 09:14:05.985] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.mixins.json could not be read. If this is a development environment you can ignore this message
+[06Jan2024 09:14:05.987] [main/WARN] [mixin/]: Reference map 'modonomicon.refmap.json' for modonomicon.forge.mixins.json could not be read. If this is a development environment you can ignore this message
+[06Jan2024 09:14:06.170] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using C:\Work\Modding\Minecraft\1.20.X\LostWorlds\build\createSrgToMcp\output.srg
+[06Jan2024 09:14:06.178] [main/INFO] [mixin/]: Remapping refMap structure_gel.refmap.json using C:\Work\Modding\Minecraft\1.20.X\LostWorlds\build\createSrgToMcp\output.srg
+[06Jan2024 09:14:06.713] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [lostworlds]
+[06Jan2024 09:14:11.560] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.1.3, for MC 1.20.1 with MCP 20230612.114412
+[06Jan2024 09:14:11.562] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.1.3 Initialized
+[06Jan2024 09:14:12.066] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[06Jan2024 09:14:12.088] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 13.72 ms
+[06Jan2024 09:14:12.858] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:loot_table_alias
+[06Jan2024 09:14:12.883] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:data_handler_type
+[06Jan2024 09:14:12.887] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:dynamic_spawner
+[06Jan2024 09:14:12.890] [main/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Registering data for structure_gel:jigsaw_type
+[06Jan2024 09:14:12.951] [main/WARN] [net.minecraft.network.syncher.SynchedEntityData/]: defineId called for: class net.sen.lostworlds.entity.mob.RhinoEntity from class net.sen.lostworlds.entity.mob.SharkEntity
+[06Jan2024 09:14:12.952] [main/WARN] [net.minecraft.network.syncher.SynchedEntityData/]: defineId called for: class net.sen.lostworlds.entity.mob.RhinoEntity from class net.sen.lostworlds.entity.mob.SharkEntity
+[06Jan2024 09:14:13.030] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Work/Modding/Minecraft/1.20.X/LostWorlds/build/fg_cache/net/minecraftforge/forge/1.20.1-47.1.3_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.1.3_mapped_parchment_2023.09.03-1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[06Jan2024 09:14:13.031] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Work/Modding/Minecraft/1.20.X/LostWorlds/build/fg_cache/net/minecraftforge/forge/1.20.1-47.1.3_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.1.3_mapped_parchment_2023.09.03-1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[06Jan2024 09:14:13.442] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[06Jan2024 09:14:13.557] [Worker-Main-2/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Generating ResourceKey[minecraft:root / forge:holder_set_type]
+[06Jan2024 09:14:13.557] [Worker-Main-2/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Generating ResourceKey[minecraft:root / forge:structure_modifier_serializers]
+[06Jan2024 09:14:13.558] [Worker-Main-2/INFO] [ModdingLegacy/StructureGel/]: [structure_gel] Generating ResourceKey[minecraft:root / forge:structure_modifier]
+[06Jan2024 09:14:13.705] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 261 ms
+[06Jan2024 09:14:13.706] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[06Jan2024 09:14:13.955] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 248 ms
+[06Jan2024 09:14:13.955] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block Tags
+[06Jan2024 09:14:14.020] [main/INFO] [net.minecraft.data.DataGenerator/]: Block Tags finished after 63 ms
+[06Jan2024 09:14:14.020] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Tags
+[06Jan2024 09:14:14.026] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Tags finished after 5 ms
+[06Jan2024 09:14:14.027] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id lostworlds
+[06Jan2024 09:14:14.042] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id lostworlds finished after 13 ms
+[06Jan2024 09:14:14.042] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block Models: lostworlds
+[06Jan2024 09:14:14.086] [main/INFO] [net.minecraft.data.DataGenerator/]: Block Models: lostworlds finished after 44 ms
+[06Jan2024 09:14:14.087] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: lostworlds
+[06Jan2024 09:14:14.606] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: lostworlds finished after 518 ms
+[06Jan2024 09:14:14.607] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: lostworlds
+[06Jan2024 09:14:15.519] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: lostworlds finished after 911 ms
+[06Jan2024 09:14:15.520] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Sound Definitions
+[06Jan2024 09:14:15.526] [main/INFO] [net.minecraft.data.DataGenerator/]: Sound Definitions finished after 5 ms
+[06Jan2024 09:14:15.527] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : lostworlds
+[06Jan2024 09:14:15.532] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : lostworlds finished after 5 ms
+[06Jan2024 09:14:15.533] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:painting_variant mod id lostworlds
+[06Jan2024 09:14:15.535] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:painting_variant mod id lostworlds finished after 1 ms
+[06Jan2024 09:14:15.535] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:point_of_interest_type mod id lostworlds
+[06Jan2024 09:14:15.537] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:point_of_interest_type mod id lostworlds finished after 1 ms
+[06Jan2024 09:14:15.537] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:fluid mod id lostworlds
+[06Jan2024 09:14:15.539] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:fluid mod id lostworlds finished after 0 ms
+[06Jan2024 09:14:15.539] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
+[06Jan2024 09:14:15.554] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 14 ms
+[06Jan2024 09:14:15.555] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[06Jan2024 09:14:15.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 103 ms
+[06Jan2024 09:14:15.660] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
+[06Jan2024 09:14:15.668] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 7 ms
+[06Jan2024 09:14:15.668] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Books: lostworlds
+[06Jan2024 09:14:15.691] [main/INFO] [net.minecraft.data.DataGenerator/]: Books: lostworlds finished after 22 ms
+[06Jan2024 09:14:15.692] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: druid_rituals: lostworlds
+[06Jan2024 09:14:15.694] [main/INFO] [net.minecraft.data.DataGenerator/]: druid_rituals: lostworlds finished after 2 ms
+[06Jan2024 09:14:15.695] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 2254 ms
+[06Jan2024 09:14:15.982] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 4266, old count: 4269, new count: 4267, removed stale: 0, written: 8

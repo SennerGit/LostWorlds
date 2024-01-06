@@ -6,6 +6,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
@@ -112,6 +113,18 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ModTags.Items.CYPRESS_STRIPPED_LOGS).add(
                 Item.byBlock(ModBlocks.STRIPPED_CYPRESS_LOG.get()),
                 Item.byBlock(ModBlocks.STRIPPED_CYPRESS_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.MUSHROOMS).add(
+                Item.byBlock(Blocks.BROWN_MUSHROOM),
+                Item.byBlock(Blocks.RED_MUSHROOM),
+                Item.byBlock(ModBlocks.POINT_MUSHROOM_BLOCK.get()),
+                Item.byBlock(ModBlocks.WITCHES_MUSHROOM_BLOCK.get()),
+                Item.byBlock(ModBlocks.ROYAL_BLUE_MUSHROOM_BLOCK.get()),
+                Item.byBlock(ModBlocks.SHORT_TOP_MUSHROOM_BLOCK.get()),
+                Item.byBlock(ModBlocks.SPECTRAL_MUSHROOM_BLOCK.get()),
+                Item.byBlock(ModBlocks.SHADE_MUSHROOM_BLOCK.get()),
+                Item.byBlock(ModBlocks.CAP_MUSHROOM_BLOCK.get())
         );
     }
 

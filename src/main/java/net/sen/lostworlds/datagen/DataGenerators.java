@@ -19,6 +19,7 @@ import net.sen.lostworlds.datagen.language.ModLanguageEnUsProvider;
 import net.sen.lostworlds.datagen.modonomicon.ModBookProvider;
 import net.sen.lostworlds.datagen.loottable.ModGlobalLootModifierProvider;
 import net.sen.lostworlds.datagen.loottable.ModLootTableProvider;
+import net.sen.lostworlds.datagen.multiblocks.DruidRitualProvider;
 import net.sen.lostworlds.datagen.tag.*;
 
 import java.util.List;
@@ -40,6 +41,7 @@ public class DataGenerators {
         BlockTagsProvider blockTagsProvider = new ModBlockTagGenerator(packOutput, lookUpProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookUpProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModCreativeTabsTagProvider(packOutput, lookUpProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
         generator.addProvider(event.includeClient(), new ModBlockModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
@@ -59,6 +61,8 @@ public class DataGenerators {
         LanguageProvider enusProvider = new ModLanguageEnUsProvider(packOutput, "en_us");
         generator.addProvider(event.includeClient(), enusProvider);
         generator.addProvider(event.includeServer(), new ModBookProvider(packOutput, enusProvider));
+
+        generator.addProvider(event.includeServer(), new DruidRitualProvider(generator));
     }
 
     private static void addArmorTrims(ExistingFileHelper existingFileHelper) {

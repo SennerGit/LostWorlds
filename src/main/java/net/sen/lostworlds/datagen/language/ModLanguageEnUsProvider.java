@@ -9,7 +9,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.effect.ModEffects;
@@ -132,6 +131,10 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.CYPRESS_PLANKS_HANGING_SIGN, "Cypress Hanging Sign");
 
         //Nether Steel
+        this.addItem(ModItems.AQUAMARINE, "Aquamarine");
+        this.addItem(ModItems.OPAL, "Opal");
+        this.addItem(ModItems.RUBY, "Ruby");
+
         this.addItem(ModItems.CRIMSON_DIAMOND, "Crimson Diamond");
         this.addItem(ModItems.NETHER_STEEL_INGOT, "Nether Steel Ingot");
         this.addItem(ModItems.NETHER_STEEL_NUGGET, "Nether Steel Nugget");
@@ -142,6 +145,21 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addItem(ModItems.CRIMSON_TEAR, "Crimson Tear");
         this.addItem(ModItems.CUSTOM_BOW, "Custom Bow");
         this.addItem(ModItems.ALEXANDRITE_SHIELD, "Alexandrite Shield");
+
+        this.addItem(ModItems.DURUM_WHEAT, "Durum Wheat");
+        this.addItem(ModItems.DURUM_WHEAT_SEEDS, "Durum Wheat Seeds");
+        this.addItem(ModItems.TOMATO, "Tomato");
+        this.addItem(ModItems.TOMATO_SEEDS, "Tomato Seeds");
+        this.addItem(ModItems.WILD_ONION, "Wild Onion");
+        this.addItem(ModItems.ONION_STAGE_1, "Onion");
+        this.addItem(ModItems.ONION_STAGE_2, "Onion");
+        this.addItem(ModItems.ONION_STAGE_3, "Onion");
+        this.addItem(ModItems.ONION, "Onion");
+        this.addItem(ModItems.DRAGON_FRUIT, "Dragon Fruit");
+        this.addItem(ModItems.DRAGON_FRUIT_SEEDS, "Dragon Fruit Seeds");
+        this.addItem(ModItems.CHILLI, "Chilli");
+        this.addItem(ModItems.CHILLI_SEEDS, "Chilli Seeds");
+
         this.addItem(ModItems.MEDUSA_HEAD, "Medusa Head");
 
         this.addItem(ModItems.NETHER_STEEL_SWORD, "Nether Steel Sword");
@@ -278,6 +296,8 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 
         //Spawm Eggs
         this.addItem(ModItems.RHINO_SPAWN_EGG, "Rhino Spawn Egg");
+        this.addItem(ModItems.DWARVES_SPAWN_EGG, "Dwarves Spawn Egg");
+        this.addItem(ModItems.ELVES_SPAWN_EGG, "Elves Spawn Egg");
         this.addItem(ModItems.SHARK_SPAWN_EGG, "Shark Spawn Egg");
         this.addItem(ModItems.MORAY_EELS_SPAWN_EGG, "Moray Eels Spawn Egg");
         this.addItem(ModItems.ELECTRIC_EELS_SPAWN_EGG, "Electric_eels Spawn Egg");
@@ -297,8 +317,45 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addItem(ModItems.TANG_FISH_SPAWN_EGG, "Tang Fish Spawn Egg");
         this.addItem(ModItems.TUNA_SPAWN_EGG, "Tuna Spawn Egg");
 
+        //Mushroom
+        this.addBlock(ModBlocks.POINT_MUSHROOM_BLOCK, "Point Mushroom Block");
+        this.addBlock(ModBlocks.POTTED_POINT_MUSHROOM_BLOCK, "Potted Point Mushroom Block");
+        this.addBlock(ModBlocks.TOP_POINT_MUSHROOM_BLOCK, "Top Point Mushroom Block");
+        this.addBlock(ModBlocks.POINT_MUSHROOM_STEM_BLOCK, "Point Mushroom Stem Block");
+
+        this.addBlock(ModBlocks.WITCHES_MUSHROOM_BLOCK, "Witches Mushroom Block");
+        this.addBlock(ModBlocks.POTTED_WITCHES_MUSHROOM_BLOCK, "Potted Witches Mushroom Block");
+        this.addBlock(ModBlocks.TOP_WITCHES_MUSHROOM_BLOCK, "Top Witches Mushroom Block");
+        this.addBlock(ModBlocks.WITCHES_MUSHROOM_STEM_BLOCK, "Witches Mushroom Stem Block");
+
+        this.addBlock(ModBlocks.ROYAL_BLUE_MUSHROOM_BLOCK, "Royal Blue Mushroom Block");
+        this.addBlock(ModBlocks.POTTED_ROYAL_BLUE_MUSHROOM_BLOCK, "Potted Royal Blue Mushroom Block");
+        this.addBlock(ModBlocks.TOP_ROYAL_BLUE_MUSHROOM_BLOCK, "Top Royal Blue Mushroom Block");
+        this.addBlock(ModBlocks.ROYAL_BLUE_MUSHROOM_STEM_BLOCK, "Royal Blue Mushroom Stem Block");
+        this.addBlock(ModBlocks.ROYAL_BLUE_MUSHROOM_GLOW_BLOCK, "Royal Blue Mushroom Glow Block");
+
+        this.addBlock(ModBlocks.SHORT_TOP_MUSHROOM_BLOCK, "Short Top Mushroom Block");
+        this.addBlock(ModBlocks.POTTED_SHORT_TOP_MUSHROOM_BLOCK, "Potted Short Top Mushroom Block");
+        this.addBlock(ModBlocks.TOP_SHORT_TOP_MUSHROOM_BLOCK, "Top Short Top Mushroom Block");
+        this.addBlock(ModBlocks.SHORT_TOP_MUSHROOM_STEM_BLOCK, "Short Top Mushroom Stem Block");
+
+        this.addBlock(ModBlocks.SPECTRAL_MUSHROOM_BLOCK, "Spectral Mushroom Block");
+        this.addBlock(ModBlocks.POTTED_SPECTRAL_MUSHROOM_BLOCK, "Potted Spectral Mushroom Block");
+        this.addBlock(ModBlocks.TOP_SPECTRAL_MUSHROOM_BLOCK, "Top Spectral Mushroom Block");
+        this.addBlock(ModBlocks.SPECTRAL_MUSHROOM_STEM_BLOCK, "Spectral Spectral Mushroom Block");
+
+        this.addBlock(ModBlocks.SHADE_MUSHROOM_VINE_BLOCK, "Shade Mushroom Vine Block");
+        this.addBlock(ModBlocks.POTTED_SHADE_MUSHROOM_BLOCK, "Potted Shade Mushroom Vine Block");
+        this.addBlock(ModBlocks.SHADE_MUSHROOM_BLOCK, "Shade Mushroom");
+
+        this.addBlock(ModBlocks.CAP_MUSHROOM_VINE_BLOCK, "Cap Mushroom Vine Block");
+        this.addBlock(ModBlocks.POTTED_CAP_MUSHROOM_BLOCK, "Potted Cap Mushroom Vine Block");
+        this.addBlock(ModBlocks.CAP_MUSHROOM_BLOCK, "Cap Mushroom");
+
         //Misc
         this.addItem(ModItems.SHARK_TOOTH, "Shark Tooth");
+
+        this.addBlock(ModBlocks.ALFHEIMR_MAGIC_GRASS, "Alfheimr Magic Grass");
 
         //Adamant
         this.addBlock(ModBlocks.ADAMANT_BLOCK, "Adamant Block");
@@ -354,6 +411,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE, "Nidavellir Soft Coal Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE, "Nidavellir Soft Redstone Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE, "Nidavellir Soft Lapis Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE, "Nidavellir Soft Aquamarine Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE, "Nidavellir Soft Opal Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE, "Nidavellir Soft Ruby Ore");
 
         this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER, "Nidavellir Soft Iron Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER, "Nidavellir Soft Gold Ore Cluster");
@@ -365,6 +425,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER, "Nidavellir Soft Coal Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER, "Nidavellir Soft Redstone Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER, "Nidavellir Soft Lapis Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER, "Nidavellir Soft Aquamarine Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER, "Nidavellir Soft Opal Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER, "Nidavellir Soft Ruby Ore Cluster");
 
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE, "Nidavellir Hard Stone");
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS, "Nidavellir Hard Stone Stairs");
@@ -396,6 +459,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE, "Nidavellir Hard Coal Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE, "Nidavellir Hard Redstone Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE, "Nidavellir Hard Lapis Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE, "Nidavellir Hard Aquamarine Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE, "Nidavellir Hard Opal Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE, "Nidavellir Hard Ruby Ore");
 
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER, "Nidavellir Hard Iron Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER, "Nidavellir Hard Gold Ore Cluster");
@@ -407,6 +473,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER, "Nidavellir Hard Coal Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER, "Nidavellir Hard Redstone Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER, "Nidavellir Hard Lapis Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER, "Nidavellir Hard Aquamarine Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER, "Nidavellir Hard Opal Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER, "Nidavellir Hard Ruby Ore Cluster");
 
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE, "Nidavellir Enhanced Stone");
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS, "Nidavellir Enhanced Stone Stairs");
@@ -438,6 +507,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE, "Nidavellir Enhanced Coal Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE, "Nidavellir Enhanced Redstone Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE, "Nidavellir Enhanced Lapis Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE, "Nidavellir Enhanced Aquamarine Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE, "Nidavellir Enhanced Opal Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE, "Nidavellir Enhanced Ruby Ore");
 
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER, "Nidavellir Enhanced Iron Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER, "Nidavellir Enhanced Gold Ore Cluster");
@@ -449,6 +521,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER, "Nidavellir Enhanced Coal Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER, "Nidavellir Enhanced Redstone Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER, "Nidavellir Enhanced Lapis Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER, "Nidavellir Enhanced Aquamarine Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER, "Nidavellir Enhanced Opal Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER, "Nidavellir Enhanced Ruby Ore Cluster");
 
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE, "Nidavellir Deepslate Stone");
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS, "Nidavellir Deepslate Stone Stairs");
@@ -480,6 +555,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE, "Nidavellir Deepslate Coal Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE, "Nidavellir Deepslate Redstone Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE, "Nidavellir Deepslate Lapis Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE, "Nidavellir Deepslate Aquamarine Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE, "Nidavellir Deepslate Opal Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE, "Nidavellir Deepslate Ruby Ore");
 
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER, "Nidavellir Deepslate Iron Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER, "Nidavellir Deepslate Gold Ore Cluster");
@@ -491,6 +569,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER, "Nidavellir Deepslate Coal Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER, "Nidavellir Deepslate Redstone Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER, "Nidavellir Deepslate Lapis Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER, "Nidavellir Deepslate Aquamarine Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER, "Nidavellir Deepslate Opal Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER, "Nidavellir Deepslate Ruby Ore Cluster");
 
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE, "Nidavellir Crimson Stone");
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS, "Nidavellir Crimson Stone Stairs");
@@ -522,6 +603,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE, "Nidavellir Crimson Coal Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE, "Nidavellir Crimson Redstone Ore");
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE, "Nidavellir Crimson Lapis Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE, "Nidavellir Crimson Aquamarine Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE, "Nidavellir Crimson Opal Ore");
+        this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE, "Nidavellir Crimson Ruby Ore");
 
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER, "Nidavellir Crimson Iron Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER, "Nidavellir Crimson Gold Ore Cluster");
@@ -533,6 +617,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER, "Nidavellir Crimson Coal Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER, "Nidavellir Crimson Redstone Ore Cluster");
         this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER, "Nidavellir Crimson Lapis Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER, "Nidavellir Crimson Aquamarine Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER, "Nidavellir Crimson Opal Ore Cluster");
+        this.addBlock(ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER, "Nidavellir Crimson Ruby Ore Cluster");
 
         this.addBlock(ModBlocks.TARTARUS_STONE, "Tartarus Stone");
         this.addBlock(ModBlocks.TARTARUS_STONE_STAIRS, "Tartarus Stone Stairs");
@@ -571,6 +658,136 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         addProfession(ModVillagers.ALLOY_MASTER, "Alloy Master");
 
         this.addBlock(ModBlocks.IRIS_FLOWER, "Iris");
+        this.addBlock(ModBlocks.POTTED_IRIS_FLOWER, "Potted Iris");
+
+        this.addBlock(ModBlocks.DARK_BLOOM_FLOWER, "Dark Bloom Flower");
+        this.addBlock(ModBlocks.POTTED_DARK_BLOOM_FLOWER, "Potted Dark Bloom Flower");
+        this.addBlock(ModBlocks.DREAD_NIGHT_FLOWER, "Dread Night Flower");
+        this.addBlock(ModBlocks.POTTED_DREAD_NIGIHT_FLOWER, "Potted Dread Night Flower");
+        this.addBlock(ModBlocks.BLACK_LOTUS_FLOWER, "Black Lotus Flower");
+        this.addBlock(ModBlocks.POTTED_BLACK_LOTUS_FLOWER, "Potted Black Lotus Flower");
+        this.addBlock(ModBlocks.NIGHT_ROSE_FLOWER, "Night Rose Flower");
+        this.addBlock(ModBlocks.POTTED_NIGHT_ROSE_FLOWER, "Potted Night Rose Flower");
+        this.addBlock(ModBlocks.AQUA_ROSE_FLOWER, "Aqua Rose Flower");
+        this.addBlock(ModBlocks.POTTED_AQUA_ROSE_FLOWER, "Potted Aqua Rose Flower");
+        this.addBlock(ModBlocks.MOON_FLOWER, "Moon Flower");
+        this.addBlock(ModBlocks.POTTED_MOON_FLOWER, "Potted Moon Flower");
+        this.addBlock(ModBlocks.CATHERINE_FLOWER, "Catherine Flower");
+        this.addBlock(ModBlocks.POTTED_CATHERINE_FLOWER, "Potted Catherine Flower");
+        this.addBlock(ModBlocks.TAINTED_ROSE_FLOWER, "Tainted Rose Flower");
+        this.addBlock(ModBlocks.POTTED_TAINTED_ROSE_FLOWER, "Potted Tainted Rose Flower");
+        this.addBlock(ModBlocks.CINNAMON_ROSE_FLOWER, "Cinnamon Rose Flower");
+        this.addBlock(ModBlocks.POTTED_CINNAMON_ROSE_FLOWER, "Potted Cinnamon Rose Flower");
+        this.addBlock(ModBlocks.BUTTERFLY_FLOWER, "Butterfly Flower");
+        this.addBlock(ModBlocks.POTTED_BUTTERFLY_FLOWER, "Potted Butterfly Flower");
+        this.addBlock(ModBlocks.GAIA_TULIP_FLOWER, "Gaia Tulip");
+        this.addBlock(ModBlocks.POTTED_GAIA_TULIP_FLOWER, "Potted Gaia Tulip");
+        this.addBlock(ModBlocks.BEARDED_IRIS_FLOWER, "Bearded Iris");
+        this.addBlock(ModBlocks.POTTED_BEARDED_IRIS_FLOWER, "Potted Bearded Iris");
+        this.addBlock(ModBlocks.CORNFLOWER_FLOWER, "Cornflower");
+        this.addBlock(ModBlocks.POTTED_CORNFLOWER_FLOWER, "Potted Cornflower");
+        this.addBlock(ModBlocks.MORNING_GLORY_FLOWER, "Morning Glory");
+        this.addBlock(ModBlocks.POTTED_MORNING_GLORY_FLOWER, "Potted Morning Glory");
+        this.addBlock(ModBlocks.GEORGIA_BLUE_FLOWER, "Georgia Blue");
+        this.addBlock(ModBlocks.POTTED_GEORGIA_BLUE_FLOWER, "Potted Georgia Blue");
+        this.addBlock(ModBlocks.BLUE_POPPY_FLOWER, "Blue Poppy");
+        this.addBlock(ModBlocks.POTTED_BLUE_POPPY_FLOWER, "Potted Blue Poppy");
+        this.addBlock(ModBlocks.TULIP_FLOWER, "Tulip");
+        this.addBlock(ModBlocks.POTTED_TULIP_FLOWER, "Potted Tulip");
+        this.addBlock(ModBlocks.CARNATION_FLOWER, "Carnation Flower");
+        this.addBlock(ModBlocks.POTTED_CARNATION_FLOWER, "Potted Carnation Flower");
+        this.addBlock(ModBlocks.LADYS_MANTLE_FLOWER, "Lady's Mantle");
+        this.addBlock(ModBlocks.POTTED_LADYS_MANTLE_FLOWER, "Potted Lady's Mantle");
+        this.addBlock(ModBlocks.GREEN_ROSE_FLOWER, "Green Rose");
+        this.addBlock(ModBlocks.POTTED_GREEN_ROSE_FLOWER, "Potted Green Rose");
+        this.addBlock(ModBlocks.CLEMATIS_FLOWER, "Clematis Flower");
+        this.addBlock(ModBlocks.POTTED_CLEMATIS_FLOWER, "Potted Clematis Flower");
+        this.addBlock(ModBlocks.BLUE_STAR_FLOWER, "Blue Star Flower");
+        this.addBlock(ModBlocks.POTTED_BLUE_STAR_FLOWER, "Potted Blue Star Flower");
+        this.addBlock(ModBlocks.SALVIA_FLOWER, "Salvia");
+        this.addBlock(ModBlocks.POTTED_SALVIA_FLOWER, "Potted Salvia");
+        this.addBlock(ModBlocks.FALSE_INDIGO_FLOWER, "False Indigo");
+        this.addBlock(ModBlocks.POTTED_FALSE_INDIGO_FLOWER, "Potted False Indigo");
+        this.addBlock(ModBlocks.WHITE_SAGE_FLOWER, "White Sage");
+        this.addBlock(ModBlocks.POTTED_WHITE_SAGE_FLOWER, "Potted White Sage");
+        this.addBlock(ModBlocks.SILVER_SCHEHERAZADE_FLOWER, "Silver Scheherazade");
+        this.addBlock(ModBlocks.POTTED_SILVER_SCHEHERAZADE_FLOWER, "Potted Silver Scheherazade");
+        this.addBlock(ModBlocks.SILVER_SPRING_FLOWER, "Silver Spring");
+        this.addBlock(ModBlocks.POTTED_SILVER_SPRING_FLOWER, "Potted Silver Spring");
+        this.addBlock(ModBlocks.SILVER_SHADOWS_FLOWER, "Silver Shadows");
+        this.addBlock(ModBlocks.POTTED_SILVER_SHADOWS_FLOWER, "Potted Silver Shadows");
+        this.addBlock(ModBlocks.GREEN_BALL_FLOWER, "Green Ball Flower");
+        this.addBlock(ModBlocks.POTTED_GREEN_BALL_FLOWER, "Potted Green Ball Flower");
+        this.addBlock(ModBlocks.LIME_DAHLIA_FLOWER, "Lime Dahlia");
+        this.addBlock(ModBlocks.POTTED_LIME_DAHLIA_FLOWER, "Potted Lime Dahlia");
+        this.addBlock(ModBlocks.HYDRANGEA_FLOWER, "Hydrangea");
+        this.addBlock(ModBlocks.POTTED_HYDRANGEA_FLOWER, "Potted Hydrangea");
+        this.addBlock(ModBlocks.ZINNIA_FLOWER, "Zinnia");
+        this.addBlock(ModBlocks.POTTED_ZINNIA_FLOWER, "Potted Zinnia");
+        this.addBlock(ModBlocks.BUTTERFLY_CANDY_FLOWER, "Butterfly Candy");
+        this.addBlock(ModBlocks.POTTED_BUTTERFLY_CANDY_FLOWER, "Potted Butterfly Candy");
+        this.addBlock(ModBlocks.CABARET_FLOWER, "Cabaret Flower");
+        this.addBlock(ModBlocks.POTTED_CABARET_FLOWER, "Potted Cabaret Flower");
+        this.addBlock(ModBlocks.DIANTHUS_FLOWER, "Dianthus");
+        this.addBlock(ModBlocks.POTTED_DIANTHUS_FLOWER, "Potted Dianthus");
+        this.addBlock(ModBlocks.TITAN_CRANBERRY_VINCA_FLOWER, "Titan Cranberry Vinca");
+        this.addBlock(ModBlocks.POTTED_TITAN_CRANBERRY_VINCA_FLOWER, "Potted Titan Cranberry Vinca");
+        this.addBlock(ModBlocks.ORANGE_ZINNIA_FLOWER, "Orange Zinnia");
+        this.addBlock(ModBlocks.POTTED_ORANGE_ZINNIA_FLOWER, "Potted Orange Zinnia");
+        this.addBlock(ModBlocks.BEGONIA_FLOWER, "Begonia");
+        this.addBlock(ModBlocks.POTTED_BEGONIA_FLOWER, "Potted Begonia");
+        this.addBlock(ModBlocks.CROWN_IMPERIAL_FLOWER, "Crown Imperial");
+        this.addBlock(ModBlocks.POTTED_CROWN_IMPERIAL_FLOWER, "Potted Crown Imperial");
+        this.addBlock(ModBlocks.ORIENTAL_POPPY_FLOWER, "Oriental Poppy");
+        this.addBlock(ModBlocks.POTTED_ORIENTAL_POPPY_FLOWER, "Potted Oriental Poppy");
+        this.addBlock(ModBlocks.AZALEA_FLOWER, "Azalea");
+        this.addBlock(ModBlocks.POTTED_AZALEA_FLOWER, "Potted Azalea");
+        this.addBlock(ModBlocks.PINK_DELIGHT_FLOWER, "Pink Delight");
+        this.addBlock(ModBlocks.POTTED_PINK_DELIGHT_FLOWER, "Potted Pink Delight");
+        this.addBlock(ModBlocks.CHRYSANTHEMUM_FLOWER, "Chrysanthemum");
+        this.addBlock(ModBlocks.POTTED_CHRYSANTHEMUM_FLOWER, "Potted Chrysanthemum");
+        this.addBlock(ModBlocks.HIBISCUS_FLOWER, "Hibiscus");
+        this.addBlock(ModBlocks.POTTED_HIBISCUS_FLOWER, "Potted Hibiscus");
+        this.addBlock(ModBlocks.CARDINAL_FLOWER, "Cardinal Flower");
+        this.addBlock(ModBlocks.POTTED_CARDINAL_FLOWER, "Potted Cardinal Flower");
+        this.addBlock(ModBlocks.GERBERA_FLOWER, "Gerbera");
+        this.addBlock(ModBlocks.POTTED_GERBERA_FLOWER, "Potted Gerbera");
+        this.addBlock(ModBlocks.RED_TULIP_FLOWER, "Red Tulip");
+        this.addBlock(ModBlocks.POTTED_RED_TULIP_FLOWER, "Potted Red Tulip");
+        this.addBlock(ModBlocks.FREESIA_FLOWER, "Freesia");
+        this.addBlock(ModBlocks.POTTED_FREESIA_FLOWER, "Potted Freesia");
+        this.addBlock(ModBlocks.GARDENIAS_FLOWER, "Gardenias");
+        this.addBlock(ModBlocks.POTTED_GARDENIAS_FLOWER, "Potted Gardenias");
+        this.addBlock(ModBlocks.STAR_JASMINE_FLOWER, "Star Jasmine");
+        this.addBlock(ModBlocks.POTTED_STAR_JASMINE_FLOWER, "Potted Star Jasmine");
+        this.addBlock(ModBlocks.WHITE_WARATAH_FLOWER, "White Waratah");
+        this.addBlock(ModBlocks.POTTED_WHITE_WARATAH_FLOWER, "Potted White Waratah");
+        this.addBlock(ModBlocks.FLANNEL_FLOWER, "Flannel");
+        this.addBlock(ModBlocks.POTTED_FLANNEL_FLOWER, "Potted Flannel");
+        this.addBlock(ModBlocks.BEARS_EARS_FLOWER, "Bears Ears");
+        this.addBlock(ModBlocks.POTTED_BEARS_EARS_FLOWER, "Bears Ears");
+        this.addBlock(ModBlocks.BIDENS_FLOWER, "Bidens Flower");
+        this.addBlock(ModBlocks.POTTED_BIDENS_FLOWER, "Potted Bidens Flower");
+        this.addBlock(ModBlocks.BLANKET_FLOWER, "Blanket Flower");
+        this.addBlock(ModBlocks.POTTED_BLANKET_FLOWER, "Potted Blanket Flower");
+        this.addBlock(ModBlocks.BULBINE_FLOWER, "Bulbine Flower");
+        this.addBlock(ModBlocks.POTTED_BULBINE_FLOWER, "Potted Bulbine Flower");
+        this.addBlock(ModBlocks.SILVER_BRUNIA_FLOWER, "Silver Brunia");
+        this.addBlock(ModBlocks.POTTED_SILVER_BRUNIA_FLOWER, "Potted Silver Brunia");
+        this.addBlock(ModBlocks.GRAY_ROSES_FLOWER, "Gray Rose");
+        this.addBlock(ModBlocks.POTTED_GRAY_ROSES_FLOWER, "Potted Gray Rose");
+        this.addBlock(ModBlocks.MOON_CARROT_FLOWER, "Moon Carrot");
+        this.addBlock(ModBlocks.POTTED_MOON_CARROT_FLOWER, "Potted Moon Carrot");
+        this.addBlock(ModBlocks.SILVER_BABY_FLOWER, "Silver Baby");
+        this.addBlock(ModBlocks.POTTED_SILVER_BABY_FLOWER, "Potted Silver Baby");
+        this.addBlock(ModBlocks.LAVENDER_FLOWER, "Lavender");
+        this.addBlock(ModBlocks.POTTED_LAVENDER_FLOWER, "Potted Lavender");
+        this.addBlock(ModBlocks.BELLFLOWER_FLOWER, "Bellflower");
+        this.addBlock(ModBlocks.POTTED_BELLFLOWER_FLOWER, "Potted Bellflower");
+        this.addBlock(ModBlocks.LILAC_FLOWER, "Lilac");
+        this.addBlock(ModBlocks.POTTED_LILAC_FLOWER, "Potted Lilac");
+        this.addBlock(ModBlocks.SWEET_PEA_FLOWER, "Sweet Pea");
+        this.addBlock(ModBlocks.POTTED_SWEET_PEA_FLOWER, "Potted Sweet Pea");
 
         this.addEnchantment(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker");
 
@@ -600,13 +817,13 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         addEffect(ModEffects.DROWSY_EFFECT, "Drowsy");
         addPotion(ModPotions.DROWSY_POTION, "Drowsy");
 
-        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_TAB, "Lost Worlds Tab");
-        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_UNDERWORLD_TAB, "Lost Worlds Underworld Tab");
-        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_NIDAVELLIR_TAB, "Lost Worlds Nidavellir Tab");
-        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ALFHEIMR_TAB, "Lost Worlds Álfheimr Tab");
-        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ATLANTIS_TAB, "Lost Worlds Atlantis Tab");
-        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_SKYOPIA_TAB, "Lost Worlds Skyopia Tab");
-        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ENTITIES_TAB, "Lost Worlds Spawn Eggs Tab");
+//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_TAB, "Lost Worlds Tab");
+//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_UNDERWORLD_TAB, "Lost Worlds Underworld Tab");
+//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_NIDAVELLIR_TAB, "Lost Worlds Nidavellir Tab");
+//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ALFHEIMR_TAB, "Lost Worlds Álfheimr Tab");
+//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ATLANTIS_TAB, "Lost Worlds Atlantis Tab");
+//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_SKYOPIA_TAB, "Lost Worlds Skyopia Tab");
+//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ENTITIES_TAB, "Lost Worlds Spawn Eggs Tab");
 
         addSound(ModSounds.MAGICAL_DOWSING_ROD_FOUND_ORE, "Magical Dowsing Rod Found Ore");
         addSound(ModSounds.CRIMSON_DIAMOND_LAMP_BREAK, "Crimson Diamond Lamp Break");
@@ -620,6 +837,18 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.add("item.lostworlds.magical_dowsing_rod.no_valuables", "No Valuables Found!");
         this.add("tooltip.lostworlds.magical_dowsing_rod.tooltip", "Hold #eSHIFT#r for more information...");
         this.add("tooltip.lostworlds.magical_dowsing_rod.tooltip.shift", "Right click on block to find valuables");
+
+        //Tab info
+        this.add("itemGroup.cfm", "Lost Worlds");
+        this.add("gui.button.cfm.enable_filters", "Enable All Filters");
+        this.add("gui.button.cfm.disable_filters", "Disable All Filters");
+        this.add("gui.tag_filter.lostworlds.general", "General");
+        this.add("gui.tag_filter.lostworlds.spawn_eggs", "Spawn Eggs");
+        this.add("gui.tag_filter.lostworlds.underworld", "Underworld");
+        this.add("gui.tag_filter.lostworlds.nidavellir", "Nidavellir");
+        this.add("gui.tag_filter.lostworlds.alfheimr", "Álfheimr");
+        this.add("gui.tag_filter.lostworlds.atlantis", "Atlantis");
+        this.add("gui.tag_filter.lostworlds.skyopia", "Skyopia");
 
         //Lost Worlds Book
         this.addItem(ModItems.LOST_WORLDS_BOOK, "Lost Worlds Book");

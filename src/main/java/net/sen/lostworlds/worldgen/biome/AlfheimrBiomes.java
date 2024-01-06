@@ -63,7 +63,7 @@ public class AlfheimrBiomes {
 
         context.register(ALFHEIMR_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
         context.register(ALFHEIMR_FAIRY_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FAIRY_RINGS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FAIRY_RINGS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), fairyRingsGen(featureGetter, carverGetter)).build());
         context.register(ALFHEIMR_GLISTENING_FORESTS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
         context.register(ALFHEIMR_CRYSTAL_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
         context.register(ALFHEIMR_UNDERGROUND, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
@@ -99,6 +99,20 @@ public class AlfheimrBiomes {
         commonFeatures(biome);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_JUNGLE);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_SPARSE_JUNGLE);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_FLOWERS_KEY);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder fairyRingsGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.MUSHROOM_ISLAND_VEGETATION);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_NORMAL);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_NORMAL);
 
         return biome;
     }
@@ -143,10 +157,6 @@ public class AlfheimrBiomes {
         BiomeGenerationSettings.Builder biome = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
 
         BiomeDefaultFeatures.addDefaultSoftDisks(biome);
-        BiomeDefaultFeatures.addForestGrass(biome);
-        BiomeDefaultFeatures.addSavannaGrass(biome);
-        BiomeDefaultFeatures.addDefaultGrass(biome);
-        BiomeDefaultFeatures.addSavannaExtraGrass(biome);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_SUGAR_CANE);
         BiomeDefaultFeatures.addSurfaceFreezing(biome);
         addCaves(biome);

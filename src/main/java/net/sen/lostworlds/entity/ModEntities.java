@@ -3,7 +3,6 @@ package net.sen.lostworlds.entity;
 import net.minecraft.world.entity.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.*;
-import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.entity.projectile.*;
 import net.sen.lostworlds.entity.mob.*;
@@ -418,6 +417,12 @@ public class ModEntities {
 //     */
 //    Goblins
 //    Dwarves
+    public static final RegistryObject<EntityType<DwarvesEntity>> DWARVES =
+            ENTITY_TYPES.register("dwarves",
+                    () -> EntityType.Builder.of(DwarvesEntity::new, MobCategory.CREATURE)
+                            .sized(1f, 1f).build("dwarves")
+            );
+
 //    Cave Bats
 //    Cave Fish
 //    Cave Salamanders
@@ -506,12 +511,12 @@ public class ModEntities {
 //            );
 //
 //    //Neutrals
-//            //Elves
-//    public static final RegistryObject<EntityType<ElvesEntity>> ELVES =
-//            ENTITY_TYPES.register("elves",
-//                    () -> EntityType.Builder.of(ElvesEntity::new, MobCategory.CREATURE)
-//                            .sized(1f, 1f).build("elves")
-//            );
+            //Elves
+    public static final RegistryObject<EntityType<ElvesEntity>> ELVES =
+            ENTITY_TYPES.register("elves",
+                    () -> EntityType.Builder.of(ElvesEntity::new, MobCategory.CREATURE)
+                            .sized(1f, 1f).build("elves")
+            );
 //
 //    //Faries
 //    public static final RegistryObject<EntityType<FariesEntity>> FARIES =
@@ -976,6 +981,8 @@ public class ModEntities {
                     () -> EntityType.Builder.of(AtlantianEntity::new, MobCategory.CREATURE)
                             .sized(1f, 1f).build("atlantian")
             );
+
+
 
     /*
     SKYOPIA

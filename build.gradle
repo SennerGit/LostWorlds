@@ -95,11 +95,16 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
         }
 
         server {
             property 'forge.enabledGameTestNamespaces', mod_id
             args '--nogui'
+
+            property 'mixin.env.disableRefMap', 'true'
         }
 
         // This run config launches GameTestServer and runs all registered gametests, then exits.
@@ -151,6 +156,10 @@ repositories {
         url "https://maven.moddinglegacy.com/maven"
     }
 
+    //Curios
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
 }
 
 dependencies {
@@ -180,6 +189,10 @@ dependencies {
     //Structure-gel-api
     implementation fg.deobf("com.legacy:structure-gel:1.20.1-2.15.0")
 
+    //Curios
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}:api")
+
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
@@ -201,7 +214,8 @@ tasks.named('processResources', ProcessResources).configure {
             loader_version_range: loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description,
-            modonomicon_version_range: modonomicon_version_range
+            modonomicon_version_range: modonomicon_version_range,
+            curios_version_range: curios_version_range
     ]
     inputs.properties replaceProperties
 

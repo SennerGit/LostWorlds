@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_orientable_trapdoor_open",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "texture": "lostworlds:block/crimson_stone_trapdoor"
-  }
-}

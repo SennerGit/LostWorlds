@@ -4,15 +4,21 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
+import net.minecraft.data.worldgen.placement.CavePlacements;
+import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.Musics;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.structure.placement.StructurePlacement;
+import net.minecraft.world.level.levelgen.structure.structures.MineshaftStructure;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.sound.ModSounds;
@@ -21,12 +27,20 @@ import net.sen.lostworlds.worldgen.biome.carver.ModConfiguredCarvers;
 
 public class NidavellirBiomes {
     public static final ResourceKey<Biome> NIDAVELLIR_CAVERN = register("nidavellir_cavern");
+    public static final ResourceKey<Biome> NIDAVELLIR_OVERGROWN_CAVERN = register("nidavellir_overgrown_cavern");
+    public static final ResourceKey<Biome> NIDAVELLIR_SUNKEN_CAVERN = register("nidavellir_sunken_cavern");
+    public static final ResourceKey<Biome> NIDAVELLIR_LAVA_CAVERN = register("nidavellir_lava_cavern");
+    public static final ResourceKey<Biome> NIDAVELLIR_FUNGAL_CAVERN = register("nidavellir_fungal_cavern");
 
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> featureGetter = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
 
         context.register(NIDAVELLIR_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(NIDAVELLIR_OVERGROWN_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), overgrownCavernGen(featureGetter, carverGetter)).build());
+        context.register(NIDAVELLIR_SUNKEN_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), sunkenCavernGen(featureGetter, carverGetter)).build());
+        context.register(NIDAVELLIR_LAVA_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), lavaCavernGen(featureGetter, carverGetter)).build());
+        context.register(NIDAVELLIR_FUNGAL_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), fungalCavernGen(featureGetter, carverGetter)).build());
     }
 
     // Defaults
@@ -44,8 +58,56 @@ public class NidavellirBiomes {
     public static BiomeGenerationSettings.Builder defaultGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
         commonFeatures(biome);
-        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_JUNGLE);
-        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_SPARSE_JUNGLE);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder fungalCavernGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, VegetationPlacements.MUSHROOM_ISLAND_VEGETATION);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder overgrownCavernGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.ROOTED_AZALEA_TREE);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.CAVE_VINES);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.GLOW_LICHEN);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.DRIPSTONE_CLUSTER);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.LARGE_DRIPSTONE);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.POINTED_DRIPSTONE);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.SPORE_BLOSSOM);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.LUSH_CAVES_CEILING_VEGETATION);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.LUSH_CAVES_CLAY);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, MiscOverworldPlacements.FOREST_ROCK);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder sunkenCavernGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = sunkenCavernGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.WARM_OCEAN_VEGETATION);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEA_PICKLE);
+
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.UNDERWATER_MAGMA);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, MiscOverworldPlacements.SPRING_WATER);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder lavaCavernGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = lavaCavernGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, MiscOverworldPlacements.LAKE_LAVA_UNDERGROUND);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, MiscOverworldPlacements.SPRING_LAVA);
 
         return biome;
     }
@@ -93,9 +155,48 @@ public class NidavellirBiomes {
         BiomeDefaultFeatures.addSavannaGrass(biome);
         BiomeDefaultFeatures.addDefaultGrass(biome);
         BiomeDefaultFeatures.addSavannaExtraGrass(biome);
-        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_SUGAR_CANE);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.AMETHYST_GEODE);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.FOSSIL_LOWER);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.FOSSIL_UPPER);
+//        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_STRUCTURES, SpawnPlacements);
         BiomeDefaultFeatures.addSurfaceFreezing(biome);
         addCaves(biome);
+        addSmallStoneClusters(biome);
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder lavaCavernGenSettingBuilder(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+
+        BiomeDefaultFeatures.addDefaultSoftDisks(biome);
+        BiomeDefaultFeatures.addForestGrass(biome);
+        BiomeDefaultFeatures.addSavannaGrass(biome);
+        BiomeDefaultFeatures.addDefaultGrass(biome);
+        BiomeDefaultFeatures.addSavannaExtraGrass(biome);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.AMETHYST_GEODE);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.FOSSIL_LOWER);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.FOSSIL_UPPER);
+//        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_STRUCTURES, SpawnPlacements);
+        BiomeDefaultFeatures.addSurfaceFreezing(biome);
+        addLavaCavernCaves(biome);
+        addSmallStoneClusters(biome);
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder sunkenCavernGenSettingBuilder(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+
+        BiomeDefaultFeatures.addDefaultSoftDisks(biome);
+        BiomeDefaultFeatures.addForestGrass(biome);
+        BiomeDefaultFeatures.addSavannaGrass(biome);
+        BiomeDefaultFeatures.addDefaultGrass(biome);
+        BiomeDefaultFeatures.addSavannaExtraGrass(biome);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.AMETHYST_GEODE);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.FOSSIL_LOWER);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CavePlacements.FOSSIL_UPPER);
+//        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_STRUCTURES, SpawnPlacements);
+        BiomeDefaultFeatures.addSurfaceFreezing(biome);
+        addSunkenCavernCaves(biome);
         addSmallStoneClusters(biome);
         return biome;
     }
@@ -103,6 +204,16 @@ public class NidavellirBiomes {
     //Caves!
     public static void addCaves(BiomeGenerationSettings.Builder biome) {
         biome.addCarver(GenerationStep.Carving.AIR, ModConfiguredCarvers.NIDAVELLIR_CAVE);
+        addLegacyOres(biome);
+    }
+
+    public static void addLavaCavernCaves(BiomeGenerationSettings.Builder biome) {
+        biome.addCarver(GenerationStep.Carving.AIR, ModConfiguredCarvers.NIDAVELLIR_LAVA_CAVERN_CAVE);
+        addLegacyOres(biome);
+    }
+
+    public static void addSunkenCavernCaves(BiomeGenerationSettings.Builder biome) {
+        biome.addCarver(GenerationStep.Carving.AIR, ModConfiguredCarvers.NIDAVELLIR_SUNKEN_CAVERN_CAVE);
         addLegacyOres(biome);
     }
 
@@ -125,6 +236,12 @@ public class NidavellirBiomes {
         biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_TIN_ORE_CLUSTER_KEY);
         biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_ZINC_ORE_KEY);
         biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_ZINC_ORE_CLUSTER_KEY);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_AQUAMARINE_ORE_KEY);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_AQUAMARINE_ORE_CLUSTER_KEY);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_OPAL_ORE_KEY);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_OPAL_ORE_CLUSTER_KEY);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_RUBY_ORE_KEY);
+        biome.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.PLACED_NIDAVELLIR_RUBY_ORE_CLUSTER_KEY);
     }
 
 

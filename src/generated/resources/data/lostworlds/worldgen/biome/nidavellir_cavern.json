@@ -51,18 +51,25 @@
       "lostworlds:nidavellir_tin_ore_key",
       "lostworlds:nidavellir_tin_ore_cluster_key",
       "lostworlds:nidavellir_zinc_ore_key",
-      "lostworlds:nidavellir_zinc_ore_cluster_key"
+      "lostworlds:nidavellir_zinc_ore_cluster_key",
+      "lostworlds:nidavellir_aquamarine_ore_key",
+      "lostworlds:nidavellir_aquamarine_ore_cluster_key",
+      "lostworlds:nidavellir_opal_ore_key",
+      "lostworlds:nidavellir_opal_ore_cluster_key",
+      "lostworlds:nidavellir_ruby_ore_key",
+      "lostworlds:nidavellir_ruby_ore_cluster_key"
     ],
-    [],
+    [
+      "minecraft:amethyst_geode",
+      "minecraft:fossil_lower",
+      "minecraft:fossil_upper"
+    ],
     [],
     [
       "minecraft:patch_grass_forest",
       "minecraft:patch_tall_grass",
       "minecraft:patch_grass_badlands",
-      "minecraft:patch_grass_savanna",
-      "minecraft:patch_sugar_cane",
-      "minecraft:trees_jungle",
-      "minecraft:trees_sparse_jungle"
+      "minecraft:patch_grass_savanna"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -7,6 +7,7 @@ import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
+import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.worldgen.biome.UnderworldBiomes;
 
 public class UnderworldSurfaceRules {
@@ -17,6 +18,7 @@ public class UnderworldSurfaceRules {
                 .add(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("minecraft:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())))
 //                .add()
                 .add(basicSurface())
+                .add(tartarusSurface())
                 .add(overworldLike());
 
         return SurfaceRules.sequence(builder.build().toArray(SurfaceRules.RuleSource[]::new));
@@ -33,6 +35,17 @@ public class UnderworldSurfaceRules {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(UnderworldBiomes.ASPHODEL_MEADOWS), SurfaceRules.ifTrue(
                         SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
                         SurfaceRules.state(Blocks.STONE.defaultBlockState()))
+                )
+        );
+    }
+
+    private static SurfaceRules.RuleSource tartarusSurface() {
+        return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(
+                                UnderworldBiomes.TARTARUS
+                        ),
+                        SurfaceRules.state(ModBlocks.TARTARUS_STONE.get().defaultBlockState())
                 )
         );
     }

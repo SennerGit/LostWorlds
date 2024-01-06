@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "lostworlds:block/myrrh_planks",
-    "side": "lostworlds:block/myrrh_planks",
-    "top": "lostworlds:block/myrrh_planks"
-  }
-}

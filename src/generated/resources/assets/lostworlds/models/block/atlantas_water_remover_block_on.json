@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "lostworlds:block/atlantas_water_remover_block_on"
-  }
-}

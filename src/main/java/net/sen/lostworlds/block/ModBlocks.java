@@ -13,7 +13,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.block.custom.*;
 import net.sen.lostworlds.block.portal.*;
@@ -69,27 +68,33 @@ public class ModBlocks {
     public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_BRICKS_CRACKED = registerBlock("nidavellir_soft_stone_bricks_cracked", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_BRICKS_CHISELED = registerBlock("nidavellir_soft_stone_bricks_chiseled", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_IRON_ORE = registerBlock("nidavellir_soft_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_GOLD_ORE = registerBlock("nidavellir_soft_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_COPPER_ORE = registerBlock("nidavellir_soft_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_TIN_ORE = registerBlock("nidavellir_soft_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_ZINC_ORE = registerBlock("nidavellir_soft_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_DIAMOND_ORE = registerBlock("nidavellir_soft_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_EMERALD_ORE = registerBlock("nidavellir_soft_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_COAL_ORE = registerBlock("nidavellir_soft_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_REDSTONE_ORE = registerBlock("nidavellir_soft_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_LAPIS_ORE = registerBlock("nidavellir_soft_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_IRON_ORE = registerBlock("nidavellir_soft_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_GOLD_ORE = registerBlock("nidavellir_soft_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_COPPER_ORE = registerBlock("nidavellir_soft_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_TIN_ORE = registerBlock("nidavellir_soft_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_ZINC_ORE = registerBlock("nidavellir_soft_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_DIAMOND_ORE = registerBlock("nidavellir_soft_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_EMERALD_ORE = registerBlock("nidavellir_soft_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_COAL_ORE = registerBlock("nidavellir_soft_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_REDSTONE_ORE = registerBlock("nidavellir_soft_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_LAPIS_ORE = registerBlock("nidavellir_soft_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE = registerBlock("nidavellir_soft_stone_aquamarine_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_OPAL_ORE = registerBlock("nidavellir_soft_stone_opal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_RUBY_ORE = registerBlock("nidavellir_soft_stone_ruby_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_aquamarine_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_opal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER = registerBlock("nidavellir_soft_stone_ruby_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
     //Hard Stone
     public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE = registerBlock("nidavellir_hard_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
@@ -114,27 +119,33 @@ public class ModBlocks {
     public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_BRICKS_CRACKED = registerBlock("nidavellir_hard_stone_bricks_cracked", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_BRICKS_CHISELED = registerBlock("nidavellir_hard_stone_bricks_chiseled", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_IRON_ORE = registerBlock("nidavellir_hard_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_GOLD_ORE = registerBlock("nidavellir_hard_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_COPPER_ORE = registerBlock("nidavellir_hard_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_TIN_ORE = registerBlock("nidavellir_hard_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_ZINC_ORE = registerBlock("nidavellir_hard_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_DIAMOND_ORE = registerBlock("nidavellir_hard_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_EMERALD_ORE = registerBlock("nidavellir_hard_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_COAL_ORE = registerBlock("nidavellir_hard_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_REDSTONE_ORE = registerBlock("nidavellir_hard_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_LAPIS_ORE = registerBlock("nidavellir_hard_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_IRON_ORE = registerBlock("nidavellir_hard_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_GOLD_ORE = registerBlock("nidavellir_hard_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_COPPER_ORE = registerBlock("nidavellir_hard_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_TIN_ORE = registerBlock("nidavellir_hard_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_ZINC_ORE = registerBlock("nidavellir_hard_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_DIAMOND_ORE = registerBlock("nidavellir_hard_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_EMERALD_ORE = registerBlock("nidavellir_hard_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_COAL_ORE = registerBlock("nidavellir_hard_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_REDSTONE_ORE = registerBlock("nidavellir_hard_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_LAPIS_ORE = registerBlock("nidavellir_hard_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE = registerBlock("nidavellir_hard_stone_aquamarine_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_OPAL_ORE = registerBlock("nidavellir_hard_stone_opal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_RUBY_ORE = registerBlock("nidavellir_hard_stone_ruby_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_aquamarine_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_opal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER = registerBlock("nidavellir_hard_stone_ruby_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
     //Enhanced Stone
     public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE = registerBlock("nidavellir_enhanced_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
@@ -159,50 +170,33 @@ public class ModBlocks {
     public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_BRICKS_CRACKED = registerBlock("nidavellir_enhanced_stone_bricks_cracked", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_BRICKS_CHISELED = registerBlock("nidavellir_enhanced_stone_bricks_chiseled", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_IRON_ORE = registerBlock("nidavellir_enhanced_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_GOLD_ORE = registerBlock("nidavellir_enhanced_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_COPPER_ORE = registerBlock("nidavellir_enhanced_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_TIN_ORE = registerBlock("nidavellir_enhanced_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_ZINC_ORE = registerBlock("nidavellir_enhanced_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE = registerBlock("nidavellir_enhanced_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE = registerBlock("nidavellir_enhanced_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_COAL_ORE = registerBlock("nidavellir_enhanced_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE = registerBlock("nidavellir_enhanced_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE = registerBlock("nidavellir_enhanced_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_IRON_ORE = registerBlock("nidavellir_enhanced_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_GOLD_ORE = registerBlock("nidavellir_enhanced_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_COPPER_ORE = registerBlock("nidavellir_enhanced_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_TIN_ORE = registerBlock("nidavellir_enhanced_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_ZINC_ORE = registerBlock("nidavellir_enhanced_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE = registerBlock("nidavellir_enhanced_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE = registerBlock("nidavellir_enhanced_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_COAL_ORE = registerBlock("nidavellir_enhanced_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE = registerBlock("nidavellir_enhanced_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE = registerBlock("nidavellir_enhanced_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE = registerBlock("nidavellir_enhanced_stone_aquamarine_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_OPAL_ORE = registerBlock("nidavellir_enhanced_stone_opal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_RUBY_ORE = registerBlock("nidavellir_enhanced_stone_ruby_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-
-    //Tartarus Stone
-    public static final RegistryObject<Block> TARTARUS_STONE = registerBlock("tartarus_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistryObject<Block> TARTARUS_STONE_STAIRS = registerBlock("tartarus_stone_stairs", () -> new StairBlock(() -> ModBlocks.CRIMSON_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_SLAB = registerBlock("tartarus_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_PRESSURE_PLATE = registerBlock("tartarus_stone_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops(), BlockSetType.STONE));
-    public static final RegistryObject<Block> TARTARUS_STONE_BUTTON = registerBlock("tartarus_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).requiresCorrectToolForDrops(), BlockSetType.STONE, 10, false));
-    public static final RegistryObject<Block> TARTARUS_STONE_WALL = registerBlock("tartarus_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_SMOOTH_STONE = registerBlock("tartarus_stone_smooth_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE = registerBlock("tartarus_stone_cobblestone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE_STAIRS = registerBlock("tartarus_stone_cobblestone_stairs", () -> new StairBlock(() -> ModBlocks.CRIMSON_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE_SLAB = registerBlock("tartarus_stone_cobblestone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE_WALL = registerBlock("tartarus_stone_cobblestone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE_MOSSY = registerBlock("tartarus_stone_cobblestone_mossy", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS = registerBlock("tartarus_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_STAIRS = registerBlock("tartarus_stone_bricks_stairs", () -> new StairBlock(() -> ModBlocks.CRIMSON_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_SLAB = registerBlock("tartarus_stone_bricks_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_WALL = registerBlock("tartarus_stone_bricks_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_MOSSY = registerBlock("tartarus_stone_bricks_mossy", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_CRACKED = registerBlock("tartarus_stone_bricks_cracked", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_CHISELED = registerBlock("tartarus_stone_bricks_chiseled", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_aquamarine_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_opal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER = registerBlock("nidavellir_enhanced_stone_ruby_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
     //Deepslate Stone
     public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE = registerBlock("nidavellir_deepslate_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
@@ -227,27 +221,33 @@ public class ModBlocks {
     public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CRACKED = registerBlock("nidavellir_deepslate_stone_bricks_cracked", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CHISELED = registerBlock("nidavellir_deepslate_stone_bricks_chiseled", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE = registerBlock("nidavellir_deepslate_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE = registerBlock("nidavellir_deepslate_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE = registerBlock("nidavellir_deepslate_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE = registerBlock("nidavellir_deepslate_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE = registerBlock("nidavellir_deepslate_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE = registerBlock("nidavellir_deepslate_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE = registerBlock("nidavellir_deepslate_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE = registerBlock("nidavellir_deepslate_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE = registerBlock("nidavellir_deepslate_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE = registerBlock("nidavellir_deepslate_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE = registerBlock("nidavellir_deepslate_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE = registerBlock("nidavellir_deepslate_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE = registerBlock("nidavellir_deepslate_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE = registerBlock("nidavellir_deepslate_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE = registerBlock("nidavellir_deepslate_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE = registerBlock("nidavellir_deepslate_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE = registerBlock("nidavellir_deepslate_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE = registerBlock("nidavellir_deepslate_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE = registerBlock("nidavellir_deepslate_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE = registerBlock("nidavellir_deepslate_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE = registerBlock("nidavellir_deepslate_stone_aquamarine_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE = registerBlock("nidavellir_deepslate_stone_opal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE = registerBlock("nidavellir_deepslate_stone_ruby_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_aquamarine_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_opal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER = registerBlock("nidavellir_deepslate_stone_ruby_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
     //Crimson Stone
     public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE = registerBlock("nidavellir_crimson_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
@@ -272,27 +272,56 @@ public class ModBlocks {
     public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_BRICKS_CRACKED = registerBlock("nidavellir_crimson_stone_bricks_cracked", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_BRICKS_CHISELED = registerBlock("nidavellir_crimson_stone_bricks_chiseled", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_IRON_ORE = registerBlock("nidavellir_crimson_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_GOLD_ORE = registerBlock("nidavellir_crimson_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_COPPER_ORE = registerBlock("nidavellir_crimson_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_TIN_ORE = registerBlock("nidavellir_crimson_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_ZINC_ORE = registerBlock("nidavellir_crimson_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE = registerBlock("nidavellir_crimson_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE = registerBlock("nidavellir_crimson_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_COAL_ORE = registerBlock("nidavellir_crimson_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE = registerBlock("nidavellir_crimson_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE = registerBlock("nidavellir_crimson_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_IRON_ORE = registerBlock("nidavellir_crimson_stone_iron_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_GOLD_ORE = registerBlock("nidavellir_crimson_stone_gold_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_COPPER_ORE = registerBlock("nidavellir_crimson_stone_copper_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_TIN_ORE = registerBlock("nidavellir_crimson_stone_tin_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_ZINC_ORE = registerBlock("nidavellir_crimson_stone_zinc_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE = registerBlock("nidavellir_crimson_stone_diamond_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE = registerBlock("nidavellir_crimson_stone_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_COAL_ORE = registerBlock("nidavellir_crimson_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE = registerBlock("nidavellir_crimson_stone_redstone_ore", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE = registerBlock("nidavellir_crimson_stone_lapis_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE = registerBlock("nidavellir_crimson_stone_aquamarine_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_OPAL_ORE = registerBlock("nidavellir_crimson_stone_opal_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_RUBY_ORE = registerBlock("nidavellir_crimson_stone_ruby_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_iron_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_gold_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_copper_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_tin_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_zinc_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_diamond_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_emerald_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_coal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_redstone_ore_cluster", () -> new ModRedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_lapis_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_aquamarine_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_opal_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER = registerBlock("nidavellir_crimson_stone_ruby_ore_cluster", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
+
+    //Tartarus Stone
+    public static final RegistryObject<Block> TARTARUS_STONE = registerBlock("tartarus_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> TARTARUS_STONE_STAIRS = registerBlock("tartarus_stone_stairs", () -> new StairBlock(() -> ModBlocks.CRIMSON_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_SLAB = registerBlock("tartarus_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_PRESSURE_PLATE = registerBlock("tartarus_stone_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops(), BlockSetType.STONE));
+    public static final RegistryObject<Block> TARTARUS_STONE_BUTTON = registerBlock("tartarus_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).requiresCorrectToolForDrops(), BlockSetType.STONE, 10, false));
+    public static final RegistryObject<Block> TARTARUS_STONE_WALL = registerBlock("tartarus_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_SMOOTH_STONE = registerBlock("tartarus_stone_smooth_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE = registerBlock("tartarus_stone_cobblestone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE_STAIRS = registerBlock("tartarus_stone_cobblestone_stairs", () -> new StairBlock(() -> ModBlocks.CRIMSON_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE_SLAB = registerBlock("tartarus_stone_cobblestone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE_WALL = registerBlock("tartarus_stone_cobblestone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_COBBLESTONE_MOSSY = registerBlock("tartarus_stone_cobblestone_mossy", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS = registerBlock("tartarus_stone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_STAIRS = registerBlock("tartarus_stone_bricks_stairs", () -> new StairBlock(() -> ModBlocks.CRIMSON_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_SLAB = registerBlock("tartarus_stone_bricks_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_WALL = registerBlock("tartarus_stone_bricks_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_MOSSY = registerBlock("tartarus_stone_bricks_mossy", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_CRACKED = registerBlock("tartarus_stone_bricks_cracked", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TARTARUS_STONE_BRICKS_CHISELED = registerBlock("tartarus_stone_bricks_chiseled", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).requiresCorrectToolForDrops()));
 
     /*
      * WOOD TYPES
@@ -494,12 +523,262 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_ADAMANT_ORE = registerBlock("deepslate_adamant_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
 
     /*
+     *Mushroom
+     */
+    public static final RegistryObject<Block> POINT_MUSHROOM_BLOCK = registerBlock("point_mushroom_block", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> POTTED_POINT_MUSHROOM_BLOCK = registerBlock("potted_point_mushroom_block", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), POINT_MUSHROOM_BLOCK, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final RegistryObject<Block> TOP_POINT_MUSHROOM_BLOCK = registerBlock("top_point_mushroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+    public static final RegistryObject<Block> POINT_MUSHROOM_STEM_BLOCK = registerBlock("point_mushroom_stem_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+
+    public static final RegistryObject<Block> WITCHES_MUSHROOM_BLOCK = registerBlock("witches_mushroom_block", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> POTTED_WITCHES_MUSHROOM_BLOCK = registerBlock("potted_witches_mushroom_block", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), WITCHES_MUSHROOM_BLOCK, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final RegistryObject<Block> TOP_WITCHES_MUSHROOM_BLOCK = registerBlock("top_witches_mushroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+    public static final RegistryObject<Block> WITCHES_MUSHROOM_STEM_BLOCK = registerBlock("witches_mushroom_stem_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+
+    public static final RegistryObject<Block> ROYAL_BLUE_MUSHROOM_BLOCK = registerBlock("royal_blue_mushroom_block", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> POTTED_ROYAL_BLUE_MUSHROOM_BLOCK = registerBlock("potted_royal_blue_mushroom_block", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), ROYAL_BLUE_MUSHROOM_BLOCK, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final RegistryObject<Block> TOP_ROYAL_BLUE_MUSHROOM_BLOCK = registerBlock("top_royal_blue_mushroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+    public static final RegistryObject<Block> ROYAL_BLUE_MUSHROOM_STEM_BLOCK = registerBlock("royal_blue_mushroom_stem_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+    public static final RegistryObject<Block> ROYAL_BLUE_MUSHROOM_GLOW_BLOCK = registerBlock("royal_blue_mushroom_glow_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM).lightLevel((p_50755_) -> { return 7; })));
+
+    public static final RegistryObject<Block> SHORT_TOP_MUSHROOM_BLOCK = registerBlock("short_top_mushroom_block", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> POTTED_SHORT_TOP_MUSHROOM_BLOCK = registerBlock("potted_short_top_mushroom_block", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SHORT_TOP_MUSHROOM_BLOCK, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final RegistryObject<Block> TOP_SHORT_TOP_MUSHROOM_BLOCK = registerBlock("top_short_top_mushroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+    public static final RegistryObject<Block> SHORT_TOP_MUSHROOM_STEM_BLOCK = registerBlock("short_top_mushroom_stem_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+
+    public static final RegistryObject<Block> SPECTRAL_MUSHROOM_BLOCK = registerBlock("spectral_mushroom_block", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> POTTED_SPECTRAL_MUSHROOM_BLOCK = registerBlock("potted_spectral_mushroom_block", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SPECTRAL_MUSHROOM_BLOCK, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final RegistryObject<Block> TOP_SPECTRAL_MUSHROOM_BLOCK = registerBlock("top_spectral_mushroom_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+    public static final RegistryObject<Block> SPECTRAL_MUSHROOM_STEM_BLOCK = registerBlock("spectral_mushroom_stem_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+
+    public static final RegistryObject<Block> SHADE_MUSHROOM_BLOCK = registerBlock("shade_mushroom_block", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final RegistryObject<Block> POTTED_SHADE_MUSHROOM_BLOCK = registerBlock("potted_shade_mushroom_block", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SHADE_MUSHROOM_BLOCK, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final RegistryObject<Block> SHADE_MUSHROOM_VINE_BLOCK = registerBlock("shade_mushroom_vine_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.VINE)));
+
+    public static final RegistryObject<Block> CAP_MUSHROOM_BLOCK = registerBlock("cap_mushroom_block", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK)));
+    public static final RegistryObject<Block> POTTED_CAP_MUSHROOM_BLOCK = registerBlock("potted_cap_mushroom_block", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CAP_MUSHROOM_BLOCK, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CAP_MUSHROOM_VINE_BLOCK = registerBlock("cap_mushroom_vine_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.VINE)));
+
+    /*
      *Plants
      */
-    public static final RegistryObject<Block> POMEGRANATE_CROP_BLOCK = BLOCKS.register("pomegranate_crop_block", () -> new PomegranateCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> ALFHEIMR_MAGIC_GRASS = registerBlock("alfheimr_magic_grass", () -> new AlfheimrGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+
     public static final RegistryObject<Block> IRIS_FLOWER = registerBlock("iris_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
     public static final RegistryObject<Block> POTTED_IRIS_FLOWER = BLOCKS.register("potted_iris_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), IRIS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Alfheimr
+    //Black
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> DARK_BLOOM_FLOWER = registerBlock("dark_bloom_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_DARK_BLOOM_FLOWER = BLOCKS.register("potted_dark_bloom_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), DARK_BLOOM_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> DREAD_NIGHT_FLOWER = registerBlock("dread_night_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_DREAD_NIGIHT_FLOWER = BLOCKS.register("potted_dread_night_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), DREAD_NIGHT_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BLACK_LOTUS_FLOWER = registerBlock("black_lotus_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BLACK_LOTUS_FLOWER = BLOCKS.register("potted_black_lotus_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BLACK_LOTUS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> NIGHT_ROSE_FLOWER = registerBlock("night_rose_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_NIGHT_ROSE_FLOWER = BLOCKS.register("potted_night_rose_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), NIGHT_ROSE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Blue
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> AQUA_ROSE_FLOWER = registerBlock("aqua_rose_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_AQUA_ROSE_FLOWER = BLOCKS.register("potted_aqua_rose_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), AQUA_ROSE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> MOON_FLOWER = registerBlock("moon_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_MOON_FLOWER = BLOCKS.register("potted_moon_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), MOON_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CATHERINE_FLOWER = registerBlock("catherine_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CATHERINE_FLOWER = BLOCKS.register("potted_catherine_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CATHERINE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> TAINTED_ROSE_FLOWER = registerBlock("tainted_rose_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_TAINTED_ROSE_FLOWER = BLOCKS.register("potted_tainted_rose_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), TAINTED_ROSE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Brown
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CINNAMON_ROSE_FLOWER = registerBlock("cinnamon_rose_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CINNAMON_ROSE_FLOWER = BLOCKS.register("potted_cinnamon_rose_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CINNAMON_ROSE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BUTTERFLY_FLOWER = registerBlock("butterfly_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BUTTERFLY_FLOWER = BLOCKS.register("potted_butterfly_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BUTTERFLY_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> GAIA_TULIP_FLOWER = registerBlock("gaia_tulip_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_GAIA_TULIP_FLOWER = BLOCKS.register("potted_gaia_tulip_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), GAIA_TULIP_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BEARDED_IRIS_FLOWER = registerBlock("bearded_iris_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BEARDED_IRIS_FLOWER = BLOCKS.register("potted_bearded_iris_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BEARDED_IRIS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Cyan
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CORNFLOWER_FLOWER = registerBlock("cornflower_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CORNFLOWER_FLOWER = BLOCKS.register("potted_cornflower_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CORNFLOWER_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> MORNING_GLORY_FLOWER = registerBlock("morning_glory_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_MORNING_GLORY_FLOWER = BLOCKS.register("potted_morning_glory_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), MORNING_GLORY_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> GEORGIA_BLUE_FLOWER = registerBlock("georgia_blue_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_GEORGIA_BLUE_FLOWER = BLOCKS.register("potted_georgia_blue_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), GEORGIA_BLUE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BLUE_POPPY_FLOWER = registerBlock("blue_poppy_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BLUE_POPPY_FLOWER = BLOCKS.register("potted_blue_poppy_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BLUE_POPPY_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Green
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> TULIP_FLOWER = registerBlock("tulip_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_TULIP_FLOWER = BLOCKS.register("potted_tulip_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), TULIP_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CARNATION_FLOWER = registerBlock("carnation_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CARNATION_FLOWER = BLOCKS.register("potted_carnation_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CARNATION_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> LADYS_MANTLE_FLOWER = registerBlock("ladys_mantle_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_LADYS_MANTLE_FLOWER = BLOCKS.register("potted_ladys_mantle_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), LADYS_MANTLE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> GREEN_ROSE_FLOWER = registerBlock("green_rose_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_GREEN_ROSE_FLOWER = BLOCKS.register("potted_green_rose_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), GREEN_ROSE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Light Blue
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CLEMATIS_FLOWER = registerBlock("clematis_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CLEMATIS_FLOWER = BLOCKS.register("potted_clematis_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CLEMATIS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BLUE_STAR_FLOWER = registerBlock("blue_star_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BLUE_STAR_FLOWER = BLOCKS.register("potted_blue_star_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BLUE_STAR_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> SALVIA_FLOWER = registerBlock("salvia_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_SALVIA_FLOWER = BLOCKS.register("potted_salvia_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SALVIA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> FALSE_INDIGO_FLOWER = registerBlock("false_indigo_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_FALSE_INDIGO_FLOWER = BLOCKS.register("potted_false_indigo_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), FALSE_INDIGO_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Light Gray
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> WHITE_SAGE_FLOWER = registerBlock("white_sage_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_WHITE_SAGE_FLOWER = BLOCKS.register("potted_white_sage_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), WHITE_SAGE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> SILVER_SCHEHERAZADE_FLOWER = registerBlock("silver_scheherazade_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_SILVER_SCHEHERAZADE_FLOWER = BLOCKS.register("potted_silver_scheherazade_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SILVER_SCHEHERAZADE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> SILVER_SPRING_FLOWER = registerBlock("silver_spring_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_SILVER_SPRING_FLOWER = BLOCKS.register("potted_silver_spring_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SILVER_SPRING_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> SILVER_SHADOWS_FLOWER = registerBlock("silver_shadows_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_SILVER_SHADOWS_FLOWER = BLOCKS.register("potted_silver_shadows_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SILVER_SHADOWS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Lime
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> GREEN_BALL_FLOWER = registerBlock("green_ball_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_GREEN_BALL_FLOWER = BLOCKS.register("potted_green_ball_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), GREEN_BALL_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> LIME_DAHLIA_FLOWER = registerBlock("lime_dahlia_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_LIME_DAHLIA_FLOWER = BLOCKS.register("potted_lime_dahlia_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), LIME_DAHLIA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> HYDRANGEA_FLOWER = registerBlock("hydrangea_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_HYDRANGEA_FLOWER = BLOCKS.register("potted_hydrangea_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), HYDRANGEA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> ZINNIA_FLOWER = registerBlock("zinnia_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_ZINNIA_FLOWER = BLOCKS.register("potted_zinnia_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), ZINNIA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Magenta
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BUTTERFLY_CANDY_FLOWER = registerBlock("butterfly_candy_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BUTTERFLY_CANDY_FLOWER = BLOCKS.register("potted_butterfly_candy_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BUTTERFLY_CANDY_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CABARET_FLOWER = registerBlock("cabaret_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CABARET_FLOWER = BLOCKS.register("potted_cabaret_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CABARET_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> DIANTHUS_FLOWER = registerBlock("dianthus_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_DIANTHUS_FLOWER = BLOCKS.register("potted_dianthus_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), DIANTHUS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> TITAN_CRANBERRY_VINCA_FLOWER = registerBlock("titan_cranberry_vinca_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_TITAN_CRANBERRY_VINCA_FLOWER = BLOCKS.register("potted_titan_cranberry_vinca_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), TITAN_CRANBERRY_VINCA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Orange
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> ORANGE_ZINNIA_FLOWER = registerBlock("orange_zinnia_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_ORANGE_ZINNIA_FLOWER = BLOCKS.register("potted_orange_zinnia_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), ORANGE_ZINNIA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BEGONIA_FLOWER = registerBlock("begonia_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BEGONIA_FLOWER = BLOCKS.register("potted_begonia_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BEGONIA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CROWN_IMPERIAL_FLOWER = registerBlock("crown_imperial_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CROWN_IMPERIAL_FLOWER = BLOCKS.register("potted_crown_imperial_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CROWN_IMPERIAL_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> ORIENTAL_POPPY_FLOWER = registerBlock("oriental_poppy_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_ORIENTAL_POPPY_FLOWER = BLOCKS.register("potted_oriental_poppy_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), ORIENTAL_POPPY_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Pink
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> AZALEA_FLOWER = registerBlock("azalea_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_AZALEA_FLOWER = BLOCKS.register("potted_azalea_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), AZALEA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> PINK_DELIGHT_FLOWER = registerBlock("pink_delight_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_PINK_DELIGHT_FLOWER = BLOCKS.register("potted_pink_delight_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), PINK_DELIGHT_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CHRYSANTHEMUM_FLOWER = registerBlock("chrysanthemum_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CHRYSANTHEMUM_FLOWER = BLOCKS.register("potted_chrysanthemum_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CHRYSANTHEMUM_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> HIBISCUS_FLOWER = registerBlock("hibiscus_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_HIBISCUS_FLOWER = BLOCKS.register("potted_hibiscus_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), HIBISCUS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Red
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> CARDINAL_FLOWER = registerBlock("cardinal_flower_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_CARDINAL_FLOWER = BLOCKS.register("potted_cardinal_flower_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), CARDINAL_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> GERBERA_FLOWER = registerBlock("gerbera_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_GERBERA_FLOWER = BLOCKS.register("potted_gerbera_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), GERBERA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> RED_TULIP_FLOWER = registerBlock("red_tulip_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_RED_TULIP_FLOWER = BLOCKS.register("potted_red_tulip_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), RED_TULIP_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> FREESIA_FLOWER = registerBlock("freesia_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_FREESIA_FLOWER = BLOCKS.register("potted_freesia_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), FREESIA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //White
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> GARDENIAS_FLOWER = registerBlock("gardenias_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_GARDENIAS_FLOWER = BLOCKS.register("potted_gardenias_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), GARDENIAS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> STAR_JASMINE_FLOWER = registerBlock("star_jasmine_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_STAR_JASMINE_FLOWER = BLOCKS.register("potted_star_jasmine_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), STAR_JASMINE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> WHITE_WARATAH_FLOWER = registerBlock("white_waratah_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_WHITE_WARATAH_FLOWER = BLOCKS.register("potted_white_waratah_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), WHITE_WARATAH_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> FLANNEL_FLOWER = registerBlock("flannel_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_FLANNEL_FLOWER = BLOCKS.register("potted_flannel_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), FLANNEL_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Yellow
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BEARS_EARS_FLOWER = registerBlock("bears_ears_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BEARS_EARS_FLOWER = BLOCKS.register("potted_bears_ears_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BEARS_EARS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BIDENS_FLOWER = registerBlock("bidens_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BIDENS_FLOWER = BLOCKS.register("potted_bidens_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BIDENS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BLANKET_FLOWER = registerBlock("blanket_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BLANKET_FLOWER = BLOCKS.register("potted_blanket_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BLANKET_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BULBINE_FLOWER = registerBlock("bulbine_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BULBINE_FLOWER = BLOCKS.register("potted_bulbine_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BULBINE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Gray
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> SILVER_BRUNIA_FLOWER = registerBlock("silver_brunia_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_SILVER_BRUNIA_FLOWER = BLOCKS.register("potted_silver_brunia_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SILVER_BRUNIA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> GRAY_ROSES_FLOWER = registerBlock("gray_roses_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_GRAY_ROSES_FLOWER = BLOCKS.register("potted_gray_roses_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), GRAY_ROSES_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> MOON_CARROT_FLOWER = registerBlock("moon_carrot_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_MOON_CARROT_FLOWER = BLOCKS.register("potted_moon_carrot_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), MOON_CARROT_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> SILVER_BABY_FLOWER = registerBlock("silver_baby_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_SILVER_BABY_FLOWER = BLOCKS.register("potted_silver_baby_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SILVER_BABY_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    //Purple
+//    public static final RegistryObject<Block> _FLOWER = registerBlock("_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+//    public static final RegistryObject<Block> POTTED__FLOWER = BLOCKS.register("potted__flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), _FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> LAVENDER_FLOWER = registerBlock("lavender_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_LAVENDER_FLOWER = BLOCKS.register("potted_lavender_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), LAVENDER_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> BELLFLOWER_FLOWER = registerBlock("bellflower_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_BELLFLOWER_FLOWER = BLOCKS.register("potted_bellflower_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), BELLFLOWER_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> LILAC_FLOWER = registerBlock("lilac_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_LILAC_FLOWER = BLOCKS.register("potted_lilac_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), LILAC_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+    public static final RegistryObject<Block> SWEET_PEA_FLOWER = registerBlock("sweet_pea_flower", () -> new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 1, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+    public static final RegistryObject<Block> POTTED_SWEET_PEA_FLOWER = BLOCKS.register("potted_sweet_pea_flower", () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SWEET_PEA_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    /*
+    FLUIDS
+     */
     public static final RegistryObject<LiquidBlock> STYX_WATER_BLOCK = BLOCKS.register("styx_water_block", () -> new LiquidBlock(ModFluids.SOURCE_STYX_WATER, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
+
+    /*
+    CROPS
+     */
+    public static final RegistryObject<Block> POMEGRANATE_CROP_BLOCK = BLOCKS.register("pomegranate_crop_block", () -> new PomegranateCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+
+    public static final RegistryObject<Block> DURUM_WHEAT_CROP_BLOCK = BLOCKS.register("durum_wheat_crop_block", () -> new DurumWheatCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> TOMATO_CROP_BLOCK = BLOCKS.register("tomato_crop_block", () -> new TomatoCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> WILD_ONION_CROP_BLOCK = BLOCKS.register("wild_onion_crop_block", () -> new OnionCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion(), 0));
+    public static final RegistryObject<Block> STAGE_1_ONION_CROP_BLOCK = BLOCKS.register("stage_1_onion_crop_block", () -> new OnionCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion(), 1));
+    public static final RegistryObject<Block> STAGE_2_ONION_CROP_BLOCK = BLOCKS.register("stage_2_onion_crop_block", () -> new OnionCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion(), 2));
+    public static final RegistryObject<Block> STAGE_3_ONION_CROP_BLOCK = BLOCKS.register("stage_3_onion_crop_block", () -> new OnionCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion(), 3));
+    public static final RegistryObject<Block> ONION_CROP_BLOCK = BLOCKS.register("onion_crop_block", () -> new OnionCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion(), 4));
+    public static final RegistryObject<Block> DRAGON_FRUIT_CROP_BLOCK = BLOCKS.register("dragon_fruit_crop_block", () -> new DragonFruitCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+    public static final RegistryObject<Block> CHILLI_CROP_BLOCK = BLOCKS.register("chilli_crop_block", () -> new ChilliCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
 
     /*
      * WORLD BLOCKS

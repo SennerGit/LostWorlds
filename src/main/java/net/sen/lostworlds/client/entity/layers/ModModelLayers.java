@@ -7,6 +7,8 @@ import net.sen.lostworlds.LostWorldsConstants;
 
 public class ModModelLayers {
     public static final ModelLayerLocation RHINO_LAYER = createModelLayerLocation("rhino_layer");
+    public static final ModelLayerLocation DWARVES_LAYER = createModelLayerLocation("dwarves_layer");
+    public static final ModelLayerLocation ELVES_LAYER = createModelLayerLocation("elves_layer");
     public static final ModelLayerLocation SHARK_LAYER = createModelLayerLocation("shark_layer");
     public static final ModelLayerLocation MORAY_EELS_LAYER = createModelLayerLocation("moray_eels_layer");
     public static final ModelLayerLocation ELECTRIC_EELS_LAYER = createModelLayerLocation("electric_eels_layer");

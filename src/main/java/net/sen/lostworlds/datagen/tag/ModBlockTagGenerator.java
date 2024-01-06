@@ -104,6 +104,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE.get(),
 
                 ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER.get(),
@@ -115,6 +118,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER.get(),
 
                 ModBlocks.NIDAVELLIR_HARD_STONE.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS.get(),
@@ -146,6 +152,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE.get(),
 
                 ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER.get(),
@@ -157,6 +166,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER.get(),
 
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS.get(),
@@ -188,6 +200,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE.get(),
 
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER.get(),
@@ -199,6 +214,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER.get(),
 
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS.get(),
@@ -230,6 +248,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE.get(),
 
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER.get(),
@@ -241,6 +262,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER.get(),
 
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS.get(),
@@ -272,6 +296,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE.get(),
 
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER.get(),
@@ -283,6 +310,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER.get(),
 
                 ModBlocks.TARTARUS_STONE.get(),
                 ModBlocks.TARTARUS_STONE_STAIRS.get(),
@@ -427,11 +457,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE.get(),
 
                 ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER.get(),
 
                 ModBlocks.NIDAVELLIR_HARD_STONE.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS.get(),
@@ -514,19 +550,31 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER.get(),
 
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER.get(),
 
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS.get(),
@@ -622,18 +670,31 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER.get(),
+
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE_CLUSTER.get(),
                 ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER.get(),
-                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER.get()
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER.get(),
+                ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER.get()
         );
 
         this.tag(ModTags.Blocks.NEEDS_NETHER_STEEL_TOOL).add(
@@ -921,6 +982,18 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(ModTags.Blocks.CYPRESS_STRIPPED_LOGS).add(
                 ModBlocks.STRIPPED_CYPRESS_LOG.get(),
                 ModBlocks.STRIPPED_CYPRESS_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.MUSHROOMS).add(
+                Blocks.BROWN_MUSHROOM,
+                Blocks.RED_MUSHROOM,
+                ModBlocks.POINT_MUSHROOM_BLOCK.get(),
+                ModBlocks.WITCHES_MUSHROOM_BLOCK.get(),
+                ModBlocks.ROYAL_BLUE_MUSHROOM_BLOCK.get(),
+                ModBlocks.SHORT_TOP_MUSHROOM_BLOCK.get(),
+                ModBlocks.SPECTRAL_MUSHROOM_BLOCK.get(),
+                ModBlocks.SHADE_MUSHROOM_BLOCK.get(),
+                ModBlocks.CAP_MUSHROOM_BLOCK.get()
         );
     }
 

@@ -1,9 +1,10 @@
 {
   "entries": [
-    "lostworlds:pomegranate_seeds_from_grass",
-    "lostworlds:pomegranate_seeds_from_fern",
-    "lostworlds:pomegranate_seeds_from_suspicious_sand",
-    "lostworlds:pomegranate_seeds_from_abandoned_mineshaft"
+    "lostworlds:tomato_seeds_from_alfheimr_magic_grass",
+    "lostworlds:durum_wheat_seeds_from_alfheimr_magic_grass",
+    "lostworlds:chilli_seeds_from_alfheimr_magic_grass",
+    "lostworlds:dragon_fruit_seeds_from_alfheimr_magic_grass",
+    "lostworlds:wild_onion_from_alfheimr_magic_grass"
   ],
   "replace": false
 }

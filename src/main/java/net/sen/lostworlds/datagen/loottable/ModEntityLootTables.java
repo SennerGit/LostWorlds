@@ -36,6 +36,20 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
+        this.add(ModEntities.DWARVES.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.BEEF))
+                        ));
+
+        this.add(ModEntities.ELVES.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.BEEF))
+                        ));
+
         this.add(ModEntities.SHARK.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
