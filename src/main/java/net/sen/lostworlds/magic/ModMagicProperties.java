@@ -1,8 +1,8 @@
 package net.sen.lostworlds.magic;
 
 public class ModMagicProperties {
-    public static final MagicProperties ENDER_EYE = new MagicProperties.Builder()
+    public static final MagicProperties PORTAL_CORE = new MagicProperties.Builder()
             .addMagicType(MagicElementTypeEnum.ENDER)
-            .addMagicType(MagicElementTypeEnum.WILD)
+            .addMagicType(MagicElementTypeEnum.RAW)
             .build();
 }

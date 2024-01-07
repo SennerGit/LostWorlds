@@ -7,12 +7,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.sen.lostworlds.LostWorlds;
 import net.sen.lostworlds.LostWorldsConstants;
 import net.sen.lostworlds.client.event.CreativeScreenEvents;
+import net.sen.lostworlds.client.gui.TooltipOverlayHandler;
 
 public class ClientHandler {
     public static void init(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MinecraftForge.EVENT_BUS.register(new CreativeScreenEvents());
         });
+
+        TooltipOverlayHandler.init();
     }
 
 //    @SubscribeEvent

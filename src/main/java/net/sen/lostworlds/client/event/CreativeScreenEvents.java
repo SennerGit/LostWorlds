@@ -40,7 +40,7 @@ import java.util.Objects;
  * Author: MrCrayfish
  */
 public class CreativeScreenEvents {
-    private static final ResourceLocation ICONS = LostWorldsConstants.modLoc("textures/gui/icons.png");
+    private static final ResourceLocation ICONS = LostWorldsConstants.modLoc("textures/gui/creative_tab_icons.png");
     private static int startIndex;
     private static CreativeModeTab lastTab = CreativeModeTabs.getDefaultTab();
 

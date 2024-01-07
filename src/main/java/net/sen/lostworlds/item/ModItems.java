@@ -15,6 +15,7 @@ import net.sen.lostworlds.datagen.modonomicon.LostWorldsBookItem;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.fluid.ModFluids;
 import net.sen.lostworlds.item.custom.*;
+import net.sen.lostworlds.magic.ModMagicProperties;
 import net.sen.lostworlds.sound.ModSounds;
 
 public class ModItems {
@@ -290,7 +291,7 @@ public class ModItems {
     public static final RegistryObject<Item> BASIC_PORTAL_ACTIVATOR = ITEMS.register("basic_portal_activator", () -> new PortalActivatorItem(0));
 
     //Portal Core
-    public static final RegistryObject<Item> BASIC_PORTAL_CORE = ITEMS.register("basic_portal_core", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> BASIC_PORTAL_CORE = ITEMS.register("basic_portal_core", () -> new MagicalItem(new Item.Properties().rarity(Rarity.UNCOMMON), ModMagicProperties.PORTAL_CORE));
 
     public static RegistryObject<Item> registerHorseArmour(String name, int pProtection, int pMaxDamage) {
         return ITEMS.register(name + "_horse_armor", () -> new HorseArmorItem(

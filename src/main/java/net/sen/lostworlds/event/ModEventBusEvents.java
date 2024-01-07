@@ -20,6 +20,7 @@ import net.sen.lostworlds.entity.custom.AbstractSchoolingBigFish;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
 import net.sen.lostworlds.entity.custom.WaterMonster;
 import net.sen.lostworlds.entity.mob.*;
+import net.minecraftforge.event.entity.item.*;
 
 @Mod.EventBusSubscriber(modid = LostWorldsConstants.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
