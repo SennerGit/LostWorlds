@@ -12,7 +12,7 @@ import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.sound.ModSounds;
 import net.sen.lostworlds.worldgen.placement.*;
@@ -198,6 +198,6 @@ public class UnderworldBiomes {
     }
 
     public static ResourceKey<Biome> register(String name) {
-        return ResourceKey.create(Registries.BIOME, LostWorldsConstants.modLoc(name));
+        return ResourceKey.create(Registries.BIOME, LostWorldsApi.modLoc(name));
     }
 }

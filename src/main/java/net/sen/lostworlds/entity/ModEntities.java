@@ -3,13 +3,13 @@ package net.sen.lostworlds.entity;
 import net.minecraft.world.entity.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.*;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.entity.projectile.*;
 import net.sen.lostworlds.entity.mob.*;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
-            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, LostWorldsConstants.MODID);
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, LostWorldsApi.MODID);
 
     public static final RegistryObject<EntityType<RhinoEntity>> RHINO =
             ENTITY_TYPES.register("rhino",

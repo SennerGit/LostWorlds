@@ -1,8 +1,6 @@
 package net.sen.lostworlds.util;
 
 import com.google.common.base.Preconditions;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -10,9 +8,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +17,7 @@ import java.util.function.BiConsumer;
 public class ModTags {
     public static class Biomes {
         private static TagKey<Biome> tag(String name) {
-            return BiomeTags.create(LostWorldsConstants.modLoc("biome_tag_" + name).toString());
+            return BiomeTags.create(LostWorldsApi.modLoc("biome_tag_" + name).toString());
         }
     }
 
@@ -32,10 +28,23 @@ public class ModTags {
         public static final TagKey<Item> ALFHEIMR = tag("alfheimr");
         public static final TagKey<Item> ATLANTIS = tag("atlantis");
         public static final TagKey<Item> SKYOPIA = tag("skyopia");
+
+        public static final TagKey<Item> METALS = tag("metals");
+        public static final TagKey<Item> BUILDING_BLOCKS = tag("building_blocks");
+        public static final TagKey<Item> MISCS = tag("miscs");
+        public static final TagKey<Item> NATURAL_BLOCKS = tag("natural_blocks");
+        public static final TagKey<Item> COLORED_BLOCKS = tag("colored_blocks");
+        public static final TagKey<Item> FUNCTIONAL_BLOCKS = tag("functional_blocks");
+        public static final TagKey<Item> FARMING = tag("farming");
+        public static final TagKey<Item> REDSTONE_BLOCKS = tag("redstone_blocks");
+        public static final TagKey<Item> MAGIC = tag("magic");
+        public static final TagKey<Item> TOOLS_AND_UTILITIES = tag("tools_and_utilities");
+        public static final TagKey<Item> COMBAT = tag("combat");
+        public static final TagKey<Item> FOOD_AND_DRINKS = tag("food_and_drinks");
         public static final TagKey<Item> SPAWN_EGGS = tag("spawn_eggs");
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(LostWorldsConstants.modLoc(name));
+            return ItemTags.create(LostWorldsApi.modLoc(name));
         }
     }
 
@@ -58,11 +67,11 @@ public class ModTags {
         public static final TagKey<Item> MUSHROOMS = tag("mushrooms");
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(LostWorldsConstants.modLoc(name));
+            return ItemTags.create(LostWorldsApi.modLoc(name));
         }
 
         private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(LostWorldsConstants.forgeLoc(name));
+            return BlockTags.create(LostWorldsApi.forgeLoc(name));
         }
     }
 
@@ -104,15 +113,15 @@ public class ModTags {
         public static final TagKey<Block> MUSHROOMS = tag("mushrooms");
 
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(LostWorldsConstants.modLoc(name));
+            return BlockTags.create(LostWorldsApi.modLoc(name));
         }
 
         private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(LostWorldsConstants.forgeLoc(name));
+            return BlockTags.create(LostWorldsApi.forgeLoc(name));
         }
 
         private static TagKey<Block> mcTag(String name) {
-            return BlockTags.create(LostWorldsConstants.mcLoc(name));
+            return BlockTags.create(LostWorldsApi.mcLoc(name));
         }
     }
 

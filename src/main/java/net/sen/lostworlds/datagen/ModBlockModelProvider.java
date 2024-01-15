@@ -7,12 +7,12 @@ import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
 
 public class ModBlockModelProvider extends BlockModelProvider {
     public ModBlockModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, LostWorldsConstants.MODID, existingFileHelper);
+        super(output, LostWorldsApi.MODID, existingFileHelper);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class ModBlockModelProvider extends BlockModelProvider {
 
     private ResourceLocation modResourceLocation(String block) {
         ResourceLocation resourceLocation;
-        resourceLocation = new ResourceLocation(LostWorldsConstants.MODID, "block/" + block);
+        resourceLocation = new ResourceLocation(LostWorldsApi.MODID, "block/" + block);
         return resourceLocation;
     }
 
@@ -49,9 +49,9 @@ public class ModBlockModelProvider extends BlockModelProvider {
     }
 
     public void createPortalBlockEW(RegistryObject<Block> portalBlock) {
-        getBuilder(LostWorldsConstants.modLoc(portalBlock.getId().getPath()).getPath() + "_ew")
-                .texture("particle", LostWorldsConstants.modLoc("block/" + portalBlock.getId().getPath()))
-                .texture("portal", LostWorldsConstants.modLoc("block/" + portalBlock.getId().getPath()))
+        getBuilder(LostWorldsApi.modLoc(portalBlock.getId().getPath()).getPath() + "_ew")
+                .texture("particle", LostWorldsApi.modLoc("block/" + portalBlock.getId().getPath()))
+                .texture("portal", LostWorldsApi.modLoc("block/" + portalBlock.getId().getPath()))
                 .element()
                 .from(6, 0, 0)
                 .to(10, 16, 16)
@@ -79,9 +79,9 @@ public class ModBlockModelProvider extends BlockModelProvider {
     }
 
     public void createPortalBlockNS(RegistryObject<Block> portalBlock) {
-        getBuilder(LostWorldsConstants.modLoc(portalBlock.getId().getPath()).getPath() + "_ns")
-                .texture("particle", LostWorldsConstants.modLoc("block/" + portalBlock.getId().getPath()))
-                .texture("portal", LostWorldsConstants.modLoc("block/" + portalBlock.getId().getPath()))
+        getBuilder(LostWorldsApi.modLoc(portalBlock.getId().getPath()).getPath() + "_ns")
+                .texture("particle", LostWorldsApi.modLoc("block/" + portalBlock.getId().getPath()))
+                .texture("portal", LostWorldsApi.modLoc("block/" + portalBlock.getId().getPath()))
                 .element()
                 .from(0, 0, 6)
                 .to(16, 16, 10)

@@ -7,8 +7,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.GiantSquidModel;
 import net.sen.lostworlds.entity.mob.GiantSquidEntity;
@@ -22,7 +21,7 @@ public class GiantSquidRenderer extends MobRenderer<GiantSquidEntity, GiantSquid
     private static final Map<GiantSquidVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(GiantSquidVariant.class), map -> {
                 map.put(GiantSquidVariant.DEFAULT,
-                        LostWorldsConstants.modLoc("textures/entity/giant_squid/giant_squid.png"));
+                        LostWorldsApi.modLoc("textures/entity/giant_squid/giant_squid.png"));
             });
 
     public GiantSquidRenderer(EntityRendererProvider.Context pContext) {

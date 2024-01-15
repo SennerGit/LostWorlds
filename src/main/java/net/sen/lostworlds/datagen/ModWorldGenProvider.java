@@ -5,7 +5,7 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.worldgen.features.ModConfiguredFeatures;
 import net.sen.lostworlds.worldgen.placement.ModPlacedFeatures;
 import net.sen.lostworlds.worldgen.biome.ModBiomes;
@@ -27,6 +27,6 @@ public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.CONFIGURED_CARVER, ModConfiguredCarvers::bootstrap);
 
     public ModWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, BUILDER, Set.of(LostWorldsConstants.MODID));
+        super(output, registries, BUILDER, Set.of(LostWorldsApi.MODID));
     }
 }

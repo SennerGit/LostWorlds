@@ -7,12 +7,11 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
 
 public class AlloySmelterScreen extends AbstractContainerScreen<AlloySmelterMenu> {
-    public static final ResourceLocation TEXTURE = LostWorldsConstants.modLoc("textures/gui/container/" + ModBlocks.ALLOY_SMELTER.getId().getPath() + "_gui.png");
+    public static final ResourceLocation TEXTURE = LostWorldsApi.modLoc("textures/gui/container/" + ModBlocks.ALLOY_SMELTER.getId().getPath() + "_gui.png");
 
     public AlloySmelterScreen(AlloySmelterMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);

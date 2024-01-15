@@ -10,14 +10,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
 import net.sen.lostworlds.effect.ModEffects;
 
 public class ModPotions {
     public static final DeferredRegister<Potion> POTIONS =
-            DeferredRegister.create(ForgeRegistries.POTIONS, LostWorldsConstants.MODID);
+            DeferredRegister.create(ForgeRegistries.POTIONS, LostWorldsApi.MODID);
 
     public static final RegistryObject<Potion> DROWSY_POTION = POTIONS.register(nameId("drowsy_potion"),
             () -> new Potion(new MobEffectInstance(ModEffects.DROWSY_EFFECT.get(), MinecraftMaths.secondsInTicks(10), 0)));
@@ -33,6 +32,6 @@ public class ModPotions {
     }
 
     public static String nameId(String name) {
-        return LostWorldsConstants.MODID + "." + name;
+        return LostWorldsApi.MODID + "." + name;
     }
 }

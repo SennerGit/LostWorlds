@@ -7,59 +7,59 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 
 public class ModDimensions {
     //Underworld
     public static final ResourceKey<LevelStem> UNDERWORLD_KEY =
-            ResourceKey.create(Registries.LEVEL_STEM, LostWorldsConstants.modLoc("underworld"));
+            ResourceKey.create(Registries.LEVEL_STEM, LostWorldsApi.modLoc("underworld"));
     public static final ResourceKey<Level> UNDERWORLD_LEVEL_KEY =
-            ResourceKey.create(Registries.DIMENSION, LostWorldsConstants.modLoc("underworld"));
+            ResourceKey.create(Registries.DIMENSION, LostWorldsApi.modLoc("underworld"));
     public static final ResourceKey<DimensionType> UNDERWORLD_DIM_TYPE =
-            ResourceKey.create(Registries.DIMENSION_TYPE, LostWorldsConstants.modLoc("underworld_type"));
+            ResourceKey.create(Registries.DIMENSION_TYPE, LostWorldsApi.modLoc("underworld_type"));
 
     public static final ResourceKey<NoiseGeneratorSettings> UNDERWORLD_NOISE_KEY =
-            ResourceKey.create(Registries.NOISE_SETTINGS, LostWorldsConstants.modLoc("underworld_noise_key"));
+            ResourceKey.create(Registries.NOISE_SETTINGS, LostWorldsApi.modLoc("underworld_noise_key"));
 
     //Nidavellir
     public static final ResourceKey<LevelStem> NIDAVELLIR_KEY = ResourceKey.create(Registries.LEVEL_STEM,
-            LostWorldsConstants.modLoc("nidavellir"));
+            LostWorldsApi.modLoc("nidavellir"));
     public static final ResourceKey<Level> NIDAVELLIR_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
-            LostWorldsConstants.modLoc("nidavellir"));
+            LostWorldsApi.modLoc("nidavellir"));
     public static final ResourceKey<NoiseGeneratorSettings> NIDAVELLIR_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
-            LostWorldsConstants.modLoc("nidavellir_noise_key"));
+            LostWorldsApi.modLoc("nidavellir_noise_key"));
     public static final ResourceKey<DimensionType> NIDAVELLIR_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
-            LostWorldsConstants.modLoc("nidavellir_type"));
+            LostWorldsApi.modLoc("nidavellir_type"));
 
     //Alfheimr
     public static final ResourceKey<LevelStem> ALFHEIMR_KEY = ResourceKey.create(Registries.LEVEL_STEM,
-            LostWorldsConstants.modLoc("alfheimr"));
+            LostWorldsApi.modLoc("alfheimr"));
     public static final ResourceKey<Level> ALFHEIMR_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
-            LostWorldsConstants.modLoc("alfheimr"));
+            LostWorldsApi.modLoc("alfheimr"));
     public static final ResourceKey<DimensionType> ALFHEIMR_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
-            LostWorldsConstants.modLoc("alfheimr_type"));
+            LostWorldsApi.modLoc("alfheimr_type"));
     public static final ResourceKey<NoiseGeneratorSettings> ALFHEIMR_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
-            LostWorldsConstants.modLoc("alfheimr_noise_key"));
+            LostWorldsApi.modLoc("alfheimr_noise_key"));
 
     //Atlantis
     public static final ResourceKey<LevelStem> ATLANTIS_KEY = ResourceKey.create(Registries.LEVEL_STEM,
-            LostWorldsConstants.modLoc("atlantis"));
+            LostWorldsApi.modLoc("atlantis"));
     public static final ResourceKey<Level> ATLANTIS_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
-            LostWorldsConstants.modLoc("atlantis"));
+            LostWorldsApi.modLoc("atlantis"));
     public static final ResourceKey<DimensionType> ATLANTIS_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
-            LostWorldsConstants.modLoc("atlantis_type"));
+            LostWorldsApi.modLoc("atlantis_type"));
     public static final ResourceKey<NoiseGeneratorSettings> ATLANTIS_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
-            LostWorldsConstants.modLoc("atlantis_noise_key"));
+            LostWorldsApi.modLoc("atlantis_noise_key"));
 
     //Skyopia
     public static final ResourceKey<LevelStem> SKYOPIA_KEY = ResourceKey.create(Registries.LEVEL_STEM,
-            LostWorldsConstants.modLoc("skyopia"));
+            LostWorldsApi.modLoc("skyopia"));
     public static final ResourceKey<Level> SKYOPIA_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
-            LostWorldsConstants.modLoc("skyopia"));
+            LostWorldsApi.modLoc("skyopia"));
     public static final ResourceKey<DimensionType> SKYOPIA_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
-            LostWorldsConstants.modLoc("skyopia_type"));
+            LostWorldsApi.modLoc("skyopia_type"));
     public static final ResourceKey<NoiseGeneratorSettings> SKYOPIA_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
-            LostWorldsConstants.modLoc("skyopia_noise_key"));
+            LostWorldsApi.modLoc("skyopia_noise_key"));
 
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         UnderworldDimension.underworldDimensionType(context);

@@ -8,17 +8,16 @@ import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.block.custom.*;
 import net.sen.lostworlds.block.portal.ModPortalBlock;
 
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, LostWorldsConstants.MODID, exFileHelper);
+        super(output, LostWorldsApi.MODID, exFileHelper);
     }
 
     @Override
@@ -26,6 +25,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.CRIMSON_DIAMOND_BLOCK);
 
         baseBlocks();
+
+        blockWithItem(ModBlocks.DRUID_RITUAL_STONE);
 
         blockWithItem(ModBlocks.UNDERWORLD_PORTAL_FRAME);
         blockWithItem(ModBlocks.NIDAVELLIR_PORTAL_FRAME);
@@ -444,6 +445,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         makeFlower(ModBlocks.LILAC_FLOWER, ModBlocks.POTTED_LILAC_FLOWER);
         makeFlower(ModBlocks.SWEET_PEA_FLOWER, ModBlocks.POTTED_SWEET_PEA_FLOWER);
 
+
         /*
         VEGETATION
          */
@@ -844,11 +846,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void blockItem(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(LostWorldsConstants.MODID + ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(LostWorldsApi.MODID + ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 
     private void blockItem(RegistryObject<Block> blockRegistryObject, String appendix) {
-        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(LostWorldsConstants.MODID + ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + appendix));
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(LostWorldsApi.MODID + ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + appendix));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
@@ -858,7 +860,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void colouredBlockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(),
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
-                        LostWorldsConstants.mcLoc("minecraft:block/cube_all"),
+                        LostWorldsApi.mcLoc("minecraft:block/cube_all"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("solid"));
     }
 
@@ -1008,7 +1010,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private ResourceLocation modBlockResourceLocation(String block) {
         ResourceLocation resourceLocation;
-        resourceLocation = LostWorldsConstants.modLoc("block/" + block);
+        resourceLocation = LostWorldsApi.modLoc("block/" + block);
         return resourceLocation;
     }
 

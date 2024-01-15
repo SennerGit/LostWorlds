@@ -1,24 +1,24 @@
 package net.sen.lostworlds.client;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.*;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.entity.ModBlockEntities;
 import net.sen.lostworlds.client.gui.MagicTooltip;
 import net.sen.lostworlds.client.gui.TooltipOverlayHandler;
 import net.sen.lostworlds.particle.MagicDowsingRodParticles;
 import net.sen.lostworlds.particle.ModParticles;
 
-@Mod.EventBusSubscriber(modid = LostWorldsConstants.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = LostWorldsApi.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEventClientBusEvents {
+    public static final ResourceLocation BOOK_GUI = LostWorldsApi.modLoc("textures/gui/book.png");
+
     @SubscribeEvent
     public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(ModParticles.MAGICAL_DOWSING_ROD_PARTICLES.get(),

@@ -8,16 +8,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParam;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
-import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.item.ModItems;
-import net.sen.lostworlds.util.ModTags;
 
 import java.util.stream.Stream;
 
@@ -87,7 +82,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
 
         this.add(ModEntities.TUNA.get(),
-                new ResourceLocation(LostWorldsConstants.MODID, "entities/tuna_small"),
+                new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_small"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(2))
@@ -96,7 +91,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
 
         this.add(ModEntities.TUNA.get(),
-                new ResourceLocation(LostWorldsConstants.MODID, "entities/tuna_mid"),
+                new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_mid"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(3))
@@ -105,7 +100,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
 
         this.add(ModEntities.TUNA.get(),
-                new ResourceLocation(LostWorldsConstants.MODID, "entities/tuna_large"),
+                new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_large"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(4))
@@ -114,7 +109,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
 
         this.add(ModEntities.TUNA.get(),
-                new ResourceLocation(LostWorldsConstants.MODID, "entities/tuna_giant"),
+                new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_giant"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(5))
@@ -218,5 +213,5 @@ public class ModEntityLootTables extends EntityLootSubProvider {
     protected Stream<EntityType<?>> getKnownEntityTypes() {
         return ForgeRegistries.ENTITY_TYPES.getValues().stream()
                 .filter(entities -> ForgeRegistries.ENTITY_TYPES.getKey(entities)
-                        .getNamespace().equals(LostWorldsConstants.MODID));    }
+                        .getNamespace().equals(LostWorldsApi.MODID));    }
 }

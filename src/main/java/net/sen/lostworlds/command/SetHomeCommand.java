@@ -7,8 +7,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 
 public class SetHomeCommand {
     public SetHomeCommand(CommandDispatcher<CommandSourceStack> dispatcher) {
@@ -20,7 +19,7 @@ public class SetHomeCommand {
         BlockPos playerPos = player.blockPosition();
         String positionString = "(" + playerPos.getX() + ", " + playerPos.getY() + ", " + playerPos.getZ() + ")";
 
-        player.getPersistentData().putIntArray(LostWorldsConstants.MODID + ".homepos", new int[] { playerPos.getX(), playerPos.getY(), playerPos.getZ()});
+        player.getPersistentData().putIntArray(LostWorldsApi.MODID + ".homepos", new int[] { playerPos.getX(), playerPos.getY(), playerPos.getZ()});
 
         context.getSource().sendSuccess(() -> Component.literal("Set Home at " + positionString), true);
         return 1;

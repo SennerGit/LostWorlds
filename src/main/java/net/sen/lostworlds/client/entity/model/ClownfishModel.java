@@ -7,16 +7,12 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
-import net.sen.lostworlds.client.entity.animations.ModRhinoAnimationDefinitions;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.entity.mob.ClownfishEntity;
 
 public class ClownfishModel<T extends ClownfishEntity> extends HierarchicalModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(LostWorldsConstants.modLoc("clownfish"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(LostWorldsApi.modLoc("clownfish"), "main");
 	private final ModelPart clownfish;
 
 	public ClownfishModel(ModelPart root) {

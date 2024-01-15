@@ -14,9 +14,8 @@ import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
-import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
 import net.sen.lostworlds.worldgen.dimension.TerrainProvider.AtlantisTerrainProvider;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.AtlantisSurfaceRules;
@@ -275,11 +274,11 @@ public class AtlantisDimension {
     }
 
     private static ResourceKey<DensityFunction> vanillaKey(String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.mcLoc("overworld/" + name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsApi.mcLoc("overworld/" + name));
     }
 
     private static ResourceKey<DensityFunction> createKey(final String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.modLoc("atlantis/" + name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsApi.modLoc("atlantis/" + name));
     }
 
 //    public static NoiseGeneratorSettings atlantisDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {

@@ -1,27 +1,25 @@
 package net.sen.lostworlds.event;
 
-import com.mojang.datafixers.optics.Wander;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.minecraft.client.gui.screens.social.PlayerEntry;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
+import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.server.command.ConfigCommand;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.command.ReturnHomeCommand;
 import net.sen.lostworlds.command.SetHomeCommand;
-import net.sen.lostworlds.event.custom.DwarvenVillagerTradesEvent;
 import net.sen.lostworlds.item.ModItems;
 import net.sen.lostworlds.item.custom.HammerItem;
 import net.minecraft.core.BlockPos;
@@ -31,21 +29,22 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.sen.lostworlds.item.custom.ModArmorItem;
+import net.sen.lostworlds.magic.MagicCapability;
+import net.sen.lostworlds.magic.MagicCapabilityAttacher;
+import net.sen.lostworlds.magic.ModMagicProperties;
 import net.sen.lostworlds.villager.ModVillagers;
-import net.sen.lostworlds.villager.custom.dwarven.DwarvenVillagerTrades;
-import net.sen.lostworlds.villager.custom.dwarven.ModDwarvenVillagers;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Mod.EventBusSubscriber(modid = LostWorldsConstants.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = LostWorldsApi.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
 
     // Done with the help of https://github.com/CoFH/CoFHCore/blob/1.19.x/src/main/java/cofh/core/event/AreaEffectEvents.java
     // Don't be a jerk License
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
+
     @SubscribeEvent
     public static void onHammerUsage(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
@@ -80,7 +79,7 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onPlayerCloned(PlayerEvent.Clone event) {
-        event.getEntity().getPersistentData().putIntArray(LostWorldsConstants.MODID + ".homepos", event.getOriginal().getPersistentData().getIntArray(LostWorldsConstants.MODID + ".homepos"));
+        event.getEntity().getPersistentData().putIntArray(LostWorldsApi.MODID + ".homepos", event.getOriginal().getPersistentData().getIntArray(LostWorldsApi.MODID + ".homepos"));
     }
 
     @SubscribeEvent
@@ -164,5 +163,35 @@ public class ModEvents {
         ItemStack stack = new ItemStack(item, itemAmount);
         newOffer = new MerchantOffer(emeraldCost, stack, maxUses, xp, priceMultiplier);
         return newOffer;
+    }
+
+    @SubscribeEvent
+    public static void registerCaps(RegisterCapabilitiesEvent event) {
+        MagicCapability.register(event);
+    }
+
+    @SubscribeEvent
+    public static void addMagicToItems(AttachCapabilitiesEvent<Item> event) {
+        if (event.getObject() == Items.ENDER_EYE)
+            MagicCapabilityAttacher.attach(event, ModMagicProperties.PORTAL_CORE);
+    }
+
+    @SubscribeEvent
+    public static void onTick(TickEvent.LevelTickEvent event) {
+        var level = event.level;
+
+        if (!(level instanceof ServerLevel serverLevel) || event.side != LogicalSide.SERVER)
+            return;
+
+        if (event.phase == TickEvent.Phase.START)
+            onServerLevelTickStart(serverLevel);
+        else if (event.phase == TickEvent.Phase.END)
+            onServerLevelTickEnd(serverLevel);
+    }
+
+    private static void onServerLevelTickStart(ServerLevel level) {
+    }
+
+    private static void onServerLevelTickEnd(ServerLevel level) {
     }
 }

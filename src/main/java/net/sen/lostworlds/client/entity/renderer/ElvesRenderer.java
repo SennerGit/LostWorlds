@@ -1,22 +1,17 @@
 package net.sen.lostworlds.client.entity.renderer;
 
-import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.ElvesModel;
 import net.sen.lostworlds.entity.mob.ElvesEntity;
-import net.sen.lostworlds.entity.variant.ElvesVariant;
-
-import java.util.Map;
 
 public class ElvesRenderer extends MobRenderer<ElvesEntity, ElvesModel<ElvesEntity>> {
-    private static final ResourceLocation TEXTURE = LostWorldsConstants.modLoc("textures/entity/elves/elves.png");
+    private static final ResourceLocation TEXTURE = LostWorldsApi.modLoc("textures/entity/elves/elves.png");
 
     public ElvesRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new ElvesModel<>(pContext.bakeLayer(ModModelLayers.ELVES_LAYER)), 2f);

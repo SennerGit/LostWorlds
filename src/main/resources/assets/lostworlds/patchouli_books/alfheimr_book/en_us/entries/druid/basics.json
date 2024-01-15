@@ -1,0 +1,20 @@
+{
+  "name": "lostworlds.entry.alfheimr.druid.intro",
+  "icon": "minecraft:feather",
+  "category": "lostworlds:druid",
+  "priority": true,
+  "pages": [
+    {
+      "type": "text",
+      "title": "lostworlds.page.alfheimr.druid.intro.0.title",
+      "text": "lostworlds.page.alfheimr.druid.intro.0.text"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock_id": "lostworlds:druid_ritual",
+      "name": "lostworlds.page.alfheimr.druid.intro.1.name",
+      "text": "lostworlds.page.alfheimr.druid.intro.1.text",
+      "enable_visualize": true
+    }
+  ]
+}

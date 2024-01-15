@@ -8,13 +8,16 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsConstants;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.compat.PatchouliCompat;
+import vazkii.patchouli.api.PatchouliAPI;
 
 public class ModCreativeModeTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LostWorldsConstants.MODID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LostWorldsApi.MODID);
 
-    public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("creative_tab", () -> {
+//    static List<Item> ignore = List.of(ModItems.LOST_WORLDS_BOOK.get());
+
+    public static final RegistryObject<CreativeModeTab> MAIN = CREATIVE_MODE_TABS.register("lostworlds_tab", () -> {
         CreativeModeTab.Builder builder = CreativeModeTab.builder();
 
         builder.icon(() -> new ItemStack(ModItems.BASIC_PORTAL_CORE.get()));
@@ -22,8 +25,30 @@ public class ModCreativeModeTabs {
         builder.withSearchBar();
         builder.displayItems((parameters, output) -> {
             ModItems.ITEMS.getEntries().forEach(registryObject -> {
+
+
+
                 Item item = registryObject.get();
-                if (item instanceof CreativeItem creativeItem) {
+
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.BOOK_MAP.get(PatchouliCompat.textureEnum.LOST_WORLDS_BOOK)));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.BOOK_MAP.get(PatchouliCompat.textureEnum.ALFHEIMR_BOOK)));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.BOOK_MAP.get(PatchouliCompat.textureEnum.ATLANTIS_BOOK)));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.BOOK_MAP.get(PatchouliCompat.textureEnum.NIDAVELLIR_BOOK)));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.BOOK_MAP.get(PatchouliCompat.textureEnum.SKYOPIA_BOOK)));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.BOOK_MAP.get(PatchouliCompat.textureEnum.UNDERWORLD_BOOK)));
+
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.LOST_WORLDS_BOOK));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.ALFHEIMR_BOOK));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.ATLANTIS_BOOK));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.NIDAVELLIR_BOOK));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.SKYOPIA_BOOK));
+//                output.accept(PatchouliAPI.get().getBookStack(PatchouliCompat.UNDERWORLD_BOOK));
+
+                    if (item instanceof CreativeItem creativeItem) {
+//                        for (Item i : ignore)
+//                            if (creativeItem == i)
+//                                return;
+
                     creativeItem.fill(output::accept);
                     return;
                 }

@@ -1,9 +1,7 @@
 package net.sen.lostworlds.client.entity.layers;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 
 public class ModModelLayers {
     public static final ModelLayerLocation RHINO_LAYER = createModelLayerLocation("rhino_layer");
@@ -32,6 +30,6 @@ public class ModModelLayers {
     public static final ModelLayerLocation MAGICAL_GORGAN_PROJECTILE_LAYER = createModelLayerLocation("magical_gorgan_projectile_layer");
 
     private static ModelLayerLocation createModelLayerLocation(String id) {
-        return new ModelLayerLocation(LostWorldsConstants.modLoc(id), id);
+        return new ModelLayerLocation(LostWorldsApi.modLoc(id), id);
     }
 }

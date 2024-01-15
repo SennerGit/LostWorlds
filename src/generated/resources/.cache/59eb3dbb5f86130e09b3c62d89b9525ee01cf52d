@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-26T09:25:58.7973522	Loot Tables
+// 1.20.1	2024-01-09T08:23:34.5438739	Loot Tables
 76fc0563528526d8df71ce9744072616106e6675 data/lostworlds/loot_tables/blocks/adamant_block.json
 d1aaa141846a0dc9a007586ec7443c812379aceb data/lostworlds/loot_tables/blocks/adamant_ore.json
 c02c9ba9f989a41164a96971ea09abfbe6f7db5e data/lostworlds/loot_tables/blocks/alfheimr_magic_grass.json
@@ -79,6 +79,7 @@ ec44b37df7123b94b955687029dcf5e79117c71b data/lostworlds/loot_tables/blocks/deep
 45e98b617d354fae0f9889687ffb399197efd796 data/lostworlds/loot_tables/blocks/dianthus_flower.json
 e3c2d4109be166b4f8f02a104dc2f2cce9745df5 data/lostworlds/loot_tables/blocks/dragon_fruit_crop_block.json
 81d5c9f94dba8fbae4062bc7ade85175a4b52d8c data/lostworlds/loot_tables/blocks/dread_night_flower.json
+0fa26f6913a627fc72b9ad947b93f75f8b13b566 data/lostworlds/loot_tables/blocks/druid_ritual_stone.json
 3bf8a7dc3f8dc3de9ca7336c827604258ba6d13a data/lostworlds/loot_tables/blocks/durum_wheat_crop_block.json
 b261521dd1b9c590887b05ba8c8d19e5865d475e data/lostworlds/loot_tables/blocks/elder_wood.json
 cfa7c22fe63acfba9dba55984649bc61a7006402 data/lostworlds/loot_tables/blocks/elder_wood_leaves.json

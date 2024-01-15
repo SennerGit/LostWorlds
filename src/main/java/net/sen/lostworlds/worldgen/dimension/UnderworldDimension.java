@@ -18,7 +18,7 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.worldgen.biome.UnderworldBiomes;
 import net.sen.lostworlds.worldgen.dimension.TerrainProvider.UnderworldTerrainProvider;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.UnderworldSurfaceRules;
@@ -351,10 +351,10 @@ public class UnderworldDimension {
     }
 
     private static ResourceKey<DensityFunction> createKey(String pLocation) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.modLoc("underworld/" + pLocation));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsApi.modLoc("underworld/" + pLocation));
     }
 
     private static ResourceKey<DensityFunction> vanillaKey(String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.mcLoc("overworld/" + name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsApi.mcLoc("overworld/" + name));
     }
 }

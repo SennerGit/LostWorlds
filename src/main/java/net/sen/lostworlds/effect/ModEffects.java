@@ -2,19 +2,17 @@ package net.sen.lostworlds.effect;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS =
-            DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, LostWorldsConstants.MODID);
+            DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, LostWorldsApi.MODID);
 
     public static final RegistryObject<MobEffect> DROWSY_EFFECT = MOB_EFFECTS.register("drowsy_effect",
             () -> new DrowsyEffect(MobEffectCategory.NEUTRAL, 0x36ebeb).addAttributeModifier(Attributes.MOVEMENT_SPEED,

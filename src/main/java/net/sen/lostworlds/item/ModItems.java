@@ -1,6 +1,5 @@
 package net.sen.lostworlds.item;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -8,10 +7,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.datagen.modonomicon.LostWorldsBookItem;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.fluid.ModFluids;
 import net.sen.lostworlds.item.custom.*;
@@ -20,7 +17,7 @@ import net.sen.lostworlds.sound.ModSounds;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, LostWorldsConstants.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, LostWorldsApi.MODID);
 
     /*
      *   Crimson Dimension
@@ -53,7 +50,7 @@ public class ModItems {
     public static final RegistryObject<Item> NETHER_STEEL_CHESTPLATE = ITEMS.register("nether_steel_chestplate", () -> new ModArmorItem(ModArmourMaterials.NETHER_STEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(256)));
     public static final RegistryObject<Item> NETHER_STEEL_LEGGINGS = ITEMS.register("nether_steel_leggings", () -> new ModArmorItem(ModArmourMaterials.NETHER_STEEL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(256)));
     public static final RegistryObject<Item> NETHER_STEEL_BOOTS = ITEMS.register("nether_steel_boots", () -> new ModArmorItem(ModArmourMaterials.NETHER_STEEL, ArmorItem.Type.BOOTS, new Item.Properties().durability(256)));
-    public static final RegistryObject<Item> NETHER_STEEL_HORSE_ARMOR = ITEMS.register("nether_steel_horse_armor", () -> new HorseArmorItem(12, LostWorldsConstants.modLoc("textures/entity/horse/armor/horse_armor_nether_steel.png"), new Item.Properties().durability(256)));
+    public static final RegistryObject<Item> NETHER_STEEL_HORSE_ARMOR = ITEMS.register("nether_steel_horse_armor", () -> new HorseArmorItem(12, LostWorldsApi.modLoc("textures/entity/horse/armor/horse_armor_nether_steel.png"), new Item.Properties().durability(256)));
 
     /*
      * World Metals
@@ -236,7 +233,7 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_TANG_FISH = ITEMS.register("cooked_tang_fish", () -> new Item(new Item.Properties())); //.food(ModFoodProperties.COOKED_CLOWNFISH)
 
     //Book
-    public static final RegistryObject<LostWorldsBookItem> LOST_WORLDS_BOOK = ITEMS.register("lost_worlds_book", () -> new LostWorldsBookItem(new Item.Properties().stacksTo(1)));
+//    public static final RegistryObject<Item> LOST_WORLDS_BOOK = ITEMS.register("lost_worlds_book", () -> new Item(new Item.Properties().stacksTo(1)));
 
     //Spawn Egg
     public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg",
@@ -296,7 +293,7 @@ public class ModItems {
     public static RegistryObject<Item> registerHorseArmour(String name, int pProtection, int pMaxDamage) {
         return ITEMS.register(name + "_horse_armor", () -> new HorseArmorItem(
                 pProtection,
-                LostWorldsConstants.modLoc("textures/entity/horse/armor/horse_armor_" + name + ".png"),
+                LostWorldsApi.modLoc("textures/entity/horse/armor/horse_armor_" + name + ".png"),
                 new Item.Properties().durability(pMaxDamage)));
 
     }

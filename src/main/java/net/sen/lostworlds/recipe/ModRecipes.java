@@ -7,15 +7,14 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 //import net.sen.lostworlds.multiblocks.druid_ritual.DruidRitualRecipe;
 
 public class ModRecipes {
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(
-            ForgeRegistries.RECIPE_TYPES, LostWorldsConstants.MODID);
+            ForgeRegistries.RECIPE_TYPES, LostWorldsApi.MODID);
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, LostWorldsConstants.MODID);
+            DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, LostWorldsApi.MODID);
 
     public static final RegistryObject<RecipeSerializer<AlloySmelterRecipe>> ALLOY_SMELTER_SERIALIZER =
             RECIPE_SERIALIZERS.register("alloy_smelter_serializer",

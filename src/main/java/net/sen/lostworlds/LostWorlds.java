@@ -17,13 +17,14 @@ import net.sen.lostworlds.block.*;
 import net.sen.lostworlds.block.entity.*;
 import net.sen.lostworlds.client.ClientHandler;
 import net.sen.lostworlds.client.util.registry.*;
+import net.sen.lostworlds.compat.Compat;
 import net.sen.lostworlds.effect.*;
 import net.sen.lostworlds.enchantment.*;
 import net.sen.lostworlds.entity.*;
 import net.sen.lostworlds.fluid.*;
 import net.sen.lostworlds.item.*;
 import net.sen.lostworlds.loot.*;
-//import net.sen.lostworlds.multiblocks.druid_ritual.ModDruidRituals;
+import net.sen.lostworlds.multiblocks.ModMultiblocks;
 import net.sen.lostworlds.painting.*;
 import net.sen.lostworlds.particle.*;
 import net.sen.lostworlds.potion.*;
@@ -39,7 +40,7 @@ import net.sen.lostworlds.worldgen.portal.*;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(LostWorldsConstants.MODID)
+@Mod(LostWorldsApi.MODID)
 public class LostWorlds {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -82,12 +83,25 @@ public class LostWorlds {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(FMLCommonSetupEvent event) {
 //        SyncHandler.init();
+        preInit(event);
+        init(event);
+        postInit(event);
+    }
 
+    private void preInit(FMLCommonSetupEvent event) {
+        Compat.setup(event);
+        new ModMultiblocks();
+    }
+
+    private void init(FMLCommonSetupEvent event) {
         ModPotions.recipe(event);
         ModCompostables.setup(event);
         ModFlowerPots.setup(event);
+    }
+
+    private void postInit(FMLCommonSetupEvent event) {
     }
 
     private void enqueueIMC(InterModEnqueueEvent event) {
@@ -100,7 +114,7 @@ public class LostWorlds {
     }
 
     //You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = LostWorldsConstants.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = LostWorldsApi.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {

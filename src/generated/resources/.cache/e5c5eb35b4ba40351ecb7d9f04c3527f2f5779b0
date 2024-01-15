@@ -1,8 +1,8 @@
-// 1.20.1	2023-12-04T12:04:37.0171733	Advancements
-7ceb22354e8c15dda683a1c7021e640a2626c91c data/lostworlds/advancements/block.lostworlds.alfheimr_portal_frame.json
-a9aa158647e921a8d93d2ffb399b438995f6d436 data/lostworlds/advancements/block.lostworlds.atlantis_portal_frame.json
-940ceadf3848b75af336ec28bff927316573bcbf data/lostworlds/advancements/block.lostworlds.nidavellir_portal_frame.json
-23f977164c51fcf9371bc95921c54620d49744c2 data/lostworlds/advancements/block.lostworlds.skyopia_portal_frame.json
-54f5a8361be9e10c71074d80608e5de27d00c67b data/lostworlds/advancements/block.lostworlds.underworld_portal_frame.json
-84815ac32689cbce6258abe117294d4bb44b5a88 data/lostworlds/advancements/item.lostworlds.basic_portal_core.json
-d6e92f443434a88327b4d37dc93c6df4c3dff35f data/lostworlds/advancements/item.lostworlds.magical_dowsing_rod.json
+// 1.20.1	2024-01-15T10:55:12.182084	Advancements
+09f5ef51d0fc1fc45cdcf33365f45ef0248863df data/lostworlds/advancements/alfheimr/root.json
+94ffe8005854b474c7f50e56943a3f13169538ba data/lostworlds/advancements/atlantis/root.json
+5d02d7d372eddec7ab38223ac8e008a571b7077b data/lostworlds/advancements/base/has_dowsing_rod.json
+b9d72a53801dce83791bb8ecdebad138e84ce66e data/lostworlds/advancements/base/root.json
+8082ad4d6ea785006055bc84d7f4442f2f759d12 data/lostworlds/advancements/nidavellir/root.json
+be1c462333bf8a8c5bb2a1ba83b509b2ba4f72c0 data/lostworlds/advancements/skyopia/root.json
+44b03ced1c3f818f384cc895563c6bc9fe66b58f data/lostworlds/advancements/underworld/root.json

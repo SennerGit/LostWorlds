@@ -139,6 +139,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropFlower(ModBlocks.LILAC_FLOWER, ModBlocks.POTTED_LILAC_FLOWER);
         this.dropFlower(ModBlocks.SWEET_PEA_FLOWER, ModBlocks.POTTED_SWEET_PEA_FLOWER);
 
+        this.dropSelf(ModBlocks.DRUID_RITUAL_STONE);
+
         this.ore(ModBlocks.NETHER_STEEL_ORE, ModItems.RAW_NETHER_STEEL);
         this.ore(ModBlocks.DEEPSLATE_NETHER_STEEL_ORE, ModItems.RAW_NETHER_STEEL);
 

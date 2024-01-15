@@ -7,8 +7,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.MerfolkModel;
 import net.sen.lostworlds.entity.mob.MerfolkEntity;
@@ -20,9 +19,9 @@ public class MerfolkRenderer extends MobRenderer<MerfolkEntity, MerfolkModel<Mer
     private static final Map<MerfolkVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(MerfolkVariant.class), map -> {
                 map.put(MerfolkVariant.DEFAULT,
-                        LostWorldsConstants.modLoc("textures/entity/merfolk/merfolk.png"));
+                        LostWorldsApi.modLoc("textures/entity/merfolk/merfolk.png"));
                 map.put(MerfolkVariant.WHITE,
-                        LostWorldsConstants.modLoc("textures/entity/merfolk/white_merfolk.png"));
+                        LostWorldsApi.modLoc("textures/entity/merfolk/white_merfolk.png"));
             });
 
     public MerfolkRenderer(EntityRendererProvider.Context pContext) {

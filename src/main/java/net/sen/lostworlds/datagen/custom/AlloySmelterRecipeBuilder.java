@@ -15,8 +15,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.recipe.AlloySmelterRecipe;
 
 import javax.annotation.Nullable;
@@ -54,12 +53,12 @@ public class AlloySmelterRecipeBuilder implements RecipeBuilder {
 
     @Override
     public void save(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ResourceLocation pRecipeId) {
-        this.advancement.parent(LostWorldsConstants.mcLoc("recipes/root"))
+        this.advancement.parent(LostWorldsApi.mcLoc("recipes/root"))
                 .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId))
                 .rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(RequirementsStrategy.OR);
 
         pFinishedRecipeConsumer.accept(new Result(pRecipeId, this.result, this.count, this.ingredient1, this.ingredient2,
-                this.advancement, LostWorldsConstants.customLoc(pRecipeId.getNamespace(), "recipes/"
+                this.advancement, LostWorldsApi.customLoc(pRecipeId.getNamespace(), "recipes/"
                 + pRecipeId.getPath())));
 
     }
@@ -102,7 +101,7 @@ public class AlloySmelterRecipeBuilder implements RecipeBuilder {
 
         @Override
         public ResourceLocation getId() {
-            return LostWorldsConstants.modLoc(
+            return LostWorldsApi.modLoc(
                     ForgeRegistries.ITEMS.getKey(this.result).getPath() + "_from_alloy_smelter"
             );
         }

@@ -7,23 +7,20 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.item.ModItems;
 import net.sen.lostworlds.loot.AddItemModifier;
 import net.sen.lostworlds.loot.AddSusSandItemModifier;
-import net.sen.lostworlds.util.ModTags;
 
 import java.util.function.Supplier;
 
 public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
     public ModGlobalLootModifierProvider(PackOutput output) {
-        super(output, LostWorldsConstants.MODID);
+        super(output, LostWorldsApi.MODID);
     }
 
     @Override
@@ -59,13 +56,13 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
 
     public void mineshaftLoot(Supplier<Item> item) {
         add(getItemName(item.get()) + "_from_abandoned_mineshaft", new AddItemModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(LostWorldsConstants.mcLoc("chests/abandoned_mineshaft")).build()},
+                new LootTableIdCondition.Builder(LostWorldsApi.mcLoc("chests/abandoned_mineshaft")).build()},
                 item.get()));
     }
 
     public void suspiciousSand(Supplier<Item> item) {
         add(getItemName(item.get()) + "_from_suspicious_sand", new AddSusSandItemModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(LostWorldsConstants.mcLoc("archaeology/desert_pyramid")).build()},
+                new LootTableIdCondition.Builder(LostWorldsApi.mcLoc("archaeology/desert_pyramid")).build()},
                 item.get()));
     }
 

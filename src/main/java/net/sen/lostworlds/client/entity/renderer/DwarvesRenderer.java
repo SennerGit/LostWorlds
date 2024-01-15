@@ -1,22 +1,17 @@
 package net.sen.lostworlds.client.entity.renderer;
 
-import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.DwarvesModel;
 import net.sen.lostworlds.entity.mob.DwarvesEntity;
-import net.sen.lostworlds.entity.variant.DwarvesVariant;
-
-import java.util.Map;
 
 public class DwarvesRenderer extends MobRenderer<DwarvesEntity, DwarvesModel<DwarvesEntity>> {
-    private static final ResourceLocation TEXTURE = LostWorldsConstants.modLoc("textures/entity/dwarves/dwarves.png");
+    private static final ResourceLocation TEXTURE = LostWorldsApi.modLoc("textures/entity/dwarves/dwarves.png");
 
     public DwarvesRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new DwarvesModel<>(pContext.bakeLayer(ModModelLayers.DWARVES_LAYER)), 2f);

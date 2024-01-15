@@ -10,14 +10,13 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.MagicGorganProjectileModel;
 import net.sen.lostworlds.entity.projectile.MagicGorganProjectileEntity;
 
 public class MagicGorganProjectileRenderer extends EntityRenderer<MagicGorganProjectileEntity> {
-    public static final ResourceLocation TEXTURE = LostWorldsConstants.modLoc("textures/entity/magic_projectile.png");
+    public static final ResourceLocation TEXTURE = LostWorldsApi.modLoc("textures/entity/magic_projectile.png");
     protected MagicGorganProjectileModel model;
 
     public MagicGorganProjectileRenderer(EntityRendererProvider.Context pContext) {

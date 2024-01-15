@@ -2,8 +2,7 @@ package net.sen.lostworlds.datagen.loottable.custom;
 
 import com.google.common.collect.Sets;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 
 import java.util.Collections;
 import java.util.Locale;
@@ -15,7 +14,7 @@ public class ModLootTable {
 
     public final ResourceLocation lootTable;
     private ModLootTable(String path) {
-        this.lootTable = new ResourceLocation(LostWorldsConstants.MODID, String.format("chests/%s", path).toLowerCase(Locale.ROOT));
+        this.lootTable = new ResourceLocation(LostWorldsApi.MODID, String.format("chests/%s", path).toLowerCase(Locale.ROOT));
     }
 
     public static Set<ResourceLocation> allBuiltin() {

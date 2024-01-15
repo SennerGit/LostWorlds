@@ -9,11 +9,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.effect.ModEffects;
 import net.sen.lostworlds.enchantment.ModEnchantments;
-import net.sen.lostworlds.item.ModCreativeModeTabs;
 import net.sen.lostworlds.item.ModItems;
 import net.sen.lostworlds.painting.ModPaintings;
 import net.sen.lostworlds.potion.ModPotions;
@@ -22,7 +21,7 @@ import net.sen.lostworlds.villager.ModVillagers;
 
 public class ModLanguageEnUsProvider extends LanguageProvider {
     public ModLanguageEnUsProvider(PackOutput output, String locale) {
-        super(output, LostWorldsConstants.MODID, locale);
+        super(output, LostWorldsApi.MODID, locale);
     }
 
     @Override
@@ -789,6 +788,8 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(ModBlocks.SWEET_PEA_FLOWER, "Sweet Pea");
         this.addBlock(ModBlocks.POTTED_SWEET_PEA_FLOWER, "Potted Sweet Pea");
 
+        this.addBlock(ModBlocks.DRUID_RITUAL_STONE, "Druid Ritual Stone");
+
         this.addEnchantment(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker");
 
         this.addItem(ModItems.DICE, "Dice");
@@ -842,65 +843,169 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.add("itemGroup.cfm", "Lost Worlds");
         this.add("gui.button.cfm.enable_filters", "Enable All Filters");
         this.add("gui.button.cfm.disable_filters", "Disable All Filters");
-        this.add("gui.tag_filter.lostworlds.general", "General");
-        this.add("gui.tag_filter.lostworlds.spawn_eggs", "Spawn Eggs");
-        this.add("gui.tag_filter.lostworlds.underworld", "Underworld");
-        this.add("gui.tag_filter.lostworlds.nidavellir", "Nidavellir");
-        this.add("gui.tag_filter.lostworlds.alfheimr", "Álfheimr");
-        this.add("gui.tag_filter.lostworlds.atlantis", "Atlantis");
-        this.add("gui.tag_filter.lostworlds.skyopia", "Skyopia");
+        this.addTagFilterUI("general", "General");
+        this.addTagFilterUI("spawn_eggs", "Spawn Eggs");
+        this.addTagFilterUI("underworld", "Underworld");
+        this.addTagFilterUI("nidavellir", "Nidavellir");
+        this.addTagFilterUI("alfheimr", "Álfheimr");
+        this.addTagFilterUI("atlantis", "Atlantis");
+        this.addTagFilterUI("skyopia", "Skyopia");
+        this.addTagFilterUI("metals", "Metals");
+        this.addTagFilterUI("building_blocks", "Building Blocks");
+        this.addTagFilterUI("miscs", "Miscs");
+        this.addTagFilterUI("natural_blocks", "Natural Blocks");
+        this.addTagFilterUI("colored_blocks", "Colored Blocks");
+        this.addTagFilterUI("functional_blocks", "Functional Blocks");
+        this.addTagFilterUI("farming", "Farming");
+        this.addTagFilterUI("redstone_blocks", "Redstone Blocks");
+        this.addTagFilterUI("magic", "Magic");
+        this.addTagFilterUI("tools_and_utilities", "Tools & Utilities");
+        this.addTagFilterUI("combat", "Combat");
+        this.addTagFilterUI("food_and_drinks", "Food & Drinks");
 
-        //Lost Worlds Book
-        this.addItem(ModItems.LOST_WORLDS_BOOK, "Lost Worlds Book");
-        addBookInformation("name", "Lost Worlds Book");
-        addBookInformation("tooltip", "Information about the lost worlds mod");
-
-        //Base Section
-        addBookInformation("getting_started.name", "Base Info");
-        addBookInformation("getting_started.intro.name", "Getting Started");
-        addBookInformation("getting_started.intro.description", "Read this on how to start with the mod");
-        addBookInformation("getting_started.intro.intro.title", "Getting Started");
-        addBookInformation("getting_started.intro.intro.text", "Test Text");
+        //Advancements
+        //Base
+        this.add("advancement.lostworlds.base.root.name", "Base Lost Worlds");
+        this.add("advancement.lostworlds.base.root.desc", "Learn the powers of different wolds");
+        this.add("advancement.lostworlds.base.dowsing_rod.name", "Magical Dowsing Rod");
+        this.add("advancement.lostworlds.base.dowsing_rod.desc", "Find magical objects");
 
         //Underworld
-        addBookInformation("underworld.name", "Underworld");
-        addBookInformation("underworld.intro.name", "Getting Started");
-        addBookInformation("underworld.intro.description", "Read this on how to start with the mod");
-        addBookInformation("underworld.intro.intro.title", "Getting Started");
-        addBookInformation("underworld.intro.intro.text", "Test Text");
-
-        //Alfheimr
-        addBookInformation("alfheimr.name", "Alfheimr");
-        addBookInformation("alfheimr.intro.name", "Getting Started");
-        addBookInformation("alfheimr.intro.description", "Read this on how to start with the mod");
-        addBookInformation("alfheimr.intro.intro.title", "Getting Started");
-        addBookInformation("alfheimr.intro.intro.text", "Test Text");
+        this.add("advancement.lostworlds.underworld.root.name", "Underworld");
+        this.add("advancement.lostworlds.underworld.root.desc", "Learn the powers of different wolds");
 
         //Nidavellir
-        addBookInformation("nidavellir.name", "Nidavellir");
-        addBookInformation("nidavellir.intro.name", "Getting Started");
-        addBookInformation("nidavellir.intro.description", "Read this on how to start with the mod");
-        addBookInformation("nidavellir.intro.intro.title", "Getting Started");
-        addBookInformation("nidavellir.intro.intro.text", "Test Text");
+        this.add("advancement.lostworlds.nidavellir.root.name", "Nidavellir");
+        this.add("advancement.lostworlds.nidavellir.root.desc", "Learn the powers of different wolds");
+
+        //Alfheimr
+        this.add("advancement.lostworlds.alfheimr.root.name", "Alfheimr");
+        this.add("advancement.lostworlds.alfheimr.root.desc", "Learn the powers of different wolds");
 
         //Atlantis
-        addBookInformation("atlantis.name", "Atlantis");
-        addBookInformation("atlantis.intro.name", "Getting Started");
-        addBookInformation("atlantis.intro.description", "Read this on how to start with the mod");
-        addBookInformation("atlantis.intro.intro.title", "Getting Started");
-        addBookInformation("atlantis.intro.intro.text", "Test Text");
+        this.add("advancement.lostworlds.atlantis.root.name", "Atlantis");
+        this.add("advancement.lostworlds.atlantis.root.desc", "Learn the powers of different wolds");
 
         //Skyopia
-        addBookInformation("skyopia.name", "Skyopia");
-        addBookInformation("skyopia.intro.name", "Getting Started");
-        addBookInformation("skyopia.intro.description", "Read this on how to start with the mod");
-        addBookInformation("skyopia.intro.intro.title", "Getting Started");
-        addBookInformation("skyopia.intro.intro.text", "Test Text");
+        this.add("advancement.lostworlds.skyopia.root.name", "Skyopia");
+        this.add("advancement.lostworlds.skyopia.root.desc", "Learn the powers of different wolds");
+
+        //Lost Worlds Book
+        this.add("item.lostworlds.book.name", "Lost Worlds Book");
+        this.add("info.lostworlds.book.landing", "A journal written by a mad man talking about the possibilities of different worlds." +
+                "$(br2)Discovering the mysteries of the many different worlds lost to history.");
+
+        this.add("lostworlds.category.basics", "Basics");
+        this.add("lostworlds.entry.basics.intro", "Intro");
+        this.add("lostworlds.page.basics.intro.0.title", "Getting to Alfheimr");
+        this.add("lostworlds.page.basics.intro.0.text", "");
+        this.add("lostworlds.page.basics.intro.1.title", "Craft the portal activator");
+
+//        this.add("", "");
+
+        //Alfheimr
+        this.add("item.alfheimr.book.name", "Alfheimr in a book Vol.1");
+        this.add("info.alfheimr.book.landing", "The first and only known printed copy." +
+                "$(br2)The book covers all things needed to know about Alfheimr.");
+
+        this.add("alfheimr.category.basics.name", "Basics");
+        this.add("alfheimr.category.basics.desc", "");
+        this.add("lostworlds.entry.alfheimr.basics.intro", "Intro");
+        this.add("lostworlds.page.alfheimr.basics.intro.0.title", "Getting to Alfheimr");
+        this.add("lostworlds.page.alfheimr.basics.intro.0.text", "");
+        this.add("lostworlds.page.alfheimr.basics.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.alfheimr.basics.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.alfheimr.basics.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.alfheimr.basics.intro.4.text", "");
+
+        this.add("alfheimr.category.flora.name", "Way of the druid");
+        this.add("alfheimr.category.flora.desc", "");
+
+        this.add("alfheimr.category.fauna.name", "Way of the druid");
+        this.add("alfheimr.category.fauna.desc", "");
+
+        this.add("alfheimr.category.druid.name", "Way of the druid");
+        this.add("alfheimr.category.druid.desc", "");
+        this.add("lostworlds.entry.alfheimr.druid.intro", "Druid Intro");
+        this.add("lostworlds.page.alfheimr.druid.intro.0.title", "Druid Ritual Basics");
+        this.add("lostworlds.page.alfheimr.druid.intro.0.text", "");
+        this.add("lostworlds.page.alfheimr.druid.intro.1.title", "Druid Ritual");
+        this.add("lostworlds.page.alfheimr.druid.intro.1.text", "");
+
+//        this.add("", "");
+
+        //Atlantis
+        this.add("item.atlantis.book.name", "The lost book of Atlantis");
+        this.add("info.atlantis.book.landing", "The only recorded book on Atlantis but was lost before it could make it to print." +
+                "$(br2)This book covers all the mystories of the world atlantis.");
+
+        this.add("atlantis.category.basics", "Basics");
+        this.add("lostworlds.entry.atlantis.intro", "Intro");
+        this.add("lostworlds.page.atlantis.intro.0.title", "Getting to Atlantis");
+        this.add("lostworlds.page.atlantis.intro.0.text", "");
+        this.add("lostworlds.page.atlantis.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.atlantis.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.atlantis.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.atlantis.intro.4.text", "");
+
+//        this.add("", "");
+
+        //Nidavellir
+        this.add("item.nidavellir.book.name", "Miners guide to Nidavellir");
+        this.add("info.nidavellir.book.landing", "Popular edition for all dwarves." +
+                "$(br2)A basic guide to Nidavellir that all the dwarves carry before entering the mines.");
+
+        this.add("nidavellir.category.basics", "Basics");
+        this.add("lostworlds.entry.nidavellir.intro", "Intro");
+        this.add("lostworlds.page.nidavellir.intro.0.title", "Getting to Nidavellir");
+        this.add("lostworlds.page.nidavellir.intro.0.text", "");
+        this.add("lostworlds.page.nidavellir.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.nidavellir.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.nidavellir.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.nidavellir.intro.4.text", "");
+
+//        this.add("", "");
+
+        //Skyopia
+        this.add("item.skyopia.book.name", "Lost journal on Skyopia");
+        this.add("info.skyopia.book.landing", "A journal written by the most infamous and notorious pirate in all of Skyopia." +
+                "$(br2)A survivors guide to the many lands and wild life of Skyopia");
+
+        this.add("skyopia.category.basics", "Basics");
+        this.add("lostworlds.entry.skyopia.intro", "Intro");
+        this.add("lostworlds.page.skyopia.intro.0.title", "Getting to Skyopia");
+        this.add("lostworlds.page.skyopia.intro.0.text", "");
+        this.add("lostworlds.page.skyopia.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.skyopia.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.skyopia.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.skyopia.intro.4.text", "");
+
+//        this.add("", "");
+
+        //Underworld
+        this.add("item.underworld.book.name", "Hades guide to the Underworld");
+        this.add("info.underworld.book.landing", "This book is written by the lord of the underworld hades." +
+                "$(br2)The reason for this book is to pass on information and knowladge on how to live in the underworld.");
+
+        this.add("underworld.category.basics", "Basics");
+        this.add("lostworlds.entry.underworld.intro", "Intro");
+        this.add("lostworlds.page.underworld.intro.0.title", "Getting to Underworld");
+        this.add("lostworlds.page.underworld.intro.0.text", "");
+        this.add("lostworlds.page.underworld.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.underworld.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.underworld.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.underworld.intro.4.text", "");
+
+//        this.add("", "");
+    }
+
+    public void addTagFilterUI(String id, String name) {
+        this.add("gui.tag_filter.lostworlds." + id, name);
     }
 
     public void addPainting(RegistryObject<PaintingVariant> painting, String title, String author) {
-        add("painting." + LostWorldsConstants.MODID + "." + painting.getId().getPath() + ".title", title);
-        add("painting." + LostWorldsConstants.MODID + "." + painting.getId().getPath() + ".author", author);
+        add("painting." + LostWorldsApi.MODID + "." + painting.getId().getPath() + ".title", title);
+        add("painting." + LostWorldsApi.MODID + "." + painting.getId().getPath() + ".author", author);
     }
 
     public void addPotion(RegistryObject<Potion> potion, String title) {
@@ -914,7 +1019,7 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
     }
 
     public void addProfession(RegistryObject<VillagerProfession> profession, String name) {
-        add("entity.minecraft.villager." + LostWorldsConstants.MODID + "." + profession.getId().getPath(), name);
+        add("entity.minecraft.villager." + LostWorldsApi.MODID + "." + profession.getId().getPath(), name);
     }
 
     public void addRecord(RegistryObject<Item> record, String name, String description) {
@@ -923,12 +1028,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
     }
 
     public void addSound(RegistryObject<SoundEvent> sound, String name) {
-        add("sounds." + LostWorldsConstants.MODID + "." + sound.get().getLocation().getPath(), name);
+        add("sounds." + LostWorldsApi.MODID + "." + sound.get().getLocation().getPath(), name);
 //        add("sounds.modid.name", name);
     }
 
-    public void addBookInformation(String name, String info) {
-        add("book." + LostWorldsConstants.MODID + "." + "lost_worlds_book." + name, info);
-//        add("sounds.modid.name", name);
-    }
+
 }

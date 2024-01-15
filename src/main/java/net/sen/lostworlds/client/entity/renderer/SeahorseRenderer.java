@@ -7,8 +7,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.SeahorseModel;
 import net.sen.lostworlds.entity.mob.SeahorseEntity;
@@ -20,9 +19,9 @@ public class SeahorseRenderer extends MobRenderer<SeahorseEntity, SeahorseModel<
     private static final Map<SeahorseVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(SeahorseVariant.class), map -> {
                 map.put(SeahorseVariant.DEFAULT,
-                        LostWorldsConstants.modLoc("textures/entity/seahorse/seahorse.png"));
+                        LostWorldsApi.modLoc("textures/entity/seahorse/seahorse.png"));
                 map.put(SeahorseVariant.WHITE,
-                        LostWorldsConstants.modLoc("textures/entity/seahorse/white_seahorse.png"));
+                        LostWorldsApi.modLoc("textures/entity/seahorse/white_seahorse.png"));
             });
 
     public SeahorseRenderer(EntityRendererProvider.Context pContext) {

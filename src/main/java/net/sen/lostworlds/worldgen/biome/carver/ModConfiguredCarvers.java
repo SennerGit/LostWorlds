@@ -5,42 +5,40 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.carver.CaveCarverConfiguration;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.util.ModTags;
 
 @SuppressWarnings("unused")
 public class ModConfiguredCarvers {
     public static final ResourceKey<ConfiguredWorldCarver<?>> NIDAVELLIR_CAVE =
             ResourceKey.create(Registries.CONFIGURED_CARVER,
-                    LostWorldsConstants.modLoc("nidavellir_carver"));
+                    LostWorldsApi.modLoc("nidavellir_carver"));
 
     public static final ResourceKey<ConfiguredWorldCarver<?>> NIDAVELLIR_LAVA_CAVERN_CAVE =
             ResourceKey.create(Registries.CONFIGURED_CARVER,
-                    LostWorldsConstants.modLoc("nidavellir_lava_cavern_carver"));
+                    LostWorldsApi.modLoc("nidavellir_lava_cavern_carver"));
 
     public static final ResourceKey<ConfiguredWorldCarver<?>> NIDAVELLIR_SUNKEN_CAVERN_CAVE =
             ResourceKey.create(Registries.CONFIGURED_CARVER,
-                    LostWorldsConstants.modLoc("nidavellir_sunken_cavern_carver"));
+                    LostWorldsApi.modLoc("nidavellir_sunken_cavern_carver"));
 
     public static final ResourceKey<ConfiguredWorldCarver<?>> ALFHEIMR_CAVE =
             ResourceKey.create(Registries.CONFIGURED_CARVER,
-                    LostWorldsConstants.modLoc("alfheimr_carver"));
+                    LostWorldsApi.modLoc("alfheimr_carver"));
 
     public static final ResourceKey<ConfiguredWorldCarver<?>> UNDERWORLD_CAVE =
             ResourceKey.create(Registries.CONFIGURED_CARVER,
-                    LostWorldsConstants.modLoc("underworld_carver"));
+                    LostWorldsApi.modLoc("underworld_carver"));
 
     public static final ResourceKey<ConfiguredWorldCarver<?>> ATLANTIS_CAVE =
             ResourceKey.create(Registries.CONFIGURED_CARVER,
-                    LostWorldsConstants.modLoc("atlantis_carver"));
+                    LostWorldsApi.modLoc("atlantis_carver"));
 
     public static void bootstrap(BootstapContext<ConfiguredWorldCarver<?>> context) {
         HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);

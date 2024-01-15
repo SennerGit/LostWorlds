@@ -1,19 +1,17 @@
 package net.sen.lostworlds.worldgen.portal;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.errorprone.annotations.Immutable;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
 
 public class ModPortals {
     public static final DeferredRegister<PoiType> POIS =
-            DeferredRegister.create(ForgeRegistries.POI_TYPES, LostWorldsConstants.MODID);
+            DeferredRegister.create(ForgeRegistries.POI_TYPES, LostWorldsApi.MODID);
 
     public static final RegistryObject<PoiType> UNDERWORLD_PORTAL_POI =
             POIS.register("underworld_portal_poi", () -> new PoiType(ImmutableSet.copyOf(

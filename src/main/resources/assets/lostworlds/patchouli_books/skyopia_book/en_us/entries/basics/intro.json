@@ -1,0 +1,45 @@
+{
+  "name": "lostworlds.entry.skyopia.intro",
+  "icon": "minecraft:feather",
+  "category": "lostworlds:basics",
+  "priority": true,
+  "pages": [
+    {
+      "type": "text",
+      "title": "lostworlds.page.skyopia.intro.0.title",
+      "text": "lostworlds.page.skyopia.intro.0.text"
+    },
+    {
+      "type": "patchouli:empty"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "lostworlds.page.skyopia.intro.2.title",
+      "recipe": "lostworlds:basic_portal_core",
+      "recipe2": "lostworlds:basic_portal_activator"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "lostworlds.page.skyopia.intro.3.title",
+      "recipe": "lostworlds:skyopia_portal_frame"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          [" FF "],
+          ["F0 F"],
+          ["F  F"],
+          ["F  F"],
+          [" FF "]
+        ],
+        "mapping": {
+          "F": "lostworlds:skyopia_portal_frame"
+        }
+      },
+      "name": "lostworlds.page.skyopia.intro.4.name",
+      "text": "lostworlds.page.skyopia.intro.4.text",
+      "enable_visualize": true
+    }
+  ]
+}

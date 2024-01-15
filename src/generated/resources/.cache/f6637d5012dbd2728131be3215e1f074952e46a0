@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-31T08:40:16.899627	Block States: lostworlds
+// 1.20.1	2024-01-08T11:21:32.3919864	Block States: lostworlds
 663ea3232c9dd41ce4698a44f264d335700026c0 assets/lostworlds/blockstates/adamant_block.json
 d3b1daf5925a0eae5ac5d4b2c7fc940063b44b4b assets/lostworlds/blockstates/adamant_ore.json
 5b62ef52fd4cdcc97a47eefae8745a03ee445ede assets/lostworlds/blockstates/alfheimr_magic_grass.json
@@ -81,6 +81,7 @@ fc1c59b51bc501f27f7926306c80e9cf6ffc69a9 assets/lostworlds/blockstates/cypress_w
 73ac22b7fb3efd24a013c35b4702c1ab86d938f2 assets/lostworlds/blockstates/dianthus_flower.json
 7a10ad709f954dbe5f277a45ceef14dc0261a145 assets/lostworlds/blockstates/dragon_fruit_crop_block.json
 622fd54a84c05d6e4039da9e7b570bf560115af9 assets/lostworlds/blockstates/dread_night_flower.json
+df88d6268ebde81926073133d97a1f692e838467 assets/lostworlds/blockstates/druid_ritual_stone.json
 b7ca3a9ef79d55c6cb2a4cfc5cf1541b21389dc8 assets/lostworlds/blockstates/durum_wheat_crop_block.json
 2a34ae5d40dfc813759d3d30ced58fadb7ffc599 assets/lostworlds/blockstates/elder_wood.json
 60729f25d536e5bd4ee3267528539459593a5d93 assets/lostworlds/blockstates/elder_wood_leaves.json
@@ -705,6 +706,7 @@ b78420eeeb5f120fad4cd0dd7ba7c20c13ab71eb assets/lostworlds/models/block/dragon_f
 3b6e33da90999fc6a9c921f786dfabc7e5f3b616 assets/lostworlds/models/block/dragon_fruit_stage5.json
 64f00db46152fb472d9c16ea88691b7ce306c462 assets/lostworlds/models/block/dragon_fruit_stage6.json
 9a3c6c80f5e9fb700f436e57b0fbee556dc27d2d assets/lostworlds/models/block/dread_night_flower.json
+627313a1106389933fb5f6bb938e1191b34fe4a4 assets/lostworlds/models/block/druid_ritual_stone.json
 7ec61b8d7774ebdf46c5fe20ed7ba8fdb8ff2dfc assets/lostworlds/models/block/durum_wheat_stage0.json
 9fcc2d6de5be25a2615500d3b5fb6bc02e31cd01 assets/lostworlds/models/block/durum_wheat_stage1.json
 5b9fdb8bdbf0f6967cf41c50b2b2cca880ab87e4 assets/lostworlds/models/block/durum_wheat_stage2.json
@@ -1458,6 +1460,7 @@ a82a0aa351e445605638f63c15bd5d6e006c27c6 assets/lostworlds/models/item/deepslate
 9f6b901eb08d88356b365b57f262deec8a21d829 assets/lostworlds/models/item/deepslate_orichalcum_ore.json
 ea336c18f286fe969a05425ffd0db6fc8910a0cf assets/lostworlds/models/item/deepslate_tin_ore.json
 52497db6281a17310c297cdd1d4ea80150033891 assets/lostworlds/models/item/deepslate_zinc_ore.json
+6a17e5f64e384e697993d421e42f459b126b86ae assets/lostworlds/models/item/druid_ritual_stone.json
 9950280a107de4ef211ed8b46541a493010b3ffb assets/lostworlds/models/item/elder_wood.json
 6e1cb42b248ef83929e5a621cbf1efe1e9fb8ca5 assets/lostworlds/models/item/elder_wood_leaves.json
 d88e0fd3e6d8da21e5973bf9b3667cf7f4945b56 assets/lostworlds/models/item/elder_wood_log.json

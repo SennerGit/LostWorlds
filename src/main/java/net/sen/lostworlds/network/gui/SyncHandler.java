@@ -8,7 +8,7 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.network.MessageMagicTypeSync;
 import net.sen.lostworlds.magic.MagicElementTypeEnum;
 
@@ -19,7 +19,7 @@ import java.util.UUID;
 public class SyncHandler {
     private static final String PROTOCOL_VERSION = Integer.toString(1);
     public static final SimpleChannel CHANNEL = NetworkRegistry.ChannelBuilder
-            .named(new ResourceLocation(LostWorldsConstants.MODID, "sync"))
+            .named(new ResourceLocation(LostWorldsApi.MODID, "sync"))
             .clientAcceptedVersions(s -> true)
             .serverAcceptedVersions(s -> true)
             .networkProtocolVersion(() -> PROTOCOL_VERSION)

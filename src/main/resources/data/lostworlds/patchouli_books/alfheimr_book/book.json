@@ -1,0 +1,18 @@
+{
+  "name": "item.alfheimr.book.name",
+  "landing_text": "info.alfheimr.book.landing",
+  "version": "1",
+  "advancements_tab": "lostworlds:alfheimr/root",
+  "creative_tab": "tools_and_utilities",
+  "book_texture": "lostworlds:textures/gui/book/alfheimr_book.png",
+  "filler_texture": "lostworlds:textures/gui/book/alfheimr_book_filler.png",
+  "progress_bar_background": "299120",
+  "progress_bar_color": "47F937",
+  "model": "lostworlds:alfheimr_book",
+  "i18n": true,
+  "macros": {
+    "$(thing)": "$(#ff6600)",
+    "$(item)": "$(#ad09e2)"
+  },
+  "use_resource_pack": true
+}

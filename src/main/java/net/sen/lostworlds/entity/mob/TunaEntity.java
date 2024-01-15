@@ -12,21 +12,15 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingBigFish;
-import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
-import net.sen.lostworlds.entity.variant.TangFishVariant;
 import net.sen.lostworlds.entity.variant.TunaSizeVariant;
 import net.sen.lostworlds.entity.variant.TunaTextureVariant;
 
@@ -37,15 +31,15 @@ public class TunaEntity extends AbstractSchoolingBigFish {
     private static final Map<TunaSizeVariant, ResourceLocation> SIZE_BY_VARIANT =
             Util.make(Maps.newEnumMap(TunaSizeVariant.class), map -> {
                 map.put(TunaSizeVariant.TINY,
-                        LostWorldsConstants.modLoc("entities/tuna"));
+                        LostWorldsApi.modLoc("entities/tuna"));
                 map.put(TunaSizeVariant.SMALL,
-                        LostWorldsConstants.modLoc("entities/tuna_small"));
+                        LostWorldsApi.modLoc("entities/tuna_small"));
                 map.put(TunaSizeVariant.MID,
-                        LostWorldsConstants.modLoc("entities/tuna_mid"));
+                        LostWorldsApi.modLoc("entities/tuna_mid"));
                 map.put(TunaSizeVariant.LARGE,
-                        LostWorldsConstants.modLoc("entities/tuna_large"));
+                        LostWorldsApi.modLoc("entities/tuna_large"));
                 map.put(TunaSizeVariant.GIANT,
-                        LostWorldsConstants.modLoc("entities/tuna_giant"));
+                        LostWorldsApi.modLoc("entities/tuna_giant"));
             });
 
     private static final EntityDataAccessor<Integer> DATA_ID_TEXTURE_VARIANT =

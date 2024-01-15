@@ -7,8 +7,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.NudibranchSlugModel;
 import net.sen.lostworlds.entity.mob.NudibranchSlugEntity;
@@ -20,9 +19,9 @@ public class NudibranchSlugRenderer extends MobRenderer<NudibranchSlugEntity, Nu
     private static final Map<NudibranchSlugVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(NudibranchSlugVariant.class), map -> {
                 map.put(NudibranchSlugVariant.DEFAULT,
-                        LostWorldsConstants.modLoc("textures/entity/nudibranch_slug/nudibranch_slug.png"));
+                        LostWorldsApi.modLoc("textures/entity/nudibranch_slug/nudibranch_slug.png"));
                 map.put(NudibranchSlugVariant.WHITE,
-                        LostWorldsConstants.modLoc("textures/entity/nudibranch_slug/white_nudibranch_slug.png"));
+                        LostWorldsApi.modLoc("textures/entity/nudibranch_slug/white_nudibranch_slug.png"));
             });
 
     public NudibranchSlugRenderer(EntityRendererProvider.Context pContext) {

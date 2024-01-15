@@ -5,14 +5,12 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.block.custom.ModHangingSignBlock;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, LostWorldsConstants.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, LostWorldsApi.MODID);
 
     public static final RegistryObject<BlockEntityType<AlloySmelterBlockEntity>> ALLOY_SMELTER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("alloy_smelter_block_entity", () -> BlockEntityType.Builder.of(

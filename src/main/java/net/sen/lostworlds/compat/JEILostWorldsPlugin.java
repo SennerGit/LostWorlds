@@ -8,8 +8,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeManager;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.compat.jei.AlloySmelterRecipeCategory;
 import net.sen.lostworlds.recipe.AlloySmelterRecipe;
 import net.sen.lostworlds.screen.alloysmelter.AlloySmelterScreen;
@@ -20,7 +19,7 @@ import java.util.List;
 public class JEILostWorldsPlugin implements IModPlugin {
     @Override
     public ResourceLocation getPluginUid() {
-        return new ResourceLocation(LostWorldsConstants.MODID, "jei_plugin");
+        return new ResourceLocation(LostWorldsApi.MODID, "jei_plugin");
     }
 
     @Override

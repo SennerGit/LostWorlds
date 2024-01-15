@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-26T09:25:58.7932822	Item Models: lostworlds
+// 1.20.1	2024-01-14T16:09:46.6325819	Item Models: lostworlds
 0fa3ee80dd9c522ceb107943daa4a5304ac16d47 assets/lostworlds/models/item/adamant_ingot.json
 08b1b60988c8357ed5f7f5b4f6ee832a741165a6 assets/lostworlds/models/item/alfheimr_magic_grass.json
 5026aa4cf127629841dfda0f249ecb3f5711044b assets/lostworlds/models/item/alloy_smelter.json
@@ -204,7 +204,6 @@ a64017532c9298c7dd71ec5b6c98f5fab9e21b41 assets/lostworlds/models/item/laurel_pl
 4f718009d625a0f3205fa599e807ed272513ea62 assets/lostworlds/models/item/lavender_flower.json
 80df7bbb15a1b76116f7f91639c2da66b8559132 assets/lostworlds/models/item/lilac_flower.json
 9dfc6caa3f6f2b1ec41e58a59c3e77fe55c999ca assets/lostworlds/models/item/lime_dahlia_flower.json
-fb19be64dc46db10183f62a2e547295c1f855ed1 assets/lostworlds/models/item/lost_worlds_book.json
 ef8dc4d91b943d5071bf6eec5e607299c64c8b64 assets/lostworlds/models/item/magical_dowsing_rod.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/lostworlds/models/item/merfolk_spawn_egg.json
 7ce598e1255fb393d54ebba224f726c8326eb61a assets/lostworlds/models/item/moon_carrot_flower.json

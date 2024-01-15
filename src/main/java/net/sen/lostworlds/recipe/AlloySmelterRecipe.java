@@ -11,8 +11,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.entity.AlloySmelterBlockEntity;
 import net.sen.lostworlds.util.tools.SlotsVector;
 
@@ -122,7 +121,7 @@ public class AlloySmelterRecipe implements Recipe<SimpleContainer> {
             this.defaultCookingTime = defaultCookingTime;
         }
         public static final ResourceLocation ID =
-                LostWorldsConstants.modLoc("alloy_smelter");
+                LostWorldsApi.modLoc("alloy_smelter");
 
         @Override
         public AlloySmelterRecipe fromJson(ResourceLocation id, JsonObject json) {

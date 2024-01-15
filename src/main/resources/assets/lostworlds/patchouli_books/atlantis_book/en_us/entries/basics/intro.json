@@ -1,0 +1,45 @@
+{
+  "name": "lostworlds.entry.atlantis.intro",
+  "icon": "minecraft:feather",
+  "category": "lostworlds:basics",
+  "priority": true,
+  "pages": [
+    {
+      "type": "text",
+      "title": "lostworlds.page.atlantis.intro.0.title",
+      "text": "lostworlds.page.atlantis.intro.0.text"
+    },
+    {
+      "type": "patchouli:empty"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "lostworlds.page.atlantis.intro.2.title",
+      "recipe": "lostworlds:basic_portal_core",
+      "recipe2": "lostworlds:basic_portal_activator"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "lostworlds.page.atlantis.intro.3.title",
+      "recipe": "lostworlds:atlantis_portal_frame"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          [" FF "],
+          ["F0 F"],
+          ["F  F"],
+          ["F  F"],
+          [" FF "]
+        ],
+        "mapping": {
+          "F": "lostworlds:atlantis_portal_frame"
+        }
+      },
+      "name": "lostworlds.page.atlantis.intro.4.name",
+      "text": "lostworlds.page.atlantis.intro.4.text",
+      "enable_visualize": true
+    }
+  ]
+}

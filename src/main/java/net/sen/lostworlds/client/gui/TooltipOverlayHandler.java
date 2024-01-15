@@ -2,7 +2,6 @@ package net.sen.lostworlds.client.gui;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Either;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -11,7 +10,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,10 +18,9 @@ import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-import net.sen.lostworlds.LostWorldsConstants;
-import net.sen.lostworlds.client.event.MagicValueEvent;
+import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.event.MagicValueEvent;
 import net.sen.lostworlds.client.event.TooltipOverlayEvent;
-import net.sen.lostworlds.item.custom.MagicalItem;
 import net.sen.lostworlds.magic.MagicElementTypeEnum;
 import net.sen.lostworlds.magic.MagicProperties;
 import net.sen.lostworlds.util.guiObj;
@@ -34,8 +31,8 @@ import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
 public class TooltipOverlayHandler {
-    private static final ResourceLocation MC_ICONS = LostWorldsConstants.mcLoc("textures/gui/icons.png");
-    private static final ResourceLocation MOD_ICONS = LostWorldsConstants.modLoc("textures/gui/magic_tooltip_icons.png");
+    private static final ResourceLocation MC_ICONS = LostWorldsApi.mcLoc("textures/gui/icons.png");
+    private static final ResourceLocation MOD_ICONS = LostWorldsApi.modLoc("textures/gui/magic_tooltip_icons.png");
     public static final int TOOLTIP_REAL_HEIGHT_OFFSET_BOTTOM = 3;
     public static final int TOOLTIP_REAL_HEIGHT_OFFSET_TOP = -3;
     public static final int TOOLTIP_REAL_WIDTH_OFFSET_RIGHT = 3;

@@ -1,14 +1,14 @@
 package net.sen.lostworlds.datagen;
 
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.ChangeDimensionTrigger;
-import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -16,163 +16,185 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.item.ModItems;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
-public class ModAdvancementsProvider implements ForgeAdvancementProvider.AdvancementGenerator {
-    @Override
-    public void generate(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-//        Advancement rootAdvancement = Advancement.Builder.advancement()
-//                .display(new DisplayInfo(new ItemStack(ModItems.CRIMSON_DIAMOND.get()),
-//                        Component.literal("Lost Worlds"),
-//                        Component.literal("Learn the powers of different wolds"),
-//                        LostWorldsConstants.modLoc("textures/item/" + ModItems.CRIMSON_DIAMOND.getId().getPath() + ".png"), FrameType.TASK,
-//                        true, true, false))
-//        .addCriterion("has_crimson_diamond", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CRIMSON_DIAMOND.get()))
-//                .save(saver, LostWorldsConstants.modLoc(LostWorlds.MODID), existingFileHelper);
-
-//        Advancement dowsingRod = Advancement.Builder.advancement()
-//                .display(new DisplayInfo(new ItemStack(ModItems.MAGICAL_DOWSING_ROD.get()),
-//                        Component.literal("Magical Dowsing Rod"),
-//                        Component.literal("Find magical objects"),
-//                        null, FrameType.TASK,
-//                        true, true, false))
-//                .parent(rootAdvancement)
-//                .addCriterion("has_dowsing_rod", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MAGICAL_DOWSING_ROD.get()))
-//                .save(saver, LostWorldsConstants.modLoc(ModItems.MAGICAL_DOWSING_ROD.getId().getPath()), existingFileHelper);
-
-        baseAdvancements(registries, saver, existingFileHelper);
-        underworldAdvancements(registries, saver, existingFileHelper);
-        nidavellirAdvancements(registries, saver, existingFileHelper);
-        alfheimrAdvancements(registries, saver, existingFileHelper);
-        atlantisAdvancements(registries, saver, existingFileHelper);
-        skyopiaAdvancements(registries, saver, existingFileHelper);
-
+public class ModAdvancementsProvider extends ForgeAdvancementProvider {
+    public ModAdvancementsProvider(DataGenerator generatorIn, CompletableFuture<HolderLookup.Provider> registries, ExistingFileHelper existingFileHelper) {
+        super(generatorIn.getPackOutput(), registries, existingFileHelper, List.of(
+                new BaseAdvancements(),
+                new UnderworldAdvancements(),
+                new NidavellirAdvancements(),
+                new AlfheimrAdvancements(),
+                new AtlantisAdvancements(),
+                new SkyopiaAdvancements()
+        ));
     }
 
-    private static void baseAdvancements(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-        Advancement baseRootAdvancement = createAdvancement(ModItems.BASIC_PORTAL_CORE.get(), "has_crimson_diamond",
-                "Base Lost Worlds",
-                "Learn the powers of different wolds",
-                LostWorldsConstants.mcLoc("textures/blocks/obsidian.png"),
-                saver, existingFileHelper
-        );
+    public static class BaseAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+        @Override
+        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+            Advancement root = createAdvancement(
+                    "base/root",
+                    ModItems.BASIC_PORTAL_CORE.get(),
+                    "advancement.lostworlds.base.root.name",
+                    "advancement.lostworlds.base.root.desc",
+                    LostWorldsApi.mcLoc("textures/blocks/obsidian.png"),
+                    InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BASIC_PORTAL_CORE.get()),
+                    saver,
+                    existingFileHelper
+            );
 
-        Advancement dowsingRod = createAdvancement(ModItems.MAGICAL_DOWSING_ROD.get(), "has_dowsing_rod",
-                "Magical Dowsing Rod",
-                "Find magical objects",
-                null,
-                baseRootAdvancement,
-                saver, existingFileHelper
-        );
+            createAdvancement(
+                    "base/has_dowsing_rod",
+                    ModItems.MAGICAL_DOWSING_ROD.get(),
+                    "advancement.lostworlds.base.dowsing_rod.name",
+                    "advancement.lostworlds.base.dowsing_rod.desc",
+                    null,
+                    root,
+                    InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MAGICAL_DOWSING_ROD.get()),
+                    saver,
+                    existingFileHelper
+            );
+        }
+    }
+    public static class UnderworldAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+        @Override
+        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+            Advancement root = createAdvancement(
+                    "underworld/root",
+                    Item.byBlock(ModBlocks.UNDERWORLD_PORTAL_FRAME.get()),
+                    "advancement.lostworlds.underworld.root.name",
+                    "advancement.lostworlds.underworld.root.desc",
+                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.UNDERWORLD_PORTAL_FRAME.getId().getPath() + ".png"),
+                    "has_entered_dimension_" + ModDimensions.UNDERWORLD_LEVEL_KEY.location().getPath(),
+                    ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.UNDERWORLD_LEVEL_KEY),
+                    saver,
+                    existingFileHelper
+            );
+        }
+    }
+    public static class NidavellirAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+        @Override
+        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+            Advancement root = createAdvancement(
+                    "nidavellir/root",
+                    Item.byBlock(ModBlocks.NIDAVELLIR_PORTAL_FRAME.get()),
+                    "advancement.lostworlds.nidavellir.root.name",
+                    "advancement.lostworlds.nidavellir.root.desc",
+                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.NIDAVELLIR_PORTAL_FRAME.getId().getPath() + ".png"),
+                    "has_entered_dimension_" + ModDimensions.NIDAVELLIR_LEVEL_KEY.location().getPath(),
+                    ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.NIDAVELLIR_LEVEL_KEY),
+                    saver,
+                    existingFileHelper
+            );
+        }
+    }
+    public static class AlfheimrAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+        @Override
+        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+            Advancement root = createAdvancement(
+                    "alfheimr/root",
+                    Item.byBlock(ModBlocks.ALFHEIMR_PORTAL_FRAME.get()),
+                    "advancement.lostworlds.alfheimr.root.name",
+                    "advancement.lostworlds.alfheimr.root.desc",
+                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.ALFHEIMR_PORTAL_FRAME.getId().getPath() + ".png"),
+                    "has_entered_dimension_" + ModDimensions.ALFHEIMR_LEVEL_KEY.location().getPath(),
+                    ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.ALFHEIMR_LEVEL_KEY),
+                    saver,
+                    existingFileHelper
+            );
+        }
+    }
+    public static class AtlantisAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+        @Override
+        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+            Advancement root = createAdvancement(
+                    "atlantis/root",
+                    Item.byBlock(ModBlocks.ATLANTIS_PORTAL_FRAME.get()),
+                    "advancement.lostworlds.atlantis.root.name",
+                    "advancement.lostworlds.atlantis.root.desc",
+                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.ATLANTIS_PORTAL_FRAME.getId().getPath() + ".png"),
+                    "has_entered_dimension_" + ModDimensions.ATLANTIS_LEVEL_KEY.location().getPath(),
+                    ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.ATLANTIS_LEVEL_KEY),
+                    saver,
+                    existingFileHelper
+            );
+        }
+    }
+    public static class SkyopiaAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+        @Override
+        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+            Advancement root = createAdvancement(
+                    "skyopia/root",
+                    Item.byBlock(ModBlocks.SKYOPIA_PORTAL_FRAME.get()),
+                    "advancement.lostworlds.skyopia.root.name",
+                    "advancement.lostworlds.skyopia.root.desc",
+                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.SKYOPIA_PORTAL_FRAME.getId().getPath() + ".png"),
+                    "has_entered_dimension_" + ModDimensions.SKYOPIA_LEVEL_KEY.location().getPath(),
+                    ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.SKYOPIA_LEVEL_KEY),
+                    saver,
+                    existingFileHelper
+            );
+        }
     }
 
-    //Underworld
-    private static void underworldAdvancements(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-        Advancement underworldRootAdvancement = createDimensionAdvancement(ModBlocks.UNDERWORLD_PORTAL_FRAME.get(),
-                ModDimensions.UNDERWORLD_LEVEL_KEY,
-                "Underworld",
-                "Learn the powers of different wolds",
-                LostWorldsConstants.modLoc("textures/block/" + ModBlocks.UNDERWORLD_PORTAL_FRAME.getId().getPath() + ".png"),
-                saver,
-                existingFileHelper
-        );
-    }
-
-    //Alfheimr
-    private static void alfheimrAdvancements(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-        Advancement alfheimrRootAdvancement = createDimensionAdvancement(ModBlocks.ALFHEIMR_PORTAL_FRAME.get(),
-                ModDimensions.ALFHEIMR_LEVEL_KEY,
-                "Alfheimr",
-                "Learn the powers of different wolds",
-                LostWorldsConstants.modLoc("textures/block/" + ModBlocks.ALFHEIMR_PORTAL_FRAME.getId().getPath() + ".png"),
-                saver,
-                existingFileHelper
-        );
-    }
-
-    //Nidavellir
-    private static void nidavellirAdvancements(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-        Advancement nidavellirRootAdvancement = createDimensionAdvancement(ModBlocks.NIDAVELLIR_PORTAL_FRAME.get(),
-                ModDimensions.NIDAVELLIR_LEVEL_KEY,
-                "Nidavellir",
-                "Learn the powers of different wolds",
-                LostWorldsConstants.modLoc("textures/block/" + ModBlocks.NIDAVELLIR_PORTAL_FRAME.getId().getPath() + ".png"),
-                saver,
-                existingFileHelper
-        );
-    }
-
-    //Atlantis
-    private static void atlantisAdvancements(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-        Advancement atlantisRootAdvancement = createDimensionAdvancement(ModBlocks.ATLANTIS_PORTAL_FRAME.get(),
-                ModDimensions.ATLANTIS_LEVEL_KEY,
-                "Atlantis",
-                "Learn the powers of different wolds",
-                LostWorldsConstants.modLoc("textures/block/" + ModBlocks.ATLANTIS_PORTAL_FRAME.getId().getPath() + ".png"),
-                saver,
-                existingFileHelper
-        );
-    }
-
-    //Skyopia
-    private static void skyopiaAdvancements(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-        Advancement skyopiaRootAdvancement = createDimensionAdvancement(ModBlocks.SKYOPIA_PORTAL_FRAME.get(),
-                ModDimensions.SKYOPIA_LEVEL_KEY,
-                "Skyopia",
-                "Learn the powers of different wolds",
-                LostWorldsConstants.modLoc("textures/block/" + ModBlocks.SKYOPIA_PORTAL_FRAME.getId().getPath() + ".png"),
-                saver,
-                existingFileHelper
-        );
-    }
-
-    private static Advancement createAdvancement(Item icon, String id, String name, String description, ResourceLocation background, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+    private static Advancement createAdvancement(String id, Item icon, String name, String description, ResourceLocation background, CriterionTriggerInstance trigger, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
         Advancement newAdvancement = Advancement.Builder.advancement()
-                .display(new DisplayInfo(new ItemStack(icon),
-                        Component.literal(name),
-                        Component.literal(description),
-                        background, FrameType.TASK,
-                        true, true, false))
-                .addCriterion(id, InventoryChangeTrigger.TriggerInstance.hasItems(icon))
-                .save(saver, LostWorldsConstants.modLoc(icon.getDescriptionId()), existingFileHelper);
+                .display(rootDisplay(icon, name, description, background))
+                .addCriterion(id, trigger)
+                .save(saver, LostWorldsApi.modLoc(id), existingFileHelper);
 
         return newAdvancement;
     }
 
-    private static Advancement createAdvancement(Item icon, String id, String name, String description, ResourceLocation background, Advancement parent, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+    private static Advancement createAdvancement(String id, Item icon, String name, String description, ResourceLocation background, String trigger_id, CriterionTriggerInstance trigger, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
         Advancement newAdvancement = Advancement.Builder.advancement()
-                .display(new DisplayInfo(new ItemStack(icon),
-                        Component.literal(name),
-                        Component.literal(description),
-                        background, FrameType.TASK,
-                        true, true, false))
+                .display(rootDisplay(icon, name, description, background))
+                .addCriterion(trigger_id, trigger)
+                .save(saver, LostWorldsApi.modLoc(id), existingFileHelper);
+
+        return newAdvancement;
+    }
+
+    private static Advancement createAdvancement(String id, Item icon, String name, String description, ResourceLocation background, Advancement parent, CriterionTriggerInstance trigger, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+        Advancement newAdvancement = Advancement.Builder.advancement()
+                .display(rootDisplay(icon, name, description, background))
                 .parent(parent)
-                .addCriterion(id, InventoryChangeTrigger.TriggerInstance.hasItems(icon))
-                .save(saver, LostWorldsConstants.modLoc(icon.getDescriptionId()), existingFileHelper);
+                .addCriterion(id, trigger)
+                .save(saver, LostWorldsApi.modLoc(id), existingFileHelper);
 
         return newAdvancement;
     }
 
-    private static Advancement createDimensionAdvancement(ItemLike icon,  ResourceKey<Level> dimensionType, String name, String description, ResourceLocation background, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+    private static Advancement createAdvancement(String id, Item icon, String name, String description, ResourceLocation background, Advancement parent, String trigger_id, CriterionTriggerInstance trigger, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
         Advancement newAdvancement = Advancement.Builder.advancement()
-                .display(new DisplayInfo(new ItemStack(icon),
-                        Component.literal(name),
-                        Component.literal(description),
-                        background, FrameType.TASK,
-                        true, true, false))
-                .addCriterion("has_entered_dimension_" + dimensionType.location().getPath(), ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(dimensionType))
-                .save(saver, LostWorldsConstants.modLoc(icon.asItem().getDescriptionId()), existingFileHelper);
+                .display(rootDisplay(icon, name, description, background))
+                .parent(parent)
+                .addCriterion(trigger_id, trigger)
+                .save(saver, LostWorldsApi.modLoc(id), existingFileHelper);
 
         return newAdvancement;
+    }
+
+    protected static DisplayInfo rootDisplay(ItemLike icon, String titleKey, String descKey, ResourceLocation background) {
+        return new DisplayInfo(
+                new ItemStack(icon.asItem()),
+                Component.translatable(titleKey),
+                Component.translatable(descKey),
+                background,
+                FrameType.TASK,
+                false,
+                false,
+                false
+        );
     }
 }

@@ -6,7 +6,6 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.biome.*;
@@ -17,8 +16,7 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 
 import java.util.List;
 import java.util.OptionalLong;
@@ -233,14 +231,14 @@ public class SkyopiaDimension {
     }
 
     private static ResourceKey<DensityFunction> vanillaKey(String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.mcLoc(name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsApi.mcLoc(name));
     }
 
     private static ResourceKey<NormalNoise.NoiseParameters> vanillaKeyNoise(String name) {
-        return ResourceKey.create(Registries.NOISE, LostWorldsConstants.mcLoc(name));
+        return ResourceKey.create(Registries.NOISE, LostWorldsApi.mcLoc(name));
     }
 
     private static ResourceKey<DensityFunction> createKey(final String name) {
-        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsConstants.modLoc(name));
+        return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsApi.modLoc(name));
     }
 }

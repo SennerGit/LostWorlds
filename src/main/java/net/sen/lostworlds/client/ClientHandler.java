@@ -1,12 +1,8 @@
 package net.sen.lostworlds.client;
 
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
-import net.sen.lostworlds.client.event.CreativeScreenEvents;
+import net.sen.lostworlds.event.CreativeScreenEvents;
 import net.sen.lostworlds.client.gui.TooltipOverlayHandler;
 
 public class ClientHandler {

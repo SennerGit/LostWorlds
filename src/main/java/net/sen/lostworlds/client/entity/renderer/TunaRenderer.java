@@ -7,17 +7,12 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.TunaModel;
 import net.sen.lostworlds.entity.mob.TunaEntity;
 import net.sen.lostworlds.entity.variant.TunaSizeVariant;
 import net.sen.lostworlds.entity.variant.TunaTextureVariant;
-import net.sen.lostworlds.util.tools.MinecraftMaths;
-import net.sen.lostworlds.util.tools.Vector2;
 
 import java.util.Map;
 
@@ -26,7 +21,7 @@ public class TunaRenderer extends MobRenderer<TunaEntity, TunaModel<TunaEntity>>
     private static final Map<TunaTextureVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(TunaTextureVariant.class), map -> {
                 map.put(TunaTextureVariant.DEFAULT,
-                        LostWorldsConstants.modLoc("textures/entity/tuna/tuna.png"));
+                        LostWorldsApi.modLoc("textures/entity/tuna/tuna.png"));
             });
     private static final Map<TunaSizeVariant, Float> SIZE_BY_VARIANT =
             Util.make(Maps.newEnumMap(TunaSizeVariant.class), map -> {

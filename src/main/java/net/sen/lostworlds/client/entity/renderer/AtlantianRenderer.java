@@ -1,23 +1,17 @@
 package net.sen.lostworlds.client.entity.renderer;
 
-import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.AtlantianModel;
 import net.sen.lostworlds.entity.mob.AtlantianEntity;
-import net.sen.lostworlds.entity.variant.AtlantianVariant;
-
-import java.util.Map;
 
 public class AtlantianRenderer extends MobRenderer<AtlantianEntity, AtlantianModel<AtlantianEntity>> {
-    private static final ResourceLocation TEXTURE = LostWorldsConstants.modLoc("textures/entity/atlantian/atlantian.png");
+    private static final ResourceLocation TEXTURE = LostWorldsApi.modLoc("textures/entity/atlantian/atlantian.png");
 
     public AtlantianRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new AtlantianModel<>(pContext.bakeLayer(ModModelLayers.ATLANTIAN_LAYER)), 2f);

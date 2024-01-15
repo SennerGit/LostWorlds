@@ -7,8 +7,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.JellyfishModel;
 import net.sen.lostworlds.entity.mob.JellyfishEntity;
@@ -20,7 +19,7 @@ public class JellyfishRenderer extends MobRenderer<JellyfishEntity, JellyfishMod
     private static final Map<JellyfishVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(JellyfishVariant.class), map -> {
                 map.put(JellyfishVariant.DEFAULT,
-                        LostWorldsConstants.modLoc("textures/entity/jellyfish/jellyfish.png"));
+                        LostWorldsApi.modLoc("textures/entity/jellyfish/jellyfish.png"));
             });
 
     public JellyfishRenderer(EntityRendererProvider.Context pContext) {

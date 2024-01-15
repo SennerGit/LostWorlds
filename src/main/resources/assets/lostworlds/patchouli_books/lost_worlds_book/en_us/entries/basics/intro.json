@@ -1,0 +1,19 @@
+{
+  "name": "lostworlds.entry.basics.intro",
+  "icon": "minecraft:feather",
+  "category": "lostworlds:basics",
+  "priority": true,
+  "pages": [
+    {
+      "type": "text",
+      "title": "lostworlds.page.basics.intro.0.title",
+      "text": "lostworlds.page.basics.intro.0.text"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "lostworlds.page.basics.intro.1.title",
+      "recipe": "lostworlds:basic_portal_core",
+      "recipe2": "lostworlds:basic_portal_activator"
+    }
+  ]
+}

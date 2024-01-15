@@ -1,23 +1,21 @@
 package net.sen.lostworlds.fluid;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsConstants;
+import net.sen.lostworlds.LostWorldsApi;
 import org.joml.Vector3f;
 
 public class ModFluidTypes {
     public static final DeferredRegister<FluidType> FLUID_TYPES =
-            DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, LostWorldsConstants.MODID);
+            DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, LostWorldsApi.MODID);
 
-    public static final ResourceLocation WATER_STILL_RL = LostWorldsConstants.mcLoc("block/water_still");
-    public static final ResourceLocation WATER_FLOWING_RL = LostWorldsConstants.mcLoc("block/water_flow");
-    public static final ResourceLocation WATER_OVERLAY_RL = LostWorldsConstants.mcLoc("block/water_overlay");
+    public static final ResourceLocation WATER_STILL_RL = LostWorldsApi.mcLoc("block/water_still");
+    public static final ResourceLocation WATER_FLOWING_RL = LostWorldsApi.mcLoc("block/water_flow");
+    public static final ResourceLocation WATER_OVERLAY_RL = LostWorldsApi.mcLoc("block/water_overlay");
     public static final RegistryObject<FluidType> STYX_WATER_FLUID_TYPE = registerFluidType("styx_water_fluid_type",
             new BaseFluidType(WATER_STILL_RL, WATER_FLOWING_RL, WATER_OVERLAY_RL, 0xA1E038D0,
                     new Vector3f(224f / 255f, 56f / 255f, 208f / 255f),
