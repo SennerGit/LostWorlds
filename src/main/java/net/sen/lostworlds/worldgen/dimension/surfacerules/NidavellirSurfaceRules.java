@@ -7,8 +7,8 @@ import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.worldgen.biome.NidavellirBiomes;
+import net.sen.lostworlds.block.NidavellirBlocks;
+import net.sen.lostworlds.worldgen.biome.util.layer.NidavellirBiomes;
 
 public class NidavellirSurfaceRules {
     public static SurfaceRules.RuleSource nidavellirSurfaceRules() {
@@ -42,7 +42,7 @@ public class NidavellirSurfaceRules {
                                 0
                         ),
                         SurfaceRules.state(
-                                ModBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState()
+                                NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState()
                         )
                 )
         );
@@ -50,25 +50,25 @@ public class NidavellirSurfaceRules {
 
     private static SurfaceRules.RuleSource stoneHardSurface() {
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(67), 0), SurfaceRules.state(ModBlocks.NIDAVELLIR_HARD_STONE.get().defaultBlockState()))
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(67), 0), SurfaceRules.state(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get().defaultBlockState()))
         );
     }
 
     private static SurfaceRules.RuleSource stoneEnhancedSurface() {
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(98), 0), SurfaceRules.state(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get().defaultBlockState()))
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(98), 0), SurfaceRules.state(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get().defaultBlockState()))
         );
     }
 
     private static SurfaceRules.RuleSource stoneDeepslateSurface() {
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(128), 0)), SurfaceRules.state(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get().defaultBlockState())))
+                SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(128), 0)), SurfaceRules.state(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get().defaultBlockState())))
         );
     }
 
     private static SurfaceRules.RuleSource stoneCrimsonSurface() {
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(60), 0)), SurfaceRules.state(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get().defaultBlockState())))
+                SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR), SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(60), 0)), SurfaceRules.state(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get().defaultBlockState())))
         );
     }
 
@@ -77,7 +77,7 @@ public class NidavellirSurfaceRules {
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(NidavellirBiomes.NIDAVELLIR_CAVERN), SurfaceRules.ifTrue(
                         SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
-                        SurfaceRules.state(ModBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState()))
+                        SurfaceRules.state(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState()))
                 )
         );
     }

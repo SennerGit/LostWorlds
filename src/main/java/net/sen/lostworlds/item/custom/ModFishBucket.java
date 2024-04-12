@@ -17,6 +17,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.entity.variant.ClownfishVariant;
 import org.jetbrains.annotations.Nullable;
@@ -37,7 +38,7 @@ public class ModFishBucket extends MobBucketItem {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         EntityType fishType = getFishType();
 
-        if (fishType == ModEntities.CLOWNFISH.get()) {
+        if (fishType == AtlantisEntities.CLOWNFISH.get()) {
             CompoundTag compoundnbt = pStack.getTag();
             if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
                 int i = compoundnbt.getInt("BucketVariantTag");

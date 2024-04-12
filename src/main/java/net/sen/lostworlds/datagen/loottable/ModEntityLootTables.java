@@ -11,7 +11,8 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.entity.ModEntities;
+import net.sen.lostworlds.entity.*;
+import net.sen.lostworlds.item.AtlantisItems;
 import net.sen.lostworlds.item.ModItems;
 
 import java.util.stream.Stream;
@@ -31,177 +32,212 @@ public class ModEntityLootTables extends EntityLootSubProvider {
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.DWARVES.get(),
+        this.add(UnderworldEntities.HELLHOUND.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.ELVES.get(),
+        this.add(UnderworldEntities.SHADOWHOUND.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.SHARK.get(),
+        this.add(UnderworldEntities.SPECTRALHOUND.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.MORAY_EELS.get(),
+        this.add(NidavellirEntities.DWARVES.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.ELECTRIC_EELS.get(),
+        this.add(NidavellirEntities.VAMPIRE_BAT.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.TANG_FISH.get(),
+        this.add(NidavellirEntities.CAVE_MOLE.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(ModItems.TANG_FISH.get()))
+                                .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.TUNA.get(),
+        this.add(AlfheimrEntities.ELVES.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(ModItems.RAW_TUNA.get()))
+                                .add(LootItem.lootTableItem(Items.BEEF))
+                        ));
+
+        this.add(AtlantisEntities.SHARK.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.BEEF))
+                        ));
+
+        this.add(AtlantisEntities.MORAY_EELS.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.BEEF))
+                        ));
+
+        this.add(AtlantisEntities.ELECTRIC_EELS.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.BEEF))
+                        ));
+
+        this.add(AtlantisEntities.TANG_FISH.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(AtlantisItems.TANG_FISH.get()))
+                        ));
+
+        this.add(AtlantisEntities.TUNA.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(AtlantisItems.RAW_TUNA.get()))
                         )
         );
 
-        this.add(ModEntities.TUNA.get(),
+        this.add(AtlantisEntities.TUNA.get(),
                 new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_small"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(2))
-                                .add(LootItem.lootTableItem(ModItems.RAW_TUNA.get()))
+                                .add(LootItem.lootTableItem(AtlantisItems.RAW_TUNA.get()))
                         )
         );
 
-        this.add(ModEntities.TUNA.get(),
+        this.add(AtlantisEntities.TUNA.get(),
                 new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_mid"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(3))
-                                .add(LootItem.lootTableItem(ModItems.RAW_TUNA.get()))
+                                .add(LootItem.lootTableItem(AtlantisItems.RAW_TUNA.get()))
                         )
         );
 
-        this.add(ModEntities.TUNA.get(),
+        this.add(AtlantisEntities.TUNA.get(),
                 new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_large"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(4))
-                                .add(LootItem.lootTableItem(ModItems.RAW_TUNA.get()))
+                                .add(LootItem.lootTableItem(AtlantisItems.RAW_TUNA.get()))
                         )
         );
 
-        this.add(ModEntities.TUNA.get(),
+        this.add(AtlantisEntities.TUNA.get(),
                 new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_giant"),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(5))
-                                .add(LootItem.lootTableItem(ModItems.RAW_TUNA.get()))
+                                .add(LootItem.lootTableItem(AtlantisItems.RAW_TUNA.get()))
                         )
         );
 
-        this.add(ModEntities.JELLYFISH.get(),
+        this.add(AtlantisEntities.JELLYFISH.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.GIANT_SQUID.get(),
+        this.add(AtlantisEntities.GIANT_SQUID.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.RAY.get(),
+        this.add(AtlantisEntities.RAY.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.GIANT_OCTOPUS.get(),
+        this.add(AtlantisEntities.GIANT_OCTOPUS.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.NUDIBRANCH_SLUG.get(),
+        this.add(AtlantisEntities.NUDIBRANCH_SLUG.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.GREAT_WHITE.get(),
+        this.add(AtlantisEntities.GREAT_WHITE.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.ANGLER_FISH.get(),
+        this.add(AtlantisEntities.ANGLER_FISH.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.SEAHORSE.get(),
+        this.add(AtlantisEntities.SEAHORSE.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.CLOWNFISH.get(),
+        this.add(AtlantisEntities.CLOWNFISH.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(ModItems.CLOWNFISH.get()))
+                                .add(LootItem.lootTableItem(AtlantisItems.CLOWNFISH.get()))
                         ));
 
-        this.add(ModEntities.ATLANTIAN_GURDIAN.get(),
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(Items.BEEF))
-                        ));
-
-        this.add(ModEntities.SIREN.get(),
+        this.add(AtlantisEntities.ATLANTIAN_GURDIAN.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.MERFOLK.get(),
+        this.add(AtlantisEntities.SIREN.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(Items.BEEF))
                         ));
 
-        this.add(ModEntities.ATLANTIAN.get(),
+        this.add(AtlantisEntities.MERFOLK.get(),
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Items.BEEF))
+                        ));
+
+        this.add(AtlantisEntities.ATLANTIAN.get(),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))

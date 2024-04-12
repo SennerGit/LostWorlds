@@ -30,6 +30,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.sen.lostworlds.entity.ModEntities;
+import net.sen.lostworlds.entity.NidavellirEntities;
 import net.sen.lostworlds.entity.variant.DwarvesVariant;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
 import org.jetbrains.annotations.Nullable;
@@ -81,7 +82,7 @@ public class DwarvesEntity extends AbstractVillager implements ReputationEventHa
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return ModEntities.DWARVES.get().create(pLevel);
+        return NidavellirEntities.DWARVES.get().create(pLevel);
     }
 
     private void setupAnimationStates() {

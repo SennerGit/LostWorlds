@@ -9,7 +9,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.*;
+import net.sen.lostworlds.block.crops.*;
 import net.sen.lostworlds.block.custom.*;
 import net.sen.lostworlds.block.portal.ModPortalBlock;
 
@@ -22,27 +23,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.CRIMSON_DIAMOND_BLOCK);
-
         baseBlocks();
 
-        blockWithItem(ModBlocks.DRUID_RITUAL_STONE);
+        blockWithItem(AlfheimrBlocks.DRUID_RITUAL_STONE);
 
-        blockWithItem(ModBlocks.UNDERWORLD_PORTAL_FRAME);
-        blockWithItem(ModBlocks.NIDAVELLIR_PORTAL_FRAME);
-        blockWithItem(ModBlocks.ALFHEIMR_PORTAL_FRAME);
-        blockWithItem(ModBlocks.ATLANTIS_PORTAL_FRAME);
-        blockWithItem(ModBlocks.SKYOPIA_PORTAL_FRAME);
+        blockWithItem(UnderworldBlocks.UNDERWORLD_PORTAL_FRAME);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_PORTAL_FRAME);
+        blockWithItem(AlfheimrBlocks.ALFHEIMR_PORTAL_FRAME);
+        blockWithItem(AtlantisBlocks.ATLANTIS_PORTAL_FRAME);
+        blockWithItem(SkyopiaBlocks.SKYOPIA_PORTAL_FRAME);
+        blockWithItem(ModBlocks.MYSTIC_GATEWAYS_PORTAL_FRAME);
+        blockWithItem(ModBlocks.MYSTIC_GATEWAYS_PORTAL_CONTROLLER);
 
-        blockWithItem(ModBlocks.NETHER_STEEL_BLOCK);
-        blockWithItem(ModBlocks.RAW_NETHER_STEEL_BLOCK);
-        blockWithItem(ModBlocks.NETHER_STEEL_ORE);
-        blockWithItem(ModBlocks.DEEPSLATE_NETHER_STEEL_ORE);
-
-        blockWithItem(ModBlocks.ORICHALCUM_BLOCK);
-        blockWithItem(ModBlocks.RAW_ORICHALCUM_BLOCK);
-        blockWithItem(ModBlocks.ORICHALCUM_ORE);
-        blockWithItem(ModBlocks.DEEPSLATE_ORICHALCUM_ORE);
+        blockWithItem(UnderworldBlocks.ORICHALCUM_BLOCK);
+        blockWithItem(UnderworldBlocks.RAW_ORICHALCUM_BLOCK);
+        blockWithItem(UnderworldBlocks.ORICHALCUM_ORE);
+        blockWithItem(UnderworldBlocks.DEEPSLATE_ORICHALCUM_ORE);
 
         blockWithItem(ModBlocks.ZINC_BLOCK);
         blockWithItem(ModBlocks.RAW_ZINC_BLOCK);
@@ -60,36 +56,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.BRONZE_BLOCK);
 
-        blockWithItem(ModBlocks.CRIMSON_STONE);
-        blockWithItem(ModBlocks.CRIMSON_COBBLESTONE);
-        blockWithItem(ModBlocks.CRIMSON_STONE_BRICKS);
-
-        blockWithItem(ModBlocks.ADAMANT_BLOCK);
-        blockWithItem(ModBlocks.ADAMANT_ORE);
-        blockWithItem(ModBlocks.DEEPSLATE_ADAMANT_ORE);
-
-        stairsBlock((StairBlock) ModBlocks.CRIMSON_STONE_STAIRS.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
-        stairsBlock((StairBlock) ModBlocks.CRIMSON_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.CRIMSON_COBBLESTONE.get()));
-        stairsBlock((StairBlock) ModBlocks.CRIMSON_STONE_BRICK_STAIRS.get(), blockTexture(ModBlocks.CRIMSON_STONE_BRICKS.get()));
-        doorBlockWithRenderType((DoorBlock) ModBlocks.CRIMSON_STONE_DOOR.get(), modLoc("block/" + ModBlocks.CRIMSON_STONE_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.CRIMSON_STONE_DOOR.getId().getPath() + "_top"), "cutout");
-        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.CRIMSON_STONE_TRAPDOOR.get(), modLoc("block/" + ModBlocks.CRIMSON_STONE_TRAPDOOR.getId().getPath()), true, "cutout");
-        slabBlock(((SlabBlock) ModBlocks.CRIMSON_STONE_SLAB.get()), blockTexture(ModBlocks.CRIMSON_STONE.get()), blockTexture(ModBlocks.CRIMSON_STONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.CRIMSON_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.CRIMSON_COBBLESTONE.get()), blockTexture(ModBlocks.CRIMSON_COBBLESTONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.CRIMSON_STONE_BRICK_SLAB.get()), blockTexture(ModBlocks.CRIMSON_STONE_BRICKS.get()), blockTexture(ModBlocks.CRIMSON_STONE_BRICKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.CRIMSON_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
-        fenceBlock((FenceBlock) ModBlocks.CRIMSON_STONE_FENCE.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
-        fenceGateBlock((FenceGateBlock) ModBlocks.CRIMSON_STONE_FENCE_GATE.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.CRIMSON_STONE_WALL.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
-        buttonBlock((ButtonBlock) ModBlocks.CRIMSON_STONE_BUTTON.get(), blockTexture(ModBlocks.CRIMSON_STONE.get()));
-        blockItem(ModBlocks.CRIMSON_STONE_STAIRS);
-        blockItem(ModBlocks.CRIMSON_STONE_SLAB);
-        blockItem(ModBlocks.CRIMSON_COBBLESTONE_STAIRS);
-        blockItem(ModBlocks.CRIMSON_COBBLESTONE_SLAB);
-        blockItem(ModBlocks.CRIMSON_STONE_BRICK_STAIRS);
-        blockItem(ModBlocks.CRIMSON_STONE_BRICK_SLAB);
-        blockItem(ModBlocks.CRIMSON_STONE_FENCE_GATE);
-        blockItem(ModBlocks.CRIMSON_STONE_PRESSURE_PLATE);
-        blockItem(ModBlocks.CRIMSON_STONE_TRAPDOOR, "_bottom");
+        blockWithItem(UnderworldBlocks.ADAMANT_BLOCK);
+        blockWithItem(UnderworldBlocks.ADAMANT_ORE);
+        blockWithItem(UnderworldBlocks.DEEPSLATE_ADAMANT_ORE);
 
         blockWithItem(ModBlocks.SOUND_BLOCK);
 
@@ -97,26 +66,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
 //        blockWithItem(ModBlocks.NIDAVELLIR_PORTAL);
 //        blockWithItem(ModBlocks.ALFHEIMR_PORTAL);
 
+        makeCrop(((PomegranateCropBlock) UnderworldBlocks.POMEGRANATE_CROP_BLOCK.get()), "pomegranate_stage", "pomegranate_stage");
+        makeCrop(((DurumWheatCropBlock) AlfheimrBlocks.DURUM_WHEAT_CROP_BLOCK.get()), "durum_wheat_stage", "durum_wheat_stage");
+        makeCrop(((TomatoCropBlock) AlfheimrBlocks.TOMATO_CROP_BLOCK.get()), "tomato_stage", "tomato_stage");
+        makeCrop(((OnionCropBlock) AlfheimrBlocks.WILD_ONION_CROP_BLOCK.get()), "wild_onion_stage", "wild_onion_stage");
+        makeCrop(((OnionCropBlock) AlfheimrBlocks.STAGE_1_ONION_CROP_BLOCK.get()), "stage_1_onion_stage", "stage_1_onion_stage");
+        makeCrop(((OnionCropBlock) AlfheimrBlocks.STAGE_2_ONION_CROP_BLOCK.get()), "stage_2_onion_stage", "stage_2_onion_stage");
+        makeCrop(((OnionCropBlock) AlfheimrBlocks.STAGE_3_ONION_CROP_BLOCK.get()), "stage_3_onion_stage", "stage_3_onion_stage");
+        makeCrop(((OnionCropBlock) AlfheimrBlocks.ONION_CROP_BLOCK.get()), "onion_stage", "onion_stage");
+        makeCrop(((DragonFruitCropBlock) AlfheimrBlocks.DRAGON_FRUIT_CROP_BLOCK.get()), "dragon_fruit_stage", "dragon_fruit_stage");
+        makeCrop(((ChilliCropBlock) AlfheimrBlocks.CHILLI_CROP_BLOCK.get()), "chilli_stage", "chilli_stage");
 
-
-        customLamp(ModBlocks.CRIMSON_DIAMOND_LAMP);
-
-        makeCrop(((PomegranateCropBlock) ModBlocks.POMEGRANATE_CROP_BLOCK.get()), "pomegranate_stage", "pomegranate_stage");
-        makeCrop(((DurumWheatCropBlock) ModBlocks.DURUM_WHEAT_CROP_BLOCK.get()), "durum_wheat_stage", "durum_wheat_stage");
-        makeCrop(((TomatoCropBlock) ModBlocks.TOMATO_CROP_BLOCK.get()), "tomato_stage", "tomato_stage");
-        makeCrop(((OnionCropBlock) ModBlocks.WILD_ONION_CROP_BLOCK.get()), "wild_onion_stage", "wild_onion_stage");
-        makeCrop(((OnionCropBlock) ModBlocks.STAGE_1_ONION_CROP_BLOCK.get()), "stage_1_onion_stage", "stage_1_onion_stage");
-        makeCrop(((OnionCropBlock) ModBlocks.STAGE_2_ONION_CROP_BLOCK.get()), "stage_2_onion_stage", "stage_2_onion_stage");
-        makeCrop(((OnionCropBlock) ModBlocks.STAGE_3_ONION_CROP_BLOCK.get()), "stage_3_onion_stage", "stage_3_onion_stage");
-        makeCrop(((OnionCropBlock) ModBlocks.ONION_CROP_BLOCK.get()), "onion_stage", "onion_stage");
-        makeCrop(((DragonFruitCropBlock) ModBlocks.DRAGON_FRUIT_CROP_BLOCK.get()), "dragon_fruit_stage", "dragon_fruit_stage");
-        makeCrop(((ChilliCropBlock) ModBlocks.CHILLI_CROP_BLOCK.get()), "chilli_stage", "chilli_stage");
-
-        this.makePortalBlock(ModBlocks.ALFHEIMR_PORTAL);
-        this.makePortalBlock(ModBlocks.ATLANTIS_PORTAL);
-        this.makePortalBlock(ModBlocks.NIDAVELLIR_PORTAL);
-        this.makePortalBlock(ModBlocks.SKYOPIA_PORTAL);
-        this.makePortalBlock(ModBlocks.UNDERWORLD_PORTAL);
+        this.makePortalBlock(AlfheimrBlocks.ALFHEIMR_PORTAL);
+        this.makePortalBlock(AtlantisBlocks.ATLANTIS_PORTAL);
+        this.makePortalBlock(NidavellirBlocks.NIDAVELLIR_PORTAL);
+        this.makePortalBlock(SkyopiaBlocks.SKYOPIA_PORTAL);
+        this.makePortalBlock(UnderworldBlocks.UNDERWORLD_PORTAL);
+        this.makePortalBlock(ModBlocks.MYSTIC_GATEWAYS_PORTAL);
 
         horizontalBlock(ModBlocks.ALLOY_SMELTER.get(), new ModelFile.UncheckedModelFile(modLoc("block/alloy_smelter")));
 
@@ -194,7 +160,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 //                .texture("top",new ResourceLocation(LostWorlds.MODID, "block/underworld_grass_block_top"))
 //                ;
 
-        this.blockWithItem(ModBlocks.UNDERWORLD_DIRT);
+        this.blockWithItem(UnderworldBlocks.UNDERWORLD_DIRT);
 //        this.grassBlock(ModBlocks.UNDERWORLD_GRASS_BLOCK, modBlockResourceLocation(ModBlocks.UNDERWORLD_DIRT), modBlockResourceLocation(ModBlocks.UNDERWORLD_DIRT), modBlockResourceLocation("underworld_grass_block_top"), modBlockResourceLocation("underworld_grass_block_side"), modBlockResourceLocation("underworld_grass_block_side_overlay"));
 //        getVariantBuilder(ModBlocks.UNDERWORLD_GRASS_BLOCK.get())
 //                .partialState()
@@ -212,279 +178,279 @@ public class ModBlockStateProvider extends BlockStateProvider {
          * TREES
          */
         //Elder Wood
-        logBlock(((RotatedPillarBlock) ModBlocks.ELDER_WOOD_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.ELDER_WOOD.get(), blockTexture(ModBlocks.ELDER_WOOD_LOG.get()), blockTexture(ModBlocks.ELDER_WOOD_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ELDER_WOOD_LOG.get(), modBlockResourceLocation("stripped_elder_wood_log"), modBlockResourceLocation("stripped_elder_wood_log_top"));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ELDER_WOOD.get(), modBlockResourceLocation("stripped_elder_wood_log"), modBlockResourceLocation("stripped_elder_wood_log"));
+        logBlock(((RotatedPillarBlock) UnderworldBlocks.ELDER_WOOD_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.ELDER_WOOD.get(), blockTexture(UnderworldBlocks.ELDER_WOOD_LOG.get()), blockTexture(UnderworldBlocks.ELDER_WOOD_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_ELDER_WOOD_LOG.get(), modBlockResourceLocation("stripped_elder_wood_log"), modBlockResourceLocation("stripped_elder_wood_log_top"));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_ELDER_WOOD.get(), modBlockResourceLocation("stripped_elder_wood_log"), modBlockResourceLocation("stripped_elder_wood_log"));
 
-        blockItem(ModBlocks.ELDER_WOOD_LOG);
-        blockItem(ModBlocks.ELDER_WOOD);
-        blockItem(ModBlocks.STRIPPED_ELDER_WOOD_LOG);
-        blockItem(ModBlocks.STRIPPED_ELDER_WOOD);
-        blockWithItem(ModBlocks.ELDER_WOOD_PLANKS);
+        blockItem(UnderworldBlocks.ELDER_WOOD_LOG);
+        blockItem(UnderworldBlocks.ELDER_WOOD);
+        blockItem(UnderworldBlocks.STRIPPED_ELDER_WOOD_LOG);
+        blockItem(UnderworldBlocks.STRIPPED_ELDER_WOOD);
+        blockWithItem(UnderworldBlocks.ELDER_WOOD_PLANKS);
 
-        stairsBlock((StairBlock) ModBlocks.ELDER_WOOD_PLANKS_STAIRS.get(), blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.ELDER_WOOD_PLANKS_SLAB.get()), blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()), blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
-        fenceBlock((FenceBlock) ModBlocks.ELDER_WOOD_PLANKS_FENCE.get(), blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
-        fenceGateBlock((FenceGateBlock) ModBlocks.ELDER_WOOD_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
-        doorBlockWithRenderType((DoorBlock) ModBlocks.ELDER_WOOD_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.ELDER_WOOD_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.ELDER_WOOD_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
-        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
-        buttonBlock((ButtonBlock) ModBlocks.ELDER_WOOD_PLANKS_BUTTON.get(), blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
+        stairsBlock((StairBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_STAIRS.get(), blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()));
+        slabBlock(((SlabBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_SLAB.get()), blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()), blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE.get(), blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()));
+        fenceBlock((FenceBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_FENCE.get(), blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_FENCE_GATE.get(), blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_DOOR.get(), modLoc("block/" + UnderworldBlocks.ELDER_WOOD_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + UnderworldBlocks.ELDER_WOOD_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.get(), modLoc("block/" + UnderworldBlocks.ELDER_WOOD_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_BUTTON.get(), blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()));
 
-        blockItem(ModBlocks.ELDER_WOOD_PLANKS_STAIRS);
-        blockItem(ModBlocks.ELDER_WOOD_PLANKS_SLAB);
-        blockItem(ModBlocks.ELDER_WOOD_PLANKS_FENCE_GATE);
-        blockItem(ModBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE);
-        blockItem(ModBlocks.ELDER_WOOD_PLANKS_TRAPDOOR, "_bottom");
-        leavesBlock(ModBlocks.ELDER_WOOD_LEAVES);
-        saplingBlock(ModBlocks.ELDER_WOOD_SAPLING);
-        signBlock(((StandingSignBlock) ModBlocks.ELDER_WOOD_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.ELDER_WOOD_PLANKS_WALL_SIGN.get()),
-                blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
-        hangingSignBlock( ModBlocks.ELDER_WOOD_PLANKS_HANGING_SIGN.get(), ModBlocks.ELDER_WOOD_PLANKS_WALL_HANGING_SIGN.get(),
-                blockTexture(ModBlocks.ELDER_WOOD_PLANKS.get()));
+        blockItem(UnderworldBlocks.ELDER_WOOD_PLANKS_STAIRS);
+        blockItem(UnderworldBlocks.ELDER_WOOD_PLANKS_SLAB);
+        blockItem(UnderworldBlocks.ELDER_WOOD_PLANKS_FENCE_GATE);
+        blockItem(UnderworldBlocks.ELDER_WOOD_PLANKS_PRESSURE_PLATE);
+        blockItem(UnderworldBlocks.ELDER_WOOD_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(UnderworldBlocks.ELDER_WOOD_LEAVES);
+        saplingBlock(UnderworldBlocks.ELDER_WOOD_SAPLING);
+        signBlock(((StandingSignBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_SIGN.get()),((WallSignBlock) UnderworldBlocks.ELDER_WOOD_PLANKS_WALL_SIGN.get()),
+                blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()));
+        hangingSignBlock( UnderworldBlocks.ELDER_WOOD_PLANKS_HANGING_SIGN.get(), UnderworldBlocks.ELDER_WOOD_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(UnderworldBlocks.ELDER_WOOD_PLANKS.get()));
 
         //Olive
-        logBlock(((RotatedPillarBlock) ModBlocks.OLIVE_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.OLIVE_WOOD.get(), blockTexture(ModBlocks.OLIVE_LOG.get()), blockTexture(ModBlocks.OLIVE_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_OLIVE_LOG.get(), modBlockResourceLocation("stripped_olive_log"), modBlockResourceLocation("stripped_olive_log_top"));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_OLIVE_WOOD.get(), modBlockResourceLocation("stripped_olive_log"), modBlockResourceLocation("stripped_olive_log"));
+        logBlock(((RotatedPillarBlock) UnderworldBlocks.OLIVE_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.OLIVE_WOOD.get(), blockTexture(UnderworldBlocks.OLIVE_LOG.get()), blockTexture(UnderworldBlocks.OLIVE_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_OLIVE_LOG.get(), modBlockResourceLocation("stripped_olive_log"), modBlockResourceLocation("stripped_olive_log_top"));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_OLIVE_WOOD.get(), modBlockResourceLocation("stripped_olive_log"), modBlockResourceLocation("stripped_olive_log"));
 
-        blockItem(ModBlocks.OLIVE_LOG);
-        blockItem(ModBlocks.OLIVE_WOOD);
-        blockItem(ModBlocks.STRIPPED_OLIVE_LOG);
-        blockItem(ModBlocks.STRIPPED_OLIVE_WOOD);
-        blockWithItem(ModBlocks.OLIVE_PLANKS);
+        blockItem(UnderworldBlocks.OLIVE_LOG);
+        blockItem(UnderworldBlocks.OLIVE_WOOD);
+        blockItem(UnderworldBlocks.STRIPPED_OLIVE_LOG);
+        blockItem(UnderworldBlocks.STRIPPED_OLIVE_WOOD);
+        blockWithItem(UnderworldBlocks.OLIVE_PLANKS);
 
-        stairsBlock((StairBlock) ModBlocks.OLIVE_PLANKS_STAIRS.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.OLIVE_PLANKS_SLAB.get()), blockTexture(ModBlocks.OLIVE_PLANKS.get()), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
-        fenceBlock((FenceBlock) ModBlocks.OLIVE_PLANKS_FENCE.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
-        fenceGateBlock((FenceGateBlock) ModBlocks.OLIVE_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
-        doorBlockWithRenderType((DoorBlock) ModBlocks.OLIVE_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.OLIVE_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.OLIVE_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
-        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.OLIVE_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.OLIVE_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
-        buttonBlock((ButtonBlock) ModBlocks.OLIVE_PLANKS_BUTTON.get(), blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+        stairsBlock((StairBlock) UnderworldBlocks.OLIVE_PLANKS_STAIRS.get(), blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()));
+        slabBlock(((SlabBlock) UnderworldBlocks.OLIVE_PLANKS_SLAB.get()), blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()), blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) UnderworldBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get(), blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()));
+        fenceBlock((FenceBlock) UnderworldBlocks.OLIVE_PLANKS_FENCE.get(), blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) UnderworldBlocks.OLIVE_PLANKS_FENCE_GATE.get(), blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) UnderworldBlocks.OLIVE_PLANKS_DOOR.get(), modLoc("block/" + UnderworldBlocks.OLIVE_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + UnderworldBlocks.OLIVE_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) UnderworldBlocks.OLIVE_PLANKS_TRAPDOOR.get(), modLoc("block/" + UnderworldBlocks.OLIVE_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) UnderworldBlocks.OLIVE_PLANKS_BUTTON.get(), blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()));
 
-        blockItem(ModBlocks.OLIVE_PLANKS_STAIRS);
-        blockItem(ModBlocks.OLIVE_PLANKS_SLAB);
-        blockItem(ModBlocks.OLIVE_PLANKS_FENCE_GATE);
-        blockItem(ModBlocks.OLIVE_PLANKS_PRESSURE_PLATE);
-        blockItem(ModBlocks.OLIVE_PLANKS_TRAPDOOR, "_bottom");
-        leavesBlock(ModBlocks.OLIVE_LEAVES);
-        saplingBlock(ModBlocks.OLIVE_SAPLING);
-        signBlock(((StandingSignBlock) ModBlocks.OLIVE_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.OLIVE_PLANKS_WALL_SIGN.get()),
-                blockTexture(ModBlocks.OLIVE_PLANKS.get()));
-        hangingSignBlock( ModBlocks.OLIVE_PLANKS_HANGING_SIGN.get(), ModBlocks.OLIVE_PLANKS_WALL_HANGING_SIGN.get(),
-                blockTexture(ModBlocks.OLIVE_PLANKS.get()));
+        blockItem(UnderworldBlocks.OLIVE_PLANKS_STAIRS);
+        blockItem(UnderworldBlocks.OLIVE_PLANKS_SLAB);
+        blockItem(UnderworldBlocks.OLIVE_PLANKS_FENCE_GATE);
+        blockItem(UnderworldBlocks.OLIVE_PLANKS_PRESSURE_PLATE);
+        blockItem(UnderworldBlocks.OLIVE_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(UnderworldBlocks.OLIVE_LEAVES);
+        saplingBlock(UnderworldBlocks.OLIVE_SAPLING);
+        signBlock(((StandingSignBlock) UnderworldBlocks.OLIVE_PLANKS_SIGN.get()),((WallSignBlock) UnderworldBlocks.OLIVE_PLANKS_WALL_SIGN.get()),
+                blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()));
+        hangingSignBlock( UnderworldBlocks.OLIVE_PLANKS_HANGING_SIGN.get(), UnderworldBlocks.OLIVE_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(UnderworldBlocks.OLIVE_PLANKS.get()));
 
         //Myrrh
-        logBlock(((RotatedPillarBlock) ModBlocks.MYRRH_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.MYRRH_WOOD.get(), blockTexture(ModBlocks.MYRRH_LOG.get()), blockTexture(ModBlocks.MYRRH_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_MYRRH_LOG.get(), modBlockResourceLocation("stripped_myrrh_log"), modBlockResourceLocation("stripped_myrrh_log_top"));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_MYRRH_WOOD.get(), modBlockResourceLocation("stripped_myrrh_log"), modBlockResourceLocation("stripped_myrrh_log"));
+        logBlock(((RotatedPillarBlock) UnderworldBlocks.MYRRH_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.MYRRH_WOOD.get(), blockTexture(UnderworldBlocks.MYRRH_LOG.get()), blockTexture(UnderworldBlocks.MYRRH_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_MYRRH_LOG.get(), modBlockResourceLocation("stripped_myrrh_log"), modBlockResourceLocation("stripped_myrrh_log_top"));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_MYRRH_WOOD.get(), modBlockResourceLocation("stripped_myrrh_log"), modBlockResourceLocation("stripped_myrrh_log"));
 
-        blockItem(ModBlocks.MYRRH_LOG);
-        blockItem(ModBlocks.MYRRH_WOOD);
-        blockItem(ModBlocks.STRIPPED_MYRRH_LOG);
-        blockItem(ModBlocks.STRIPPED_MYRRH_WOOD);
-        blockWithItem(ModBlocks.MYRRH_PLANKS);
+        blockItem(UnderworldBlocks.MYRRH_LOG);
+        blockItem(UnderworldBlocks.MYRRH_WOOD);
+        blockItem(UnderworldBlocks.STRIPPED_MYRRH_LOG);
+        blockItem(UnderworldBlocks.STRIPPED_MYRRH_WOOD);
+        blockWithItem(UnderworldBlocks.MYRRH_PLANKS);
 
-        stairsBlock((StairBlock) ModBlocks.MYRRH_PLANKS_STAIRS.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.MYRRH_PLANKS_SLAB.get()), blockTexture(ModBlocks.MYRRH_PLANKS.get()), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
-        fenceBlock((FenceBlock) ModBlocks.MYRRH_PLANKS_FENCE.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
-        fenceGateBlock((FenceGateBlock) ModBlocks.MYRRH_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
-        doorBlockWithRenderType((DoorBlock) ModBlocks.MYRRH_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.MYRRH_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.MYRRH_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
-        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.MYRRH_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.MYRRH_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
-        buttonBlock((ButtonBlock) ModBlocks.MYRRH_PLANKS_BUTTON.get(), blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+        stairsBlock((StairBlock) UnderworldBlocks.MYRRH_PLANKS_STAIRS.get(), blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()));
+        slabBlock(((SlabBlock) UnderworldBlocks.MYRRH_PLANKS_SLAB.get()), blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()), blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) UnderworldBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get(), blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()));
+        fenceBlock((FenceBlock) UnderworldBlocks.MYRRH_PLANKS_FENCE.get(), blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) UnderworldBlocks.MYRRH_PLANKS_FENCE_GATE.get(), blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) UnderworldBlocks.MYRRH_PLANKS_DOOR.get(), modLoc("block/" + UnderworldBlocks.MYRRH_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + UnderworldBlocks.MYRRH_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) UnderworldBlocks.MYRRH_PLANKS_TRAPDOOR.get(), modLoc("block/" + UnderworldBlocks.MYRRH_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) UnderworldBlocks.MYRRH_PLANKS_BUTTON.get(), blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()));
 
-        blockItem(ModBlocks.MYRRH_PLANKS_STAIRS);
-        blockItem(ModBlocks.MYRRH_PLANKS_SLAB);
-        blockItem(ModBlocks.MYRRH_PLANKS_FENCE_GATE);
-        blockItem(ModBlocks.MYRRH_PLANKS_PRESSURE_PLATE);
-        blockItem(ModBlocks.MYRRH_PLANKS_TRAPDOOR, "_bottom");
-        leavesBlock(ModBlocks.MYRRH_LEAVES);
-        saplingBlock(ModBlocks.MYRRH_SAPLING);
-        signBlock(((StandingSignBlock) ModBlocks.MYRRH_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.MYRRH_PLANKS_WALL_SIGN.get()),
-                blockTexture(ModBlocks.MYRRH_PLANKS.get()));
-        hangingSignBlock( ModBlocks.MYRRH_PLANKS_HANGING_SIGN.get(), ModBlocks.MYRRH_PLANKS_WALL_HANGING_SIGN.get(),
-                blockTexture(ModBlocks.MYRRH_PLANKS.get()));
+        blockItem(UnderworldBlocks.MYRRH_PLANKS_STAIRS);
+        blockItem(UnderworldBlocks.MYRRH_PLANKS_SLAB);
+        blockItem(UnderworldBlocks.MYRRH_PLANKS_FENCE_GATE);
+        blockItem(UnderworldBlocks.MYRRH_PLANKS_PRESSURE_PLATE);
+        blockItem(UnderworldBlocks.MYRRH_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(UnderworldBlocks.MYRRH_LEAVES);
+        saplingBlock(UnderworldBlocks.MYRRH_SAPLING);
+        signBlock(((StandingSignBlock) UnderworldBlocks.MYRRH_PLANKS_SIGN.get()),((WallSignBlock) UnderworldBlocks.MYRRH_PLANKS_WALL_SIGN.get()),
+                blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()));
+        hangingSignBlock( UnderworldBlocks.MYRRH_PLANKS_HANGING_SIGN.get(), UnderworldBlocks.MYRRH_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(UnderworldBlocks.MYRRH_PLANKS.get()));
 
         //Laurel
-        logBlock(((RotatedPillarBlock) ModBlocks.LAUREL_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.LAUREL_WOOD.get(), blockTexture(ModBlocks.LAUREL_LOG.get()), blockTexture(ModBlocks.LAUREL_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_LAUREL_LOG.get(), modBlockResourceLocation("stripped_laurel_log"), modBlockResourceLocation("stripped_laurel_log_top"));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_LAUREL_WOOD.get(), modBlockResourceLocation("stripped_laurel_log"), modBlockResourceLocation("stripped_laurel_log"));
+        logBlock(((RotatedPillarBlock) UnderworldBlocks.LAUREL_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.LAUREL_WOOD.get(), blockTexture(UnderworldBlocks.LAUREL_LOG.get()), blockTexture(UnderworldBlocks.LAUREL_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_LAUREL_LOG.get(), modBlockResourceLocation("stripped_laurel_log"), modBlockResourceLocation("stripped_laurel_log_top"));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_LAUREL_WOOD.get(), modBlockResourceLocation("stripped_laurel_log"), modBlockResourceLocation("stripped_laurel_log"));
 
-        blockItem(ModBlocks.LAUREL_LOG);
-        blockItem(ModBlocks.LAUREL_WOOD);
-        blockItem(ModBlocks.STRIPPED_LAUREL_LOG);
-        blockItem(ModBlocks.STRIPPED_LAUREL_WOOD);
-        blockWithItem(ModBlocks.LAUREL_PLANKS);
+        blockItem(UnderworldBlocks.LAUREL_LOG);
+        blockItem(UnderworldBlocks.LAUREL_WOOD);
+        blockItem(UnderworldBlocks.STRIPPED_LAUREL_LOG);
+        blockItem(UnderworldBlocks.STRIPPED_LAUREL_WOOD);
+        blockWithItem(UnderworldBlocks.LAUREL_PLANKS);
 
-        stairsBlock((StairBlock) ModBlocks.LAUREL_PLANKS_STAIRS.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.LAUREL_PLANKS_SLAB.get()), blockTexture(ModBlocks.LAUREL_PLANKS.get()), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
-        fenceBlock((FenceBlock) ModBlocks.LAUREL_PLANKS_FENCE.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
-        fenceGateBlock((FenceGateBlock) ModBlocks.LAUREL_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
-        doorBlockWithRenderType((DoorBlock) ModBlocks.LAUREL_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.LAUREL_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.LAUREL_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
-        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.LAUREL_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.LAUREL_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
-        buttonBlock((ButtonBlock) ModBlocks.LAUREL_PLANKS_BUTTON.get(), blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+        stairsBlock((StairBlock) UnderworldBlocks.LAUREL_PLANKS_STAIRS.get(), blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()));
+        slabBlock(((SlabBlock) UnderworldBlocks.LAUREL_PLANKS_SLAB.get()), blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()), blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) UnderworldBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get(), blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()));
+        fenceBlock((FenceBlock) UnderworldBlocks.LAUREL_PLANKS_FENCE.get(), blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) UnderworldBlocks.LAUREL_PLANKS_FENCE_GATE.get(), blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) UnderworldBlocks.LAUREL_PLANKS_DOOR.get(), modLoc("block/" + UnderworldBlocks.LAUREL_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + UnderworldBlocks.LAUREL_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) UnderworldBlocks.LAUREL_PLANKS_TRAPDOOR.get(), modLoc("block/" + UnderworldBlocks.LAUREL_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) UnderworldBlocks.LAUREL_PLANKS_BUTTON.get(), blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()));
 
-        blockItem(ModBlocks.LAUREL_PLANKS_STAIRS);
-        blockItem(ModBlocks.LAUREL_PLANKS_SLAB);
-        blockItem(ModBlocks.LAUREL_PLANKS_FENCE_GATE);
-        blockItem(ModBlocks.LAUREL_PLANKS_PRESSURE_PLATE);
-        blockItem(ModBlocks.LAUREL_PLANKS_TRAPDOOR, "_bottom");
-        leavesBlock(ModBlocks.LAUREL_LEAVES);
-        saplingBlock(ModBlocks.LAUREL_SAPLING);
-        signBlock(((StandingSignBlock) ModBlocks.LAUREL_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.LAUREL_PLANKS_WALL_SIGN.get()),
-                blockTexture(ModBlocks.LAUREL_PLANKS.get()));
-        hangingSignBlock( ModBlocks.LAUREL_PLANKS_HANGING_SIGN.get(), ModBlocks.LAUREL_PLANKS_WALL_HANGING_SIGN.get(),
-                blockTexture(ModBlocks.LAUREL_PLANKS.get()));
+        blockItem(UnderworldBlocks.LAUREL_PLANKS_STAIRS);
+        blockItem(UnderworldBlocks.LAUREL_PLANKS_SLAB);
+        blockItem(UnderworldBlocks.LAUREL_PLANKS_FENCE_GATE);
+        blockItem(UnderworldBlocks.LAUREL_PLANKS_PRESSURE_PLATE);
+        blockItem(UnderworldBlocks.LAUREL_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(UnderworldBlocks.LAUREL_LEAVES);
+        saplingBlock(UnderworldBlocks.LAUREL_SAPLING);
+        signBlock(((StandingSignBlock) UnderworldBlocks.LAUREL_PLANKS_SIGN.get()),((WallSignBlock) UnderworldBlocks.LAUREL_PLANKS_WALL_SIGN.get()),
+                blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()));
+        hangingSignBlock( UnderworldBlocks.LAUREL_PLANKS_HANGING_SIGN.get(), UnderworldBlocks.LAUREL_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(UnderworldBlocks.LAUREL_PLANKS.get()));
 
         //Cypress
-        logBlock(((RotatedPillarBlock) ModBlocks.CYPRESS_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.CYPRESS_WOOD.get(), blockTexture(ModBlocks.CYPRESS_LOG.get()), blockTexture(ModBlocks.CYPRESS_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_CYPRESS_LOG.get(), modBlockResourceLocation("stripped_cypress_log"), modBlockResourceLocation("stripped_cypress_log_top"));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_CYPRESS_WOOD.get(), modBlockResourceLocation("stripped_cypress_log"), modBlockResourceLocation("stripped_cypress_log"));
+        logBlock(((RotatedPillarBlock) UnderworldBlocks.CYPRESS_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.CYPRESS_WOOD.get(), blockTexture(UnderworldBlocks.CYPRESS_LOG.get()), blockTexture(UnderworldBlocks.CYPRESS_LOG.get()));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_CYPRESS_LOG.get(), modBlockResourceLocation("stripped_cypress_log"), modBlockResourceLocation("stripped_cypress_log_top"));
+        axisBlock((RotatedPillarBlock) UnderworldBlocks.STRIPPED_CYPRESS_WOOD.get(), modBlockResourceLocation("stripped_cypress_log"), modBlockResourceLocation("stripped_cypress_log"));
 
-        blockItem(ModBlocks.CYPRESS_LOG);
-        blockItem(ModBlocks.CYPRESS_WOOD);
-        blockItem(ModBlocks.STRIPPED_CYPRESS_LOG);
-        blockItem(ModBlocks.STRIPPED_CYPRESS_WOOD);
-        blockWithItem(ModBlocks.CYPRESS_PLANKS);
+        blockItem(UnderworldBlocks.CYPRESS_LOG);
+        blockItem(UnderworldBlocks.CYPRESS_WOOD);
+        blockItem(UnderworldBlocks.STRIPPED_CYPRESS_LOG);
+        blockItem(UnderworldBlocks.STRIPPED_CYPRESS_WOOD);
+        blockWithItem(UnderworldBlocks.CYPRESS_PLANKS);
 
-        stairsBlock((StairBlock) ModBlocks.CYPRESS_PLANKS_STAIRS.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.CYPRESS_PLANKS_SLAB.get()), blockTexture(ModBlocks.CYPRESS_PLANKS.get()), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
-        fenceBlock((FenceBlock) ModBlocks.CYPRESS_PLANKS_FENCE.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
-        fenceGateBlock((FenceGateBlock) ModBlocks.CYPRESS_PLANKS_FENCE_GATE.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
-        doorBlockWithRenderType((DoorBlock) ModBlocks.CYPRESS_PLANKS_DOOR.get(), modLoc("block/" + ModBlocks.CYPRESS_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + ModBlocks.CYPRESS_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
-        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.CYPRESS_PLANKS_TRAPDOOR.get(), modLoc("block/" + ModBlocks.CYPRESS_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
-        buttonBlock((ButtonBlock) ModBlocks.CYPRESS_PLANKS_BUTTON.get(), blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+        stairsBlock((StairBlock) UnderworldBlocks.CYPRESS_PLANKS_STAIRS.get(), blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
+        slabBlock(((SlabBlock) UnderworldBlocks.CYPRESS_PLANKS_SLAB.get()), blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()), blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) UnderworldBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get(), blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
+        fenceBlock((FenceBlock) UnderworldBlocks.CYPRESS_PLANKS_FENCE.get(), blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) UnderworldBlocks.CYPRESS_PLANKS_FENCE_GATE.get(), blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) UnderworldBlocks.CYPRESS_PLANKS_DOOR.get(), modLoc("block/" + UnderworldBlocks.CYPRESS_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + UnderworldBlocks.CYPRESS_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) UnderworldBlocks.CYPRESS_PLANKS_TRAPDOOR.get(), modLoc("block/" + UnderworldBlocks.CYPRESS_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) UnderworldBlocks.CYPRESS_PLANKS_BUTTON.get(), blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
 
-        blockItem(ModBlocks.CYPRESS_PLANKS_STAIRS);
-        blockItem(ModBlocks.CYPRESS_PLANKS_SLAB);
-        blockItem(ModBlocks.CYPRESS_PLANKS_FENCE_GATE);
-        blockItem(ModBlocks.CYPRESS_PLANKS_PRESSURE_PLATE);
-        blockItem(ModBlocks.CYPRESS_PLANKS_TRAPDOOR, "_bottom");
-        leavesBlock(ModBlocks.CYPRESS_LEAVES);
-        saplingBlock(ModBlocks.CYPRESS_SAPLING);
-        signBlock(((StandingSignBlock) ModBlocks.CYPRESS_PLANKS_SIGN.get()),((WallSignBlock) ModBlocks.CYPRESS_PLANKS_WALL_SIGN.get()),
-                blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
-        hangingSignBlock( ModBlocks.CYPRESS_PLANKS_HANGING_SIGN.get(), ModBlocks.CYPRESS_PLANKS_WALL_HANGING_SIGN.get(),
-                blockTexture(ModBlocks.CYPRESS_PLANKS.get()));
+        blockItem(UnderworldBlocks.CYPRESS_PLANKS_STAIRS);
+        blockItem(UnderworldBlocks.CYPRESS_PLANKS_SLAB);
+        blockItem(UnderworldBlocks.CYPRESS_PLANKS_FENCE_GATE);
+        blockItem(UnderworldBlocks.CYPRESS_PLANKS_PRESSURE_PLATE);
+        blockItem(UnderworldBlocks.CYPRESS_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(UnderworldBlocks.CYPRESS_LEAVES);
+        saplingBlock(UnderworldBlocks.CYPRESS_SAPLING);
+        signBlock(((StandingSignBlock) UnderworldBlocks.CYPRESS_PLANKS_SIGN.get()),((WallSignBlock) UnderworldBlocks.CYPRESS_PLANKS_WALL_SIGN.get()),
+                blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
+        hangingSignBlock( UnderworldBlocks.CYPRESS_PLANKS_HANGING_SIGN.get(), UnderworldBlocks.CYPRESS_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
 
         /*
          * FLOWER
         */
-        makeFlower(ModBlocks.IRIS_FLOWER, ModBlocks.POTTED_IRIS_FLOWER);
-        makeFlower(ModBlocks.DARK_BLOOM_FLOWER, ModBlocks.POTTED_DARK_BLOOM_FLOWER);
-        makeFlower(ModBlocks.DREAD_NIGHT_FLOWER, ModBlocks.POTTED_DREAD_NIGIHT_FLOWER);
-        makeFlower(ModBlocks.BLACK_LOTUS_FLOWER, ModBlocks.POTTED_BLACK_LOTUS_FLOWER);
-        makeFlower(ModBlocks.NIGHT_ROSE_FLOWER, ModBlocks.POTTED_NIGHT_ROSE_FLOWER);
-        makeFlower(ModBlocks.AQUA_ROSE_FLOWER, ModBlocks.POTTED_AQUA_ROSE_FLOWER);
-        makeFlower(ModBlocks.MOON_FLOWER, ModBlocks.POTTED_MOON_FLOWER);
-        makeFlower(ModBlocks.CATHERINE_FLOWER, ModBlocks.POTTED_CATHERINE_FLOWER);
-        makeFlower(ModBlocks.TAINTED_ROSE_FLOWER, ModBlocks.POTTED_TAINTED_ROSE_FLOWER);
-        makeFlower(ModBlocks.CINNAMON_ROSE_FLOWER, ModBlocks.POTTED_CINNAMON_ROSE_FLOWER);
-        makeFlower(ModBlocks.BUTTERFLY_FLOWER, ModBlocks.POTTED_BUTTERFLY_FLOWER);
-        makeFlower(ModBlocks.GAIA_TULIP_FLOWER, ModBlocks.POTTED_GAIA_TULIP_FLOWER);
-        makeFlower(ModBlocks.BEARDED_IRIS_FLOWER, ModBlocks.POTTED_BEARDED_IRIS_FLOWER);
-        makeFlower(ModBlocks.CORNFLOWER_FLOWER, ModBlocks.POTTED_CORNFLOWER_FLOWER);
-        makeFlower(ModBlocks.MORNING_GLORY_FLOWER, ModBlocks.POTTED_MORNING_GLORY_FLOWER);
-        makeFlower(ModBlocks.GEORGIA_BLUE_FLOWER, ModBlocks.POTTED_GEORGIA_BLUE_FLOWER);
-        makeFlower(ModBlocks.BLUE_POPPY_FLOWER, ModBlocks.POTTED_BLUE_POPPY_FLOWER);
-        makeFlower(ModBlocks.TULIP_FLOWER, ModBlocks.POTTED_TULIP_FLOWER);
-        makeFlower(ModBlocks.CARNATION_FLOWER, ModBlocks.POTTED_CARNATION_FLOWER);
-        makeFlower(ModBlocks.LADYS_MANTLE_FLOWER, ModBlocks.POTTED_LADYS_MANTLE_FLOWER);
-        makeFlower(ModBlocks.GREEN_ROSE_FLOWER, ModBlocks.POTTED_GREEN_ROSE_FLOWER);
-        makeFlower(ModBlocks.CLEMATIS_FLOWER, ModBlocks.POTTED_CLEMATIS_FLOWER);
-        makeFlower(ModBlocks.BLUE_STAR_FLOWER, ModBlocks.POTTED_BLUE_STAR_FLOWER);
-        makeFlower(ModBlocks.SALVIA_FLOWER, ModBlocks.POTTED_SALVIA_FLOWER);
-        makeFlower(ModBlocks.FALSE_INDIGO_FLOWER, ModBlocks.POTTED_FALSE_INDIGO_FLOWER);
-        makeFlower(ModBlocks.WHITE_SAGE_FLOWER, ModBlocks.POTTED_WHITE_SAGE_FLOWER);
-        makeFlower(ModBlocks.SILVER_SCHEHERAZADE_FLOWER, ModBlocks.POTTED_SILVER_SCHEHERAZADE_FLOWER);
-        makeFlower(ModBlocks.SILVER_SPRING_FLOWER, ModBlocks.POTTED_SILVER_SPRING_FLOWER);
-        makeFlower(ModBlocks.SILVER_SHADOWS_FLOWER, ModBlocks.POTTED_SILVER_SHADOWS_FLOWER);
-        makeFlower(ModBlocks.GREEN_BALL_FLOWER, ModBlocks.POTTED_GREEN_BALL_FLOWER);
-        makeFlower(ModBlocks.LIME_DAHLIA_FLOWER, ModBlocks.POTTED_LIME_DAHLIA_FLOWER);
-        makeFlower(ModBlocks.HYDRANGEA_FLOWER, ModBlocks.POTTED_HYDRANGEA_FLOWER);
-        makeFlower(ModBlocks.ZINNIA_FLOWER, ModBlocks.POTTED_ZINNIA_FLOWER);
-        makeFlower(ModBlocks.BUTTERFLY_CANDY_FLOWER, ModBlocks.POTTED_BUTTERFLY_CANDY_FLOWER);
-        makeFlower(ModBlocks.CABARET_FLOWER, ModBlocks.POTTED_CABARET_FLOWER);
-        makeFlower(ModBlocks.DIANTHUS_FLOWER, ModBlocks.POTTED_DIANTHUS_FLOWER);
-        makeFlower(ModBlocks.TITAN_CRANBERRY_VINCA_FLOWER, ModBlocks.POTTED_TITAN_CRANBERRY_VINCA_FLOWER);
-        makeFlower(ModBlocks.ORANGE_ZINNIA_FLOWER, ModBlocks.POTTED_ORANGE_ZINNIA_FLOWER);
-        makeFlower(ModBlocks.BEGONIA_FLOWER, ModBlocks.POTTED_BEGONIA_FLOWER);
-        makeFlower(ModBlocks.CROWN_IMPERIAL_FLOWER, ModBlocks.POTTED_CROWN_IMPERIAL_FLOWER);
-        makeFlower(ModBlocks.ORIENTAL_POPPY_FLOWER, ModBlocks.POTTED_ORIENTAL_POPPY_FLOWER);
-        makeFlower(ModBlocks.AZALEA_FLOWER, ModBlocks.POTTED_AZALEA_FLOWER);
-        makeFlower(ModBlocks.PINK_DELIGHT_FLOWER, ModBlocks.POTTED_PINK_DELIGHT_FLOWER);
-        makeFlower(ModBlocks.CHRYSANTHEMUM_FLOWER, ModBlocks.POTTED_CHRYSANTHEMUM_FLOWER);
-        makeFlower(ModBlocks.HIBISCUS_FLOWER, ModBlocks.POTTED_HIBISCUS_FLOWER);
-        makeFlower(ModBlocks.CARDINAL_FLOWER, ModBlocks.POTTED_CARDINAL_FLOWER);
-        makeFlower(ModBlocks.GERBERA_FLOWER, ModBlocks.POTTED_GERBERA_FLOWER);
-        makeFlower(ModBlocks.RED_TULIP_FLOWER, ModBlocks.POTTED_RED_TULIP_FLOWER);
-        makeFlower(ModBlocks.FREESIA_FLOWER, ModBlocks.POTTED_FREESIA_FLOWER);
-        makeFlower(ModBlocks.GARDENIAS_FLOWER, ModBlocks.POTTED_GARDENIAS_FLOWER);
-        makeFlower(ModBlocks.STAR_JASMINE_FLOWER, ModBlocks.POTTED_STAR_JASMINE_FLOWER);
-        makeFlower(ModBlocks.WHITE_WARATAH_FLOWER, ModBlocks.POTTED_WHITE_WARATAH_FLOWER);
-        makeFlower(ModBlocks.FLANNEL_FLOWER, ModBlocks.POTTED_FLANNEL_FLOWER);
-        makeFlower(ModBlocks.BEARS_EARS_FLOWER, ModBlocks.POTTED_BEARS_EARS_FLOWER);
-        makeFlower(ModBlocks.BIDENS_FLOWER, ModBlocks.POTTED_BIDENS_FLOWER);
-        makeFlower(ModBlocks.BLANKET_FLOWER, ModBlocks.POTTED_BLANKET_FLOWER);
-        makeFlower(ModBlocks.BULBINE_FLOWER, ModBlocks.POTTED_BULBINE_FLOWER);
-        makeFlower(ModBlocks.SILVER_BRUNIA_FLOWER, ModBlocks.POTTED_SILVER_BRUNIA_FLOWER);
-        makeFlower(ModBlocks.GRAY_ROSES_FLOWER, ModBlocks.POTTED_GRAY_ROSES_FLOWER);
-        makeFlower(ModBlocks.MOON_CARROT_FLOWER, ModBlocks.POTTED_MOON_CARROT_FLOWER);
-        makeFlower(ModBlocks.SILVER_BABY_FLOWER, ModBlocks.POTTED_SILVER_BABY_FLOWER);
-        makeFlower(ModBlocks.LAVENDER_FLOWER, ModBlocks.POTTED_LAVENDER_FLOWER);
-        makeFlower(ModBlocks.BELLFLOWER_FLOWER, ModBlocks.POTTED_BELLFLOWER_FLOWER);
-        makeFlower(ModBlocks.LILAC_FLOWER, ModBlocks.POTTED_LILAC_FLOWER);
-        makeFlower(ModBlocks.SWEET_PEA_FLOWER, ModBlocks.POTTED_SWEET_PEA_FLOWER);
+        makeFlower(UnderworldBlocks.IRIS_FLOWER, UnderworldBlocks.POTTED_IRIS_FLOWER);
+        makeFlower(AlfheimrBlocks.DARK_BLOOM_FLOWER, AlfheimrBlocks.POTTED_DARK_BLOOM_FLOWER);
+        makeFlower(AlfheimrBlocks.DREAD_NIGHT_FLOWER, AlfheimrBlocks.POTTED_DREAD_NIGIHT_FLOWER);
+        makeFlower(AlfheimrBlocks.BLACK_LOTUS_FLOWER, AlfheimrBlocks.POTTED_BLACK_LOTUS_FLOWER);
+        makeFlower(AlfheimrBlocks.NIGHT_ROSE_FLOWER, AlfheimrBlocks.POTTED_NIGHT_ROSE_FLOWER);
+        makeFlower(AlfheimrBlocks.AQUA_ROSE_FLOWER, AlfheimrBlocks.POTTED_AQUA_ROSE_FLOWER);
+        makeFlower(AlfheimrBlocks.MOON_FLOWER, AlfheimrBlocks.POTTED_MOON_FLOWER);
+        makeFlower(AlfheimrBlocks.CATHERINE_FLOWER, AlfheimrBlocks.POTTED_CATHERINE_FLOWER);
+        makeFlower(AlfheimrBlocks.TAINTED_ROSE_FLOWER, AlfheimrBlocks.POTTED_TAINTED_ROSE_FLOWER);
+        makeFlower(AlfheimrBlocks.CINNAMON_ROSE_FLOWER, AlfheimrBlocks.POTTED_CINNAMON_ROSE_FLOWER);
+        makeFlower(AlfheimrBlocks.BUTTERFLY_FLOWER, AlfheimrBlocks.POTTED_BUTTERFLY_FLOWER);
+        makeFlower(AlfheimrBlocks.GAIA_TULIP_FLOWER, AlfheimrBlocks.POTTED_GAIA_TULIP_FLOWER);
+        makeFlower(AlfheimrBlocks.BEARDED_IRIS_FLOWER, AlfheimrBlocks.POTTED_BEARDED_IRIS_FLOWER);
+        makeFlower(AlfheimrBlocks.CORNFLOWER_FLOWER, AlfheimrBlocks.POTTED_CORNFLOWER_FLOWER);
+        makeFlower(AlfheimrBlocks.MORNING_GLORY_FLOWER, AlfheimrBlocks.POTTED_MORNING_GLORY_FLOWER);
+        makeFlower(AlfheimrBlocks.GEORGIA_BLUE_FLOWER, AlfheimrBlocks.POTTED_GEORGIA_BLUE_FLOWER);
+        makeFlower(AlfheimrBlocks.BLUE_POPPY_FLOWER, AlfheimrBlocks.POTTED_BLUE_POPPY_FLOWER);
+        makeFlower(AlfheimrBlocks.TULIP_FLOWER, AlfheimrBlocks.POTTED_TULIP_FLOWER);
+        makeFlower(AlfheimrBlocks.CARNATION_FLOWER, AlfheimrBlocks.POTTED_CARNATION_FLOWER);
+        makeFlower(AlfheimrBlocks.LADYS_MANTLE_FLOWER, AlfheimrBlocks.POTTED_LADYS_MANTLE_FLOWER);
+        makeFlower(AlfheimrBlocks.GREEN_ROSE_FLOWER, AlfheimrBlocks.POTTED_GREEN_ROSE_FLOWER);
+        makeFlower(AlfheimrBlocks.CLEMATIS_FLOWER, AlfheimrBlocks.POTTED_CLEMATIS_FLOWER);
+        makeFlower(AlfheimrBlocks.BLUE_STAR_FLOWER, AlfheimrBlocks.POTTED_BLUE_STAR_FLOWER);
+        makeFlower(AlfheimrBlocks.SALVIA_FLOWER, AlfheimrBlocks.POTTED_SALVIA_FLOWER);
+        makeFlower(AlfheimrBlocks.FALSE_INDIGO_FLOWER, AlfheimrBlocks.POTTED_FALSE_INDIGO_FLOWER);
+        makeFlower(AlfheimrBlocks.WHITE_SAGE_FLOWER, AlfheimrBlocks.POTTED_WHITE_SAGE_FLOWER);
+        makeFlower(AlfheimrBlocks.SILVER_SCHEHERAZADE_FLOWER, AlfheimrBlocks.POTTED_SILVER_SCHEHERAZADE_FLOWER);
+        makeFlower(AlfheimrBlocks.SILVER_SPRING_FLOWER, AlfheimrBlocks.POTTED_SILVER_SPRING_FLOWER);
+        makeFlower(AlfheimrBlocks.SILVER_SHADOWS_FLOWER, AlfheimrBlocks.POTTED_SILVER_SHADOWS_FLOWER);
+        makeFlower(AlfheimrBlocks.GREEN_BALL_FLOWER, AlfheimrBlocks.POTTED_GREEN_BALL_FLOWER);
+        makeFlower(AlfheimrBlocks.LIME_DAHLIA_FLOWER, AlfheimrBlocks.POTTED_LIME_DAHLIA_FLOWER);
+        makeFlower(AlfheimrBlocks.HYDRANGEA_FLOWER, AlfheimrBlocks.POTTED_HYDRANGEA_FLOWER);
+        makeFlower(AlfheimrBlocks.ZINNIA_FLOWER, AlfheimrBlocks.POTTED_ZINNIA_FLOWER);
+        makeFlower(AlfheimrBlocks.BUTTERFLY_CANDY_FLOWER, AlfheimrBlocks.POTTED_BUTTERFLY_CANDY_FLOWER);
+        makeFlower(AlfheimrBlocks.CABARET_FLOWER, AlfheimrBlocks.POTTED_CABARET_FLOWER);
+        makeFlower(AlfheimrBlocks.DIANTHUS_FLOWER, AlfheimrBlocks.POTTED_DIANTHUS_FLOWER);
+        makeFlower(AlfheimrBlocks.TITAN_CRANBERRY_VINCA_FLOWER, AlfheimrBlocks.POTTED_TITAN_CRANBERRY_VINCA_FLOWER);
+        makeFlower(AlfheimrBlocks.ORANGE_ZINNIA_FLOWER, AlfheimrBlocks.POTTED_ORANGE_ZINNIA_FLOWER);
+        makeFlower(AlfheimrBlocks.BEGONIA_FLOWER, AlfheimrBlocks.POTTED_BEGONIA_FLOWER);
+        makeFlower(AlfheimrBlocks.CROWN_IMPERIAL_FLOWER, AlfheimrBlocks.POTTED_CROWN_IMPERIAL_FLOWER);
+        makeFlower(AlfheimrBlocks.ORIENTAL_POPPY_FLOWER, AlfheimrBlocks.POTTED_ORIENTAL_POPPY_FLOWER);
+        makeFlower(AlfheimrBlocks.AZALEA_FLOWER, AlfheimrBlocks.POTTED_AZALEA_FLOWER);
+        makeFlower(AlfheimrBlocks.PINK_DELIGHT_FLOWER, AlfheimrBlocks.POTTED_PINK_DELIGHT_FLOWER);
+        makeFlower(AlfheimrBlocks.CHRYSANTHEMUM_FLOWER, AlfheimrBlocks.POTTED_CHRYSANTHEMUM_FLOWER);
+        makeFlower(AlfheimrBlocks.HIBISCUS_FLOWER, AlfheimrBlocks.POTTED_HIBISCUS_FLOWER);
+        makeFlower(AlfheimrBlocks.CARDINAL_FLOWER, AlfheimrBlocks.POTTED_CARDINAL_FLOWER);
+        makeFlower(AlfheimrBlocks.GERBERA_FLOWER, AlfheimrBlocks.POTTED_GERBERA_FLOWER);
+        makeFlower(AlfheimrBlocks.RED_TULIP_FLOWER, AlfheimrBlocks.POTTED_RED_TULIP_FLOWER);
+        makeFlower(AlfheimrBlocks.FREESIA_FLOWER, AlfheimrBlocks.POTTED_FREESIA_FLOWER);
+        makeFlower(AlfheimrBlocks.GARDENIAS_FLOWER, AlfheimrBlocks.POTTED_GARDENIAS_FLOWER);
+        makeFlower(AlfheimrBlocks.STAR_JASMINE_FLOWER, AlfheimrBlocks.POTTED_STAR_JASMINE_FLOWER);
+        makeFlower(AlfheimrBlocks.WHITE_WARATAH_FLOWER, AlfheimrBlocks.POTTED_WHITE_WARATAH_FLOWER);
+        makeFlower(AlfheimrBlocks.FLANNEL_FLOWER, AlfheimrBlocks.POTTED_FLANNEL_FLOWER);
+        makeFlower(AlfheimrBlocks.BEARS_EARS_FLOWER, AlfheimrBlocks.POTTED_BEARS_EARS_FLOWER);
+        makeFlower(AlfheimrBlocks.BIDENS_FLOWER, AlfheimrBlocks.POTTED_BIDENS_FLOWER);
+        makeFlower(AlfheimrBlocks.BLANKET_FLOWER, AlfheimrBlocks.POTTED_BLANKET_FLOWER);
+        makeFlower(AlfheimrBlocks.BULBINE_FLOWER, AlfheimrBlocks.POTTED_BULBINE_FLOWER);
+        makeFlower(AlfheimrBlocks.SILVER_BRUNIA_FLOWER, AlfheimrBlocks.POTTED_SILVER_BRUNIA_FLOWER);
+        makeFlower(AlfheimrBlocks.GRAY_ROSES_FLOWER, AlfheimrBlocks.POTTED_GRAY_ROSES_FLOWER);
+        makeFlower(AlfheimrBlocks.MOON_CARROT_FLOWER, AlfheimrBlocks.POTTED_MOON_CARROT_FLOWER);
+        makeFlower(AlfheimrBlocks.SILVER_BABY_FLOWER, AlfheimrBlocks.POTTED_SILVER_BABY_FLOWER);
+        makeFlower(AlfheimrBlocks.LAVENDER_FLOWER, AlfheimrBlocks.POTTED_LAVENDER_FLOWER);
+        makeFlower(AlfheimrBlocks.BELLFLOWER_FLOWER, AlfheimrBlocks.POTTED_BELLFLOWER_FLOWER);
+        makeFlower(AlfheimrBlocks.LILAC_FLOWER, AlfheimrBlocks.POTTED_LILAC_FLOWER);
+        makeFlower(AlfheimrBlocks.SWEET_PEA_FLOWER, AlfheimrBlocks.POTTED_SWEET_PEA_FLOWER);
 
 
         /*
         VEGETATION
          */
-        makeVegetation(ModBlocks.ALFHEIMR_MAGIC_GRASS);
+        makeVegetation(AlfheimrBlocks.ALFHEIMR_MAGIC_GRASS);
 
         /*
         MUSHROOMS
          */
-        blockWithItem(ModBlocks.TOP_POINT_MUSHROOM_BLOCK);
-        blockWithItem(ModBlocks.POINT_MUSHROOM_STEM_BLOCK);
-        makeMushroom(ModBlocks.POINT_MUSHROOM_BLOCK, ModBlocks.POTTED_POINT_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.TOP_POINT_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.POINT_MUSHROOM_STEM_BLOCK);
+        makeMushroom(AlfheimrBlocks.POINT_MUSHROOM_BLOCK, AlfheimrBlocks.POTTED_POINT_MUSHROOM_BLOCK);
 
-        blockWithItem(ModBlocks.TOP_WITCHES_MUSHROOM_BLOCK);
-        blockWithItem(ModBlocks.WITCHES_MUSHROOM_STEM_BLOCK);
-        makeMushroom(ModBlocks.WITCHES_MUSHROOM_BLOCK, ModBlocks.POTTED_WITCHES_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.TOP_WITCHES_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.WITCHES_MUSHROOM_STEM_BLOCK);
+        makeMushroom(AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK, AlfheimrBlocks.POTTED_WITCHES_MUSHROOM_BLOCK);
 
-        blockWithItem(ModBlocks.TOP_ROYAL_BLUE_MUSHROOM_BLOCK);
-        blockWithItem(ModBlocks.ROYAL_BLUE_MUSHROOM_STEM_BLOCK);
-        blockWithItem(ModBlocks.ROYAL_BLUE_MUSHROOM_GLOW_BLOCK);
-        makeMushroom(ModBlocks.ROYAL_BLUE_MUSHROOM_BLOCK, ModBlocks.POTTED_ROYAL_BLUE_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.TOP_ROYAL_BLUE_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_STEM_BLOCK);
+        blockWithItem(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_GLOW_BLOCK);
+        makeMushroom(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK, AlfheimrBlocks.POTTED_ROYAL_BLUE_MUSHROOM_BLOCK);
 
-        blockWithItem(ModBlocks.TOP_SHORT_TOP_MUSHROOM_BLOCK);
-        blockWithItem(ModBlocks.SHORT_TOP_MUSHROOM_STEM_BLOCK);
-        makeMushroom(ModBlocks.SHORT_TOP_MUSHROOM_BLOCK, ModBlocks.POTTED_SHORT_TOP_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.TOP_SHORT_TOP_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.SHORT_TOP_MUSHROOM_STEM_BLOCK);
+        makeMushroom(AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK, AlfheimrBlocks.POTTED_SHORT_TOP_MUSHROOM_BLOCK);
 
-        blockWithItem(ModBlocks.TOP_SPECTRAL_MUSHROOM_BLOCK);
-        blockWithItem(ModBlocks.SPECTRAL_MUSHROOM_STEM_BLOCK);
-        makeMushroom(ModBlocks.SPECTRAL_MUSHROOM_BLOCK, ModBlocks.POTTED_SPECTRAL_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.TOP_SPECTRAL_MUSHROOM_BLOCK);
+        blockWithItem(AlfheimrBlocks.SPECTRAL_MUSHROOM_STEM_BLOCK);
+        makeMushroom(AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK, AlfheimrBlocks.POTTED_SPECTRAL_MUSHROOM_BLOCK);
 
-        makeVine(ModBlocks.SHADE_MUSHROOM_VINE_BLOCK);
-        makeMushroom(ModBlocks.SHADE_MUSHROOM_BLOCK, ModBlocks.POTTED_SHADE_MUSHROOM_BLOCK);
+        makeVine(AlfheimrBlocks.SHADE_MUSHROOM_VINE_BLOCK);
+        makeMushroom(AlfheimrBlocks.SHADE_MUSHROOM_BLOCK, AlfheimrBlocks.POTTED_SHADE_MUSHROOM_BLOCK);
 
-        makeVine(ModBlocks.CAP_MUSHROOM_VINE_BLOCK);
-        makeMushroom(ModBlocks.CAP_MUSHROOM_BLOCK, ModBlocks.POTTED_CAP_MUSHROOM_BLOCK);
+        makeVine(AlfheimrBlocks.CAP_MUSHROOM_VINE_BLOCK);
+        makeMushroom(AlfheimrBlocks.CAP_MUSHROOM_BLOCK, AlfheimrBlocks.POTTED_CAP_MUSHROOM_BLOCK);
 
         /*
         STUFF
          */
-        this.waterRemoverBlock(ModBlocks.ATLANTAS_WATER_REMOVER_BLOCK);
+        this.waterRemoverBlock(AtlantisBlocks.ATLANTAS_WATER_REMOVER_BLOCK);
 
         blockComplexGen();
     }
@@ -493,348 +459,348 @@ public class ModBlockStateProvider extends BlockStateProvider {
         /*
         STONE GEN
          */
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_SMOOTH_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_CRACKED);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_CHISELED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_SMOOTH_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_CRACKED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_CHISELED);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_SMOOTH_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_CRACKED);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_CHISELED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_SMOOTH_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_CRACKED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_CHISELED);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_SMOOTH_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_CRACKED);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_CHISELED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_SMOOTH_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_CRACKED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_CHISELED);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_SMOOTH_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CRACKED);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CHISELED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_SMOOTH_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CRACKED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_CHISELED);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_SMOOTH_STONE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_MOSSY);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_CRACKED);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_CHISELED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_SMOOTH_STONE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_MOSSY);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_CRACKED);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_CHISELED);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE);
 
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER);
-        blockWithItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_EMERALD_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER);
+        blockWithItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER);
 
-        blockWithItem(ModBlocks.TARTARUS_STONE);
-        blockWithItem(ModBlocks.TARTARUS_STONE_COBBLESTONE);
-        blockWithItem(ModBlocks.TARTARUS_STONE_BRICKS);
-        blockWithItem(ModBlocks.TARTARUS_STONE_SMOOTH_STONE);
-        blockWithItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_MOSSY);
-        blockWithItem(ModBlocks.TARTARUS_STONE_BRICKS_MOSSY);
-        blockWithItem(ModBlocks.TARTARUS_STONE_BRICKS_CRACKED);
-        blockWithItem(ModBlocks.TARTARUS_STONE_BRICKS_CHISELED);
+        blockWithItem(UnderworldBlocks.TARTARUS_STONE);
+        blockWithItem(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE);
+        blockWithItem(UnderworldBlocks.TARTARUS_STONE_BRICKS);
+        blockWithItem(UnderworldBlocks.TARTARUS_STONE_SMOOTH_STONE);
+        blockWithItem(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE_MOSSY);
+        blockWithItem(UnderworldBlocks.TARTARUS_STONE_BRICKS_MOSSY);
+        blockWithItem(UnderworldBlocks.TARTARUS_STONE_BRICKS_CRACKED);
+        blockWithItem(UnderworldBlocks.TARTARUS_STONE_BRICKS_CHISELED);
     }
 
     private void blockComplexGen() {
         /*
         STONE GEN
          */
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
-        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_SOFT_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_SOFT_STONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_SOFT_STONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) NidavellirBlocks.NIDAVELLIR_SOFT_STONE_PRESSURE_PLATE.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_SOFT_STONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get()));
+        buttonBlock((ButtonBlock) NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BUTTON.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get()));
 
-        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_SLAB);
-        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_PRESSURE_PLATE);
-//        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BUTTON);
-//        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_SLAB);
+        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_PRESSURE_PLATE);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BUTTON);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL);
 
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_HARD_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_HARD_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_HARD_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
-        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_HARD_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_HARD_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_HARD_STONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_HARD_STONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) NidavellirBlocks.NIDAVELLIR_HARD_STONE_PRESSURE_PLATE.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_HARD_STONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get()));
+        buttonBlock((ButtonBlock) NidavellirBlocks.NIDAVELLIR_HARD_STONE_BUTTON.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get()));
 
-        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_SLAB);
-        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_PRESSURE_PLATE);
-//        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_BUTTON);
-//        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_SLAB);
+        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_PRESSURE_PLATE);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BUTTON);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL);
 
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
-        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_PRESSURE_PLATE.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
+        buttonBlock((ButtonBlock) NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get()));
 
-        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_SLAB);
-        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_PRESSURE_PLATE);
-//        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON);
-//        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_SLAB);
+        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_PRESSURE_PLATE);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL);
 
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
-        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_PRESSURE_PLATE.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
+        buttonBlock((ButtonBlock) NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get()));
 
-        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_SLAB);
-        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_PRESSURE_PLATE);
-//        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON);
-//        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_SLAB);
+        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_PRESSURE_PLATE);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL);
 
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()));
-        stairsBlock((StairBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
-        buttonBlock((ButtonBlock) ModBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON.get(), blockTexture(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()));
+        stairsBlock((StairBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_STAIRS.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_SLAB.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_PRESSURE_PLATE.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        wallBlock((WallBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
+        buttonBlock((ButtonBlock) NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON.get(), blockTexture(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get()));
 
-        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_SLAB);
-        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_PRESSURE_PLATE);
-//        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON);
-//        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL);
-        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_STAIRS);
-        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_SLAB);
-//        blockItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_SLAB);
+        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_PRESSURE_PLATE);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL);
+        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_STAIRS);
+        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_SLAB);
+//        blockItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL);
 
-        stairsBlock((StairBlock) ModBlocks.TARTARUS_STONE_STAIRS.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
-        stairsBlock((StairBlock) ModBlocks.TARTARUS_STONE_COBBLESTONE_STAIRS.get(), blockTexture(ModBlocks.TARTARUS_STONE_COBBLESTONE.get()));
-        stairsBlock((StairBlock) ModBlocks.TARTARUS_STONE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.TARTARUS_STONE_BRICKS.get()));
-        slabBlock(((SlabBlock) ModBlocks.TARTARUS_STONE_SLAB.get()), blockTexture(ModBlocks.TARTARUS_STONE.get()), blockTexture(ModBlocks.TARTARUS_STONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.TARTARUS_STONE_COBBLESTONE_SLAB.get()), blockTexture(ModBlocks.TARTARUS_STONE_COBBLESTONE.get()), blockTexture(ModBlocks.TARTARUS_STONE_COBBLESTONE.get()));
-        slabBlock(((SlabBlock) ModBlocks.TARTARUS_STONE_BRICKS_SLAB.get()), blockTexture(ModBlocks.TARTARUS_STONE_BRICKS.get()), blockTexture(ModBlocks.TARTARUS_STONE_BRICKS.get()));
-        pressurePlateBlock((PressurePlateBlock) ModBlocks.TARTARUS_STONE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.TARTARUS_STONE_WALL.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.TARTARUS_STONE_COBBLESTONE_WALL.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
-        wallBlock((WallBlock) ModBlocks.TARTARUS_STONE_BRICKS_WALL.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
-        buttonBlock((ButtonBlock) ModBlocks.TARTARUS_STONE_BUTTON.get(), blockTexture(ModBlocks.TARTARUS_STONE.get()));
+        stairsBlock((StairBlock) UnderworldBlocks.TARTARUS_STONE_STAIRS.get(), blockTexture(UnderworldBlocks.TARTARUS_STONE.get()));
+        stairsBlock((StairBlock) UnderworldBlocks.TARTARUS_STONE_COBBLESTONE_STAIRS.get(), blockTexture(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE.get()));
+        stairsBlock((StairBlock) UnderworldBlocks.TARTARUS_STONE_BRICKS_STAIRS.get(), blockTexture(UnderworldBlocks.TARTARUS_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) UnderworldBlocks.TARTARUS_STONE_SLAB.get()), blockTexture(UnderworldBlocks.TARTARUS_STONE.get()), blockTexture(UnderworldBlocks.TARTARUS_STONE.get()));
+        slabBlock(((SlabBlock) UnderworldBlocks.TARTARUS_STONE_COBBLESTONE_SLAB.get()), blockTexture(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE.get()), blockTexture(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE.get()));
+        slabBlock(((SlabBlock) UnderworldBlocks.TARTARUS_STONE_BRICKS_SLAB.get()), blockTexture(UnderworldBlocks.TARTARUS_STONE_BRICKS.get()), blockTexture(UnderworldBlocks.TARTARUS_STONE_BRICKS.get()));
+        pressurePlateBlock((PressurePlateBlock) UnderworldBlocks.TARTARUS_STONE_PRESSURE_PLATE.get(), blockTexture(UnderworldBlocks.TARTARUS_STONE.get()));
+        wallBlock((WallBlock) UnderworldBlocks.TARTARUS_STONE_WALL.get(), blockTexture(UnderworldBlocks.TARTARUS_STONE.get()));
+        wallBlock((WallBlock) UnderworldBlocks.TARTARUS_STONE_COBBLESTONE_WALL.get(), blockTexture(UnderworldBlocks.TARTARUS_STONE.get()));
+        wallBlock((WallBlock) UnderworldBlocks.TARTARUS_STONE_BRICKS_WALL.get(), blockTexture(UnderworldBlocks.TARTARUS_STONE.get()));
+        buttonBlock((ButtonBlock) UnderworldBlocks.TARTARUS_STONE_BUTTON.get(), blockTexture(UnderworldBlocks.TARTARUS_STONE.get()));
 
-        blockItem(ModBlocks.TARTARUS_STONE_STAIRS);
-        blockItem(ModBlocks.TARTARUS_STONE_SLAB);
-        blockItem(ModBlocks.TARTARUS_STONE_PRESSURE_PLATE);
-//        blockItem(ModBlocks.TARTARUS_STONE_BUTTON);
-//        blockItem(ModBlocks.TARTARUS_STONE_WALL);
-        blockItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_STAIRS);
-        blockItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_SLAB);
-//        blockItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_WALL);
-        blockItem(ModBlocks.TARTARUS_STONE_BRICKS_STAIRS);
-        blockItem(ModBlocks.TARTARUS_STONE_BRICKS_SLAB);
-//        blockItem(ModBlocks.TARTARUS_STONE_BRICKS_WALL);
+        blockItem(UnderworldBlocks.TARTARUS_STONE_STAIRS);
+        blockItem(UnderworldBlocks.TARTARUS_STONE_SLAB);
+        blockItem(UnderworldBlocks.TARTARUS_STONE_PRESSURE_PLATE);
+//        blockItem(UnderworldBlocks.TARTARUS_STONE_BUTTON);
+//        blockItem(UnderworldBlocks.TARTARUS_STONE_WALL);
+        blockItem(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE_STAIRS);
+        blockItem(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE_SLAB);
+//        blockItem(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE_WALL);
+        blockItem(UnderworldBlocks.TARTARUS_STONE_BRICKS_STAIRS);
+        blockItem(UnderworldBlocks.TARTARUS_STONE_BRICKS_SLAB);
+//        blockItem(UnderworldBlocks.TARTARUS_STONE_BRICKS_WALL);
     }
 
     private String name(Block block) {

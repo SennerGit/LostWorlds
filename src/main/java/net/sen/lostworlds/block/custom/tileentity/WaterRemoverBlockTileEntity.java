@@ -9,7 +9,6 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.sen.lostworlds.block.ModBlockSetType;
 import net.sen.lostworlds.block.ModTileEntityTypes;
 import net.sen.lostworlds.block.custom.WaterRemoverBlock;
 import org.jetbrains.annotations.Nullable;
@@ -56,6 +55,6 @@ public class WaterRemoverBlockTileEntity extends BlockEntity {
             this.level.sendBlockUpdated(this.worldPosition, this.level.getBlockState(this.worldPosition), this.level.getBlockState(this.worldPosition), 3);
         }
 
-        return;
+//        return;
     }
 }

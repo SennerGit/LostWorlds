@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.sen.lostworlds.LostWorlds;
+import net.sen.lostworlds.compat.curios.CuriosCompat;
+import net.sen.lostworlds.compat.patchouli.PatchouliCompat;
 import net.sen.lostworlds.datagen.tag.ModItemTagGenerator;
 
 import java.util.HashMap;

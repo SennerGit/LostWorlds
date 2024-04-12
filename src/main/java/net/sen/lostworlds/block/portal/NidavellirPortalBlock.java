@@ -31,6 +31,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.NidavellirBlocks;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.portal.NidavellirTeleporter;
@@ -293,7 +294,7 @@ public class NidavellirPortalBlock extends ModPortalBlock {
         }
 
         private static boolean isEmpty(BlockState state) {
-            return state.isAir() || state.is(ModBlocks.NIDAVELLIR_PORTAL.get());
+            return state.isAir() || state.is(NidavellirBlocks.NIDAVELLIR_PORTAL.get());
         }
 
         public boolean isValid() {
@@ -301,7 +302,7 @@ public class NidavellirPortalBlock extends ModPortalBlock {
         }
 
         public void createPortalBlocks() {
-            BlockState blockstate = ModBlocks.NIDAVELLIR_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
+            BlockState blockstate = NidavellirBlocks.NIDAVELLIR_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
             BlockPos.betweenClosed(this.bottomLeft, this.bottomLeft.relative(Direction.UP, this.height - 1).relative(this.rightDir, this.width - 1)).forEach(pos -> this.level.setBlock(pos, blockstate, 18));
         }
 

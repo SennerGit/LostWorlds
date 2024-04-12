@@ -25,6 +25,7 @@ import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sen.lostworlds.Config;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.SkyopiaBlocks;
 import net.sen.lostworlds.block.portal.SkyopiaPortalBlock;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 
@@ -142,7 +143,7 @@ public class SkyopiaTeleporter implements ITeleporter {
             }
         }
 
-        BlockState blockstate = ModBlocks.SKYOPIA_PORTAL.get().defaultBlockState().setValue(SkyopiaPortalBlock.AXIS, axis);
+        BlockState blockstate = SkyopiaBlocks.SKYOPIA_PORTAL.get().defaultBlockState().setValue(SkyopiaPortalBlock.AXIS, axis);
 
         for(int k2 = 0; k2 < 2; ++k2) {
             for(int l2 = 0; l2 < 3; ++l2) {

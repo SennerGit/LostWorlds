@@ -16,8 +16,8 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
-import net.sen.lostworlds.worldgen.dimension.TerrainProvider.AtlantisTerrainProvider;
+import net.sen.lostworlds.worldgen.biome.util.layer.AtlantisBiomes;
+import net.sen.lostworlds.worldgen.dimension.terrainprovider.AtlantisTerrainProvider;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.AtlantisSurfaceRules;
 
 import java.util.List;

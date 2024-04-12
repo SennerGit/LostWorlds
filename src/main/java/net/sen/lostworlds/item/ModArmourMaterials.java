@@ -14,13 +14,6 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum ModArmourMaterials implements ArmorMaterial {
-    NETHER_STEEL("nether_steel", 24, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
-        p_266655_.put(ArmorItem.Type.BOOTS, 4);
-        p_266655_.put(ArmorItem.Type.LEGGINGS, 5);
-        p_266655_.put(ArmorItem.Type.CHESTPLATE, 7);
-        p_266655_.put(ArmorItem.Type.HELMET, 5);
-    }), 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.of(ModItems.NETHER_STEEL_INGOT.get())),
-
     ZINC("zinc", 24, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
         p_266655_.put(ArmorItem.Type.BOOTS, 4);
         p_266655_.put(ArmorItem.Type.LEGGINGS, 5);
@@ -54,7 +47,7 @@ public enum ModArmourMaterials implements ArmorMaterial {
         p_266655_.put(ArmorItem.Type.LEGGINGS, 5);
         p_266655_.put(ArmorItem.Type.CHESTPLATE, 7);
         p_266655_.put(ArmorItem.Type.HELMET, 5);
-    }), 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.of(ModItems.ORICHALCUM_INGOT.get()));
+    }), 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.of(UnderworldItems.ORICHALCUM_INGOT.get()));
 
     public static final StringRepresentable.EnumCodec<ArmorMaterials> CODEC = StringRepresentable.fromEnum(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266653_) -> {

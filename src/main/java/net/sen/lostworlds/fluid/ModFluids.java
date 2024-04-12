@@ -9,6 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.UnderworldBlocks;
 import net.sen.lostworlds.item.ModItems;
 
 public class ModFluids {
@@ -22,7 +23,7 @@ public class ModFluids {
 
     public static final ForgeFlowingFluid.Properties STYX_WATER_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
             ModFluidTypes.STYX_WATER_FLUID_TYPE, SOURCE_STYX_WATER, FLOWING_STYX_WATER)
-            .slopeFindDistance(2).levelDecreasePerBlock(1).block(ModBlocks.STYX_WATER_BLOCK).bucket(ModItems.STYX_WATER_BUCKET);
+            .slopeFindDistance(2).levelDecreasePerBlock(1).block(UnderworldBlocks.STYX_WATER_BLOCK).bucket(ModItems.STYX_WATER_BUCKET);
 
     public static void register(IEventBus eventBus) {
         FLUIDS.register(eventBus);

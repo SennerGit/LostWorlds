@@ -8,10 +8,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.ElvesModel;
+import net.sen.lostworlds.entity.AlfheimrEntities;
 import net.sen.lostworlds.entity.mob.ElvesEntity;
 
 public class ElvesRenderer extends MobRenderer<ElvesEntity, ElvesModel<ElvesEntity>> {
-    private static final ResourceLocation TEXTURE = LostWorldsApi.modLoc("textures/entity/elves/elves.png");
+    private static final ResourceLocation TEXTURE = LostWorldsApi.entityRendererLoc(AlfheimrEntities.ELVES_ID);
 
     public ElvesRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new ElvesModel<>(pContext.bakeLayer(ModModelLayers.ELVES_LAYER)), 2f);

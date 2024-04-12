@@ -35,15 +35,15 @@ import java.util.Map;
 import java.util.Optional;
 
 public class AlloySmelterBlockEntity extends BlockEntity implements MenuProvider {
-    public static final int MAX_SLOTS = 4;
+    private static final int MAX_SLOTS = 4;
     private static final int INPUT_1_SLOT_ID = 0;
     private static final int INPUT_2_SLOT_ID = 1;
     private static final int FUEL_SLOT_ID = 2;
     private static final int OUTPUT_SLOT_ID = 3;
-    public static final SlotsVector INPUT_1_SLOT = new SlotsVector(INPUT_1_SLOT_ID, 37, 17);
-    public static final SlotsVector INPUT_2_SLOT = new SlotsVector(INPUT_2_SLOT_ID, 73, 17);
-    public static final SlotsVector FUEL_SLOT = new SlotsVector(FUEL_SLOT_ID, 56, 53);
-    public static final SlotsVector OUTPUT_SLOT = new SlotsVector(OUTPUT_SLOT_ID, 116, 35); //117, 36
+    public static final SlotsVector INPUT_1_SLOT = new SlotsVector(getInput1SlotId(), 37, 17);
+    public static final SlotsVector INPUT_2_SLOT = new SlotsVector(getInput2SlotId(), 73, 17);
+    public static final SlotsVector FUEL_SLOT = new SlotsVector(getFuelSlotId(), 56, 53);
+    public static final SlotsVector OUTPUT_SLOT = new SlotsVector(getOutputSlotId(), 116, 35); //117, 36
 
     private int burnTime = 0;
     private int maxBurnTime = 1;
@@ -56,7 +56,7 @@ public class AlloySmelterBlockEntity extends BlockEntity implements MenuProvider
     private int progress = 0;
     private int maxProgress = 78;
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(MAX_SLOTS) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(getMaxSlots()) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -78,12 +78,12 @@ public class AlloySmelterBlockEntity extends BlockEntity implements MenuProvider
 
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
             new InventoryDirectionWrapper(itemHandler,
-                    new InventoryDirectionEntry(Direction.DOWN, OUTPUT_SLOT_ID, false),
-                    new InventoryDirectionEntry(Direction.NORTH, FUEL_SLOT_ID, true),
-                    new InventoryDirectionEntry(Direction.SOUTH, FUEL_SLOT_ID, true),
-                    new InventoryDirectionEntry(Direction.EAST, INPUT_2_SLOT_ID, true),
-                    new InventoryDirectionEntry(Direction.WEST, INPUT_1_SLOT_ID, true),
-                    new InventoryDirectionEntry(Direction.UP, FUEL_SLOT_ID, true)).directionsMap;
+                    new InventoryDirectionEntry(Direction.DOWN, getOutputSlotId(), false),
+                    new InventoryDirectionEntry(Direction.NORTH, getFuelSlotId(), true),
+                    new InventoryDirectionEntry(Direction.SOUTH, getFuelSlotId(), true),
+                    new InventoryDirectionEntry(Direction.EAST, getInput2SlotId(), true),
+                    new InventoryDirectionEntry(Direction.WEST, getInput1SlotId(), true),
+                    new InventoryDirectionEntry(Direction.UP, getFuelSlotId(), true)).directionsMap;
 
     public AlloySmelterBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.ALLOY_SMELTER_BLOCK_ENTITY.get(), pPos, pBlockState);
@@ -224,11 +224,11 @@ public class AlloySmelterBlockEntity extends BlockEntity implements MenuProvider
         this.itemHandler.extractItem(INPUT_2_SLOT.getSlotId(), 1, false);
 
         this.itemHandler.setStackInSlot(OUTPUT_SLOT.getSlotId(), new ItemStack(resultItem.getItem(),
-                this.itemHandler.getStackInSlot(OUTPUT_SLOT_ID).getCount() + resultItem.getCount()));
+                this.itemHandler.getStackInSlot(getOutputSlotId()).getCount() + resultItem.getCount()));
     }
 
     private <T extends BlockEntity> void burn(Level level, BlockPos pos, BlockState state, T blockEntity) {
-//        ItemStack burnStack = this.itemHandler.getStackInSlot(FUEL_SLOT_ID);
+//        ItemStack burnStack = this.itemHandler.getStackInSlot(getFuelSlotId());
 //
 //        if (this.isBurningFuel) {
 //            this.burnTime--;
@@ -250,15 +250,15 @@ public class AlloySmelterBlockEntity extends BlockEntity implements MenuProvider
 //                this.isBurningFuel = false;
 //            }
 //        } else {
-//            if (ForgeHooks.getBurnTime(itemHandler.getStackInSlot(FUEL_SLOT_ID), RecipeType.SMELTING) > 0 && itemHandler.getStackInSlot(FUEL_SLOT_ID).getCount() < 64)
+//            if (ForgeHooks.getBurnTime(itemHandler.getStackInSlot(getFuelSlotId()), RecipeType.SMELTING) > 0 && itemHandler.getStackInSlot(getFuelSlotId()).getCount() < 64)
 //            {
 //                //this.fuelInfo = FuelRegistry.GetInfo(burnStack.getItem());
 //
 //                if (this.fuelInfo != FuelRegistry.NULL) {
-//                    this.burnTime = ForgeHooks.getBurnTime(itemHandler.getStackInSlot(FUEL_SLOT_ID), RecipeType.SMELTING);
-//                    this.maxBurnTime = ForgeHooks.getBurnTime(itemHandler.getStackInSlot(FUEL_SLOT_ID), RecipeType.SMELTING);
+//                    this.burnTime = ForgeHooks.getBurnTime(itemHandler.getStackInSlot(getFuelSlotId()), RecipeType.SMELTING);
+//                    this.maxBurnTime = ForgeHooks.getBurnTime(itemHandler.getStackInSlot(getFuelSlotId()), RecipeType.SMELTING);
 //                    this.isBurningFuel = true;
-//                    this.itemHandler.extractItem(FUEL_SLOT_ID, 1, false);
+//                    this.itemHandler.extractItem(getFuelSlotId(), 1, false);
 //                }
 //            }
 //        }
@@ -276,7 +276,7 @@ public class AlloySmelterBlockEntity extends BlockEntity implements MenuProvider
                 if (alloyFurnaceBlockEntity.burnTime < alloyFurnaceBlockEntity.burnTime && alloyFurnaceBlockEntity.burnTime >= 0 && inventory.getStackInSlot(3).getCount() < 64) {
                     //If not fuel Item has been consumed it is done now
                     if (!alloyFurnaceBlockEntity.isBurningFuel) {
-                        inventory.extractItem(FUEL_SLOT_ID, 1, false);
+                        inventory.extractItem(getFuelSlotId(), 1, false);
                         alloyFurnaceBlockEntity.isBurningFuel = true;
                     }
                     //Checks if the alloy timer is running
@@ -419,4 +419,41 @@ public class AlloySmelterBlockEntity extends BlockEntity implements MenuProvider
 //    private static int getTotalCookTime(Level pLevel, AlloySmelterBlockEntity pBlockEntity) {
 //        return pBlockEntity.quickCheck.getRecipeFor(pBlockEntity, pLevel).map(AlloySmelterRecipe::getCookingTime).orElse(200);
 //    }
+
+
+    public static int getInput1SlotId() {return INPUT_1_SLOT_ID;}
+    public static int getInput2SlotId() {return INPUT_2_SLOT_ID;}
+    public static int getFuelSlotId() {return FUEL_SLOT_ID;}
+    public static int getOutputSlotId() {return OUTPUT_SLOT_ID;}
+    public static int getMaxSlots() {return MAX_SLOTS;}
+    public int getBurnTime() {
+        return burnTime;
+    }
+    public int getMaxBurnTime() {
+        return maxBurnTime;
+    }
+    public boolean isBurningFuel() {
+        return isBurningFuel;
+    }
+    public FuelRegistry.FuelInfo getFuelInfo() {
+        return fuelInfo;
+    }
+    public LazyOptional<IItemHandler> getLazyItemHandler() {
+        return lazyItemHandler;
+    }
+    public ContainerData getData() {
+        return data;
+    }
+    public int getProgress() {
+        return progress;
+    }
+    public int getMaxProgress() {
+        return maxProgress;
+    }
+    public ItemStackHandler getItemHandler() {
+        return itemHandler;
+    }
+    public Map<Direction, LazyOptional<WrappedHandler>> getDirectionWrappedHandlerMap() {
+        return directionWrappedHandlerMap;
+    }
 }

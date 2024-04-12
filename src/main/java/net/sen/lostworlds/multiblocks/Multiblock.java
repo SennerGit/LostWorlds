@@ -6,7 +6,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.compat.PatchouliCompat;
+import net.sen.lostworlds.compat.patchouli.PatchouliCompat;
 
 import java.util.HashMap;
 import java.util.Map;

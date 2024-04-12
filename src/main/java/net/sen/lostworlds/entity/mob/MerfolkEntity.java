@@ -33,6 +33,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.ForgeEventFactory;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.entity.variant.MerfolkVariant;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
@@ -85,7 +86,7 @@ public class MerfolkEntity extends AbstractVillager {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return ModEntities.MERFOLK.get().create(pLevel);
+        return AtlantisEntities.MERFOLK.get().create(pLevel);
     }
 
     private void setupAnimationStates() {

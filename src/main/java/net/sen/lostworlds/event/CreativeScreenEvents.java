@@ -17,12 +17,10 @@ import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.*;
 import net.sen.lostworlds.client.gui.widget.IconButton;
 import net.sen.lostworlds.client.gui.widget.TagButton;
-import net.sen.lostworlds.item.CreativeItem;
-import net.sen.lostworlds.item.ModCreativeModeTabs;
-import net.sen.lostworlds.item.ModItems;
+import net.sen.lostworlds.item.*;
 import net.sen.lostworlds.util.ModTags;
 
 import java.util.ArrayList;
@@ -211,25 +209,25 @@ public class CreativeScreenEvents {
         TagFilter[] filters = new TagFilter[] {
                 //The tabs
                 new TagFilter(ModTags.CreativeTabs.GENERAL, new ItemStack(ModItems.BASIC_PORTAL_ACTIVATOR.get())),
-                new TagFilter(ModTags.CreativeTabs.UNDERWORLD, new ItemStack(ModBlocks.UNDERWORLD_PORTAL_FRAME.get())),
-                new TagFilter(ModTags.CreativeTabs.NIDAVELLIR, new ItemStack(ModBlocks.NIDAVELLIR_PORTAL_FRAME.get())),
-                new TagFilter(ModTags.CreativeTabs.ALFHEIMR, new ItemStack(ModBlocks.ALFHEIMR_PORTAL_FRAME.get())),
-                new TagFilter(ModTags.CreativeTabs.ATLANTIS, new ItemStack(ModBlocks.ATLANTIS_PORTAL_FRAME.get())),
-                new TagFilter(ModTags.CreativeTabs.SKYOPIA, new ItemStack(ModBlocks.SKYOPIA_PORTAL_FRAME.get())),
+                new TagFilter(ModTags.CreativeTabs.UNDERWORLD, new ItemStack(UnderworldBlocks.UNDERWORLD_PORTAL_FRAME.get())),
+                new TagFilter(ModTags.CreativeTabs.NIDAVELLIR, new ItemStack(NidavellirBlocks.NIDAVELLIR_PORTAL_FRAME.get())),
+                new TagFilter(ModTags.CreativeTabs.ALFHEIMR, new ItemStack(AlfheimrBlocks.ALFHEIMR_PORTAL_FRAME.get())),
+                new TagFilter(ModTags.CreativeTabs.ATLANTIS, new ItemStack(AtlantisBlocks.ATLANTIS_PORTAL_FRAME.get())),
+                new TagFilter(ModTags.CreativeTabs.SKYOPIA, new ItemStack(SkyopiaBlocks.SKYOPIA_PORTAL_FRAME.get())),
 
-                new TagFilter(ModTags.CreativeTabs.METALS, new ItemStack(ModItems.ORICHALCUM_INGOT.get())),
-                new TagFilter(ModTags.CreativeTabs.BUILDING_BLOCKS, new ItemStack(ModBlocks.TARTARUS_STONE_BRICKS.get())),
-                new TagFilter(ModTags.CreativeTabs.MISCS, new ItemStack(ModBlocks.SKYOPIA_PORTAL_FRAME.get())),
-                new TagFilter(ModTags.CreativeTabs.NATURAL_BLOCKS, new ItemStack(ModBlocks.ELDER_WOOD.get())),
-                new TagFilter(ModTags.CreativeTabs.COLORED_BLOCKS, new ItemStack(ModBlocks.IRIS_FLOWER.get())),
+                new TagFilter(ModTags.CreativeTabs.METALS, new ItemStack(UnderworldItems.ORICHALCUM_INGOT.get())),
+                new TagFilter(ModTags.CreativeTabs.BUILDING_BLOCKS, new ItemStack(UnderworldBlocks.TARTARUS_STONE_BRICKS.get())),
+                new TagFilter(ModTags.CreativeTabs.MISCS, new ItemStack(SkyopiaBlocks.SKYOPIA_PORTAL_FRAME.get())),
+                new TagFilter(ModTags.CreativeTabs.NATURAL_BLOCKS, new ItemStack(UnderworldBlocks.ELDER_WOOD.get())),
+                new TagFilter(ModTags.CreativeTabs.COLORED_BLOCKS, new ItemStack(UnderworldBlocks.IRIS_FLOWER.get())),
                 new TagFilter(ModTags.CreativeTabs.FUNCTIONAL_BLOCKS, new ItemStack(ModBlocks.ALLOY_SMELTER.get())),
-                new TagFilter(ModTags.CreativeTabs.FARMING, new ItemStack(ModItems.POMEGRANATE_SEEDS.get())),
+                new TagFilter(ModTags.CreativeTabs.FARMING, new ItemStack(UnderworldItems.POMEGRANATE_SEEDS.get())),
                 new TagFilter(ModTags.CreativeTabs.REDSTONE_BLOCKS, new ItemStack(Items.REDSTONE)),
                 new TagFilter(ModTags.CreativeTabs.MAGIC, new ItemStack(ModItems.BASIC_PORTAL_ACTIVATOR.get())),
-                new TagFilter(ModTags.CreativeTabs.TOOLS_AND_UTILITIES, new ItemStack(ModItems.ORICHALCUM_PICKAXE.get())),
-                new TagFilter(ModTags.CreativeTabs.COMBAT, new ItemStack(ModItems.ORICHALCUM_SWORD.get())),
-                new TagFilter(ModTags.CreativeTabs.FOOD_AND_DRINKS, new ItemStack(ModItems.POMEGRANATE.get())),
-                new TagFilter(ModTags.CreativeTabs.SPAWN_EGGS, new ItemStack(ModItems.TUNA_SPAWN_EGG.get()))
+                new TagFilter(ModTags.CreativeTabs.TOOLS_AND_UTILITIES, new ItemStack(UnderworldItems.ORICHALCUM_PICKAXE.get())),
+                new TagFilter(ModTags.CreativeTabs.COMBAT, new ItemStack(UnderworldItems.ORICHALCUM_SWORD.get())),
+                new TagFilter(ModTags.CreativeTabs.FOOD_AND_DRINKS, new ItemStack(UnderworldItems.POMEGRANATE.get())),
+                new TagFilter(ModTags.CreativeTabs.SPAWN_EGGS, new ItemStack(ModSpawnEggs.TUNA_SPAWN_EGG.get()))
         };
 
         ForgeRegistries.ITEMS.getValues().stream()

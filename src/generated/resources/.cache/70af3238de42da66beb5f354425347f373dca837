@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-24T15:05:17.5970073	Block Tags
+// 1.20.1	2024-03-23T07:08:40.263889	Block Tags
 af43ed7bea64b661188415bc3d1abe797211555b data/lostworlds/tags/blocks/alfheimr_portal_frame_blocks.json
 3c65efba5539d2ade7a844dcfa142c91a020175f data/lostworlds/tags/blocks/atlantis_portal_frame_blocks.json
 1327d78e0388c77f4d3ddec7f2b6e4b42e8696f2 data/lostworlds/tags/blocks/cypress_logs.json
@@ -10,15 +10,15 @@ de40a497531552f6da8e8c4b0531f6fbbf26f34e data/lostworlds/tags/blocks/elder_wood_
 f83b1d7d0066eb5e1e9005ab112325b5116b2535 data/lostworlds/tags/blocks/laurel_logs.json
 2d0dcc56d1a3255e4531ecda3f21db6eb91a1893 data/lostworlds/tags/blocks/laurel_stripped_logs.json
 eb32be7e609548bbf72f4ad12578eca0ec06456f data/lostworlds/tags/blocks/laurel_wood.json
-6ee8a01e2cc2d5e63a076ecd099497d692066c5d data/lostworlds/tags/blocks/magical_block.json
 64ba52a0503fe733de3f3907b7f157cb0821a8e3 data/lostworlds/tags/blocks/mineable/paxel.json
 7a7db16ae239e6ab83e74a04d895456767a5dd5b data/lostworlds/tags/blocks/mod_carver_replaceables.json
 84eba054ee325227aa2584d062c2686b2443ef41 data/lostworlds/tags/blocks/mushrooms.json
 010d3f0c64828fcf14b3f927fea8294eac6e8f62 data/lostworlds/tags/blocks/myrrh_logs.json
 65eee66fcc4f88d7be5e69f910b9c61a72125955 data/lostworlds/tags/blocks/myrrh_stripped_logs.json
 88bae6757f25fa5986654bb645a21b60129379bb data/lostworlds/tags/blocks/myrrh_wood.json
+77e1663ceda55d3d72f9312d41db24c6edd26a25 data/lostworlds/tags/blocks/mystic_gateways_portal_controller_blocks.json
+38487afe8f947dd776ece58cbf7ab5a00b80bd0c data/lostworlds/tags/blocks/mystic_gateways_portal_frame_blocks.json
 73168c3e348472768e83e230f747ab587ab5b88c data/lostworlds/tags/blocks/needs_netherite_tool.json
-17d91808bd2ac9a1986b6cee03571f405ff5a1fe data/lostworlds/tags/blocks/needs_nether_steel_tool.json
 4e47784e204b2ae04349cbe9422ecc8b4fae52b5 data/lostworlds/tags/blocks/nidavellir_portal_frame_blocks.json
 c8ef2b2b537ba28fecc270da2b6edd7914072a64 data/lostworlds/tags/blocks/olive_logs.json
 fa4a4b8c2eba33c501141accc25c289717bae59c data/lostworlds/tags/blocks/olive_stripped_logs.json
@@ -26,16 +26,16 @@ fa4a4b8c2eba33c501141accc25c289717bae59c data/lostworlds/tags/blocks/olive_strip
 ae2e4e5832b51d2ada2d336ca255debf5be9df2f data/lostworlds/tags/blocks/skyopia_portal_frame_blocks.json
 706519ee70533c54faab081eb516bd438cb179be data/lostworlds/tags/blocks/underworld_portal_frame_block.json
 acbb48ad041980fa95f2ec2130749ae9fe6e09f4 data/minecraft/tags/blocks/fences.json
-6311d366c280f734b9de4bf2ed90c2ff25a39597 data/minecraft/tags/blocks/fence_gates.json
+0ea0b5cd0b4ec706a40a85842d63d4300a28c26e data/minecraft/tags/blocks/fence_gates.json
 11198a775087490bd7316db5d6d9e2bd7b245fba data/minecraft/tags/blocks/logs_that_burn.json
 62e45773c012c73f8d08e83915858586eb0ad17e data/minecraft/tags/blocks/mineable/axe.json
-fb3a54c993ca1d2fb77feca42f1a9ea585e7a011 data/minecraft/tags/blocks/mineable/pickaxe.json
+59b37851eeceb6ffcbaecddbc0c8e46cdae146e0 data/minecraft/tags/blocks/mineable/pickaxe.json
 d525ab40886667560fb5bd5a23f03669567bee07 data/minecraft/tags/blocks/needs_diamond_tool.json
-3361a187618d9e72e15823698b62ea9c10ece99d data/minecraft/tags/blocks/needs_iron_tool.json
-6963136a0c15bce7c5c1892bc36a11a8d00779a1 data/minecraft/tags/blocks/needs_stone_tool.json
+cb5146f1b067582da580719342bf312eb3b74b11 data/minecraft/tags/blocks/needs_iron_tool.json
+e57e482aee144ff1ab6da74623497ee356f7ff45 data/minecraft/tags/blocks/needs_stone_tool.json
 a81eb532278163c4659d01861d6a8a3dda721e7c data/minecraft/tags/blocks/planks.json
 c511758e7c2b94a5c0cfdb397a88bb04c5ea3b30 data/minecraft/tags/blocks/portals.json
-3a98b2ebaf1d12af3aade0446f4397d84d6fe0ce data/minecraft/tags/blocks/walls.json
+8838c6d2418e85f8dc6ba7f51ec0ba5f722dea4b data/minecraft/tags/blocks/walls.json
 d4d3ddcb0325b5f85c11392c71aae60af67ad73b data/minecraft/tags/blocks/wooden_buttons.json
 606db4b008edb6f6c95328d71f52936575c4b3d2 data/minecraft/tags/blocks/wooden_doors.json
 acbb48ad041980fa95f2ec2130749ae9fe6e09f4 data/minecraft/tags/blocks/wooden_fences.json

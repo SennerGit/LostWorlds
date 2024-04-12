@@ -8,10 +8,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.DwarvesModel;
+import net.sen.lostworlds.entity.NidavellirEntities;
 import net.sen.lostworlds.entity.mob.DwarvesEntity;
 
 public class DwarvesRenderer extends MobRenderer<DwarvesEntity, DwarvesModel<DwarvesEntity>> {
-    private static final ResourceLocation TEXTURE = LostWorldsApi.modLoc("textures/entity/dwarves/dwarves.png");
+    private static final ResourceLocation TEXTURE = LostWorldsApi.entityRendererLoc(NidavellirEntities.DWARVES_ID);
 
     public DwarvesRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new DwarvesModel<>(pContext.bakeLayer(ModModelLayers.DWARVES_LAYER)), 2f);

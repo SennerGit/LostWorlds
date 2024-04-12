@@ -1,5 +1,6 @@
 package net.sen.lostworlds;
 
+import com.google.common.reflect.Reflection;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -35,7 +36,8 @@ import net.sen.lostworlds.util.registry.ModCompostables;
 import net.sen.lostworlds.util.registry.ModFlowerPots;
 import net.sen.lostworlds.villager.*;
 import net.sen.lostworlds.villager.custom.dwarven.ModDwarvenVillagers;
-import net.sen.lostworlds.worldgen.biome.carver.*;
+import net.sen.lostworlds.worldgen.biome.util.layer.carver.ModCarvers;
+import net.sen.lostworlds.worldgen.dimension.biomebuilder.AlfheimrBiomeBuilder;
 import net.sen.lostworlds.worldgen.portal.*;
 import org.slf4j.Logger;
 
@@ -50,7 +52,18 @@ public class LostWorlds {
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        UnderworldItems.register(modEventBus);
+        NidavellirItems.register(modEventBus);
+        AlfheimrItems.register(modEventBus);
+        AtlantisItems.register(modEventBus);
+        SkyopiaItems.register(modEventBus);
+        ModSpawnEggs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        UnderworldBlocks.register(modEventBus);
+        AlfheimrBlocks.register(modEventBus);
+        NidavellirBlocks.register(modEventBus);
+        AtlantisBlocks.register(modEventBus);
+        SkyopiaBlocks.register(modEventBus);
         ModEnchantments.register(modEventBus);
         ModSounds.register(modEventBus);
         ModLootModifier.register(modEventBus);
@@ -67,6 +80,11 @@ public class LostWorlds {
         ModBlockEntities.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModEntities.register(modEventBus);
+        UnderworldEntities.register(modEventBus);
+        NidavellirEntities.register(modEventBus);
+        AlfheimrEntities.register(modEventBus);
+        AtlantisEntities.register(modEventBus);
+        SkyopiaEntities.register(modEventBus);
 
         //Custom
 //        ModDruidRituals.register(modEventBus);
@@ -93,6 +111,10 @@ public class LostWorlds {
     private void preInit(FMLCommonSetupEvent event) {
         Compat.setup(event);
         new ModMultiblocks();
+
+        Reflection.initialize(
+                AlfheimrBiomeBuilder.class
+        );
     }
 
     private void init(FMLCommonSetupEvent event) {
@@ -118,12 +140,6 @@ public class LostWorlds {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-//            DebugInfoHandler.init();
-//            HUDOverlayHandler.init();
-//            TooltipOverlayHandler.init();
-
-//            event.enqueueWork(ClientHandler::init);
-
             event.enqueueWork(() -> {
                 ModWoodTypesReg.setup(event);
                 ModItemProperties.addCustomItemProperties();

@@ -29,6 +29,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.SkyopiaBlocks;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.portal.SkyopiaTeleporter;
@@ -291,7 +292,7 @@ public class SkyopiaPortalBlock extends ModPortalBlock {
         }
 
         private static boolean isEmpty(BlockState state) {
-            return state.isAir() || state.is(ModBlocks.SKYOPIA_PORTAL.get());
+            return state.isAir() || state.is(SkyopiaBlocks.SKYOPIA_PORTAL.get());
         }
 
         public boolean isValid() {
@@ -299,7 +300,7 @@ public class SkyopiaPortalBlock extends ModPortalBlock {
         }
 
         public void createPortalBlocks() {
-            BlockState blockstate = ModBlocks.SKYOPIA_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
+            BlockState blockstate = SkyopiaBlocks.SKYOPIA_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
             BlockPos.betweenClosed(this.bottomLeft, this.bottomLeft.relative(Direction.UP, this.height - 1).relative(this.rightDir, this.width - 1)).forEach(pos -> this.level.setBlock(pos, blockstate, 18));
         }
 

@@ -16,6 +16,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
 import net.sen.lostworlds.entity.variant.TangFishVariant;
+import net.sen.lostworlds.item.AtlantisItems;
 import net.sen.lostworlds.item.ModItems;
 
 import javax.annotation.Nullable;
@@ -125,7 +126,7 @@ public class TangFishEntity extends AbstractSchoolingFishVarients {
 
     @Override
     public ItemStack getBucketItemStack() {
-        Item item = ModItems.TANG_FISH_BUCKET.get();
+        Item item = AtlantisItems.TANG_FISH_BUCKET.get();
         return new ItemStack(item);
     }
 }

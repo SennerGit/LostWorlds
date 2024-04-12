@@ -36,7 +36,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.sen.lostworlds.entity.ModEntities;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.variant.AtlantianVariant;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
 import org.jetbrains.annotations.Nullable;
@@ -88,7 +88,7 @@ public class AtlantianEntity extends AbstractVillager implements ReputationEvent
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return ModEntities.ATLANTIAN.get().create(pLevel);
+        return AtlantisEntities.ATLANTIAN.get().create(pLevel);
     }
 
     private void setupAnimationStates() {

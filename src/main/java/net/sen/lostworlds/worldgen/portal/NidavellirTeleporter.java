@@ -24,7 +24,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sen.lostworlds.Config;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.NidavellirBlocks;
 import net.sen.lostworlds.block.portal.NidavellirPortalBlock;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 
@@ -142,7 +142,7 @@ public class NidavellirTeleporter implements ITeleporter {
             }
         }
 
-        BlockState blockstate = ModBlocks.NIDAVELLIR_PORTAL.get().defaultBlockState().setValue(NidavellirPortalBlock.AXIS, axis);
+        BlockState blockstate = NidavellirBlocks.NIDAVELLIR_PORTAL.get().defaultBlockState().setValue(NidavellirPortalBlock.AXIS, axis);
 
         for(int k2 = 0; k2 < 2; ++k2) {
             for(int l2 = 0; l2 < 3; ++l2) {

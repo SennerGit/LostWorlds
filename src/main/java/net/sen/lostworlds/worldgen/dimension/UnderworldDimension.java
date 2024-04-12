@@ -19,8 +19,8 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.worldgen.biome.UnderworldBiomes;
-import net.sen.lostworlds.worldgen.dimension.TerrainProvider.UnderworldTerrainProvider;
+import net.sen.lostworlds.worldgen.biome.util.layer.UnderworldBiomes;
+import net.sen.lostworlds.worldgen.dimension.terrainprovider.UnderworldTerrainProvider;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.UnderworldSurfaceRules;
 
 import java.util.List;

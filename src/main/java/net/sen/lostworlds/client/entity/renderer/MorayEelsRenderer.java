@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.MorayEelsModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.MorayEelsEntity;
 import net.sen.lostworlds.entity.variant.MorayEelsVariant;
 
@@ -19,9 +20,9 @@ public class MorayEelsRenderer extends MobRenderer<MorayEelsEntity, MorayEelsMod
     private static final Map<MorayEelsVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(MorayEelsVariant.class), map -> {
                 map.put(MorayEelsVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/moray_eels/moray_eels.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.MORAY_EELS_ID));
                 map.put(MorayEelsVariant.WHITE,
-                        LostWorldsApi.modLoc("textures/entity/moray_eels/white_moray_eels.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.MORAY_EELS_ID, "white_" + AtlantisEntities.MORAY_EELS_ID));
             });
 
     public MorayEelsRenderer(EntityRendererProvider.Context pContext) {

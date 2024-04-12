@@ -9,6 +9,9 @@ public class ModItemProperties {
         ItemProperties.register(ModItems.DATA_TABLET.get(), LostWorldsApi.modLoc("on"),
                 (pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f);
 
+        ItemProperties.register(ModItems.WAYGATE_CRYSTAL.get(), LostWorldsApi.modLoc("on"),
+                (pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f);
+
         makeBow(ModItems.CUSTOM_BOW.get());
         makeShield(ModItems.ALEXANDRITE_SHIELD.get());
     }

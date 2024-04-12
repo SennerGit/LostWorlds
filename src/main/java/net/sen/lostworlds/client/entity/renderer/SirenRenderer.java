@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.SirenModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.SirenEntity;
 import net.sen.lostworlds.entity.variant.SirenVariant;
 
@@ -19,7 +20,7 @@ public class SirenRenderer extends MobRenderer<SirenEntity, SirenModel<SirenEnti
     private static final Map<SirenVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(SirenVariant.class), map -> {
                 map.put(SirenVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/siren/siren.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.SIREN_ID));
             });
 
     public SirenRenderer(EntityRendererProvider.Context pContext) {

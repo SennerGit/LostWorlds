@@ -14,6 +14,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.NidavellirBlocks;
 
 import java.util.List;
 
@@ -58,11 +59,11 @@ public class ModOreFeatures {
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endstoneReplaceables = new BlockMatchTest(Blocks.END_STONE);
-        RuleTest softStoneReplaceables = new BlockMatchTest(ModBlocks.NIDAVELLIR_SOFT_STONE.get());
-        RuleTest hardStoneReplaceables = new BlockMatchTest(ModBlocks.NIDAVELLIR_HARD_STONE.get());
-        RuleTest enhancedStoneReplaceables = new BlockMatchTest(ModBlocks.NIDAVELLIR_ENHANCED_STONE.get());
-        RuleTest deepslateStoneReplaceables = new BlockMatchTest(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE.get());
-        RuleTest crimsonStoneReplaceables = new BlockMatchTest(ModBlocks.NIDAVELLIR_CRIMSON_STONE.get());
+        RuleTest softStoneReplaceables = new BlockMatchTest(NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get());
+        RuleTest hardStoneReplaceables = new BlockMatchTest(NidavellirBlocks.NIDAVELLIR_HARD_STONE.get());
+        RuleTest enhancedStoneReplaceables = new BlockMatchTest(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE.get());
+        RuleTest deepslateStoneReplaceables = new BlockMatchTest(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE.get());
+        RuleTest crimsonStoneReplaceables = new BlockMatchTest(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE.get());
         
         //ALFHEIMR
         List<OreConfiguration.TargetBlockState> alfheimrTinOres = List.of(
@@ -99,195 +100,195 @@ public class ModOreFeatures {
         
         //NIDAVELLIR
         List<OreConfiguration.TargetBlockState> nidavellirTinOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE.get().defaultBlockState())
         );
         
         List<OreConfiguration.TargetBlockState> nidavellirTinOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_TIN_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_TIN_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_TIN_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_TIN_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_TIN_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirZincOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirZincOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_ZINC_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirCoalOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirCoalOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_COAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_COAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_COAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_COAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_COAL_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirIronOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirIronOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_IRON_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_IRON_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_IRON_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_IRON_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_IRON_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirGoldOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirGoldOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_GOLD_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirRedstoneOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirRedstoneOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_REDSTONE_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirDiamondOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirDiamondOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_DIAMOND_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirLapisOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirLapisOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_LAPIS_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirCopperOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirCopperOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_COPPER_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirAquamarineOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirAquamarineOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_AQUAMARINE_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirOpalOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirOpalOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_OPAL_ORE_CLUSTER.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirRubyOres = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE.get().defaultBlockState())
         );
 
         List<OreConfiguration.TargetBlockState> nidavellirRubyOreClusters = List.of(
-                OreConfiguration.target(softStoneReplaceables, ModBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(hardStoneReplaceables, ModBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(enhancedStoneReplaceables, ModBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateStoneReplaceables, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
-                OreConfiguration.target(crimsonStoneReplaceables, ModBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState())
+                OreConfiguration.target(softStoneReplaceables, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(hardStoneReplaceables, NidavellirBlocks.NIDAVELLIR_HARD_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(enhancedStoneReplaceables, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(deepslateStoneReplaceables, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState()),
+                OreConfiguration.target(crimsonStoneReplaceables, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_RUBY_ORE_CLUSTER.get().defaultBlockState())
         );
 
         //ALFHEIMR

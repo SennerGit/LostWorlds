@@ -11,6 +11,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.UnderworldBlocks;
 import net.sen.lostworlds.worldgen.features.*;
 
 import java.util.List;
@@ -35,23 +36,23 @@ public class ModVegetationPlacements {
     public static void bootstrap(BootstapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures) {
         register(context, TREE_ELDER_WOOD_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.TREE_ELDER_WOOD_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
-                        ModBlocks.ELDER_WOOD_SAPLING.get()));
+                        UnderworldBlocks.ELDER_WOOD_SAPLING.get()));
 
         register(context, TREE_OLIVE_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.TREE_OLIVE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
-                        ModBlocks.OLIVE_SAPLING.get()));
+                        UnderworldBlocks.OLIVE_SAPLING.get()));
 
         register(context, TREE_MYRRH_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.TREE_MYRRH_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
-                        ModBlocks.MYRRH_SAPLING.get()));
+                        UnderworldBlocks.MYRRH_SAPLING.get()));
 
         register(context, TREE_LAUREL_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.TREE_LAUREL_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
-                        ModBlocks.LAUREL_SAPLING.get()));
+                        UnderworldBlocks.LAUREL_SAPLING.get()));
 
         register(context, TREE_CYPRESS_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.TREE_CYPRESS_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
-                        ModBlocks.CYPRESS_SAPLING.get()));
+                        UnderworldBlocks.CYPRESS_SAPLING.get()));
 
         //Flowers
         register(context, FLOWER_IRIS_PLACED_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.FLOWER_IRIS_KEY),

@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.ElectricEelsModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.ElectricEelsEntity;
 import net.sen.lostworlds.entity.variant.ElectricEelsVariant;
 
@@ -19,9 +20,9 @@ public class ElectricEelsRenderer extends MobRenderer<ElectricEelsEntity, Electr
     private static final Map<ElectricEelsVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(ElectricEelsVariant.class), map -> {
                 map.put(ElectricEelsVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/electric_eels/electric_eels.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.ELECTRIC_EELS_ID));
                 map.put(ElectricEelsVariant.WHITE,
-                        LostWorldsApi.modLoc("textures/entity/electric_eels/white_electric_eels.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.ELECTRIC_EELS_ID, "white_" + AtlantisEntities.ELECTRIC_EELS_ID));
             });
 
     public ElectricEelsRenderer(EntityRendererProvider.Context pContext) {

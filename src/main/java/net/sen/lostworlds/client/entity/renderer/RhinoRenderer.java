@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.RhinoModel;
+import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.entity.mob.RhinoEntity;
 import net.sen.lostworlds.entity.variant.RhinoVariant;
 
@@ -19,9 +20,9 @@ public class RhinoRenderer extends MobRenderer<RhinoEntity, RhinoModel<RhinoEnti
     private static final Map<RhinoVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(RhinoVariant.class), map -> {
                 map.put(RhinoVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/rhino/rhino.png"));
+                        LostWorldsApi.entityRendererLoc(ModEntities.RHINO_ID));
                 map.put(RhinoVariant.WHITE,
-                        LostWorldsApi.modLoc("textures/entity/rhino/white_rhino.png"));
+                        LostWorldsApi.entityRendererLoc(ModEntities.RHINO_ID, "white_" + ModEntities.RHINO_ID));
             });
 
     public RhinoRenderer(EntityRendererProvider.Context pContext) {

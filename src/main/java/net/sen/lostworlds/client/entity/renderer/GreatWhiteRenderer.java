@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.GreatWhiteModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.GreatWhiteEntity;
 import net.sen.lostworlds.entity.variant.GreatWhiteVariant;
 
@@ -19,9 +20,9 @@ public class GreatWhiteRenderer extends MobRenderer<GreatWhiteEntity, GreatWhite
     private static final Map<GreatWhiteVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(GreatWhiteVariant.class), map -> {
                 map.put(GreatWhiteVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/great_white/great_white.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.GREAT_WHITE_ID));
                 map.put(GreatWhiteVariant.WHITE,
-                        LostWorldsApi.modLoc("textures/entity/great_white/white_great_white.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.GREAT_WHITE_ID, "white_" + AtlantisEntities.GREAT_WHITE_ID));
             });
 
     public GreatWhiteRenderer(EntityRendererProvider.Context pContext) {

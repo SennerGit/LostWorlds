@@ -11,6 +11,7 @@ import net.sen.lostworlds.entity.ai.AquaticMoveController;
 import net.sen.lostworlds.entity.ai.EntityAINearestTarget3D;
 import net.sen.lostworlds.entity.ai.SemiAquaticPathNavigator;
 import net.sen.lostworlds.entity.variant.SharkVariant;
+import net.sen.lostworlds.item.AtlantisItems;
 import net.sen.lostworlds.util.tools.MinecraftBlockPos;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
 
@@ -280,7 +281,7 @@ public class SharkEntity extends WaterAnimal {
                     if(dist < 2D){
                         shark.doHurtTarget(prey);
                         if(shark.random.nextFloat() < 0.3F){
-                            shark.spawnAtLocation(new ItemStack(ModItems.SHARK_TOOTH.get()));
+                            shark.spawnAtLocation(new ItemStack(AtlantisItems.SHARK_TOOTH.get()));
                         }
                         stop();
                     }

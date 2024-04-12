@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.MerfolkModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.MerfolkEntity;
 import net.sen.lostworlds.entity.variant.MerfolkVariant;
 
@@ -19,9 +20,9 @@ public class MerfolkRenderer extends MobRenderer<MerfolkEntity, MerfolkModel<Mer
     private static final Map<MerfolkVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(MerfolkVariant.class), map -> {
                 map.put(MerfolkVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/merfolk/merfolk.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.MERFOLK_ID));
                 map.put(MerfolkVariant.WHITE,
-                        LostWorldsApi.modLoc("textures/entity/merfolk/white_merfolk.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.MERFOLK_ID, "white_" + AtlantisEntities.MERFOLK_ID));
             });
 
     public MerfolkRenderer(EntityRendererProvider.Context pContext) {

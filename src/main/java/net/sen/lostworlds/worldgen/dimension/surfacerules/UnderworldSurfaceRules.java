@@ -7,8 +7,8 @@ import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.worldgen.biome.UnderworldBiomes;
+import net.sen.lostworlds.block.UnderworldBlocks;
+import net.sen.lostworlds.worldgen.biome.util.layer.UnderworldBiomes;
 
 public class UnderworldSurfaceRules {
 
@@ -45,7 +45,7 @@ public class UnderworldSurfaceRules {
                         SurfaceRules.isBiome(
                                 UnderworldBiomes.TARTARUS
                         ),
-                        SurfaceRules.state(ModBlocks.TARTARUS_STONE.get().defaultBlockState())
+                        SurfaceRules.state(UnderworldBlocks.TARTARUS_STONE.get().defaultBlockState())
                 )
         );
     }

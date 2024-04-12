@@ -16,6 +16,7 @@ public class ModMenuTypes {
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, LostWorldsApi.MODID);
 
     public static final RegistryObject<MenuType<AlloySmelterMenu>> ALLOY_SMELTER_MENU = registerMenuType("alloy_smelter_menu", AlloySmelterMenu::new);
+    public static final RegistryObject<MenuType<MysticGatewayControllerMenu>> MYSTIC_GATEWAY_CONTROLLER_MENU = registerMenuType("mystic_gateway_controller_menu", MysticGatewayControllerMenu::new);
 
 //    public static final RegistryObject<MenuType<LostWorldsInventory>> LOST_WORLDS_INVENTORY =
 //    registerMenuType("lost_worlds_inventory", LostWorldsInventory::new);

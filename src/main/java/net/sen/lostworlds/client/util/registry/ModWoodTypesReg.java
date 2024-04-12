@@ -2,7 +2,7 @@ package net.sen.lostworlds.client.util.registry;
 
 import net.minecraft.client.renderer.Sheets;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.sen.lostworlds.block.ModWoodTypes;
+import net.sen.lostworlds.block.wood.ModWoodTypes;
 
 public class ModWoodTypesReg {
     public static void setup(final FMLClientSetupEvent event) {

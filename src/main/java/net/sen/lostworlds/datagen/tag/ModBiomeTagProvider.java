@@ -7,7 +7,7 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.worldgen.biome.AtlantisBiomes;
+import net.sen.lostworlds.worldgen.biome.util.layer.AtlantisBiomes;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;

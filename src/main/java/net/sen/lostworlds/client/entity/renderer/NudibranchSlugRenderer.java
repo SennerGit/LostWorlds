@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.NudibranchSlugModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.NudibranchSlugEntity;
 import net.sen.lostworlds.entity.variant.NudibranchSlugVariant;
 
@@ -19,9 +20,9 @@ public class NudibranchSlugRenderer extends MobRenderer<NudibranchSlugEntity, Nu
     private static final Map<NudibranchSlugVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(NudibranchSlugVariant.class), map -> {
                 map.put(NudibranchSlugVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/nudibranch_slug/nudibranch_slug.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.NUDIBRANCH_SLUG_ID));
                 map.put(NudibranchSlugVariant.WHITE,
-                        LostWorldsApi.modLoc("textures/entity/nudibranch_slug/white_nudibranch_slug.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.NUDIBRANCH_SLUG_ID, "white_" + AtlantisEntities.NUDIBRANCH_SLUG_ID));
             });
 
     public NudibranchSlugRenderer(EntityRendererProvider.Context pContext) {

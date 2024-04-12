@@ -8,7 +8,7 @@ import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.*;
 
 public class ModBlockModelProvider extends BlockModelProvider {
     public ModBlockModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -17,11 +17,12 @@ public class ModBlockModelProvider extends BlockModelProvider {
 
     @Override
     protected void registerModels() {
-        this.createPortalBlock(ModBlocks.ALFHEIMR_PORTAL);
-        this.createPortalBlock(ModBlocks.ATLANTIS_PORTAL);
-        this.createPortalBlock(ModBlocks.NIDAVELLIR_PORTAL);
-        this.createPortalBlock(ModBlocks.SKYOPIA_PORTAL);
-        this.createPortalBlock(ModBlocks.UNDERWORLD_PORTAL);
+        this.createPortalBlock(AlfheimrBlocks.ALFHEIMR_PORTAL);
+        this.createPortalBlock(AtlantisBlocks.ATLANTIS_PORTAL);
+        this.createPortalBlock(NidavellirBlocks.NIDAVELLIR_PORTAL);
+        this.createPortalBlock(SkyopiaBlocks.SKYOPIA_PORTAL);
+        this.createPortalBlock(UnderworldBlocks.UNDERWORLD_PORTAL);
+        this.createPortalBlock(ModBlocks.MYSTIC_GATEWAYS_PORTAL);
 //        this.grassBlock(ModBlocks.UNDERWORLD_GRASS_BLOCK, modResourceLocation(ModBlocks.UNDERWORLD_DIRT), modResourceLocation(ModBlocks.UNDERWORLD_DIRT), modResourceLocation("underworld_grass_block_top"), modResourceLocation("underworld_grass_block_side"), modResourceLocation("underworld_grass_block_side_overlay"));
     }
 

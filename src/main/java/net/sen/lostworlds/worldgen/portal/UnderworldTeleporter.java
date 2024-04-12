@@ -25,6 +25,7 @@ import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sen.lostworlds.Config;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.UnderworldBlocks;
 import net.sen.lostworlds.block.portal.UnderworldPortalBlock;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 
@@ -142,7 +143,7 @@ public class UnderworldTeleporter implements ITeleporter {
             }
         }
 
-        BlockState blockstate = ModBlocks.UNDERWORLD_PORTAL.get().defaultBlockState().setValue(UnderworldPortalBlock.AXIS, axis);
+        BlockState blockstate = UnderworldBlocks.UNDERWORLD_PORTAL.get().defaultBlockState().setValue(UnderworldPortalBlock.AXIS, axis);
 
         for(int k2 = 0; k2 < 2; ++k2) {
             for(int l2 = 0; l2 < 3; ++l2) {

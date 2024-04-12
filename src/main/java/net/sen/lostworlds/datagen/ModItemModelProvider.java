@@ -13,8 +13,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.item.ModItems;
+import net.sen.lostworlds.block.*;
+import net.sen.lostworlds.item.*;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -23,53 +23,52 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        buttonItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BUTTON, ModBlocks.NIDAVELLIR_SOFT_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_SOFT_STONE_WALL, ModBlocks.NIDAVELLIR_SOFT_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL, ModBlocks.NIDAVELLIR_SOFT_COBBLESTONE);
-        wallItem(ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL, ModBlocks.NIDAVELLIR_SOFT_STONE_BRICKS);
+        buttonItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BUTTON, NidavellirBlocks.NIDAVELLIR_SOFT_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_WALL, NidavellirBlocks.NIDAVELLIR_SOFT_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_WALL, NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS_WALL, NidavellirBlocks.NIDAVELLIR_SOFT_STONE_BRICKS);
 
-        buttonItem(ModBlocks.NIDAVELLIR_HARD_STONE_BUTTON, ModBlocks.NIDAVELLIR_HARD_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_HARD_STONE_WALL, ModBlocks.NIDAVELLIR_HARD_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL, ModBlocks.NIDAVELLIR_HARD_COBBLESTONE);
-        wallItem(ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL, ModBlocks.NIDAVELLIR_HARD_STONE_BRICKS);
+        buttonItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BUTTON, NidavellirBlocks.NIDAVELLIR_HARD_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_WALL, NidavellirBlocks.NIDAVELLIR_HARD_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE_WALL, NidavellirBlocks.NIDAVELLIR_HARD_COBBLESTONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS_WALL, NidavellirBlocks.NIDAVELLIR_HARD_STONE_BRICKS);
 
-        buttonItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON, ModBlocks.NIDAVELLIR_ENHANCED_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_WALL, ModBlocks.NIDAVELLIR_ENHANCED_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL, ModBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE);
-        wallItem(ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL, ModBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS);
+        buttonItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BUTTON, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_WALL, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE_WALL, NidavellirBlocks.NIDAVELLIR_ENHANCED_COBBLESTONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS_WALL, NidavellirBlocks.NIDAVELLIR_ENHANCED_STONE_BRICKS);
 
-        buttonItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL, ModBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE);
-        wallItem(ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL, ModBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS);
+        buttonItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BUTTON, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_WALL, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE_WALL, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_COBBLESTONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS_WALL, NidavellirBlocks.NIDAVELLIR_DEEPSLATE_STONE_BRICKS);
 
-        buttonItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON, ModBlocks.NIDAVELLIR_CRIMSON_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_WALL, ModBlocks.NIDAVELLIR_CRIMSON_STONE);
-        wallItem(ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL, ModBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE);
-        wallItem(ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL, ModBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS);
+        buttonItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BUTTON, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_WALL, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE_WALL, NidavellirBlocks.NIDAVELLIR_CRIMSON_COBBLESTONE);
+        wallItem(NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS_WALL, NidavellirBlocks.NIDAVELLIR_CRIMSON_STONE_BRICKS);
 
-        buttonItem(ModBlocks.TARTARUS_STONE_BUTTON, ModBlocks.TARTARUS_STONE);
-        wallItem(ModBlocks.TARTARUS_STONE_WALL, ModBlocks.TARTARUS_STONE);
-        wallItem(ModBlocks.TARTARUS_STONE_COBBLESTONE_WALL, ModBlocks.TARTARUS_STONE_COBBLESTONE);
-        wallItem(ModBlocks.TARTARUS_STONE_BRICKS_WALL, ModBlocks.TARTARUS_STONE_BRICKS);
+        buttonItem(UnderworldBlocks.TARTARUS_STONE_BUTTON, UnderworldBlocks.TARTARUS_STONE);
+        wallItem(UnderworldBlocks.TARTARUS_STONE_WALL, UnderworldBlocks.TARTARUS_STONE);
+        wallItem(UnderworldBlocks.TARTARUS_STONE_COBBLESTONE_WALL, UnderworldBlocks.TARTARUS_STONE_COBBLESTONE);
+        wallItem(UnderworldBlocks.TARTARUS_STONE_BRICKS_WALL, UnderworldBlocks.TARTARUS_STONE_BRICKS);
 
-        simpleItem(ModItems.CRIMSON_APPLE);
-        simpleItem(ModItems.POMEGRANATE);
-        simpleItem(ModItems.POMEGRANATE_SEEDS);
-        simpleItem(ModItems.OLIVE);
-        simpleItem(ModItems.DURUM_WHEAT);
-        simpleItem(ModItems.DURUM_WHEAT_SEEDS);
-        simpleItem(ModItems.TOMATO);
-        simpleItem(ModItems.TOMATO_SEEDS);
-        simpleItem(ModItems.WILD_ONION);
-        simpleItem(ModItems.ONION_STAGE_1);
-        simpleItem(ModItems.ONION_STAGE_2);
-        simpleItem(ModItems.ONION_STAGE_3);
-        simpleItem(ModItems.ONION);
-        simpleItem(ModItems.DRAGON_FRUIT);
-        simpleItem(ModItems.DRAGON_FRUIT_SEEDS);
-        simpleItem(ModItems.CHILLI);
-        simpleItem(ModItems.CHILLI_SEEDS);
+        simpleItem(UnderworldItems.POMEGRANATE);
+        simpleItem(UnderworldItems.POMEGRANATE_SEEDS);
+        simpleItem(UnderworldItems.OLIVE);
+        simpleItem(AlfheimrItems.DURUM_WHEAT);
+        simpleItem(AlfheimrItems.DURUM_WHEAT_SEEDS);
+        simpleItem(AlfheimrItems.TOMATO);
+        simpleItem(AlfheimrItems.TOMATO_SEEDS);
+        simpleItem(AlfheimrItems.WILD_ONION);
+        simpleItem(AlfheimrItems.ONION_STAGE_1);
+        simpleItem(AlfheimrItems.ONION_STAGE_2);
+        simpleItem(AlfheimrItems.ONION_STAGE_3);
+        simpleItem(AlfheimrItems.ONION);
+        simpleItem(AlfheimrItems.DRAGON_FRUIT);
+        simpleItem(AlfheimrItems.DRAGON_FRUIT_SEEDS);
+        simpleItem(AlfheimrItems.CHILLI);
+        simpleItem(AlfheimrItems.CHILLI_SEEDS);
 
         simpleItem(ModItems.AQUAMARINE);
         simpleItem(ModItems.OPAL);
@@ -77,24 +76,21 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.CRIMSON_DIAMOND);
         simpleItem(ModItems.CRIMSON_TEAR);
-        simpleItem(ModItems.NETHER_STEEL_INGOT);
-        simpleItem(ModItems.NETHER_STEEL_NUGGET);
-        simpleItem(ModItems.RAW_NETHER_STEEL);
         simpleItem(ModItems.MAGICAL_DOWSING_ROD);
         simpleItem(ModItems.BAR_BRAWL_RECORD);
 
         //Orichalcum
-        simpleItem(ModItems.ORICHALCUM_INGOT);
-        simpleItem(ModItems.RAW_ORICHALCUM);
-        simpleItem(ModItems.ORICHALCUM_NUGGET);
+        simpleItem(UnderworldItems.ORICHALCUM_INGOT);
+        simpleItem(UnderworldItems.RAW_ORICHALCUM);
+        simpleItem(UnderworldItems.ORICHALCUM_NUGGET);
 
-        handheldItem(ModItems.ORICHALCUM_SWORD);
-        handheldItem(ModItems.ORICHALCUM_PICKAXE);
-        handheldItem(ModItems.ORICHALCUM_SHOVEL);
-        handheldItem(ModItems.ORICHALCUM_AXE);
-        handheldItem(ModItems.ORICHALCUM_HOE);
+        handheldItem(UnderworldItems.ORICHALCUM_SWORD);
+        handheldItem(UnderworldItems.ORICHALCUM_PICKAXE);
+        handheldItem(UnderworldItems.ORICHALCUM_SHOVEL);
+        handheldItem(UnderworldItems.ORICHALCUM_AXE);
+        handheldItem(UnderworldItems.ORICHALCUM_HOE);
 
-        simpleItem(ModItems.ORICHALCUM_HORSE_ARMOR);
+        simpleItem(UnderworldItems.ORICHALCUM_HORSE_ARMOR);
 
         //Zinc
         simpleItem(ModItems.ZINC_INGOT);
@@ -150,104 +146,88 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BRONZE_HORSE_ARMOR);
 
         //Adamant
-        simpleItem(ModItems.ADAMANT);
-
-        //Crimson Stone
-        buttonItem(ModBlocks.CRIMSON_STONE_BUTTON, ModBlocks.CRIMSON_STONE);
-        fenceItem(ModBlocks.CRIMSON_STONE_FENCE, ModBlocks.CRIMSON_STONE);
-        wallItem(ModBlocks.CRIMSON_STONE_WALL, ModBlocks.CRIMSON_STONE);
-
-        this.simpleBlockItemUi(ModBlocks.CRIMSON_STONE_DOOR);
+        simpleItem(UnderworldItems.ADAMANT);
 
         //Vegetation
-        this.simpleBlockTexture(ModBlocks.ALFHEIMR_MAGIC_GRASS);
+        this.simpleBlockTexture(AlfheimrBlocks.ALFHEIMR_MAGIC_GRASS);
 
-        this.simpleBlockTexture(ModBlocks.IRIS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.DARK_BLOOM_FLOWER);
-        this.simpleBlockTexture(ModBlocks.DREAD_NIGHT_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BLACK_LOTUS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.NIGHT_ROSE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.AQUA_ROSE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.MOON_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CATHERINE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.TAINTED_ROSE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CINNAMON_ROSE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BUTTERFLY_FLOWER);
-        this.simpleBlockTexture(ModBlocks.GAIA_TULIP_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BEARDED_IRIS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CORNFLOWER_FLOWER);
-        this.simpleBlockTexture(ModBlocks.MORNING_GLORY_FLOWER);
-        this.simpleBlockTexture(ModBlocks.GEORGIA_BLUE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BLUE_POPPY_FLOWER);
-        this.simpleBlockTexture(ModBlocks.TULIP_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CARNATION_FLOWER);
-        this.simpleBlockTexture(ModBlocks.LADYS_MANTLE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.GREEN_ROSE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CLEMATIS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BLUE_STAR_FLOWER);
-        this.simpleBlockTexture(ModBlocks.SALVIA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.FALSE_INDIGO_FLOWER);
-        this.simpleBlockTexture(ModBlocks.WHITE_SAGE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.SILVER_SCHEHERAZADE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.SILVER_SPRING_FLOWER);
-        this.simpleBlockTexture(ModBlocks.SILVER_SHADOWS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.GREEN_BALL_FLOWER);
-        this.simpleBlockTexture(ModBlocks.LIME_DAHLIA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.HYDRANGEA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.ZINNIA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BUTTERFLY_CANDY_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CABARET_FLOWER);
-        this.simpleBlockTexture(ModBlocks.DIANTHUS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.TITAN_CRANBERRY_VINCA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.ORANGE_ZINNIA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BEGONIA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CROWN_IMPERIAL_FLOWER);
-        this.simpleBlockTexture(ModBlocks.ORIENTAL_POPPY_FLOWER);
-        this.simpleBlockTexture(ModBlocks.AZALEA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.PINK_DELIGHT_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CHRYSANTHEMUM_FLOWER);
-        this.simpleBlockTexture(ModBlocks.HIBISCUS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.CARDINAL_FLOWER);
-        this.simpleBlockTexture(ModBlocks.GERBERA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.RED_TULIP_FLOWER);
-        this.simpleBlockTexture(ModBlocks.FREESIA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.GARDENIAS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.STAR_JASMINE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.WHITE_WARATAH_FLOWER);
-        this.simpleBlockTexture(ModBlocks.FLANNEL_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BEARS_EARS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BIDENS_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BLANKET_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BULBINE_FLOWER);
-        this.simpleBlockTexture(ModBlocks.SILVER_BRUNIA_FLOWER);
-        this.simpleBlockTexture(ModBlocks.GRAY_ROSES_FLOWER);
-        this.simpleBlockTexture(ModBlocks.MOON_CARROT_FLOWER);
-        this.simpleBlockTexture(ModBlocks.SILVER_BABY_FLOWER);
-        this.simpleBlockTexture(ModBlocks.LAVENDER_FLOWER);
-        this.simpleBlockTexture(ModBlocks.BELLFLOWER_FLOWER);
-        this.simpleBlockTexture(ModBlocks.LILAC_FLOWER);
-        this.simpleBlockTexture(ModBlocks.SWEET_PEA_FLOWER);
+        this.simpleBlockTexture(UnderworldBlocks.IRIS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.DARK_BLOOM_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.DREAD_NIGHT_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BLACK_LOTUS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.NIGHT_ROSE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.AQUA_ROSE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.MOON_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CATHERINE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.TAINTED_ROSE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CINNAMON_ROSE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BUTTERFLY_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.GAIA_TULIP_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BEARDED_IRIS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CORNFLOWER_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.MORNING_GLORY_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.GEORGIA_BLUE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BLUE_POPPY_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.TULIP_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CARNATION_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.LADYS_MANTLE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.GREEN_ROSE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CLEMATIS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BLUE_STAR_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.SALVIA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.FALSE_INDIGO_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.WHITE_SAGE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.SILVER_SCHEHERAZADE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.SILVER_SPRING_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.SILVER_SHADOWS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.GREEN_BALL_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.LIME_DAHLIA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.HYDRANGEA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.ZINNIA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BUTTERFLY_CANDY_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CABARET_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.DIANTHUS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.TITAN_CRANBERRY_VINCA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.ORANGE_ZINNIA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BEGONIA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CROWN_IMPERIAL_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.ORIENTAL_POPPY_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.AZALEA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.PINK_DELIGHT_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CHRYSANTHEMUM_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.HIBISCUS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.CARDINAL_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.GERBERA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.RED_TULIP_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.FREESIA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.GARDENIAS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.STAR_JASMINE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.WHITE_WARATAH_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.FLANNEL_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BEARS_EARS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BIDENS_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BLANKET_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BULBINE_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.SILVER_BRUNIA_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.GRAY_ROSES_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.MOON_CARROT_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.SILVER_BABY_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.LAVENDER_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.BELLFLOWER_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.LILAC_FLOWER);
+        this.simpleBlockTexture(AlfheimrBlocks.SWEET_PEA_FLOWER);
 
         //Mushrooms
-        this.mushroomItem(ModBlocks.POINT_MUSHROOM_BLOCK);
-        this.mushroomItem(ModBlocks.WITCHES_MUSHROOM_BLOCK);
-        this.mushroomItem(ModBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
-        this.mushroomItem(ModBlocks.SHORT_TOP_MUSHROOM_BLOCK);
-        this.mushroomItem(ModBlocks.SPECTRAL_MUSHROOM_BLOCK);
-        this.mushroomItem(ModBlocks.SHADE_MUSHROOM_BLOCK);
-        this.mushroomItem(ModBlocks.SHADE_MUSHROOM_VINE_BLOCK);
-        this.mushroomItem(ModBlocks.CAP_MUSHROOM_BLOCK);
-        this.mushroomItem(ModBlocks.CAP_MUSHROOM_VINE_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.SHADE_MUSHROOM_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.SHADE_MUSHROOM_VINE_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.CAP_MUSHROOM_BLOCK);
+        this.mushroomItem(AlfheimrBlocks.CAP_MUSHROOM_VINE_BLOCK);
 
-        handheldItem(ModItems.NETHER_STEEL_SWORD);
-        handheldItem(ModItems.NETHER_STEEL_PICKAXE);
-        handheldItem(ModItems.NETHER_STEEL_SHOVEL);
-        handheldItem(ModItems.NETHER_STEEL_AXE);
-        handheldItem(ModItems.NETHER_STEEL_HOE);
-        handheldItem(ModItems.NETHER_STEEL_PAXEL);
-        handheldItem(ModItems.NETHER_STEEL_HAMMER);
-
-        simpleItem(ModItems.NETHER_STEEL_HORSE_ARMOR);
         //simpleItem(ModItems.DATA_TABLET);
 
         //simpleItem(ModItems.NETHER_STEEL_HELMET);
@@ -260,100 +240,104 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.STYX_WATER_BUCKET);
 
-        simpleItem(ModItems.CLOWNFISH_BUCKET);
-        simpleItem(ModItems.TANG_FISH_BUCKET);
+        simpleItem(AtlantisItems.CLOWNFISH_BUCKET);
+        simpleItem(AtlantisItems.TANG_FISH_BUCKET);
 
         /*
          * TREES
          */
         //Elder Wood
-        saplingItem(ModBlocks.ELDER_WOOD_SAPLING);
+        saplingItem(UnderworldBlocks.ELDER_WOOD_SAPLING);
 
-        fenceItem(ModBlocks.ELDER_WOOD_PLANKS_FENCE, ModBlocks.ELDER_WOOD_PLANKS);
-        buttonItem(ModBlocks.ELDER_WOOD_PLANKS_BUTTON, ModBlocks.ELDER_WOOD_PLANKS);
-        this.simpleBlockItemUi(ModBlocks.ELDER_WOOD_PLANKS_DOOR);
-        simpleItem(ModItems.ELDER_WOOD_SIGN);
-        simpleItem(ModItems.ELDER_WOOD_HANGING_SIGN);
+        fenceItem(UnderworldBlocks.ELDER_WOOD_PLANKS_FENCE, UnderworldBlocks.ELDER_WOOD_PLANKS);
+        buttonItem(UnderworldBlocks.ELDER_WOOD_PLANKS_BUTTON, UnderworldBlocks.ELDER_WOOD_PLANKS);
+        this.simpleBlockItemUi(UnderworldBlocks.ELDER_WOOD_PLANKS_DOOR);
+        simpleItem(UnderworldItems.ELDER_WOOD_SIGN);
+        simpleItem(UnderworldItems.ELDER_WOOD_HANGING_SIGN);
 
         //Olive
-        saplingItem(ModBlocks.OLIVE_SAPLING);
+        saplingItem(UnderworldBlocks.OLIVE_SAPLING);
 
-        fenceItem(ModBlocks.OLIVE_PLANKS_FENCE, ModBlocks.OLIVE_PLANKS);
-        buttonItem(ModBlocks.OLIVE_PLANKS_BUTTON, ModBlocks.OLIVE_PLANKS);
-        this.simpleBlockItemUi(ModBlocks.OLIVE_PLANKS_DOOR);
-        simpleItem(ModItems.OLIVE_SIGN);
-        simpleItem(ModItems.OLIVE_HANGING_SIGN);
+        fenceItem(UnderworldBlocks.OLIVE_PLANKS_FENCE, UnderworldBlocks.OLIVE_PLANKS);
+        buttonItem(UnderworldBlocks.OLIVE_PLANKS_BUTTON, UnderworldBlocks.OLIVE_PLANKS);
+        this.simpleBlockItemUi(UnderworldBlocks.OLIVE_PLANKS_DOOR);
+        simpleItem(UnderworldItems.OLIVE_SIGN);
+        simpleItem(UnderworldItems.OLIVE_HANGING_SIGN);
 
         //Myrrh
-        saplingItem(ModBlocks.MYRRH_SAPLING);
+        saplingItem(UnderworldBlocks.MYRRH_SAPLING);
 
-        fenceItem(ModBlocks.MYRRH_PLANKS_FENCE, ModBlocks.MYRRH_PLANKS);
-        buttonItem(ModBlocks.MYRRH_PLANKS_BUTTON, ModBlocks.MYRRH_PLANKS);
-        this.simpleBlockItemUi(ModBlocks.MYRRH_PLANKS_DOOR);
-        simpleItem(ModItems.MYRRH_SIGN);
-        simpleItem(ModItems.MYRRH_HANGING_SIGN);
+        fenceItem(UnderworldBlocks.MYRRH_PLANKS_FENCE, UnderworldBlocks.MYRRH_PLANKS);
+        buttonItem(UnderworldBlocks.MYRRH_PLANKS_BUTTON, UnderworldBlocks.MYRRH_PLANKS);
+        this.simpleBlockItemUi(UnderworldBlocks.MYRRH_PLANKS_DOOR);
+        simpleItem(UnderworldItems.MYRRH_SIGN);
+        simpleItem(UnderworldItems.MYRRH_HANGING_SIGN);
 
         //Laurel
-        saplingItem(ModBlocks.LAUREL_SAPLING);
+        saplingItem(UnderworldBlocks.LAUREL_SAPLING);
 
-        fenceItem(ModBlocks.LAUREL_PLANKS_FENCE, ModBlocks.LAUREL_PLANKS);
-        buttonItem(ModBlocks.LAUREL_PLANKS_BUTTON, ModBlocks.LAUREL_PLANKS);
-        this.simpleBlockItemUi(ModBlocks.LAUREL_PLANKS_DOOR);
-        simpleItem(ModItems.LAUREL_SIGN);
-        simpleItem(ModItems.LAUREL_HANGING_SIGN);
+        fenceItem(UnderworldBlocks.LAUREL_PLANKS_FENCE, UnderworldBlocks.LAUREL_PLANKS);
+        buttonItem(UnderworldBlocks.LAUREL_PLANKS_BUTTON, UnderworldBlocks.LAUREL_PLANKS);
+        this.simpleBlockItemUi(UnderworldBlocks.LAUREL_PLANKS_DOOR);
+        simpleItem(UnderworldItems.LAUREL_SIGN);
+        simpleItem(UnderworldItems.LAUREL_HANGING_SIGN);
 
         //Cypress
-        saplingItem(ModBlocks.CYPRESS_SAPLING);
+        saplingItem(UnderworldBlocks.CYPRESS_SAPLING);
 
-        fenceItem(ModBlocks.CYPRESS_PLANKS_FENCE, ModBlocks.CYPRESS_PLANKS);
-        buttonItem(ModBlocks.CYPRESS_PLANKS_BUTTON, ModBlocks.CYPRESS_PLANKS);
-        this.simpleBlockItemUi(ModBlocks.CYPRESS_PLANKS_DOOR);
-        simpleItem(ModItems.CYPRESS_SIGN);
-        simpleItem(ModItems.CYPRESS_HANGING_SIGN);
+        fenceItem(UnderworldBlocks.CYPRESS_PLANKS_FENCE, UnderworldBlocks.CYPRESS_PLANKS);
+        buttonItem(UnderworldBlocks.CYPRESS_PLANKS_BUTTON, UnderworldBlocks.CYPRESS_PLANKS);
+        this.simpleBlockItemUi(UnderworldBlocks.CYPRESS_PLANKS_DOOR);
+        simpleItem(UnderworldItems.CYPRESS_SIGN);
+        simpleItem(UnderworldItems.CYPRESS_HANGING_SIGN);
 
 //        simpleBookItem(ModItems.LOST_WORLDS_BOOK);
 
-        createArmourSet(ModItems.NETHER_STEEL_HELMET, ModItems.NETHER_STEEL_CHESTPLATE, ModItems.NETHER_STEEL_LEGGINGS, ModItems.NETHER_STEEL_BOOTS);
-        createArmourSet(ModItems.ORICHALCUM_HELMET, ModItems.ORICHALCUM_CHESTPLATE, ModItems.ORICHALCUM_LEGGINGS, ModItems.ORICHALCUM_BOOTS);
+        createArmourSet(UnderworldItems.ORICHALCUM_HELMET, UnderworldItems.ORICHALCUM_CHESTPLATE, UnderworldItems.ORICHALCUM_LEGGINGS, UnderworldItems.ORICHALCUM_BOOTS);
         createArmourSet(ModItems.ZINC_HELMET, ModItems.ZINC_CHESTPLATE, ModItems.ZINC_LEGGINGS, ModItems.ZINC_BOOTS);
         createArmourSet(ModItems.TIN_HELMET, ModItems.TIN_CHESTPLATE, ModItems.TIN_LEGGINGS, ModItems.TIN_BOOTS);
         createArmourSet(ModItems.BRASS_HELMET, ModItems.BRASS_CHESTPLATE, ModItems.BRASS_LEGGINGS, ModItems.BRASS_BOOTS);
         createArmourSet(ModItems.BRONZE_HELMET, ModItems.BRONZE_CHESTPLATE, ModItems.BRONZE_LEGGINGS, ModItems.BRONZE_BOOTS);
 
-        withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.DWARVES_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.ELVES_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.SHARK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.MORAY_EELS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.ELECTRIC_EELS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.JELLYFISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.GIANT_SQUID_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.RAY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.GIANT_OCTOPUS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.NUDIBRANCH_SLUG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.GREAT_WHITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.ANGLER_FISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.SEAHORSE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.CLOWNFISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.ATLANTIAN_GURDIAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.SIREN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.MERFOLK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.ATLANTIAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.TANG_FISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.TUNA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.HELLHOUND_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.SHADOWHOUND_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.SPECTRALHOUND_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.DWARVES_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.VAMPIRE_BAT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.CAVE_MOLE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.ELVES_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.SHARK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.MORAY_EELS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.ELECTRIC_EELS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.JELLYFISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.GIANT_SQUID_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.RAY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.GIANT_OCTOPUS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.NUDIBRANCH_SLUG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.GREAT_WHITE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.ANGLER_FISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.SEAHORSE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.CLOWNFISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.ATLANTIAN_GURDIAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.SIREN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.MERFOLK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.ATLANTIAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.TANG_FISH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModSpawnEggs.TUNA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         simpleItem(ModItems.DICE);
         simpleItem(ModItems.BASIC_PORTAL_ACTIVATOR);
         simpleItem(ModItems.BASIC_PORTAL_CORE);
 
         //Misc
-        simpleItem(ModItems.SHARK_TOOTH);
-        simpleItem(ModItems.CLOWNFISH);
-        simpleItem(ModItems.COOKED_CLOWNFISH);
-        simpleItem(ModItems.RAW_TUNA);
-        simpleItem(ModItems.COOKED_TUNA);
-        simpleItem(ModItems.TANG_FISH);
-        simpleItem(ModItems.COOKED_TANG_FISH);
+        simpleItem(AtlantisItems.SHARK_TOOTH);
+        simpleItem(AtlantisItems.CLOWNFISH);
+        simpleItem(AtlantisItems.COOKED_CLOWNFISH);
+        simpleItem(AtlantisItems.RAW_TUNA);
+        simpleItem(AtlantisItems.COOKED_TUNA);
+        simpleItem(AtlantisItems.TANG_FISH);
+        simpleItem(AtlantisItems.COOKED_TANG_FISH);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

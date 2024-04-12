@@ -20,15 +20,13 @@ import net.minecraft.world.level.block.NetherPortalBlock;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.portal.PortalShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.AtlantisBlocks;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.portal.AtlantisTeleporter;
@@ -292,7 +290,7 @@ public class AtlantisPortalBlock extends ModPortalBlock {
         }
 
         private static boolean isEmpty(BlockState state) {
-            return state.isAir() || state.is(ModBlocks.ATLANTIS_PORTAL.get());
+            return state.isAir() || state.is(AtlantisBlocks.ATLANTIS_PORTAL.get());
         }
 
         public boolean isValid() {
@@ -300,7 +298,7 @@ public class AtlantisPortalBlock extends ModPortalBlock {
         }
 
         public void createPortalBlocks() {
-            BlockState blockstate = ModBlocks.ATLANTIS_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
+            BlockState blockstate = AtlantisBlocks.ATLANTIS_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
             BlockPos.betweenClosed(this.bottomLeft, this.bottomLeft.relative(Direction.UP, this.height - 1).relative(this.rightDir, this.width - 1)).forEach(pos -> this.level.setBlock(pos, blockstate, 18));
         }
 

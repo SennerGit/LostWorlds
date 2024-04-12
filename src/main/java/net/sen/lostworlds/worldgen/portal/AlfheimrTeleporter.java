@@ -24,7 +24,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sen.lostworlds.Config;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.AlfheimrBlocks;
 import net.sen.lostworlds.block.portal.AlfheimrPortalBlock;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 
@@ -142,7 +142,7 @@ public class AlfheimrTeleporter implements ITeleporter {
             }
         }
 
-        BlockState blockstate = ModBlocks.ALFHEIMR_PORTAL.get().defaultBlockState().setValue(AlfheimrPortalBlock.AXIS, axis);
+        BlockState blockstate = AlfheimrBlocks.ALFHEIMR_PORTAL.get().defaultBlockState().setValue(AlfheimrPortalBlock.AXIS, axis);
 
         for(int k2 = 0; k2 < 2; ++k2) {
             for(int l2 = 0; l2 < 3; ++l2) {

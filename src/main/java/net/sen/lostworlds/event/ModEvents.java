@@ -2,16 +2,21 @@ package net.sen.lostworlds.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
@@ -21,6 +26,7 @@ import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.command.ReturnHomeCommand;
 import net.sen.lostworlds.command.SetHomeCommand;
 import net.sen.lostworlds.item.ModItems;
+import net.sen.lostworlds.item.UnderworldItems;
 import net.sen.lostworlds.item.custom.HammerItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -101,10 +107,10 @@ public class ModEvents {
     public static void addCustomTrades(VillagerTradesEvent event) {
         if (event.getType() == VillagerProfession.FARMER) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModItems.POMEGRANATE.get(), 6);
+            ItemStack stack = new ItemStack(UnderworldItems.POMEGRANATE.get(), 6);
             int villagerLevel = 1;
 
-            trades.get(villagerLevel).add((pTrader, pRandom) -> tradingCost(2, ModItems.POMEGRANATE.get(), 6, 10, 2, 0.02f));
+            trades.get(villagerLevel).add((pTrader, pRandom) -> tradingCost(2, UnderworldItems.POMEGRANATE.get(), 6, 10, 2, 0.02f));
 //            trades.get(villagerLevel).add((pTrader, pRandom) -> new MerchantOffer(
 //                    stack, new ItemStack(ModItems.POMEGRANATE.get(), 6),
 //                    10, 2, 0.02f)
@@ -147,10 +153,10 @@ public class ModEvents {
     public static void addCustomWanderingTrades(WandererTradesEvent event) {
             List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
             List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades();
-            ItemStack stack = new ItemStack(ModItems.POMEGRANATE.get(), 6);
+            ItemStack stack = new ItemStack(UnderworldItems.POMEGRANATE.get(), 6);
             int villagerLevel = 1;
 
-            genericTrades.add((pTrader, pRandom) -> tradingCost(2, ModItems.POMEGRANATE.get(), 6, 10, 2, 0.02f));
+            genericTrades.add((pTrader, pRandom) -> tradingCost(2, UnderworldItems.POMEGRANATE.get(), 6, 10, 2, 0.02f));
 //            genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
 //                    stack, new ItemStack(ModItems.POMEGRANATE.get(), 6),
 //                    10, 2, 0.02f)
@@ -194,4 +200,19 @@ public class ModEvents {
 
     private static void onServerLevelTickEnd(ServerLevel level) {
     }
+
+//    @SubscribeEvent
+//    public static void onDeath(LivingDeathEvent event) {
+//        LivingEntity entity = event.getEntity();
+//
+//        if (entity instanceof Player player) {
+//
+//        }
+//    }
+
+//    @SubscribeEvent
+//    public void playerChangedDimensionEvent(PlayerEvent.PlayerChangedDimensionEvent event) {
+//        Player player = event.getEntity();
+//        Level level = player.level();
+//    }
 }

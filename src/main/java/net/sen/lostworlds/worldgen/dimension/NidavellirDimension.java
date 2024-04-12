@@ -16,8 +16,8 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.BlendedNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.worldgen.biome.NidavellirBiomes;
+import net.sen.lostworlds.block.NidavellirBlocks;
+import net.sen.lostworlds.worldgen.biome.util.layer.NidavellirBiomes;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.NidavellirSurfaceRules;
 
 import java.util.List;
@@ -75,7 +75,7 @@ public class NidavellirDimension {
                     1,
                     2
                 ),
-                ModBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState(),
+                NidavellirBlocks.NIDAVELLIR_SOFT_STONE.get().defaultBlockState(),
                 Blocks.WATER.defaultBlockState(),
                 nidavellirDimensionNoiseRouter(functions, noises),
                 NidavellirSurfaceRules.nidavellirSurfaceRules(),

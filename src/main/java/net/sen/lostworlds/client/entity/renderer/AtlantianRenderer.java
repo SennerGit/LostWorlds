@@ -8,10 +8,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.AtlantianModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.AtlantianEntity;
 
 public class AtlantianRenderer extends MobRenderer<AtlantianEntity, AtlantianModel<AtlantianEntity>> {
-    private static final ResourceLocation TEXTURE = LostWorldsApi.modLoc("textures/entity/atlantian/atlantian.png");
+    private static final ResourceLocation TEXTURE = LostWorldsApi.entityRendererLoc(AtlantisEntities.ATLANTIAN_ID);
 
     public AtlantianRenderer(EntityRendererProvider.Context pContext) {
         super(pContext, new AtlantianModel<>(pContext.bakeLayer(ModModelLayers.ATLANTIAN_LAYER)), 2f);

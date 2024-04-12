@@ -5,6 +5,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.item.Item;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
 import net.sen.lostworlds.entity.variant.ClownfishVariant;
+import net.sen.lostworlds.item.AtlantisItems;
 import net.sen.lostworlds.item.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
@@ -220,7 +221,7 @@ public class ClownfishEntity extends AbstractSchoolingFishVarients {
 //
     @Override
     public ItemStack getBucketItemStack() {
-        Item item = ModItems.CLOWNFISH_BUCKET.get();
+        Item item = AtlantisItems.CLOWNFISH_BUCKET.get();
         return new ItemStack(item);
     }
 //

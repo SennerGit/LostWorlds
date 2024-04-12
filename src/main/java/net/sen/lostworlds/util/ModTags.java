@@ -105,6 +105,8 @@ public class ModTags {
         public static final TagKey<Block> ALFHEIMR_PORTAL_FRAME_BLOCKS = tag("alfheimr_portal_frame_blocks");
         public static final TagKey<Block> ATLANTIS_PORTAL_FRAME_BLOCKS = tag("atlantis_portal_frame_blocks");
         public static final TagKey<Block> SKYOPIA_PORTAL_FRAME_BLOCKS = tag("skyopia_portal_frame_blocks");
+        public static final TagKey<Block> MYSTIC_GATEWAYS_PORTAL_FRAME_BLOCKS = tag("mystic_gateways_portal_frame_blocks");
+        public static final TagKey<Block> MYSTIC_GATEWAYS_PORTAL_CONTROLLER_BLOCKS = tag("mystic_gateways_portal_controller_blocks");
 
         public static final TagKey<Block> MOD_CARVER_REPLACEABLES = tag("mod_carver_replaceables");
 

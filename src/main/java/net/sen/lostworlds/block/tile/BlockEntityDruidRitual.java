@@ -5,16 +5,13 @@ https://github.com/Ellpeck/NaturesAura/blob/main/src/main/java/de/ellpeck/nature
 package net.sen.lostworlds.block.tile;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.sen.lostworlds.multiblocks.ModMultiblocks;
-import net.sen.lostworlds.multiblocks.Multiblock;
 
-public class BlockEntityDruidRitual extends BlockEntityImpl implements ITickableBlockEntity {
+public class BlockEntityDruidRitual extends BlockEntityImplement implements ITickableBlockEntity {
     @OnlyIn(Dist.CLIENT)
     public int bobTimer;
     public boolean isComplete;

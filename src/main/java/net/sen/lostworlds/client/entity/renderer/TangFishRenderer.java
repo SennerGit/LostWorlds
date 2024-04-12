@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.TangFishModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.TangFishEntity;
 import net.sen.lostworlds.entity.variant.TangFishVariant;
 
@@ -19,13 +20,13 @@ public class TangFishRenderer extends MobRenderer<TangFishEntity, TangFishModel<
     private static final Map<TangFishVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(TangFishVariant.class), map -> {
                 map.put(TangFishVariant.BLUE,
-                        LostWorldsApi.modLoc("textures/entity/tang_fish/blue_tang_fish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.TANG_FISH_ID, "blue_" + AtlantisEntities.TANG_FISH_ID));
                 map.put(TangFishVariant.BLACK,
-                        LostWorldsApi.modLoc("textures/entity/tang_fish/black_tang_fish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.TANG_FISH_ID, "black_" + AtlantisEntities.TANG_FISH_ID));
                 map.put(TangFishVariant.BROWN,
-                        LostWorldsApi.modLoc("textures/entity/tang_fish/brown_tang_fish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.TANG_FISH_ID, "brown_" + AtlantisEntities.TANG_FISH_ID));
                 map.put(TangFishVariant.ACHILLES,
-                        LostWorldsApi.modLoc("textures/entity/tang_fish/achilles_tang_fish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.TANG_FISH_ID, "achilles_" + AtlantisEntities.TANG_FISH_ID));
             });
 
     public TangFishRenderer(EntityRendererProvider.Context pContext) {

@@ -24,8 +24,9 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.block.custom.ModSaplingBlock;
+import net.sen.lostworlds.block.AlfheimrBlocks;
+import net.sen.lostworlds.block.UnderworldBlocks;
+import net.sen.lostworlds.block.wood.ModSaplingBlock;
 
 public class ModVegetationFeatures {
     //Trees
@@ -46,11 +47,11 @@ public class ModVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY = registerKey("alfheimr_magic_grass_single_placed_key");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        ModSaplingBlock elderWoodSapling = ((ModSaplingBlock) ModBlocks.ELDER_WOOD_SAPLING.get());
+        ModSaplingBlock elderWoodSapling = ((ModSaplingBlock) UnderworldBlocks.ELDER_WOOD_SAPLING.get());
         register(context, TREE_ELDER_WOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.ELDER_WOOD_LOG.get()),
+                BlockStateProvider.simple(UnderworldBlocks.ELDER_WOOD_LOG.get()),
                 new StraightTrunkPlacer(5, 4, 3),
-                BlockStateProvider.simple(ModBlocks.ELDER_WOOD_LEAVES.get()),
+                BlockStateProvider.simple(UnderworldBlocks.ELDER_WOOD_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
@@ -59,11 +60,11 @@ public class ModVegetationFeatures {
                 .dirt(BlockStateProvider.simple(elderWoodSapling.getBlock(2)))
                 .build());
 
-        ModSaplingBlock oliveSapling = ((ModSaplingBlock) ModBlocks.OLIVE_SAPLING.get());
+        ModSaplingBlock oliveSapling = ((ModSaplingBlock) UnderworldBlocks.OLIVE_SAPLING.get());
         register(context, TREE_OLIVE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.OLIVE_LOG.get()),
+                BlockStateProvider.simple(UnderworldBlocks.OLIVE_LOG.get()),
                 new StraightTrunkPlacer(5, 4, 3),
-                BlockStateProvider.simple(ModBlocks.OLIVE_LEAVES.get()),
+                BlockStateProvider.simple(UnderworldBlocks.OLIVE_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
@@ -72,11 +73,11 @@ public class ModVegetationFeatures {
                 .dirt(BlockStateProvider.simple(oliveSapling.getBlock(2)))
                 .build());
 
-        ModSaplingBlock myrrhSapling = ((ModSaplingBlock) ModBlocks.MYRRH_SAPLING.get());
+        ModSaplingBlock myrrhSapling = ((ModSaplingBlock) UnderworldBlocks.MYRRH_SAPLING.get());
         register(context, TREE_MYRRH_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.MYRRH_LOG.get()),
+                BlockStateProvider.simple(UnderworldBlocks.MYRRH_LOG.get()),
                 new StraightTrunkPlacer(5, 4, 3),
-                BlockStateProvider.simple(ModBlocks.MYRRH_LEAVES.get()),
+                BlockStateProvider.simple(UnderworldBlocks.MYRRH_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
@@ -85,11 +86,11 @@ public class ModVegetationFeatures {
                 .dirt(BlockStateProvider.simple(myrrhSapling.getBlock(2)))
                 .build());
 
-        ModSaplingBlock laurelSapling = ((ModSaplingBlock) ModBlocks.LAUREL_SAPLING.get());
+        ModSaplingBlock laurelSapling = ((ModSaplingBlock) UnderworldBlocks.LAUREL_SAPLING.get());
         register(context, TREE_LAUREL_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.LAUREL_LOG.get()),
+                BlockStateProvider.simple(UnderworldBlocks.LAUREL_LOG.get()),
                 new StraightTrunkPlacer(5, 4, 3),
-                BlockStateProvider.simple(ModBlocks.LAUREL_LEAVES.get()),
+                BlockStateProvider.simple(UnderworldBlocks.LAUREL_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
@@ -98,11 +99,11 @@ public class ModVegetationFeatures {
                 .dirt(BlockStateProvider.simple(laurelSapling.getBlock(2)))
                 .build());
 
-        ModSaplingBlock cypressSapling = ((ModSaplingBlock) ModBlocks.CYPRESS_SAPLING.get());
+        ModSaplingBlock cypressSapling = ((ModSaplingBlock) UnderworldBlocks.CYPRESS_SAPLING.get());
         register(context, TREE_CYPRESS_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.CYPRESS_LOG.get()),
+                BlockStateProvider.simple(UnderworldBlocks.CYPRESS_LOG.get()),
                 new StraightTrunkPlacer(5, 4, 3),
-                BlockStateProvider.simple(ModBlocks.CYPRESS_LEAVES.get()),
+                BlockStateProvider.simple(UnderworldBlocks.CYPRESS_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
@@ -114,76 +115,76 @@ public class ModVegetationFeatures {
         //Flowers
         register(context, FLOWER_IRIS_KEY, Feature.FLOWER,
                 new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.IRIS_FLOWER.get())))));
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(UnderworldBlocks.IRIS_FLOWER.get())))));
 
         register(context, ALFHEIMR_FLOWERS_KEY, Feature.FLOWER,
                 grassPatch(
                         new WeightedStateProvider(
                                 SimpleWeightedRandomList.<BlockState>builder()
-                                        .add(ModBlocks.DARK_BLOOM_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.DREAD_NIGHT_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BLACK_LOTUS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.NIGHT_ROSE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.AQUA_ROSE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.MOON_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CATHERINE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.TAINTED_ROSE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CINNAMON_ROSE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BUTTERFLY_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.GAIA_TULIP_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BEARDED_IRIS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CORNFLOWER_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.MORNING_GLORY_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.GEORGIA_BLUE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BLUE_POPPY_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.TULIP_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CARNATION_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.LADYS_MANTLE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.GREEN_ROSE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CLEMATIS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BLUE_STAR_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.SALVIA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.FALSE_INDIGO_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.WHITE_SAGE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.SILVER_SCHEHERAZADE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.SILVER_SPRING_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.SILVER_SHADOWS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.GREEN_BALL_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.LIME_DAHLIA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.HYDRANGEA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.ZINNIA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BUTTERFLY_CANDY_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CABARET_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.DIANTHUS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.TITAN_CRANBERRY_VINCA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.ORANGE_ZINNIA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BEGONIA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CROWN_IMPERIAL_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.ORIENTAL_POPPY_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.AZALEA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.PINK_DELIGHT_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CHRYSANTHEMUM_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.HIBISCUS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.CARDINAL_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.GERBERA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.RED_TULIP_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.FREESIA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.GARDENIAS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.STAR_JASMINE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.WHITE_WARATAH_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.FLANNEL_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BEARS_EARS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BIDENS_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BLANKET_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BULBINE_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.SILVER_BRUNIA_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.GRAY_ROSES_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.MOON_CARROT_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.SILVER_BABY_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.LAVENDER_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.BELLFLOWER_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.LILAC_FLOWER.get().defaultBlockState(), 2)
-                                        .add(ModBlocks.SWEET_PEA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.DARK_BLOOM_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.DREAD_NIGHT_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BLACK_LOTUS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.NIGHT_ROSE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.AQUA_ROSE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.MOON_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CATHERINE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.TAINTED_ROSE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CINNAMON_ROSE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BUTTERFLY_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.GAIA_TULIP_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BEARDED_IRIS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CORNFLOWER_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.MORNING_GLORY_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.GEORGIA_BLUE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BLUE_POPPY_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.TULIP_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CARNATION_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.LADYS_MANTLE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.GREEN_ROSE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CLEMATIS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BLUE_STAR_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.SALVIA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.FALSE_INDIGO_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.WHITE_SAGE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.SILVER_SCHEHERAZADE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.SILVER_SPRING_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.SILVER_SHADOWS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.GREEN_BALL_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.LIME_DAHLIA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.HYDRANGEA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.ZINNIA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BUTTERFLY_CANDY_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CABARET_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.DIANTHUS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.TITAN_CRANBERRY_VINCA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.ORANGE_ZINNIA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BEGONIA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CROWN_IMPERIAL_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.ORIENTAL_POPPY_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.AZALEA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.PINK_DELIGHT_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CHRYSANTHEMUM_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.HIBISCUS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.CARDINAL_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.GERBERA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.RED_TULIP_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.FREESIA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.GARDENIAS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.STAR_JASMINE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.WHITE_WARATAH_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.FLANNEL_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BEARS_EARS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BIDENS_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BLANKET_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BULBINE_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.SILVER_BRUNIA_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.GRAY_ROSES_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.MOON_CARROT_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.SILVER_BABY_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.LAVENDER_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.BELLFLOWER_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.LILAC_FLOWER.get().defaultBlockState(), 2)
+                                        .add(AlfheimrBlocks.SWEET_PEA_FLOWER.get().defaultBlockState(), 2)
                         ),
                         64
                 )
@@ -191,9 +192,9 @@ public class ModVegetationFeatures {
 
         //Vegetation
         register(context, ALFHEIMR_MAGIC_GRASS_PLACED_KEY, Feature.RANDOM_PATCH,
-                grassPatch(BlockStateProvider.simple(ModBlocks.ALFHEIMR_MAGIC_GRASS.get()), 32));
+                grassPatch(BlockStateProvider.simple(AlfheimrBlocks.ALFHEIMR_MAGIC_GRASS.get()), 32));
 
-        FeatureUtils.register(context, ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.ALFHEIMR_MAGIC_GRASS.get().defaultBlockState())));
+        FeatureUtils.register(context, ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(AlfheimrBlocks.ALFHEIMR_MAGIC_GRASS.get().defaultBlockState())));
 
         register(context, ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY, Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(
@@ -204,7 +205,7 @@ public class ModVegetationFeatures {
                                 Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
                                         new WeightedStateProvider(
                                             SimpleWeightedRandomList.<BlockState>builder().add(
-                                                    ModBlocks.ALFHEIMR_MAGIC_GRASS.get().defaultBlockState(),
+                                                    AlfheimrBlocks.ALFHEIMR_MAGIC_GRASS.get().defaultBlockState(),
                                                     3
                                             )
                                         )

@@ -15,7 +15,7 @@ public class ModTileEntityTypes {
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, LostWorldsApi.MODID);
 
     public static final RegistryObject<BlockEntityType<WaterRemoverBlockTileEntity>> WATER_REMOVER_BLOCK_TILE_ENTITY =
-            TILE_ENTITIES.register("water_remover_block_tile_entity", () -> new BlockEntityType<>(WaterRemoverBlockTileEntity::new, Set.of(ModBlocks.ATLANTAS_WATER_REMOVER_BLOCK.get()), null));
+            TILE_ENTITIES.register("water_remover_block_tile_entity", () -> new BlockEntityType<>(WaterRemoverBlockTileEntity::new, Set.of(AtlantisBlocks.ATLANTAS_WATER_REMOVER_BLOCK.get()), null));
 
     public static void register(IEventBus eventBus) {
         TILE_ENTITIES.register(eventBus);

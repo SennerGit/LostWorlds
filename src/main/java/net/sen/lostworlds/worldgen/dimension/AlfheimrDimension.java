@@ -1,6 +1,9 @@
 package net.sen.lostworlds.worldgen.dimension;
 
 import com.mojang.datafixers.util.Pair;
+import it.unimi.dsi.fastutil.floats.Float2ObjectAVLTreeMap;
+import it.unimi.dsi.fastutil.floats.Float2ObjectSortedMap;
+import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -16,17 +19,21 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.worldgen.biome.AlfheimrBiomes;
-import net.sen.lostworlds.worldgen.dimension.surfacerules.AlfheimrSurfaceRules;
-import net.sen.lostworlds.worldgen.dimension.TerrainProvider.AlfheimrTerrainProvider;
+import net.sen.lostworlds.worldgen.biome.util.layer.AlfheimrBiomes;
+import net.sen.lostworlds.worldgen.components.chunkgenerators.TerrainColumn;
+import net.sen.lostworlds.worldgen.dimension.biomebuilder.AlfheimrBiomeBuilder;
+import net.sen.lostworlds.worldgen.dimension.noise.AlfheimrNoiseGenSettings;
+import net.sen.lostworlds.worldgen.dimension.surfacerules.*;
+import net.sen.lostworlds.worldgen.dimension.terrainprovider.AlfheimrTerrainProvider;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalLong;
+import java.util.function.Consumer;
 
 public class AlfheimrDimension {
     private static final DensityFunction BLENDING_FACTOR = DensityFunctions.constant(10.0);
     private static final DensityFunction BLENDING_JAGGEDNESS = DensityFunctions.zero();
-
     private static final ResourceKey<DensityFunction> BASE_3D_NOISE_OVERWORLD = vanillaKey("base_3d_noise");
     private static final ResourceKey<DensityFunction> SPAGHETTI_ROUGHNESS_FUNCTION = vanillaKey("caves/spaghetti_roughness_function");
     private static final ResourceKey<DensityFunction> ENTRANCES = vanillaKey("caves/entrances");
@@ -40,36 +47,215 @@ public class AlfheimrDimension {
     public static final ResourceKey<DensityFunction> JAGGEDNESS = createKey("jaggedness");
     public static final ResourceKey<DensityFunction> SLOPED_CHEESE = createKey("sloped_cheese");
 
-    public static void alfheimrDimension(BootstapContext<LevelStem> context) {
-        HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
+    public static void alfheimrDimension(final BootstapContext<LevelStem> context) {
+//        HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
+//        HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
+//        HolderGetter<NoiseGeneratorSettings> noiseGeneratorSettings = context.lookup(Registries.NOISE_SETTINGS);
+//
+//        LevelStem stem = new LevelStem(
+//                dimTypes.getOrThrow(ModDimensions.ALFHEIMR_DIM_TYPE),
+//                alfheimrNoiseBasedChunkGenerator(context));
 
-        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.ALFHEIMR_DIM_TYPE), alfheimrNoiseBasedChunkGenerator(context));
+        context.register(ModDimensions.ALFHEIMR_KEY, new LevelStem(
+                context.lookup(Registries.DIMENSION_TYPE).getOrThrow(ModDimensions.ALFHEIMR_DIM_TYPE),
+                new NoiseBasedChunkGenerator(
+                        MultiNoiseBiomeSource.createFromPreset(context.lookup(Registries.MULTI_NOISE_BIOME_SOURCE_PARAMETER_LIST).getOrThrow(AlfheimrBiomeBuilder.PARAMETER_LIST)),
+                        context.lookup(Registries.NOISE_SETTINGS).getOrThrow(ModDimensions.ALFHEIMR_NOISE_KEY)
+                )
+        ));
 
-        context.register(ModDimensions.ALFHEIMR_KEY, stem);
+//        context.register(ModDimensions.ALFHEIMR_KEY, stem);
     }
 
-    private static NoiseBasedChunkGenerator alfheimrNoiseBasedChunkGenerator(BootstapContext<LevelStem> context) {
-        HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
-        HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
+//    private static NoiseBasedChunkGenerator alfheimrNoiseBasedChunkGenerator(BootstapContext<LevelStem> context) {
+//        HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
+//        HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
+//
+////        BiomeSource biomes = MultiNoiseBiomeSource.createFromList(
+////                        new Climate.ParameterList<>(List.of(
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_ENCHANTED_FOREST)),
+////                                Pair.of(Climate.parameters(0.1F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FAIRY_HILLS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FAIRY_RINGS)),
+//////                                Pair.of(Climate.parameters(0.2F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_GLISTENING_FORESTS)),
+////                                Pair.of(Climate.parameters(0.3F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION)),
+////                                Pair.of(Climate.parameters(0.4F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_MOUNTAIN)),
+////                                Pair.of(Climate.parameters(0.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DESERT)),
+////                                Pair.of(Climate.parameters(0.6F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SNOW_FOREST)),
+////                                Pair.of(Climate.parameters(0.7F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_HOLLOW_HILLS)),
+////                                Pair.of(Climate.parameters(0.8F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SKY_PEAKS)),
+////                                Pair.of(Climate.parameters(0.9F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_SPRING)),
+////                                Pair.of(Climate.parameters(1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_OCEAN)),
+////                                Pair.of(Climate.parameters(1.1F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_MEADOWS))
+////                        )));
+//
+////        return new NoiseBasedChunkGenerator(
+////                MultiNoiseBiomeSource.createFromList(
+////                        new Climate.ParameterList<>(List.of(
+////                                //OFFLAND
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DEEP_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_WARM_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_LUKEWARM_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DEEP_LUKEWARM_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_COLD_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DEEP_COLD_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_ENCHANTED_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DEEP_ENCHANTED_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CURSED_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DEEP_CURSED_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_DEEP_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FROZEN_OCEAN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DEEP_FROZEN_OCEAN)),
+////
+////                                //HIGHLAND
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_HOLLOW_HILLS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SKY_PEAKS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_STONY_HOLLOW)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_STONY_PEAKS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_LOST_HILLS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_KINGDOM_HILLS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DEADMAN_CLIFFS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SNOW_PEAKS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FROZEN_PEAKS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SNOW_GROVE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FROZEN_GROVE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_CLIFFS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_PEAKS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_MOUNTAIN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_GROVE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_PEAKS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_CLIFFS)),
+////
+////                                //WOODLANDS
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DENSE_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_ENCHANTED_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DENSE_ENCHANTED_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DARK_ENCHANTED_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTALLISED_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DENSE_CRYSTALLISED_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FAIRY_HILLS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_GLISTENING_FORESTS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_HAUNTED_FORESTS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_JUNGLE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CURSED_JUNGLE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SNOW_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FROZEN_JUNGLE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_MUSHROOM_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DENSE_MUSHROOM_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FAIRY_RINGS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_FOREST)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_CRYSTAL_FOREST)),
+////
+////                                //WETLANDS
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_SPRING)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_RIVER)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FROZEN_RIVER)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_STREAM)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_LAKE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SWAMP)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_MEADOWS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_LOST_SWAMP)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_BEACH)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FROZEN_BEACH)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_STONY_SHORE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_SHORE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_SHORE)),
+////
+////                                //FLATLANDS
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_PLAINS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_PLAINS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FLOWER_PLAINS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_MYSTICAL_PLAINS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SNOWY_PLAINS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_SNOWY_PLAINS)),
+////
+////                                //ARID-LANDS
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DESERT)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_DESERT)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DRAGOON_DESERT)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SAVANNA)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_MYSTICAL_SAVANNA)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DRY_RAVINE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_WASTELAND)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_WASTELAND_DRY_RAVINE)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_WASTELAND_PEAKS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_WASTELAND_CRYSTAL)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_BADLANDS)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTED_BADLANDS)),
+////
+////                                //CAVES
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_CAVERN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_OVERGROWN_CAVERN)),
+////                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTED_CAVERN))
+////                        ))),
+////                noiseGenSettings.getOrThrow(ModDimensions.ALFHEIMR_NOISE_KEY));
+//
+////        return new NoiseBasedChunkGenerator(
+////                new AlfheimrBiomeProvider(
+//////                        BiomeMaker.makeBiomeList(biomeRegistry, biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_UNDERGROUND)),
+////                        makeBiomeList(biomeRegistry, biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_UNDERGROUND)),
+////                        -1.25f,
+////                        2.5f,
+////                        context.lookup(AlfheimrBiomeLayerStack.BIOME_STACK_KEY).getOrThrow(AlfheimrBiomeLayerStack.BIOMES_ALONG_STREAMS)
+////                ),
+////                noiseGenSettings.getOrThrow(ModDimensions.ALFHEIMR_NOISE_KEY)
+////        );
+//
+//
+//    }
 
-        return new NoiseBasedChunkGenerator(
-                MultiNoiseBiomeSource.createFromList(
-                        new Climate.ParameterList<>(List.of(
-                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_ENCHANTED_FOREST)),
-                                Pair.of(Climate.parameters(0.1F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FAIRY_HILLS)),
-//                                Pair.of(Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_FAIRY_RINGS)),
-                                Pair.of(Climate.parameters(0.2F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_GLISTENING_FORESTS)),
-                                Pair.of(Climate.parameters(0.3F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION)),
-                                Pair.of(Climate.parameters(0.4F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CORRUPTION_MOUNTAIN)),
-                                Pair.of(Climate.parameters(0.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_DESERT)),
-                                Pair.of(Climate.parameters(0.6F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SNOW_FOREST)),
-                                Pair.of(Climate.parameters(0.7F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_HOLLOW_HILLS)),
-                                Pair.of(Climate.parameters(0.8F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_SKY_PEAKS)),
-                                Pair.of(Climate.parameters(0.9F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_CRYSTAL_SPRING)),
-                                Pair.of(Climate.parameters(1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_OCEAN)),
-                                Pair.of(Climate.parameters(1.1F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(AlfheimrBiomes.ALFHEIMR_MEADOWS))
-                        ))),
-                noiseGenSettings.getOrThrow(ModDimensions.ALFHEIMR_NOISE_KEY));
+    public static List<TerrainColumn> makeBiomeList(HolderGetter<Biome> biomeRegistry, Holder<Biome> undergroundBiome) {
+        return List.of(
+                biomeColumnWithUnderground(0.025F, 0.05F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_ENCHANTED_FOREST, undergroundBiome),
+                biomeColumnWithUnderground(0.1F, 0.2F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_FAIRY_HILLS, undergroundBiome),
+                biomeColumnWithUnderground(0.0625F, 0.05F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_FAIRY_RINGS, undergroundBiome),
+                biomeColumnWithUnderground(0.005F, 0.005F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_GLISTENING_FORESTS, undergroundBiome),
+                biomeColumnWithUnderground(-1.65F, 0.25F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_STREAM, undergroundBiome),
+                biomeColumnWithUnderground(-1.97F, 0.0F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_RIVER, undergroundBiome),
+
+                biomeColumnWithUnderground(0.025F, 0.05F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_CORRUPTION_MOUNTAIN, undergroundBiome),
+                biomeColumnWithUnderground(0.05F, 0.05F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_CORRUPTION, undergroundBiome),
+
+                biomeColumnWithUnderground(0.025F, 0.05F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_DESERT, undergroundBiome),
+
+                biomeColumnWithUnderground(-0.9F, 0.15F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_MEADOWS, undergroundBiome),
+
+                biomeColumnWithUnderground(0.025F, 0.005F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_HOLLOW_HILLS, undergroundBiome),
+                biomeColumnWithUnderground(0.025F, 0.005F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_SKY_PEAKS, undergroundBiome),
+
+                biomeColumnWithUnderground(0.05F, 0.15F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_SNOW_FOREST, undergroundBiome),
+
+                biomeColumnWithUnderground(3.0F, 0.25F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_CRYSTAL_CAVERN, undergroundBiome),
+                biomeColumnToBedrock(7.0F, 0.1F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_OVERGROWN_CAVERN),
+                biomeColumnToBedrock(13.75F, 0.025F, biomeRegistry, AlfheimrBiomes.ALFHEIMR_CORRUPTED_CAVERN)
+        );
+    }
+
+    private static TerrainColumn biomeColumnWithUnderground(float noiseDepth, float noiseScale, HolderGetter<Biome> biomeRegistry, ResourceKey<Biome> key, Holder<Biome> undergroundBiome) {
+        Holder.Reference<Biome> biomeHolder = biomeRegistry.getOrThrow(key);
+
+        biomeHolder.bindKey(key);
+
+        return makeColumn(noiseDepth, noiseScale, biomeHolder, treeMap -> {
+            // This will put the transition boundary around Y-8
+            treeMap.put(Math.min(noiseDepth - 1, -1), biomeHolder);
+            treeMap.put(Math.min(noiseDepth - 3, -3), undergroundBiome);
+        });
+    }
+
+    private static TerrainColumn biomeColumnToBedrock(float noiseDepth, float noiseScale, HolderGetter<Biome> biomeRegistry, ResourceKey<Biome> key) {
+        Holder.Reference<Biome> biomeHolder = biomeRegistry.getOrThrow(key);
+
+        biomeHolder.bindKey(key);
+
+        return makeColumn(noiseDepth, noiseScale, biomeHolder, treeMap -> treeMap.put(0, biomeHolder));
+    }
+
+    private static TerrainColumn makeColumn(float noiseDepth, float noiseScale, Holder<Biome> biomeHolder, Consumer<Float2ObjectSortedMap<Holder<Biome>>> layerBuilder) {
+        return new TerrainColumn(biomeHolder, Util.make(new Float2ObjectAVLTreeMap<>(), layerBuilder), noiseDepth, noiseScale);
     }
 
     public static void alfheimrDensityFunction(BootstapContext<DensityFunction> context) {
@@ -141,22 +327,24 @@ public class AlfheimrDimension {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
 
+        NoiseSettings AlfheimrNoise = NoiseSettings.create (
+                -32,
+                384,
+                1,
+                2
+        );
+
         return new NoiseGeneratorSettings(
-                NoiseSettings.create (
-                    -64,
-                    384,
-                    1,
-                    2
-                ),
+                AlfheimrNoise,
                 Blocks.STONE.defaultBlockState(),
                 Blocks.WATER.defaultBlockState(),
                 alfheimrNoiseRouter(functions, noises),
                 AlfheimrSurfaceRules.alfheimrSurfaceRules(),
                 List.of(), //spawn targets
-                128,
+                0,
                 false,
-                true,
-                true,
+                false,
+                false,
                 false
         );
     }

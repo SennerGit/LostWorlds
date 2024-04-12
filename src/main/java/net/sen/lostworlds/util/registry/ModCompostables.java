@@ -2,38 +2,40 @@ package net.sen.lostworlds.util.registry;
 
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.sen.lostworlds.block.AlfheimrBlocks;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.item.AlfheimrItems;
 import net.sen.lostworlds.item.ModItems;
+import net.sen.lostworlds.item.UnderworldItems;
 
 public class ModCompostables {
     public static void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            ComposterBlock.COMPOSTABLES.put(ModItems.CRIMSON_APPLE.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.POMEGRANATE.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.OLIVE.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.DURUM_WHEAT.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.TOMATO.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.WILD_ONION.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.ONION_STAGE_1.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.ONION_STAGE_2.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.ONION_STAGE_3.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.ONION.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.DRAGON_FRUIT.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.CHILLI.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(UnderworldItems.POMEGRANATE.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(UnderworldItems.OLIVE.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.DURUM_WHEAT.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.TOMATO.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.WILD_ONION.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.ONION_STAGE_1.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.ONION_STAGE_2.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.ONION_STAGE_3.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.ONION.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.DRAGON_FRUIT.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.CHILLI.get(), 0.35f);
 
-            ComposterBlock.COMPOSTABLES.put(ModBlocks.POINT_MUSHROOM_BLOCK.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModBlocks.WITCHES_MUSHROOM_BLOCK.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModBlocks.ROYAL_BLUE_MUSHROOM_BLOCK.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModBlocks.SHORT_TOP_MUSHROOM_BLOCK.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModBlocks.SPECTRAL_MUSHROOM_BLOCK.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModBlocks.SHADE_MUSHROOM_BLOCK.get(), 0.35f);
-            ComposterBlock.COMPOSTABLES.put(ModBlocks.CAP_MUSHROOM_BLOCK.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrBlocks.POINT_MUSHROOM_BLOCK.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrBlocks.SHADE_MUSHROOM_BLOCK.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrBlocks.CAP_MUSHROOM_BLOCK.get(), 0.35f);
 
-            ComposterBlock.COMPOSTABLES.put(ModItems.POMEGRANATE_SEEDS.get(), 0.20f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.DURUM_WHEAT_SEEDS.get(), 0.20f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.TOMATO_SEEDS.get(), 0.20f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.DRAGON_FRUIT_SEEDS.get(), 0.20f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.CHILLI_SEEDS.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(UnderworldItems.POMEGRANATE_SEEDS.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.DURUM_WHEAT_SEEDS.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.TOMATO_SEEDS.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.DRAGON_FRUIT_SEEDS.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(AlfheimrItems.CHILLI_SEEDS.get(), 0.20f);
         });
     }
 }

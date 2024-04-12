@@ -19,7 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.*;
 import net.sen.lostworlds.item.ModItems;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 
@@ -71,10 +71,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
             Advancement root = createAdvancement(
                     "underworld/root",
-                    Item.byBlock(ModBlocks.UNDERWORLD_PORTAL_FRAME.get()),
+                    Item.byBlock(UnderworldBlocks.UNDERWORLD_PORTAL_FRAME.get()),
                     "advancement.lostworlds.underworld.root.name",
                     "advancement.lostworlds.underworld.root.desc",
-                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.UNDERWORLD_PORTAL_FRAME.getId().getPath() + ".png"),
+                    LostWorldsApi.modLoc("textures/block/" + UnderworldBlocks.UNDERWORLD_PORTAL_FRAME.getId().getPath() + ".png"),
                     "has_entered_dimension_" + ModDimensions.UNDERWORLD_LEVEL_KEY.location().getPath(),
                     ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.UNDERWORLD_LEVEL_KEY),
                     saver,
@@ -87,10 +87,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
             Advancement root = createAdvancement(
                     "nidavellir/root",
-                    Item.byBlock(ModBlocks.NIDAVELLIR_PORTAL_FRAME.get()),
+                    Item.byBlock(NidavellirBlocks.NIDAVELLIR_PORTAL_FRAME.get()),
                     "advancement.lostworlds.nidavellir.root.name",
                     "advancement.lostworlds.nidavellir.root.desc",
-                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.NIDAVELLIR_PORTAL_FRAME.getId().getPath() + ".png"),
+                    LostWorldsApi.modLoc("textures/block/" + NidavellirBlocks.NIDAVELLIR_PORTAL_FRAME.getId().getPath() + ".png"),
                     "has_entered_dimension_" + ModDimensions.NIDAVELLIR_LEVEL_KEY.location().getPath(),
                     ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.NIDAVELLIR_LEVEL_KEY),
                     saver,
@@ -103,10 +103,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
             Advancement root = createAdvancement(
                     "alfheimr/root",
-                    Item.byBlock(ModBlocks.ALFHEIMR_PORTAL_FRAME.get()),
+                    Item.byBlock(AlfheimrBlocks.ALFHEIMR_PORTAL_FRAME.get()),
                     "advancement.lostworlds.alfheimr.root.name",
                     "advancement.lostworlds.alfheimr.root.desc",
-                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.ALFHEIMR_PORTAL_FRAME.getId().getPath() + ".png"),
+                    LostWorldsApi.modLoc("textures/block/" + AlfheimrBlocks.ALFHEIMR_PORTAL_FRAME.getId().getPath() + ".png"),
                     "has_entered_dimension_" + ModDimensions.ALFHEIMR_LEVEL_KEY.location().getPath(),
                     ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.ALFHEIMR_LEVEL_KEY),
                     saver,
@@ -119,10 +119,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
             Advancement root = createAdvancement(
                     "atlantis/root",
-                    Item.byBlock(ModBlocks.ATLANTIS_PORTAL_FRAME.get()),
+                    Item.byBlock(AtlantisBlocks.ATLANTIS_PORTAL_FRAME.get()),
                     "advancement.lostworlds.atlantis.root.name",
                     "advancement.lostworlds.atlantis.root.desc",
-                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.ATLANTIS_PORTAL_FRAME.getId().getPath() + ".png"),
+                    LostWorldsApi.modLoc("textures/block/" + AtlantisBlocks.ATLANTIS_PORTAL_FRAME.getId().getPath() + ".png"),
                     "has_entered_dimension_" + ModDimensions.ATLANTIS_LEVEL_KEY.location().getPath(),
                     ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.ATLANTIS_LEVEL_KEY),
                     saver,
@@ -135,10 +135,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
             Advancement root = createAdvancement(
                     "skyopia/root",
-                    Item.byBlock(ModBlocks.SKYOPIA_PORTAL_FRAME.get()),
+                    Item.byBlock(SkyopiaBlocks.SKYOPIA_PORTAL_FRAME.get()),
                     "advancement.lostworlds.skyopia.root.name",
                     "advancement.lostworlds.skyopia.root.desc",
-                    LostWorldsApi.modLoc("textures/block/" + ModBlocks.SKYOPIA_PORTAL_FRAME.getId().getPath() + ".png"),
+                    LostWorldsApi.modLoc("textures/block/" + SkyopiaBlocks.SKYOPIA_PORTAL_FRAME.getId().getPath() + ".png"),
                     "has_entered_dimension_" + ModDimensions.SKYOPIA_LEVEL_KEY.location().getPath(),
                     ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(ModDimensions.SKYOPIA_LEVEL_KEY),
                     saver,

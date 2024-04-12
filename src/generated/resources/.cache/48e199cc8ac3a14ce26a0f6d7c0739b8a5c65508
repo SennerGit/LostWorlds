@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-24T15:05:17.5940075	Item Tags
+// 1.20.1	2024-03-23T07:08:40.1616953	Item Tags
 1327d78e0388c77f4d3ddec7f2b6e4b42e8696f2 data/lostworlds/tags/items/cypress_logs.json
 2d404d31673d9060db9bf5b193c7b7108b810df9 data/lostworlds/tags/items/cypress_stripped_logs.json
 15017fb942b97f9c9cca82d292a9097dfceb29d0 data/lostworlds/tags/items/elder_wood_logs.json
@@ -11,4 +11,4 @@ f83b1d7d0066eb5e1e9005ab112325b5116b2535 data/lostworlds/tags/items/laurel_logs.
 c8ef2b2b537ba28fecc270da2b6edd7914072a64 data/lostworlds/tags/items/olive_logs.json
 fa4a4b8c2eba33c501141accc25c289717bae59c data/lostworlds/tags/items/olive_stripped_logs.json
 cc8ba915a484770ade30bffd5aac0dfcbcc8f5bd data/minecraft/tags/items/music_discs.json
-2bdcd75445a01f024e5e99937e96c0bc807b3eb2 data/minecraft/tags/items/trimmable_armor.json
+06a2c89bf20684a2c90f79c8e8d7ae98820fbfd3 data/minecraft/tags/items/trimmable_armor.json

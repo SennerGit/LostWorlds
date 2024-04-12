@@ -160,6 +160,14 @@ repositories {
     maven {
         url = "https://maven.theillusivec4.top/"
     }
+
+    //Jade
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
@@ -192,6 +200,11 @@ dependencies {
     //Curios
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}")
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}:api")
+
+    //Jade
+    // Visit https://www.curseforge.com/minecraft/mc-mods/jade/files/all?filter-status=1&filter-game-version=2020709689%3A7498
+    // to get the latest version's jade_version
+    implementation fg.deobf("curse.maven:jade-324717:${jade_curse_maven_id}")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

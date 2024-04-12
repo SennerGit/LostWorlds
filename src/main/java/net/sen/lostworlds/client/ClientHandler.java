@@ -1,5 +1,6 @@
 package net.sen.lostworlds.client;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.sen.lostworlds.event.CreativeScreenEvents;
@@ -31,5 +32,4 @@ public class ClientHandler {
 //            EntityRenderers.register(ModEntities.MAGIC_GORGAN_PROJECTILE.get(), MagicGorganProjectileRenderer::new);
 //        });
 //    }
-
 }

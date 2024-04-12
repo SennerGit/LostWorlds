@@ -1,4 +1,4 @@
-// 1.20.1	2023-12-26T06:32:24.041444	Registries
+// 1.20.1	2024-04-12T06:31:41.1568135	Registries
 08fae192d646592f55b3babeb97f317ba00f5057 data/lostworlds/dimension/alfheimr.json
 50160d8e226670a7615fc81362e3beef527fc535 data/lostworlds/dimension/atlantis.json
 6204795a6bccaeecdffc57267406495535c77126 data/lostworlds/dimension/nidavellir.json
@@ -108,7 +108,7 @@ cb646ffb51f9d2f9b237a0a2bccf789075be7e94 data/lostworlds/worldgen/density_functi
 231ae73a590474d19b7cfdd5292f244837a3fae0 data/lostworlds/worldgen/density_function/underworld/jaggedness.json
 f5fe09a430d2aedee387c2bf95bfa4c0167c7b00 data/lostworlds/worldgen/density_function/underworld/offset.json
 d82d680705f2c7a5ea1afc580128404720c5444e data/lostworlds/worldgen/density_function/underworld/sloped_cheese.json
-47bfa5fd3b8c6aa7c6d3e26a3ec2ccb993beb40a data/lostworlds/worldgen/noise_settings/alfheimr_noise_key.json
+5e7457b00cba3e6167a5f4a7bba87027f50b8562 data/lostworlds/worldgen/noise_settings/alfheimr_noise_key.json
 2963382962f4c95b2f0dc081f307fc0e58207b04 data/lostworlds/worldgen/noise_settings/atlantis_noise_key.json
 490b3cdf3e1fa957d7daf4769b7728ac5a674f15 data/lostworlds/worldgen/noise_settings/nidavellir_noise_key.json
 3d5a76ca06dd75a72b75e2aef032cd06372ba2dd data/lostworlds/worldgen/noise_settings/underworld_noise_key.json

@@ -1,5 +1,7 @@
 package net.sen.lostworlds.worldgen.dimension;
 
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.MultiNoiseBiomeSourceParameterList;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -8,8 +10,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.worldgen.dimension.biomebuilder.AlfheimrBiomeBuilder;
 
 public class ModDimensions {
+    public static long seed; //Minecraft Overworld seed - used for seed ASM
+
     //Underworld
     public static final ResourceKey<LevelStem> UNDERWORLD_KEY =
             ResourceKey.create(Registries.LEVEL_STEM, LostWorldsApi.modLoc("underworld"));
@@ -40,6 +45,7 @@ public class ModDimensions {
             LostWorldsApi.modLoc("alfheimr_type"));
     public static final ResourceKey<NoiseGeneratorSettings> ALFHEIMR_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
             LostWorldsApi.modLoc("alfheimr_noise_key"));
+    public static final ResourceLocation ALFHEIMR_ID = new ResourceLocation(LostWorldsApi.MODID, "alfheimr");
 
     //Atlantis
     public static final ResourceKey<LevelStem> ATLANTIS_KEY = ResourceKey.create(Registries.LEVEL_STEM,
@@ -60,6 +66,14 @@ public class ModDimensions {
             LostWorldsApi.modLoc("skyopia_type"));
     public static final ResourceKey<NoiseGeneratorSettings> SKYOPIA_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
             LostWorldsApi.modLoc("skyopia_noise_key"));
+
+    //Skyopia
+    public static final ResourceKey<LevelStem> MYSTIC_GATEWAYS_KEY = ResourceKey.create(Registries.LEVEL_STEM,
+            LostWorldsApi.modLoc("mystic_gateways"));
+    public static final ResourceKey<Level> MYSTIC_GATEWAYS_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
+            LostWorldsApi.modLoc("mystic_gateways"));
+    public static final ResourceKey<DimensionType> MYSTIC_GATEWAYS_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
+            LostWorldsApi.modLoc("mystic_gateways_type"));
 
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         UnderworldDimension.underworldDimensionType(context);
@@ -90,5 +104,9 @@ public class ModDimensions {
        UnderworldDimension.underworldDensityFunction(context);
        AtlantisDimension.atlantisDensityFunction(context);
        AlfheimrDimension.alfheimrDensityFunction(context);
+    }
+
+    public static void bootstrapNoiseBiomeSourceParameterList(final BootstapContext<MultiNoiseBiomeSourceParameterList> context) {
+        AlfheimrBiomeBuilder.bootstrap(context);
     }
 }

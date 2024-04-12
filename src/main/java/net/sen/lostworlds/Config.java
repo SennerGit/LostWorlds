@@ -16,6 +16,7 @@ public class Config {
         public static ConfigValue<String> return_alfheimr_portal_frame_block_id;
         public static ConfigValue<String> return_atlantis_portal_frame_block_id;
         public static ConfigValue<String> return_skyopia_portal_frame_block_id;
+        public static ConfigValue<String> return_mystic_gateways_portal_frame_block_id;
 
         public Common(ForgeConfigSpec.Builder builder) {
             return_underworld_portal_frame_block_id = builder
@@ -51,6 +52,14 @@ public class Config {
                     .define("Return Portal Frame Block ID", ForgeRegistries.BLOCKS.getKey(Blocks.STONE).toString());
 
             return_skyopia_portal_frame_block_id = builder
+                    .comment("""
+							Determines what block the game will generate Alfheimr return portals out of
+							Use the block tag lostworlds:portal_frame_blocks to determine what blocks portals can be built with
+							If value entered here is not a valid block it will default to generating minecraft:stone_bricks""")
+                    .translation("lostworlds.config.return_skyopia_portal_frame_block_id")
+                    .define("Return Portal Frame Block ID", ForgeRegistries.BLOCKS.getKey(Blocks.STONE).toString());
+
+            return_mystic_gateways_portal_frame_block_id = builder
                     .comment("""
 							Determines what block the game will generate Alfheimr return portals out of
 							Use the block tag lostworlds:portal_frame_blocks to determine what blocks portals can be built with

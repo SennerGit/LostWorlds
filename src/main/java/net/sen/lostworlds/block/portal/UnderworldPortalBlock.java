@@ -30,6 +30,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.UnderworldBlocks;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.portal.UnderworldTeleporter;
@@ -292,7 +293,7 @@ public class UnderworldPortalBlock extends ModPortalBlock {
         }
 
         private static boolean isEmpty(BlockState state) {
-            return state.isAir() || state.is(ModBlocks.UNDERWORLD_PORTAL.get());
+            return state.isAir() || state.is(UnderworldBlocks.UNDERWORLD_PORTAL.get());
         }
 
         public boolean isValid() {
@@ -300,7 +301,7 @@ public class UnderworldPortalBlock extends ModPortalBlock {
         }
 
         public void createPortalBlocks() {
-            BlockState blockstate = ModBlocks.UNDERWORLD_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
+            BlockState blockstate = UnderworldBlocks.UNDERWORLD_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
             BlockPos.betweenClosed(this.bottomLeft, this.bottomLeft.relative(Direction.UP, this.height - 1).relative(this.rightDir, this.width - 1)).forEach(pos -> this.level.setBlock(pos, blockstate, 18));
         }
 

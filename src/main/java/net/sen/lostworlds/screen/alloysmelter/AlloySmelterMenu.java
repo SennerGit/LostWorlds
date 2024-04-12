@@ -29,9 +29,9 @@ public class AlloySmelterMenu extends AbstractContainerMenu {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public AlloySmelterMenu(int pContainerID, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.ALLOY_SMELTER_MENU.get(), pContainerID);
-        checkContainerSize(inv, AlloySmelterBlockEntity.MAX_SLOTS);
+    public AlloySmelterMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(ModMenuTypes.ALLOY_SMELTER_MENU.get(), pContainerId);
+        checkContainerSize(inv, AlloySmelterBlockEntity.getMaxSlots());
         blockEntity = ((AlloySmelterBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
@@ -87,7 +87,7 @@ public class AlloySmelterMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_SECOND_SLOT_INDEX = VANILLA_SECOND_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = AlloySmelterBlockEntity.MAX_SLOTS;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = AlloySmelterBlockEntity.getMaxSlots();  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {

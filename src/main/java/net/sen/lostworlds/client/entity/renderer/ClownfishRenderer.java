@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.ClownfishModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.ClownfishEntity;
 import net.sen.lostworlds.entity.variant.ClownfishVariant;
 
@@ -19,15 +20,15 @@ public class ClownfishRenderer extends MobRenderer<ClownfishEntity, ClownfishMod
     private static final Map<ClownfishVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(ClownfishVariant.class), map -> {
                 map.put(ClownfishVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/clownfish/clownfish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.CLOWNFISH_ID));
                 map.put(ClownfishVariant.BLUE,
-                        LostWorldsApi.modLoc("textures/entity/clownfish/blue_clownfish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.CLOWNFISH_ID, "blue_" + AtlantisEntities.CLOWNFISH_ID));
                 map.put(ClownfishVariant.BLACK_AND_WHITE,
-                        LostWorldsApi.modLoc("textures/entity/clownfish/back_n_white_clownfish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.CLOWNFISH_ID, "back_n_white_" + AtlantisEntities.CLOWNFISH_ID));
                 map.put(ClownfishVariant.NAKED,
-                        LostWorldsApi.modLoc("textures/entity/clownfish/naked_clownfish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.CLOWNFISH_ID, "naked_" + AtlantisEntities.CLOWNFISH_ID));
                 map.put(ClownfishVariant.PLATINUM,
-                        LostWorldsApi.modLoc("textures/entity/clownfish/platinum_clownfish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.CLOWNFISH_ID, "platinum_" + AtlantisEntities.CLOWNFISH_ID));
             });
 
     public ClownfishRenderer(EntityRendererProvider.Context pContext) {

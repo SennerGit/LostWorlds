@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.RayModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.RayEntity;
 import net.sen.lostworlds.entity.variant.RayVariant;
 
@@ -21,7 +22,7 @@ public class RayRenderer extends MobRenderer<RayEntity, RayModel<RayEntity>> {
     private static final Map<RayVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(RayVariant.class), map -> {
                 map.put(RayVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/manta_ray/manta_ray.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.RAY_ID));
             });
 
     public RayRenderer(EntityRendererProvider.Context pContext) {

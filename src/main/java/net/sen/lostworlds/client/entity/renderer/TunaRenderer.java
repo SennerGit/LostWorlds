@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.TunaModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.TunaEntity;
 import net.sen.lostworlds.entity.variant.TunaSizeVariant;
 import net.sen.lostworlds.entity.variant.TunaTextureVariant;
@@ -21,7 +22,7 @@ public class TunaRenderer extends MobRenderer<TunaEntity, TunaModel<TunaEntity>>
     private static final Map<TunaTextureVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(TunaTextureVariant.class), map -> {
                 map.put(TunaTextureVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/tuna/tuna.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.TUNA_ID));
             });
     private static final Map<TunaSizeVariant, Float> SIZE_BY_VARIANT =
             Util.make(Maps.newEnumMap(TunaSizeVariant.class), map -> {

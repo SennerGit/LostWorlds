@@ -29,6 +29,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.sen.lostworlds.entity.AlfheimrEntities;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.entity.variant.ElvesVariant;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
@@ -81,7 +82,7 @@ public class ElvesEntity extends AbstractVillager implements ReputationEventHand
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return ModEntities.ELVES.get().create(pLevel);
+        return AlfheimrEntities.ELVES.get().create(pLevel);
     }
 
     private void setupAnimationStates() {

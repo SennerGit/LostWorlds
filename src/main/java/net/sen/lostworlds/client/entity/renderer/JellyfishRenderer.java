@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.client.entity.layers.ModModelLayers;
 import net.sen.lostworlds.client.entity.model.JellyfishModel;
+import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.mob.JellyfishEntity;
 import net.sen.lostworlds.entity.variant.JellyfishVariant;
 
@@ -19,7 +20,7 @@ public class JellyfishRenderer extends MobRenderer<JellyfishEntity, JellyfishMod
     private static final Map<JellyfishVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(JellyfishVariant.class), map -> {
                 map.put(JellyfishVariant.DEFAULT,
-                        LostWorldsApi.modLoc("textures/entity/jellyfish/jellyfish.png"));
+                        LostWorldsApi.entityRendererLoc(AtlantisEntities.JELLYFISH_ID));
             });
 
     public JellyfishRenderer(EntityRendererProvider.Context pContext) {

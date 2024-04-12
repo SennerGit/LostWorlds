@@ -1,7 +1,6 @@
 package net.sen.lostworlds.block.portal;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
@@ -30,7 +29,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.block.AlfheimrBlocks;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.portal.AlfheimrTeleporter;
@@ -298,7 +297,7 @@ public class AlfheimrPortalBlock extends ModPortalBlock {
         }
 
         private static boolean isEmpty(BlockState state) {
-            return state.isAir() || state.is(ModBlocks.ALFHEIMR_PORTAL.get());
+            return state.isAir() || state.is(AlfheimrBlocks.ALFHEIMR_PORTAL.get());
         }
 
         public boolean isValid() {
@@ -306,7 +305,7 @@ public class AlfheimrPortalBlock extends ModPortalBlock {
         }
 
         public void createPortalBlocks() {
-            BlockState blockstate = ModBlocks.ALFHEIMR_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
+            BlockState blockstate = AlfheimrBlocks.ALFHEIMR_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
             BlockPos.betweenClosed(this.bottomLeft, this.bottomLeft.relative(Direction.UP, this.height - 1).relative(this.rightDir, this.width - 1)).forEach(pos -> this.level.setBlock(pos, blockstate, 18));
         }
 

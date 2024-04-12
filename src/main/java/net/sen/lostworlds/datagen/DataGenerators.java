@@ -3,9 +3,12 @@ package net.sen.lostworlds.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.armortrim.TrimMaterials;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
@@ -16,11 +19,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.datagen.language.ModLanguageEnUsProvider;
 //import net.sen.lostworlds.datagen.modonomicon.ModBookProvider;
-import net.sen.lostworlds.datagen.loottable.ModGlobalLootModifierProvider;
-import net.sen.lostworlds.datagen.loottable.ModLootTableProvider;
+import net.sen.lostworlds.datagen.loottable.*;
+import net.sen.lostworlds.datagen.loottable.custom.*;
 import net.sen.lostworlds.datagen.tag.*;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = LostWorldsApi.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -31,35 +35,32 @@ public class DataGenerators {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookUpProvider = event.getLookupProvider();
+
         addArmorTrims(existingFileHelper);
 
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
-
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
+        generator.addProvider(event.includeServer(), new ModAdvancementsProvider(generator, lookUpProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookUpProvider));
 
         BlockTagsProvider blockTagsProvider = new ModBlockTagGenerator(packOutput, lookUpProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookUpProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new ModCreativeTabsTagProvider(packOutput, lookUpProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModPaintingVariantTagProvider(packOutput, lookUpProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModPoiTypeTagProvider(packOutput, lookUpProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModFluidTagsProvider(packOutput, lookUpProvider, existingFileHelper));
 
         generator.addProvider(event.includeClient(), new ModBlockModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModSoundProvider(packOutput, existingFileHelper));
 
         generator.addProvider(event.includeClient(), new ModGlobalLootModifierProvider(packOutput));
 
-        generator.addProvider(event.includeClient(), new ModPaintingVariantTagProvider(packOutput, lookUpProvider, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModPoiTypeTagProvider(packOutput, lookUpProvider, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModFluidTagsProvider(packOutput, lookUpProvider, existingFileHelper));
-
-        generator.addProvider(event.includeServer(), new ModAdvancementsProvider(generator, lookUpProvider, existingFileHelper));
-
-        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookUpProvider));
+        generator.addProvider(event.includeClient(), new ModSoundProvider(packOutput, existingFileHelper));
 
         LanguageProvider enusProvider = new ModLanguageEnUsProvider(packOutput, "en_us");
         generator.addProvider(event.includeClient(), enusProvider);
-//        generator.addProvider(event.includeServer(), new ModBookProvider(packOutput, enusProvider));
     }
 
     private static void addArmorTrims(ExistingFileHelper existingFileHelper) {
