@@ -1,12 +1,15 @@
 package net.sen.lostworlds.worldgen.biome.util.layer;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.Musics;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -17,27 +20,60 @@ import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.sound.ModSounds;
 import net.sen.lostworlds.worldgen.biome.util.layer.carver.ModConfiguredCarvers;
 import net.sen.lostworlds.worldgen.placement.*;
+import org.apache.commons.compress.utils.Lists;
+
+import java.util.List;
 
 public class AlfheimrBiomes {
+    private static List<ResourceKey<Biome>> BIOMES = Lists.newArrayList();
+
     /*
     ALFHEIMR
     */
     //OFFLAND
-    public static final ResourceKey<Biome> ALFHEIMR_OCEAN = register("alfheimr_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_DEEP_OCEAN = register("alfheimr_deep_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_WARM_OCEAN = register("alfheimr_warm_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_LUKEWARM_OCEAN = register("alfheimr_lukewarm_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_DEEP_LUKEWARM_OCEAN = register("alfheimr_deep_lukewarm_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_COLD_OCEAN = register("alfheimr_cold_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_DEEP_COLD_OCEAN = register("alfheimr_deep_cold_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_ENCHANTED_OCEAN = register("alfheimr_enchanted_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_DEEP_ENCHANTED_OCEAN = register("alfheimr_deep_enchanted_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_CURSED_OCEAN = register("alfheimr_cursed_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_DEEP_CURSED_OCEAN = register("alfheimr_deep_cursed_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_CORRUPTION_OCEAN = register("alfheimr_corruption_ocean");
-    public static final ResourceKey<Biome> ALFHEIMR_CORRUPTION_DEEP_OCEAN = register("alfheimr_corruption_deep_ocean");
     public static final ResourceKey<Biome> ALFHEIMR_FROZEN_OCEAN = register("alfheimr_frozen_ocean");
     public static final ResourceKey<Biome> ALFHEIMR_DEEP_FROZEN_OCEAN = register("alfheimr_deep_frozen_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_COLD_OCEAN = register("alfheimr_cold_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_COLD_OCEAN = register("alfheimr_deep_cold_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_OCEAN = register("alfheimr_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_OCEAN = register("alfheimr_deep_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_LUKEWARM_OCEAN = register("alfheimr_lukewarm_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_LUKEWARM_OCEAN = register("alfheimr_deep_lukewarm_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_WARM_OCEAN = register("alfheimr_warm_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_WARM_OCEAN = register("alfheimr_deep_warm_ocean");
+
+    public static final ResourceKey<Biome> ALFHEIMR_FROZEN_CORRUPTION_OCEAN = register("alfheimr_frozen_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_FROZEN_CORRUPTION_OCEAN = register("alfheimr_deep_frozen_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_COLD_CORRUPTION_OCEAN = register("alfheimr_cold_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_COLD_CORRUPTION_OCEAN = register("alfheimr_deep_cold_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_CORRUPTION_OCEAN = register("alfheimr_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_CORRUPTION_OCEAN = register("alfheimr_deep_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_LUKEWARM_CORRUPTION_OCEAN = register("alfheimr_lukewarm_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_LUKEWARM_CORRUPTION_OCEAN = register("alfheimr_deep_lukewarm_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_WARM_CORRUPTION_OCEAN = register("alfheimr_warm_corruption_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_WARM_CORRUPTION_OCEAN = register("alfheimr_deep_warm_corruption_ocean");
+
+    public static final ResourceKey<Biome> ALFHEIMR_FROZEN_CURSED_OCEAN = register("alfheimr_frozen_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_FROZEN_CURSED_OCEAN = register("alfheimr_deep_frozen_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_COLD_CURSED_OCEAN = register("alfheimr_cold_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_COLD_CURSED_OCEAN = register("alfheimr_deep_cold_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_CURSED_OCEAN = register("alfheimr_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_CURSED_OCEAN = register("alfheimr_deep_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_LUKEWARM_CURSED_OCEAN = register("alfheimr_lukewarm_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_LUKEWARM_CURSED_OCEAN = register("alfheimr_deep_lukewarm_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_WARM_CURSED_OCEAN = register("alfheimr_warm_cursed_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_WARM_CURSED_OCEAN = register("alfheimr_deep_warm_cursed_ocean");
+
+    public static final ResourceKey<Biome> ALFHEIMR_FROZEN_ENCHANTED_OCEAN = register("alfheimr_frozen_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_FROZEN_ENCHANTED_OCEAN = register("alfheimr_deep_frozen_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_COLD_ENCHANTED_OCEAN = register("alfheimr_cold_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_COLD_ENCHANTED_OCEAN = register("alfheimr_deep_cold_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_ENCHANTED_OCEAN = register("alfheimr_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_ENCHANTED_OCEAN = register("alfheimr_deep_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_LUKEWARM_ENCHANTED_OCEAN = register("alfheimr_lukewarm_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_LUKEWARM_ENCHANTED_OCEAN = register("alfheimr_deep_lukewarm_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_WARM_ENCHANTED_OCEAN = register("alfheimr_wamr_enchanted_ocean");
+    public static final ResourceKey<Biome> ALFHEIMR_DEEP_WARM_ENCHANTED_OCEAN = register("alfheimr_deep_warm_enchanted_ocean");
 
     //HIGHLAND
     public static final ResourceKey<Biome> ALFHEIMR_HOLLOW_HILLS = register("alfheimr_hollow_hills");
@@ -78,6 +114,10 @@ public class AlfheimrBiomes {
     public static final ResourceKey<Biome> ALFHEIMR_FAIRY_RINGS = register("alfheimr_fairy_rings");
     public static final ResourceKey<Biome> ALFHEIMR_CORRUPTION_FOREST = register("alfheimr_corruption_forest");
     public static final ResourceKey<Biome> ALFHEIMR_CORRUPTION_CRYSTAL_FOREST = register("alfheimr_corruption_crystal_forest");
+    
+    public static final ResourceKey<Biome> ALFHEIMR_MAGIC_VALLEY = register("alfheimr_magic_valley");
+    public static final ResourceKey<Biome> ALFHEIMR_TROPICS = register("alfheimr_tropics");
+    public static final ResourceKey<Biome> ALFHEIMR_MAGIC_TROPICS = register("alfheimr_magic_tropics");
 
     //WETLANDS
     public static final ResourceKey<Biome> ALFHEIMR_CRYSTAL_SPRING = register("alfheimr_crystal_spring");
@@ -123,112 +163,153 @@ public class AlfheimrBiomes {
     public static final ResourceKey<Biome> ALFHEIMR_CORRUPTED_CAVERN = register("alfheimr_corrupted_cavern");
 
     public static void bootstrap(BootstapContext<Biome> context) {
-        HolderGetter<PlacedFeature> featureGetter = context.lookup(Registries.PLACED_FEATURE);
+        HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
 
         //OFFLAND
-        context.register(ALFHEIMR_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DEEP_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WARM_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_LUKEWARM_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DEEP_LUKEWARM_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_COLD_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DEEP_COLD_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_ENCHANTED_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DEEP_ENCHANTED_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CURSED_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DEEP_CURSED_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_DEEP_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FROZEN_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DEEP_FROZEN_OCEAN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FROZEN_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_FROZEN_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_COLD_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_COLD_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_LUKEWARM_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_LUKEWARM_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_WARM_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_WARM_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+
+        context.register(ALFHEIMR_FROZEN_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_FROZEN_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_COLD_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_COLD_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_LUKEWARM_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_LUKEWARM_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_WARM_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_WARM_CORRUPTION_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+
+        context.register(ALFHEIMR_FROZEN_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_FROZEN_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_COLD_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_COLD_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_LUKEWARM_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_LUKEWARM_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_WARM_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_WARM_CURSED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+
+        context.register(ALFHEIMR_FROZEN_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_FROZEN_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_COLD_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_COLD_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_LUKEWARM_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_LUKEWARM_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
+        context.register(ALFHEIMR_WARM_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, false)).build());
+        context.register(ALFHEIMR_DEEP_WARM_ENCHANTED_OCEAN, oceanWithDefaults(defaultAmbientBuilder(), oceanMobSpawning(), oceanGen(placedFeatureGetter, carverGetter, true)).build());
 
         //HIGHLAND
-        context.register(ALFHEIMR_HOLLOW_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SKY_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_STONY_HOLLOW, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_STONY_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_LOST_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_KINGDOM_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DEADMAN_CLIFFS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SNOW_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FROZEN_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SNOW_GROVE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FROZEN_GROVE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CRYSTAL_CLIFFS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CRYSTAL_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_MOUNTAIN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_GROVE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_CLIFFS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_HOLLOW_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SKY_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_STONY_HOLLOW, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_STONY_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_LOST_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_KINGDOM_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DEADMAN_CLIFFS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SNOW_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FROZEN_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SNOW_GROVE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FROZEN_GROVE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTAL_CLIFFS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTAL_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION_MOUNTAIN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION_GROVE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION_CLIFFS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MAGIC_VALLEY, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_TROPICS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MAGIC_TROPICS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
 
         //WOODLANDS
-        context.register(ALFHEIMR_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DENSE_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DENSE_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DARK_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CRYSTALLISED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DENSE_CRYSTALLISED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FAIRY_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_GLISTENING_FORESTS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_HAUNTED_FORESTS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CURSED_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SNOW_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FROZEN_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_MUSHROOM_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DENSE_MUSHROOM_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FAIRY_RINGS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), fairyRingsGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_CRYSTAL_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DENSE_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DENSE_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DARK_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTALLISED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DENSE_CRYSTALLISED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FAIRY_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_GLISTENING_FORESTS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_HAUNTED_FORESTS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CURSED_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SNOW_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FROZEN_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MUSHROOM_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DENSE_MUSHROOM_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FAIRY_RINGS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), fairyRingsGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION_CRYSTAL_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
 
         //WETLANDS
-        context.register(ALFHEIMR_CRYSTAL_SPRING, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_RIVER, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FROZEN_RIVER, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_STREAM, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_LAKE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SWAMP, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_MEADOWS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_LOST_SWAMP, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_BEACH, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FROZEN_BEACH, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_STONY_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CRYSTAL_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTAL_SPRING, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_RIVER, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FROZEN_RIVER, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_STREAM, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_LAKE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SWAMP, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MEADOWS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_LOST_SWAMP, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_BEACH, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FROZEN_BEACH, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_STONY_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTAL_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
 
         //FLATLANDS
-        context.register(ALFHEIMR_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CRYSTAL_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FLOWER_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_MYSTICAL_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SNOWY_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTION_SNOWY_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTAL_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FLOWER_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MYSTICAL_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SNOWY_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTION_SNOWY_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
 
         //ARID-LANDS
-        context.register(ALFHEIMR_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CRYSTAL_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DRAGOON_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SAVANNA, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_MYSTICAL_SAVANNA, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DRY_RAVINE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WASTELAND, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WASTELAND_DRY_RAVINE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WASTELAND_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WASTELAND_CRYSTAL, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_BADLANDS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTED_BADLANDS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTAL_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DRAGOON_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SAVANNA, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MYSTICAL_SAVANNA, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DRY_RAVINE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_WASTELAND, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_WASTELAND_DRY_RAVINE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_WASTELAND_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_WASTELAND_CRYSTAL, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_BADLANDS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTED_BADLANDS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
 
         //CAVES
-        context.register(ALFHEIMR_CRYSTAL_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_OVERGROWN_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTED_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(featureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTAL_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_OVERGROWN_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTED_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
     }
 
     // Defaults
     public static Biome.BiomeBuilder biomeWithDefaults(BiomeSpecialEffects.Builder biomeAmbience, MobSpawnSettings.Builder mobSpawnInfo, BiomeGenerationSettings.Builder biomeGenerationSettings) {
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(0.5F)
+                .downfall(0.5F)
+                .specialEffects(biomeAmbience.build())
+                .mobSpawnSettings(mobSpawnInfo.build())
+                .generationSettings(biomeGenerationSettings.build())
+                .temperatureAdjustment(Biome.TemperatureModifier.NONE);
+    }
+    public static Biome.BiomeBuilder oceanWithDefaults(BiomeSpecialEffects.Builder biomeAmbience, MobSpawnSettings.Builder mobSpawnInfo, BiomeGenerationSettings.Builder biomeGenerationSettings) {
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .temperature(0.5F)
@@ -248,6 +329,21 @@ public class AlfheimrBiomes {
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_FLOWERS_KEY);
+
+        return biome;
+    }
+
+
+    public static BiomeGenerationSettings.Builder oceanGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean isDeep) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_JUNGLE);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_SPARSE_JUNGLE);
+
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.WARM_OCEAN_VEGETATION);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEA_PICKLE);
+
 
         return biome;
     }
@@ -284,6 +380,19 @@ public class AlfheimrBiomes {
         spawnInfo.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.RHINO.get(), 12, 4, 4));
 
         return spawnInfo;
+    }
+
+    public static MobSpawnSettings.Builder oceanMobSpawning() {
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.COD, 20, 4, 8));
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.SQUID, 20, 4, 8));
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 20, 4, 8));
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.SALMON, 20, 4, 8));
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.DOLPHIN, 20, 4, 8));
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 20, 4, 8));
+
+        return spawns;
     }
     
     public static BiomeGenerationSettings.Builder globalOverworldGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
@@ -339,7 +448,18 @@ public class AlfheimrBiomes {
     public static void commonFeaturesWithoutBuildings(BiomeGenerationSettings.Builder biome) {
     }
 
+    public static List<ResourceKey<Biome>> getBiomes() {
+        return ImmutableList.copyOf(BIOMES);
+    }
+
     public static ResourceKey<Biome> register(String name) {
-        return ResourceKey.create(Registries.BIOME, LostWorldsApi.modLoc(name));
+        ResourceKey<Biome> key = ResourceKey.create(Registries.BIOME, LostWorldsApi.modLoc(name));
+        BIOMES.add(key);
+        return key;
+    }
+
+    private static void registerBiome(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome)
+    {
+        context.register(key, biome);
     }
 }

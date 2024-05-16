@@ -1,10 +1,11 @@
 package net.sen.lostworlds;
 
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.RegistryBuilder;
-import net.sen.lostworlds.multiblocks.IMultiblock;
+import net.sen.lostworlds.multiblocks.IMultiblock;;
 
 import java.util.HashMap;
 import java.util.Locale;

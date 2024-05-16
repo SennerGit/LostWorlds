@@ -8,6 +8,8 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.sen.lostworlds.worldgen.biome.util.layer.AlfheimrBiomes;
 import org.jetbrains.annotations.NotNull;
 
+import static net.minecraft.world.level.levelgen.SurfaceRules.*;
+
 public class AlfheimrSurfaceRules {
     private static SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
@@ -15,6 +17,7 @@ public class AlfheimrSurfaceRules {
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
+    private static final SurfaceRules.RuleSource CLAY = makeStateRule(Blocks.CLAY);
     private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
     private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
     private static final SurfaceRules.RuleSource SNOW = makeStateRule(Blocks.SNOW_BLOCK);
@@ -36,9 +39,16 @@ public class AlfheimrSurfaceRules {
 //                .add(overworldLike());
 
 //        return SurfaceRules.sequence(builder.build().toArray(SurfaceRules.RuleSource[]::new));
+        ConditionSource notUnderWater = waterBlockCheck(-1, 0);
+
+        ConditionSource isSandy = isBiome(AlfheimrBiomes.ALFHEIMR_OCEAN);
+        RuleSource sandRules = sequence(ifTrue(not(notUnderWater), SAND), SAND);
+
         return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(isSandy, sandRules),
                 bedrockLayer,
                 enchantedSurface(),
+                desertSurface(),
                 overworldLike()
         );
     }
@@ -55,7 +65,7 @@ public class AlfheimrSurfaceRules {
                 SurfaceRules.ifTrue(surfaceNoiseAbove(-2.25D), podzolFloor)
         ));
 
-        return SurfaceRules.ifTrue(SurfaceRules.isBiome(
+        return SurfaceRules.ifTrue(isBiome(
                 AlfheimrBiomes.ALFHEIMR_ENCHANTED_FOREST
         ), coarseDirtFloor);
 
@@ -82,8 +92,25 @@ public class AlfheimrSurfaceRules {
     }
 
     @NotNull
+    private static SurfaceRules.RuleSource desertSurface() {
+        SurfaceRules.RuleSource podzolFloor = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0), SAND),
+                SAND
+        );
+
+        SurfaceRules.RuleSource sandFloor = SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(
+                SurfaceRules.ifTrue(surfaceNoiseAbove(2.25D), SAND),
+                SurfaceRules.ifTrue(surfaceNoiseAbove(-2.25D), podzolFloor)
+        ));
+
+        return SurfaceRules.ifTrue(isBiome(
+                AlfheimrBiomes.ALFHEIMR_DESERT
+        ), sandFloor);
+    }
+
+    @NotNull
     private static SurfaceRules.RuleSource overworldLike() {
-        SurfaceRules.RuleSource riverLakeBeds = SurfaceRules.ifTrue(SurfaceRules.isBiome(
+        SurfaceRules.RuleSource riverLakeBeds = SurfaceRules.ifTrue(isBiome(
                 AlfheimrBiomes.ALFHEIMR_RIVER,
                 AlfheimrBiomes.ALFHEIMR_STREAM
         ), SurfaceRules.sequence(
@@ -92,7 +119,7 @@ public class AlfheimrSurfaceRules {
                 SAND
         ));
 
-        SurfaceRules.RuleSource swampBeds = SurfaceRules.ifTrue(SurfaceRules.isBiome(
+        SurfaceRules.RuleSource swampBeds = SurfaceRules.ifTrue(isBiome(
                 AlfheimrBiomes.ALFHEIMR_MEADOWS
         ), SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0), GRASS_BLOCK),

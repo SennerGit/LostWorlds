@@ -6,6 +6,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -31,6 +32,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
 import net.sen.lostworlds.block.AlfheimrBlocks;
 import net.sen.lostworlds.util.ModTags;
+import net.sen.lostworlds.worldgen.dimension.AlfheimrDimension;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.portal.AlfheimrTeleporter;
 
@@ -99,28 +101,37 @@ public class AlfheimrPortalBlock extends ModPortalBlock {
     }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (!entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions()) {
-            if (entity.isOnPortalCooldown()) {
-                entity.setPortalCooldown();
+    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
+//        if (!entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions()) {
+//            if (entity.isOnPortalCooldown()) {
+//                entity.setPortalCooldown();
+//            } else {
+//                if (!entity.level().isClientSide() && !pos.equals(entity.portalEntrancePos)) {
+//                    entity.portalEntrancePos = pos.immutable();
+//                }
+//                Level level1 = entity.level();
+//                if (level1 != null) {
+//                    MinecraftServer minecraftserver = level1.getServer();
+//                    ResourceKey<Level> destination = entity.level().dimension() == ModDimensions.ALFHEIMR_LEVEL_KEY ? Level.OVERWORLD : ModDimensions.ALFHEIMR_LEVEL_KEY;
+//                    if (minecraftserver != null) {
+//                        ServerLevel destinationWorld = minecraftserver.getLevel(destination);
+//                        if (destinationWorld != null && minecraftserver.isNetherEnabled() && !entity.isPassenger()) {
+//                            entity.level().getProfiler().push("alfheimr_portal");
+//                            entity.setPortalCooldown();
+//                            entity.changeDimension(destinationWorld, new AlfheimrTeleporter(destinationWorld));
+//                            entity.level().getProfiler().pop();
+//                        }
+//                    }
+//                }
+//            }
+//        }
+
+        super.entityInside(state, worldIn, pos, entityIn);
+        if (!worldIn.isClientSide && entityIn instanceof ServerPlayer && !entityIn.isPassenger() && entityIn.canChangeDimensions()) {
+            if (!entityIn.isOnPortalCooldown()) {
+                AlfheimrDimension.teleportPlayer((ServerPlayer) entityIn, ModDimensions.ALFHEIMR_LEVEL_KEY);
             } else {
-                if (!entity.level().isClientSide() && !pos.equals(entity.portalEntrancePos)) {
-                    entity.portalEntrancePos = pos.immutable();
-                }
-                Level level1 = entity.level();
-                if (level1 != null) {
-                    MinecraftServer minecraftserver = level1.getServer();
-                    ResourceKey<Level> destination = entity.level().dimension() == ModDimensions.ALFHEIMR_LEVEL_KEY ? Level.OVERWORLD : ModDimensions.ALFHEIMR_LEVEL_KEY;
-                    if (minecraftserver != null) {
-                        ServerLevel destinationWorld = minecraftserver.getLevel(destination);
-                        if (destinationWorld != null && minecraftserver.isNetherEnabled() && !entity.isPassenger()) {
-                            entity.level().getProfiler().push("alfheimr_portal");
-                            entity.setPortalCooldown();
-                            entity.changeDimension(destinationWorld, new AlfheimrTeleporter(destinationWorld));
-                            entity.level().getProfiler().pop();
-                        }
-                    }
-                }
+                entityIn.portalCooldown = 80;
             }
         }
     }

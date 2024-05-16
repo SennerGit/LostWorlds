@@ -11,6 +11,8 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.worldgen.dimension.biomebuilder.AlfheimrBiomeBuilder;
+import net.sen.lostworlds.worldgen.dimension.noise.AlfheimrNoiseGenSettings;
+import net.sen.lostworlds.worldgen.dimension.noise.AlfheimrNoiseRouter;
 
 public class ModDimensions {
     public static long seed; //Minecraft Overworld seed - used for seed ASM
@@ -75,7 +77,7 @@ public class ModDimensions {
     public static final ResourceKey<DimensionType> MYSTIC_GATEWAYS_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             LostWorldsApi.modLoc("mystic_gateways_type"));
 
-    public static void bootstrapType(BootstapContext<DimensionType> context) {
+    public static void bootstrapType(final BootstapContext<DimensionType> context) {
         UnderworldDimension.underworldDimensionType(context);
         NidavellirDimension.nidavellirDimensionType(context);
         AlfheimrDimension.alfheimrDimensionType(context);
@@ -83,27 +85,29 @@ public class ModDimensions {
         SkyopiaDimension.skyopiaDimensionType(context);
     }
 
-
-    public static void bootstrapNoise(BootstapContext<NoiseGeneratorSettings> context) {
+    public static void bootstrapNoise(final BootstapContext<NoiseGeneratorSettings> context) {
         context.register(UNDERWORLD_NOISE_KEY, UnderworldDimension.underworldDimensionNoise(context));
         context.register(NIDAVELLIR_NOISE_KEY, NidavellirDimension.nidavellirDimensionNoise(context));
-        context.register(ALFHEIMR_NOISE_KEY, AlfheimrDimension.alfheimrDimensionNoise(context));
+//        context.register(ALFHEIMR_NOISE_KEY, AlfheimrDimension.alfheimrDimensionNoise(context));
         context.register(ATLANTIS_NOISE_KEY, AtlantisDimension.atlantisDimensionNoise(context));
 //        context.register(SKYOPIA_NOISE_KEY, SkyopiaDimension.skyopiaDimensionNoise(context));
+
+        AlfheimrNoiseGenSettings.bootstrap(context);
+
     }
 
-   public static void bootstrapStem(BootstapContext<LevelStem> context) {
+   public static void bootstrapStem(final BootstapContext<LevelStem> context) {
        UnderworldDimension.underworldDimension(context);
        NidavellirDimension.nidavellirDimensionLevelStem(context);
-       AlfheimrDimension.alfheimrDimension(context);
+       AlfheimrDimension.alfheimrLevelStem(context);
        AtlantisDimension.atlantisDimension(context);
        SkyopiaDimension.skyopiaDimension(context);
     }
 
-   public static void bootstrapDensityFunctions(BootstapContext<DensityFunction> context) {
+   public static void bootstrapDensityFunctions(final BootstapContext<DensityFunction> context) {
        UnderworldDimension.underworldDensityFunction(context);
        AtlantisDimension.atlantisDensityFunction(context);
-       AlfheimrDimension.alfheimrDensityFunction(context);
+       AlfheimrNoiseRouter.alfheimrDensityFunction(context);
     }
 
     public static void bootstrapNoiseBiomeSourceParameterList(final BootstapContext<MultiNoiseBiomeSourceParameterList> context) {
