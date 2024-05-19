@@ -77,7 +77,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModTags.Blocks.OLIVE_WOOD,
                 ModTags.Blocks.MYRRH_WOOD,
                 ModTags.Blocks.LAUREL_WOOD,
-                ModTags.Blocks.CYPRESS_WOOD
+                ModTags.Blocks.CYPRESS_WOOD,
+                ModTags.Blocks.BLACK_BIRCH_WOOD,
+                ModTags.Blocks.WHITE_OAK_WOOD,
+                ModTags.Blocks.BUR_OAK_WOOD,
+                ModTags.Blocks.BLOOD_CHERRY_WOOD,
+                ModTags.Blocks.SACRED_TREE_WOOD,
+                ModTags.Blocks.WILLOW_WOOD,
+                ModTags.Blocks.DEADWOOD_WOOD,
+                ModTags.Blocks.EBONY_KINGSWOOD_WOOD,
+                ModTags.Blocks.IVORY_KINGSWOOD_WOOD,
+                ModTags.Blocks.WEAVER_WOOD
         );
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
@@ -730,7 +740,47 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.CYPRESS_LOG.get(),
                 UnderworldBlocks.CYPRESS_WOOD.get(),
                 UnderworldBlocks.STRIPPED_CYPRESS_LOG.get(),
-                UnderworldBlocks.STRIPPED_CYPRESS_WOOD.get()
+                UnderworldBlocks.STRIPPED_CYPRESS_WOOD.get(),
+                AlfheimrBlocks.BLACK_BIRCH_LOG.get(),
+                AlfheimrBlocks.BLACK_BIRCH_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD.get(),
+                AlfheimrBlocks.WHITE_OAK_LOG.get(),
+                AlfheimrBlocks.WHITE_OAK_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD.get(),
+                AlfheimrBlocks.BUR_OAK_LOG.get(),
+                AlfheimrBlocks.BUR_OAK_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BUR_OAK_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_LOG.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD.get(),
+                AlfheimrBlocks.SACRED_TREE_LOG.get(),
+                AlfheimrBlocks.SACRED_TREE_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG.get(),
+                AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD.get(),
+                AlfheimrBlocks.WILLOW_LOG.get(),
+                AlfheimrBlocks.WILLOW_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WILLOW_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WILLOW_WOOD.get(),
+                AlfheimrBlocks.DEADWOOD_LOG.get(),
+                AlfheimrBlocks.DEADWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_DEADWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.WEAVER_LOG.get(),
+                AlfheimrBlocks.WEAVER_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WEAVER_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WEAVER_WOOD.get()
         );
 
         this.tag(BlockTags.PLANKS).add(
@@ -738,7 +788,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.OLIVE_PLANKS.get(),
                 UnderworldBlocks.MYRRH_PLANKS.get(),
                 UnderworldBlocks.LAUREL_PLANKS.get(),
-                UnderworldBlocks.CYPRESS_PLANKS.get()
+                UnderworldBlocks.CYPRESS_PLANKS.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS.get(),
+                AlfheimrBlocks.WILLOW_PLANKS.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get(),
+                AlfheimrBlocks.WEAVER_PLANKS.get()
         );
 
         this.tag(BlockTags.WOODEN_DOORS).add(
@@ -746,7 +806,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.OLIVE_PLANKS_DOOR.get(),
                 UnderworldBlocks.MYRRH_PLANKS_DOOR.get(),
                 UnderworldBlocks.LAUREL_PLANKS_DOOR.get(),
-                UnderworldBlocks.CYPRESS_PLANKS_DOOR.get()
+                UnderworldBlocks.CYPRESS_PLANKS_DOOR.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_DOOR.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_DOOR.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_DOOR.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_DOOR.get()
         );
 
         this.tag(BlockTags.WOODEN_FENCES).add(
@@ -754,7 +824,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.OLIVE_PLANKS_FENCE.get(),
                 UnderworldBlocks.MYRRH_PLANKS_FENCE.get(),
                 UnderworldBlocks.LAUREL_PLANKS_FENCE.get(),
-                UnderworldBlocks.CYPRESS_PLANKS_FENCE.get()
+                UnderworldBlocks.CYPRESS_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_FENCE.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_FENCE.get()
         );
 
         this.tag(BlockTags.WOODEN_BUTTONS).add(
@@ -762,7 +842,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.OLIVE_PLANKS_BUTTON.get(),
                 UnderworldBlocks.MYRRH_PLANKS_BUTTON.get(),
                 UnderworldBlocks.LAUREL_PLANKS_BUTTON.get(),
-                UnderworldBlocks.CYPRESS_PLANKS_BUTTON.get()
+                UnderworldBlocks.CYPRESS_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_BUTTON.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_BUTTON.get()
         );
 
         this.tag(BlockTags.WOODEN_SLABS).add(
@@ -770,7 +860,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.OLIVE_PLANKS_SLAB.get(),
                 UnderworldBlocks.MYRRH_PLANKS_SLAB.get(),
                 UnderworldBlocks.LAUREL_PLANKS_SLAB.get(),
-                UnderworldBlocks.CYPRESS_PLANKS_SLAB.get()
+                UnderworldBlocks.CYPRESS_PLANKS_SLAB.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_SLAB.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_SLAB.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_SLAB.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SLAB.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_SLAB.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_SLAB.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_SLAB.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SLAB.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SLAB.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_SLAB.get()
         );
 
         this.tag(BlockTags.WOODEN_STAIRS).add(
@@ -778,7 +878,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.OLIVE_PLANKS_STAIRS.get(),
                 UnderworldBlocks.MYRRH_PLANKS_STAIRS.get(),
                 UnderworldBlocks.LAUREL_PLANKS_STAIRS.get(),
-                UnderworldBlocks.CYPRESS_PLANKS_STAIRS.get()
+                UnderworldBlocks.CYPRESS_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_STAIRS.get()
         );
 
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(
@@ -786,7 +896,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.OLIVE_PLANKS_PRESSURE_PLATE.get(),
                 UnderworldBlocks.MYRRH_PLANKS_PRESSURE_PLATE.get(),
                 UnderworldBlocks.LAUREL_PLANKS_PRESSURE_PLATE.get(),
-                UnderworldBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get()
+                UnderworldBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_PRESSURE_PLATE.get()
         );
 
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(
@@ -794,7 +914,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 UnderworldBlocks.OLIVE_PLANKS_TRAPDOOR.get(),
                 UnderworldBlocks.MYRRH_PLANKS_TRAPDOOR.get(),
                 UnderworldBlocks.LAUREL_PLANKS_TRAPDOOR.get(),
-                UnderworldBlocks.CYPRESS_PLANKS_TRAPDOOR.get()
+                UnderworldBlocks.CYPRESS_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_TRAPDOOR.get()
         );
 
         this.tag(ModTags.Blocks.ELDER_WOOD).add(
@@ -940,6 +1070,296 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(ModTags.Blocks.CYPRESS_STRIPPED_LOGS).add(
                 UnderworldBlocks.STRIPPED_CYPRESS_LOG.get(),
                 UnderworldBlocks.STRIPPED_CYPRESS_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.BLACK_BIRCH_WOOD).add(
+                AlfheimrBlocks.BLACK_BIRCH_LOG.get(),
+                AlfheimrBlocks.BLACK_BIRCH_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD.get(),
+                AlfheimrBlocks.BLACK_BIRCH_LEAVES.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_SLAB.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.BLACK_BIRCH_LOGS).add(
+                AlfheimrBlocks.BLACK_BIRCH_LOG.get(),
+                AlfheimrBlocks.BLACK_BIRCH_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.BLACK_BIRCH_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.WHITE_OAK_WOOD).add(
+                AlfheimrBlocks.WHITE_OAK_LOG.get(),
+                AlfheimrBlocks.WHITE_OAK_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD.get(),
+                AlfheimrBlocks.WHITE_OAK_LEAVES.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_SLAB.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.WHITE_OAK_LOGS).add(
+                AlfheimrBlocks.WHITE_OAK_LOG.get(),
+                AlfheimrBlocks.WHITE_OAK_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.WHITE_OAK_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.BUR_OAK_WOOD).add(
+                AlfheimrBlocks.BUR_OAK_LOG.get(),
+                AlfheimrBlocks.BUR_OAK_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BUR_OAK_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD.get(),
+                AlfheimrBlocks.BUR_OAK_LEAVES.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_SLAB.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_DOOR.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.BUR_OAK_LOGS).add(
+                AlfheimrBlocks.BUR_OAK_LOG.get(),
+                AlfheimrBlocks.BUR_OAK_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BUR_OAK_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.BUR_OAK_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_BUR_OAK_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.BLOOD_CHERRY_WOOD).add(
+                AlfheimrBlocks.BLOOD_CHERRY_LOG.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_LEAVES.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SLAB.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.BLOOD_CHERRY_LOGS).add(
+                AlfheimrBlocks.BLOOD_CHERRY_LOG.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.BLOOD_CHERRY_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG.get(),
+                AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.SACRED_TREE_WOOD).add(
+                AlfheimrBlocks.SACRED_TREE_LOG.get(),
+                AlfheimrBlocks.SACRED_TREE_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG.get(),
+                AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD.get(),
+                AlfheimrBlocks.SACRED_TREE_LEAVES.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_SLAB.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.SACRED_TREE_LOGS).add(
+                AlfheimrBlocks.SACRED_TREE_LOG.get(),
+                AlfheimrBlocks.SACRED_TREE_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG.get(),
+                AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.SACRED_TREE_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG.get(),
+                AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.WILLOW_WOOD).add(
+                AlfheimrBlocks.WILLOW_LOG.get(),
+                AlfheimrBlocks.WILLOW_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WILLOW_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WILLOW_WOOD.get(),
+                AlfheimrBlocks.WILLOW_LEAVES.get(),
+                AlfheimrBlocks.WILLOW_PLANKS.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_SLAB.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_DOOR.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.WILLOW_LOGS).add(
+                AlfheimrBlocks.WILLOW_LOG.get(),
+                AlfheimrBlocks.WILLOW_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WILLOW_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WILLOW_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.WILLOW_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_WILLOW_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WILLOW_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.DEADWOOD_WOOD).add(
+                AlfheimrBlocks.DEADWOOD_LOG.get(),
+                AlfheimrBlocks.DEADWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_DEADWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD.get(),
+                AlfheimrBlocks.DEADWOOD_LEAVES.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_SLAB.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_DOOR.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.DEADWOOD_LOGS).add(
+                AlfheimrBlocks.DEADWOOD_LOG.get(),
+                AlfheimrBlocks.DEADWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_DEADWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.DEADWOOD_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_DEADWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.EBONY_KINGSWOOD_WOOD).add(
+                AlfheimrBlocks.EBONY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_LEAVES.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SLAB.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.EBONY_KINGSWOOD_LOGS).add(
+                AlfheimrBlocks.EBONY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.EBONY_KINGSWOOD_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.IVORY_KINGSWOOD_WOOD).add(
+                AlfheimrBlocks.IVORY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_LEAVES.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SLAB.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.IVORY_KINGSWOOD_LOGS).add(
+                AlfheimrBlocks.IVORY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.IVORY_KINGSWOOD_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG.get(),
+                AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.WEAVER_WOOD).add(
+                AlfheimrBlocks.WEAVER_LOG.get(),
+                AlfheimrBlocks.WEAVER_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WEAVER_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WEAVER_WOOD.get(),
+                AlfheimrBlocks.WEAVER_LEAVES.get(),
+                AlfheimrBlocks.WEAVER_PLANKS.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_SLAB.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_STAIRS.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_PRESSURE_PLATE.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_DOOR.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_FENCE_GATE.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_BUTTON.get()
+        );
+
+        this.tag(ModTags.Blocks.WEAVER_LOGS).add(
+                AlfheimrBlocks.WEAVER_LOG.get(),
+                AlfheimrBlocks.WEAVER_WOOD.get(),
+                AlfheimrBlocks.STRIPPED_WEAVER_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WEAVER_WOOD.get()
+        );
+
+        this.tag(ModTags.Blocks.WEAVER_STRIPPED_LOGS).add(
+                AlfheimrBlocks.STRIPPED_WEAVER_LOG.get(),
+                AlfheimrBlocks.STRIPPED_WEAVER_WOOD.get()
         );
 
         this.tag(ModTags.Blocks.MUSHROOMS).add(

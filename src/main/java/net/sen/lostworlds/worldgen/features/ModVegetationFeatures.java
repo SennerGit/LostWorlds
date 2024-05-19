@@ -27,6 +27,8 @@ import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.AlfheimrBlocks;
 import net.sen.lostworlds.block.UnderworldBlocks;
 import net.sen.lostworlds.block.wood.ModSaplingBlock;
+import net.sen.lostworlds.worldgen.tree.custom.foliageplacer.*;
+import net.sen.lostworlds.worldgen.tree.custom.trunkplacer.*;
 
 public class ModVegetationFeatures {
     //Trees
@@ -35,6 +37,16 @@ public class ModVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_MYRRH_KEY = registerKey("tree_myrrh");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_LAUREL_KEY = registerKey("tree_laurel");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_CYPRESS_KEY = registerKey("tree_cypress");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_BLACK_BIRCH_KEY = registerKey("tree_black_birch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_WHITE_OAK_KEY = registerKey("tree_white_oak");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_BUR_OAK_KEY = registerKey("tree_bur_oak");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_BLOOD_CHERRY_KEY = registerKey("tree_blood_cherry");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_SACRED_TREE_KEY = registerKey("tree_sacred_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_WILLOW_KEY = registerKey("tree_willow");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_DEADWOOD_KEY = registerKey("tree_deadwood");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_EBONY_KINGSWOOD_KEY = registerKey("tree_ebony_kingswood");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_IVORY_KINGSWOOD_KEY = registerKey("tree_ivory_kingswood");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREE_WEAVER_KEY = registerKey("tree_weaver");
 
     //Flowers
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWER_IRIS_KEY = registerKey("flower_iris");
@@ -47,12 +59,13 @@ public class ModVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY = registerKey("alfheimr_magic_grass_single_placed_key");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+        //Elder Wood
         ModSaplingBlock elderWoodSapling = ((ModSaplingBlock) UnderworldBlocks.ELDER_WOOD_SAPLING.get());
         register(context, TREE_ELDER_WOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(UnderworldBlocks.ELDER_WOOD_LOG.get()),
-                new StraightTrunkPlacer(5, 4, 3),
+                new ElderWoodTrunkPlacer(5, 4, 3),
                 BlockStateProvider.simple(UnderworldBlocks.ELDER_WOOD_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new ElderWoodFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
                 .dirt(BlockStateProvider.simple(elderWoodSapling.getBlock(0)))
@@ -60,12 +73,13 @@ public class ModVegetationFeatures {
                 .dirt(BlockStateProvider.simple(elderWoodSapling.getBlock(2)))
                 .build());
 
+        //Olive
         ModSaplingBlock oliveSapling = ((ModSaplingBlock) UnderworldBlocks.OLIVE_SAPLING.get());
         register(context, TREE_OLIVE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(UnderworldBlocks.OLIVE_LOG.get()),
-                new StraightTrunkPlacer(5, 4, 3),
+                new OliveTrunkPlacer(5, 4, 3),
                 BlockStateProvider.simple(UnderworldBlocks.OLIVE_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new OliveFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
                 .dirt(BlockStateProvider.simple(oliveSapling.getBlock(0)))
@@ -73,12 +87,13 @@ public class ModVegetationFeatures {
                 .dirt(BlockStateProvider.simple(oliveSapling.getBlock(2)))
                 .build());
 
+        //Myrrh
         ModSaplingBlock myrrhSapling = ((ModSaplingBlock) UnderworldBlocks.MYRRH_SAPLING.get());
         register(context, TREE_MYRRH_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(UnderworldBlocks.MYRRH_LOG.get()),
-                new StraightTrunkPlacer(5, 4, 3),
+                new MyrrhTrunkPlacer(5, 4, 3),
                 BlockStateProvider.simple(UnderworldBlocks.MYRRH_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new MyrrhFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
                 .dirt(BlockStateProvider.simple(myrrhSapling.getBlock(0)))
@@ -86,12 +101,13 @@ public class ModVegetationFeatures {
                 .dirt(BlockStateProvider.simple(myrrhSapling.getBlock(2)))
                 .build());
 
+        //Laurel
         ModSaplingBlock laurelSapling = ((ModSaplingBlock) UnderworldBlocks.LAUREL_SAPLING.get());
         register(context, TREE_LAUREL_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(UnderworldBlocks.LAUREL_LOG.get()),
-                new StraightTrunkPlacer(5, 4, 3),
+                new LaurelTrunkPlacer(5, 4, 3),
                 BlockStateProvider.simple(UnderworldBlocks.LAUREL_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new LaurelFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
                 .dirt(BlockStateProvider.simple(laurelSapling.getBlock(0)))
@@ -99,17 +115,158 @@ public class ModVegetationFeatures {
                 .dirt(BlockStateProvider.simple(laurelSapling.getBlock(2)))
                 .build());
 
+        //Cypress
         ModSaplingBlock cypressSapling = ((ModSaplingBlock) UnderworldBlocks.CYPRESS_SAPLING.get());
         register(context, TREE_CYPRESS_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(UnderworldBlocks.CYPRESS_LOG.get()),
-                new StraightTrunkPlacer(5, 4, 3),
+                new CypressTrunkPlacer(5, 4, 3),
                 BlockStateProvider.simple(UnderworldBlocks.CYPRESS_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new CypressFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
                 .dirt(BlockStateProvider.simple(cypressSapling.getBlock(0)))
                 .dirt(BlockStateProvider.simple(cypressSapling.getBlock(1)))
                 .dirt(BlockStateProvider.simple(cypressSapling.getBlock(2)))
+                .build());
+
+        //Black Birch
+        ModSaplingBlock blackBirchSapling = ((ModSaplingBlock) AlfheimrBlocks.BLACK_BIRCH_SAPLING.get());
+        register(context, TREE_BLACK_BIRCH_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.BLACK_BIRCH_LOG.get()),
+                new BlackBirchTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.BLACK_BIRCH_LEAVES.get()),
+                new BlackBirchFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(blackBirchSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(blackBirchSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(blackBirchSapling.getBlock(2)))
+                .build());
+
+        //White Oak
+        ModSaplingBlock whiteOakSapling = ((ModSaplingBlock) AlfheimrBlocks.WHITE_OAK_SAPLING.get());
+        register(context, TREE_WHITE_OAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.WHITE_OAK_LOG.get()),
+                new WhiteOakTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.WHITE_OAK_LEAVES.get()),
+                new WhiteOakFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(whiteOakSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(whiteOakSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(whiteOakSapling.getBlock(2)))
+                .build());
+
+        //Bur Oak
+        ModSaplingBlock burOakSapling = ((ModSaplingBlock) AlfheimrBlocks.BUR_OAK_SAPLING.get());
+        register(context, TREE_BUR_OAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.BUR_OAK_LOG.get()),
+                new BurOakTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.BUR_OAK_LEAVES.get()),
+                new BurOakFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(burOakSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(burOakSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(burOakSapling.getBlock(2)))
+                .build());
+
+        //Blood Cherry
+        ModSaplingBlock bloodCherrySapling = ((ModSaplingBlock) AlfheimrBlocks.BLOOD_CHERRY_SAPLING.get());
+        register(context, TREE_BLOOD_CHERRY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.BLOOD_CHERRY_LOG.get()),
+                new BloodCherryTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.BLOOD_CHERRY_LEAVES.get()),
+                new BloodCherryFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(bloodCherrySapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(bloodCherrySapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(bloodCherrySapling.getBlock(2)))
+                .build());
+
+        //Sacred Tree
+        ModSaplingBlock sacredTreeSapling = ((ModSaplingBlock) AlfheimrBlocks.SACRED_TREE_SAPLING.get());
+        register(context, TREE_SACRED_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.SACRED_TREE_LOG.get()),
+                new SacredTreeTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.SACRED_TREE_LEAVES.get()),
+                new SacredTreeFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(sacredTreeSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(sacredTreeSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(sacredTreeSapling.getBlock(2)))
+                .build());
+
+        //Willow
+        ModSaplingBlock willowSapling = ((ModSaplingBlock) AlfheimrBlocks.WILLOW_SAPLING.get());
+        register(context, TREE_WILLOW_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.WILLOW_LOG.get()),
+                new WillowTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.WILLOW_LEAVES.get()),
+                new WillowFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(willowSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(willowSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(willowSapling.getBlock(2)))
+                .build());
+
+        //Deadwood
+        ModSaplingBlock deadwoodSapling = ((ModSaplingBlock) AlfheimrBlocks.DEADWOOD_SAPLING.get());
+        register(context, TREE_DEADWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.DEADWOOD_LOG.get()),
+                new DeadwoodTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.DEADWOOD_LEAVES.get()),
+                new DeadwoodFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(deadwoodSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(deadwoodSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(deadwoodSapling.getBlock(2)))
+                .build());
+
+        //Ebony Kingswood
+        ModSaplingBlock ebonyKingswoodSapling = ((ModSaplingBlock) AlfheimrBlocks.EBONY_KINGSWOOD_SAPLING.get());
+        register(context, TREE_EBONY_KINGSWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.EBONY_KINGSWOOD_LOG.get()),
+                new EbonyKingswoodTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.EBONY_KINGSWOOD_LEAVES.get()),
+                new EbonyKingswoodFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(ebonyKingswoodSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(ebonyKingswoodSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(ebonyKingswoodSapling.getBlock(2)))
+                .build());
+
+        //Ivory Kingswood
+        ModSaplingBlock ivoryKingswoodSapling = ((ModSaplingBlock) AlfheimrBlocks.IVORY_KINGSWOOD_SAPLING.get());
+        register(context, TREE_IVORY_KINGSWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.IVORY_KINGSWOOD_LOG.get()),
+                new IvoryKingswoodTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.IVORY_KINGSWOOD_LEAVES.get()),
+                new IvoryKingswoodFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(ivoryKingswoodSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(ivoryKingswoodSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(ivoryKingswoodSapling.getBlock(2)))
+                .build());
+
+        //Weaver
+        ModSaplingBlock weaverSapling = ((ModSaplingBlock) AlfheimrBlocks.WEAVER_SAPLING.get());
+        register(context, TREE_WEAVER_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AlfheimrBlocks.WEAVER_LOG.get()),
+                new WeaverTrunkPlacer(5, 4, 3),
+                BlockStateProvider.simple(AlfheimrBlocks.WEAVER_LEAVES.get()),
+                new WeaverFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(3)),
+                new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(weaverSapling.getBlock(0)))
+                .dirt(BlockStateProvider.simple(weaverSapling.getBlock(1)))
+                .dirt(BlockStateProvider.simple(weaverSapling.getBlock(2)))
                 .build());
 
         //Flowers

@@ -129,6 +129,196 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(UnderworldBlocks.CYPRESS_PLANKS_SIGN, "Cypress Sign");
         this.addBlock(UnderworldBlocks.CYPRESS_PLANKS_HANGING_SIGN, "Cypress Hanging Sign");
 
+        //Black Birch
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_LOG, "Black Birch Log");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_WOOD, "Black Birch Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG, "Black Birch Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD, "Black Birch Wood Stripped");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS, "Black Birch Planks");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_LEAVES, "Black Birch Leaves");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_SAPLING, "Black Birch Sapling");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_SLAB, "Black Birch Slab");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_STAIRS, "Black Birch Stairs");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_PRESSURE_PLATE, "Black Birch Pressure Plate");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR, "Black Birch Door");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_TRAPDOOR, "Black Birch Trapdoor");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE, "Black Birch Fence");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE_GATE, "Black Birch Fence Gate");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_BUTTON, "Black Birch Button");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_SIGN, "Black Birch Sign");
+        this.addBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_HANGING_SIGN, "Black Birch Hanging Sign");
+
+        //White Oak
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_LOG, "White Oak Log");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_WOOD, "White Oak Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG, "White Oak Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD, "White Oak Wood Stripped");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS, "White Oak Planks");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_LEAVES, "White Oak Leaves");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_SAPLING, "White Oak Sapling");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_SLAB, "White Oak Slab");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_STAIRS, "White Oak Stairs");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_PRESSURE_PLATE, "White Oak Pressure Plate");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR, "White Oak Door");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_TRAPDOOR, "White Oak Trapdoor");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE, "White Oak Fence");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE_GATE, "White Oak Fence Gate");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_BUTTON, "White Oak Button");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_SIGN, "White Oak Sign");
+        this.addBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_HANGING_SIGN, "White Oak Hanging Sign");
+
+        //Bur Oak
+        this.addBlock(AlfheimrBlocks.BUR_OAK_LOG, "Bur Oak Log");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_WOOD, "Bur Oak Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_BUR_OAK_LOG, "Bur Oak Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD, "Bur Oak Wood Stripped");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS, "Bur Oak Planks");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_LEAVES, "Bur Oak Leaves");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_SAPLING, "Bur Oak Sapling");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_SLAB, "Bur Oak Slab");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_STAIRS, "Bur Oak Stairs");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_PRESSURE_PLATE, "Bur Oak Pressure Plate");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_DOOR, "Bur Oak Door");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_TRAPDOOR, "Bur Oak Trapdoor");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_FENCE, "Bur Oak Fence");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_FENCE_GATE, "Bur Oak Fence Gate");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_BUTTON, "Bur Oak Button");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_SIGN, "Bur Oak Sign");
+        this.addBlock(AlfheimrBlocks.BUR_OAK_PLANKS_HANGING_SIGN, "Bur Oak Hanging Sign");
+
+        //Blood Cherry
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_LOG, "Blood Cherry Log");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_WOOD, "Blood Cherry Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG, "Blood Cherry Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD, "Blood Cherry Wood Stripped");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS, "Blood Cherry Planks");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_LEAVES, "Blood Cherry Leaves");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_SAPLING, "Blood Cherry Sapling");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SLAB, "Blood Cherry Slab");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_STAIRS, "Blood Cherry Stairs");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_PRESSURE_PLATE, "Blood Cherry Pressure Plate");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR, "Blood Cherry Door");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_TRAPDOOR, "Blood Cherry Trapdoor");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE, "Blood Cherry Fence");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE_GATE, "Blood Cherry Fence Gate");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_BUTTON, "Blood Cherry Button");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SIGN, "Blood Cherry Sign");
+        this.addBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_HANGING_SIGN, "Blood Cherry Hanging Sign");
+
+        //Sacred Tree
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_LOG, "Sacred Tree Log");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_WOOD, "Sacred Tree Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG, "Sacred Tree Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD, "Sacred Tree Wood Stripped");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS, "Sacred Tree Planks");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_LEAVES, "Sacred Tree Leaves");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_SAPLING, "Sacred Tree Sapling");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_SLAB, "Sacred Tree Slab");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_STAIRS, "Sacred Tree Stairs");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_PRESSURE_PLATE, "Sacred Tree Pressure Plate");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR, "Sacred Tree Door");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_TRAPDOOR, "Sacred Tree Trapdoor");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE, "Sacred Tree Fence");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE_GATE, "Sacred Tree Fence Gate");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_BUTTON, "Sacred Tree Button");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_SIGN, "Sacred Tree Sign");
+        this.addBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_HANGING_SIGN, "Sacred Tree Hanging Sign");
+
+        //Willow
+        this.addBlock(AlfheimrBlocks.WILLOW_LOG, "Willow Log");
+        this.addBlock(AlfheimrBlocks.WILLOW_WOOD, "Willow Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_WILLOW_LOG, "Willow Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_WILLOW_WOOD, "Willow Wood Stripped");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS, "Willow Planks");
+        this.addBlock(AlfheimrBlocks.WILLOW_LEAVES, "Willow Leaves");
+        this.addBlock(AlfheimrBlocks.WILLOW_SAPLING, "Willow Sapling");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_SLAB, "Willow Slab");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_STAIRS, "Willow Stairs");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_PRESSURE_PLATE, "Willow Pressure Plate");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_DOOR, "Willow Door");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_TRAPDOOR, "Willow Trapdoor");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_FENCE, "Willow Fence");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_FENCE_GATE, "Willow Fence Gate");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_BUTTON, "Willow Button");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_SIGN, "Willow Sign");
+        this.addBlock(AlfheimrBlocks.WILLOW_PLANKS_HANGING_SIGN, "Willow Hanging Sign");
+
+        //Deadwood
+        this.addBlock(AlfheimrBlocks.DEADWOOD_LOG, "Deadwood Log");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_WOOD, "Deadwood Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_DEADWOOD_LOG, "Deadwood Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD, "Deadwood Wood Stripped");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS, "Deadwood Planks");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_LEAVES, "Deadwood Leaves");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_SAPLING, "Deadwood Sapling");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_SLAB, "Deadwood Slab");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_STAIRS, "Deadwood Stairs");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_PRESSURE_PLATE, "Deadwood Pressure Plate");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_DOOR, "Deadwood Door");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_TRAPDOOR, "Deadwood Trapdoor");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_FENCE, "Deadwood Fence");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_FENCE_GATE, "Deadwood Fence Gate");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_BUTTON, "Deadwood Button");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_SIGN, "Deadwood Sign");
+        this.addBlock(AlfheimrBlocks.DEADWOOD_PLANKS_HANGING_SIGN, "Deadwood Hanging Sign");
+
+        //Ebony Kingswood
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_LOG, "Ebony Kingswood Log");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_WOOD, "Ebony Kingswood Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG, "Ebony Kingswood Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD, "Ebony Kingswood Wood Stripped");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS, "Ebony Kingswood Planks");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_LEAVES, "Ebony Kingswood Leaves");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_SAPLING, "Ebony Kingswood Sapling");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SLAB, "Ebony Kingswood Slab");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_STAIRS, "Ebony Kingswood Stairs");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_PRESSURE_PLATE, "Ebony Kingswood Pressure Plate");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR, "Ebony Kingswood Door");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_TRAPDOOR, "Ebony Kingswood Trapdoor");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE, "Ebony Kingswood Fence");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE_GATE, "Ebony Kingswood Fence Gate");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_BUTTON, "Ebony Kingswood Button");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SIGN, "Ebony Kingswood Sign");
+        this.addBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_HANGING_SIGN, "Ebony Kingswood Hanging Sign");
+
+        //Ivory Kingswood
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_LOG, "Ivory Kingswood Log");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_WOOD, "Ivory Kingswood Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG, "Ivory Kingswood Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD, "Ivory Kingswood Wood Stripped");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS, "Ivory Kingswood Planks");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_LEAVES, "Ivory Kingswood Leaves");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_SAPLING, "Ivory Kingswood Sapling");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SLAB, "Ivory Kingswood Slab");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_STAIRS, "Ivory Kingswood Stairs");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_PRESSURE_PLATE, "Ivory Kingswood Pressure Plate");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR, "Ivory Kingswood Door");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_TRAPDOOR, "Ivory Kingswood Trapdoor");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE, "Ivory Kingswood Fence");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE_GATE, "Ivory Kingswood Fence Gate");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_BUTTON, "Ivory Kingswood Button");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SIGN, "Ivory Kingswood Sign");
+        this.addBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_HANGING_SIGN, "Ivory Kingswood Hanging Sign");
+
+        //Weaver
+        this.addBlock(AlfheimrBlocks.WEAVER_LOG, "Weaver Log");
+        this.addBlock(AlfheimrBlocks.WEAVER_WOOD, "Weaver Wood");
+        this.addBlock(AlfheimrBlocks.STRIPPED_WEAVER_LOG, "Weaver Log Stripped");
+        this.addBlock(AlfheimrBlocks.STRIPPED_WEAVER_WOOD, "Weaver Wood Stripped");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS, "Weaver Planks");
+        this.addBlock(AlfheimrBlocks.WEAVER_LEAVES, "Weaver Leaves");
+        this.addBlock(AlfheimrBlocks.WEAVER_SAPLING, "Weaver Sapling");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_SLAB, "Weaver Slab");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_STAIRS, "Weaver Stairs");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_PRESSURE_PLATE, "Weaver Pressure Plate");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_DOOR, "Weaver Door");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_TRAPDOOR, "Weaver Trapdoor");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_FENCE, "Weaver Fence");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_FENCE_GATE, "Weaver Fence Gate");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_BUTTON, "Weaver Button");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_SIGN, "Weaver Sign");
+        this.addBlock(AlfheimrBlocks.WEAVER_PLANKS_HANGING_SIGN, "Weaver Hanging Sign");
+
         this.addItem(ModItems.AQUAMARINE, "Aquamarine");
         this.addItem(ModItems.OPAL, "Opal");
         this.addItem(ModItems.RUBY, "Ruby");
@@ -852,9 +1042,12 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.add("advancement.lostworlds.skyopia.root.desc", "Learn the powers of different wolds");
 
         //Lost Worlds Book
-        this.add("item.lostworlds.book.name", "Lost Worlds Book");
-        this.add("info.lostworlds.book.landing", "A journal written by a mad man talking about the possibilities of different worlds." +
-                "$(br2)Discovering the mysteries of the many different worlds lost to history.");
+        createBook("lostworlds", "Lost Worlds Book", "A journal written by a mad man talking about the possibilities of different worlds." +
+                "$(br2)Discovering the mysteries of the many different worlds lost to history."
+        );
+//        this.add("item.lostworlds.book.name", "Lost Worlds Book");
+//        this.add("info.lostworlds.book.landing", "A journal written by a mad man talking about the possibilities of different worlds." +
+//                "$(br2)Discovering the mysteries of the many different worlds lost to history.");
 
         this.add("lostworlds.category.basics", "Basics");
         this.add("lostworlds.entry.basics.intro", "Intro");
@@ -865,9 +1058,13 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 //        this.add("", "");
 
         //Alfheimr
-        this.add("item.alfheimr.book.name", "Alfheimr in a book Vol.1");
-        this.add("info.alfheimr.book.landing", "The first and only known printed copy." +
-                "$(br2)The book covers all things needed to know about Alfheimr.");
+        createBook("alfheimr", "Alfheimr in a book Vol.1",
+                "The first and only known printed copy." +
+                "$(br2)The book covers all things needed to know about Alfheimr."
+        );
+//        this.add("item.alfheimr.book.name", "Alfheimr in a book Vol.1");
+//        this.add("info.alfheimr.book.landing", "The first and only known printed copy." +
+//                "$(br2)The book covers all things needed to know about Alfheimr.");
 
         this.add("alfheimr.category.basics.name", "Basics");
         this.add("alfheimr.category.basics.desc", "");
@@ -896,9 +1093,13 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 //        this.add("", "");
 
         //Atlantis
-        this.add("item.atlantis.book.name", "The lost book of Atlantis");
-        this.add("info.atlantis.book.landing", "The only recorded book on Atlantis but was lost before it could make it to print." +
-                "$(br2)This book covers all the mystories of the world atlantis.");
+        createBook("atlantis", "The lost book of Atlantis",
+                "The only recorded book on Atlantis but was lost before it could make it to print." +
+                        "$(br2)This book covers all the mystories of the world atlantis."
+        );
+//        this.add("item.atlantis.book.name", "The lost book of Atlantis");
+//        this.add("info.atlantis.book.landing", "The only recorded book on Atlantis but was lost before it could make it to print." +
+//                "$(br2)This book covers all the mystories of the world atlantis.");
 
         this.add("atlantis.category.basics", "Basics");
         this.add("lostworlds.entry.atlantis.intro", "Intro");
@@ -912,9 +1113,13 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 //        this.add("", "");
 
         //Nidavellir
-        this.add("item.nidavellir.book.name", "Miners guide to Nidavellir");
-        this.add("info.nidavellir.book.landing", "Popular edition for all dwarves." +
-                "$(br2)A basic guide to Nidavellir that all the dwarves carry before entering the mines.");
+        createBook("nidavellir", "Miners guide to Nidavellir",
+                "Popular edition for all dwarves." +
+                        "$(br2)A basic guide to Nidavellir that all the dwarves carry before entering the mines."
+        );
+//        this.add("item.nidavellir.book.name", "Miners guide to Nidavellir");
+//        this.add("info.nidavellir.book.landing", "Popular edition for all dwarves." +
+//                "$(br2)A basic guide to Nidavellir that all the dwarves carry before entering the mines.");
 
         this.add("nidavellir.category.basics", "Basics");
         this.add("lostworlds.entry.nidavellir.intro", "Intro");
@@ -928,9 +1133,13 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 //        this.add("", "");
 
         //Skyopia
-        this.add("item.skyopia.book.name", "Lost journal on Skyopia");
-        this.add("info.skyopia.book.landing", "A journal written by the most infamous and notorious pirate in all of Skyopia." +
-                "$(br2)A survivors guide to the many lands and wild life of Skyopia");
+        createBook("skyopia", "Lost journal on Skyopia",
+                "A journal written by the most infamous and notorious pirate in all of Skyopia." +
+                        "$(br2)A survivors guide to the many lands and wild life of Skyopia"
+        );
+//        this.add("item.skyopia.book.name", "Lost journal on Skyopia");
+//        this.add("info.skyopia.book.landing", "A journal written by the most infamous and notorious pirate in all of Skyopia." +
+//                "$(br2)A survivors guide to the many lands and wild life of Skyopia");
 
         this.add("skyopia.category.basics", "Basics");
         this.add("lostworlds.entry.skyopia.intro", "Intro");
@@ -944,9 +1153,13 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 //        this.add("", "");
 
         //Underworld
-        this.add("item.underworld.book.name", "Hades guide to the Underworld");
-        this.add("info.underworld.book.landing", "This book is written by the lord of the underworld hades." +
-                "$(br2)The reason for this book is to pass on information and knowladge on how to live in the underworld.");
+        createBook("underworld", "Hades guide to the Underworld",
+                "This book is written by the lord of the underworld hades." +
+                        "$(br2)The reason for this book is to pass on information and knowladge on how to live in the underworld."
+        );
+//        this.add("item.underworld.book.name", "Hades guide to the Underworld");
+//        this.add("info.underworld.book.landing", "This book is written by the lord of the underworld hades." +
+//                "$(br2)The reason for this book is to pass on information and knowladge on how to live in the underworld.");
 
         this.add("underworld.category.basics", "Basics");
         this.add("lostworlds.entry.underworld.intro", "Intro");
@@ -958,6 +1171,30 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.add("lostworlds.page.underworld.intro.4.text", "");
 
 //        this.add("", "");
+
+        //book_on_dragons
+        createBook("book_on_dragons", "Book On Dragons",
+                "This book is written by Gavin Young." +
+                "The worlds leading researcher in everything about dragons. Both in known knowladge and legends."
+        );
+        this.add("book_on_dragons_book.category.lesser_dragons.name", "Lesser Dragons");
+        this.add("book_on_dragons_book.category.lesser_dragons.desc", "");
+
+        this.add("book_on_dragons_book.category.greater_dragons.name", "Greater Dragons");
+        this.add("book_on_dragons_book.category.greater_dragons.desc", "");
+
+
+        this.add("book_on_dragons_book.category.emperor_dragons.name", "Emeror Dragons");
+        this.add("book_on_dragons_book.category.emperor_dragons.desc", "");
+        this.add("lostworlds.entry.book_on_dragons_book.greater_dragons.ender_dragon.name", "Ender Dragon");
+        this.add("lostworlds.page.book_on_dragons_book.greater_dragons.ender_dragon.0.title", "The Ender Dragon");
+        this.add("lostworlds.page.book_on_dragons_book.greater_dragons.ender_dragon.0.text",
+                "The Ender Dragon is a dragon that is only found in the end dimension."
+        );
+
+        this.add("book_on_dragons_book.category.celestial_dragons.name", "Celestrial Dragons");
+        this.add("book_on_dragons_book.category.celestial_dragons.desc", "");
+
     }
 
     public void addTagFilterUI(String id, String name) {
@@ -993,5 +1230,8 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 //        add("sounds.modid.name", name);
     }
 
-
+    public void createBook(String id, String name, String landing) {
+        this.add("item."+id+".book.name", name);
+        this.add("info."+id+".book.landing", landing);
+    }
 }

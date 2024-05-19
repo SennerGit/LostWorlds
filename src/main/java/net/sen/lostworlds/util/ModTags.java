@@ -64,6 +64,37 @@ public class ModTags {
         public static final TagKey<Item> CYPRESS_LOGS = tag("cypress_logs");
         public static final TagKey<Item> CYPRESS_STRIPPED_LOGS = tag("cypress_stripped_logs");
 
+        public static final TagKey<Item> BLACK_BIRCH_LOGS = tag("black_birch_logs");
+        public static final TagKey<Item> BLACK_BIRCH_STRIPPED_LOGS = tag("black_birch_stripped_logs");
+
+        public static final TagKey<Item> WHITE_OAK_LOGS = tag("white_oak_logs");
+        public static final TagKey<Item> WHITE_OAK_STRIPPED_LOGS = tag("white_oak_stripped_logs");
+
+        public static final TagKey<Item> BUR_OAK_LOGS = tag("bur_oak_logs");
+        public static final TagKey<Item> BUR_OAK_STRIPPED_LOGS = tag("bur_oak_stripped_logs");
+
+        public static final TagKey<Item> BLOOD_CHERRY_LOGS = tag("blood_cherry_logs");
+        public static final TagKey<Item> BLOOD_CHERRY_STRIPPED_LOGS = tag("blood_cherry_stripped_logs");
+
+        public static final TagKey<Item> SACRED_TREE_LOGS = tag("sacred_tree_logs");
+        public static final TagKey<Item> SACRED_TREE_STRIPPED_LOGS = tag("sacred_tree_stripped_logs");
+
+        public static final TagKey<Item> WILLOW_LOGS = tag("willow_logs");
+        public static final TagKey<Item> WILLOW_STRIPPED_LOGS = tag("willow_stripped_logs");
+
+        public static final TagKey<Item> DEADWOOD_LOGS = tag("deadwood_logs");
+        public static final TagKey<Item> DEADWOOD_STRIPPED_LOGS = tag("deadwood_stripped_logs");
+
+        public static final TagKey<Item> EBONY_KINGSWOOD_LOGS = tag("ebony_kingswood_logs");
+        public static final TagKey<Item> EBONY_KINGSWOOD_STRIPPED_LOGS = tag("ebony_kingswood_stripped_logs");
+
+        public static final TagKey<Item> IVORY_KINGSWOOD_LOGS = tag("ivory_kingswood_logs");
+        public static final TagKey<Item> IVORY_KINGSWOOD_STRIPPED_LOGS = tag("ivory_kingswood_stripped_logs");
+
+        public static final TagKey<Item> WEAVER_LOGS = tag("weaver_logs");
+        public static final TagKey<Item> WEAVER_STRIPPED_LOGS = tag("weaver_stripped_logs");
+
+
         public static final TagKey<Item> MUSHROOMS = tag("mushrooms");
 
         private static TagKey<Item> tag(String name) {
@@ -99,6 +130,46 @@ public class ModTags {
         public static final TagKey<Block> CYPRESS_WOOD = tag("cypress_wood");
         public static final TagKey<Block> CYPRESS_LOGS = tag("cypress_logs");
         public static final TagKey<Block> CYPRESS_STRIPPED_LOGS = tag("cypress_stripped_logs");
+
+        public static final TagKey<Block> BLACK_BIRCH_WOOD = tag("black_birch_wood");
+        public static final TagKey<Block> BLACK_BIRCH_LOGS = tag("black_birch_logs");
+        public static final TagKey<Block> BLACK_BIRCH_STRIPPED_LOGS = tag("black_birch_stripped_logs");
+
+        public static final TagKey<Block> WHITE_OAK_WOOD = tag("white_oak_wood");
+        public static final TagKey<Block> WHITE_OAK_LOGS = tag("white_oak_logs");
+        public static final TagKey<Block> WHITE_OAK_STRIPPED_LOGS = tag("white_oak_stripped_logs");
+
+        public static final TagKey<Block> BUR_OAK_WOOD = tag("bur_oak_wood");
+        public static final TagKey<Block> BUR_OAK_LOGS = tag("bur_oak_logs");
+        public static final TagKey<Block> BUR_OAK_STRIPPED_LOGS = tag("bur_oak_stripped_logs");
+
+        public static final TagKey<Block> BLOOD_CHERRY_WOOD = tag("blood_cherry_wood");
+        public static final TagKey<Block> BLOOD_CHERRY_LOGS = tag("blood_cherry_logs");
+        public static final TagKey<Block> BLOOD_CHERRY_STRIPPED_LOGS = tag("blood_cherry_stripped_logs");
+
+        public static final TagKey<Block> SACRED_TREE_WOOD = tag("sacred_tree_wood");
+        public static final TagKey<Block> SACRED_TREE_LOGS = tag("sacred_tree_logs");
+        public static final TagKey<Block> SACRED_TREE_STRIPPED_LOGS = tag("sacred_tree_stripped_logs");
+
+        public static final TagKey<Block> WILLOW_WOOD = tag("willow_wood");
+        public static final TagKey<Block> WILLOW_LOGS = tag("willow_logs");
+        public static final TagKey<Block> WILLOW_STRIPPED_LOGS = tag("willow_stripped_logs");
+
+        public static final TagKey<Block> DEADWOOD_WOOD = tag("deadwood_wood");
+        public static final TagKey<Block> DEADWOOD_LOGS = tag("deadwood_logs");
+        public static final TagKey<Block> DEADWOOD_STRIPPED_LOGS = tag("deadwood_stripped_logs");
+
+        public static final TagKey<Block> EBONY_KINGSWOOD_WOOD = tag("ebony_kingswood_wood");
+        public static final TagKey<Block> EBONY_KINGSWOOD_LOGS = tag("ebony_kingswood_logs");
+        public static final TagKey<Block> EBONY_KINGSWOOD_STRIPPED_LOGS = tag("ebony_kingswood_stripped_logs");
+
+        public static final TagKey<Block> IVORY_KINGSWOOD_WOOD = tag("ivory_kingswood_wood");
+        public static final TagKey<Block> IVORY_KINGSWOOD_LOGS = tag("ivory_kingswood_logs");
+        public static final TagKey<Block> IVORY_KINGSWOOD_STRIPPED_LOGS = tag("ivory_kingswood_stripped_logs");
+
+        public static final TagKey<Block> WEAVER_WOOD = tag("weaver_wood");
+        public static final TagKey<Block> WEAVER_LOGS = tag("weaver_logs");
+        public static final TagKey<Block> WEAVER_STRIPPED_LOGS = tag("weaver_stripped_logs");
 
         public static final TagKey<Block> UNDERWORLD_PORTAL_FRAME_BLOCKS = tag("underworld_portal_frame_block");
         public static final TagKey<Block> NIDAVELLIR_PORTAL_FRAME_BLOCKS = tag("nidavellir_portal_frame_blocks");
@@ -148,6 +219,36 @@ public class ModTags {
 
         toItemTag.put(Blocks.CYPRESS_LOGS, Items.CYPRESS_LOGS);
         toItemTag.put(Blocks.CYPRESS_STRIPPED_LOGS, Items.CYPRESS_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.BLACK_BIRCH_LOGS, Items.BLACK_BIRCH_LOGS);
+        toItemTag.put(Blocks.BLACK_BIRCH_STRIPPED_LOGS, Items.BLACK_BIRCH_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.WHITE_OAK_LOGS, Items.WHITE_OAK_LOGS);
+        toItemTag.put(Blocks.WHITE_OAK_STRIPPED_LOGS, Items.WHITE_OAK_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.BUR_OAK_LOGS, Items.BUR_OAK_LOGS);
+        toItemTag.put(Blocks.BUR_OAK_STRIPPED_LOGS, Items.BUR_OAK_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.BLOOD_CHERRY_LOGS, Items.BLOOD_CHERRY_LOGS);
+        toItemTag.put(Blocks.BLOOD_CHERRY_STRIPPED_LOGS, Items.BLOOD_CHERRY_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.SACRED_TREE_LOGS, Items.SACRED_TREE_LOGS);
+        toItemTag.put(Blocks.SACRED_TREE_STRIPPED_LOGS, Items.SACRED_TREE_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.WILLOW_LOGS, Items.WILLOW_LOGS);
+        toItemTag.put(Blocks.WILLOW_STRIPPED_LOGS, Items.WILLOW_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.DEADWOOD_LOGS, Items.DEADWOOD_LOGS);
+        toItemTag.put(Blocks.DEADWOOD_STRIPPED_LOGS, Items.DEADWOOD_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.EBONY_KINGSWOOD_LOGS, Items.EBONY_KINGSWOOD_LOGS);
+        toItemTag.put(Blocks.EBONY_KINGSWOOD_STRIPPED_LOGS, Items.EBONY_KINGSWOOD_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.IVORY_KINGSWOOD_LOGS, Items.IVORY_KINGSWOOD_LOGS);
+        toItemTag.put(Blocks.IVORY_KINGSWOOD_STRIPPED_LOGS, Items.IVORY_KINGSWOOD_STRIPPED_LOGS);
+
+        toItemTag.put(Blocks.WEAVER_LOGS, Items.WEAVER_LOGS);
+        toItemTag.put(Blocks.WEAVER_STRIPPED_LOGS, Items.WEAVER_STRIPPED_LOGS);
 
         toItemTag.put(Blocks.MUSHROOMS, Items.MUSHROOMS);
     }

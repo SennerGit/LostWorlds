@@ -344,7 +344,6 @@ public class AlfheimrBiomes {
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEA_PICKLE);
 
-
         return biome;
     }
 
@@ -415,6 +414,7 @@ public class AlfheimrBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(biome);
         addCaves(biome);
         addSmallStoneClusters(biome);
+
         return biome;
     }
 

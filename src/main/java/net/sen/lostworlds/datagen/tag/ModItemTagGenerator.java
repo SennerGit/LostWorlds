@@ -113,6 +113,126 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 Item.byBlock(UnderworldBlocks.STRIPPED_CYPRESS_WOOD.get())
         );
 
+        this.tag(ModTags.Items.BLACK_BIRCH_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.BLACK_BIRCH_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.BLACK_BIRCH_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.BLACK_BIRCH_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.WHITE_OAK_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.WHITE_OAK_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.WHITE_OAK_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.WHITE_OAK_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.BUR_OAK_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.BUR_OAK_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.BUR_OAK_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BUR_OAK_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.BUR_OAK_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BUR_OAK_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.BLOOD_CHERRY_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.BLOOD_CHERRY_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.BLOOD_CHERRY_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.BLOOD_CHERRY_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.SACRED_TREE_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.SACRED_TREE_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.SACRED_TREE_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.SACRED_TREE_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.WILLOW_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.WILLOW_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.WILLOW_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WILLOW_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WILLOW_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.WILLOW_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WILLOW_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WILLOW_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.DEADWOOD_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.DEADWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.DEADWOOD_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_DEADWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.DEADWOOD_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_DEADWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.EBONY_KINGSWOOD_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.EBONY_KINGSWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.EBONY_KINGSWOOD_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.EBONY_KINGSWOOD_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.IVORY_KINGSWOOD_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.IVORY_KINGSWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.IVORY_KINGSWOOD_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.IVORY_KINGSWOOD_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.WEAVER_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.WEAVER_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.WEAVER_WOOD.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WEAVER_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WEAVER_WOOD.get())
+        );
+
+        this.tag(ModTags.Items.WEAVER_STRIPPED_LOGS).add(
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WEAVER_LOG.get()),
+                Item.byBlock(AlfheimrBlocks.STRIPPED_WEAVER_WOOD.get())
+        );
+
         this.tag(ModTags.Items.MUSHROOMS).add(
                 Item.byBlock(Blocks.BROWN_MUSHROOM),
                 Item.byBlock(Blocks.RED_MUSHROOM),

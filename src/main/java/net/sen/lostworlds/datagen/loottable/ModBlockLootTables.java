@@ -536,6 +536,216 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.sign(UnderworldBlocks.CYPRESS_PLANKS_SIGN, UnderworldBlocks.CYPRESS_PLANKS_WALL_SIGN, UnderworldItems.CYPRESS_SIGN);
         this.wall_sign(UnderworldBlocks.CYPRESS_PLANKS_HANGING_SIGN, UnderworldBlocks.CYPRESS_PLANKS_WALL_HANGING_SIGN, UnderworldItems.CYPRESS_HANGING_SIGN);
 
+        //Black Birch
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_LOG);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_SAPLING);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_PLANKS);
+        this.slab(AlfheimrBlocks.BLACK_BIRCH_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.BLACK_BIRCH_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.BLACK_BIRCH_LEAVES);
+
+        this.sign(AlfheimrBlocks.BLACK_BIRCH_PLANKS_SIGN, AlfheimrBlocks.BLACK_BIRCH_PLANKS_WALL_SIGN, AlfheimrItems.BLACK_BIRCH_SIGN);
+        this.wall_sign(AlfheimrBlocks.BLACK_BIRCH_PLANKS_HANGING_SIGN, AlfheimrBlocks.BLACK_BIRCH_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.BLACK_BIRCH_HANGING_SIGN);
+
+        //White Oak
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_LOG);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_SAPLING);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_PLANKS);
+        this.slab(AlfheimrBlocks.WHITE_OAK_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.WHITE_OAK_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.WHITE_OAK_LEAVES);
+
+        this.sign(AlfheimrBlocks.WHITE_OAK_PLANKS_SIGN, AlfheimrBlocks.WHITE_OAK_PLANKS_WALL_SIGN, AlfheimrItems.WHITE_OAK_SIGN);
+        this.wall_sign(AlfheimrBlocks.WHITE_OAK_PLANKS_HANGING_SIGN, AlfheimrBlocks.WHITE_OAK_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.WHITE_OAK_HANGING_SIGN);
+
+        //Bur Oak
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_LOG);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_BUR_OAK_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_SAPLING);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_PLANKS);
+        this.slab(AlfheimrBlocks.BUR_OAK_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.BUR_OAK_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.BUR_OAK_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.BUR_OAK_LEAVES);
+
+        this.sign(AlfheimrBlocks.BUR_OAK_PLANKS_SIGN, AlfheimrBlocks.BUR_OAK_PLANKS_WALL_SIGN, AlfheimrItems.BUR_OAK_SIGN);
+        this.wall_sign(AlfheimrBlocks.BUR_OAK_PLANKS_HANGING_SIGN, AlfheimrBlocks.BUR_OAK_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.BUR_OAK_HANGING_SIGN);
+
+        //Blood Cherry
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_LOG);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_SAPLING);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_PLANKS);
+        this.slab(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.BLOOD_CHERRY_LEAVES);
+
+        this.sign(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SIGN, AlfheimrBlocks.BLOOD_CHERRY_PLANKS_WALL_SIGN, AlfheimrItems.BLOOD_CHERRY_SIGN);
+        this.wall_sign(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_HANGING_SIGN, AlfheimrBlocks.BLOOD_CHERRY_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.BLOOD_CHERRY_HANGING_SIGN);
+
+        //Sacred Tree
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_LOG);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_SAPLING);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_PLANKS);
+        this.slab(AlfheimrBlocks.SACRED_TREE_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.SACRED_TREE_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.SACRED_TREE_LEAVES);
+
+        this.sign(AlfheimrBlocks.SACRED_TREE_PLANKS_SIGN, AlfheimrBlocks.SACRED_TREE_PLANKS_WALL_SIGN, AlfheimrItems.SACRED_TREE_SIGN);
+        this.wall_sign(AlfheimrBlocks.SACRED_TREE_PLANKS_HANGING_SIGN, AlfheimrBlocks.SACRED_TREE_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.SACRED_TREE_HANGING_SIGN);
+
+        //Willow
+        this.dropSelf(AlfheimrBlocks.WILLOW_LOG);
+        this.dropSelf(AlfheimrBlocks.WILLOW_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_WILLOW_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_WILLOW_WOOD);
+        this.dropSelf(AlfheimrBlocks.WILLOW_SAPLING);
+        this.dropSelf(AlfheimrBlocks.WILLOW_PLANKS);
+        this.slab(AlfheimrBlocks.WILLOW_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.WILLOW_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.WILLOW_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.WILLOW_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.WILLOW_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.WILLOW_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.WILLOW_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.WILLOW_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.WILLOW_LEAVES);
+
+        this.sign(AlfheimrBlocks.WILLOW_PLANKS_SIGN, AlfheimrBlocks.WILLOW_PLANKS_WALL_SIGN, AlfheimrItems.WILLOW_SIGN);
+        this.wall_sign(AlfheimrBlocks.WILLOW_PLANKS_HANGING_SIGN, AlfheimrBlocks.WILLOW_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.WILLOW_HANGING_SIGN);
+
+        //Deadwood
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_LOG);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_DEADWOOD_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_SAPLING);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_PLANKS);
+        this.slab(AlfheimrBlocks.DEADWOOD_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.DEADWOOD_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.DEADWOOD_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.DEADWOOD_LEAVES);
+
+        this.sign(AlfheimrBlocks.DEADWOOD_PLANKS_SIGN, AlfheimrBlocks.DEADWOOD_PLANKS_WALL_SIGN, AlfheimrItems.DEADWOOD_SIGN);
+        this.wall_sign(AlfheimrBlocks.DEADWOOD_PLANKS_HANGING_SIGN, AlfheimrBlocks.DEADWOOD_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.DEADWOOD_HANGING_SIGN);
+
+        //Ebony Kingswood
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_LOG);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_SAPLING);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS);
+        this.slab(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.EBONY_KINGSWOOD_LEAVES);
+
+        this.sign(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SIGN, AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_WALL_SIGN, AlfheimrItems.EBONY_KINGSWOOD_SIGN);
+        this.wall_sign(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_HANGING_SIGN, AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.EBONY_KINGSWOOD_HANGING_SIGN);
+
+        //Ivory Kingswood
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_LOG);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_SAPLING);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS);
+        this.slab(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.IVORY_KINGSWOOD_LEAVES);
+
+        this.sign(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SIGN, AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_WALL_SIGN, AlfheimrItems.IVORY_KINGSWOOD_SIGN);
+        this.wall_sign(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_HANGING_SIGN, AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.IVORY_KINGSWOOD_HANGING_SIGN);
+
+        //Weaver
+        this.dropSelf(AlfheimrBlocks.WEAVER_LOG);
+        this.dropSelf(AlfheimrBlocks.WEAVER_WOOD);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_WEAVER_LOG);
+        this.dropSelf(AlfheimrBlocks.STRIPPED_WEAVER_WOOD);
+        this.dropSelf(AlfheimrBlocks.WEAVER_SAPLING);
+        this.dropSelf(AlfheimrBlocks.WEAVER_PLANKS);
+        this.slab(AlfheimrBlocks.WEAVER_PLANKS_SLAB);
+        this.dropSelf(AlfheimrBlocks.WEAVER_PLANKS_STAIRS);
+        this.dropSelf(AlfheimrBlocks.WEAVER_PLANKS_PRESSURE_PLATE);
+        this.door(AlfheimrBlocks.WEAVER_PLANKS_DOOR);
+        this.dropSelf(AlfheimrBlocks.WEAVER_PLANKS_TRAPDOOR);
+        this.dropSelf(AlfheimrBlocks.WEAVER_PLANKS_FENCE);
+        this.dropSelf(AlfheimrBlocks.WEAVER_PLANKS_FENCE_GATE);
+        this.dropSelf(AlfheimrBlocks.WEAVER_PLANKS_BUTTON);
+
+        this.leaves(AlfheimrBlocks.WEAVER_LEAVES);
+
+        this.sign(AlfheimrBlocks.WEAVER_PLANKS_SIGN, AlfheimrBlocks.WEAVER_PLANKS_WALL_SIGN, AlfheimrItems.WEAVER_SIGN);
+        this.wall_sign(AlfheimrBlocks.WEAVER_PLANKS_HANGING_SIGN, AlfheimrBlocks.WEAVER_PLANKS_WALL_HANGING_SIGN, AlfheimrItems.WEAVER_HANGING_SIGN);
+
         //Mushroom
         this.dropSelf(AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
         this.dropOther(AlfheimrBlocks.POTTED_POINT_MUSHROOM_BLOCK, AlfheimrBlocks.POINT_MUSHROOM_BLOCK);

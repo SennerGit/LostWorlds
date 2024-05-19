@@ -3,15 +3,11 @@ package net.sen.lostworlds.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.armortrim.TrimMaterials;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,11 +16,9 @@ import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.datagen.language.ModLanguageEnUsProvider;
 //import net.sen.lostworlds.datagen.modonomicon.ModBookProvider;
 import net.sen.lostworlds.datagen.loottable.*;
-import net.sen.lostworlds.datagen.loottable.custom.*;
+import net.sen.lostworlds.datagen.recipes.ModRecipeProvider;
 import net.sen.lostworlds.datagen.tag.*;
 
-import java.util.List;
-import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = LostWorldsApi.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)

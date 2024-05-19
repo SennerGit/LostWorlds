@@ -1,5 +1,6 @@
 package net.sen.lostworlds.datagen;
 
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -17,12 +18,6 @@ public class ModBlockModelProvider extends BlockModelProvider {
 
     @Override
     protected void registerModels() {
-        this.createPortalBlock(AlfheimrBlocks.ALFHEIMR_PORTAL);
-        this.createPortalBlock(AtlantisBlocks.ATLANTIS_PORTAL);
-        this.createPortalBlock(NidavellirBlocks.NIDAVELLIR_PORTAL);
-        this.createPortalBlock(SkyopiaBlocks.SKYOPIA_PORTAL);
-        this.createPortalBlock(UnderworldBlocks.UNDERWORLD_PORTAL);
-        this.createPortalBlock(ModBlocks.MYSTIC_GATEWAYS_PORTAL);
 //        this.grassBlock(ModBlocks.UNDERWORLD_GRASS_BLOCK, modResourceLocation(ModBlocks.UNDERWORLD_DIRT), modResourceLocation(ModBlocks.UNDERWORLD_DIRT), modResourceLocation("underworld_grass_block_top"), modResourceLocation("underworld_grass_block_side"), modResourceLocation("underworld_grass_block_side_overlay"));
     }
 
@@ -42,71 +37,6 @@ public class ModBlockModelProvider extends BlockModelProvider {
      */
     public BlockModelBuilder grassBlock(RegistryObject<Block> block, ResourceLocation particle, ResourceLocation bottom, ResourceLocation top, ResourceLocation side, ResourceLocation overlay) {
         return grassBlock(block.getId().getPath(), particle, bottom, top, side, overlay);
-    }
-
-    public void createPortalBlock(RegistryObject<Block> portalBlock) {
-        createPortalBlockEW(portalBlock);
-        createPortalBlockNS(portalBlock);
-    }
-
-    public void createPortalBlockEW(RegistryObject<Block> portalBlock) {
-        getBuilder(LostWorldsApi.modLoc(portalBlock.getId().getPath()).getPath() + "_ew")
-                .texture("particle", LostWorldsApi.modLoc("block/" + portalBlock.getId().getPath()))
-                .texture("portal", LostWorldsApi.modLoc("block/" + portalBlock.getId().getPath()))
-                .element()
-                .from(6, 0, 0)
-                .to(10, 16, 16)
-                .faces(
-                        (
-                                (direction, faceBuilder) -> {
-                                    String texture = "#portal";
-
-                                    switch (direction) {
-                                        case EAST:
-                                            texture = "#portal";
-                                            break;
-                                        case WEST:
-                                            texture = "#portal";
-                                            break;
-                                    }
-
-                                    faceBuilder.uvs(0, 0, 16, 16)
-                                            .texture(texture)
-                                            .cullface(direction);
-                                }
-                        )
-                )
-                .end();
-    }
-
-    public void createPortalBlockNS(RegistryObject<Block> portalBlock) {
-        getBuilder(LostWorldsApi.modLoc(portalBlock.getId().getPath()).getPath() + "_ns")
-                .texture("particle", LostWorldsApi.modLoc("block/" + portalBlock.getId().getPath()))
-                .texture("portal", LostWorldsApi.modLoc("block/" + portalBlock.getId().getPath()))
-                .element()
-                .from(0, 0, 6)
-                .to(16, 16, 10)
-                .faces(
-                        (
-                                (direction, faceBuilder) -> {
-                                    String texture = "#portal";
-
-                                    switch (direction) {
-                                        case NORTH:
-                                            texture = "#portal";
-                                            break;
-                                        case SOUTH:
-                                            texture = "#portal";
-                                            break;
-                                    }
-
-                                    faceBuilder.uvs(0, 0, 16, 16)
-                                            .texture(texture)
-                                            .cullface(direction);
-                                }
-                        )
-                )
-                .end();
     }
 
     public BlockModelBuilder grassBlock(String name, ResourceLocation particle, ResourceLocation bottom, ResourceLocation top, ResourceLocation side, ResourceLocation overlay) {

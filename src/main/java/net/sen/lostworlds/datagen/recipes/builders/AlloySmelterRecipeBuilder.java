@@ -1,4 +1,4 @@
-package net.sen.lostworlds.datagen.custom;
+package net.sen.lostworlds.datagen.recipes.builders;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

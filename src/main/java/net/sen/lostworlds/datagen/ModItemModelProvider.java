@@ -291,6 +291,96 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(UnderworldItems.CYPRESS_SIGN);
         simpleItem(UnderworldItems.CYPRESS_HANGING_SIGN);
 
+        //Black Birch
+        saplingItem(AlfheimrBlocks.BLACK_BIRCH_SAPLING);
+
+        fenceItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE, AlfheimrBlocks.BLACK_BIRCH_PLANKS);
+        buttonItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_BUTTON, AlfheimrBlocks.BLACK_BIRCH_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.BLACK_BIRCH_SIGN);
+        simpleItem(AlfheimrItems.BLACK_BIRCH_HANGING_SIGN);
+
+        //White Oak
+        saplingItem(AlfheimrBlocks.WHITE_OAK_SAPLING);
+
+        fenceItem(AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE, AlfheimrBlocks.WHITE_OAK_PLANKS);
+        buttonItem(AlfheimrBlocks.WHITE_OAK_PLANKS_BUTTON, AlfheimrBlocks.WHITE_OAK_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.WHITE_OAK_SIGN);
+        simpleItem(AlfheimrItems.WHITE_OAK_HANGING_SIGN);
+
+        //Bur Oak
+        saplingItem(AlfheimrBlocks.BUR_OAK_SAPLING);
+
+        fenceItem(AlfheimrBlocks.BUR_OAK_PLANKS_FENCE, AlfheimrBlocks.BUR_OAK_PLANKS);
+        buttonItem(AlfheimrBlocks.BUR_OAK_PLANKS_BUTTON, AlfheimrBlocks.BUR_OAK_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.BUR_OAK_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.BUR_OAK_SIGN);
+        simpleItem(AlfheimrItems.BUR_OAK_HANGING_SIGN);
+
+        //Blood Cherry
+        saplingItem(AlfheimrBlocks.BLOOD_CHERRY_SAPLING);
+
+        fenceItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE, AlfheimrBlocks.BLOOD_CHERRY_PLANKS);
+        buttonItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_BUTTON, AlfheimrBlocks.BLOOD_CHERRY_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.BLOOD_CHERRY_SIGN);
+        simpleItem(AlfheimrItems.BLOOD_CHERRY_HANGING_SIGN);
+
+        //Sacred Tree
+        saplingItem(AlfheimrBlocks.SACRED_TREE_SAPLING);
+
+        fenceItem(AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE, AlfheimrBlocks.SACRED_TREE_PLANKS);
+        buttonItem(AlfheimrBlocks.SACRED_TREE_PLANKS_BUTTON, AlfheimrBlocks.SACRED_TREE_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.SACRED_TREE_SIGN);
+        simpleItem(AlfheimrItems.SACRED_TREE_HANGING_SIGN);
+
+        //Willow
+        saplingItem(AlfheimrBlocks.WILLOW_SAPLING);
+
+        fenceItem(AlfheimrBlocks.WILLOW_PLANKS_FENCE, AlfheimrBlocks.WILLOW_PLANKS);
+        buttonItem(AlfheimrBlocks.WILLOW_PLANKS_BUTTON, AlfheimrBlocks.WILLOW_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.WILLOW_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.WILLOW_SIGN);
+        simpleItem(AlfheimrItems.WILLOW_HANGING_SIGN);
+
+        //Deadwood
+        saplingItem(AlfheimrBlocks.DEADWOOD_SAPLING);
+
+        fenceItem(AlfheimrBlocks.DEADWOOD_PLANKS_FENCE, AlfheimrBlocks.DEADWOOD_PLANKS);
+        buttonItem(AlfheimrBlocks.DEADWOOD_PLANKS_BUTTON, AlfheimrBlocks.DEADWOOD_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.DEADWOOD_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.DEADWOOD_SIGN);
+        simpleItem(AlfheimrItems.DEADWOOD_HANGING_SIGN);
+
+        //Ebony Kingswood
+        saplingItem(AlfheimrBlocks.EBONY_KINGSWOOD_SAPLING);
+
+        fenceItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE, AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS);
+        buttonItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_BUTTON, AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.EBONY_KINGSWOOD_SIGN);
+        simpleItem(AlfheimrItems.EBONY_KINGSWOOD_HANGING_SIGN);
+
+        //Ivory Kingswood
+        saplingItem(AlfheimrBlocks.IVORY_KINGSWOOD_SAPLING);
+
+        fenceItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE, AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS);
+        buttonItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_BUTTON, AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.IVORY_KINGSWOOD_SIGN);
+        simpleItem(AlfheimrItems.IVORY_KINGSWOOD_HANGING_SIGN);
+
+        //Weaver
+        saplingItem(AlfheimrBlocks.WEAVER_SAPLING);
+
+        fenceItem(AlfheimrBlocks.WEAVER_PLANKS_FENCE, AlfheimrBlocks.WEAVER_PLANKS);
+        buttonItem(AlfheimrBlocks.WEAVER_PLANKS_BUTTON, AlfheimrBlocks.WEAVER_PLANKS);
+        this.simpleBlockItemUi(AlfheimrBlocks.WEAVER_PLANKS_DOOR);
+        simpleItem(AlfheimrItems.WEAVER_SIGN);
+        simpleItem(AlfheimrItems.WEAVER_HANGING_SIGN);
+
 //        simpleBookItem(ModItems.LOST_WORLDS_BOOK);
 
         createArmourSet(UnderworldItems.ORICHALCUM_HELMET, UnderworldItems.ORICHALCUM_CHESTPLATE, UnderworldItems.ORICHALCUM_LEGGINGS, UnderworldItems.ORICHALCUM_BOOTS);

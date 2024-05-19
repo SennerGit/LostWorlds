@@ -1,4 +1,4 @@
-package net.sen.lostworlds.datagen;
+package net.sen.lostworlds.datagen.recipes;
 
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
@@ -18,7 +18,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.*;
-import net.sen.lostworlds.datagen.custom.AlloySmelterRecipeBuilder;
+import net.sen.lostworlds.datagen.recipes.builders.AlloySmelterRecipeBuilder;
+import net.sen.lostworlds.item.AlfheimrItems;
 import net.sen.lostworlds.item.AtlantisItems;
 import net.sen.lostworlds.item.ModItems;
 import net.sen.lostworlds.item.UnderworldItems;
@@ -391,6 +392,56 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 UnderworldBlocks.CYPRESS_PLANKS_STAIRS.get(), UnderworldBlocks.CYPRESS_PLANKS_SLAB.get(), UnderworldBlocks.CYPRESS_PLANKS_FENCE.get(),
                 UnderworldBlocks.CYPRESS_PLANKS_FENCE_GATE.get(), UnderworldBlocks.CYPRESS_PLANKS_DOOR.get(), UnderworldBlocks.CYPRESS_PLANKS_TRAPDOOR.get(),
                 UnderworldBlocks.CYPRESS_PLANKS_PRESSURE_PLATE.get(), UnderworldBlocks.CYPRESS_PLANKS_BUTTON.get(), UnderworldItems.CYPRESS_SIGN.get(), UnderworldItems.CYPRESS_HANGING_SIGN.get());
+        //Black Birch
+        createWoodRecipes(pWriter, "black_birch", ModTags.Blocks.BLACK_BIRCH_LOGS, ModTags.Blocks.BLACK_BIRCH_STRIPPED_LOGS, AlfheimrBlocks.BLACK_BIRCH_PLANKS.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_STAIRS.get(), AlfheimrBlocks.BLACK_BIRCH_PLANKS_SLAB.get(), AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR.get(), AlfheimrBlocks.BLACK_BIRCH_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BLACK_BIRCH_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.BLACK_BIRCH_PLANKS_BUTTON.get(), AlfheimrItems.BLACK_BIRCH_SIGN.get(), AlfheimrItems.BLACK_BIRCH_HANGING_SIGN.get());
+        //White Oak
+        createWoodRecipes(pWriter, "white_oak", ModTags.Blocks.WHITE_OAK_LOGS, ModTags.Blocks.WHITE_OAK_STRIPPED_LOGS, AlfheimrBlocks.WHITE_OAK_PLANKS.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_STAIRS.get(), AlfheimrBlocks.WHITE_OAK_PLANKS_SLAB.get(), AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR.get(), AlfheimrBlocks.WHITE_OAK_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WHITE_OAK_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.WHITE_OAK_PLANKS_BUTTON.get(), AlfheimrItems.WHITE_OAK_SIGN.get(), AlfheimrItems.WHITE_OAK_HANGING_SIGN.get());
+        //Bur Oak
+        createWoodRecipes(pWriter, "bur_oak", ModTags.Blocks.BUR_OAK_LOGS, ModTags.Blocks.BUR_OAK_STRIPPED_LOGS, AlfheimrBlocks.BUR_OAK_PLANKS.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_STAIRS.get(), AlfheimrBlocks.BUR_OAK_PLANKS_SLAB.get(), AlfheimrBlocks.BUR_OAK_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.BUR_OAK_PLANKS_DOOR.get(), AlfheimrBlocks.BUR_OAK_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BUR_OAK_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.BUR_OAK_PLANKS_BUTTON.get(), AlfheimrItems.BUR_OAK_SIGN.get(), AlfheimrItems.BUR_OAK_HANGING_SIGN.get());
+        //Blood Cherry
+        createWoodRecipes(pWriter, "blood_cherry", ModTags.Blocks.BLOOD_CHERRY_LOGS, ModTags.Blocks.BLOOD_CHERRY_STRIPPED_LOGS, AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_STAIRS.get(), AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SLAB.get(), AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR.get(), AlfheimrBlocks.BLOOD_CHERRY_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.BLOOD_CHERRY_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.BLOOD_CHERRY_PLANKS_BUTTON.get(), AlfheimrItems.BLOOD_CHERRY_SIGN.get(), AlfheimrItems.BLOOD_CHERRY_HANGING_SIGN.get());
+        //Sacred Tree
+        createWoodRecipes(pWriter, "sacred_tree", ModTags.Blocks.SACRED_TREE_LOGS, ModTags.Blocks.SACRED_TREE_STRIPPED_LOGS, AlfheimrBlocks.SACRED_TREE_PLANKS.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_STAIRS.get(), AlfheimrBlocks.SACRED_TREE_PLANKS_SLAB.get(), AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR.get(), AlfheimrBlocks.SACRED_TREE_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.SACRED_TREE_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.SACRED_TREE_PLANKS_BUTTON.get(), AlfheimrItems.SACRED_TREE_SIGN.get(), AlfheimrItems.SACRED_TREE_HANGING_SIGN.get());
+        //Willow
+        createWoodRecipes(pWriter, "willow", ModTags.Blocks.WILLOW_LOGS, ModTags.Blocks.WILLOW_STRIPPED_LOGS, AlfheimrBlocks.WILLOW_PLANKS.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_STAIRS.get(), AlfheimrBlocks.WILLOW_PLANKS_SLAB.get(), AlfheimrBlocks.WILLOW_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.WILLOW_PLANKS_DOOR.get(), AlfheimrBlocks.WILLOW_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WILLOW_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.WILLOW_PLANKS_BUTTON.get(), AlfheimrItems.WILLOW_SIGN.get(), AlfheimrItems.WILLOW_HANGING_SIGN.get());
+        //Deadwood
+        createWoodRecipes(pWriter, "deadwood", ModTags.Blocks.DEADWOOD_LOGS, ModTags.Blocks.DEADWOOD_STRIPPED_LOGS, AlfheimrBlocks.DEADWOOD_PLANKS.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_STAIRS.get(), AlfheimrBlocks.DEADWOOD_PLANKS_SLAB.get(), AlfheimrBlocks.DEADWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.DEADWOOD_PLANKS_DOOR.get(), AlfheimrBlocks.DEADWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.DEADWOOD_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.DEADWOOD_PLANKS_BUTTON.get(), AlfheimrItems.DEADWOOD_SIGN.get(), AlfheimrItems.DEADWOOD_HANGING_SIGN.get());
+        //Ebony Kingswood
+        createWoodRecipes(pWriter, "ebony_kingswood", ModTags.Blocks.EBONY_KINGSWOOD_LOGS, ModTags.Blocks.EBONY_KINGSWOOD_STRIPPED_LOGS, AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_STAIRS.get(), AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SLAB.get(), AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR.get(), AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_BUTTON.get(), AlfheimrItems.EBONY_KINGSWOOD_SIGN.get(), AlfheimrItems.EBONY_KINGSWOOD_HANGING_SIGN.get());
+        //Ivory Kingswood
+        createWoodRecipes(pWriter, "ivory_kingswood", ModTags.Blocks.IVORY_KINGSWOOD_LOGS, ModTags.Blocks.IVORY_KINGSWOOD_STRIPPED_LOGS, AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_STAIRS.get(), AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SLAB.get(), AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR.get(), AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_BUTTON.get(), AlfheimrItems.IVORY_KINGSWOOD_SIGN.get(), AlfheimrItems.IVORY_KINGSWOOD_HANGING_SIGN.get());
+        //Weaver
+        createWoodRecipes(pWriter, "weaver", ModTags.Blocks.WEAVER_LOGS, ModTags.Blocks.WEAVER_STRIPPED_LOGS, AlfheimrBlocks.WEAVER_PLANKS.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_STAIRS.get(), AlfheimrBlocks.WEAVER_PLANKS_SLAB.get(), AlfheimrBlocks.WEAVER_PLANKS_FENCE.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_FENCE_GATE.get(), AlfheimrBlocks.WEAVER_PLANKS_DOOR.get(), AlfheimrBlocks.WEAVER_PLANKS_TRAPDOOR.get(),
+                AlfheimrBlocks.WEAVER_PLANKS_PRESSURE_PLATE.get(), AlfheimrBlocks.WEAVER_PLANKS_BUTTON.get(), AlfheimrItems.WEAVER_SIGN.get(), AlfheimrItems.WEAVER_HANGING_SIGN.get());
     }
     public void alloyRecipes(Consumer<FinishedRecipe> pWriter) {
         createAlloyRecipes(pWriter, "brass", Items.COPPER_INGOT, ModItems.ZINC_INGOT.get(), ModItems.BRASS_INGOT.get(), ModBlocks.BRASS_BLOCK.get(), ModItems.BRASS_NUGGET.get());

@@ -1,5 +1,6 @@
 package net.sen.lostworlds.datagen;
 
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -341,6 +342,336 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
         hangingSignBlock( UnderworldBlocks.CYPRESS_PLANKS_HANGING_SIGN.get(), UnderworldBlocks.CYPRESS_PLANKS_WALL_HANGING_SIGN.get(),
                 blockTexture(UnderworldBlocks.CYPRESS_PLANKS.get()));
+
+        //Black Birch
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.BLACK_BIRCH_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.BLACK_BIRCH_WOOD.get(), blockTexture(AlfheimrBlocks.BLACK_BIRCH_LOG.get()), blockTexture(AlfheimrBlocks.BLACK_BIRCH_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG.get(), modBlockResourceLocation("stripped_black_birch_log"), modBlockResourceLocation("stripped_black_birch_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD.get(), modBlockResourceLocation("stripped_black_birch_log"), modBlockResourceLocation("stripped_black_birch_log"));
+
+        blockItem(AlfheimrBlocks.BLACK_BIRCH_LOG);
+        blockItem(AlfheimrBlocks.BLACK_BIRCH_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_BLACK_BIRCH_WOOD);
+        blockWithItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()), blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.BLACK_BIRCH_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.BLACK_BIRCH_LEAVES);
+        saplingBlock(AlfheimrBlocks.BLACK_BIRCH_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.BLACK_BIRCH_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.BLACK_BIRCH_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.BLACK_BIRCH_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.BLACK_BIRCH_PLANKS.get()));
+
+        //White Oak
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.WHITE_OAK_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.WHITE_OAK_WOOD.get(), blockTexture(AlfheimrBlocks.WHITE_OAK_LOG.get()), blockTexture(AlfheimrBlocks.WHITE_OAK_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG.get(), modBlockResourceLocation("stripped_white_oak_log"), modBlockResourceLocation("stripped_white_oak_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD.get(), modBlockResourceLocation("stripped_white_oak_log"), modBlockResourceLocation("stripped_white_oak_log"));
+
+        blockItem(AlfheimrBlocks.WHITE_OAK_LOG);
+        blockItem(AlfheimrBlocks.WHITE_OAK_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_WHITE_OAK_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_WHITE_OAK_WOOD);
+        blockWithItem(AlfheimrBlocks.WHITE_OAK_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()), blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.WHITE_OAK_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.WHITE_OAK_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.WHITE_OAK_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.WHITE_OAK_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.WHITE_OAK_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.WHITE_OAK_LEAVES);
+        saplingBlock(AlfheimrBlocks.WHITE_OAK_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.WHITE_OAK_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.WHITE_OAK_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.WHITE_OAK_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.WHITE_OAK_PLANKS.get()));
+
+        //Bur Oak
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.BUR_OAK_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.BUR_OAK_WOOD.get(), blockTexture(AlfheimrBlocks.BUR_OAK_LOG.get()), blockTexture(AlfheimrBlocks.BUR_OAK_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_BUR_OAK_LOG.get(), modBlockResourceLocation("stripped_bur_oak_log"), modBlockResourceLocation("stripped_bur_oak_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD.get(), modBlockResourceLocation("stripped_bur_oak_log"), modBlockResourceLocation("stripped_bur_oak_log"));
+
+        blockItem(AlfheimrBlocks.BUR_OAK_LOG);
+        blockItem(AlfheimrBlocks.BUR_OAK_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_BUR_OAK_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_BUR_OAK_WOOD);
+        blockWithItem(AlfheimrBlocks.BUR_OAK_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.BUR_OAK_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.BUR_OAK_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()), blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.BUR_OAK_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.BUR_OAK_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.BUR_OAK_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.BUR_OAK_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.BUR_OAK_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.BUR_OAK_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.BUR_OAK_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.BUR_OAK_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.BUR_OAK_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.BUR_OAK_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.BUR_OAK_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.BUR_OAK_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.BUR_OAK_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.BUR_OAK_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.BUR_OAK_LEAVES);
+        saplingBlock(AlfheimrBlocks.BUR_OAK_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.BUR_OAK_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.BUR_OAK_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.BUR_OAK_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.BUR_OAK_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.BUR_OAK_PLANKS.get()));
+
+        //Blood Cherry
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.BLOOD_CHERRY_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.BLOOD_CHERRY_WOOD.get(), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_LOG.get()), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG.get(), modBlockResourceLocation("stripped_blood_cherry_log"), modBlockResourceLocation("stripped_blood_cherry_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD.get(), modBlockResourceLocation("stripped_blood_cherry_log"), modBlockResourceLocation("stripped_blood_cherry_log"));
+
+        blockItem(AlfheimrBlocks.BLOOD_CHERRY_LOG);
+        blockItem(AlfheimrBlocks.BLOOD_CHERRY_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_BLOOD_CHERRY_WOOD);
+        blockWithItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.BLOOD_CHERRY_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.BLOOD_CHERRY_LEAVES);
+        saplingBlock(AlfheimrBlocks.BLOOD_CHERRY_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.BLOOD_CHERRY_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.BLOOD_CHERRY_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.BLOOD_CHERRY_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.BLOOD_CHERRY_PLANKS.get()));
+
+        //Sacred Tree
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.SACRED_TREE_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.SACRED_TREE_WOOD.get(), blockTexture(AlfheimrBlocks.SACRED_TREE_LOG.get()), blockTexture(AlfheimrBlocks.SACRED_TREE_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG.get(), modBlockResourceLocation("stripped_sacred_tree_log"), modBlockResourceLocation("stripped_sacred_tree_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD.get(), modBlockResourceLocation("stripped_sacred_tree_log"), modBlockResourceLocation("stripped_sacred_tree_log"));
+
+        blockItem(AlfheimrBlocks.SACRED_TREE_LOG);
+        blockItem(AlfheimrBlocks.SACRED_TREE_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_SACRED_TREE_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_SACRED_TREE_WOOD);
+        blockWithItem(AlfheimrBlocks.SACRED_TREE_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()), blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.SACRED_TREE_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.SACRED_TREE_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.SACRED_TREE_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.SACRED_TREE_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.SACRED_TREE_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.SACRED_TREE_LEAVES);
+        saplingBlock(AlfheimrBlocks.SACRED_TREE_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.SACRED_TREE_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.SACRED_TREE_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.SACRED_TREE_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.SACRED_TREE_PLANKS.get()));
+
+        //Willow
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.WILLOW_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.WILLOW_WOOD.get(), blockTexture(AlfheimrBlocks.WILLOW_LOG.get()), blockTexture(AlfheimrBlocks.WILLOW_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_WILLOW_LOG.get(), modBlockResourceLocation("stripped_willow_log"), modBlockResourceLocation("stripped_willow_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_WILLOW_WOOD.get(), modBlockResourceLocation("stripped_willow_log"), modBlockResourceLocation("stripped_willow_log"));
+
+        blockItem(AlfheimrBlocks.WILLOW_LOG);
+        blockItem(AlfheimrBlocks.WILLOW_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_WILLOW_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_WILLOW_WOOD);
+        blockWithItem(AlfheimrBlocks.WILLOW_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.WILLOW_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.WILLOW_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()), blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.WILLOW_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.WILLOW_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.WILLOW_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.WILLOW_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.WILLOW_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.WILLOW_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.WILLOW_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.WILLOW_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.WILLOW_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.WILLOW_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.WILLOW_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.WILLOW_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.WILLOW_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.WILLOW_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.WILLOW_LEAVES);
+        saplingBlock(AlfheimrBlocks.WILLOW_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.WILLOW_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.WILLOW_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.WILLOW_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.WILLOW_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.WILLOW_PLANKS.get()));
+
+        //Deadwood
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.DEADWOOD_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.DEADWOOD_WOOD.get(), blockTexture(AlfheimrBlocks.DEADWOOD_LOG.get()), blockTexture(AlfheimrBlocks.DEADWOOD_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_DEADWOOD_LOG.get(), modBlockResourceLocation("stripped_deadwood_log"), modBlockResourceLocation("stripped_deadwood_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD.get(), modBlockResourceLocation("stripped_deadwood_log"), modBlockResourceLocation("stripped_deadwood_log"));
+
+        blockItem(AlfheimrBlocks.DEADWOOD_LOG);
+        blockItem(AlfheimrBlocks.DEADWOOD_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_DEADWOOD_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_DEADWOOD_WOOD);
+        blockWithItem(AlfheimrBlocks.DEADWOOD_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.DEADWOOD_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.DEADWOOD_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()), blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.DEADWOOD_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.DEADWOOD_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.DEADWOOD_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.DEADWOOD_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.DEADWOOD_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.DEADWOOD_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.DEADWOOD_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.DEADWOOD_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.DEADWOOD_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.DEADWOOD_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.DEADWOOD_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.DEADWOOD_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.DEADWOOD_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.DEADWOOD_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.DEADWOOD_LEAVES);
+        saplingBlock(AlfheimrBlocks.DEADWOOD_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.DEADWOOD_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.DEADWOOD_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.DEADWOOD_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.DEADWOOD_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.DEADWOOD_PLANKS.get()));
+
+        //Ebony Kingswood
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.EBONY_KINGSWOOD_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.EBONY_KINGSWOOD_WOOD.get(), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_LOG.get()), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG.get(), modBlockResourceLocation("stripped_ebony_kingswood_log"), modBlockResourceLocation("stripped_ebony_kingswood_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD.get(), modBlockResourceLocation("stripped_ebony_kingswood_log"), modBlockResourceLocation("stripped_ebony_kingswood_log"));
+
+        blockItem(AlfheimrBlocks.EBONY_KINGSWOOD_LOG);
+        blockItem(AlfheimrBlocks.EBONY_KINGSWOOD_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_EBONY_KINGSWOOD_WOOD);
+        blockWithItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.EBONY_KINGSWOOD_LEAVES);
+        saplingBlock(AlfheimrBlocks.EBONY_KINGSWOOD_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS.get()));
+
+        //Ivory Kingswood
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.IVORY_KINGSWOOD_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.IVORY_KINGSWOOD_WOOD.get(), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_LOG.get()), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG.get(), modBlockResourceLocation("stripped_ivory_kingswood_log"), modBlockResourceLocation("stripped_ivory_kingswood_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD.get(), modBlockResourceLocation("stripped_ivory_kingswood_log"), modBlockResourceLocation("stripped_ivory_kingswood_log"));
+
+        blockItem(AlfheimrBlocks.IVORY_KINGSWOOD_LOG);
+        blockItem(AlfheimrBlocks.IVORY_KINGSWOOD_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_IVORY_KINGSWOOD_WOOD);
+        blockWithItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.IVORY_KINGSWOOD_LEAVES);
+        saplingBlock(AlfheimrBlocks.IVORY_KINGSWOOD_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS.get()));
+
+        //Weaver
+        logBlock(((RotatedPillarBlock) AlfheimrBlocks.WEAVER_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.WEAVER_WOOD.get(), blockTexture(AlfheimrBlocks.WEAVER_LOG.get()), blockTexture(AlfheimrBlocks.WEAVER_LOG.get()));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_WEAVER_LOG.get(), modBlockResourceLocation("stripped_weaver_log"), modBlockResourceLocation("stripped_weaver_log_top"));
+        axisBlock((RotatedPillarBlock) AlfheimrBlocks.STRIPPED_WEAVER_WOOD.get(), modBlockResourceLocation("stripped_weaver_log"), modBlockResourceLocation("stripped_weaver_log"));
+
+        blockItem(AlfheimrBlocks.WEAVER_LOG);
+        blockItem(AlfheimrBlocks.WEAVER_WOOD);
+        blockItem(AlfheimrBlocks.STRIPPED_WEAVER_LOG);
+        blockItem(AlfheimrBlocks.STRIPPED_WEAVER_WOOD);
+        blockWithItem(AlfheimrBlocks.WEAVER_PLANKS);
+
+        stairsBlock((StairBlock) AlfheimrBlocks.WEAVER_PLANKS_STAIRS.get(), blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()));
+        slabBlock(((SlabBlock) AlfheimrBlocks.WEAVER_PLANKS_SLAB.get()), blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()), blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) AlfheimrBlocks.WEAVER_PLANKS_PRESSURE_PLATE.get(), blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()));
+        fenceBlock((FenceBlock) AlfheimrBlocks.WEAVER_PLANKS_FENCE.get(), blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) AlfheimrBlocks.WEAVER_PLANKS_FENCE_GATE.get(), blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) AlfheimrBlocks.WEAVER_PLANKS_DOOR.get(), modLoc("block/" + AlfheimrBlocks.WEAVER_PLANKS_DOOR.getId().getPath() + "_bottom"), modLoc("block/" + AlfheimrBlocks.WEAVER_PLANKS_DOOR.getId().getPath() + "_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) AlfheimrBlocks.WEAVER_PLANKS_TRAPDOOR.get(), modLoc("block/" + AlfheimrBlocks.WEAVER_PLANKS_TRAPDOOR.getId().getPath()), true, "cutout");
+        buttonBlock((ButtonBlock) AlfheimrBlocks.WEAVER_PLANKS_BUTTON.get(), blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()));
+
+        blockItem(AlfheimrBlocks.WEAVER_PLANKS_STAIRS);
+        blockItem(AlfheimrBlocks.WEAVER_PLANKS_SLAB);
+        blockItem(AlfheimrBlocks.WEAVER_PLANKS_FENCE_GATE);
+        blockItem(AlfheimrBlocks.WEAVER_PLANKS_PRESSURE_PLATE);
+        blockItem(AlfheimrBlocks.WEAVER_PLANKS_TRAPDOOR, "_bottom");
+        leavesBlock(AlfheimrBlocks.WEAVER_LEAVES);
+        saplingBlock(AlfheimrBlocks.WEAVER_SAPLING);
+        signBlock(((StandingSignBlock) AlfheimrBlocks.WEAVER_PLANKS_SIGN.get()),((WallSignBlock) AlfheimrBlocks.WEAVER_PLANKS_WALL_SIGN.get()),
+                blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()));
+        hangingSignBlock( AlfheimrBlocks.WEAVER_PLANKS_HANGING_SIGN.get(), AlfheimrBlocks.WEAVER_PLANKS_WALL_HANGING_SIGN.get(),
+                blockTexture(AlfheimrBlocks.WEAVER_PLANKS.get()));
 
         /*
          * FLOWER
@@ -859,37 +1190,48 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     public void makePortalBlock(RegistryObject<Block> block) {
-        ModelFile portalModel = models().getBuilder(modBlockResourceLocation(block).getPath());
-        ModelFile portalModelEW = models().getBuilder(modBlockResourceLocation(block, "_ew").getPath());
-        ModelFile portalModelNS = models().getBuilder(modBlockResourceLocation(block, "_ns").getPath());
+        ResourceLocation loc = LostWorldsApi.modLoc("block/" + block.getId().getPath());
+        ResourceLocation loc_ew = LostWorldsApi.modLoc("block/" + block.getId().getPath() + "_ew");
+        ResourceLocation loc_ns = LostWorldsApi.modLoc("block/" + block.getId().getPath() + "_ns");
+
+        BlockModelBuilder model_ew = models()
+                .getBuilder(loc_ew.toString())
+                .texture("particle", loc)
+                .texture("portal", loc)
+
+                .element()
+                .from(6, 0, 0)
+                .to(10, 16, 16)
+                .face(Direction.EAST).uvs(0, 0, 16, 16).texture("#portal").end()
+                .face(Direction.WEST).uvs(0, 0, 16, 16).texture("#portal").end()
+                .end();
+
+        BlockModelBuilder model_ns = models()
+                .getBuilder(loc_ns.toString())
+                .texture("particle", loc)
+                .texture("portal", loc)
+
+                .element()
+                .from(0, 0, 6)
+                .to(16, 16, 10)
+                .face(Direction.NORTH).uvs(0, 0, 16, 16).texture("#portal").end()
+                .face(Direction.SOUTH).uvs(0, 0, 16, 16).texture("#portal").end()
+                .end();
 
         getVariantBuilder(block.get())
                 .forAllStates(state -> {
                     switch (state.getValue(ModPortalBlock.AXIS)) {
                         case X -> {
-                            return ConfiguredModel.builder().modelFile(portalModelEW).build();
+                            return ConfiguredModel.builder().modelFile(model_ns).build();
                         }
 
                         case Z -> {
-                            return ConfiguredModel.builder().modelFile(portalModelNS).build();
+                            return ConfiguredModel.builder().modelFile(model_ew).build();
                         }
                     }
 
                     return null;
-//                    final String path = state.getValue(ModPortalBlock.AXIS == ) ? "_ew" : "_ns";
-//                    return ConfiguredModel.builder().modelFile(portalModelEW).nextModel().modelFile(portalModelNS).build();
-                })
-//                .forAllStates(state -> ConfiguredModel.builder().modelFile(portalModelNS).build())
-        ;
-
-//        getVariantBuilder(block.get()).partialState().addModels(
-//                new ConfiguredModel(portalModelEW)
-//        ).addModels(
-//                new ConfiguredModel(portalModelNS)
-//        );
-
-//        getVariantBuilder(block.get()).partialState().getSetStates().get(ModPortalBlock.AXIS)
-//                .modelForState().modelFile(portalModelEW).nextModel().modelFile(portalModelNS).build();
+                });
     }
 
     public void makeCrop(ModCropBlock block, String modelName, String textureName) {

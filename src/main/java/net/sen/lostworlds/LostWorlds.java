@@ -40,6 +40,8 @@ import net.sen.lostworlds.villager.custom.dwarven.ModDwarvenVillagers;
 import net.sen.lostworlds.worldgen.biome.util.layer.carver.ModCarvers;
 import net.sen.lostworlds.worldgen.dimension.biomebuilder.AlfheimrBiomeBuilder;
 import net.sen.lostworlds.worldgen.portal.*;
+import net.sen.lostworlds.worldgen.tree.custom.foliageplacer.ModFoliagePlacerTypes;
+import net.sen.lostworlds.worldgen.tree.custom.trunkplacer.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -86,6 +88,8 @@ public class LostWorlds {
         AlfheimrEntities.register(modEventBus);
         AtlantisEntities.register(modEventBus);
         SkyopiaEntities.register(modEventBus);
+        ModTrunkPlacerTypes.register(modEventBus);
+        ModFoliagePlacerTypes.register(modEventBus);
 
         //Custom
 //        ModDruidRituals.register(modEventBus);

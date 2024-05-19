@@ -12,6 +12,15 @@ public class ModWoodTypesReg {
             Sheets.addWoodType(ModWoodTypes.MYRRH);
             Sheets.addWoodType(ModWoodTypes.LAUREL);
             Sheets.addWoodType(ModWoodTypes.CYPRESS);
+            Sheets.addWoodType(ModWoodTypes.BLACK_BIRCH);
+            Sheets.addWoodType(ModWoodTypes.BUR_OAK);
+            Sheets.addWoodType(ModWoodTypes.BLOOD_CHERRY);
+            Sheets.addWoodType(ModWoodTypes.SACRED_TREE);
+            Sheets.addWoodType(ModWoodTypes.WILLOW);
+            Sheets.addWoodType(ModWoodTypes.DEADWOOD);
+            Sheets.addWoodType(ModWoodTypes.EBONY_KINGSWOOD);
+            Sheets.addWoodType(ModWoodTypes.IVORY_KINGSWOOD);
+            Sheets.addWoodType(ModWoodTypes.WEAVER);
         });
     }
 }
