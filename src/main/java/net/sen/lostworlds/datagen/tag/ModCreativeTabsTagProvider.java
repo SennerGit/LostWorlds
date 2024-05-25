@@ -28,6 +28,11 @@ public class ModCreativeTabsTagProvider extends ItemTagsProvider {
                 ModItems.BASIC_PORTAL_ACTIVATOR.get(),
                 UnderworldItems.OLIVE.get(),
 
+                Item.byBlock(ModBlocks.STICK_DECOR.get()),
+                Item.byBlock(ModBlocks.ROCK_DECOR.get()),
+                Item.byBlock(ModBlocks.LEAVES_DECOR.get()),
+                Item.byBlock(ModBlocks.SEASHELL_DECOR.get()),
+
                 Item.byBlock(ModBlocks.ZINC_BLOCK.get()),
                 Item.byBlock(ModBlocks.RAW_ZINC_BLOCK.get()),
                 Item.byBlock(ModBlocks.ZINC_ORE.get()),

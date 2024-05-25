@@ -38,6 +38,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MYSTIC_GATEWAYS_PORTAL = registerBlock("mystic_gateways_portal", MysticGatewaysPortalBlock::new);
 
+
     /*
      * NIDAVELLIR STONE GEO
      */
@@ -81,6 +82,10 @@ public class ModBlocks {
     //https://en.wikipedia.org/wiki/Bronze
     public static final RegistryObject<Block> BRONZE_BLOCK = registerBlock("bronze_block", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops(), UniformInt.of(2, 5)));
 
+    public static final RegistryObject<Block> STICK_DECOR = registerBlock("stick_decor", () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET).noOcclusion()));
+    public static final RegistryObject<Block> ROCK_DECOR = registerBlock("rock_decor", () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET)));
+    public static final RegistryObject<Block> LEAVES_DECOR = registerBlock("leaves_decor", () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET).noOcclusion()));
+    public static final RegistryObject<Block> SEASHELL_DECOR = registerBlock("seashell_decor", () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET).noOcclusion()));
     /*
      *Mushroom
      */

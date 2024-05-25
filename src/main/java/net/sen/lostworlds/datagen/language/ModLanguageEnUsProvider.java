@@ -26,6 +26,62 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        blocksAndItems();
+        spawnEggs();
+        paintings();
+        effects();
+        potions();
+        sounds();
+        records();
+        custom();
+        creativeTab();
+        baseAdvancements();
+        underworldAdvancements();
+        nidavellirAdvancements();
+        alfheimrAdvancements();
+        atlantisAdvancements();
+        skyopiaAdvancements();
+        lostWorldsBook();
+        alfheimrBook();
+        atlantisBook();
+        nidavellirBook();
+        skyopiaBook();
+        underworldBook();
+        bookOnDragonsBook();
+
+    }
+
+    private void spawnEggs() {
+        //Spawm Eggs
+        this.addItem(ModSpawnEggs.RHINO_SPAWN_EGG, "Rhino Spawn Egg");
+        this.addItem(ModSpawnEggs.HELLHOUND_SPAWN_EGG, "Hell Hound Spawn Egg");
+        this.addItem(ModSpawnEggs.SHADOWHOUND_SPAWN_EGG, "Shadow Hound Spawn Egg");
+        this.addItem(ModSpawnEggs.SPECTRALHOUND_SPAWN_EGG, "Spectral Hound Spawn Egg");
+        this.addItem(ModSpawnEggs.DWARVES_SPAWN_EGG, "Dwarves Spawn Egg");
+        this.addItem(ModSpawnEggs.VAMPIRE_BAT_SPAWN_EGG, "Vampire Bat Spawn Egg");
+        this.addItem(ModSpawnEggs.CAVE_MOLE_SPAWN_EGG, "Cave Mole Spawn Egg");
+        this.addItem(ModSpawnEggs.ELVES_SPAWN_EGG, "Elves Spawn Egg");
+        this.addItem(ModSpawnEggs.SHARK_SPAWN_EGG, "Shark Spawn Egg");
+        this.addItem(ModSpawnEggs.MORAY_EELS_SPAWN_EGG, "Moray Eels Spawn Egg");
+        this.addItem(ModSpawnEggs.ELECTRIC_EELS_SPAWN_EGG, "Electric_eels Spawn Egg");
+        this.addItem(ModSpawnEggs.JELLYFISH_SPAWN_EGG, "Jellyfish Spawn Egg");
+        this.addItem(ModSpawnEggs.GIANT_SQUID_SPAWN_EGG, "Giant Squid Spawn Egg");
+        this.addItem(ModSpawnEggs.RAY_SPAWN_EGG, "Ray Spawn Egg");
+        this.addItem(ModSpawnEggs.GIANT_OCTOPUS_SPAWN_EGG, "Giant Octopus Spawn Egg");
+        this.addItem(ModSpawnEggs.NUDIBRANCH_SLUG_SPAWN_EGG, "Nudibranch Slug Spawn Egg");
+        this.addItem(ModSpawnEggs.GREAT_WHITE_SPAWN_EGG, "Great White Spawn Egg");
+        this.addItem(ModSpawnEggs.ANGLER_FISH_SPAWN_EGG, "Angler Fish Spawn Egg");
+        this.addItem(ModSpawnEggs.SEAHORSE_SPAWN_EGG, "Seahorse Spawn Egg");
+        this.addItem(ModSpawnEggs.CLOWNFISH_SPAWN_EGG, "Clownfish Spawn Egg");
+        this.addItem(ModSpawnEggs.ATLANTIAN_GURDIAN_SPAWN_EGG, "Atlantian_gurdian Spawn Egg");
+        this.addItem(ModSpawnEggs.SIREN_SPAWN_EGG, "Siren Spawn Egg");
+        this.addItem(ModSpawnEggs.MERFOLK_SPAWN_EGG, "Merfolk Spawn Egg");
+        this.addItem(ModSpawnEggs.ATLANTIAN_SPAWN_EGG, "Atlantian Spawn Egg");
+        this.addItem(ModSpawnEggs.TANG_FISH_SPAWN_EGG, "Tang Fish Spawn Egg");
+        this.addItem(ModSpawnEggs.TUNA_SPAWN_EGG, "Tuna Spawn Egg");
+    }
+
+    private void blocksAndItems() {
         //Custom Blocks/Items
         this.addItem(ModItems.MAGICAL_DOWSING_ROD, "Magical Dowsing Rod");
         this.addBlock(ModBlocks.SOUND_BLOCK, "Sound Block");
@@ -456,34 +512,6 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 
         this.addItem(ModItems.BRONZE_HORSE_ARMOR, "Bronze Horse Armor");
 
-        //Spawm Eggs
-        this.addItem(ModSpawnEggs.RHINO_SPAWN_EGG, "Rhino Spawn Egg");
-        this.addItem(ModSpawnEggs.HELLHOUND_SPAWN_EGG, "Hell Hound Spawn Egg");
-        this.addItem(ModSpawnEggs.SHADOWHOUND_SPAWN_EGG, "Shadow Hound Spawn Egg");
-        this.addItem(ModSpawnEggs.SPECTRALHOUND_SPAWN_EGG, "Spectral Hound Spawn Egg");
-        this.addItem(ModSpawnEggs.DWARVES_SPAWN_EGG, "Dwarves Spawn Egg");
-        this.addItem(ModSpawnEggs.VAMPIRE_BAT_SPAWN_EGG, "Vampire Bat Spawn Egg");
-        this.addItem(ModSpawnEggs.CAVE_MOLE_SPAWN_EGG, "Cave Mole Spawn Egg");
-        this.addItem(ModSpawnEggs.ELVES_SPAWN_EGG, "Elves Spawn Egg");
-        this.addItem(ModSpawnEggs.SHARK_SPAWN_EGG, "Shark Spawn Egg");
-        this.addItem(ModSpawnEggs.MORAY_EELS_SPAWN_EGG, "Moray Eels Spawn Egg");
-        this.addItem(ModSpawnEggs.ELECTRIC_EELS_SPAWN_EGG, "Electric_eels Spawn Egg");
-        this.addItem(ModSpawnEggs.JELLYFISH_SPAWN_EGG, "Jellyfish Spawn Egg");
-        this.addItem(ModSpawnEggs.GIANT_SQUID_SPAWN_EGG, "Giant Squid Spawn Egg");
-        this.addItem(ModSpawnEggs.RAY_SPAWN_EGG, "Ray Spawn Egg");
-        this.addItem(ModSpawnEggs.GIANT_OCTOPUS_SPAWN_EGG, "Giant Octopus Spawn Egg");
-        this.addItem(ModSpawnEggs.NUDIBRANCH_SLUG_SPAWN_EGG, "Nudibranch Slug Spawn Egg");
-        this.addItem(ModSpawnEggs.GREAT_WHITE_SPAWN_EGG, "Great White Spawn Egg");
-        this.addItem(ModSpawnEggs.ANGLER_FISH_SPAWN_EGG, "Angler Fish Spawn Egg");
-        this.addItem(ModSpawnEggs.SEAHORSE_SPAWN_EGG, "Seahorse Spawn Egg");
-        this.addItem(ModSpawnEggs.CLOWNFISH_SPAWN_EGG, "Clownfish Spawn Egg");
-        this.addItem(ModSpawnEggs.ATLANTIAN_GURDIAN_SPAWN_EGG, "Atlantian_gurdian Spawn Egg");
-        this.addItem(ModSpawnEggs.SIREN_SPAWN_EGG, "Siren Spawn Egg");
-        this.addItem(ModSpawnEggs.MERFOLK_SPAWN_EGG, "Merfolk Spawn Egg");
-        this.addItem(ModSpawnEggs.ATLANTIAN_SPAWN_EGG, "Atlantian Spawn Egg");
-        this.addItem(ModSpawnEggs.TANG_FISH_SPAWN_EGG, "Tang Fish Spawn Egg");
-        this.addItem(ModSpawnEggs.TUNA_SPAWN_EGG, "Tuna Spawn Egg");
-
         //Mushroom
         this.addBlock(AlfheimrBlocks.POINT_MUSHROOM_BLOCK, "Point Mushroom Block");
         this.addBlock(AlfheimrBlocks.POTTED_POINT_MUSHROOM_BLOCK, "Potted Point Mushroom Block");
@@ -523,6 +551,12 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addItem(AtlantisItems.SHARK_TOOTH, "Shark Tooth");
 
         this.addBlock(AlfheimrBlocks.ALFHEIMR_MAGIC_GRASS, "Alfheimr Magic Grass");
+
+        //Decor
+        this.addBlock(ModBlocks.STICK_DECOR, "Stick Pile");
+        this.addBlock(ModBlocks.ROCK_DECOR, "Rock");
+        this.addBlock(ModBlocks.LEAVES_DECOR, "Leaves Pile");
+        this.addBlock(ModBlocks.SEASHELL_DECOR, "Seashell");
 
         //Adamant
         this.addBlock(UnderworldBlocks.ADAMANT_BLOCK, "Adamant Block");
@@ -961,35 +995,42 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addBlock(AlfheimrBlocks.ALFHEIMR_PORTAL, "Alfheimr Portal");
         this.addBlock(AtlantisBlocks.ATLANTIS_PORTAL, "Atlantis Portal");
         this.addBlock(SkyopiaBlocks.SKYOPIA_PORTAL, "Skyopia Portal");
+    }
 
+    private void paintings() {
         addPainting(ModPaintings.SAW_THEM, "Saw Them", "NanoAttack");
         addPainting(ModPaintings.SHRIMP, "Shrimp", "NanoAttack");
         addPainting(ModPaintings.WORLD, "World", "NanoAttack");
+    }
 
+    private void effects() {
         addEffect(ModEffects.DROWSY_EFFECT, "Drowsy");
+    }
+
+    private void potions() {
         addPotion(ModPotions.DROWSY_POTION, "Drowsy");
+    }
 
-//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_TAB, "Lost Worlds Tab");
-//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_UNDERWORLD_TAB, "Lost Worlds Underworld Tab");
-//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_NIDAVELLIR_TAB, "Lost Worlds Nidavellir Tab");
-//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ALFHEIMR_TAB, "Lost Worlds Álfheimr Tab");
-//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ATLANTIS_TAB, "Lost Worlds Atlantis Tab");
-//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_SKYOPIA_TAB, "Lost Worlds Skyopia Tab");
-//        addCreativeTab(ModCreativeModeTabs.LOST_WORLDS_ENTITIES_TAB, "Lost Worlds Spawn Eggs Tab");
-
+    private void sounds() {
         addSound(ModSounds.MAGICAL_DOWSING_ROD_FOUND_ORE, "Magical Dowsing Rod Found Ore");
         addSound(ModSounds.CRIMSON_DIAMOND_LAMP_BREAK, "Crimson Diamond Lamp Break");
         addSound(ModSounds.CRIMSON_DIAMOND_LAMP_STEP, "Crimson Diamond Lamp Step");
         addSound(ModSounds.CRIMSON_DIAMOND_LAMP_FALL, "Crimson Diamond Lamp Fall");
         addSound(ModSounds.CRIMSON_DIAMOND_LAMP_PLACE, "Crimson Diamond Lamp Place");
         addSound(ModSounds.CRIMSON_DIAMOND_LAMP_HIT, "Crimson Diamond Lamp Hit");
+    }
 
-        addRecord(ModItems.BAR_BRAWL_RECORD, "Bar Brawl Record", "Bryan Tech - Bar Brawl (CC0)");
-
+    private void custom() {
         this.add("item.lostworlds.magical_dowsing_rod.no_valuables", "No Valuables Found!");
         this.add("tooltip.lostworlds.magical_dowsing_rod.tooltip", "Hold #eSHIFT#r for more information...");
         this.add("tooltip.lostworlds.magical_dowsing_rod.tooltip.shift", "Right click on block to find valuables");
+    }
 
+    private void records() {
+        addRecord(ModItems.BAR_BRAWL_RECORD, "Bar Brawl Record", "Bryan Tech - Bar Brawl (CC0)");
+    }
+
+    private void creativeTab() {
         //Tab info
         this.add("itemGroup.cfm", "Lost Worlds");
         this.add("gui.button.cfm.enable_filters", "Enable All Filters");
@@ -1013,51 +1054,123 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addTagFilterUI("tools_and_utilities", "Tools & Utilities");
         this.addTagFilterUI("combat", "Combat");
         this.addTagFilterUI("food_and_drinks", "Food & Drinks");
+    }
 
-        //Advancements
-        //Base
-        this.add("advancement.lostworlds.base.root.name", "Base Lost Worlds");
-        this.add("advancement.lostworlds.base.root.desc", "Learn the powers of different wolds");
-        this.add("advancement.lostworlds.base.dowsing_rod.name", "Magical Dowsing Rod");
-        this.add("advancement.lostworlds.base.dowsing_rod.desc", "Find magical objects");
-
-        //Underworld
-        this.add("advancement.lostworlds.underworld.root.name", "Underworld");
-        this.add("advancement.lostworlds.underworld.root.desc", "Learn the powers of different wolds");
-
-        //Nidavellir
-        this.add("advancement.lostworlds.nidavellir.root.name", "Nidavellir");
-        this.add("advancement.lostworlds.nidavellir.root.desc", "Learn the powers of different wolds");
-
-        //Alfheimr
-        this.add("advancement.lostworlds.alfheimr.root.name", "Alfheimr");
-        this.add("advancement.lostworlds.alfheimr.root.desc", "Learn the powers of different wolds");
-
-        //Atlantis
-        this.add("advancement.lostworlds.atlantis.root.name", "Atlantis");
-        this.add("advancement.lostworlds.atlantis.root.desc", "Learn the powers of different wolds");
-
-        //Skyopia
-        this.add("advancement.lostworlds.skyopia.root.name", "Skyopia");
-        this.add("advancement.lostworlds.skyopia.root.desc", "Learn the powers of different wolds");
-
-        //Lost Worlds Book
-        createBook("lostworlds", "Lost Worlds Book", "A journal written by a mad man talking about the possibilities of different worlds." +
-                "$(br2)Discovering the mysteries of the many different worlds lost to history."
+    private void bookOnDragonsBook() {
+        //Book On Dragons Book
+        createBook("book_on_dragons", "Book On Dragons",
+                "This book is written by Gavin Young." +
+                "The worlds leading researcher in everything about dragons. Both in known knowladge and legends."
         );
-//        this.add("item.lostworlds.book.name", "Lost Worlds Book");
-//        this.add("info.lostworlds.book.landing", "A journal written by a mad man talking about the possibilities of different worlds." +
-//                "$(br2)Discovering the mysteries of the many different worlds lost to history.");
+        this.add("book_on_dragons_book.category.lesser_dragons.name", "Lesser Dragons");
+        this.add("book_on_dragons_book.category.lesser_dragons.desc", "");
 
-        this.add("lostworlds.category.basics", "Basics");
-        this.add("lostworlds.entry.basics.intro", "Intro");
-        this.add("lostworlds.page.basics.intro.0.title", "Getting to Alfheimr");
-        this.add("lostworlds.page.basics.intro.0.text", "");
-        this.add("lostworlds.page.basics.intro.1.title", "Craft the portal activator");
+        this.add("book_on_dragons_book.category.greater_dragons.name", "Greater Dragons");
+        this.add("book_on_dragons_book.category.greater_dragons.desc", "");
+
+
+        this.add("book_on_dragons_book.category.emperor_dragons.name", "Emeror Dragons");
+        this.add("book_on_dragons_book.category.emperor_dragons.desc", "");
+        this.add("lostworlds.entry.book_on_dragons_book.greater_dragons.ender_dragon.name", "Ender Dragon");
+        this.add("lostworlds.page.book_on_dragons_book.greater_dragons.ender_dragon.0.title", "The Ender Dragon");
+        this.add("lostworlds.page.book_on_dragons_book.greater_dragons.ender_dragon.0.text",
+                "The Ender Dragon is a dragon that is only found in the end dimension."
+        );
+
+        this.add("book_on_dragons_book.category.celestial_dragons.name", "Celestrial Dragons");
+        this.add("book_on_dragons_book.category.celestial_dragons.desc", "");
+    }
+
+    private void underworldBook() {
+        //Underworld Book
+        createBook("underworld", "Hades guide to the Underworld",
+                "This book is written by the lord of the underworld hades." +
+                        "$(br2)The reason for this book is to pass on information and knowladge on how to live in the underworld."
+        );
+//        this.add("item.underworld.book.name", "Hades guide to the Underworld");
+//        this.add("info.underworld.book.landing", "This book is written by the lord of the underworld hades." +
+//                "$(br2)The reason for this book is to pass on information and knowladge on how to live in the underworld.");
+
+        this.add("underworld.category.basics", "Basics");
+        this.add("lostworlds.entry.underworld.intro", "Intro");
+        this.add("lostworlds.page.underworld.intro.0.title", "Getting to Underworld");
+        this.add("lostworlds.page.underworld.intro.0.text", "");
+        this.add("lostworlds.page.underworld.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.underworld.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.underworld.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.underworld.intro.4.text", "");
 
 //        this.add("", "");
+    }
 
-        //Alfheimr
+    private void skyopiaBook() {
+        //Skyopia Book
+        createBook("skyopia", "Lost journal on Skyopia",
+                "A journal written by the most infamous and notorious pirate in all of Skyopia." +
+                        "$(br2)A survivors guide to the many lands and wild life of Skyopia"
+        );
+//        this.add("item.skyopia.book.name", "Lost journal on Skyopia");
+//        this.add("info.skyopia.book.landing", "A journal written by the most infamous and notorious pirate in all of Skyopia." +
+//                "$(br2)A survivors guide to the many lands and wild life of Skyopia");
+
+        this.add("skyopia.category.basics", "Basics");
+        this.add("lostworlds.entry.skyopia.intro", "Intro");
+        this.add("lostworlds.page.skyopia.intro.0.title", "Getting to Skyopia");
+        this.add("lostworlds.page.skyopia.intro.0.text", "");
+        this.add("lostworlds.page.skyopia.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.skyopia.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.skyopia.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.skyopia.intro.4.text", "");
+
+//        this.add("", "");
+    }
+
+    private void nidavellirBook() {
+        //Nidavellir Book
+        createBook("nidavellir", "Miners guide to Nidavellir",
+                "Popular edition for all dwarves." +
+                        "$(br2)A basic guide to Nidavellir that all the dwarves carry before entering the mines."
+        );
+//        this.add("item.nidavellir.book.name", "Miners guide to Nidavellir");
+//        this.add("info.nidavellir.book.landing", "Popular edition for all dwarves." +
+//                "$(br2)A basic guide to Nidavellir that all the dwarves carry before entering the mines.");
+
+        this.add("nidavellir.category.basics", "Basics");
+        this.add("lostworlds.entry.nidavellir.intro", "Intro");
+        this.add("lostworlds.page.nidavellir.intro.0.title", "Getting to Nidavellir");
+        this.add("lostworlds.page.nidavellir.intro.0.text", "");
+        this.add("lostworlds.page.nidavellir.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.nidavellir.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.nidavellir.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.nidavellir.intro.4.text", "");
+
+//        this.add("", "");
+    }
+
+    private void atlantisBook() {
+        //Atlantis Book
+        createBook("atlantis", "The lost book of Atlantis",
+                "The only recorded book on Atlantis but was lost before it could make it to print." +
+                        "$(br2)This book covers all the mystories of the world atlantis."
+        );
+//        this.add("item.atlantis.book.name", "The lost book of Atlantis");
+//        this.add("info.atlantis.book.landing", "The only recorded book on Atlantis but was lost before it could make it to print." +
+//                "$(br2)This book covers all the mystories of the world atlantis.");
+
+        this.add("atlantis.category.basics", "Basics");
+        this.add("lostworlds.entry.atlantis.intro", "Intro");
+        this.add("lostworlds.page.atlantis.intro.0.title", "Getting to Atlantis");
+        this.add("lostworlds.page.atlantis.intro.0.text", "");
+        this.add("lostworlds.page.atlantis.intro.2.title", "Craft the portal activator");
+        this.add("lostworlds.page.atlantis.intro.3.title", "Making the portal frame");
+        this.add("lostworlds.page.atlantis.intro.4.name", "Building the portal");
+        this.add("lostworlds.page.atlantis.intro.4.text", "");
+
+//        this.add("", "");
+    }
+
+    private void alfheimrBook() {
+        //Alfheimr Book
         createBook("alfheimr", "Alfheimr in a book Vol.1",
                 "The first and only known printed copy." +
                 "$(br2)The book covers all things needed to know about Alfheimr."
@@ -1091,110 +1204,62 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.add("lostworlds.page.alfheimr.druid.intro.1.text", "");
 
 //        this.add("", "");
+    }
 
-        //Atlantis
-        createBook("atlantis", "The lost book of Atlantis",
-                "The only recorded book on Atlantis but was lost before it could make it to print." +
-                        "$(br2)This book covers all the mystories of the world atlantis."
+    private void lostWorldsBook() {
+        //Lost Worlds Book
+        createBook("lostworlds", "Lost Worlds Book", "A journal written by a mad man talking about the possibilities of different worlds." +
+                "$(br2)Discovering the mysteries of the many different worlds lost to history."
         );
-//        this.add("item.atlantis.book.name", "The lost book of Atlantis");
-//        this.add("info.atlantis.book.landing", "The only recorded book on Atlantis but was lost before it could make it to print." +
-//                "$(br2)This book covers all the mystories of the world atlantis.");
+//        this.add("item.lostworlds.book.name", "Lost Worlds Book");
+//        this.add("info.lostworlds.book.landing", "A journal written by a mad man talking about the possibilities of different worlds." +
+//                "$(br2)Discovering the mysteries of the many different worlds lost to history.");
 
-        this.add("atlantis.category.basics", "Basics");
-        this.add("lostworlds.entry.atlantis.intro", "Intro");
-        this.add("lostworlds.page.atlantis.intro.0.title", "Getting to Atlantis");
-        this.add("lostworlds.page.atlantis.intro.0.text", "");
-        this.add("lostworlds.page.atlantis.intro.2.title", "Craft the portal activator");
-        this.add("lostworlds.page.atlantis.intro.3.title", "Making the portal frame");
-        this.add("lostworlds.page.atlantis.intro.4.name", "Building the portal");
-        this.add("lostworlds.page.atlantis.intro.4.text", "");
+        this.add("lostworlds.category.basics", "Basics");
+        this.add("lostworlds.entry.basics.intro", "Intro");
+        this.add("lostworlds.page.basics.intro.0.title", "Getting to Alfheimr");
+        this.add("lostworlds.page.basics.intro.0.text", "");
+        this.add("lostworlds.page.basics.intro.1.title", "Craft the portal activator");
 
 //        this.add("", "");
+    }
 
-        //Nidavellir
-        createBook("nidavellir", "Miners guide to Nidavellir",
-                "Popular edition for all dwarves." +
-                        "$(br2)A basic guide to Nidavellir that all the dwarves carry before entering the mines."
-        );
-//        this.add("item.nidavellir.book.name", "Miners guide to Nidavellir");
-//        this.add("info.nidavellir.book.landing", "Popular edition for all dwarves." +
-//                "$(br2)A basic guide to Nidavellir that all the dwarves carry before entering the mines.");
-
-        this.add("nidavellir.category.basics", "Basics");
-        this.add("lostworlds.entry.nidavellir.intro", "Intro");
-        this.add("lostworlds.page.nidavellir.intro.0.title", "Getting to Nidavellir");
-        this.add("lostworlds.page.nidavellir.intro.0.text", "");
-        this.add("lostworlds.page.nidavellir.intro.2.title", "Craft the portal activator");
-        this.add("lostworlds.page.nidavellir.intro.3.title", "Making the portal frame");
-        this.add("lostworlds.page.nidavellir.intro.4.name", "Building the portal");
-        this.add("lostworlds.page.nidavellir.intro.4.text", "");
-
-//        this.add("", "");
-
+    private void skyopiaAdvancements() {
         //Skyopia
-        createBook("skyopia", "Lost journal on Skyopia",
-                "A journal written by the most infamous and notorious pirate in all of Skyopia." +
-                        "$(br2)A survivors guide to the many lands and wild life of Skyopia"
-        );
-//        this.add("item.skyopia.book.name", "Lost journal on Skyopia");
-//        this.add("info.skyopia.book.landing", "A journal written by the most infamous and notorious pirate in all of Skyopia." +
-//                "$(br2)A survivors guide to the many lands and wild life of Skyopia");
+        this.add("advancement.lostworlds.skyopia.root.name", "Skyopia");
+        this.add("advancement.lostworlds.skyopia.root.desc", "Learn the powers of different wolds");
+    }
 
-        this.add("skyopia.category.basics", "Basics");
-        this.add("lostworlds.entry.skyopia.intro", "Intro");
-        this.add("lostworlds.page.skyopia.intro.0.title", "Getting to Skyopia");
-        this.add("lostworlds.page.skyopia.intro.0.text", "");
-        this.add("lostworlds.page.skyopia.intro.2.title", "Craft the portal activator");
-        this.add("lostworlds.page.skyopia.intro.3.title", "Making the portal frame");
-        this.add("lostworlds.page.skyopia.intro.4.name", "Building the portal");
-        this.add("lostworlds.page.skyopia.intro.4.text", "");
+    private void atlantisAdvancements() {
+        //Atlantis
+        this.add("advancement.lostworlds.atlantis.root.name", "Atlantis");
+        this.add("advancement.lostworlds.atlantis.root.desc", "Learn the powers of different wolds");
+    }
 
-//        this.add("", "");
+    private void alfheimrAdvancements() {
+        //Alfheimr
+        this.add("advancement.lostworlds.alfheimr.root.name", "Alfheimr");
+        this.add("advancement.lostworlds.alfheimr.root.desc", "Learn the powers of different wolds");
+    }
 
+    private void nidavellirAdvancements() {
+        //Nidavellir
+        this.add("advancement.lostworlds.nidavellir.root.name", "Nidavellir");
+        this.add("advancement.lostworlds.nidavellir.root.desc", "Learn the powers of different wolds");
+    }
+
+    private void underworldAdvancements() {
         //Underworld
-        createBook("underworld", "Hades guide to the Underworld",
-                "This book is written by the lord of the underworld hades." +
-                        "$(br2)The reason for this book is to pass on information and knowladge on how to live in the underworld."
-        );
-//        this.add("item.underworld.book.name", "Hades guide to the Underworld");
-//        this.add("info.underworld.book.landing", "This book is written by the lord of the underworld hades." +
-//                "$(br2)The reason for this book is to pass on information and knowladge on how to live in the underworld.");
+        this.add("advancement.lostworlds.underworld.root.name", "Underworld");
+        this.add("advancement.lostworlds.underworld.root.desc", "Learn the powers of different wolds");
+    }
 
-        this.add("underworld.category.basics", "Basics");
-        this.add("lostworlds.entry.underworld.intro", "Intro");
-        this.add("lostworlds.page.underworld.intro.0.title", "Getting to Underworld");
-        this.add("lostworlds.page.underworld.intro.0.text", "");
-        this.add("lostworlds.page.underworld.intro.2.title", "Craft the portal activator");
-        this.add("lostworlds.page.underworld.intro.3.title", "Making the portal frame");
-        this.add("lostworlds.page.underworld.intro.4.name", "Building the portal");
-        this.add("lostworlds.page.underworld.intro.4.text", "");
-
-//        this.add("", "");
-
-        //book_on_dragons
-        createBook("book_on_dragons", "Book On Dragons",
-                "This book is written by Gavin Young." +
-                "The worlds leading researcher in everything about dragons. Both in known knowladge and legends."
-        );
-        this.add("book_on_dragons_book.category.lesser_dragons.name", "Lesser Dragons");
-        this.add("book_on_dragons_book.category.lesser_dragons.desc", "");
-
-        this.add("book_on_dragons_book.category.greater_dragons.name", "Greater Dragons");
-        this.add("book_on_dragons_book.category.greater_dragons.desc", "");
-
-
-        this.add("book_on_dragons_book.category.emperor_dragons.name", "Emeror Dragons");
-        this.add("book_on_dragons_book.category.emperor_dragons.desc", "");
-        this.add("lostworlds.entry.book_on_dragons_book.greater_dragons.ender_dragon.name", "Ender Dragon");
-        this.add("lostworlds.page.book_on_dragons_book.greater_dragons.ender_dragon.0.title", "The Ender Dragon");
-        this.add("lostworlds.page.book_on_dragons_book.greater_dragons.ender_dragon.0.text",
-                "The Ender Dragon is a dragon that is only found in the end dimension."
-        );
-
-        this.add("book_on_dragons_book.category.celestial_dragons.name", "Celestrial Dragons");
-        this.add("book_on_dragons_book.category.celestial_dragons.desc", "");
-
+    private void baseAdvancements() {
+        //Base
+        this.add("advancement.lostworlds.base.root.name", "Base Lost Worlds");
+        this.add("advancement.lostworlds.base.root.desc", "Learn the powers of different wolds");
+        this.add("advancement.lostworlds.base.dowsing_rod.name", "Magical Dowsing Rod");
+        this.add("advancement.lostworlds.base.dowsing_rod.desc", "Find magical objects");
     }
 
     public void addTagFilterUI(String id, String name) {

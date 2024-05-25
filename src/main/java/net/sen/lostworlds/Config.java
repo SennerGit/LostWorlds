@@ -11,7 +11,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 public class Config {
     public static class Common {
-
         public static ConfigValue<String> return_underworld_portal_frame_block_id;
         public static ConfigValue<String> return_nidavellir_portal_frame_block_id;
         public static ConfigValue<String> return_alfheimr_portal_frame_block_id;

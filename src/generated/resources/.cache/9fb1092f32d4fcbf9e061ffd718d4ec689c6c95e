@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-18T17:42:25.2146259	Recipes
+// 1.20.1	2024-05-20T06:48:59.2010042	Recipes
 6d8afa64c23e1e23a65c70dbf1afccb333909ee3 data/lostworlds/advancements/recipes/brass_ingot.json
 5221d8163d85cd687580c55064ff0041d513c5dc data/lostworlds/advancements/recipes/bronze_ingot.json
 128cc3f34add1462c766ec0cab661b5cef15192b data/lostworlds/advancements/recipes/building_blocks/coal_blasting_from_nidavellir_crimson_stone_coal_ore.json
@@ -1335,5 +1335,7 @@ e4c6e0090b088b3ba71a81cd3767ba160fb2263a data/lostworlds/recipes/zinc_ingot_smel
 61412bddf17169ffa2ddf9d147f7981ed8c33d2c data/lostworlds/recipes/zinc_sword.json
 7d5f088a9610ee8834f7905ca694a014fb1e32f4 data/minecraft/advancements/recipes/food/mushroom_stew.json
 0ece0d742db9c4604cfc85bea6873d1f2811af0b data/minecraft/advancements/recipes/misc/air.json
+a7b12fc920e2ff498f1f1ff71ef0b55351b8cdfd data/minecraft/advancements/recipes/misc/cobblestone.json
 2a5a975f85e708f23116779836d7d6b2c90690fd data/minecraft/recipes/air.json
+396ec6bc014b461f83d9d1ba68eb7097164deda0 data/minecraft/recipes/cobblestone.json
 51cd506a3e591bb05b5710f5d2207ecd7206ff69 data/minecraft/recipes/mushroom_stew.json

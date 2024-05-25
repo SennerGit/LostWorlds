@@ -63,6 +63,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.SOUND_BLOCK);
 
+        makeCarpet(ModBlocks.STICK_DECOR);
+        makeCarpet(ModBlocks.ROCK_DECOR);
+        makeCarpet(ModBlocks.LEAVES_DECOR);
+        makeCarpet(ModBlocks.SEASHELL_DECOR);
+
 //        blockWithItem(ModBlocks.UNDERWORLD_PORTAL);
 //        blockWithItem(ModBlocks.NIDAVELLIR_PORTAL);
 //        blockWithItem(ModBlocks.ALFHEIMR_PORTAL);
@@ -1238,6 +1243,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
+    }
+
+    public void makeCarpet(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().carpet(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                        blockTexture(blockRegistryObject.get()))
+        );
     }
 
     private ConfiguredModel[] states(BlockState state, ModCropBlock block, String modelName, String textureName) {

@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.armortrim.TrimMaterials;
 import net.minecraftforge.common.data.BlockTagsProvider;
+import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -28,22 +29,13 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        CompletableFuture<HolderLookup.Provider> lookUpProvider = event.getLookupProvider();
+        CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
 
         addArmorTrims(existingFileHelper);
 
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
-        generator.addProvider(event.includeServer(), new ModAdvancementsProvider(generator, lookUpProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookUpProvider));
-
-        BlockTagsProvider blockTagsProvider = new ModBlockTagGenerator(packOutput, lookUpProvider, existingFileHelper);
-        generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookUpProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModCreativeTabsTagProvider(packOutput, lookUpProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModPaintingVariantTagProvider(packOutput, lookUpProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModPoiTypeTagProvider(packOutput, lookUpProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModFluidTagsProvider(packOutput, lookUpProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModAdvancementsProvider(generator, provider, existingFileHelper));
 
         generator.addProvider(event.includeClient(), new ModBlockModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
@@ -52,6 +44,20 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModGlobalLootModifierProvider(packOutput));
 
         generator.addProvider(event.includeClient(), new ModSoundProvider(packOutput, existingFileHelper));
+
+        //Datapack Stuff
+        DatapackBuiltinEntriesProvider datapackProvider = new ModRegistriesProvider(packOutput, provider);
+        CompletableFuture<HolderLookup.Provider> lookupProvider = datapackProvider.getRegistryProvider();
+        generator.addProvider(event.includeServer(), datapackProvider);
+
+        BlockTagsProvider blockTagsProvider = new ModBlockTagGenerator(packOutput, provider, existingFileHelper);
+        generator.addProvider(event.includeServer(), blockTagsProvider);
+        generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModCreativeTabsTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModPaintingVariantTagProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModPoiTypeTagProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModBiomeTagProvider(packOutput, lookupProvider, existingFileHelper));
 
         LanguageProvider enusProvider = new ModLanguageEnUsProvider(packOutput, "en_us");
         generator.addProvider(event.includeClient(), enusProvider);

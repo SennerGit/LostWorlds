@@ -60,6 +60,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(UnderworldBlocks.ADAMANT_BLOCK);
 
+        this.dropSelf(ModBlocks.ROCK_DECOR);
+        this.dropOther(ModBlocks.STICK_DECOR, Items.STICK);
+        this.dropWhenSilkTouch(ModBlocks.LEAVES_DECOR.get());
+        this.dropOther(ModBlocks.SEASHELL_DECOR.get(), Items.NAUTILUS_SHELL);
+
         this.dropFlower(UnderworldBlocks.IRIS_FLOWER, UnderworldBlocks.POTTED_IRIS_FLOWER);
         this.dropFlower(AlfheimrBlocks.DARK_BLOOM_FLOWER, AlfheimrBlocks.POTTED_DARK_BLOOM_FLOWER);
         this.dropFlower(AlfheimrBlocks.DREAD_NIGHT_FLOWER, AlfheimrBlocks.POTTED_DREAD_NIGIHT_FLOWER);

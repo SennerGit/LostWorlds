@@ -1,6 +1,7 @@
 package net.sen.lostworlds.util;
 
 import com.google.common.base.Preconditions;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -16,9 +17,36 @@ import java.util.function.BiConsumer;
 
 public class ModTags {
     public static class Biomes {
+        public static final TagKey<Biome> IS_ALFHEIMR_OCEAN = tag("is_alfheimr_ocean");
+        public static final TagKey<Biome> IS_ALFHEIMR_BADLANDS = tag("is_alfheimr_badlands");
+        public static final TagKey<Biome> IS_ALFHEIMR_BEACH = tag("is_alfheimr_beach");
+        public static final TagKey<Biome> IS_ALFHEIMR_DEEP_OCEAN = tag("is_alfheimr_deep_ocean");
+        public static final TagKey<Biome> IS_ALFHEIMR_FOREST = tag("is_alfheimr_forest");
+        public static final TagKey<Biome> IS_ALFHEIMR_MUSHROOM_FOREST = tag("is_alfheimr_mushroom_forest");
+        public static final TagKey<Biome> IS_ALFHEIMR_CRYSTAL_FOREST = tag("is_alfheimr_crystal_forest");
+        public static final TagKey<Biome> IS_ALFHEIMR_HILL = tag("is_alfheimr_hill");
+        public static final TagKey<Biome> IS_ALFHEIMR_JUNGLE = tag("is_alfheimr_jungle");
+        public static final TagKey<Biome> IS_ALFHEIMR_MOUNTAIN = tag("is_alfheimr_mountain");
+        public static final TagKey<Biome> IS_ALFHEIMR = tag("is_alfheimr");
+        public static final TagKey<Biome> IS_ALFHEIMR_RIVER = tag("is_alfheimr_river");
+        public static final TagKey<Biome> IS_ALFHEIMR_SAVANNA = tag("is_alfheimr_savanna");
+        public static final TagKey<Biome> IS_ALFHEIMR_DESERT = tag("is_alfheimr_desert");
+        public static final TagKey<Biome> IS_ALFHEIMR_FLAT_LANDS = tag("is_alfheimr_flat_lands");
+        public static final TagKey<Biome> IS_ALFHEIMR_SWAMP = tag("is_alfheimr_swamp");
+
+        public static final TagKey<Biome> HAS_GRAVE = tag("has_structure/has_grave");
+        public static final TagKey<Biome> HAS_STONEHENGE = tag("has_structure/has_stonehenge");
+        public static final TagKey<Biome> HAS_ELVEN_VILLAGE_ENCHANTED_FOREST = tag("has_structure/has_elven_village_enchanted_forest");
+        public static final TagKey<Biome> HAS_DWARVEN_FORTRESS = tag("has_structure/has_dwarven_fortress");
+
+//        private static TagKey<Biome> tag(String name) {
+//            return BiomeTags.create(LostWorldsApi.modLoc("biome_tag_" + name).toString());
+//        }
+
         private static TagKey<Biome> tag(String name) {
-            return BiomeTags.create(LostWorldsApi.modLoc("biome_tag_" + name).toString());
+            return BiomeTags.create(new ResourceLocation(LostWorldsApi.MODID, name).toString());
         }
+
     }
 
     public static class CreativeTabs {
