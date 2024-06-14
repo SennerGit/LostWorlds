@@ -6,9 +6,10 @@ import net.minecraft.world.level.block.Blocks;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.block.AlfheimrBlocks;
 import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.network.InternalHooks;
 
 public final class ModMultiblocks {
-    public static final IMultiblock DRUID_RITUAL = LostWorldsApi.instance().createMultiblock(
+    public static final IMultiblock DRUID_RITUAL = InternalHooks.INSTANCE.get().createMultiblock(
             LostWorldsApi.modLoc("druid_ritual"),
             new String[][] {
                     {"G G", "   ", "G G"},

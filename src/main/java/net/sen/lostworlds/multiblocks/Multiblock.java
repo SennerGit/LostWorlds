@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.sen.lostworlds.LostWorldsApi;
 import net.sen.lostworlds.compat.patchouli.PatchouliCompat;
+import net.sen.lostworlds.network.InternalHooks;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -98,7 +99,7 @@ public class Multiblock implements IMultiblock {
                 }
 //        ModonomiconConstants
         PatchouliCompat.addPatchouliMultiblock(name, pattern, rawMatchers);
-        LostWorldsApi.MULTIBLOCKS.put(this.name, this);
+        InternalHooks.MULTIBLOCKS.put(this.name, this);
     }
 
     @Override

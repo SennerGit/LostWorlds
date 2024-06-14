@@ -4,10 +4,10 @@ import com.google.common.reflect.Reflection;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.util.NonNullLazy;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -27,6 +27,7 @@ import net.sen.lostworlds.fluid.*;
 import net.sen.lostworlds.item.*;
 import net.sen.lostworlds.loot.*;
 import net.sen.lostworlds.multiblocks.ModMultiblocks;
+import net.sen.lostworlds.network.LostWorldsPackets;
 import net.sen.lostworlds.painting.*;
 import net.sen.lostworlds.particle.*;
 import net.sen.lostworlds.potion.*;
@@ -38,14 +39,18 @@ import net.sen.lostworlds.util.registry.ModFlowerPots;
 import net.sen.lostworlds.villager.*;
 import net.sen.lostworlds.villager.custom.dwarven.ModDwarvenVillagers;
 import net.sen.lostworlds.worldgen.biome.util.layer.carver.ModCarvers;
+import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.dimension.biomebuilder.AlfheimrBiomeBuilder;
 import net.sen.lostworlds.worldgen.portal.*;
+import net.sen.lostworlds.api.*;
 import net.sen.lostworlds.worldgen.tree.custom.foliageplacer.ModFoliagePlacerTypes;
 import net.sen.lostworlds.worldgen.tree.custom.trunkplacer.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
+import java.util.regex.Pattern;
+
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(LostWorldsApi.MODID)
+@Mod(net.sen.lostworlds.LostWorldsApi.MODID)
 public class LostWorlds {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -103,7 +108,7 @@ public class LostWorlds {
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LostWorldsConfig.COMMON_SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -111,6 +116,20 @@ public class LostWorlds {
         preInit(event);
         init(event);
         postInit(event);
+    }
+
+    private static final Pattern QUALIFIER = Pattern.compile("-\\w+\\+\\d+");
+
+    public static String getCompatVersion() {
+        return getCompatVersion(ModList.get().getModContainerById(net.sen.lostworlds.LostWorldsApi.MODID).orElseThrow(IllegalStateException::new).getModInfo().getVersion().toString());
+    }
+
+    private static String getCompatVersion(String fullVersion) {
+        return QUALIFIER.matcher(fullVersion).replaceAll("");
+    }
+
+    public static boolean isCompatibleVersion(String version) {
+        return getCompatVersion().equals(getCompatVersion(version));
     }
 
     private void preInit(FMLCommonSetupEvent event) {
@@ -126,6 +145,8 @@ public class LostWorlds {
         ModPotions.recipe(event);
         ModCompostables.setup(event);
         ModFlowerPots.setup(event);
+
+        LostWorldsPackets.init();
     }
 
     private void postInit(FMLCommonSetupEvent event) {
@@ -141,7 +162,7 @@ public class LostWorlds {
     }
 
     //You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = LostWorldsApi.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = net.sen.lostworlds.LostWorldsApi.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {

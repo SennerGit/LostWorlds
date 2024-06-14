@@ -5,14 +5,18 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.RegistryBuilder;
+import net.sen.lostworlds.api.ILostWorldsApi;
 import net.sen.lostworlds.multiblocks.IMultiblock;;
 
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class LostWorldsApi {
+public class LostWorldsApi implements ILostWorldsApi {
     // Define mod id in a common place for everything to reference
+    public static final LostWorldsApi INSTANCE = new LostWorldsApi();
+    public static final LostWorldsApi INTERNAL_INSTANCE = new LostWorldsApi();
+
     public static final String MODID = "lostworlds";
 
     public static ResourceLocation modLoc(String name) {
@@ -37,23 +41,14 @@ public class LostWorldsApi {
         return new ResourceLocation("forge", name);
     }
 
-    public static final Map<ResourceLocation, IMultiblock> MULTIBLOCKS = new HashMap<>();
 
-    private static final IInternalHooks INSTANCE;
+//    static {
+//        try {
+//            INSTANCE = (IInternalHooks) Class.forName("net.sen.lostworlds.network.InternalHooks").getConstructor().newInstance();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
-    static {
-        try {
-            INSTANCE = (IInternalHooks) Class.forName("net.sen.lostworlds.InternalHooks").getConstructor().newInstance();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-    public static IInternalHooks instance() {
-        return LostWorldsApi.INSTANCE;
-    }
-
-    public interface IInternalHooks {
-        IMultiblock createMultiblock(ResourceLocation name, String[][] pattern, Object... rawMatchers);
-    }
 }

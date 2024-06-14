@@ -1,4 +1,4 @@
-package net.sen.lostworlds.datagen.registries;
+package net.sen.lostworlds.datagen;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;

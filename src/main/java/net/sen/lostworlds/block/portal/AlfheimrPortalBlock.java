@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerChunkCache;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -15,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.NetherPortalBlock;
@@ -30,6 +32,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
+import net.sen.lostworlds.LostWorldsConfig;
 import net.sen.lostworlds.block.AlfheimrBlocks;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.dimension.AlfheimrDimension;
@@ -37,6 +40,9 @@ import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.portal.AlfheimrTeleporter;
 
 import javax.annotation.Nullable;
+
+import static net.minecraft.server.packs.repository.PackSource.WORLD;
+import static net.sen.lostworlds.LostWorlds.LOGGER;
 
 public class AlfheimrPortalBlock extends ModPortalBlock {
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
@@ -101,37 +107,29 @@ public class AlfheimrPortalBlock extends ModPortalBlock {
     }
 
     @Override
-    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
-//        if (!entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions()) {
-//            if (entity.isOnPortalCooldown()) {
-//                entity.setPortalCooldown();
-//            } else {
-//                if (!entity.level().isClientSide() && !pos.equals(entity.portalEntrancePos)) {
-//                    entity.portalEntrancePos = pos.immutable();
-//                }
-//                Level level1 = entity.level();
-//                if (level1 != null) {
-//                    MinecraftServer minecraftserver = level1.getServer();
-//                    ResourceKey<Level> destination = entity.level().dimension() == ModDimensions.ALFHEIMR_LEVEL_KEY ? Level.OVERWORLD : ModDimensions.ALFHEIMR_LEVEL_KEY;
-//                    if (minecraftserver != null) {
-//                        ServerLevel destinationWorld = minecraftserver.getLevel(destination);
-//                        if (destinationWorld != null && minecraftserver.isNetherEnabled() && !entity.isPassenger()) {
-//                            entity.level().getProfiler().push("alfheimr_portal");
-//                            entity.setPortalCooldown();
-//                            entity.changeDimension(destinationWorld, new AlfheimrTeleporter(destinationWorld));
-//                            entity.level().getProfiler().pop();
-//                        }
-//                    }
-//                }
-//            }
-//        }
-
-        super.entityInside(state, worldIn, pos, entityIn);
-        if (!worldIn.isClientSide && entityIn instanceof ServerPlayer && !entityIn.isPassenger() && entityIn.canChangeDimensions()) {
-            if (!entityIn.isOnPortalCooldown()) {
-                AlfheimrDimension.teleportPlayer((ServerPlayer) entityIn, ModDimensions.ALFHEIMR_LEVEL_KEY);
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        if (!entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions()) {
+            if (entity.isOnPortalCooldown()) {
+                entity.setPortalCooldown();
             } else {
-                entityIn.portalCooldown = 80;
+                if (!entity.level().isClientSide() && !pos.equals(entity.portalEntrancePos)) {
+                    entity.portalEntrancePos = pos.immutable();
+                }
+                Level level1 = entity.level();
+                if (level1 != null) {
+                    MinecraftServer minecraftserver = level1.getServer();
+                    ResourceKey<Level> destination = entity.level().dimension() == ModDimensions.ALFHEIMR_LEVEL_KEY ? Level.OVERWORLD : ModDimensions.ALFHEIMR_LEVEL_KEY;
+                    if (minecraftserver != null) {
+                        ServerLevel destinationWorld = getTeleportDestination((ServerPlayer) entity, ModDimensions.ALFHEIMR_LEVEL_KEY);
+                        if (destinationWorld == null) return;
+
+                        if (!entity.isOnPortalCooldown() && LostWorldsConfig.COMMON.enable_alfheimr_dimension.get()) { // && !entity.isPassenger() && ) {
+                            entity.unRide();
+                            entity.changeDimension(destinationWorld, new AlfheimrTeleporter(destinationWorld));
+                            entity.portalCooldown = 160;
+                        }
+                    }
+                }
             }
         }
     }
@@ -323,5 +321,38 @@ public class AlfheimrPortalBlock extends ModPortalBlock {
         public boolean isComplete() {
             return this.isValid() && this.numPortalBlocks == this.width * this.height;
         }
+    }
+
+    /*
+     Place portal on top
+     */
+    @Nullable
+    private static ServerLevel getTeleportDestination(ServerPlayer player, ResourceKey<Level> dimensionType) {
+        ResourceKey<Level> destination;
+        if (player.level().dimension() == dimensionType) {
+            destination = Level.OVERWORLD;
+        } else {
+            destination = dimensionType;
+        }
+
+        ServerLevel destLevel = player.server.getLevel(destination);
+        if (destLevel == null) {
+            LOGGER.error("Cannot teleport player to dimension {} as it does not exist!", destination.location());
+            return null;
+        }
+        return destLevel;
+    }
+
+    // hack to get the correct sea level given a world: the vanilla IWorldReader.getSeaLevel() is deprecated and always returns 63 despite the chunk generator
+    public static int getSeaLevel(LevelReader reader) {
+        if (reader instanceof ServerLevel serverLevel) {
+            ServerChunkCache chunkProvider = serverLevel.getChunkSource();
+            return chunkProvider.getGenerator().getSeaLevel();
+        } else if (reader instanceof Level level) {
+            if (level.dimension() == WORLD) {
+                return AlfheimrDimension.SEA_LEVEL;
+            }
+        }
+        return reader.getSeaLevel();
     }
 }

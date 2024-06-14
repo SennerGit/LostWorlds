@@ -1373,6 +1373,16 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 AlfheimrBlocks.SHADE_MUSHROOM_BLOCK.get(),
                 AlfheimrBlocks.CAP_MUSHROOM_BLOCK.get()
         );
+
+        this.tag(ModTags.Blocks.ALFHEIMR_PORTAL_BLACKLIST).add(
+                Blocks.WATER
+        );
+
+        this.tag(ModTags.Blocks.ALFHEIMR_PORTAL_WHITELIST).add(
+                Blocks.STONE,
+                Blocks.DIRT,
+                Blocks.GRASS_BLOCK
+        );
     }
 
     @Override

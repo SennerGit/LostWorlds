@@ -33,16 +33,16 @@ public class DataGenerators {
 
         addArmorTrims(existingFileHelper);
 
+        //Server
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(packOutput));
         generator.addProvider(event.includeServer(), new ModAdvancementsProvider(generator, provider, existingFileHelper));
 
+        //Client
         generator.addProvider(event.includeClient(), new ModBlockModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-
         generator.addProvider(event.includeClient(), new ModGlobalLootModifierProvider(packOutput));
-
         generator.addProvider(event.includeClient(), new ModSoundProvider(packOutput, existingFileHelper));
 
         //Datapack Stuff
@@ -59,8 +59,8 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModBiomeTagProvider(packOutput, lookupProvider, existingFileHelper));
 
-        LanguageProvider enusProvider = new ModLanguageEnUsProvider(packOutput, "en_us");
-        generator.addProvider(event.includeClient(), enusProvider);
+        //Language
+        generator.addProvider(event.includeClient(), new ModLanguageEnUsProvider(packOutput, "en_us"));
     }
 
     private static void addArmorTrims(ExistingFileHelper existingFileHelper) {

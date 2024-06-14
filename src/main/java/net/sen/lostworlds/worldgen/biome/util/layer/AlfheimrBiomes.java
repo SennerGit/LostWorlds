@@ -236,19 +236,19 @@ public class AlfheimrBiomes {
         //WOODLANDS
         context.register(ALFHEIMR_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_DENSE_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DENSE_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DARK_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), magicForestGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DENSE_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), magicForestGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DARK_ENCHANTED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), magicForestGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_CRYSTALLISED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_DENSE_CRYSTALLISED_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_FAIRY_HILLS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_GLISTENING_FORESTS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_HAUNTED_FORESTS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CURSED_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), jungleGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CURSED_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), jungleGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_SNOW_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FROZEN_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_MUSHROOM_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FROZEN_JUNGLE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), jungleGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MUSHROOM_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), mushroomGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_DENSE_MUSHROOM_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_FAIRY_RINGS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), fairyRingsGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_CORRUPTION_FOREST, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
@@ -260,11 +260,11 @@ public class AlfheimrBiomes {
         context.register(ALFHEIMR_FROZEN_RIVER, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_STREAM, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_LAKE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SWAMP, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_MEADOWS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_LOST_SWAMP, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_BEACH, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_FROZEN_BEACH, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SWAMP, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), swampGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MEADOWS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), swampGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_LOST_SWAMP, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), swampGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_BEACH, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), beachGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_FROZEN_BEACH, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), beachGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_STONY_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_CRYSTAL_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
         context.register(ALFHEIMR_CORRUPTION_SHORE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
@@ -279,18 +279,18 @@ public class AlfheimrBiomes {
         context.register(ALFHEIMR_CORRUPTION_SNOWY_PLAINS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
 
         //ARID-LANDS
-        context.register(ALFHEIMR_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CRYSTAL_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DRAGOON_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_SAVANNA, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_MYSTICAL_SAVANNA, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_DRY_RAVINE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WASTELAND, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WASTELAND_DRY_RAVINE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WASTELAND_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_WASTELAND_CRYSTAL, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_BADLANDS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
-        context.register(ALFHEIMR_CORRUPTED_BADLANDS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), desertGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CRYSTAL_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), desertGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DRAGOON_DESERT, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), desertGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_SAVANNA, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_MYSTICAL_SAVANNA, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_DRY_RAVINE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_WASTELAND, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_WASTELAND_DRY_RAVINE, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_WASTELAND_PEAKS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_WASTELAND_CRYSTAL, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_BADLANDS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
+        context.register(ALFHEIMR_CORRUPTED_BADLANDS, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), barronGen(placedFeatureGetter, carverGetter)).build());
 
         //CAVES
         context.register(ALFHEIMR_CRYSTAL_CAVERN, biomeWithDefaults(defaultAmbientBuilder(), defaultMobSpawning(), defaultGen(placedFeatureGetter, carverGetter)).build());
@@ -323,22 +323,112 @@ public class AlfheimrBiomes {
     public static BiomeGenerationSettings.Builder defaultGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
         commonFeatures(biome);
-        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_JUNGLE);
-        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_SPARSE_JUNGLE);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_BLACK_BIRCH_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_BUR_OAK_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_WHITE_OAK_KEY);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PLACED_KEY);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_FLOWERS_KEY);
 
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_STICKS_KEY);
+
         return biome;
     }
 
 
-    public static BiomeGenerationSettings.Builder oceanGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean isDeep) {
+    public static BiomeGenerationSettings.Builder beachGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_STICKS_KEY);
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_SEASHELLS_KEY);
+
+        return biome;
+    }
+
+
+    public static BiomeGenerationSettings.Builder desertGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder barronGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_DEADWOOD_KEY);
+
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_STICKS_KEY);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder swampGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_WILLOW_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_FLOWERS_KEY);
+
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_STICKS_KEY);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder magicForestGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_BLACK_BIRCH_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_BUR_OAK_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_WHITE_OAK_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_SACRED_TREE_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_FLOWERS_KEY);
+
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_STICKS_KEY);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder jungleGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
         commonFeatures(biome);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_JUNGLE);
-        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_SPARSE_JUNGLE);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_BLACK_BIRCH_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_BUR_OAK_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_WHITE_OAK_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_ELDER_WOOD_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.ALFHEIMR_FLOWERS_KEY);
+
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_STICKS_KEY);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder oceanGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean isDeep) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_BLACK_BIRCH_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_BUR_OAK_KEY);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModVegetationPlacements.TREE_WHITE_OAK_KEY);
 
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.WARM_OCEAN_VEGETATION);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
@@ -350,9 +440,25 @@ public class AlfheimrBiomes {
     public static BiomeGenerationSettings.Builder fairyRingsGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
         commonFeatures(biome);
+
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.MUSHROOM_ISLAND_VEGETATION);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_NORMAL);
         biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_NORMAL);
+
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
+
+        return biome;
+    }
+
+    public static BiomeGenerationSettings.Builder mushroomGen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeGenerationSettings.Builder biome = defaultGenSettingBuilder(featureGetter, carverGetter);
+        commonFeatures(biome);
+
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.MUSHROOM_ISLAND_VEGETATION);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_NORMAL);
+        biome.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_NORMAL);
+
+        biome.addFeature(GenerationStep.Decoration.RAW_GENERATION, ModDecorPlacements.PLACED_ALFHEIMR_ROCKS_KEY);
 
         return biome;
     }

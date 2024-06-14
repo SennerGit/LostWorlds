@@ -3,7 +3,6 @@ package net.sen.lostworlds.worldgen.portal;
 import net.minecraft.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.TicketType;
@@ -22,9 +21,6 @@ import net.minecraft.world.level.portal.PortalInfo;
 import net.minecraft.world.level.portal.PortalShape;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.ITeleporter;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.sen.lostworlds.Config;
-import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.block.UnderworldBlocks;
 import net.sen.lostworlds.block.portal.UnderworldPortalBlock;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
@@ -36,8 +32,6 @@ import java.util.function.Function;
 
 public class UnderworldTeleporter implements ITeleporter {
     protected final ServerLevel level;
-    private final BlockState frame = !ForgeRegistries.BLOCKS.containsKey(ResourceLocation.tryParse(Config.Common.return_underworld_portal_frame_block_id.get())) ? Blocks.STONE_BRICKS.defaultBlockState() : ForgeRegistries.BLOCKS.getValue(ResourceLocation.tryParse(Config.Common.return_underworld_portal_frame_block_id.get())).defaultBlockState();
-
 
     public UnderworldTeleporter(ServerLevel level) {
         this.level = level;
@@ -126,7 +120,7 @@ public class UnderworldTeleporter implements ITeleporter {
             for(int i3 = -1; i3 < 2; ++i3) {
                 for(int j3 = 0; j3 < 2; ++j3) {
                     for(int k3 = -1; k3 < 3; ++k3) {
-                        BlockState blockstate1 = k3 < 0 ? this.frame : Blocks.AIR.defaultBlockState();
+                        BlockState blockstate1 = k3 < 0 ? UnderworldBlocks.UNDERWORLD_PORTAL_FRAME.get().defaultBlockState() : Blocks.AIR.defaultBlockState();
                         blockpos$mutableblockpos.setWithOffset(blockpos, j3 * direction.getStepX() + i3 * direction1.getStepX(), k3, j3 * direction.getStepZ() + i3 * direction1.getStepZ());
                         this.level.setBlockAndUpdate(blockpos$mutableblockpos, blockstate1);
                     }
@@ -138,7 +132,7 @@ public class UnderworldTeleporter implements ITeleporter {
             for(int j2 = -1; j2 < 4; ++j2) {
                 if (l1 == -1 || l1 == 2 || j2 == -1 || j2 == 3) {
                     blockpos$mutableblockpos.setWithOffset(blockpos, l1 * direction.getStepX(), j2, l1 * direction.getStepZ());
-                    this.level.setBlock(blockpos$mutableblockpos, this.frame, 3);
+                    this.level.setBlock(blockpos$mutableblockpos, UnderworldBlocks.UNDERWORLD_PORTAL_FRAME.get().defaultBlockState(), 3);
                 }
             }
         }

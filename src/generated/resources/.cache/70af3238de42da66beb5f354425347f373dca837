@@ -1,5 +1,7 @@
-// 1.20.1	2024-05-18T17:42:25.2125587	Block Tags
+// 1.20.1	2024-05-27T09:35:22.4873817	Block Tags
+cf3608bd187922aeb48c566c19e8482b0dca34c7 data/lostworlds/tags/blocks/alfheimr_portal_blacklist.json
 af43ed7bea64b661188415bc3d1abe797211555b data/lostworlds/tags/blocks/alfheimr_portal_frame_blocks.json
+319c42a36c90ef97d9cdab87e4afab61c62fc5e6 data/lostworlds/tags/blocks/alfheimr_portal_whitelist.json
 3c65efba5539d2ade7a844dcfa142c91a020175f data/lostworlds/tags/blocks/atlantis_portal_frame_blocks.json
 dc80495d3adef84b01edb7876c89752bbd747c2b data/lostworlds/tags/blocks/black_birch_logs.json
 eac5753137c146ea5373296c322af3a177ed5b64 data/lostworlds/tags/blocks/black_birch_stripped_logs.json

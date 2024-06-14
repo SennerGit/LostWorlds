@@ -213,6 +213,9 @@ public class ModTags {
 
         public static final TagKey<Block> MUSHROOMS = tag("mushrooms");
 
+        public static final TagKey<Block> ALFHEIMR_PORTAL_BLACKLIST = tag("alfheimr_portal_blacklist");
+        public static final TagKey<Block> ALFHEIMR_PORTAL_WHITELIST = tag("alfheimr_portal_whitelist");
+
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(LostWorldsApi.modLoc(name));
         }

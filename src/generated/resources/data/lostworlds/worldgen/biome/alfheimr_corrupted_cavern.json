@@ -24,7 +24,10 @@
     "water_fog_color": 2673282
   },
   "features": [
-    [],
+    [
+      "lostworlds:alfheimr_rocks_key",
+      "lostworlds:alfheimr_sticks_key"
+    ],
     [],
     [],
     [],
@@ -49,8 +52,9 @@
     [],
     [
       "minecraft:patch_sugar_cane",
-      "minecraft:trees_jungle",
-      "minecraft:trees_sparse_jungle",
+      "lostworlds:black_birch_placed",
+      "lostworlds:bur_oak_placed",
+      "lostworlds:white_oak_placed",
       "lostworlds:alfheimr_magic_grass_placed_key",
       "lostworlds:alfheimr_magic_grass_single_placed_key",
       "lostworlds:alfheimr_magic_grass_patch_placed_key",

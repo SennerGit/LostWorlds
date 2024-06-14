@@ -6,6 +6,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -28,11 +29,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
+import net.sen.lostworlds.LostWorldsConfig;
 import net.sen.lostworlds.block.ModBlocks;
 import net.sen.lostworlds.block.SkyopiaBlocks;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 import net.sen.lostworlds.worldgen.portal.SkyopiaTeleporter;
+import net.sen.lostworlds.worldgen.portal.UnderworldTeleporter;
 
 import javax.annotation.Nullable;
 
@@ -108,11 +111,12 @@ public class SkyopiaPortalBlock extends ModPortalBlock {
                     ResourceKey<Level> destination = entity.level().dimension() == ModDimensions.SKYOPIA_LEVEL_KEY ? Level.OVERWORLD : ModDimensions.SKYOPIA_LEVEL_KEY;
                     if (minecraftserver != null) {
                         ServerLevel destinationWorld = minecraftserver.getLevel(destination);
-                        if (destinationWorld != null && minecraftserver.isNetherEnabled() && !entity.isPassenger()) {
-                            entity.level().getProfiler().push("skyopia_portal");
-                            entity.setPortalCooldown();
-                            entity.changeDimension(destinationWorld, new SkyopiaTeleporter(destinationWorld));
-                            entity.level().getProfiler().pop();
+                        if (destinationWorld == null) return;
+
+                        if (!entity.isOnPortalCooldown() && LostWorldsConfig.COMMON.enable_skyopia_dimension.get()) { // && !entity.isPassenger() && ) {
+                            entity.unRide();
+                            entity.changeDimension(destinationWorld, new UnderworldTeleporter(destinationWorld));
+                            entity.portalCooldown = 160;
                         }
                     }
                 }

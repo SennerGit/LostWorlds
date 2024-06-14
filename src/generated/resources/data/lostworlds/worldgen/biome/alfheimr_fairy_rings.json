@@ -24,7 +24,9 @@
     "water_fog_color": 2673282
   },
   "features": [
-    [],
+    [
+      "lostworlds:alfheimr_rocks_key"
+    ],
     [],
     [],
     [],

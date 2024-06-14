@@ -1,0 +1,16 @@
+{
+  "required" : true,
+  "package": "net.sen.lostworlds.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "lostworlds.refmap.json",
+  "mixins": [
+    "WorldDimensionsMixin"
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

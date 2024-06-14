@@ -1,0 +1,149 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/corner_01",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/corner_02",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/corner_03",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/straight_01",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/straight_02",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/straight_03",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 7
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/straight_04",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 7
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/straight_05",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/straight_06",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/crossroad_01",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/crossroad_02",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/crossroad_03",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/crossroad_04",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/crossroad_05",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/crossroad_06",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "lostworlds:elven_village/enchanted_forest/streets/turn_01",
+        "processors": "lostworlds:elven_village_streets_enchanted_forest",
+        "projection": "terrain_matching"
+      },
+      "weight": 3
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

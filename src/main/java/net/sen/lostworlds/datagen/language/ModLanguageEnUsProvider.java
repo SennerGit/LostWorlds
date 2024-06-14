@@ -34,6 +34,7 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         sounds();
         records();
         custom();
+        config();
         creativeTab();
         baseAdvancements();
         underworldAdvancements();
@@ -1024,6 +1025,14 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.add("item.lostworlds.magical_dowsing_rod.no_valuables", "No Valuables Found!");
         this.add("tooltip.lostworlds.magical_dowsing_rod.tooltip", "Hold #eSHIFT#r for more information...");
         this.add("tooltip.lostworlds.magical_dowsing_rod.tooltip.shift", "Right click on block to find valuables");
+    }
+
+    private void config() {
+        this.add("config.lostworlds.common.enable_dimensions.enable_alfheimr_dimension", "Enables the teleportation into the Alfheimr Dimension.");
+        this.add("config.lostworlds.common.enable_dimensions.enable_underworld_dimension", "Enables the teleportation into the Underworld Dimension.");
+        this.add("config.lostworlds.common.enable_dimensions.enable_nidavellir_dimension", "Enables the teleportation into the Nidavellir Dimension.");
+        this.add("config.lostworlds.common.enable_dimensions.enable_atlantis_dimension", "Enables the teleportation into the Atlantis Dimension.");
+        this.add("config.lostworlds.common.enable_dimensions.enable_skyopia_dimension", "Enables the teleportation into the Skyopia Dimension.");
     }
 
     private void records() {
