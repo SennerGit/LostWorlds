@@ -7,15 +7,15 @@ import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.*;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.effect.ModEffects;
-import net.sen.lostworlds.enchantment.ModEnchantments;
-import net.sen.lostworlds.item.*;
-import net.sen.lostworlds.painting.ModPaintings;
-import net.sen.lostworlds.potion.ModPotions;
+import net.sen.lostworlds.registry.*;
+import net.sen.lostworlds.registry.blocks.*;
+import net.sen.lostworlds.registry.items.*;
 import net.sen.lostworlds.sound.ModSounds;
 import net.sen.lostworlds.villager.ModVillagers;
 
@@ -32,7 +32,7 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         effects();
         potions();
         sounds();
-        records();
+//        records();
         custom();
         config();
         creativeTab();
@@ -86,7 +86,7 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         //Custom Blocks/Items
         this.addItem(ModItems.MAGICAL_DOWSING_ROD, "Magical Dowsing Rod");
         this.addBlock(ModBlocks.SOUND_BLOCK, "Sound Block");
-        this.addBlock(ModBlocks.ALLOY_SMELTER, "Alloy Smelter");
+//        this.addBlock(ModBlocks.ALLOY_SMELTER, "Alloy Smelter");
 
         /*
          * TREES
@@ -840,7 +840,7 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.addItem(AtlantisItems.TANG_FISH, "Tang Fish");
         this.addItem(AtlantisItems.COOKED_TANG_FISH, "Cooked Tang Fish");
 
-        addProfession(ModVillagers.ALLOY_MASTER, "Alloy Master");
+//        addProfession(ModVillagers.ALLOY_MASTER, "Alloy Master");
 
         this.addBlock(UnderworldBlocks.IRIS_FLOWER, "Iris");
         this.addBlock(UnderworldBlocks.POTTED_IRIS_FLOWER, "Potted Iris");
@@ -976,7 +976,7 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
 
         this.addBlock(AlfheimrBlocks.DRUID_RITUAL_STONE, "Druid Ritual Stone");
 
-        this.addEnchantment(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker");
+//        this.addEnchantment(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker");
 
         this.addItem(ModItems.DICE, "Dice");
         this.addBlock(ModBlocks.DICE_BLOCK, "Dice");
@@ -1035,9 +1035,9 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.add("config.lostworlds.common.enable_dimensions.enable_skyopia_dimension", "Enables the teleportation into the Skyopia Dimension.");
     }
 
-    private void records() {
-        addRecord(ModItems.BAR_BRAWL_RECORD, "Bar Brawl Record", "Bryan Tech - Bar Brawl (CC0)");
-    }
+//    private void records() {
+//        addRecord(ModItems.BAR_BRAWL_RECORD, "Bar Brawl Record", "Bryan Tech - Bar Brawl (CC0)");
+//    }
 
     private void creativeTab() {
         //Tab info
@@ -1275,32 +1275,37 @@ public class ModLanguageEnUsProvider extends LanguageProvider {
         this.add("gui.tag_filter.lostworlds." + id, name);
     }
 
-    public void addPainting(RegistryObject<PaintingVariant> painting, String title, String author) {
+    public void addPainting(DeferredHolder<PaintingVariant, PaintingVariant> painting, String title, String author) {
         add("painting." + LostWorldsApi.MODID + "." + painting.getId().getPath() + ".title", title);
         add("painting." + LostWorldsApi.MODID + "." + painting.getId().getPath() + ".author", author);
     }
 
-    public void addPotion(RegistryObject<Potion> potion, String title) {
+    public void addPotion(DeferredHolder<Potion, Potion> potion, String title) {
         add("item.minecraft.potion.effect." + potion.getId().getPath(), title + " Potion");
         add("item.minecraft.splash_potion.effect." + potion.getId().getPath(), title + "Splash Potion");
         add("item.minecraft.lingering_potion.effect." + potion.getId().getPath(), title + " Lingering Potion");
     }
 
-    public void addCreativeTab(RegistryObject<CreativeModeTab> tab, String name) {
+    public void addCreativeTab(DeferredHolder<CreativeModeTab, CreativeModeTab> tab, String name) {
         add("creativetab." + tab.getId().getPath(), name);
     }
 
-    public void addProfession(RegistryObject<VillagerProfession> profession, String name) {
+    public void addProfession(DeferredHolder<VillagerProfession, VillagerProfession> profession, String name) {
         add("entity.minecraft.villager." + LostWorldsApi.MODID + "." + profession.getId().getPath(), name);
     }
 
-    public void addRecord(RegistryObject<Item> record, String name, String description) {
+    public void addRecord(DeferredItem<Item> record, String name, String description) {
         addItem(record, name);
         add(record.get() + ".desc", description);
     }
 
-    public void addSound(RegistryObject<SoundEvent> sound, String name) {
+    public void addSound(DeferredHolder<SoundEvent, SoundEvent> sound, String name) {
         add("sounds." + LostWorldsApi.MODID + "." + sound.get().getLocation().getPath(), name);
+//        add("sounds.modid.name", name);
+    }
+
+    public void addEnchantment(DeferredHolder<Enchantment, Enchantment> enchantment, String name) {
+        add("sounds." + LostWorldsApi.MODID + "." + enchantment.getId().getPath(), name);
 //        add("sounds.modid.name", name);
     }
 

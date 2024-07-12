@@ -18,7 +18,6 @@ import net.minecraft.world.level.levelgen.carver.CarvingContext;
 import net.minecraft.world.level.levelgen.carver.CaveCarverConfiguration;
 import net.minecraft.world.level.levelgen.carver.CaveWorldCarver;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.common.Tags;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 import java.util.function.Function;

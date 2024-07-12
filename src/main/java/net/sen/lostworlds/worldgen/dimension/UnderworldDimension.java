@@ -4,7 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -18,7 +18,7 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.worldgen.biome.util.layer.UnderworldBiomes;
 import net.sen.lostworlds.worldgen.dimension.terrainprovider.UnderworldTerrainProvider;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.UnderworldSurfaceRules;
@@ -43,7 +43,7 @@ public class UnderworldDimension {
     public static final ResourceKey<DensityFunction> JAGGEDNESS = createKey("jaggedness");
     public static final ResourceKey<DensityFunction> SLOPED_CHEESE = createKey("sloped_cheese");
     
-//    public static void UnderworldDimension(BootstapContext<LevelStem> context) {
+//    public static void UnderworldDimension(BootstrapContext<LevelStem> context) {
 //        HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
 //        HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
 //        HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
@@ -66,7 +66,7 @@ public class UnderworldDimension {
 
 
 
-    public static void underworldDimension(BootstapContext<LevelStem> context) {
+    public static void underworldDimension(BootstrapContext<LevelStem> context) {
         HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
@@ -98,7 +98,7 @@ public class UnderworldDimension {
         context.register(ModDimensions.UNDERWORLD_KEY, stem);
     }
 
-    public static void underworldDensityFunction(BootstapContext<DensityFunction> context) {
+    public static void underworldDensityFunction(BootstrapContext<DensityFunction> context) {
         final HolderGetter<DensityFunction> densityFunctions = context.lookup(Registries.DENSITY_FUNCTION);
 
         final DensityFunctions.Spline.Coordinate continents = new DensityFunctions.Spline.Coordinate(densityFunctions.getOrThrow(NoiseRouterData.CONTINENTS));
@@ -144,7 +144,7 @@ public class UnderworldDimension {
         ));
     }
 
-    public static void underworldDimensionType(BootstapContext<DimensionType> context) {
+    public static void underworldDimensionType(BootstrapContext<DimensionType> context) {
         context.register(ModDimensions.UNDERWORLD_DIM_TYPE, new DimensionType(
                 OptionalLong.of(12000), // fixedTime
                 true, // hasSkylight
@@ -163,7 +163,7 @@ public class UnderworldDimension {
                 new DimensionType.MonsterSettings(false, false, UniformInt.of(0, 7), 0)));
     }
 
-    public static NoiseGeneratorSettings underworldDimensionNoise(BootstapContext<?> context) {
+    public static NoiseGeneratorSettings underworldDimensionNoise(BootstrapContext<?> context) {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
 

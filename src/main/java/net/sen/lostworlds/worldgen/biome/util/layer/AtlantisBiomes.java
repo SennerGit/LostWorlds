@@ -3,7 +3,7 @@ package net.sen.lostworlds.worldgen.biome.util.layer;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.sound.ModSounds;
 import net.sen.lostworlds.worldgen.biome.util.layer.carver.ModConfiguredCarvers;
@@ -27,7 +27,7 @@ public class AtlantisBiomes {
     //Forest
     public static final ResourceKey<Biome> ATLANTIS_OCEAN = register("atlantis_ocean");
 
-    public static void bootstrap(BootstapContext<Biome> context) {
+    public static void bootstrap(BootstrapContext<Biome> context) {
         HolderGetter<PlacedFeature> featureGetter = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
 
@@ -99,7 +99,8 @@ public class AtlantisBiomes {
                         .foliageColorOverride(0x147229)
                         .fogColor(0x147229)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                        .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()));
+//                        .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()))
+                ;
     }
 
     public static MobSpawnSettings.Builder defaultMobSpawning() {

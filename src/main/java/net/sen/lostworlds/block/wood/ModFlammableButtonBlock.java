@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class ModFlammableButtonBlock extends ButtonBlock {
 
-    public ModFlammableButtonBlock(Properties pProperties, BlockSetType pType, int pTicksToStayPressed, boolean pArrowsCanPress) {
-        super(pProperties, pType, pTicksToStayPressed, pArrowsCanPress);
+    public ModFlammableButtonBlock(BlockSetType pType, int pTicksToStayPressed, Properties pProperties) {
+        super(pType, pTicksToStayPressed, pProperties);
     }
 
     @Override

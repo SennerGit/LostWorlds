@@ -6,7 +6,7 @@ import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.registry.blocks.ModBlocks;
 import net.sen.lostworlds.block.custom.DiceBlock;
 import net.sen.lostworlds.entity.ModEntities;
 

@@ -7,7 +7,7 @@ import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
-import net.sen.lostworlds.block.UnderworldBlocks;
+import net.sen.lostworlds.registry.blocks.UnderworldBlocks;
 import net.sen.lostworlds.worldgen.biome.util.layer.UnderworldBiomes;
 
 public class UnderworldSurfaceRules {

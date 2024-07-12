@@ -8,8 +8,8 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
-import net.sen.lostworlds.LostWorldsApi;
 //import net.sen.lostworlds.client.entity.animations.ModShadowhoundAnimationDefinitions;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.entity.mob.ShadowhoundEntity;
 
 public class ShadowhoundModel<T extends ShadowhoundEntity> extends HierarchicalModel<T> {
@@ -105,8 +105,8 @@ public class ShadowhoundModel<T extends ShadowhoundEntity> extends HierarchicalM
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		shadowhound.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int colour) {
+		shadowhound.render(poseStack, vertexConsumer, packedLight, packedOverlay, colour);
 	}
 
 	@Override

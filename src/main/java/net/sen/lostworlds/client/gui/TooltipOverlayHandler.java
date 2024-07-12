@@ -12,13 +12,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.RenderTooltipEvent;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.client.event.RenderTooltipEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.event.MagicValueEvent;
 import net.sen.lostworlds.client.event.TooltipOverlayEvent;
 import net.sen.lostworlds.magic.MagicElementTypeEnum;
@@ -63,7 +62,7 @@ public class TooltipOverlayHandler {
             .build();
 
     public static void init() {
-        MinecraftForge.EVENT_BUS.register(new TooltipOverlayHandler());
+        NeoForge.EVENT_BUS.register(new TooltipOverlayHandler());
     }
 
     public static class MagicTooltipRenderer implements ClientTooltipComponent {
@@ -101,7 +100,7 @@ public class TooltipOverlayHandler {
             MagicProperties magicProperties = magicTooltip.getMagicProperties();
 
             TooltipOverlayEvent.Render renderEvent = new TooltipOverlayEvent.Render(itemStack, pX, pY, pGuiGraphics, magicProperties);
-            MinecraftForge.EVENT_BUS.post(renderEvent);
+            NeoForge.EVENT_BUS.post(renderEvent);
             if (renderEvent.isCanceled())
                 return;
 
@@ -165,10 +164,10 @@ public class TooltipOverlayHandler {
 //        MagicProperties magicalProperties = MagicTypeHelper.getMagicValue(hoveredStack, mc.player);
 
         MagicValueEvent magicValueEvent = new MagicValueEvent(mc.player, hoveredStack, magicalProperties);
-        MinecraftForge.EVENT_BUS.post(magicValueEvent);
+        NeoForge.EVENT_BUS.post(magicValueEvent);
 
         TooltipOverlayEvent.Pre prerenderEvent = new TooltipOverlayEvent.Pre(hoveredStack, magicalProperties);
-        MinecraftForge.EVENT_BUS.post(prerenderEvent);
+        NeoForge.EVENT_BUS.post(prerenderEvent);
         if (prerenderEvent.isCanceled())
             return;
 

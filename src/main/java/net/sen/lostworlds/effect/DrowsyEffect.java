@@ -10,12 +10,7 @@ public class DrowsyEffect extends MobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
-        super.applyEffectTick(pLivingEntity, pAmplifier);
-    }
-
-    @Override
-    public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
+    public boolean applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
         return true;
     }
 }

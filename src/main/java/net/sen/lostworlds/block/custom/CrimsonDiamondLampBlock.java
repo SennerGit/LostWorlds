@@ -19,8 +19,8 @@ public class CrimsonDiamondLampBlock extends Block {
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
+        if (!pLevel.isClientSide()) {
             boolean currentState = pState.getValue(LIT);
             pLevel.setBlock(pPos, pState.setValue(LIT, !currentState), 3);
         }

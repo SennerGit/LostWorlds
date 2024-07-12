@@ -2,7 +2,10 @@ package net.sen.lostworlds.datagen.loottable;
 
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -21,11 +24,12 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.*;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.block.crops.*;
-import net.sen.lostworlds.item.*;
+import net.sen.lostworlds.registry.blocks.*;
+import net.sen.lostworlds.registry.items.AlfheimrItems;
+import net.sen.lostworlds.registry.items.ModItems;
+import net.sen.lostworlds.registry.items.UnderworldItems;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -40,8 +44,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     private static final LootItemCondition.Builder SHEARS = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS));
 
-    public ModBlockLootTables() {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    public ModBlockLootTables(HolderLookup.Provider pRegistries) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), pRegistries);
     }
 
     @Override
@@ -56,7 +60,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.RAW_ZINC_BLOCK);
         this.dropSelf(ModBlocks.RAW_TIN_BLOCK);
         this.dropSelf(ModBlocks.SOUND_BLOCK);
-        this.dropSelf(ModBlocks.ALLOY_SMELTER);
+//        this.dropSelf(ModBlocks.ALLOY_SMELTER);
 
         this.dropSelf(UnderworldBlocks.ADAMANT_BLOCK);
 
@@ -172,6 +176,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 //        this.dropWhenSilkTouch(ModBlocks.UNDERWORLD_GRASS_BLOCK);
 
         this.stone(NidavellirBlocks.NIDAVELLIR_SOFT_STONE, NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE);
+        this.dropOther(UnderworldBlocks.STYX_CAULDRON.get(), Blocks.CAULDRON);
         this.dropSelf(NidavellirBlocks.NIDAVELLIR_SOFT_STONE_STAIRS);
         this.dropSelf(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE);
         this.dropSelf(NidavellirBlocks.NIDAVELLIR_SOFT_COBBLESTONE_STAIRS);
@@ -753,38 +758,38 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         //Mushroom
         this.dropSelf(AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.POTTED_POINT_MUSHROOM_BLOCK, AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.TOP_POINT_MUSHROOM_BLOCK, AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.POINT_MUSHROOM_STEM_BLOCK, AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.POTTED_POINT_MUSHROOM_BLOCK.get(), AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.TOP_POINT_MUSHROOM_BLOCK.get(), AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.POINT_MUSHROOM_STEM_BLOCK.get(), AlfheimrBlocks.POINT_MUSHROOM_BLOCK);
 
         this.dropSelf(AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.POTTED_WITCHES_MUSHROOM_BLOCK, AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.TOP_WITCHES_MUSHROOM_BLOCK, AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.WITCHES_MUSHROOM_STEM_BLOCK, AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.POTTED_WITCHES_MUSHROOM_BLOCK.get(), AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.TOP_WITCHES_MUSHROOM_BLOCK.get(), AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.WITCHES_MUSHROOM_STEM_BLOCK.get(), AlfheimrBlocks.WITCHES_MUSHROOM_BLOCK);
 
         this.dropSelf(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.POTTED_ROYAL_BLUE_MUSHROOM_BLOCK, AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.TOP_ROYAL_BLUE_MUSHROOM_BLOCK, AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_STEM_BLOCK, AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_GLOW_BLOCK, AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.POTTED_ROYAL_BLUE_MUSHROOM_BLOCK.get(), AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.TOP_ROYAL_BLUE_MUSHROOM_BLOCK.get(), AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_STEM_BLOCK.get(), AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_GLOW_BLOCK.get(), AlfheimrBlocks.ROYAL_BLUE_MUSHROOM_BLOCK);
 
         this.dropSelf(AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.POTTED_SHORT_TOP_MUSHROOM_BLOCK, AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.TOP_SHORT_TOP_MUSHROOM_BLOCK, AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.SHORT_TOP_MUSHROOM_STEM_BLOCK, AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.POTTED_SHORT_TOP_MUSHROOM_BLOCK.get(), AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.TOP_SHORT_TOP_MUSHROOM_BLOCK.get(), AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.SHORT_TOP_MUSHROOM_STEM_BLOCK.get(), AlfheimrBlocks.SHORT_TOP_MUSHROOM_BLOCK);
 
         this.dropSelf(AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.POTTED_SPECTRAL_MUSHROOM_BLOCK, AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.TOP_SPECTRAL_MUSHROOM_BLOCK, AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.SPECTRAL_MUSHROOM_STEM_BLOCK, AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.POTTED_SPECTRAL_MUSHROOM_BLOCK.get(), AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.TOP_SPECTRAL_MUSHROOM_BLOCK.get(), AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.SPECTRAL_MUSHROOM_STEM_BLOCK.get(), AlfheimrBlocks.SPECTRAL_MUSHROOM_BLOCK);
 
         this.dropSelf(AlfheimrBlocks.SHADE_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.POTTED_SHADE_MUSHROOM_BLOCK, AlfheimrBlocks.SHADE_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.SHADE_MUSHROOM_VINE_BLOCK, AlfheimrBlocks.SHADE_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.POTTED_SHADE_MUSHROOM_BLOCK.get(), AlfheimrBlocks.SHADE_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.SHADE_MUSHROOM_VINE_BLOCK.get(), AlfheimrBlocks.SHADE_MUSHROOM_BLOCK);
 
         this.dropSelf(AlfheimrBlocks.CAP_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.POTTED_CAP_MUSHROOM_BLOCK, AlfheimrBlocks.CAP_MUSHROOM_BLOCK);
-        this.dropOther(AlfheimrBlocks.CAP_MUSHROOM_VINE_BLOCK, AlfheimrBlocks.CAP_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.POTTED_CAP_MUSHROOM_BLOCK.get(), AlfheimrBlocks.CAP_MUSHROOM_BLOCK);
+        this.dropOther(AlfheimrBlocks.CAP_MUSHROOM_VINE_BLOCK.get(), AlfheimrBlocks.CAP_MUSHROOM_BLOCK);
 
         this.grassDrop(AlfheimrBlocks.ALFHEIMR_MAGIC_GRASS);
     }
@@ -872,7 +877,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                                 LootItem.lootTableItem(pGrownWildCropItem)
                                                         .apply(
                                                                 ApplyBonusCount.addBonusBinomialDistributionCount(
-                                                                        Enchantments.BLOCK_FORTUNE,
+                                                                        this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE),
                                                                         0.5714286F,
                                                                         3
                                                                 )
@@ -910,7 +915,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                                 LootItem.lootTableItem(pGrownCropItem)
                                                         .apply(
                                                                 ApplyBonusCount.addBonusBinomialDistributionCount(
-                                                                        Enchantments.BLOCK_FORTUNE,
+                                                                        this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE),
                                                                         0.5714286F,
                                                                         3
                                                                 )
@@ -962,18 +967,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     }
 
     public void clusterOre(Supplier<? extends Block> block, Item drop, float minDrop, float maxDrop) {
-        this.add(block.get(), (ore) -> createSilkTouchDispatchTable(ore, applyExplosionDecay(ore, LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))));
+        this.add(block.get(), (ore) -> createSilkTouchDispatchTable(ore, applyExplosionDecay(ore, LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop))).apply(ApplyBonusCount.addOreBonusCount(this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE))))));
     }
 
     public void clusterOre(Supplier<? extends Block> block, Supplier<? extends Item> drop, float minDrop, float maxDrop) {
-        this.add(block.get(), (ore) -> createSilkTouchDispatchTable(ore, applyExplosionDecay(ore, LootItem.lootTableItem(drop.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))));
+        this.add(block.get(), (ore) -> createSilkTouchDispatchTable(ore, applyExplosionDecay(ore, LootItem.lootTableItem(drop.get()).apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrop, maxDrop))).apply(ApplyBonusCount.addOreBonusCount(this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE))))));
     }
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
 //        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
 //        blockList.add(ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator);
-        return ForgeRegistries.BLOCKS.getValues().stream()
+        return BuiltInRegistries.BLOCK.stream()
                 .filter((block) -> LostWorldsApi.MODID.equals(Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(block)).getNamespace()))
                 .collect(Collectors.toList());
     }

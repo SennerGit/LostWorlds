@@ -45,7 +45,7 @@ public class VampireBatEntity extends Monster {
 
     public VampireBatEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setMaxUpStep(1f);
+        //this.setMaxUpStep(1f);
     }
 
     @Override
@@ -135,10 +135,10 @@ public class VampireBatEntity extends Monster {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(ATTACKING, false);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     /*
@@ -161,11 +161,12 @@ public class VampireBatEntity extends Monster {
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
+@Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         VampireBatVariant variant = Util.getRandom(VampireBatVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override

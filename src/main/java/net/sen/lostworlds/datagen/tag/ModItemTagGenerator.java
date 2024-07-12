@@ -7,13 +7,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.AlfheimrBlocks;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.block.UnderworldBlocks;
-import net.sen.lostworlds.item.ModItems;
-import net.sen.lostworlds.item.UnderworldItems;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.sen.lostworlds.api.LostWorldsApi;
+import net.sen.lostworlds.registry.blocks.AlfheimrBlocks;
+import net.sen.lostworlds.registry.blocks.UnderworldBlocks;
+import net.sen.lostworlds.registry.items.ModItems;
+import net.sen.lostworlds.registry.items.UnderworldItems;
 import net.sen.lostworlds.util.ModTags;
 
 import javax.annotation.Nullable;
@@ -49,9 +48,9 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 UnderworldItems.ORICHALCUM_BOOTS.get()
         );
 
-        this.tag(ItemTags.MUSIC_DISCS).add(
-                ModItems.BAR_BRAWL_RECORD.get()
-        );
+//        this.tag(ItemTags.MUSIC_DISCS).add(
+//                ModItems.BAR_BRAWL_RECORD.get()
+//        );
 
         this.tag(ModTags.Items.ELDER_WOOD_LOGS).add(
                 Item.byBlock(UnderworldBlocks.ELDER_WOOD_LOG.get()),

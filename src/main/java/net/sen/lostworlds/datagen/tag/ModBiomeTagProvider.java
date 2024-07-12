@@ -4,9 +4,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.biome.util.layer.AlfheimrBiomes;
 import net.sen.lostworlds.worldgen.biome.util.layer.AtlantisBiomes;
@@ -24,12 +24,12 @@ public class ModBiomeTagProvider extends BiomeTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
 //        super.addTags(pProvider);
 
-        tag(Tags.Biomes.IS_WATER)
-                .addTag(ModTags.Biomes.IS_ALFHEIMR_OCEAN)
-                .addTag(ModTags.Biomes.IS_ALFHEIMR_DEEP_OCEAN)
-                .add(
-                    AtlantisBiomes.ATLANTIS_OCEAN
-        );
+//        tag(Tags.Biomes.IS_WATER)
+//                .addTag(ModTags.Biomes.IS_ALFHEIMR_OCEAN)
+//                .addTag(ModTags.Biomes.IS_ALFHEIMR_DEEP_OCEAN)
+//                .add(
+//                    AtlantisBiomes.ATLANTIS_OCEAN
+//        );
 
         tag(BiomeTags.PLAYS_UNDERWATER_MUSIC)
                 .addTag(ModTags.Biomes.IS_ALFHEIMR_OCEAN)

@@ -1,9 +1,9 @@
 package net.sen.lostworlds.datagen;
 
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.SoundDefinitionsProvider;
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.sound.ModSounds;
 
 public class ModSoundProvider extends SoundDefinitionsProvider {
@@ -13,7 +13,7 @@ public class ModSoundProvider extends SoundDefinitionsProvider {
      * @param output The {@linkplain PackOutput} instance provided by the data generator.
      * @param helper The existing file helper provided by the event you are initializing this provider in.
      */
-    protected ModSoundProvider(PackOutput output, ExistingFileHelper helper) {
+    public ModSoundProvider(PackOutput output, ExistingFileHelper helper) {
         super(output, LostWorldsApi.MODID, helper);
     }
 

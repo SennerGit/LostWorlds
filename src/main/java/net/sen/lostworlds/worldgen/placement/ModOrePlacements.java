@@ -3,12 +3,12 @@ package net.sen.lostworlds.worldgen.placement;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.worldgen.features.*;
 
 import java.util.List;
@@ -49,7 +49,7 @@ public class ModOrePlacements {
     public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_RUBY_ORE_KEY = registerKey("nidavellir_ruby_ore_key");
     public static final ResourceKey<PlacedFeature> PLACED_NIDAVELLIR_RUBY_ORE_CLUSTER_KEY = registerKey("nidavellir_ruby_ore_cluster_key");
 
-    public static void bootstrap(BootstapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures) {
+    public static void bootstrap(BootstrapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures) {
 
         register(context, PLACED_ALFHEIMR_TIN_ORE_KEY, configuredFeatures.getOrThrow(ModOreFeatures.ALFHEIMR_TIN_ORE_KEY),
                 ModOrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(
@@ -258,7 +258,7 @@ public class ModOrePlacements {
         return ResourceKey.create(Registries.PLACED_FEATURE, LostWorldsApi.modLoc(name));
     }
 
-    private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }

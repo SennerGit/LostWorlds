@@ -22,26 +22,25 @@ public class DataTabletItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        if(pPlayer.getItemInHand(pUsedHand).hasTag()) {
-            pPlayer.getItemInHand(pUsedHand).setTag(new CompoundTag());
-        }
+//        if(pPlayer.getItemInHand(pUsedHand).hasFoil()) {
+//            pPlayer.getItemInHand(pUsedHand).setTag(new CompoundTag());
+//        }
 
         return super.use(pLevel, pPlayer, pUsedHand);
     }
 
-    @Override
-    public boolean isFoil(ItemStack pStack) {
-        return pStack.hasTag();
-    }
+//    @Override
+//    public boolean isFoil(ItemStack pStack) {
+//        return pStack.hasTag();
+//    }
 
-    @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel,
-                                List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if(pStack.hasTag()) {
-            String currentFoundOre = pStack.getTag().getString("lostworlds.found_ore");
-            pTooltipComponents.add(Component.literal(currentFoundOre));
-        }
-
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
-    }
+//    @Override
+//    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+//        if(pStack.hasTag()) {
+//            String currentFoundOre = pStack.getTag().getString("lostworlds.found_ore");
+//            pTooltipComponents.add(Component.literal(currentFoundOre));
+//        }
+//
+//        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+//    }
 }

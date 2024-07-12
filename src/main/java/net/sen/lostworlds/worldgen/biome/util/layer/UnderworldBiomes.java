@@ -3,7 +3,7 @@ package net.sen.lostworlds.worldgen.biome.util.layer;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.Musics;
@@ -12,7 +12,7 @@ import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.sound.ModSounds;
 import net.sen.lostworlds.worldgen.placement.*;
@@ -28,7 +28,7 @@ public class UnderworldBiomes {
     public static final ResourceKey<Biome> STYGAN_MARSH = register("underworld_stygan_marsh");
     public static final ResourceKey<Biome> TARTARUS = register("underworld_tartarus");
 
-    public static void bootstrap(BootstapContext<Biome> context) {
+    public static void bootstrap(BootstrapContext<Biome> context) {
         HolderGetter<PlacedFeature> featureGetter = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
 
@@ -84,7 +84,8 @@ public class UnderworldBiomes {
                 .foliageColorOverride(0x3F0037)
                 .fogColor(0x2D0029)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()));
+//                .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()))
+                ;
 
         return biomeBuilder;
     }
@@ -98,7 +99,8 @@ public class UnderworldBiomes {
                 .foliageColorOverride(0x715D0E)
                 .fogColor(0xD2B136)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()));
+//                .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()))
+                ;
 
         return biomeBuilder;
     }

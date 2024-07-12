@@ -10,8 +10,8 @@ import net.sen.lostworlds.block.entity.ModHangingSignBlockEntity;
 import net.sen.lostworlds.block.entity.ModSignBlockEntity;
 
 public class ModWallSignBlock extends WallSignBlock {
-    public ModWallSignBlock(Properties pProperties, WoodType pType) {
-        super(pProperties, pType);
+    public ModWallSignBlock(WoodType pType, Properties pProperties) {
+        super(pType, pProperties);
     }
 
     @Override

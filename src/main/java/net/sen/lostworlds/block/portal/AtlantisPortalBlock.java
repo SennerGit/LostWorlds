@@ -1,58 +1,67 @@
 package net.sen.lostworlds.block.portal;
 
+import com.mojang.logging.LogUtils;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.NetherPortalBlock;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.border.WorldBorder;
+import net.minecraft.world.level.dimension.DimensionType;
+import net.minecraft.world.level.portal.DimensionTransition;
 import net.minecraft.world.level.portal.PortalShape;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.level.BlockEvent;
-import net.sen.lostworlds.LostWorldsConfig;
-import net.sen.lostworlds.block.AtlantisBlocks;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.level.BlockEvent;
+import net.sen.lostworlds.registry.blocks.AtlantisBlocks;
 import net.sen.lostworlds.util.ModTags;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
-import net.sen.lostworlds.worldgen.portal.AtlantisTeleporter;
-import net.sen.lostworlds.worldgen.portal.UnderworldTeleporter;
+import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
+import java.util.Optional;
 
 public class AtlantisPortalBlock extends ModPortalBlock {
-    public AtlantisPortalBlock() {
-        super(Properties.of()
-                .pushReaction(PushReaction.BLOCK)
-                .strength(-1f)
-                .noOcclusion()
-                .noCollission()
-                .lightLevel((state) -> 10)
-                .noLootTable()
-        );
+    public static final MapCodec<AtlantisPortalBlock> CODEC = simpleCodec(AtlantisPortalBlock::new);
+    private static final Logger LOGGER = LogUtils.getLogger();
 
-        registerDefaultState(stateDefinition.any().setValue(AXIS, Direction.Axis.X));
+    @Override
+    public MapCodec<? extends Block> codec() {
+        return CODEC;
+    }
+
+    public AtlantisPortalBlock(BlockBehaviour.Properties properties) {
+        super(properties);
+
+        this.registerDefaultState(stateDefinition.any().setValue(AXIS, Direction.Axis.X));
+    }
+
+    public AtlantisPortalBlock() {
+        super();
+
+        this.registerDefaultState(stateDefinition.any().setValue(AXIS, Direction.Axis.X));
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        switch (pState.getValue(AXIS)) {
+        switch ((Direction.Axis) pState.getValue(AXIS)) {
             case Z:
                 return Z_AABB;
             case X:
@@ -61,72 +70,145 @@ public class AtlantisPortalBlock extends ModPortalBlock {
         }
     }
 
-    public boolean trySpawnPortal(LevelAccessor level, BlockPos pos) {
-        AtlantisPortalShape size = this.isPortal(level, pos);
-        if (size != null && !onTrySpawnPortal(level, pos, size)) {
-            size.createPortalBlocks();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static boolean onTrySpawnPortal(LevelAccessor world, BlockPos pos, AtlantisPortalShape size) {
-        return MinecraftForge.EVENT_BUS.post(new BlockEvent.PortalSpawnEvent(world, pos, world.getBlockState(pos), size));
-    }
-
-    @Nullable
-    public AtlantisPortalShape isPortal(LevelAccessor level, BlockPos pos) {
-        AtlantisPortalShape AtlantisPortalBlock$size = new AtlantisPortalShape(level, pos, Direction.Axis.X);
-        if (AtlantisPortalBlock$size.isValid() && AtlantisPortalBlock$size.numPortalBlocks == 0) {
-            return AtlantisPortalBlock$size;
-        } else {
-            AtlantisPortalShape AtlantisPortalBlock$size1 = new AtlantisPortalShape(level, pos, Direction.Axis.Z);
-            return AtlantisPortalBlock$size1.isValid() && AtlantisPortalBlock$size1.numPortalBlocks == 0 ? AtlantisPortalBlock$size1 : null;
-        }
-    }
-
     @Override
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         Direction.Axis direction$axis = facing.getAxis();
         Direction.Axis direction$axis1 = stateIn.getValue(AXIS);
         boolean flag = direction$axis1 != direction$axis && direction$axis.isHorizontal();
-        return !flag && facingState.getBlock() != this && !(new AtlantisPortalShape(level, currentPos, direction$axis1)).isComplete() ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
+        return !flag && !facingState.is(this) && !new PortalShape(level, currentPos, direction$axis1).isComplete()
+                ? Blocks.AIR.defaultBlockState()
+                : super.updateShape(stateIn, facing, facingState, level, currentPos, facingPos);
     }
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (!entity.isPassenger() && !entity.isVehicle() && entity.canChangeDimensions()) {
-            if (entity.isOnPortalCooldown()) {
-                entity.setPortalCooldown();
-            } else {
-                if (!entity.level().isClientSide() && !pos.equals(entity.portalEntrancePos)) {
-                    entity.portalEntrancePos = pos.immutable();
-                }
-                Level level1 = entity.level();
-                if (level1 != null) {
-                    MinecraftServer minecraftserver = level1.getServer();
-                    ResourceKey<Level> destination = entity.level().dimension() == ModDimensions.ATLANTIS_LEVEL_KEY ? Level.OVERWORLD : ModDimensions.ATLANTIS_LEVEL_KEY;
-                    if (minecraftserver != null) {
-                        ServerLevel destinationWorld = minecraftserver.getLevel(destination);
-                        if (destinationWorld == null) return;
-
-                        if (!entity.isOnPortalCooldown() && LostWorldsConfig.COMMON.enable_atlantis_dimension.get()) { // && !entity.isPassenger() && ) {
-                            entity.unRide();
-                            entity.changeDimension(destinationWorld, new UnderworldTeleporter(destinationWorld));
-                            entity.portalCooldown = 160;
-                        }
-                    }
-                }
-            }
+        if (entity.canUsePortal(false)) {
+            entity.setAsInsidePortal(this, pos);
         }
     }
 
+    @Override
+    public int getPortalTransitionTime(ServerLevel level, Entity entity) {
+        return entity instanceof Player player
+                ? Math.max(
+                1,
+                level.getGameRules()
+                        .getInt(
+                                player.getAbilities().invulnerable
+                                        ? GameRules.RULE_PLAYERS_NETHER_PORTAL_CREATIVE_DELAY
+                                        : GameRules.RULE_PLAYERS_NETHER_PORTAL_DEFAULT_DELAY
+                        )
+        )
+                : 0;
+    }
+
+    @org.jetbrains.annotations.Nullable
+    @Override
+    public DimensionTransition getPortalDestination(ServerLevel level, Entity entity, BlockPos pos) {
+        ResourceKey<Level> resourceKey = level.dimension() == ModDimensions.ATLANTIS_LEVEL_KEY ? Level.OVERWORLD : ModDimensions.ATLANTIS_LEVEL_KEY;
+        ServerLevel serverLevel = level.getServer().getLevel(resourceKey);
+        if (serverLevel == null) {
+            return null;
+        } else {
+            boolean flag = serverLevel.dimension() == ModDimensions.ATLANTIS_LEVEL_KEY;
+            WorldBorder worldBorder = serverLevel.getWorldBorder();
+            double d0 = DimensionType.getTeleportationScale(level.dimensionType(), serverLevel.dimensionType());
+            BlockPos blockPos = worldBorder.clampToBounds(entity.getX() * d0, entity.getY(), entity.getZ() * d0);
+            return this.getExitPortal(serverLevel, entity, pos, blockPos, flag, worldBorder);
+        }
+    }
+
+    @Nullable
+    private DimensionTransition getExitPortal(ServerLevel level, Entity entity, BlockPos startPos, BlockPos endPos, boolean flag, WorldBorder worldBorder) {
+        Optional<BlockPos> optional = level.getPortalForcer().findClosestPortalPosition(endPos, flag, worldBorder);
+        BlockUtil.FoundRectangle blockutil$foundrectangle;
+        DimensionTransition.PostDimensionTransition dimensiontransition$postdimensiontransition;
+        if (optional.isPresent()) {
+            BlockPos blockPos = optional.get();
+            BlockState blockState = level.getBlockState(blockPos);
+            blockutil$foundrectangle = BlockUtil.getLargestRectangleAround(
+                    blockPos,
+                    blockState.getValue(BlockStateProperties.HORIZONTAL_AXIS),
+                    21,
+                    Direction.Axis.Y,
+                    21,
+                    pos -> level.getBlockState(pos) == blockState
+            );
+            dimensiontransition$postdimensiontransition = DimensionTransition.PLAY_PORTAL_SOUND.then(pos -> pos.placePortalTicket(blockPos));
+        } else {
+            Direction.Axis direction$axis = entity.level().getBlockState(startPos).getOptionalValue(AXIS).orElse(Direction.Axis.X);
+            Optional<BlockUtil.FoundRectangle> optional1 = level.getPortalForcer().createPortal(endPos, direction$axis);
+            if (optional1.isEmpty()) {
+                LOGGER.error("Unable to create a portal, likely target out of worldborder");
+                return null;
+            }
+
+            blockutil$foundrectangle = optional1.get();
+            dimensiontransition$postdimensiontransition = DimensionTransition.PLAY_PORTAL_SOUND.then(DimensionTransition.PLACE_PORTAL_TICKET);
+        }
+
+        return getDimensionTransitionFromExit(entity, startPos, blockutil$foundrectangle, level, dimensiontransition$postdimensiontransition);
+    }
+
+    private DimensionTransition getDimensionTransitionFromExit(Entity entity, BlockPos blockPos, BlockUtil.FoundRectangle foundrectangle, ServerLevel level, DimensionTransition.PostDimensionTransition dimensiontransition$postdimensiontransition) {
+        BlockState blockState = entity.level().getBlockState(blockPos);
+        Direction.Axis direction$axis;
+        Vec3 vec3;
+        if (blockState.hasProperty(BlockStateProperties.HORIZONTAL_AXIS)) {
+            direction$axis = blockState.getValue(BlockStateProperties.HORIZONTAL_AXIS);
+            BlockUtil.FoundRectangle blockutil$foundrectangle = BlockUtil.getLargestRectangleAround(
+                    blockPos,
+                    direction$axis,
+                    21,
+                    Direction.Axis.Y,
+                    21,
+                    pos -> entity.level().getBlockState(pos) == blockState
+            );
+            vec3 = entity.getRelativePortalPosition(direction$axis, blockutil$foundrectangle);
+        } else {
+            direction$axis = Direction.Axis.X;
+            vec3 = new Vec3(0.5, 0.0, 0.0);
+        }
+
+        return createDimensionTransition(level, foundrectangle, direction$axis, vec3, entity, entity.getDeltaMovement(), entity.getYRot(), entity.getXRot(), dimensiontransition$postdimensiontransition);
+    }
+
+    private DimensionTransition createDimensionTransition(ServerLevel level, BlockUtil.FoundRectangle foundrectangle, Direction.Axis axis, Vec3 vec3P, Entity entity, Vec3 deltaMovement, float yRot, float xRot, DimensionTransition.PostDimensionTransition dimensiontransition$postdimensiontransition) {
+        BlockPos blockPos = foundrectangle.minCorner;
+        BlockState blockState = level.getBlockState(blockPos);
+        Direction.Axis direction$axis = blockState.getOptionalValue(BlockStateProperties.HORIZONTAL_AXIS).orElse(Direction.Axis.X);
+        double d0 = (double) foundrectangle.axis1Size;
+        double d1 = (double) foundrectangle.axis2Size;
+        EntityDimensions entityDimensions = entity.getDimensions(entity.getPose());
+        int i = axis == direction$axis ? 0 : 90;
+        Vec3 vec3 = axis == direction$axis ? deltaMovement : new Vec3(deltaMovement.z, deltaMovement.y, -deltaMovement.x);
+        double d2 = (double) entityDimensions.width() / 2.0 + (d0 - (double) entityDimensions.width()) * vec3P.x();
+        double d3 = (d1 - (double) entityDimensions.height()) * vec3P.y();
+        double d4 = 0.5 + vec3P.z();
+        boolean flag = direction$axis == Direction.Axis.X;
+        Vec3 vec31 = new Vec3((double) blockPos.getX() + (flag ? d2 : d4), (double) blockPos.getY() + d3, (double) blockPos.getZ() + (flag ? d4 : d2));
+        Vec3 vec32 = PortalShape.findCollisionFreePosition(vec31, level, entity, entityDimensions);
+        return new DimensionTransition(level, vec32, vec3, yRot + (float)  i, xRot, dimensiontransition$postdimensiontransition);
+    }
+
+    @Override
+    public Transition getLocalTransition() {
+        return Transition.CONFUSION;
+    }
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (random.nextInt(100) == 0) {
-            level.playLocalSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.PORTAL_AMBIENT, SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.4F + 0.8F, false);
+            level.playLocalSound(
+                    (double) pos.getX() + 0.5D,
+                    (double) pos.getY() + 0.5D,
+                    (double) pos.getZ() + 0.5D,
+                    SoundEvents.PORTAL_AMBIENT,
+                    SoundSource.BLOCKS,
+                    0.5F,
+                    random.nextFloat() * 0.4F + 0.8F,
+                    false
+            );
         }
 
         for (int i = 0; i < 4; ++i) {
@@ -151,7 +233,7 @@ public class AtlantisPortalBlock extends ModPortalBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
         return ItemStack.EMPTY;
     }
 
@@ -178,12 +260,40 @@ public class AtlantisPortalBlock extends ModPortalBlock {
         builder.add(AXIS);
     }
 
+    /*
+    Data for the activator
+     */
+    public boolean trySpawnPortal(LevelAccessor level, BlockPos pos) {
+        AtlantisPortalBlock.AtlantisPortalShape size = this.isPortal(level, pos);
+        if (size != null && !onTrySpawnPortal(level, pos, size)) {
+            size.createPortalBlocks();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean onTrySpawnPortal(LevelAccessor world, BlockPos pos, AtlantisPortalBlock.AtlantisPortalShape size) {
+        return NeoForge.EVENT_BUS.post(new BlockEvent.PortalSpawnEvent(world, pos, world.getBlockState(pos), size)).isCanceled();
+    }
+
+    @Nullable
+    public AtlantisPortalBlock.AtlantisPortalShape isPortal(LevelAccessor level, BlockPos pos) {
+        AtlantisPortalBlock.AtlantisPortalShape AtlantisPortalBlock$size = new AtlantisPortalBlock.AtlantisPortalShape(level, pos, Direction.Axis.X);
+        if (AtlantisPortalBlock$size.isValid() && AtlantisPortalBlock$size.numPortalBlocks == 0) {
+            return AtlantisPortalBlock$size;
+        } else {
+            AtlantisPortalBlock.AtlantisPortalShape AtlantisPortalBlock$size1 = new AtlantisPortalBlock.AtlantisPortalShape(level, pos, Direction.Axis.Z);
+            return AtlantisPortalBlock$size1.isValid() && AtlantisPortalBlock$size1.numPortalBlocks == 0 ? AtlantisPortalBlock$size1 : null;
+        }
+    }
+
     public static class AtlantisPortalShape extends PortalShape {
         private static final int MIN_WIDTH = 1;
         public static final int MAX_WIDTH = 21;
         private static final int MIN_HEIGHT = 2;
         public static final int MAX_HEIGHT = 21;
-        private static final StatePredicate FRAME = (state, getter, pos) -> state.is(ModTags.Blocks.ATLANTIS_PORTAL_FRAME_BLOCKS);
+        private static final StatePredicate FRAME = (state, getter, pos) -> state.is(ModTags.Blocks.SKYOPIA_PORTAL_FRAME_BLOCKS);
         private final LevelAccessor level;
         private final Direction.Axis axis;
         private final Direction rightDir;

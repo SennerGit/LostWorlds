@@ -2,7 +2,7 @@ package net.sen.lostworlds.client.util.registry;
 
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.sen.lostworlds.client.entity.renderer.MagicGorganProjectileRenderer;
 import net.sen.lostworlds.entity.ModEntities;
 

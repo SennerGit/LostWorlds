@@ -2,7 +2,7 @@ package net.sen.lostworlds.block.wood;
 
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.block.ModBlockSetType;
 
 public class ModWoodTypes {

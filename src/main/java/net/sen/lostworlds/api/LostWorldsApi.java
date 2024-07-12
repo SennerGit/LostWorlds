@@ -1,16 +1,8 @@
-package net.sen.lostworlds;
+package net.sen.lostworlds.api;
 
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.registries.RegistryBuilder;
-import net.sen.lostworlds.api.ILostWorldsApi;
-import net.sen.lostworlds.multiblocks.IMultiblock;;
 
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 
 public class LostWorldsApi implements ILostWorldsApi {
     // Define mod id in a common place for everything to reference
@@ -20,25 +12,25 @@ public class LostWorldsApi implements ILostWorldsApi {
     public static final String MODID = "lostworlds";
 
     public static ResourceLocation modLoc(String name) {
-        return new ResourceLocation(MODID, name);
+        return ResourceLocation.fromNamespaceAndPath(MODID, name.toLowerCase(Locale.ROOT));
     }
     public static ResourceLocation entityRendererLoc(String entityFolder, String entityName) {
-        return new ResourceLocation(MODID, "textures/entity/" + entityFolder + "/" + entityName + ".png");
+        return modLoc("textures/entity/" + entityFolder + "/" + entityName + ".png");
     }
     public static ResourceLocation entityRendererLoc(String name) {
-        return new ResourceLocation(MODID, "textures/entity/" + name + "/" + name + ".png");
+        return modLoc("textures/entity/" + name + "/" + name + ".png");
     }
 
     public static ResourceLocation mcLoc(String name) {
-        return new ResourceLocation(name);
+        return ResourceLocation.withDefaultNamespace(name);
     }
 
     public static ResourceLocation customLoc(String namespace, String location) {
-        return new ResourceLocation(namespace, location);
+        return ResourceLocation.fromNamespaceAndPath(namespace, location);
     }
 
-    public static ResourceLocation forgeLoc(String name) {
-        return new ResourceLocation("forge", name);
+    public static ResourceLocation neoforgeLoc(String name) {
+        return ResourceLocation.fromNamespaceAndPath("neoforge", name);
     }
 
 

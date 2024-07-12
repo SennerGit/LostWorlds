@@ -110,8 +110,8 @@ public abstract class AbstractSchoolingBigFish extends AbstractBigFish{
     }
 
     @Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
-        super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
+        super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
         if (pSpawnData == null) {
             pSpawnData = new AbstractSchoolingBigFish.SchoolSpawnGroupData(this);
         } else {

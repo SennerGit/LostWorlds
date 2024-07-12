@@ -1,15 +1,13 @@
 package net.sen.lostworlds.client;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.sen.lostworlds.event.CreativeScreenEvents;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import net.sen.lostworlds.client.gui.TooltipOverlayHandler;
 
 public class ClientHandler {
     public static void init(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            MinecraftForge.EVENT_BUS.register(new CreativeScreenEvents());
+//            NeoForge.EVENT_BUS.register(new CreativeScreenEvents());
         });
 
         TooltipOverlayHandler.init();

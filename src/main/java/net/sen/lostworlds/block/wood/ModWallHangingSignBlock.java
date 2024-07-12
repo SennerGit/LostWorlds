@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.sen.lostworlds.block.entity.ModHangingSignBlockEntity;
 
 public class ModWallHangingSignBlock extends WallHangingSignBlock {
-    public ModWallHangingSignBlock(Properties pProperties, WoodType pType) {
-        super(pProperties, pType);
+    public ModWallHangingSignBlock(WoodType pType, Properties pProperties) {
+        super(pType, pProperties);
     }
 
     @Override

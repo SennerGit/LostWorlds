@@ -1,12 +1,10 @@
 package net.sen.lostworlds.util.registry;
 
 import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.sen.lostworlds.block.AlfheimrBlocks;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.item.AlfheimrItems;
-import net.sen.lostworlds.item.ModItems;
-import net.sen.lostworlds.item.UnderworldItems;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.sen.lostworlds.registry.blocks.AlfheimrBlocks;
+import net.sen.lostworlds.registry.items.AlfheimrItems;
+import net.sen.lostworlds.registry.items.UnderworldItems;
 
 public class ModCompostables {
     public static void setup(final FMLCommonSetupEvent event) {

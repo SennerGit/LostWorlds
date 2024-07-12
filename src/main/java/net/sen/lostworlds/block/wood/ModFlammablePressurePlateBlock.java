@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class ModFlammablePressurePlateBlock extends PressurePlateBlock {
-    public ModFlammablePressurePlateBlock(Sensitivity pSensitivity, Properties pProperties, BlockSetType pType) {
-        super(pSensitivity, pProperties, pType);
+    public ModFlammablePressurePlateBlock(BlockSetType pType, Properties pProperties) {
+        super(pType, pProperties);
     }
 
     @Override

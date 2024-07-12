@@ -4,7 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.worldgen.biome.util.layer.AtlantisBiomes;
 import net.sen.lostworlds.worldgen.dimension.terrainprovider.AtlantisTerrainProvider;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.AtlantisSurfaceRules;
@@ -42,7 +42,7 @@ public class AtlantisDimension {
     public static final ResourceKey<DensityFunction> JAGGEDNESS = createKey("jaggedness");
     public static final ResourceKey<DensityFunction> SLOPED_CHEESE = createKey("sloped_cheese");
 
-    public static void atlantisDimensionType(BootstapContext<DimensionType> context) {
+    public static void atlantisDimensionType(BootstrapContext<DimensionType> context) {
         context.register(ModDimensions.ATLANTIS_DIM_TYPE, new DimensionType(
                 OptionalLong.of(12000), // fixedTime
                 true, // hasSkylight
@@ -61,7 +61,7 @@ public class AtlantisDimension {
                 new DimensionType.MonsterSettings(false, false, UniformInt.of(0, 7), 0)));
     }
 
-    public static void atlantisDimension(BootstapContext<LevelStem> context) {
+    public static void atlantisDimension(BootstrapContext<LevelStem> context) {
         HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
@@ -78,7 +78,7 @@ public class AtlantisDimension {
         context.register(ModDimensions.ATLANTIS_KEY, stem);
     }
 
-    public static NoiseGeneratorSettings atlantisDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {
+    public static NoiseGeneratorSettings atlantisDimensionNoise(BootstrapContext<NoiseGeneratorSettings> context) {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NoiseParameters> noises = context.lookup(Registries.NOISE);
 
@@ -97,7 +97,7 @@ public class AtlantisDimension {
         );
     }
 
-    public static void atlantisDensityFunction(BootstapContext<DensityFunction> context) {
+    public static void atlantisDensityFunction(BootstrapContext<DensityFunction> context) {
         final HolderGetter<DensityFunction> densityFunctions = context.lookup(Registries.DENSITY_FUNCTION);
 
         final DensityFunctions.Spline.Coordinate continents = new DensityFunctions.Spline.Coordinate(densityFunctions.getOrThrow(NoiseRouterData.CONTINENTS));
@@ -281,7 +281,7 @@ public class AtlantisDimension {
         return ResourceKey.create(Registries.DENSITY_FUNCTION, LostWorldsApi.modLoc("atlantis/" + name));
     }
 
-//    public static NoiseGeneratorSettings atlantisDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {
+//    public static NoiseGeneratorSettings atlantisDimensionNoise(BootstrapContext<NoiseGeneratorSettings> context) {
 //        NoiseSettings settings = NoiseSettings.create(-64, 384, 1, 2);
 //
 //        NoiseGeneratorSettings noiseGeneratorSettings = new NoiseGeneratorSettings(

@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class ModFlammableDoorBlock extends DoorBlock {
-    public ModFlammableDoorBlock(Properties pProperties, BlockSetType pType) {
-        super(pProperties, pType);
+    public ModFlammableDoorBlock(BlockSetType pType, Properties pProperties) {
+        super(pType, pProperties);
     }
 
     @Override

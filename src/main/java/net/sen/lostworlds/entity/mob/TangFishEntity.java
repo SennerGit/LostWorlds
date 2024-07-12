@@ -1,7 +1,6 @@
 package net.sen.lostworlds.entity.mob;
 
 import net.minecraft.Util;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
@@ -16,8 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
 import net.sen.lostworlds.entity.variant.TangFishVariant;
-import net.sen.lostworlds.item.AtlantisItems;
-import net.sen.lostworlds.item.ModItems;
+import net.sen.lostworlds.registry.items.AtlantisItems;
 
 import javax.annotation.Nullable;
 
@@ -117,11 +115,12 @@ public class TangFishEntity extends AbstractSchoolingFishVarients {
         }
     }
 
+@Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         Enum<?> variant = Util.getRandom(TangFishVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override

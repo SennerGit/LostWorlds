@@ -4,9 +4,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
-import net.sen.lostworlds.LostWorldsApi;
-//import net.sen.lostworlds.item.ModTrimMaterials;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.worldgen.features.ModConfiguredFeatures;
 import net.sen.lostworlds.worldgen.placement.ModPlacedFeatures;
 import net.sen.lostworlds.worldgen.biome.util.layer.ModBiomes;
@@ -25,12 +24,12 @@ public class ModRegistriesProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.DIMENSION_TYPE, ModDimensions::bootstrapType)
             .add(Registries.NOISE_SETTINGS, ModDimensions::bootstrapNoise)
             .add(Registries.DENSITY_FUNCTION, ModDimensions::bootstrapDensityFunctions)
+            .add(Registries.MULTI_NOISE_BIOME_SOURCE_PARAMETER_LIST, ModDimensions::bootstrapNoiseBiomeSourceParameterList)
             .add(Registries.CONFIGURED_CARVER, ModConfiguredCarvers::bootstrap)
             .add(Registries.STRUCTURE, ModStructureGenerator::bootstrapStructures)
             .add(Registries.STRUCTURE_SET, ModStructureGenerator::bootstrapStructureSets)
             .add(Registries.TEMPLATE_POOL, ModStructureGenerator::bootstrapStructureTemplatePools)
-            .add(Registries.PROCESSOR_LIST, ModStructureGenerator::bootstrapProcessors)
-            .add(Registries.MULTI_NOISE_BIOME_SOURCE_PARAMETER_LIST, ModDimensions::bootstrapNoiseBiomeSourceParameterList);
+            .add(Registries.PROCESSOR_LIST, ModStructureGenerator::bootstrapProcessors);
 //            .add(Registries.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
 
     public ModRegistriesProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

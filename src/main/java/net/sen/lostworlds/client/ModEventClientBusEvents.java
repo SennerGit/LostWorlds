@@ -3,19 +3,22 @@ package net.sen.lostworlds.client;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.*;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.block.entity.ModBlockEntities;
 import net.sen.lostworlds.client.gui.MagicTooltip;
 import net.sen.lostworlds.client.gui.TooltipOverlayHandler;
 import net.sen.lostworlds.particle.MagicDowsingRodParticles;
-import net.sen.lostworlds.particle.ModParticles;
+import net.sen.lostworlds.registry.ModParticles;
 
-@Mod.EventBusSubscriber(modid = LostWorldsApi.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class ModEventClientBusEvents {
     public static final ResourceLocation BOOK_GUI = LostWorldsApi.modLoc("textures/gui/book.png");
 

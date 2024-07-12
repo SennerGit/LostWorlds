@@ -3,9 +3,8 @@ package net.sen.lostworlds.multiblocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.AlfheimrBlocks;
-import net.sen.lostworlds.block.ModBlocks;
+import net.sen.lostworlds.api.LostWorldsApi;
+import net.sen.lostworlds.registry.blocks.AlfheimrBlocks;
 import net.sen.lostworlds.network.InternalHooks;
 
 public final class ModMultiblocks {

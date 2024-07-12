@@ -4,11 +4,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
-import net.minecraftforge.client.model.generators.BlockModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.BlockModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.block.*;
 
 public class ModBlockModelProvider extends BlockModelProvider {
@@ -21,13 +21,13 @@ public class ModBlockModelProvider extends BlockModelProvider {
 //        this.grassBlock(ModBlocks.UNDERWORLD_GRASS_BLOCK, modResourceLocation(ModBlocks.UNDERWORLD_DIRT), modResourceLocation(ModBlocks.UNDERWORLD_DIRT), modResourceLocation("underworld_grass_block_top"), modResourceLocation("underworld_grass_block_side"), modResourceLocation("underworld_grass_block_side_overlay"));
     }
 
-    private ResourceLocation modResourceLocation(RegistryObject<Block> block) {
+    private ResourceLocation modResourceLocation(DeferredBlock<Block> block) {
         return modResourceLocation(block.getId().getPath());
     }
 
     private ResourceLocation modResourceLocation(String block) {
         ResourceLocation resourceLocation;
-        resourceLocation = new ResourceLocation(LostWorldsApi.MODID, "block/" + block);
+        resourceLocation = LostWorldsApi.modLoc("block/" + block);
         return resourceLocation;
     }
 
@@ -35,7 +35,7 @@ public class ModBlockModelProvider extends BlockModelProvider {
      * ChaosAwakens
      * https://github.com/ChaosAwakens/ChaosAwakens/tree/6bb21a2e15361e3aa3a15ebc1d427e5f746019cd
      */
-    public BlockModelBuilder grassBlock(RegistryObject<Block> block, ResourceLocation particle, ResourceLocation bottom, ResourceLocation top, ResourceLocation side, ResourceLocation overlay) {
+    public BlockModelBuilder grassBlock(DeferredBlock<Block> block, ResourceLocation particle, ResourceLocation bottom, ResourceLocation top, ResourceLocation side, ResourceLocation overlay) {
         return grassBlock(block.getId().getPath(), particle, bottom, top, side, overlay);
     }
 

@@ -5,12 +5,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.sen.lostworlds.block.*;
 import net.sen.lostworlds.block.portal.*;
+import net.sen.lostworlds.registry.blocks.*;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 
 public class PortalActivatorItem extends Item {
@@ -35,27 +35,27 @@ public class PortalActivatorItem extends Item {
                         if (((UnderworldPortalBlock) UnderworldBlocks.UNDERWORLD_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                             pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                             pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                    LivingEntity.getSlotForHand(pContext.getHand()));
                             return InteractionResult.CONSUME;
                         } else if (((NidavellirPortalBlock) NidavellirBlocks.NIDAVELLIR_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                             pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                             pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                    LivingEntity.getSlotForHand(pContext.getHand()));
                             return InteractionResult.CONSUME;
                         } else if (((AlfheimrPortalBlock) AlfheimrBlocks.ALFHEIMR_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                             pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                             pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                    LivingEntity.getSlotForHand(pContext.getHand()));
                             return InteractionResult.CONSUME;
                         } else if (((AtlantisPortalBlock) AtlantisBlocks.ATLANTIS_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                             pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                             pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                    LivingEntity.getSlotForHand(pContext.getHand()));
                             return InteractionResult.CONSUME;
                         } else if (((SkyopiaPortalBlock) SkyopiaBlocks.SKYOPIA_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                             pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                             pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                    LivingEntity.getSlotForHand(pContext.getHand()));
                             return InteractionResult.CONSUME;
                         }
                     } else {
@@ -71,7 +71,7 @@ public class PortalActivatorItem extends Item {
                             if (((UnderworldPortalBlock) UnderworldBlocks.UNDERWORLD_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                                 pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                                 pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                        player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                        LivingEntity.getSlotForHand(pContext.getHand()));
                                 return InteractionResult.CONSUME;
                             } else {
                                 return InteractionResult.FAIL;
@@ -85,7 +85,7 @@ public class PortalActivatorItem extends Item {
                             if (((NidavellirPortalBlock) NidavellirBlocks.NIDAVELLIR_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                                 pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                                 pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                        player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                        LivingEntity.getSlotForHand(pContext.getHand()));
                                 return InteractionResult.CONSUME;
                             } else {
                                 return InteractionResult.FAIL;
@@ -99,7 +99,7 @@ public class PortalActivatorItem extends Item {
                             if (((AlfheimrPortalBlock) AlfheimrBlocks.ALFHEIMR_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                                 pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                                 pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                        player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                        LivingEntity.getSlotForHand(pContext.getHand()));
                                 return InteractionResult.CONSUME;
                             } else {
                                 return InteractionResult.FAIL;
@@ -113,7 +113,7 @@ public class PortalActivatorItem extends Item {
                             if (((AlfheimrPortalBlock) AtlantisBlocks.ATLANTIS_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                                 pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                                 pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                        player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                        LivingEntity.getSlotForHand(pContext.getHand()));
                                 return InteractionResult.CONSUME;
                             } else {
                                 return InteractionResult.FAIL;
@@ -127,7 +127,7 @@ public class PortalActivatorItem extends Item {
                             if (((AlfheimrPortalBlock) SkyopiaBlocks.SKYOPIA_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
                                 pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
                                 pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
-                                        player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                                        LivingEntity.getSlotForHand(pContext.getHand()));
                                 return InteractionResult.CONSUME;
                             } else {
                                 return InteractionResult.FAIL;
@@ -136,41 +136,6 @@ public class PortalActivatorItem extends Item {
                     }
                 }
             }
-//            if (pContext.getPlayer().level().dimension() == ModDimensions.UNDERWORLD_LEVEL_KEY || pContext.getPlayer().level().dimension() == Level.OVERWORLD) {
-//                for (Direction direction : Direction.Plane.VERTICAL) {
-//                    BlockPos framePos = pContext.getClickedPos().relative(direction);
-//                    if (((UnderworldPortalBlock) ModBlocks.UNDERWORLD_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
-//                        pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
-//                        return InteractionResult.CONSUME;
-//                    } else {
-//                        return InteractionResult.FAIL;
-//                    }
-//                }
-//            }
-//
-//            if (pContext.getPlayer().level().dimension() == ModDimensions.NIDAVELLIR_LEVEL_KEY || pContext.getPlayer().level().dimension() == Level.OVERWORLD) {
-//                for (Direction direction : Direction.Plane.VERTICAL) {
-//                    BlockPos framePos = pContext.getClickedPos().relative(direction);
-//                    if (((UnderworldPortalBlock) ModBlocks.NIDAVELLIR_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
-//                        pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
-//                        return InteractionResult.CONSUME;
-//                    } else {
-//                        return InteractionResult.FAIL;
-//                    }
-//                }
-//            }
-//
-//            if (pContext.getPlayer().level().dimension() == ModDimensions.ALFHEIMR_LEVEL_KEY || pContext.getPlayer().level().dimension() == Level.OVERWORLD) {
-//                for (Direction direction : Direction.Plane.VERTICAL) {
-//                    BlockPos framePos = pContext.getClickedPos().relative(direction);
-//                    if (((UnderworldPortalBlock) ModBlocks.ALFHEIMR_PORTAL.get()).trySpawnPortal(pContext.getLevel(), framePos)) {
-//                        pContext.getLevel().playSound(pContext.getPlayer(), framePos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 1);
-//                        return InteractionResult.CONSUME;
-//                    } else {
-//                        return InteractionResult.FAIL;
-//                    }
-//                }
-//            }
         }
 
         return InteractionResult.FAIL;

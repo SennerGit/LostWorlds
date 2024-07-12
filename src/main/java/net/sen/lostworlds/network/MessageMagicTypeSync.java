@@ -1,7 +1,6 @@
 package net.sen.lostworlds.network;
 
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.network.NetworkEvent;
 import net.sen.lostworlds.magic.MagicElementTypeEnum;
 
 import java.util.function.Supplier;
@@ -25,11 +24,11 @@ public class MessageMagicTypeSync {
         return new MessageMagicTypeSync(magicElementEnum);
     }
 
-    public static void handle(final MessageMagicTypeSync message, Supplier<NetworkEvent.Context> context) {
-//        context.get().enqueueWork(() -> {
-//            NetworkHelper.getSidedPlayer(context.get()).get
-//        });
-
-        context.get().setPacketHandled(true);
-    }
+//    public static void handle(final MessageMagicTypeSync message,  Supplier<NetworkEvent.Context> context) {
+////        context.get().enqueueWork(() -> {
+////            NetworkHelper.getSidedPlayer(context.get()).get
+////        });
+//
+//        context.get().setPacketHandled(true);
+//    }
 }

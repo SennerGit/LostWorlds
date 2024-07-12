@@ -35,7 +35,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.ForgeEventFactory;
+
 import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.variant.AtlantianVariant;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
@@ -61,7 +61,7 @@ public class AtlantianEntity extends AbstractVillager implements ReputationEvent
 
     public AtlantianEntity(EntityType<? extends AbstractVillager> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setMaxUpStep(1f);
+        //this.setMaxUpStep(1f);
     }
 
     @Override
@@ -140,10 +140,10 @@ public class AtlantianEntity extends AbstractVillager implements ReputationEvent
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(ATTACKING, false);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     @Override
@@ -171,11 +171,12 @@ public class AtlantianEntity extends AbstractVillager implements ReputationEvent
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
+@Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         AtlantianVariant variant = Util.getRandom(AtlantianVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override

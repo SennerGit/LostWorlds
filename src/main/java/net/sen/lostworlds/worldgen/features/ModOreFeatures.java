@@ -1,7 +1,7 @@
 package net.sen.lostworlds.worldgen.features;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
@@ -12,9 +12,9 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.block.NidavellirBlocks;
+import net.sen.lostworlds.api.LostWorldsApi;
+import net.sen.lostworlds.registry.blocks.ModBlocks;
+import net.sen.lostworlds.registry.blocks.NidavellirBlocks;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class ModOreFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_RUBY_ORE_KEY = registerKey("nidavellir_ruby_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NIDAVELLIR_RUBY_ORE_CLUSTER_KEY = registerKey("nidavellir_ruby_ore_cluster");
 
-    public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
@@ -333,7 +333,7 @@ public class ModOreFeatures {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, LostWorldsApi.modLoc(name));
     }
 
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
                                                                                           ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }

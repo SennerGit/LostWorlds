@@ -1,20 +1,26 @@
 package net.sen.lostworlds.datagen;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.*;
-import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.*;
-import net.sen.lostworlds.item.*;
+import net.minecraft.world.level.block.*;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.loaders.ItemLayerModelBuilder;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.sen.lostworlds.api.LostWorldsApi;
+import net.sen.lostworlds.registry.blocks.AlfheimrBlocks;
+import net.sen.lostworlds.registry.blocks.ModBlocks;
+import net.sen.lostworlds.registry.blocks.NidavellirBlocks;
+import net.sen.lostworlds.registry.blocks.UnderworldBlocks;
+import net.sen.lostworlds.registry.items.*;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -77,7 +83,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CRIMSON_DIAMOND);
         simpleItem(ModItems.CRIMSON_TEAR);
         simpleItem(ModItems.MAGICAL_DOWSING_ROD);
-        simpleItem(ModItems.BAR_BRAWL_RECORD);
 
         //Orichalcum
         simpleItem(UnderworldItems.ORICHALCUM_INGOT);
@@ -235,7 +240,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         //simpleItem(ModItems.NETHER_STEEL_LEGGINGS);
         //simpleItem(ModItems.NETHER_STEEL_BOOTS);
 
-        complexBlock(ModBlocks.ALLOY_SMELTER.get());
+//        complexBlock(ModBlocks.ALLOY_SMELTER.get());
 //        simpleBlockItem(ModBlocks.UNDERWORLD_GRASS_BLOCK);
 
         simpleItem(ModItems.STYX_WATER_BUCKET);
@@ -251,7 +256,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(UnderworldBlocks.ELDER_WOOD_PLANKS_FENCE, UnderworldBlocks.ELDER_WOOD_PLANKS);
         buttonItem(UnderworldBlocks.ELDER_WOOD_PLANKS_BUTTON, UnderworldBlocks.ELDER_WOOD_PLANKS);
-        this.simpleBlockItemUi(UnderworldBlocks.ELDER_WOOD_PLANKS_DOOR);
+        simpleDoorBlock(UnderworldBlocks.ELDER_WOOD_PLANKS_DOOR);
         simpleItem(UnderworldItems.ELDER_WOOD_SIGN);
         simpleItem(UnderworldItems.ELDER_WOOD_HANGING_SIGN);
 
@@ -260,7 +265,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(UnderworldBlocks.OLIVE_PLANKS_FENCE, UnderworldBlocks.OLIVE_PLANKS);
         buttonItem(UnderworldBlocks.OLIVE_PLANKS_BUTTON, UnderworldBlocks.OLIVE_PLANKS);
-        this.simpleBlockItemUi(UnderworldBlocks.OLIVE_PLANKS_DOOR);
+        simpleDoorBlock(UnderworldBlocks.OLIVE_PLANKS_DOOR);
         simpleItem(UnderworldItems.OLIVE_SIGN);
         simpleItem(UnderworldItems.OLIVE_HANGING_SIGN);
 
@@ -269,7 +274,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(UnderworldBlocks.MYRRH_PLANKS_FENCE, UnderworldBlocks.MYRRH_PLANKS);
         buttonItem(UnderworldBlocks.MYRRH_PLANKS_BUTTON, UnderworldBlocks.MYRRH_PLANKS);
-        this.simpleBlockItemUi(UnderworldBlocks.MYRRH_PLANKS_DOOR);
+        simpleDoorBlock(UnderworldBlocks.MYRRH_PLANKS_DOOR);
         simpleItem(UnderworldItems.MYRRH_SIGN);
         simpleItem(UnderworldItems.MYRRH_HANGING_SIGN);
 
@@ -278,7 +283,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(UnderworldBlocks.LAUREL_PLANKS_FENCE, UnderworldBlocks.LAUREL_PLANKS);
         buttonItem(UnderworldBlocks.LAUREL_PLANKS_BUTTON, UnderworldBlocks.LAUREL_PLANKS);
-        this.simpleBlockItemUi(UnderworldBlocks.LAUREL_PLANKS_DOOR);
+        simpleDoorBlock(UnderworldBlocks.LAUREL_PLANKS_DOOR);
         simpleItem(UnderworldItems.LAUREL_SIGN);
         simpleItem(UnderworldItems.LAUREL_HANGING_SIGN);
 
@@ -287,7 +292,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(UnderworldBlocks.CYPRESS_PLANKS_FENCE, UnderworldBlocks.CYPRESS_PLANKS);
         buttonItem(UnderworldBlocks.CYPRESS_PLANKS_BUTTON, UnderworldBlocks.CYPRESS_PLANKS);
-        this.simpleBlockItemUi(UnderworldBlocks.CYPRESS_PLANKS_DOOR);
+        simpleDoorBlock(UnderworldBlocks.CYPRESS_PLANKS_DOOR);
         simpleItem(UnderworldItems.CYPRESS_SIGN);
         simpleItem(UnderworldItems.CYPRESS_HANGING_SIGN);
 
@@ -296,7 +301,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_FENCE, AlfheimrBlocks.BLACK_BIRCH_PLANKS);
         buttonItem(AlfheimrBlocks.BLACK_BIRCH_PLANKS_BUTTON, AlfheimrBlocks.BLACK_BIRCH_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.BLACK_BIRCH_PLANKS_DOOR);
         simpleItem(AlfheimrItems.BLACK_BIRCH_SIGN);
         simpleItem(AlfheimrItems.BLACK_BIRCH_HANGING_SIGN);
 
@@ -305,7 +310,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.WHITE_OAK_PLANKS_FENCE, AlfheimrBlocks.WHITE_OAK_PLANKS);
         buttonItem(AlfheimrBlocks.WHITE_OAK_PLANKS_BUTTON, AlfheimrBlocks.WHITE_OAK_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.WHITE_OAK_PLANKS_DOOR);
         simpleItem(AlfheimrItems.WHITE_OAK_SIGN);
         simpleItem(AlfheimrItems.WHITE_OAK_HANGING_SIGN);
 
@@ -314,7 +319,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.BUR_OAK_PLANKS_FENCE, AlfheimrBlocks.BUR_OAK_PLANKS);
         buttonItem(AlfheimrBlocks.BUR_OAK_PLANKS_BUTTON, AlfheimrBlocks.BUR_OAK_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.BUR_OAK_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.BUR_OAK_PLANKS_DOOR);
         simpleItem(AlfheimrItems.BUR_OAK_SIGN);
         simpleItem(AlfheimrItems.BUR_OAK_HANGING_SIGN);
 
@@ -323,7 +328,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_FENCE, AlfheimrBlocks.BLOOD_CHERRY_PLANKS);
         buttonItem(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_BUTTON, AlfheimrBlocks.BLOOD_CHERRY_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.BLOOD_CHERRY_PLANKS_DOOR);
         simpleItem(AlfheimrItems.BLOOD_CHERRY_SIGN);
         simpleItem(AlfheimrItems.BLOOD_CHERRY_HANGING_SIGN);
 
@@ -332,7 +337,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.SACRED_TREE_PLANKS_FENCE, AlfheimrBlocks.SACRED_TREE_PLANKS);
         buttonItem(AlfheimrBlocks.SACRED_TREE_PLANKS_BUTTON, AlfheimrBlocks.SACRED_TREE_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.SACRED_TREE_PLANKS_DOOR);
         simpleItem(AlfheimrItems.SACRED_TREE_SIGN);
         simpleItem(AlfheimrItems.SACRED_TREE_HANGING_SIGN);
 
@@ -341,7 +346,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.WILLOW_PLANKS_FENCE, AlfheimrBlocks.WILLOW_PLANKS);
         buttonItem(AlfheimrBlocks.WILLOW_PLANKS_BUTTON, AlfheimrBlocks.WILLOW_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.WILLOW_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.WILLOW_PLANKS_DOOR);
         simpleItem(AlfheimrItems.WILLOW_SIGN);
         simpleItem(AlfheimrItems.WILLOW_HANGING_SIGN);
 
@@ -350,7 +355,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.DEADWOOD_PLANKS_FENCE, AlfheimrBlocks.DEADWOOD_PLANKS);
         buttonItem(AlfheimrBlocks.DEADWOOD_PLANKS_BUTTON, AlfheimrBlocks.DEADWOOD_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.DEADWOOD_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.DEADWOOD_PLANKS_DOOR);
         simpleItem(AlfheimrItems.DEADWOOD_SIGN);
         simpleItem(AlfheimrItems.DEADWOOD_HANGING_SIGN);
 
@@ -359,7 +364,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_FENCE, AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS);
         buttonItem(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_BUTTON, AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.EBONY_KINGSWOOD_PLANKS_DOOR);
         simpleItem(AlfheimrItems.EBONY_KINGSWOOD_SIGN);
         simpleItem(AlfheimrItems.EBONY_KINGSWOOD_HANGING_SIGN);
 
@@ -368,7 +373,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_FENCE, AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS);
         buttonItem(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_BUTTON, AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.IVORY_KINGSWOOD_PLANKS_DOOR);
         simpleItem(AlfheimrItems.IVORY_KINGSWOOD_SIGN);
         simpleItem(AlfheimrItems.IVORY_KINGSWOOD_HANGING_SIGN);
 
@@ -377,7 +382,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(AlfheimrBlocks.WEAVER_PLANKS_FENCE, AlfheimrBlocks.WEAVER_PLANKS);
         buttonItem(AlfheimrBlocks.WEAVER_PLANKS_BUTTON, AlfheimrBlocks.WEAVER_PLANKS);
-        this.simpleBlockItemUi(AlfheimrBlocks.WEAVER_PLANKS_DOOR);
+        simpleDoorBlock(AlfheimrBlocks.WEAVER_PLANKS_DOOR);
         simpleItem(AlfheimrItems.WEAVER_SIGN);
         simpleItem(AlfheimrItems.WEAVER_HANGING_SIGN);
 
@@ -430,81 +435,86 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(AtlantisItems.COOKED_TANG_FISH);
     }
 
-    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
+    private ItemModelBuilder simpleItem(DeferredItem<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 LostWorldsApi.mcLoc("item/generated")).texture("layer0",
                 LostWorldsApi.modLoc("item/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> block) {
+    private ItemModelBuilder simpleBlockItem(DeferredBlock<Block> block) {
         return withExistingParent(block.getId().getPath(),
                 LostWorldsApi.modLoc("block/" + block.getId().getPath()));
     }
 
-    private ItemModelBuilder simpleBookItem(RegistryObject<Item> item) {
+    private ItemModelBuilder simpleBookItem(DeferredItem<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 LostWorldsApi.mcLoc("item/generated")).texture("layer0",
                 LostWorldsApi.modLoc("item/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder simpleBlockItemUi(RegistryObject<Block> item) {
+    private ItemModelBuilder simpleBlockItemUi(DeferredBlock<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 LostWorldsApi.mcLoc("item/generated")).texture("layer0",
                 LostWorldsApi.modLoc("item/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+    private ItemModelBuilder simpleDoorBlock(DeferredBlock<DoorBlock> item) {
+        return withExistingParent(item.getId().getPath(),
+                LostWorldsApi.mcLoc("item/generated")).texture("layer0",
+                LostWorldsApi.modLoc("item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(DeferredItem<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 LostWorldsApi.mcLoc("item/handheld")).texture("layer0",
                 LostWorldsApi.modLoc("item/" + item.getId().getPath()));
     }
 
-    private void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
-                .texture("texture", LostWorldsApi.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    private void buttonItem(DeferredBlock<ButtonBlock> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
+                .texture("texture", LostWorldsApi.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(baseBlock.get()).getPath()));
     }
 
-    private void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture", LostWorldsApi.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    private void fenceItem(DeferredBlock<FenceBlock> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture", LostWorldsApi.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(baseBlock.get()).getPath()));
     }
 
-    private void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall", LostWorldsApi.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    private void wallItem(DeferredBlock<WallBlock> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
+                .texture("wall", LostWorldsApi.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(baseBlock.get()).getPath()));
     }
 
     private ItemModelBuilder complexBlock(Block block) {
-        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(LostWorldsApi.MODID,
-                "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
+        return withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath(), LostWorldsApi.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath()));
     }
 
-    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+    private ItemModelBuilder saplingItem(DeferredBlock<SaplingBlock> item) {
         return withExistingParent(item.getId().getPath(),
                 LostWorldsApi.mcLoc("item/generated")).texture("layer0",
-                new ResourceLocation(LostWorldsApi.MODID,"block/" + item.getId().getPath()));
+                LostWorldsApi.modLoc("block/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder mushroomItem(RegistryObject<Block> item) {
+    private ItemModelBuilder mushroomItem(DeferredBlock<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 LostWorldsApi.mcLoc("item/generated")).texture("layer0",
-                new ResourceLocation(LostWorldsApi.MODID,"block/" + item.getId().getPath()));
+                LostWorldsApi.modLoc("block/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder simpleBlockTexture(RegistryObject<Block> item) {
+    private ItemModelBuilder simpleBlockTexture(DeferredBlock<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 LostWorldsApi.mcLoc("item/generated")).texture("layer0",
-                new ResourceLocation(LostWorldsApi.MODID,"block/" + item.getId().getPath()));
+                LostWorldsApi.modLoc("block/" + item.getId().getPath()));
     }
 
-    public void createArmourSet(RegistryObject<Item> helmet, RegistryObject<Item> chestplate, RegistryObject<Item> leggings, RegistryObject<Item> boots) {
+    public void createArmourSet(DeferredItem<Item> helmet, DeferredItem<Item> chestplate, DeferredItem<Item> leggings, DeferredItem<Item> boots) {
         createArmourPiece(helmet, "helmet");
         createArmourPiece(chestplate, "chestplate");
         createArmourPiece(leggings, "leggings");
         createArmourPiece(boots, "boots");
     }
 
-    public void createArmourPiece(RegistryObject<Item> item, String name) {
+    public void createArmourPiece(DeferredItem<Item> item, String name) {
 //        ItemModelBuilder base = this.simpleItem(item);
 //        for (ItemModelGenerators.TrimModelData trim : ItemModelGenerators.GENERATED_TRIM_MODELS) {
 //
@@ -522,11 +532,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         createArmor(item);
     }
 
-    private ItemModelBuilder createTrim(RegistryObject<Item> item, String name, ResourceKey<TrimMaterial> trimMaterials, float indexId) {
+    private ItemModelBuilder createTrim(DeferredItem<Item> item, String name, ResourceKey<TrimMaterial> trimMaterials, float indexId) {
         ItemModelBuilder base = this.simpleItem(item);
         ModelFile trimModel = this.withExistingParent(item.getId().getPath() + "_" + trimMaterials.location().getPath() + "_trim",
                 LostWorldsApi.mcLoc("item/generated"))
-                .texture("layer0", new ResourceLocation(LostWorldsApi.MODID,"item/" + item.getId().getPath()))
+                .texture("layer0", LostWorldsApi.modLoc("item/" + item.getId().getPath()))
 //                .texture("layer1", this.mcLoc("trims/items/" + name + "_trim"));
 
                 //@Error Need to include trim but throws error because the trim file doesn't exist
@@ -536,7 +546,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         return base.override().predicate(LostWorldsApi.mcLoc("trim_type"), indexId).model(trimModel).end();
     }
 
-    private ItemModelBuilder createArmor(RegistryObject<Item> item) {
+    private ItemModelBuilder createArmor(DeferredItem<Item> item) {
         ModelFile quartzLoc = generateArmorModel(LostWorldsApi.MODID + ":item/" + item.getId().getPath() + "_quartz_trim");
         ModelFile ironLoc = generateArmorModel(LostWorldsApi.MODID + ":item/" + item.getId().getPath() + "_iron_trim");
         ModelFile netheriteLoc = generateArmorModel(LostWorldsApi.MODID + ":item/" + item.getId().getPath() + "_netherite_trim");
@@ -560,7 +570,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .override().predicate(LostWorldsApi.modLoc("item/" + item.getId().getPath()), 0.8f).model(diamondLoc).end()
                 .override().predicate(LostWorldsApi.modLoc("item/" + item.getId().getPath()), 0.9f).model(lapisLoc).end()
                 .override().predicate(LostWorldsApi.modLoc("item/" + item.getId().getPath()), 1.0f).model(amethystLoc).end()
-                .texture("layer0", new ResourceLocation(LostWorldsApi.MODID,"item/" + item.getId().getPath()));
+                .texture("layer0", LostWorldsApi.modLoc("item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder generateArmorModel(String name, ResourceLocation... layers) {

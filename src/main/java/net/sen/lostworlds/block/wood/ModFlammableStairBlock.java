@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.function.Supplier;
 
 public class ModFlammableStairBlock extends StairBlock {
-    public ModFlammableStairBlock(Supplier<BlockState> state, Properties properties) {
+    public ModFlammableStairBlock(BlockState state, Properties properties) {
         super(state, properties);
     }
 

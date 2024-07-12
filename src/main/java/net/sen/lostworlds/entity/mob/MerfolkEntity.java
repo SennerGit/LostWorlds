@@ -32,7 +32,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.ForgeEventFactory;
+
 import net.sen.lostworlds.entity.AtlantisEntities;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.entity.variant.MerfolkVariant;
@@ -59,7 +59,7 @@ public class MerfolkEntity extends AbstractVillager {
 
     public MerfolkEntity(EntityType<? extends AbstractVillager> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setMaxUpStep(1f);
+        //this.setMaxUpStep(1f);
     }
 
     @Override
@@ -138,10 +138,10 @@ public class MerfolkEntity extends AbstractVillager {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(ATTACKING, false);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     @Override
@@ -169,11 +169,12 @@ public class MerfolkEntity extends AbstractVillager {
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
+@Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         MerfolkVariant variant = Util.getRandom(MerfolkVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override

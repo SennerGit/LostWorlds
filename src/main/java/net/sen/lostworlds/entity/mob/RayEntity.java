@@ -31,7 +31,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.ForgeEventFactory;
+
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
 import net.sen.lostworlds.entity.variant.RayVariant;
@@ -47,7 +47,7 @@ public class RayEntity extends WaterAnimal {
 
     public RayEntity(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setMaxUpStep(1f);
+        //this.setMaxUpStep(1f);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -132,9 +132,9 @@ public class RayEntity extends WaterAnimal {
     }
 
    @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     /*
@@ -157,11 +157,12 @@ public class RayEntity extends WaterAnimal {
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
+@Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         RayVariant variant = Util.getRandom(RayVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override

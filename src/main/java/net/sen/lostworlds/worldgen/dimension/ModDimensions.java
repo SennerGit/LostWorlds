@@ -8,17 +8,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.AlfheimrBlocks;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.worldgen.dimension.biomebuilder.AlfheimrBiomeBuilder;
 import net.sen.lostworlds.worldgen.dimension.noise.AlfheimrNoiseGenSettings;
 import net.sen.lostworlds.worldgen.dimension.noise.AlfheimrNoiseRouter;
@@ -59,7 +54,7 @@ public class ModDimensions {
             LostWorldsApi.modLoc("alfheimr_type"));
     public static final ResourceKey<NoiseGeneratorSettings> ALFHEIMR_NOISE_KEY = ResourceKey.create(Registries.NOISE_SETTINGS,
             LostWorldsApi.modLoc("alfheimr_noise_key"));
-    public static final ResourceLocation ALFHEIMR_ID = new ResourceLocation(LostWorldsApi.MODID, "alfheimr");
+    public static final ResourceLocation ALFHEIMR_ID = LostWorldsApi.modLoc("alfheimr");
 
     //Atlantis
     public static final ResourceKey<LevelStem> ATLANTIS_KEY = ResourceKey.create(Registries.LEVEL_STEM,
@@ -89,7 +84,7 @@ public class ModDimensions {
     public static final ResourceKey<DimensionType> MYSTIC_GATEWAYS_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             LostWorldsApi.modLoc("mystic_gateways_type"));
 
-    public static void bootstrapType(final BootstapContext<DimensionType> context) {
+    public static void bootstrapType(final BootstrapContext<DimensionType> context) {
         UnderworldDimension.underworldDimensionType(context);
         NidavellirDimension.nidavellirDimensionType(context);
         AlfheimrDimension.alfheimrDimensionType(context);
@@ -97,7 +92,7 @@ public class ModDimensions {
         SkyopiaDimension.skyopiaDimensionType(context);
     }
 
-    public static void bootstrapNoise(final BootstapContext<NoiseGeneratorSettings> context) {
+    public static void bootstrapNoise(final BootstrapContext<NoiseGeneratorSettings> context) {
         context.register(UNDERWORLD_NOISE_KEY, UnderworldDimension.underworldDimensionNoise(context));
         context.register(NIDAVELLIR_NOISE_KEY, NidavellirDimension.nidavellirDimensionNoise(context));
 //        context.register(ALFHEIMR_NOISE_KEY, AlfheimrDimension.alfheimrDimensionNoise(context));
@@ -108,7 +103,7 @@ public class ModDimensions {
 
     }
 
-   public static void bootstrapStem(final BootstapContext<LevelStem> context) {
+   public static void bootstrapStem(final BootstrapContext<LevelStem> context) {
        UnderworldDimension.underworldDimension(context);
        NidavellirDimension.nidavellirDimensionLevelStem(context);
        AlfheimrDimension.alfheimrLevelStem(context);
@@ -116,13 +111,13 @@ public class ModDimensions {
        SkyopiaDimension.skyopiaDimension(context);
     }
 
-   public static void bootstrapDensityFunctions(final BootstapContext<DensityFunction> context) {
+   public static void bootstrapDensityFunctions(final BootstrapContext<DensityFunction> context) {
        UnderworldDimension.underworldDensityFunction(context);
        AtlantisDimension.atlantisDensityFunction(context);
        AlfheimrNoiseRouter.alfheimrDensityFunction(context);
     }
 
-    public static void bootstrapNoiseBiomeSourceParameterList(final BootstapContext<MultiNoiseBiomeSourceParameterList> context) {
+    public static void bootstrapNoiseBiomeSourceParameterList(final BootstrapContext<MultiNoiseBiomeSourceParameterList> context) {
         AlfheimrBiomeBuilder.bootstrap(context);
     }
 }

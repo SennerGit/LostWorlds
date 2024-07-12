@@ -30,12 +30,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.ForgeEventFactory;
+
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.entity.ai.RhinoAttackGoal;
 import net.sen.lostworlds.entity.variant.RhinoVariant;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
 import org.jetbrains.annotations.Nullable;
+
+import static net.neoforged.neoforge.event.EventHooks.onAnimalTame;
 
 public class RhinoEntity extends TamableAnimal implements PlayerRideable {
     private static final EntityDataAccessor<Boolean> ATTACKING =
@@ -57,7 +59,7 @@ public class RhinoEntity extends TamableAnimal implements PlayerRideable {
 
     public RhinoEntity(EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setMaxUpStep(1f);
+        //this.setMaxUpStep(1f);
     }
 
     @Override
@@ -73,7 +75,7 @@ public class RhinoEntity extends TamableAnimal implements PlayerRideable {
 //        this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, Ingredient.of(this.followFood),true));
 
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1d));
-        this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.1d, 28f, 7f, false));
+        this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.1d, 28f, 7f));
 
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 4f));
@@ -153,10 +155,10 @@ public class RhinoEntity extends TamableAnimal implements PlayerRideable {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(ATTACKING, false);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     /*
@@ -179,11 +181,12 @@ public class RhinoEntity extends TamableAnimal implements PlayerRideable {
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
+@Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         RhinoVariant variant = Util.getRandom(RhinoVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override
@@ -239,7 +242,7 @@ public class RhinoEntity extends TamableAnimal implements PlayerRideable {
                     itemstack.shrink(1);
                 }
 
-                if (!ForgeEventFactory.onAnimalTame(this, pPlayer)) {
+                if (!onAnimalTame(this, pPlayer)) {
                     if (!this.level().isClientSide) {
                         super.tame(pPlayer);
                         this.navigation.recomputePath();

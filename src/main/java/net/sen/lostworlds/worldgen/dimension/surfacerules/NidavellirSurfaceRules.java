@@ -7,7 +7,7 @@ import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
-import net.sen.lostworlds.block.NidavellirBlocks;
+import net.sen.lostworlds.registry.blocks.NidavellirBlocks;
 import net.sen.lostworlds.worldgen.biome.util.layer.NidavellirBiomes;
 
 public class NidavellirSurfaceRules {

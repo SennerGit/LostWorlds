@@ -9,7 +9,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
@@ -20,14 +19,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 
 import java.util.function.Predicate;
 
 public abstract class WaterMonster extends PathfinderMob implements Enemy {
     protected WaterMonster(EntityType<? extends WaterMonster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0f);
+        this.setPathfindingMalus(PathType.WATER, 0.0f);
         this.xpReward = 5;
     }
 
@@ -50,17 +49,16 @@ public abstract class WaterMonster extends PathfinderMob implements Enemy {
         return SoundEvents.HOSTILE_DEATH;
     }
 
-
-    public boolean canBreatheUnderwater() {
-        return true;
-    }
-
-    public MobType getMobType() {
-        return MobType.WATER;
-    }
-    public boolean checkSpawnObstruction(LevelReader pLevel) {
-        return pLevel.isUnobstructed(this);
-    }
+//    public boolean canBreatheUnderwater() {
+//        return true;
+//    }
+//
+//    public MobType getMobType() {
+//        return MobType.WATER;
+//    }
+//    public boolean checkSpawnObstruction(LevelReader pLevel) {
+//        return pLevel.isUnobstructed(this);
+//    }
 
     /*
     Monster Behaviour
@@ -101,9 +99,9 @@ public abstract class WaterMonster extends PathfinderMob implements Enemy {
         if (pShootable.getItem() instanceof ProjectileWeaponItem) {
             Predicate<ItemStack> predicate = ((ProjectileWeaponItem)pShootable.getItem()).getSupportedHeldProjectiles();
             ItemStack itemstack = ProjectileWeaponItem.getHeldProjectile(this, predicate);
-            return net.minecraftforge.common.ForgeHooks.getProjectile(this, pShootable, itemstack.isEmpty() ? new ItemStack(Items.ARROW) : itemstack);
+            return net.neoforged.neoforge.common.CommonHooks.getProjectile(this, pShootable, itemstack.isEmpty() ? new ItemStack(Items.ARROW) : itemstack);
         } else {
-            return net.minecraftforge.common.ForgeHooks.getProjectile(this, pShootable, ItemStack.EMPTY);
+            return net.neoforged.neoforge.common.CommonHooks.getProjectile(this, pShootable, ItemStack.EMPTY);
         }
     }
 

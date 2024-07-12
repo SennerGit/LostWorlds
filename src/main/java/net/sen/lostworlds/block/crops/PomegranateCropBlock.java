@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.sen.lostworlds.item.UnderworldItems;
+import net.sen.lostworlds.registry.items.UnderworldItems;
 
 public class PomegranateCropBlock extends ModCropBlock {
     public static final int MAX_AGE = 6;

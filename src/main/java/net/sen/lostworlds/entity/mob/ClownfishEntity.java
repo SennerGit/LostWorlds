@@ -1,13 +1,12 @@
 package net.sen.lostworlds.entity.mob;
 
 import net.minecraft.Util;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.item.Item;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingFishVarients;
 import net.sen.lostworlds.entity.variant.ClownfishVariant;
-import net.sen.lostworlds.item.AtlantisItems;
-import net.sen.lostworlds.item.ModItems;
-import net.minecraft.nbt.CompoundTag;
+import net.sen.lostworlds.registry.items.AtlantisItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
@@ -117,10 +116,10 @@ public class ClownfishEntity extends AbstractSchoolingFishVarients {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-//        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
-//        this.entityData.define(FROM_BUCKET, false);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+//        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
+//        pBuilder.define(FROM_BUCKET, false);
     }
 
     /*
@@ -160,11 +159,12 @@ public class ClownfishEntity extends AbstractSchoolingFishVarients {
         }
     }
 
+@Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         Enum<?> variant = Util.getRandom(ClownfishVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override
@@ -188,10 +188,10 @@ public class ClownfishEntity extends AbstractSchoolingFishVarients {
 //    }
 //
 //    @Override
-//    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+//    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
 //        ClownfishVariant variant = Util.getRandom(ClownfishVariant.values(), this.random);
 //        this.setVariant(variant);
-//        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+//        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
 //    }
 //
 //    @Override

@@ -7,7 +7,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 
 public class SetHomeCommand {
     public SetHomeCommand(CommandDispatcher<CommandSourceStack> dispatcher) {

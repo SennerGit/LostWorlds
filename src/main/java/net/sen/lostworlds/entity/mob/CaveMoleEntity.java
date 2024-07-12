@@ -30,7 +30,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.ForgeEventFactory;
+
+import net.neoforged.neoforge.common.NeoForgeEventHandler;
 import net.sen.lostworlds.entity.NidavellirEntities;
 import net.sen.lostworlds.entity.ai.RhinoAttackGoal;
 import net.sen.lostworlds.entity.variant.CaveMoleVariant;
@@ -57,7 +58,7 @@ public class CaveMoleEntity extends TamableAnimal implements PlayerRideable {
 
     public CaveMoleEntity(EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setMaxUpStep(1f);
+        //this.setMaxUpStep(1f);
     }
 
     @Override
@@ -73,7 +74,7 @@ public class CaveMoleEntity extends TamableAnimal implements PlayerRideable {
 //        this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, Ingredient.of(this.followFood),true));
 
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1d));
-        this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.1d, 28f, 7f, false));
+        this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.1d, 28f, 7f));
 
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 4f));
@@ -153,10 +154,10 @@ public class CaveMoleEntity extends TamableAnimal implements PlayerRideable {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(ATTACKING, false);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     /*
@@ -179,11 +180,12 @@ public class CaveMoleEntity extends TamableAnimal implements PlayerRideable {
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
+@Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         CaveMoleVariant variant = Util.getRandom(CaveMoleVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override
@@ -239,16 +241,16 @@ public class CaveMoleEntity extends TamableAnimal implements PlayerRideable {
                     itemstack.shrink(1);
                 }
 
-                if (!ForgeEventFactory.onAnimalTame(this, pPlayer)) {
-                    if (!this.level().isClientSide) {
-                        super.tame(pPlayer);
-                        this.navigation.recomputePath();
-                        this.setTarget(null);
-                        this.level().broadcastEntityEvent(this, (byte) 7);
-                        setOrderedToSit(true);
-                        this.setInSittingPose(true);
-                    }
-                }
+//                if (!NeoForgeEventHandler.onAnimalTame(this, pPlayer)) {
+//                    if (!this.level().isClientSide) {
+//                        super.tame(pPlayer);
+//                        this.navigation.recomputePath();
+//                        this.setTarget(null);
+//                        this.level().broadcastEntityEvent(this, (byte) 7);
+//                        setOrderedToSit(true);
+//                        this.setInSittingPose(true);
+//                    }
+//                }
 
                 return InteractionResult.SUCCESS;
             }

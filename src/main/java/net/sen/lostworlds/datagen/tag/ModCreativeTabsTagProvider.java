@@ -5,10 +5,10 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.*;
-import net.sen.lostworlds.item.*;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.sen.lostworlds.api.LostWorldsApi;
+import net.sen.lostworlds.registry.blocks.*;
+import net.sen.lostworlds.registry.items.*;
 import net.sen.lostworlds.util.ModTags;
 
 import javax.annotation.Nullable;
@@ -104,9 +104,9 @@ public class ModCreativeTabsTagProvider extends ItemTagsProvider {
                 ModItems.MEDUSA_HEAD.get(),
 
                 ModItems.MAGICAL_DOWSING_ROD.get(),
-                ModItems.BAR_BRAWL_RECORD.get(),
+//                ModItems.BAR_BRAWL_RECORD.get(),
                 Item.byBlock(ModBlocks.SOUND_BLOCK.get()),
-                Item.byBlock(ModBlocks.ALLOY_SMELTER.get()),
+//                Item.byBlock(ModBlocks.ALLOY_SMELTER.get()),
 
                 ModItems.CUSTOM_BOW.get(),
                 ModItems.ALEXANDRITE_SHIELD.get(),
@@ -1130,7 +1130,7 @@ public class ModCreativeTabsTagProvider extends ItemTagsProvider {
                 ModItems.MEDUSA_HEAD.get(),
 
                 ModItems.MAGICAL_DOWSING_ROD.get(),
-                ModItems.BAR_BRAWL_RECORD.get(),
+//                ModItems.BAR_BRAWL_RECORD.get(),
                 Item.byBlock(ModBlocks.SOUND_BLOCK.get()),
 
                 ModItems.STYX_WATER_BUCKET.get(),
@@ -1625,9 +1625,9 @@ public class ModCreativeTabsTagProvider extends ItemTagsProvider {
                 Item.byBlock(AlfheimrBlocks.SWEET_PEA_FLOWER.get())
         );
 
-        this.tag(ModTags.CreativeTabs.FUNCTIONAL_BLOCKS).add(
-                Item.byBlock(ModBlocks.ALLOY_SMELTER.get())
-        );
+//        this.tag(ModTags.CreativeTabs.FUNCTIONAL_BLOCKS).add(
+//                Item.byBlock(ModBlocks.ALLOY_SMELTER.get())
+//        );
 
         this.tag(ModTags.CreativeTabs.FARMING).add(
                 UnderworldItems.POMEGRANATE_SEEDS.get(),

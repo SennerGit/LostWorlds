@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.sound.ModSounds;
 import net.sen.lostworlds.worldgen.biome.util.layer.carver.ModConfiguredCarvers;
@@ -162,7 +162,7 @@ public class AlfheimrBiomes {
     public static final ResourceKey<Biome> ALFHEIMR_OVERGROWN_CAVERN = register("alfheimr_overgrown_cavern");
     public static final ResourceKey<Biome> ALFHEIMR_CORRUPTED_CAVERN = register("alfheimr_corrupted_cavern");
 
-    public static void bootstrap(BootstapContext<Biome> context) {
+    public static void bootstrap(BootstrapContext<Biome> context) {
         HolderGetter<PlacedFeature> placedFeatureGetter = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> carverGetter = context.lookup(Registries.CONFIGURED_CARVER);
 
@@ -472,7 +472,8 @@ public class AlfheimrBiomes {
                 .foliageColorOverride(0x147229)
                 .grassColorOverride(0x3afc6d)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS) // We should probably change it
-                .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()));
+//                .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()))
+                ;
 
         return biomeBuilder;
     }
@@ -564,7 +565,7 @@ public class AlfheimrBiomes {
         return key;
     }
 
-    private static void registerBiome(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome)
+    private static void registerBiome(BootstrapContext<Biome> context, ResourceKey<Biome> key, Biome biome)
     {
         context.register(key, biome);
     }

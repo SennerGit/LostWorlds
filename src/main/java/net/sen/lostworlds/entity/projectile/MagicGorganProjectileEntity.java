@@ -1,11 +1,9 @@
 package net.sen.lostworlds.entity.projectile;
 
 import net.sen.lostworlds.entity.ModEntities;
-import net.sen.lostworlds.particle.ModParticles;
+import net.sen.lostworlds.registry.ModParticles;
 import net.sen.lostworlds.sound.ModSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -23,8 +21,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.network.NetworkHooks;
 
 public class MagicGorganProjectileEntity extends Projectile {
     private static final EntityDataAccessor<Boolean> HIT =
@@ -46,6 +42,11 @@ public class MagicGorganProjectileEntity extends Projectile {
     }
 
     @Override
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+
+    }
+
+    @Override
     public void tick() {
         super.tick();
         if (this.entityData.get(HIT)) {
@@ -60,8 +61,8 @@ public class MagicGorganProjectileEntity extends Projectile {
 
         Vec3 vec3 = this.getDeltaMovement();
         HitResult hitresult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
-        if (hitresult.getType() != HitResult.Type.MISS && !ForgeEventFactory.onProjectileImpact(this, hitresult))
-            this.onHit(hitresult);
+//        if (hitresult.getType() != HitResult.Type.MISS && !ForgeEventFactory.onProjectileImpact(this, hitresult))
+//            this.onHit(hitresult);
 
         double d0 = this.getX() + vec3.x;
         double d1 = this.getY() + vec3.y;
@@ -137,13 +138,13 @@ public class MagicGorganProjectileEntity extends Projectile {
         }
     }
 
-    @Override
-    protected void defineSynchedData() {
-        this.entityData.define(HIT, false);
-    }
-
-    @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return NetworkHooks.getEntitySpawningPacket(this);
-    }
+//    @Override
+//    protected void defineSynchedData() {
+//        this.entityData.define(HIT, false);
+//    }
+//
+//    @Override
+//    public Packet<ClientGamePacketListener> getAddEntityPacket() {
+//        return NetworkHooks.getEntitySpawningPacket(this);
+//    }
 }

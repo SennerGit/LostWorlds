@@ -3,16 +3,15 @@ package net.sen.lostworlds.worldgen.placement;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.AlfheimrBlocks;
-import net.sen.lostworlds.block.ModBlocks;
-import net.sen.lostworlds.block.UnderworldBlocks;
+import net.sen.lostworlds.api.LostWorldsApi;
+import net.sen.lostworlds.registry.blocks.AlfheimrBlocks;
+import net.sen.lostworlds.registry.blocks.UnderworldBlocks;
 import net.sen.lostworlds.worldgen.features.*;
 
 import java.util.List;
@@ -44,7 +43,7 @@ public class ModVegetationPlacements {
     public static final ResourceKey<PlacedFeature> ALFHEIMR_MAGIC_GRASS_SINGLE_PLACED_KEY = registerKey("alfheimr_magic_grass_single_placed_key");
     public static final ResourceKey<PlacedFeature> ALFHEIMR_MAGIC_GRASS_PATCH_PLACED_KEY = registerKey("alfheimr_magic_grass_patch_placed_key");
 
-    public static void bootstrap(BootstapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures) {
+    public static void bootstrap(BootstrapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures) {
         register(context, TREE_ELDER_WOOD_KEY, configuredFeatures.getOrThrow(ModVegetationFeatures.TREE_ELDER_WOOD_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
                         UnderworldBlocks.ELDER_WOOD_SAPLING.get()));
@@ -126,7 +125,7 @@ public class ModVegetationPlacements {
         return ResourceKey.create(Registries.PLACED_FEATURE, LostWorldsApi.modLoc(name));
     }
 
-    private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }

@@ -1,5 +1,6 @@
 package net.sen.lostworlds.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -11,8 +12,11 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.IShearable;
+import net.sen.lostworlds.block.portal.AlfheimrPortalBlock;
 
-public class AlfheimrGrassBlock extends BushBlock implements BonemealableBlock, net.minecraftforge.common.IForgeShearable {
+public class AlfheimrGrassBlock extends BushBlock implements BonemealableBlock, IShearable {
+    public static final MapCodec<AlfheimrGrassBlock> CODEC = simpleCodec(AlfheimrGrassBlock::new);
     protected static final float AABB_OFFSET = 6.0F;
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
@@ -27,6 +31,11 @@ public class AlfheimrGrassBlock extends BushBlock implements BonemealableBlock, 
         super(pProperties);
     }
 
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
+    }
+
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
     }
@@ -36,6 +45,11 @@ public class AlfheimrGrassBlock extends BushBlock implements BonemealableBlock, 
      */
     public boolean isValidBonemealTarget(LevelReader pLevel, BlockPos pPos, BlockState pState, boolean pIsClient) {
         return true;
+    }
+
+    @Override
+    public boolean isValidBonemealTarget(LevelReader pLevel, BlockPos pPos, BlockState pState) {
+        return false;
     }
 
     public boolean isBonemealSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
@@ -58,16 +72,6 @@ public class AlfheimrGrassBlock extends BushBlock implements BonemealableBlock, 
             }
         }
 
-        return pState.is(Blocks.GRASS);
-
-//        return super.mayPlaceOn(pState, pLevel, pPos);
-
-//        for (Block block : blocks) {
-//            if (block == pState.getBlock()) {
-//                return pState.is(block);
-//            }
-//        }
-//
-//        return pState.is(Blocks.GRASS);
+        return pState.is(Blocks.GRASS_BLOCK);
     }
 }

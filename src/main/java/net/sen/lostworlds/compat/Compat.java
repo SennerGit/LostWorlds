@@ -2,11 +2,9 @@ package net.sen.lostworlds.compat;
 
 import com.google.common.collect.ImmutableMap;
 
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.sen.lostworlds.LostWorlds;
-import net.sen.lostworlds.compat.curios.CuriosCompat;
-import net.sen.lostworlds.compat.patchouli.PatchouliCompat;
 import net.sen.lostworlds.datagen.tag.ModItemTagGenerator;
 
 import java.util.HashMap;
@@ -16,8 +14,8 @@ import java.util.function.Supplier;
 
 public final class Compat {
     private static final Map<String, Supplier<ICompat>> MODULE_TYPES = ImmutableMap.<String, Supplier<ICompat>>builder()
-            .put("patchouli", PatchouliCompat::new)
-            .put("curios", CuriosCompat::new)
+//            .put("patchouli", PatchouliCompat::new)
+//            .put("curios", CuriosCompat::new)
             //.put("enchantability", EnchantibilityCompat::new)
             .build();
     private static final Map<String, ICompat> MODULES = new HashMap<>();

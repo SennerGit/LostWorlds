@@ -4,7 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -16,13 +16,13 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 
 import java.util.List;
 import java.util.OptionalLong;
 
 public class SkyopiaDimension {
-    public static void skyopiaDimensionType(BootstapContext<DimensionType> context) {
+    public static void skyopiaDimensionType(BootstrapContext<DimensionType> context) {
         context.register(ModDimensions.SKYOPIA_DIM_TYPE, new DimensionType(
                 OptionalLong.of(18000), // fixedTime
                 true, // hasSkylight
@@ -41,7 +41,7 @@ public class SkyopiaDimension {
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(7), 15)));
     }
 
-    public static void skyopiaDimension(BootstapContext<LevelStem> context) {
+    public static void skyopiaDimension(BootstrapContext<LevelStem> context) {
         HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
@@ -62,7 +62,7 @@ public class SkyopiaDimension {
         context.register(ModDimensions.SKYOPIA_KEY, stem);
     }
 
-    public static NoiseGeneratorSettings skyopiaDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {
+    public static NoiseGeneratorSettings skyopiaDimensionNoise(BootstrapContext<NoiseGeneratorSettings> context) {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
 

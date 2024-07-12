@@ -1,12 +1,15 @@
 package net.sen.lostworlds.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
@@ -21,6 +24,12 @@ import net.sen.lostworlds.block.custom.tileentity.WaterRemoverBlockTileEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class WaterRemoverBlock extends BaseEntityBlock {
+    public static final MapCodec<WaterRemoverBlock> CODEC = simpleCodec(WaterRemoverBlock::new);
+    @Override
+    protected MapCodec<? extends WaterRemoverBlock> codec() {
+        return CODEC;
+    }
+
     public static final BooleanProperty LIT = BooleanProperty.create("clicked");
     public static final int MAX_DEPTH = 6;
     public static final int MAX_COUNT = 257;
@@ -31,17 +40,13 @@ public class WaterRemoverBlock extends BaseEntityBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
             boolean currentState = pState.getValue(LIT);
             pLevel.setBlock(pPos, pState.setValue(LIT, !currentState), 3);
         }
 
-//        if (pState.getValue(LIT)) {
-//            this.tryAbsorbWater(pLevel, pPos);
-//        }
-
-        return InteractionResult.SUCCESS;
+        return ItemInteractionResult.SUCCESS;
     }
 
     @Override
@@ -99,7 +104,7 @@ public class WaterRemoverBlock extends BaseEntityBlock {
                     Block block = blockstate.getBlock();
                     if (block instanceof BucketPickup) {
                         BucketPickup bucketpickup = (BucketPickup)block;
-                        if (!bucketpickup.pickupBlock(pLevel, blockPos, blockstate).isEmpty()) {
+                        if (!bucketpickup.pickupBlock(null, pLevel, blockPos, blockstate).isEmpty()) {
                             return true;
                         }
                     }

@@ -21,6 +21,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import net.sen.lostworlds.api.LostWorldsApi;
 
 public class TransformCircumstance {
     public static final TransformCircumstance EXPLOSION = new TransformCircumstance("explosion");
@@ -35,7 +36,7 @@ public class TransformCircumstance {
         if (type.equals("explosion"))
             return explosion();
         else if (type.equals("fluid")) {
-            return fluid(TagKey.create(Registries.FLUID, new ResourceLocation(obj.get("tag").getAsString())));
+            return fluid(TagKey.create(Registries.FLUID, LostWorldsApi.mcLoc(obj.get("tag").getAsString())));
         } else
             throw new JsonParseException("Invalid transform recipe type " + type);
     }

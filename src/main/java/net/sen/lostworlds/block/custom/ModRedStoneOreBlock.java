@@ -1,5 +1,6 @@
 package net.sen.lostworlds.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -7,13 +8,16 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RedStoneOreBlock;
 import net.minecraft.world.level.block.RedstoneTorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,6 +27,12 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class ModRedStoneOreBlock extends Block {
+    public static final MapCodec<ModRedStoneOreBlock> CODEC = simpleCodec(ModRedStoneOreBlock::new);
+
+    @Override
+    public MapCodec<ModRedStoneOreBlock> codec() {
+        return CODEC;
+    }
     public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
 
     public ModRedStoneOreBlock(BlockBehaviour.Properties properties) {
@@ -50,7 +60,7 @@ public class ModRedStoneOreBlock extends Block {
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    public ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (pLevel.isClientSide) {
             spawnParticles(pLevel, pPos);
         } else {
@@ -58,7 +68,9 @@ public class ModRedStoneOreBlock extends Block {
         }
 
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
-        return itemstack.getItem() instanceof BlockItem && (new BlockPlaceContext(pPlayer, pHand, itemstack, pHit)).canPlace() ? InteractionResult.PASS : InteractionResult.SUCCESS;
+        return itemstack.getItem() instanceof BlockItem && (new BlockPlaceContext(pPlayer, pHand, itemstack, pHitResult)).canPlace()
+                ? ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION
+                : ItemInteractionResult.SUCCESS;
     }
 
     private static void interact(BlockState pState, Level pLevel, BlockPos pPos) {
@@ -97,8 +109,8 @@ public class ModRedStoneOreBlock extends Block {
     }
 
     @Override
-    public int getExpDrop(BlockState state, net.minecraft.world.level.LevelReader world, RandomSource randomSource, BlockPos pos, int fortune, int silktouch) {
-        return silktouch == 0 ? 1 + randomSource.nextInt(5) : 0;
+    public int getExpDrop(BlockState state, LevelReader level, RandomSource randomSource, BlockPos pos) {
+        return 1 + randomSource.nextInt(5);
     }
 
     /**

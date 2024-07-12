@@ -1,8 +1,7 @@
 package net.sen.lostworlds.datagen;
 
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.DisplayInfo;
-import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.*;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.critereon.ChangeDimensionTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
@@ -14,21 +13,20 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeAdvancementProvider;
-import net.minecraftforge.registries.RegistryObject;
-import net.sen.lostworlds.LostWorldsApi;
-import net.sen.lostworlds.block.*;
-import net.sen.lostworlds.item.ModItems;
+import net.neoforged.neoforge.common.data.AdvancementProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.sen.lostworlds.api.LostWorldsApi;
+import net.sen.lostworlds.registry.items.ModItems;
+import net.sen.lostworlds.registry.blocks.*;
 import net.sen.lostworlds.worldgen.dimension.ModDimensions;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
-public class ModAdvancementsProvider extends ForgeAdvancementProvider {
+public class ModAdvancementsProvider extends AdvancementProvider {
     public ModAdvancementsProvider(DataGenerator generatorIn, CompletableFuture<HolderLookup.Provider> registries, ExistingFileHelper existingFileHelper) {
         super(generatorIn.getPackOutput(), registries, existingFileHelper, List.of(
                 new BaseAdvancements(),
@@ -40,10 +38,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         ));
     }
 
-    public static class BaseAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+    public static class BaseAdvancements implements AdvancementProvider.AdvancementGenerator {
         @Override
-        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-            Advancement root = createAdvancementCraftingParent(
+        public void generate(HolderLookup.Provider pRegistries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
+            AdvancementHolder root = createAdvancementCraftingParent(
                     "base",
                     "root",
                     ModItems.BASIC_PORTAL_CORE.get(),
@@ -64,10 +62,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
             );
         }
     }
-    public static class UnderworldAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+    public static class UnderworldAdvancements implements AdvancementProvider.AdvancementGenerator {
         @Override
-        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-            Advancement root = createAdvancementDimensionParent(
+        public void generate(HolderLookup.Provider pRegistries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
+            AdvancementHolder root = createAdvancementDimensionParent(
                     "underworld",
                     "root",
                     Item.byBlock(UnderworldBlocks.UNDERWORLD_PORTAL_FRAME.get()),
@@ -78,10 +76,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
             );
         }
     }
-    public static class NidavellirAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+    public static class NidavellirAdvancements implements AdvancementProvider.AdvancementGenerator {
         @Override
-        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-            Advancement root = createAdvancementDimensionParent(
+        public void generate(HolderLookup.Provider pRegistries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
+            AdvancementHolder root = createAdvancementDimensionParent(
                     "nidavellir",
                     "root",
                     Item.byBlock(NidavellirBlocks.NIDAVELLIR_PORTAL_FRAME.get()),
@@ -92,10 +90,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
             );
         }
     }
-    public static class AlfheimrAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+    public static class AlfheimrAdvancements implements AdvancementProvider.AdvancementGenerator {
         @Override
-        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-            Advancement root = createAdvancementDimensionParent(
+        public void generate(HolderLookup.Provider pRegistries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
+            AdvancementHolder root = createAdvancementDimensionParent(
                     "alfheimr",
                     "root",
                     Item.byBlock(AlfheimrBlocks.ALFHEIMR_PORTAL_FRAME.get()),
@@ -106,10 +104,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
             );
         }
     }
-    public static class AtlantisAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+    public static class AtlantisAdvancements implements AdvancementProvider.AdvancementGenerator {
         @Override
-        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-            Advancement root = createAdvancementDimensionParent(
+        public void generate(HolderLookup.Provider pRegistries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
+            AdvancementHolder root = createAdvancementDimensionParent(
                     "atlantis",
                     "root",
                     Item.byBlock(AtlantisBlocks.ATLANTIS_PORTAL_FRAME.get()),
@@ -120,10 +118,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
             );
         }
     }
-    public static class SkyopiaAdvancements implements ForgeAdvancementProvider.AdvancementGenerator {
+    public static class SkyopiaAdvancements implements AdvancementProvider.AdvancementGenerator {
         @Override
-        public void generate(HolderLookup.Provider pRegistries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-            Advancement root = createAdvancementDimensionParent(
+        public void generate(HolderLookup.Provider pRegistries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
+            AdvancementHolder root = createAdvancementDimensionParent(
                     "skyopia",
                     "root",
                     Item.byBlock(SkyopiaBlocks.SKYOPIA_PORTAL_FRAME.get()),
@@ -135,30 +133,30 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         }
     }
 
-    private static Advancement createAdvancementDimensionParent(String tree, String id, Item iconBlock, Item backgroundBlock, ResourceKey<Level> levelResourceKey, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+    private static AdvancementHolder createAdvancementDimensionParent(String tree, String id, Item iconBlock, Item backgroundBlock, ResourceKey<Level> levelResourceKey, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
         String newId = new String(tree + "/" + id);
 
-        Advancement newAdvancement = Advancement.Builder.advancement()
+        AdvancementHolder newAdvancement = Advancement.Builder.advancement()
                 .display(rootDisplay(
                         iconBlock,
                         advancementLoc(tree, id, "name"),
                         advancementLoc(tree, id, "desc"),
-                        LostWorldsApi.modLoc("textures/block/" + Item.getId(backgroundBlock) + ".png")
+                        Optional.of(LostWorldsApi.modLoc("textures/block/" + Item.getId(backgroundBlock) + ".png"))
                 ))
                 .addCriterion("has_entered_dimension_" + levelResourceKey.location().getPath(), ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(levelResourceKey))
                 .save(saver, LostWorldsApi.modLoc(newId), existingFileHelper);
 
         return newAdvancement;
     }
-    private static Advancement createAdvancementCraftingParent(String tree, String id, Item iconBlock, Item backgroundBlock, Item goal, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+    private static AdvancementHolder createAdvancementCraftingParent(String tree, String id, Item iconBlock, Item backgroundBlock, Item goal, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
         String newId = new String(tree + "/" + id);
 
-        Advancement newAdvancement = Advancement.Builder.advancement()
+        AdvancementHolder newAdvancement = Advancement.Builder.advancement()
                 .display(rootDisplay(
                         iconBlock,
                         advancementLoc(tree, id, "name"),
                         advancementLoc(tree, id, "desc"),
-                        LostWorldsApi.modLoc("textures/block/" + Item.getId(backgroundBlock) + ".png")
+                        Optional.of(LostWorldsApi.modLoc("textures/block/" + Item.getId(backgroundBlock) + ".png"))
                 ))
                 .addCriterion("has_crafted_" + Item.getId(goal), InventoryChangeTrigger.TriggerInstance.hasItems(goal))
                 .save(saver, LostWorldsApi.modLoc(newId), existingFileHelper);
@@ -166,10 +164,10 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         return newAdvancement;
     }
 
-    private static Advancement createAdvancementCrafting(String tree, String id, Advancement parent, Item iconBlock, Item goal, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+    private static AdvancementHolder createAdvancementCrafting(String tree, String id, AdvancementHolder parent, Item iconBlock, Item goal, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
         String newId = new String(tree + "/" + id);
 
-        Advancement newAdvancement = Advancement.Builder.advancement()
+        AdvancementHolder newAdvancement = Advancement.Builder.advancement()
                 .display(rootDisplay(
                         iconBlock,
                         advancementLoc(tree, id, "name"),
@@ -183,13 +181,13 @@ public class ModAdvancementsProvider extends ForgeAdvancementProvider {
         return newAdvancement;
     }
 
-    protected static DisplayInfo rootDisplay(ItemLike icon, String titleKey, String descKey, ResourceLocation background) {
+    protected static DisplayInfo rootDisplay(ItemLike icon, String titleKey, String descKey, Optional<ResourceLocation> background) {
         return new DisplayInfo(
                 new ItemStack(icon.asItem()),
                 Component.translatable(titleKey),
                 Component.translatable(descKey),
                 background,
-                FrameType.TASK,
+                AdvancementType.TASK,
                 false,
                 false,
                 false

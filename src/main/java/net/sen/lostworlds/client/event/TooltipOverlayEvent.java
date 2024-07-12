@@ -2,12 +2,11 @@ package net.sen.lostworlds.client.event;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.Cancelable;
-import net.minecraftforge.eventbus.api.Event;
+import net.neoforged.bus.api.Event;
+import net.neoforged.bus.api.ICancellableEvent;
 import net.sen.lostworlds.magic.MagicProperties;
 
-@Cancelable
-public class TooltipOverlayEvent extends Event {
+public class TooltipOverlayEvent extends Event implements ICancellableEvent {
     /**
      * If cancelled, will stop all rendering from happening.
      */
@@ -48,8 +47,7 @@ public class TooltipOverlayEvent extends Event {
     public final MagicProperties magicProperties;
 
     @Override
-    public boolean isCancelable()
-    {
+    public boolean isCanceled() {
         return true;
     }
 }

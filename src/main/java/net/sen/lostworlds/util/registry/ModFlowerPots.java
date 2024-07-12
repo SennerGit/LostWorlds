@@ -2,10 +2,9 @@ package net.sen.lostworlds.util.registry;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.sen.lostworlds.block.AlfheimrBlocks;
-import net.sen.lostworlds.block.AlfheimrBlocks;
-import net.sen.lostworlds.block.UnderworldBlocks;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.sen.lostworlds.registry.blocks.AlfheimrBlocks;
+import net.sen.lostworlds.registry.blocks.UnderworldBlocks;
 
 public class ModFlowerPots {
     public static void setup(final FMLCommonSetupEvent event) {

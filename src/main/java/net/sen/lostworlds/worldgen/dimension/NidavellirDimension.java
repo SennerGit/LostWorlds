@@ -3,7 +3,7 @@ package net.sen.lostworlds.worldgen.dimension;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.biome.Biome;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.BlendedNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.sen.lostworlds.block.NidavellirBlocks;
+import net.sen.lostworlds.registry.blocks.NidavellirBlocks;
 import net.sen.lostworlds.worldgen.biome.util.layer.NidavellirBiomes;
 import net.sen.lostworlds.worldgen.dimension.surfacerules.NidavellirSurfaceRules;
 
@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.OptionalLong;
 
 public class NidavellirDimension {
-    public static void nidavellirDimensionType(BootstapContext<DimensionType> context) {
+    public static void nidavellirDimensionType(BootstrapContext<DimensionType> context) {
         context.register(ModDimensions.NIDAVELLIR_DIM_TYPE, new DimensionType(
                 OptionalLong.of(12000), // fixedTime
                 false, // hasSkylight
@@ -43,7 +43,7 @@ public class NidavellirDimension {
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
     }
 
-    public static void nidavellirDimensionLevelStem(BootstapContext<LevelStem> context) {
+    public static void nidavellirDimensionLevelStem(BootstrapContext<LevelStem> context) {
         HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
@@ -64,7 +64,7 @@ public class NidavellirDimension {
         context.register(ModDimensions.NIDAVELLIR_KEY, stem);
     }
 
-    public static NoiseGeneratorSettings nidavellirDimensionNoise(BootstapContext<NoiseGeneratorSettings> context) {
+    public static NoiseGeneratorSettings nidavellirDimensionNoise(BootstrapContext<NoiseGeneratorSettings> context) {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
         HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
 

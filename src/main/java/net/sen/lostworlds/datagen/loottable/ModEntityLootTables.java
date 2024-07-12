@@ -1,6 +1,10 @@
 package net.sen.lostworlds.datagen.loottable;
 
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.EntityLootSubProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
@@ -9,19 +13,16 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.entity.*;
-import net.sen.lostworlds.item.AtlantisItems;
-import net.sen.lostworlds.item.ModItems;
+import net.sen.lostworlds.registry.items.AtlantisItems;
 
 import java.util.stream.Stream;
 
 public class ModEntityLootTables extends EntityLootSubProvider {
-    protected ModEntityLootTables() {
-        super(FeatureFlags.REGISTRY.allFlags());
+    protected ModEntityLootTables(HolderLookup.Provider pRegistries) {
+        super(FeatureFlags.REGISTRY.allFlags(), pRegistries);
     }
-
 
     @Override
     public void generate() {
@@ -118,7 +119,8 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
 
         this.add(AtlantisEntities.TUNA.get(),
-                new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_small"),
+                ResourceKey.create(Registries.LOOT_TABLE,
+                        LostWorldsApi.modLoc("entities/tuna_small")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(2))
@@ -127,7 +129,8 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
 
         this.add(AtlantisEntities.TUNA.get(),
-                new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_mid"),
+                ResourceKey.create(Registries.LOOT_TABLE,
+                        LostWorldsApi.modLoc("entities/tuna_mid")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(3))
@@ -136,7 +139,8 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
 
         this.add(AtlantisEntities.TUNA.get(),
-                new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_large"),
+                ResourceKey.create(Registries.LOOT_TABLE,
+                        LostWorldsApi.modLoc("entities/tuna_large")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(4))
@@ -145,7 +149,8 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         );
 
         this.add(AtlantisEntities.TUNA.get(),
-                new ResourceLocation(LostWorldsApi.MODID, "entities/tuna_giant"),
+                ResourceKey.create(Registries.LOOT_TABLE,
+                        LostWorldsApi.modLoc("entities/tuna_giant")),
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(5))
@@ -247,7 +252,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
     @Override
     protected Stream<EntityType<?>> getKnownEntityTypes() {
-        return ForgeRegistries.ENTITY_TYPES.getValues().stream()
-                .filter(entities -> ForgeRegistries.ENTITY_TYPES.getKey(entities)
+        return BuiltInRegistries.ENTITY_TYPE.stream()
+                .filter(entities -> BuiltInRegistries.ENTITY_TYPE.getKey(entities)
                         .getNamespace().equals(LostWorldsApi.MODID));    }
 }

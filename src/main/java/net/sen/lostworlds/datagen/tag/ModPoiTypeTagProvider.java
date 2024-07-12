@@ -5,8 +5,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.PoiTypeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.PoiTypeTags;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.villager.ModVillagers;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,7 +19,7 @@ public class ModPoiTypeTagProvider extends PoiTypeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        tag(PoiTypeTags.ACQUIRABLE_JOB_SITE)
-                .addOptional(new ResourceLocation(LostWorldsApi.MODID, ModVillagers.ALLOY_POI.getId().getPath()));
+//        tag(PoiTypeTags.ACQUIRABLE_JOB_SITE)
+//                .addOptional(LostWorldsApi.modLoc(ModVillagers.ALLOY_POI.getId().getPath()));
     }
 }

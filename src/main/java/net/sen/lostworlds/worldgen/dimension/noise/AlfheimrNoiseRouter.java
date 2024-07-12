@@ -3,11 +3,11 @@ package net.sen.lostworlds.worldgen.dimension.noise;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.worldgen.dimension.AlfheimrDimension;
 import net.sen.lostworlds.worldgen.dimension.terrainprovider.AlfheimrTerrainProvider;
 
@@ -27,7 +27,7 @@ public final class AlfheimrNoiseRouter {
     public static final ResourceKey<DensityFunction> JAGGEDNESS = createKey("jaggedness");
     public static final ResourceKey<DensityFunction> SLOPED_CHEESE = createKey("sloped_cheese");
 
-    public static void alfheimrDensityFunction(BootstapContext<DensityFunction> context) {
+    public static void alfheimrDensityFunction(BootstrapContext<DensityFunction> context) {
         final HolderGetter<DensityFunction> densityFunctions = context.lookup(Registries.DENSITY_FUNCTION);
 
         final DensityFunctions.Spline.Coordinate continents = new DensityFunctions.Spline.Coordinate(densityFunctions.getOrThrow(NoiseRouterData.CONTINENTS));

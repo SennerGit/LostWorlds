@@ -8,8 +8,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ToolAction;
-import net.sen.lostworlds.block.UnderworldBlocks;
+import net.neoforged.neoforge.common.ToolAction;
+import net.sen.lostworlds.registry.blocks.UnderworldBlocks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;

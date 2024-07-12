@@ -20,33 +20,38 @@ public class RhinoAttackGoal extends MeleeAttackGoal {
     }
 
     @Override
-    protected void checkAndPerformAttack(LivingEntity pEnemy, double pDistToEnemySqr) {
-        if (isEnemyWithInAttackDistance(pEnemy, pDistToEnemySqr)) {
-            shouldCountTillNextAttack = true;
-            
-            if (isTimeToStartAttaclAnimation()) {
-                entity.setAttacking(true);
-            }
-
-            if (isTimeToAttack()) {
-                this.mob.getLookControl().setLookAt(pEnemy.getX(), pEnemy.getY(), pEnemy.getZ());
-                performAttack(pEnemy);
-            }
-        } else {
-            resetAttackCooldown();
-            shouldCountTillNextAttack = false;
-            entity.setAttacking(false);
-            entity.attackAnimationTimeout = 0;
-        }
+    protected void checkAndPerformAttack(LivingEntity pTarget) {
+        super.checkAndPerformAttack(pTarget);
     }
+
+//    @Override
+//    protected void checkAndPerformAttack(LivingEntity pEnemy, double pDistToEnemySqr) {
+//        if (isEnemyWithInAttackDistance(pEnemy, pDistToEnemySqr)) {
+//            shouldCountTillNextAttack = true;
+//
+//            if (isTimeToStartAttaclAnimation()) {
+//                entity.setAttacking(true);
+//            }
+//
+//            if (isTimeToAttack()) {
+//                this.mob.getLookControl().setLookAt(pEnemy.getX(), pEnemy.getY(), pEnemy.getZ());
+//                performAttack(pEnemy);
+//            }
+//        } else {
+//            resetAttackCooldown();
+//            shouldCountTillNextAttack = false;
+//            entity.setAttacking(false);
+//            entity.attackAnimationTimeout = 0;
+//        }
+//    }
 
     private boolean isTimeToStartAttaclAnimation() {
         return this.ticksUntilNextAttack <= attackDelay;
     }
 
-    private boolean isEnemyWithInAttackDistance(LivingEntity pEnemy, double pDistToEnemySqr) {
-        return pDistToEnemySqr <= this.getAttackReachSqr(pEnemy);
-    }
+//    private boolean isEnemyWithInAttackDistance(LivingEntity pEnemy, double pDistToEnemySqr) {
+//        return pDistToEnemySqr <= this.getAttackReachSqr(pEnemy);
+//    }
 
     protected void resetAttackCooldown() {
         this.ticksUntilNextAttack = this.adjustedTickDelay(attackDelay * 2);

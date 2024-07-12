@@ -7,7 +7,7 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.entity.mob.ClownfishEntity;
 
 public class ClownfishModel<T extends ClownfishEntity> extends HierarchicalModel<T> {
@@ -63,8 +63,8 @@ public class ClownfishModel<T extends ClownfishEntity> extends HierarchicalModel
 //	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		clownfish.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int colour) {
+		clownfish.render(poseStack, vertexConsumer, packedLight, packedOverlay, colour);
 	}
 
 	@Override

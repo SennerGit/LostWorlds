@@ -44,7 +44,7 @@ public class SirenEntity extends WaterMonster {
 
     public SirenEntity(EntityType<? extends WaterMonster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setMaxUpStep(1f);
+        //this.setMaxUpStep(1f);
         this.moveControl = new AquaticMoveController(this, 1f);
     }
 
@@ -165,10 +165,10 @@ public class SirenEntity extends WaterMonster {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(ATTACKING, false);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     /*
@@ -211,12 +211,13 @@ public class SirenEntity extends WaterMonster {
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
-    @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @org.jetbrains.annotations.Nullable SpawnGroupData pSpawnData, @org.jetbrains.annotations.Nullable CompoundTag pDataTag) {
-        SirenVariant variant = Util.getRandom(SirenVariant.values(), this.random);
-        this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
-    }
+//@Nullable
+//    @Override
+//    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @org.jetbrains.annotations.Nullable SpawnGroupData pSpawnData, @org.jetbrains.annotations.Nullable CompoundTag pDataTag) {
+//        SirenVariant variant = Util.getRandom(SirenVariant.values(), this.random);
+//        this.setVariant(variant);
+//        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
+//    }
 
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {

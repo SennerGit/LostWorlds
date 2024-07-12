@@ -1,7 +1,7 @@
 package net.sen.lostworlds.util;
 
 import com.google.common.base.Preconditions;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -9,7 +9,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +44,7 @@ public class ModTags {
 //        }
 
         private static TagKey<Biome> tag(String name) {
-            return BiomeTags.create(new ResourceLocation(LostWorldsApi.MODID, name).toString());
+            return TagKey.create(Registries.BIOME, LostWorldsApi.modLoc(name));
         }
 
     }
@@ -72,7 +72,7 @@ public class ModTags {
         public static final TagKey<Item> SPAWN_EGGS = tag("spawn_eggs");
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(LostWorldsApi.modLoc(name));
+            return TagKey.create(Registries.ITEM, LostWorldsApi.modLoc(name));
         }
     }
 
@@ -126,11 +126,11 @@ public class ModTags {
         public static final TagKey<Item> MUSHROOMS = tag("mushrooms");
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(LostWorldsApi.modLoc(name));
+            return TagKey.create(Registries.ITEM, LostWorldsApi.modLoc(name));
         }
 
         private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(LostWorldsApi.forgeLoc(name));
+            return TagKey.create(Registries.BLOCK, LostWorldsApi.neoforgeLoc(name));
         }
     }
 
@@ -215,13 +215,14 @@ public class ModTags {
 
         public static final TagKey<Block> ALFHEIMR_PORTAL_BLACKLIST = tag("alfheimr_portal_blacklist");
         public static final TagKey<Block> ALFHEIMR_PORTAL_WHITELIST = tag("alfheimr_portal_whitelist");
+        public static final TagKey<Block> WORLDGEN_REPLACEABLES = tag("worldgen_replaceables");
 
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(LostWorldsApi.modLoc(name));
+            return TagKey.create(Registries.BLOCK, LostWorldsApi.modLoc(name));
         }
 
         private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(LostWorldsApi.forgeLoc(name));
+            return TagKey.create(Registries.BLOCK, LostWorldsApi.neoforgeLoc(name));
         }
 
         private static TagKey<Block> mcTag(String name) {

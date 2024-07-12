@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
+import net.sen.lostworlds.api.LostWorldsApi;
 
 import java.util.Map;
 
@@ -63,7 +64,7 @@ public final class ElvesType {
     }
 
     private static VillagerType register(String pKey) {
-        return Registry.register(BuiltInRegistries.VILLAGER_TYPE, new ResourceLocation(pKey), new VillagerType(pKey));
+        return Registry.register(BuiltInRegistries.VILLAGER_TYPE, LostWorldsApi.mcLoc(pKey), new VillagerType(pKey));
     }
 
     public static VillagerType byBiome(Holder<Biome> pBiome) {

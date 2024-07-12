@@ -30,10 +30,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.ForgeEventFactory;
+
 import net.sen.lostworlds.entity.ModEntities;
 import net.sen.lostworlds.entity.ai.AquaticMoveController;
 import net.sen.lostworlds.entity.ai.RhinoAttackGoal;
@@ -53,8 +53,8 @@ public class GiantSquidEntity extends WaterAnimal {
 
     public GiantSquidEntity(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setMaxUpStep(1f);
-        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
+        //this.setMaxUpStep(1f);
+        this.setPathfindingMalus(PathType.WATER, 0.0F);
         this.lookControl = new SmoothSwimmingLookControl(this, 4);
         this.moveControl = new AquaticMoveController(this, 1.2f, 5);
     }
@@ -150,9 +150,9 @@ public class GiantSquidEntity extends WaterAnimal {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     /*
@@ -174,12 +174,13 @@ public class GiantSquidEntity extends WaterAnimal {
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
-    @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @org.jetbrains.annotations.Nullable SpawnGroupData pSpawnData, @org.jetbrains.annotations.Nullable CompoundTag pDataTag) {
-        GiantSquidVariant variant = Util.getRandom(GiantSquidVariant.values(), this.random);
-        this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
-    }
+//@Nullable
+//    @Override
+//    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @org.jetbrains.annotations.Nullable SpawnGroupData pSpawnData, @org.jetbrains.annotations.Nullable CompoundTag pDataTag) {
+//        GiantSquidVariant variant = Util.getRandom(GiantSquidVariant.values(), this.random);
+//        this.setVariant(variant);
+//        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
+//    }
 
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {

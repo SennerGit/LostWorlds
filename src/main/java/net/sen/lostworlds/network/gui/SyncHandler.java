@@ -1,14 +1,15 @@
 package net.sen.lostworlds.network.gui;
 
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.network.registration.NetworkRegistry;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.network.MessageMagicTypeSync;
 import net.sen.lostworlds.magic.MagicElementTypeEnum;
 
@@ -18,18 +19,18 @@ import java.util.UUID;
 
 public class SyncHandler {
     private static final String PROTOCOL_VERSION = Integer.toString(1);
-    public static final SimpleChannel CHANNEL = NetworkRegistry.ChannelBuilder
-            .named(new ResourceLocation(LostWorldsApi.MODID, "sync"))
-            .clientAcceptedVersions(s -> true)
-            .serverAcceptedVersions(s -> true)
-            .networkProtocolVersion(() -> PROTOCOL_VERSION)
-            .simpleChannel();
+//    public static final CustomPacketPayload CHANNEL = NetworkRegistry.isModdedPayload().ChannelBuilder
+//            .named(new ResourceLocation(LostWorldsApi.MODID, "sync"))
+//            .clientAcceptedVersions(s -> true)
+//            .serverAcceptedVersions(s -> true)
+//            .networkProtocolVersion(() -> PROTOCOL_VERSION)
+//            .simpleChannel();
 
     public static void init()
     {
-        CHANNEL.registerMessage(1, MessageMagicTypeSync.class, MessageMagicTypeSync::encode, MessageMagicTypeSync::decode, MessageMagicTypeSync::handle);
+//        CHANNEL.registerMessage(1, MessageMagicTypeSync.class, MessageMagicTypeSync::encode, MessageMagicTypeSync::decode, MessageMagicTypeSync::handle);
 
-        MinecraftForge.EVENT_BUS.register(new SyncHandler());
+        NeoForge.EVENT_BUS.register(new SyncHandler());
     }
 
     /*
@@ -38,7 +39,7 @@ public class SyncHandler {
     private static final Map<UUID, MagicElementTypeEnum[]> lastMagicElementEnum = new HashMap<>();
 
     @SubscribeEvent
-    public void onLivingTickEvent(LivingTickEvent event)
+    public void onLivingTickEvent(EntityTickEvent event)
     {
         if (!(event.getEntity() instanceof ServerPlayer))
             return;

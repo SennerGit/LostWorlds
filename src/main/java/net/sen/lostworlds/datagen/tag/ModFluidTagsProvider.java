@@ -4,8 +4,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.tags.FluidTags;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.fluid.ModFluids;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,7 +19,7 @@ public class ModFluidTagsProvider extends FluidTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(FluidTags.WATER)
-                .add(ModFluids.SOURCE_STYX_WATER.get())
-                .add(ModFluids.FLOWING_STYX_WATER.get());
+                .add(ModFluids.STYX_SOURCE.get())
+                .add(ModFluids.STYX_FLOWING.get());
     }
 }

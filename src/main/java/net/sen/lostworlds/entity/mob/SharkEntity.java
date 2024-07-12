@@ -11,7 +11,7 @@ import net.sen.lostworlds.entity.ai.AquaticMoveController;
 import net.sen.lostworlds.entity.ai.EntityAINearestTarget3D;
 import net.sen.lostworlds.entity.ai.SemiAquaticPathNavigator;
 import net.sen.lostworlds.entity.variant.SharkVariant;
-import net.sen.lostworlds.item.AtlantisItems;
+import net.sen.lostworlds.registry.items.AtlantisItems;
 import net.sen.lostworlds.util.tools.MinecraftBlockPos;
 import net.sen.lostworlds.util.tools.MinecraftMaths;
 
@@ -39,7 +39,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.sen.lostworlds.item.ModItems;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -185,10 +184,10 @@ public class SharkEntity extends WaterAnimal {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(ATTACKING, false);
+        pBuilder.define(DATA_ID_TYPE_VARIANT, 0);
     }
 
     /*
@@ -210,11 +209,12 @@ public class SharkEntity extends WaterAnimal {
         this.entityData.set(DATA_ID_TYPE_VARIANT, pTypeVariant);
     }
 
+    @Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @org.jetbrains.annotations.Nullable SpawnGroupData pSpawnData, @org.jetbrains.annotations.Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         SharkVariant variant = Util.getRandom(SharkVariant.values(), this.random);
         this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override

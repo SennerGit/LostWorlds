@@ -2,10 +2,12 @@ package net.sen.lostworlds.entity.mob;
 
 import com.google.common.collect.Maps;
 import net.minecraft.Util;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -18,8 +20,11 @@ import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.phys.Vec3;
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.entity.custom.AbstractSchoolingBigFish;
 import net.sen.lostworlds.entity.variant.TunaSizeVariant;
 import net.sen.lostworlds.entity.variant.TunaTextureVariant;
@@ -28,18 +33,38 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 public class TunaEntity extends AbstractSchoolingBigFish {
-    private static final Map<TunaSizeVariant, ResourceLocation> SIZE_BY_VARIANT =
+    private static final Map<TunaSizeVariant, ResourceKey<LootTable>> SIZE_BY_VARIANT =
             Util.make(Maps.newEnumMap(TunaSizeVariant.class), map -> {
                 map.put(TunaSizeVariant.TINY,
-                        LostWorldsApi.modLoc("entities/tuna"));
+                        ResourceKey.create(
+                                Registries.LOOT_TABLE,
+                                LostWorldsApi.modLoc("entities/tuna")
+                        )
+                );
                 map.put(TunaSizeVariant.SMALL,
-                        LostWorldsApi.modLoc("entities/tuna_small"));
+                        ResourceKey.create(
+                                Registries.LOOT_TABLE,
+                                LostWorldsApi.modLoc("entities/tuna_small")
+                        )
+                );
                 map.put(TunaSizeVariant.MID,
-                        LostWorldsApi.modLoc("entities/tuna_mid"));
+                        ResourceKey.create(
+                                Registries.LOOT_TABLE,
+                                LostWorldsApi.modLoc("entities/tuna_mid")
+                        )
+                );
                 map.put(TunaSizeVariant.LARGE,
-                        LostWorldsApi.modLoc("entities/tuna_large"));
+                        ResourceKey.create(
+                                Registries.LOOT_TABLE,
+                                LostWorldsApi.modLoc("entities/tuna_large")
+                        )
+                );
                 map.put(TunaSizeVariant.GIANT,
-                        LostWorldsApi.modLoc("entities/tuna_giant"));
+                        ResourceKey.create(
+                                Registries.LOOT_TABLE,
+                                LostWorldsApi.modLoc("entities/tuna_giant")
+                        )
+                );
             });
 
     private static final EntityDataAccessor<Integer> DATA_ID_TEXTURE_VARIANT =
@@ -156,10 +181,10 @@ public class TunaEntity extends AbstractSchoolingBigFish {
      * Variants
      */
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(DATA_ID_TEXTURE_VARIANT, 0);
-        this.entityData.define(DATA_ID_SIZE_VARIANT, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(DATA_ID_TEXTURE_VARIANT, 0);
+        pBuilder.define(DATA_ID_SIZE_VARIANT, 0);
     }
 
     public TunaTextureVariant getTunaTextureVariant() {
@@ -195,14 +220,16 @@ public class TunaEntity extends AbstractSchoolingBigFish {
         this.entityData.set(DATA_ID_SIZE_VARIANT, pTypeVariant);
     }
 
+    @org.jetbrains.annotations.Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @org.jetbrains.annotations.Nullable SpawnGroupData pSpawnData, @org.jetbrains.annotations.Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @org.jetbrains.annotations.Nullable SpawnGroupData pSpawnData) {
         TunaTextureVariant textureVariant = Util.getRandom(TunaTextureVariant.values(), this.random);
         TunaSizeVariant sizeVariant = Util.getRandom(TunaSizeVariant.values(), this.random);
 
         this.setTunaTextureVariant(textureVariant);
         this.setTunaSizeVariant(sizeVariant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override
@@ -219,14 +246,20 @@ public class TunaEntity extends AbstractSchoolingBigFish {
         pCompound.putInt("size_variant", this.getSizeVariant());
     }
 
+//    @Override
+//    protected ResourceLocation getDefaultLootTable() {
+//        return SIZE_BY_VARIANT.get(getTunaSizeVariant());
+//    }
+
+
     @Override
-    protected ResourceLocation getDefaultLootTable() {
+    protected ResourceKey<LootTable> getDefaultLootTable() {
         return SIZE_BY_VARIANT.get(getTunaSizeVariant());
     }
 
     /*
-        GOALS
-         */
+            GOALS
+             */
     static class FishSwimGoal extends RandomSwimmingGoal {
         private final TunaEntity fish;
 

@@ -7,7 +7,7 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.Pools;
 import net.minecraft.data.worldgen.ProcessorLists;
 import net.minecraft.resources.ResourceKey;
@@ -26,8 +26,8 @@ import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.*;
-import net.minecraftforge.registries.DeferredRegister;
-import net.sen.lostworlds.LostWorldsApi;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 
@@ -60,7 +60,7 @@ public class ModStructureGenerator {
     public static final ResourceKey<StructureTemplatePool> DWARVEN_FORTRESS_POOL_ENTRENCE = createStructureTemplatePoolKey("dwarven_fortress/dwarven_fortress_entrence");
 
     @SuppressWarnings("deprecation")
-    public static void bootstrapStructures(BootstapContext<Structure> context) {
+    public static void bootstrapStructures(BootstrapContext<Structure> context) {
         Map<MobCategory, StructureSpawnOverride> mobSpawnBox = Arrays.stream(MobCategory.values())
                 .collect(Collectors.toMap((category) -> category, (category) -> new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.STRUCTURE, WeightedRandomList.create())));
 
@@ -132,7 +132,7 @@ public class ModStructureGenerator {
     }
 
     @SuppressWarnings("deprecation")
-    public static void bootstrapStructureSets(BootstapContext<StructureSet> context) {
+    public static void bootstrapStructureSets(BootstrapContext<StructureSet> context) {
         HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
         context.register(
@@ -205,7 +205,7 @@ public class ModStructureGenerator {
     }
 
     @SuppressWarnings("deprecation")
-    public static void bootstrapStructureTemplatePools(BootstapContext<StructureTemplatePool> context) {
+    public static void bootstrapStructureTemplatePools(BootstrapContext<StructureTemplatePool> context) {
         Holder<StructureTemplatePool> emptyPool = context.lookup(Registries.TEMPLATE_POOL).getOrThrow(Pools.EMPTY);
         HolderGetter<StructureProcessorList> processors = context.lookup(Registries.PROCESSOR_LIST);
 
@@ -216,7 +216,7 @@ public class ModStructureGenerator {
     }
 
     @SuppressWarnings("deprecation")
-    public static void bootstrapProcessors(BootstapContext<StructureProcessorList> context) {
+    public static void bootstrapProcessors(BootstrapContext<StructureProcessorList> context) {
         context.register(
                 ELVEN_VILLAGE_ENCHANTED_FOREST_STREETS_PROCESSOR,
                 new StructureProcessorList(
@@ -235,7 +235,7 @@ public class ModStructureGenerator {
         );
     }
 
-    private static void GravePool(BootstapContext<StructureTemplatePool> context, Holder<StructureTemplatePool> emptyPool, HolderGetter<StructureProcessorList> processors) {
+    private static void GravePool(BootstrapContext<StructureTemplatePool> context, Holder<StructureTemplatePool> emptyPool, HolderGetter<StructureProcessorList> processors) {
         context.register(
                 GRAVE_POOL,
                 new StructureTemplatePool(
@@ -253,7 +253,7 @@ public class ModStructureGenerator {
                 )
         );
     }
-    private static void StonehengePool(BootstapContext<StructureTemplatePool> context, Holder<StructureTemplatePool> emptyPool, HolderGetter<StructureProcessorList> processors) {
+    private static void StonehengePool(BootstrapContext<StructureTemplatePool> context, Holder<StructureTemplatePool> emptyPool, HolderGetter<StructureProcessorList> processors) {
         context.register(
                 STONEHENGE_POOL,
                 new StructureTemplatePool(
@@ -271,7 +271,7 @@ public class ModStructureGenerator {
                 )
         );
     }
-    private static void EvlenVillagePool(BootstapContext<StructureTemplatePool> context, Holder<StructureTemplatePool> emptyPool, HolderGetter<StructureProcessorList> processors) {
+    private static void EvlenVillagePool(BootstrapContext<StructureTemplatePool> context, Holder<StructureTemplatePool> emptyPool, HolderGetter<StructureProcessorList> processors) {
         context.register(
                 ELVEN_VILLAGE_ENCHANTED_FOREST_POOL_TOWN_CENTERS,
                 new StructureTemplatePool(
@@ -428,7 +428,7 @@ public class ModStructureGenerator {
                 )
         );
     }
-    private static void DwarvenFortressPool(BootstapContext<StructureTemplatePool> context, Holder<StructureTemplatePool> emptyPool, HolderGetter<StructureProcessorList> processors) {
+    private static void DwarvenFortressPool(BootstrapContext<StructureTemplatePool> context, Holder<StructureTemplatePool> emptyPool, HolderGetter<StructureProcessorList> processors) {
         context.register(
                 DWARVEN_FORTRESS_POOL_ENTRENCE,
                 new StructureTemplatePool(

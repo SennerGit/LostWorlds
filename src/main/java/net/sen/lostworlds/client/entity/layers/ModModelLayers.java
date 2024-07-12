@@ -1,7 +1,7 @@
 package net.sen.lostworlds.client.entity.layers;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.sen.lostworlds.LostWorldsApi;
+import net.sen.lostworlds.api.LostWorldsApi;
 import net.sen.lostworlds.entity.*;
 
 public class ModModelLayers {

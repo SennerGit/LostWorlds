@@ -10,7 +10,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
@@ -193,7 +193,7 @@ public class AlfheimrBiomeBuilder {
             {null, null, null, null, null}
     };
 
-    public static void bootstrap(final BootstapContext<MultiNoiseBiomeSourceParameterList> context) {
+    public static void bootstrap(final BootstrapContext<MultiNoiseBiomeSourceParameterList> context) {
         context.register(PARAMETER_LIST, new MultiNoiseBiomeSourceParameterList(PRESET, context.lookup(Registries.BIOME)));
     }
 

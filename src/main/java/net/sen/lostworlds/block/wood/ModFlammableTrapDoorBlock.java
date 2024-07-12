@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class ModFlammableTrapDoorBlock extends TrapDoorBlock {
-    public ModFlammableTrapDoorBlock(Properties pProperties, BlockSetType pType) {
-        super(pProperties, pType);
+    public ModFlammableTrapDoorBlock(BlockSetType pType, Properties pProperties) {
+        super(pType, pProperties);
     }
 
     @Override
