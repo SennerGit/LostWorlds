@@ -1,0 +1,14 @@
+{
+  "name": "lostworlds.entry.book_on_dragons_book.greater_dragons.ender_dragon.name",
+  "icon": "minecraft:dragon_head",
+  "category": "lostworlds:greater_dragons",
+  "priority": true,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:ender_dragon",
+      "name": "lostworlds.page.book_on_dragons_book.greater_dragons.ender_dragon.0.title",
+      "text": "lostworlds.page.book_on_dragons_book.greater_dragons.ender_dragon.0.text"
+    }
+  ]
+}

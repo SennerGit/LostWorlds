@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "lostworlds:block/tartarus_stone_cobblestone",
+    "side": "lostworlds:block/tartarus_stone_cobblestone",
+    "top": "lostworlds:block/tartarus_stone_cobblestone"
+  }
+}

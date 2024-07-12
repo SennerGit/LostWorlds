@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "lostworlds:block/ebony_kingswood_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "lostworlds:block/ebony_kingswood_wood"
+    },
+    "axis=z": {
+      "model": "lostworlds:block/ebony_kingswood_wood_horizontal",
+      "x": 90
+    }
+  }
+}

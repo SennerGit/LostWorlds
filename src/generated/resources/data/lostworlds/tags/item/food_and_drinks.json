@@ -1,0 +1,27 @@
+{
+  "values": [
+    "lostworlds:point_mushroom_block",
+    "lostworlds:witches_mushroom_block",
+    "lostworlds:royal_blue_mushroom_block",
+    "lostworlds:short_top_mushroom_block",
+    "lostworlds:spectral_mushroom_block",
+    "lostworlds:shade_mushroom_block",
+    "lostworlds:cap_mushroom_block",
+    "lostworlds:raw_tuna",
+    "lostworlds:cooked_tuna",
+    "lostworlds:clownfish",
+    "lostworlds:cooked_clownfish",
+    "lostworlds:tang_fish",
+    "lostworlds:cooked_tang_fish",
+    "lostworlds:tomato",
+    "lostworlds:wild_onion",
+    "lostworlds:onion_stage_1",
+    "lostworlds:onion_stage_2",
+    "lostworlds:onion_stage_3",
+    "lostworlds:onion",
+    "lostworlds:dragon_fruit",
+    "lostworlds:chilli",
+    "lostworlds:pomegranate",
+    "lostworlds:olive"
+  ]
+}

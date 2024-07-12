@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "lostworlds:block/ebony_kingswood_planks"
+  }
+}

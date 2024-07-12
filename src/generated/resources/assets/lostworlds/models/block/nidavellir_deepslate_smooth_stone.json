@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "lostworlds:block/nidavellir_deepslate_smooth_stone"
+  }
+}

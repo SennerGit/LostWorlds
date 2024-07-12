@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "frequency": 0.0,
+    "salt": 126625065,
+    "separation": 6,
+    "spacing": 20
+  },
+  "structures": [
+    {
+      "structure": "lostworlds:grave",
+      "weight": 1
+    }
+  ]
+}

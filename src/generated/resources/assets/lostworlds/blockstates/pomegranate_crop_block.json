@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "lostworlds:block/pomegranate_stage0"
+    },
+    "age=1": {
+      "model": "lostworlds:block/pomegranate_stage1"
+    },
+    "age=2": {
+      "model": "lostworlds:block/pomegranate_stage2"
+    },
+    "age=3": {
+      "model": "lostworlds:block/pomegranate_stage3"
+    },
+    "age=4": {
+      "model": "lostworlds:block/pomegranate_stage4"
+    },
+    "age=5": {
+      "model": "lostworlds:block/pomegranate_stage5"
+    },
+    "age=6": {
+      "model": "lostworlds:block/pomegranate_stage6"
+    }
+  }
+}

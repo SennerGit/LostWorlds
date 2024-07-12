@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lostworlds:block/shade_mushroom_vine_block"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "values": [
+    "lostworlds:ivory_kingswood_log",
+    "lostworlds:ivory_kingswood_wood",
+    "lostworlds:stripped_ivory_kingswood_log",
+    "lostworlds:stripped_ivory_kingswood_wood",
+    "lostworlds:ivory_kingswood_leaves",
+    "lostworlds:ivory_kingswood_planks",
+    "lostworlds:ivory_kingswood_planks_slab",
+    "lostworlds:ivory_kingswood_planks_stairs",
+    "lostworlds:ivory_kingswood_planks_pressure_plate",
+    "lostworlds:ivory_kingswood_planks_door",
+    "lostworlds:ivory_kingswood_planks_trapdoor",
+    "lostworlds:ivory_kingswood_planks_fence",
+    "lostworlds:ivory_kingswood_planks_fence_gate",
+    "lostworlds:ivory_kingswood_planks_button"
+  ]
+}

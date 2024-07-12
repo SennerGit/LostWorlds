@@ -1,0 +1,108 @@
+{
+  "type": "lostworlds:underworld_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "lostworlds:underworld_asphodel_meadows",
+          "parameters": {
+            "continentalness": 0.4,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.0,
+            "offset": 0.0,
+            "temperature": 0.0,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "lostworlds:underworld_dominion_of_hades",
+          "parameters": {
+            "continentalness": 0.4,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.1,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "lostworlds:underworld_elysian_fields",
+          "parameters": {
+            "continentalness": 0.4,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.2,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "lostworlds:underworld_isles_of_the_blessed",
+          "parameters": {
+            "continentalness": 0.4,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.3,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "lostworlds:underworld_lands_of_dreams",
+          "parameters": {
+            "continentalness": 0.4,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.4,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "lostworlds:underworld_river_styx",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.0,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.5,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "lostworlds:underworld_stygan_marsh",
+          "parameters": {
+            "continentalness": 0.4,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.6,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "lostworlds:underworld_tartarus",
+          "parameters": {
+            "continentalness": 0.6,
+            "depth": 0.5,
+            "erosion": 0.6,
+            "humidity": 0.4,
+            "offset": 1.0,
+            "temperature": 0.7,
+            "weirdness": 0.4
+          }
+        }
+      ]
+    },
+    "settings": "lostworlds:underworld_noise_key"
+  }
+}

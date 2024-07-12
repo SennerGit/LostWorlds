@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lostworlds:block/nidavellir_soft_cobblestone_slab"
+    },
+    "type=double": {
+      "model": "lostworlds:block/nidavellir_soft_cobblestone"
+    },
+    "type=top": {
+      "model": "lostworlds:block/nidavellir_soft_cobblestone_slab_top"
+    }
+  }
+}

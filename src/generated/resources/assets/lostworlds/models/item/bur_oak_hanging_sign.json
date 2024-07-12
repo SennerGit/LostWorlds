@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lostworlds:item/bur_oak_hanging_sign"
+  }
+}

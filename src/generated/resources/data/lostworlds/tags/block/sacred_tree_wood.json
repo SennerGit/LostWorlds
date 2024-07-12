@@ -1,0 +1,18 @@
+{
+  "values": [
+    "lostworlds:sacred_tree_log",
+    "lostworlds:sacred_tree_wood",
+    "lostworlds:stripped_sacred_tree_log",
+    "lostworlds:stripped_sacred_tree_wood",
+    "lostworlds:sacred_tree_leaves",
+    "lostworlds:sacred_tree_planks",
+    "lostworlds:sacred_tree_planks_slab",
+    "lostworlds:sacred_tree_planks_stairs",
+    "lostworlds:sacred_tree_planks_pressure_plate",
+    "lostworlds:sacred_tree_planks_door",
+    "lostworlds:sacred_tree_planks_trapdoor",
+    "lostworlds:sacred_tree_planks_fence",
+    "lostworlds:sacred_tree_planks_fence_gate",
+    "lostworlds:sacred_tree_planks_button"
+  ]
+}

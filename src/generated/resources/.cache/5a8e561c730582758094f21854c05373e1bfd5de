@@ -1,0 +1,18 @@
+// 1.21	2024-07-12T12:01:39.1255378	Tags for minecraft:item mod id lostworlds
+ffabbc9d7159fc01205b1fd32a689df048409afc data/lostworlds/tags/item/alfheimr.json
+1450b7b9b1fb2fc7d12473b602b0de8f29799559 data/lostworlds/tags/item/atlantis.json
+d487ba167bdcad8b464927826bc0beb3211a5abe data/lostworlds/tags/item/building_blocks.json
+8b097b5e2efe4c3ad9fc8b82179e07890f203945 data/lostworlds/tags/item/colored_blocks.json
+b62b719c2baaa6c067c390430526a3ebe8a3c703 data/lostworlds/tags/item/combat.json
+3a3de3f53dc58f483aa0ae7ff67809dad7470588 data/lostworlds/tags/item/farming.json
+ccdfb892a1b1c692d25b3509f71a026f327dbec8 data/lostworlds/tags/item/food_and_drinks.json
+fa104ac2e2b15855b014fb4302933c8c7a876d98 data/lostworlds/tags/item/general.json
+2581e458fcd6148b9aafcc3d22d1e29cbae55462 data/lostworlds/tags/item/magic.json
+10cfe060029bb67b384bcfb8224d805e235107f5 data/lostworlds/tags/item/metals.json
+2b02983e71d39b83c08acdc55de1b6928274c41a data/lostworlds/tags/item/miscs.json
+5e31ac8ecdb2d0f99d9bcb04e72da40f2260e2c5 data/lostworlds/tags/item/natural_blocks.json
+fab62dfd4600dce6c8bfb240ba6da247e4bfba48 data/lostworlds/tags/item/nidavellir.json
+ae2e4e5832b51d2ada2d336ca255debf5be9df2f data/lostworlds/tags/item/skyopia.json
+0946c7e60b4fe1c9120f6b3068f1b5741915c1f2 data/lostworlds/tags/item/spawn_eggs.json
+f77e73cad7b8474fa43ed011f8c68132ece5a1ad data/lostworlds/tags/item/tools_and_utilities.json
+3d80a4c81119caaa503d6bf7ea35c5b719f96250 data/lostworlds/tags/item/underworld.json

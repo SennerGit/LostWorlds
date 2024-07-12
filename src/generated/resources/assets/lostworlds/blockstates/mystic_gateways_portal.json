@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "lostworlds:block/mystic_gateways_portal_ns"
+    },
+    "axis=z": {
+      "model": "lostworlds:block/mystic_gateways_portal_ew"
+    }
+  }
+}

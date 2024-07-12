@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "lostworlds:block/skyopia_portal_ns"
+    },
+    "axis=z": {
+      "model": "lostworlds:block/skyopia_portal_ew"
+    }
+  }
+}

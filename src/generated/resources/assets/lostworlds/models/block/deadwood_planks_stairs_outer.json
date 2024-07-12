@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "lostworlds:block/deadwood_planks",
+    "side": "lostworlds:block/deadwood_planks",
+    "top": "lostworlds:block/deadwood_planks"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/vine",
+  "render_type": "minecraft:vine",
+  "textures": {
+    "vine": "lostworlds:block/cap_mushroom_vine_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lostworlds:item/elder_wood_hanging_sign"
+  }
+}

@@ -1,0 +1,413 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "lostworlds:dark_bloom_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:dread_night_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:black_lotus_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:night_rose_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:aqua_rose_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:moon_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:catherine_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:tainted_rose_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:cinnamon_rose_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:butterfly_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:gaia_tulip_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:bearded_iris_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:cornflower_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:morning_glory_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:georgia_blue_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:blue_poppy_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:tulip_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:carnation_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:ladys_mantle_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:green_rose_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:clematis_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:blue_star_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:salvia_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:false_indigo_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:white_sage_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:silver_scheherazade_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:silver_spring_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:silver_shadows_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:green_ball_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:lime_dahlia_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:hydrangea_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:zinnia_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:butterfly_candy_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:cabaret_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:dianthus_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:titan_cranberry_vinca_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:orange_zinnia_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:begonia_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:crown_imperial_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:oriental_poppy_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:azalea_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:pink_delight_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:chrysanthemum_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:hibiscus_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:cardinal_flower_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:gerbera_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:red_tulip_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:freesia_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:gardenias_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:star_jasmine_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:white_waratah_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:flannel_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:bears_ears_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:bidens_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:blanket_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:bulbine_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:silver_brunia_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:gray_roses_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:moon_carrot_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:silver_baby_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:lavender_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:bellflower_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:lilac_flower"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "lostworlds:sweet_pea_flower"
+                },
+                "weight": 2
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 64,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

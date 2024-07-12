@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "lostworlds:block/ebony_kingswood_log",
+    "side": "lostworlds:block/ebony_kingswood_log"
+  }
+}

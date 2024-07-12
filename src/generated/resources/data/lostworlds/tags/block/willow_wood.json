@@ -1,0 +1,18 @@
+{
+  "values": [
+    "lostworlds:willow_log",
+    "lostworlds:willow_wood",
+    "lostworlds:stripped_willow_log",
+    "lostworlds:stripped_willow_wood",
+    "lostworlds:willow_leaves",
+    "lostworlds:willow_planks",
+    "lostworlds:willow_planks_slab",
+    "lostworlds:willow_planks_stairs",
+    "lostworlds:willow_planks_pressure_plate",
+    "lostworlds:willow_planks_door",
+    "lostworlds:willow_planks_trapdoor",
+    "lostworlds:willow_planks_fence",
+    "lostworlds:willow_planks_fence_gate",
+    "lostworlds:willow_planks_button"
+  ]
+}

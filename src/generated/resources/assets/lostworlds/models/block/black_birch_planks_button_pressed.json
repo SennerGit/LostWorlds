@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "lostworlds:block/black_birch_planks"
+  }
+}

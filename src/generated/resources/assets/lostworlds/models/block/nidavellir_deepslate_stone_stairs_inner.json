@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "lostworlds:block/nidavellir_deepslate_stone",
+    "side": "lostworlds:block/nidavellir_deepslate_stone",
+    "top": "lostworlds:block/nidavellir_deepslate_stone"
+  }
+}

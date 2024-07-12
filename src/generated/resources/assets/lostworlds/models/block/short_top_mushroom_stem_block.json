@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "lostworlds:block/short_top_mushroom_stem_block"
+  }
+}

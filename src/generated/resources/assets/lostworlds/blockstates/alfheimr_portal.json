@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "lostworlds:block/alfheimr_portal_ns"
+    },
+    "axis=z": {
+      "model": "lostworlds:block/alfheimr_portal_ew"
+    }
+  }
+}

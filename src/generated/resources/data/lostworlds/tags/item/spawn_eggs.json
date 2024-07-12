@@ -1,0 +1,30 @@
+{
+  "values": [
+    "lostworlds:rhino_spawn_egg",
+    "lostworlds:hellhound_spawn_egg",
+    "lostworlds:shadowhound_spawn_egg",
+    "lostworlds:spectralhound_spawn_egg",
+    "lostworlds:dwarves_spawn_egg",
+    "lostworlds:vampire_bat_spawn_egg",
+    "lostworlds:cave_mole_spawn_egg",
+    "lostworlds:elves_spawn_egg",
+    "lostworlds:shark_spawn_egg",
+    "lostworlds:moray_eels_spawn_egg",
+    "lostworlds:electric_eels_spawn_egg",
+    "lostworlds:jellyfish_spawn_egg",
+    "lostworlds:giant_squid_spawn_egg",
+    "lostworlds:ray_spawn_egg",
+    "lostworlds:giant_octopus_spawn_egg",
+    "lostworlds:nudibranch_slug_spawn_egg",
+    "lostworlds:great_white_spawn_egg",
+    "lostworlds:angler_fish_spawn_egg",
+    "lostworlds:seahorse_spawn_egg",
+    "lostworlds:clownfish_spawn_egg",
+    "lostworlds:atlantian_gurdian_spawn_egg",
+    "lostworlds:siren_spawn_egg",
+    "lostworlds:merfolk_spawn_egg",
+    "lostworlds:atlantian_spawn_egg",
+    "lostworlds:tang_fish_spawn_egg",
+    "lostworlds:tuna_spawn_egg"
+  ]
+}

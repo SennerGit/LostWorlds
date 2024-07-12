@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "lostworlds:block/weaver_planks",
+    "side": "lostworlds:block/weaver_planks",
+    "top": "lostworlds:block/weaver_planks"
+  }
+}

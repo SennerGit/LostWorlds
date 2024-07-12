@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "lostworlds:block/nidavellir_soft_stone"
+  }
+}

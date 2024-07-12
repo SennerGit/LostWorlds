@@ -1,0 +1,27 @@
+{
+  "values": [
+    "lostworlds:underworld_portal_frame",
+    "lostworlds:orichalcum_ingot",
+    "lostworlds:raw_orichalcum",
+    "lostworlds:orichalcum_nugget",
+    "lostworlds:aurichalcite",
+    "lostworlds:brass_ingot",
+    "lostworlds:brass_nugget",
+    "lostworlds:bronze_ingot",
+    "lostworlds:bronze_nugget",
+    "lostworlds:adamant_ore",
+    "lostworlds:deepslate_adamant_ore",
+    "lostworlds:adamant_ingot",
+    "lostworlds:aquamarine",
+    "lostworlds:opal",
+    "lostworlds:ruby",
+    "lostworlds:zinc_ingot",
+    "lostworlds:raw_zinc",
+    "lostworlds:zinc_nugget",
+    "lostworlds:tin_ingot",
+    "lostworlds:raw_tin",
+    "lostworlds:tin_nugget",
+    "lostworlds:zinc_block",
+    "lostworlds:tin_block"
+  ]
+}

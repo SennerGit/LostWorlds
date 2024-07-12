@@ -1,0 +1,18 @@
+{
+  "values": [
+    "lostworlds:bur_oak_log",
+    "lostworlds:bur_oak_wood",
+    "lostworlds:stripped_bur_oak_log",
+    "lostworlds:stripped_bur_oak_wood",
+    "lostworlds:bur_oak_leaves",
+    "lostworlds:bur_oak_planks",
+    "lostworlds:bur_oak_planks_slab",
+    "lostworlds:bur_oak_planks_stairs",
+    "lostworlds:bur_oak_planks_pressure_plate",
+    "lostworlds:bur_oak_planks_door",
+    "lostworlds:bur_oak_planks_trapdoor",
+    "lostworlds:bur_oak_planks_fence",
+    "lostworlds:bur_oak_planks_fence_gate",
+    "lostworlds:bur_oak_planks_button"
+  ]
+}

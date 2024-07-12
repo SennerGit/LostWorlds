@@ -1,0 +1,81 @@
+{
+  "carvers": {
+    "air": "lostworlds:underworld_carver"
+  },
+  "downfall": 0.5,
+  "effects": {
+    "fog_color": 13807926,
+    "foliage_color": 7429390,
+    "grass_color": 10322251,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "sky_color": 16773191,
+    "water_color": 13807926,
+    "water_fog_color": 8016407
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "lostworlds:alfheimr_coal_ore_key",
+      "lostworlds:alfheimr_iron_ore_key",
+      "lostworlds:alfheimr_gold_ore_key",
+      "lostworlds:alfheimr_redstone_ore_key",
+      "lostworlds:alfheimr_diamond_ore_key",
+      "lostworlds:alfheimr_lapis_ore_key",
+      "lostworlds:alfheimr_copper_ore_key",
+      "lostworlds:alfheimr_small_andesite_key",
+      "lostworlds:alfheimr_small_diorite_key",
+      "lostworlds:alfheimr_small_granite_key"
+    ],
+    [],
+    [],
+    [
+      "minecraft:patch_grass_forest",
+      "minecraft:patch_tall_grass",
+      "minecraft:patch_grass_badlands",
+      "minecraft:patch_grass_savanna",
+      "minecraft:patch_sugar_cane",
+      "lostworlds:elder_wood_placed",
+      "lostworlds:olive_placed",
+      "lostworlds:myrrh_placed",
+      "lostworlds:laurel_placed",
+      "lostworlds:cypress_placed",
+      "lostworlds:flower_iris_placed_key"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "lostworlds:rhino",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 12
+      }
+    ],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.5
+}

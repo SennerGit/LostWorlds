@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lostworlds:block/tartarus_stone_slab"
+    },
+    "type=double": {
+      "model": "lostworlds:block/tartarus_stone"
+    },
+    "type=top": {
+      "model": "lostworlds:block/tartarus_stone_slab_top"
+    }
+  }
+}

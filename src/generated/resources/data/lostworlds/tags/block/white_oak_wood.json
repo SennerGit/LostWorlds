@@ -1,0 +1,18 @@
+{
+  "values": [
+    "lostworlds:white_oak_log",
+    "lostworlds:white_oak_wood",
+    "lostworlds:stripped_white_oak_log",
+    "lostworlds:stripped_white_oak_wood",
+    "lostworlds:white_oak_leaves",
+    "lostworlds:white_oak_planks",
+    "lostworlds:white_oak_planks_slab",
+    "lostworlds:white_oak_planks_stairs",
+    "lostworlds:white_oak_planks_pressure_plate",
+    "lostworlds:white_oak_planks_door",
+    "lostworlds:white_oak_planks_trapdoor",
+    "lostworlds:white_oak_planks_fence",
+    "lostworlds:white_oak_planks_fence_gate",
+    "lostworlds:white_oak_planks_button"
+  ]
+}

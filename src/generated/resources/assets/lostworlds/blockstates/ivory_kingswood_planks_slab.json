@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lostworlds:block/ivory_kingswood_planks_slab"
+    },
+    "type=double": {
+      "model": "lostworlds:block/ivory_kingswood_planks"
+    },
+    "type=top": {
+      "model": "lostworlds:block/ivory_kingswood_planks_slab_top"
+    }
+  }
+}

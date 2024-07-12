@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lostworlds:block/weaver_planks_slab"
+    },
+    "type=double": {
+      "model": "lostworlds:block/weaver_planks"
+    },
+    "type=top": {
+      "model": "lostworlds:block/weaver_planks_slab_top"
+    }
+  }
+}

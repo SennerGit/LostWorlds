@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "lostworlds:point_mushroom_block",
+    "lostworlds:witches_mushroom_block",
+    "lostworlds:royal_blue_mushroom_block",
+    "lostworlds:short_top_mushroom_block",
+    "lostworlds:spectral_mushroom_block",
+    "lostworlds:shade_mushroom_block",
+    "lostworlds:cap_mushroom_block"
+  ]
+}

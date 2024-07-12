@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lostworlds:block/nidavellir_crimson_stone_bricks_slab"
+    },
+    "type=double": {
+      "model": "lostworlds:block/nidavellir_crimson_stone_bricks"
+    },
+    "type=top": {
+      "model": "lostworlds:block/nidavellir_crimson_stone_bricks_slab_top"
+    }
+  }
+}

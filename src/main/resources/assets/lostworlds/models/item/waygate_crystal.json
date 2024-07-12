@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lostworlds:item/waygate_crystal"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "lostworlds:on": 1
+      },
+      "model": "lostworlds:item/waygate_crystal_on"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "lostworlds:block/sacred_tree_planks_door_bottom",
+    "top": "lostworlds:block/sacred_tree_planks_door_top"
+  }
+}

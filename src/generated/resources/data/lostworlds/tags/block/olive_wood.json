@@ -1,0 +1,18 @@
+{
+  "values": [
+    "lostworlds:olive_log",
+    "lostworlds:olive_wood",
+    "lostworlds:stripped_olive_log",
+    "lostworlds:stripped_olive_wood",
+    "lostworlds:olive_leaves",
+    "lostworlds:olive_planks",
+    "lostworlds:olive_planks_slab",
+    "lostworlds:olive_planks_stairs",
+    "lostworlds:olive_planks_pressure_plate",
+    "lostworlds:olive_planks_door",
+    "lostworlds:olive_planks_trapdoor",
+    "lostworlds:olive_planks_fence",
+    "lostworlds:olive_planks_fence_gate",
+    "lostworlds:olive_planks_button"
+  ]
+}

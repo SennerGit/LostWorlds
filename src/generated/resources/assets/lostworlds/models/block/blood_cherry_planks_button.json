@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "lostworlds:block/blood_cherry_planks"
+  }
+}

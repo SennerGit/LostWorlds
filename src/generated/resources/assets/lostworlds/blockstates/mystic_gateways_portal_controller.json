@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "lostworlds:block/mystic_gateways_portal_controller"
+    }
+  }
+}

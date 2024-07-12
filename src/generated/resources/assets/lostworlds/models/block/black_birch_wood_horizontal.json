@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "lostworlds:block/black_birch_log",
+    "side": "lostworlds:block/black_birch_log"
+  }
+}

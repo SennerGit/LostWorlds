@@ -1,0 +1,92 @@
+{
+  "carvers": {
+    "air": "lostworlds:nidavellir_carver"
+  },
+  "downfall": 0.5,
+  "effects": {
+    "fog_color": 1339945,
+    "foliage_color": 1339945,
+    "grass_color": 3865709,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "sky_color": 4234441,
+    "water_color": 4843712,
+    "water_fog_color": 2673282
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "lostworlds:nidavellir_coal_ore_key",
+      "lostworlds:nidavellir_coal_ore_cluster_key",
+      "lostworlds:nidavellir_iron_ore_key",
+      "lostworlds:nidavellir_iron_ore_cluster_key",
+      "lostworlds:nidavellir_gold_ore_key",
+      "lostworlds:nidavellir_gold_ore_cluster_key",
+      "lostworlds:nidavellir_redstone_ore_key",
+      "lostworlds:nidavellir_redstone_ore_cluster_key",
+      "lostworlds:nidavellir_diamond_ore_key",
+      "lostworlds:nidavellir_diamond_ore_cluster_key",
+      "lostworlds:nidavellir_lapis_ore_key",
+      "lostworlds:nidavellir_lapis_ore_cluster_key",
+      "lostworlds:nidavellir_copper_ore_key",
+      "lostworlds:nidavellir_copper_ore_cluster_key",
+      "lostworlds:nidavellir_tin_ore_key",
+      "lostworlds:nidavellir_tin_ore_cluster_key",
+      "lostworlds:nidavellir_zinc_ore_key",
+      "lostworlds:nidavellir_zinc_ore_cluster_key",
+      "lostworlds:nidavellir_aquamarine_ore_key",
+      "lostworlds:nidavellir_aquamarine_ore_cluster_key",
+      "lostworlds:nidavellir_opal_ore_key",
+      "lostworlds:nidavellir_opal_ore_cluster_key",
+      "lostworlds:nidavellir_ruby_ore_key",
+      "lostworlds:nidavellir_ruby_ore_cluster_key"
+    ],
+    [
+      "minecraft:amethyst_geode",
+      "minecraft:fossil_lower",
+      "minecraft:fossil_upper"
+    ],
+    [],
+    [
+      "minecraft:patch_grass_forest",
+      "minecraft:patch_tall_grass",
+      "minecraft:patch_grass_badlands",
+      "minecraft:patch_grass_savanna"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "lostworlds:rhino",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 12
+      }
+    ],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.5
+}

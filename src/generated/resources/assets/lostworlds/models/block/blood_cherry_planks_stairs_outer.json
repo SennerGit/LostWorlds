@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "lostworlds:block/blood_cherry_planks",
+    "side": "lostworlds:block/blood_cherry_planks",
+    "top": "lostworlds:block/blood_cherry_planks"
+  }
+}

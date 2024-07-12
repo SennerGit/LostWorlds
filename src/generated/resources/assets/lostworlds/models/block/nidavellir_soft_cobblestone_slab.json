@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "lostworlds:block/nidavellir_soft_cobblestone",
+    "side": "lostworlds:block/nidavellir_soft_cobblestone",
+    "top": "lostworlds:block/nidavellir_soft_cobblestone"
+  }
+}
